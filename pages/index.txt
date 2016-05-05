@@ -1,0 +1,33 @@
+making free networks possible
+=============================
+
+include::menu.inc[]
+
+== Introduction to libre-mesh
+
+The Libre-Mesh project (LiMe) was started in 2013 by a set of free networks activists from several countries and different projects,
+willing to create a common an single solution for their networks.
+
+
+The Libre-Mesh project includes the development of several tools used for deploying libre/free mesh networks.
+
+
+The firmware (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks. 
+Check link:howitworks.html[How it Works] to see the basic ideas.
+
+
+== Mesh networks
+
+Mesh networks are such networks
+
+== Free networks
+
+We understand a free network as a telecomunications network which accomplish three points:
+
+. It is open, so anyone can connect to it if physically possible
+. It is neutral, so there are not preferences for the kind, origin or destination of the data
+. It is free as the spanish world libre, so there are not restrictions
+
+== Firmware and embedded device
+
+TBD

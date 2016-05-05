@@ -1,0 +1,27 @@
+About the project
+=================
+
+include::menu.inc[]
+
+== Name
+
+image:logo/logo_small.png["The LIME logo",role="left"]
+
+Libre-Mesh is community and an open project, so anyone can join us. We understand anyone using the LiMe firmware as part of this community.
+The development is mainly made for a group of volunteers, which we identify as a team.
+
+== Team
+
+Here you can find an alphabetically ordered list of the current people involved in the development.
+
+[cols="2*1",options="header"]
+|====
+| Name | Contact
+| Al | -
+| Axel | -
+| Gui | -
+| Gio | -
+| Nico | -
+| Pau | p4u[at]dabax[dot]net
+| Pedro | -
+|====

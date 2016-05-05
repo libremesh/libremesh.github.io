@@ -1,0 +1,67 @@
+Get it
+======
+
+include::menu.inc[]
+
+== Download precompiled binaries
+
+We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe to your router.
+
+----
+http://downloads.libre-mesh.org
+----
+
+== Use the chef application
+
+Chef is our own web application for generating customized firmware images.
+
+----
+http://chef.libre-mesh.org
+----
+
+== Compile using the tool lime-build
+
+LiMe build is a tool for developers to create a development enviroment for libre-mesh. 
+Basically it consists in one Makefile, so it is executed using the GNU "make" command.
+
+----
+git clone git://github.com/libre-mesh/lime-build.git 
+----
+
+== Compile the code yourself
+
+Clone OpenWRT stable repository.
+
+----
+git clone git://git.openwrt.org/15.05/openwrt.git
+----
+
+Add lime-packages feed to the default ones.
+
+----
+cd openwrt
+cp feeds.conf.default feeds.conf
+echo "src-git lime https://github.com/libre-mesh/lime-packages.git" >> feeds.conf
+----
+
+Download the new packages.
+
+----
+scripts/feeds update -a
+scripts/feeds install -a
+----
+
+Select needed packages from LiMe menu in menuconfig.
+
+----
+make menuconfig
+----
+
+Compile the firmware images.
+
+----
+make -j4
+----
+
+The resulting files will be present in bin/ directory.
+
