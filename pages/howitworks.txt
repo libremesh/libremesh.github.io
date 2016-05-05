@@ -4,7 +4,7 @@ How it works
 include::menu.inc[]
 
 
-== Objectives to achieve
+== Objectives to Achieve
 
   - Scalability
   - Network segmentation
@@ -13,7 +13,7 @@ include::menu.inc[]
   - Compatibility of most of the existing scenarios
   - A single firmware for all the network (for ground level, for backbone, for companies, for quick deployments, etc.)
 
-== The basics
+== The Basics
 
 The network architecture designed for libre-mesh is based in two layers:
 
@@ -22,32 +22,32 @@ The network architecture designed for libre-mesh is based in two layers:
 
 image::img/network1.png[]
 
-By default all nodes are runing BMX7 (_a routing protocol for mesh networks working on the IP layer_) and BAT-ADV (_ a routing protocol for mesh networks working on the MAC layer_) at same time in the same WiFi devices but different VLANS (_virtual LAN, for instance wlan0.13_). 
-However this can be changed by the user, both BMX7 and BATADV can be disabled according to the specific needs and requirements.
+By default all nodes are running BMX7 (_a routing protocol for mesh networks working on the IP layer_) and BAT-ADV (_ a routing protocol for mesh networks working on the MAC layer_) at same time in the same WiFi devices but on different VLANs (_virtual LAN, for instance wlan0.13_). 
+However this can be customized by the user, both BMX7 and BATADV can be disabled according to the specific needs.
 
 The BMX7 VLAN is always the same, so all link-layer connected nodes will see each other. 
-The BATADV VLAN depends on the cloud identifier which is calculed (by default) using the AP SSID (_access point identification name_).
+The BATADV VLAN depends on the cloud identifier which is calculated (by default) using the AP SSID (_access point identification name_).
 
 image::img/network2.png[]
 
 **This configuration allows to isolate the layer 2 clouds** (this is named network segmentation). 
-For instance a neighborhood, a company complex or a street level Hotsposts network can choose isolate their LAN (_local area network_) from the rest of the network. 
+For instance a neighborhood, a company complex or a street level Hotsposts network can choose to isolate their LAN (_local area network_) from the rest of the network. 
 However at the same time, they will be able to reach the rest of the community network using the layer 3 routed network.
 
 In case an entire network community wants to have a single cloud, they can just use the same cloud identifier.
 
-== The details
+== The Details
 
 All WiFi Access Points from the same layer 2 cloud share the same SSID, a special anycast (_an IP shared by multiple devices in the network_) IPv4/IPv6 address and a special anycast MAC address.
 
-**It allows real roaming inside the network**, so the clients does not need to renew their IP configuration when they change from one AP to the other.
+**This allows real roaming inside the network**, so the clients does not need to renew their IP configuration when they change from one AP to the other.
 
 image::img/network3.png[]
 
 All mesh nodes have a DHCP/RA (_network protocols to provide network configuration such as a valid IP address_) server to provide valid IPs from the cloud to the clients. 
 
-The DHCP leasses file is shared among the cloud to prevent collisions [[http://en.wiki.guifi.net/A.L.F.R.E.D.|using "A.L.F.R.E.D"]].
-As long as all nodes share the same anycast MAC/IP, from the client point of view it is fully transparent. Thus the gateway is always the same nonetheless the mesh node where they are attached is different.
+The DHCP leases file is shared among the cloud to prevent collisions http://en.wiki.guifi.net/A.L.F.R.E.D.[using "A.L.F.R.E.D"].
+As long as all nodes share the same anycast MAC/IP, from the client point of view it is fully transparent. Thus the gateway is always the same nonetheless the mesh node where they are attached to is different.
 
 image::img/network4.png[]
 
@@ -57,7 +57,7 @@ An ebtables (_something like iptables but for network layer 2_) rule in the LAN/
 
 image::img/network5.png[]
 
-The packet is routed throw the BMX6 layer 3 network to the best Internet gateway (according to the BMX7 metrics). It may be a node from the same cloud or any other from another far away cloud.
+The packet is routed through the BMX7 layer 3 network to the best Internet gateway (according to the BMX7 metrics). It may be a node from the same cloud or any other from another cloud far away.
 In the way back the packet will arrive to some node in the cloud (it might not be the same), it will depend on the routing protocol metrics. 
 
 image::img/network6.png[]

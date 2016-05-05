@@ -31,7 +31,7 @@ git clone https://github.com/libre-mesh/lime-web.git
 
 === Submitting Patches
 
-We accept pull requests via GitHub. But can also be submitted via the dev mailing list.
+We accept pull requests via GitHub. But patches can also be submitted via the dev mailing list.
 Submissions should follow these rules
 
 
@@ -44,7 +44,7 @@ Submissions should follow these rules
   .. What does it do that it should not do / what does it not do that it should do
   .. Steps to reproduce
   .. What you have already done to fix the problem
-  .. Any additional info you thinks is important
+  .. Any additional info you think is important
 . Reporting a bug means that you reported a bug. It does not constitute a claim that
   anyone has to work on fixing it.
 . Pointless/vague/silly/... bugs reports will be ignored

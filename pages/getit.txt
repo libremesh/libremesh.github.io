@@ -3,15 +3,15 @@ Get it
 
 include::menu.inc[]
 
-== Download precompiled binaries
+== Download Precompiled Binaries
 
-We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe to your router.
+We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
 
 ----
 http://downloads.libre-mesh.org
 ----
 
-== Use the chef application
+== Use the Chef Application
 
 Chef is our own web application for generating customized firmware images.
 
@@ -19,16 +19,16 @@ Chef is our own web application for generating customized firmware images.
 http://chef.libre-mesh.org
 ----
 
-== Compile using the tool lime-build
+== Compile Using the Tool lime-build
 
-LiMe build is a tool for developers to create a development enviroment for libre-mesh. 
+LiMe build is a tool for developers, it creates a development environment for libre-mesh. 
 Basically it consists in one Makefile, so it is executed using the GNU "make" command.
 
 ----
-git clone git://github.com/libre-mesh/lime-build.git 
+git clone https://github.com/libre-mesh/lime-build.git 
 ----
 
-== Compile the code yourself
+== Compile the Code Yourself
 
 Clone OpenWRT stable repository.
 

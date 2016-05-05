@@ -7,12 +7,12 @@ include::menu.inc[]
 
 image:logo/logo_small.png["The LIME logo",role="left"]
 
-Libre-Mesh is community and an open project, so anyone can join us. We understand anyone using the LiMe firmware as part of this community.
-The development is mainly made for a group of volunteers, which we identify as a team.
+Libre-Mesh is a community and an open project, so anyone can join us. We consider anyone using the LiMe firmware as part of this community.
+The development is mainly carried on by a group of volunteers, which we identify as a team.
 
 == Team
 
-Here you can find an alphabetically ordered list of the current people involved in the development.
+Here you can find an alphabetically ordered list of the people currently involved in the development.
 
 [cols="2*1",options="header"]
 |====
