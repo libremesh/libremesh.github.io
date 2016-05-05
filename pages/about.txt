@@ -19,8 +19,11 @@ Here you can find an alphabetically ordered list of the current people involved 
 | Name | Contact
 | Al | -
 | Axel | -
-| Gui | -
+| Gabriel | -
 | Gio | -
+| Gui | -
+| Ilario | ilario[at]eigenlab[dot]org
+| Leonaard | -
 | Nico | -
 | Pau | p4u[at]dabax[dot]net
 | Pedro | -
