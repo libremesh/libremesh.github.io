@@ -19,7 +19,7 @@ Here you can find an alphabetically ordered list of the people currently involve
 | Name | Contact
 | Al | -
 | Axel | -
-| Gabriel | -
+| Gabriel | gabriel[at]autistici[dot]org
 | Gio | -
 | Gui | -
 | Ilario | ilario[at]eigenlab[dot]org
