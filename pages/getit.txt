@@ -24,9 +24,33 @@ http://chef.libre-mesh.org
 LiMe build is a tool for developers, it creates a development environment for libre-mesh. 
 Basically it consists in one Makefile, so it is executed using the GNU "make" command.
 
+Clone lime-build git repository
 ----
 git clone https://github.com/libre-mesh/lime-build.git 
 ----
+
+You can see the list of officialy supported targets by typing:
+----
+make list_targets
+----
+If your target is not listed then you can use some generic target such as _ar71xx_
+
+From now on, you must always use T=<your_target> when invoking _make_. As example we use Tplink wdr4300.
+
+Launch the _menuconfig_ to select extra packages or leave it as is per default
+
+----
+make T=tl-wdr4300 menuconfig
+----
+
+Then launch the compilation process using J=<number_of_cpu_cores>
+
+----
+make T=tl-wdr4300 J=4
+----
+
+When finish, if not errors, you will find the binaries ready to install inside directory _images_
+
 
 == Compile the Code Yourself
 
