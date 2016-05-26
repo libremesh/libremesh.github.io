@@ -1,0 +1,15 @@
+Hardware Documentation Index
+============================
+
+include::menu.inc[]
+
+Installing LiMe is not always as easy as we would like to.
+It depends on the router model, revision and so on.
+The best way for getting an updated set of instrucctions is to find your
+model on OpenWRT or LEDE web pages. However to cover some specific scenarios,
+we provide a list of articles which might help you.
+
+Please, take into account that these pages are third-party contributed, so if
+you find the opportunity send us your contribution via git pull-request or mail.
+
+

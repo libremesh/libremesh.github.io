@@ -33,3 +33,4 @@ copy "$D/img" "$D/html/img"
 
 render "$D/pages" "$D/html"
 render "$D/docs" "$D/html/docs"
+render "$D/docs/hardware" "$D/html/docs/hardware"
