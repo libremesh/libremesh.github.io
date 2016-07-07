@@ -5,6 +5,8 @@ include::menu.inc[]
 
 == Download Precompiled Binaries
 
+Note: These builds are currently broken. Please use another method below until new builds are available.
+
 We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
 
 https://chef.altermundi.net/ls/libre-mesh/[Stable releases with generic configuration] (the bigger the revision number the newer the release).
@@ -13,7 +15,9 @@ https://chef.altermundi.net/ls/libre-mesh/[Stable releases with generic configur
 
 Chef is our own web application for generating customized firmware images.
 
-https://chef.altermundi.net[Chef homepage.]
+https://chef.altermundi.net[Chef homepage]
+
+https://chef.altermundi.net/ls/libre-mesh/r44952/1509/ar71xx/[Official builds on Chef]
 
 == Compile Using the Tool lime-build
 
@@ -25,13 +29,13 @@ Clone lime-build git repository
 git clone https://github.com/libre-mesh/lime-build.git
 ----
 
-You can see the list of officialy supported targets by typing:
+You can see the list of officially supported targets by typing:
 ----
 make list_targets
 ----
 If your target is not listed then you can use some generic target such as _ar71xx_
 
-From now on, you must always use T=<your_target> when invoking _make_. As example we use Tplink wdr4300.
+From now on, you must always use T=<your_target> when invoking _make_. As example we use TP-Link WDR4300.
 
 Launch the _menuconfig_ to select extra packages or leave it as is per default
 
