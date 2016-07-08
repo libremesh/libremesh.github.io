@@ -1,0 +1,35 @@
+---
+---
+Development
+===========
+
+== The Source Code
+
+The code is stored inside a git tree which contains all branches and releases. 
+
+All repositories can be browsed online through
+http://github.com/libre-mesh/[GitHub] as well.
+
+== Getting The _LiMe_ Code
+
+Any _LiMe_ development happens in the main git repository which is
+accessible via HTTPS:
+
+----
+git clone https://github.com/libre-mesh/lime-packages.git
+----
+
+== The Web Presence
+
+The pages you're reading are generated from text files using the
+http://www.methods.co.nz/asciidoc/[AsciiDoc] suite plus jekyll. Any changes made to the
+projects web site will be reflected in our web git repository:
+
+----
+git clone https://github.com/libre-mesh/lime-web.git
+----
+
+== Submitting Patches
+
+We accept pull requests via GitHub. But patches can also be submitted via the dev mailing list.
+

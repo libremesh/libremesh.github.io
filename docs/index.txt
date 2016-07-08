@@ -1,7 +1,7 @@
+---
+---
 Documentation Index
 ===================
-
-include::menu.inc[]
 
 == The Web Presence
 
@@ -15,7 +15,7 @@ git clone https://github.com/libre-mesh/lime-web.git
 
 If you would like to contribute to the documentation then please send patches to our mailing list and use the prefix "doc:" in the patches subject.
 
-== Presentations
+== Presentations and Documents
 
 1. https://github.com/G10h4ck/presentazione-SAX2016-reveal.js[Interoperability between classic infrastructure and Libre-Mesh networks in Guifi.net
 ]

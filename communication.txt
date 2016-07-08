@@ -1,0 +1,29 @@
+---
+---
+Communication
+=============
+
+== Contact
+
+It is possible to communicate with the current community members using mail and IRC.
+All project related communication should be done on public channels that are
+archived and easily browsable. Specific problems and tasks may be resolved
+using direct means of communication.
+
+
+== Mailing Lists
+
+The project offers the following mailing lists
+
+. https://lists.libre-mesh.org/mailman/listinfo/dev[dev@lists.libre-mesh.org] -
+  This list is used for general development related work.
+. https://lists.libre-mesh.org/mailman/listinfo/users[users@lists.libre-mesh.org] - 
+  This list is used for project organisational purposes. And for user specific questions.
+
+
+== IRC Channels
+
+The project uses an IRC channel on freenode
+
+. #libre-mesh - a public channel for everyone to join and participate
+

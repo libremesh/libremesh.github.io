@@ -1,0 +1,18 @@
+# jekyll configuration
+
+title: 'Welcome to the libre-mesh project'
+
+exclude: [ 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README' ]
+
+prefix: '/'
+
+asciidoctor:
+  attributes:
+    - idseparator=_
+    - source-highlighter=coderay
+    - icons=font
+    - hardbreaks!
+
+asciidoc_ext: txt
+
+# end of configuration

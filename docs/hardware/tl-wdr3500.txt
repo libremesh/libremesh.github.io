@@ -1,7 +1,9 @@
+---
+---
 Tplink wdr 3500
 ===============
 
-include::menu.inc[]
+== TPlink WDR 3500
 
 Because of the new FCC rules, new TPlink models would require a special method to install third party firmwares like LiMe.
 
