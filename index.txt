@@ -7,16 +7,17 @@ The Libre-Mesh project
 
 The Libre-Mesh project (LiMe) was started in 2013 by a set of free networks activists from several countries and different projects,
 willing to create a common solution for their networks.
-
 The Libre-Mesh project includes the development of several tools used for deploying libre/free mesh networks.
-
 The firmware (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
 Check link:howitworks.html[How it Works] to see the basic ideas.
 
 
 == Mesh Networks
 
-Mesh networks are telecomunication networks were all participants (nodes) are able to route traffic from other participants. So there are not central points and the physical topology can be completely random.
+Mesh networks are such networks where all participants (nodes) are able to route traffic from other participants. 
+So there are not central points and the physical topology can be completely random.
+Usually mesh networks are decentralized, bottom-up organized, deployed and maintained by the people using them.
+We believe this is the only way for achieving a real free network out of control for the governments or big organizations.
 
 == Free Networks
 
@@ -29,3 +30,6 @@ We understand a free network as a telecommunications network which accomplish th
 == Firmware and Embedded Device
 
 An embedded device is a small computer. Usually the operating system running in such small computers is called Firmware.
+Our way of deploying free mesh networks is by installing our own firmware to the devices (usuarlly WiFi routers).
+Our system is based on the OpenWRT/LEDE project, which at the same time is based on the well known Linux operating system.
+Everyting we develop is free software so anyone can use, copy, modify and distribute it with no restrictions.
