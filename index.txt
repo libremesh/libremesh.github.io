@@ -10,13 +10,13 @@ willing to create a common solution for their networks.
 
 The Libre-Mesh project includes the development of several tools used for deploying libre/free mesh networks.
 
-The firmware (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks. 
+The firmware (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
 Check link:howitworks.html[How it Works] to see the basic ideas.
 
 
 == Mesh Networks
 
-Mesh networks are telecomunication networks were all participants (nodes) are able to route traffic from other participants. So there are not central points and the physical topology can be completelly random.
+Mesh networks are telecomunication networks were all participants (nodes) are able to route traffic from other participants. So there are not central points and the physical topology can be completely random.
 
 == Free Networks
 
