@@ -11,6 +11,10 @@ It is a common configuration interface for https://github.com/openwrt/luci[OpenW
 
 To access it, connect your computer to the router over ethernet or wifi, open your browser and go to http://anygw[http://anygw] or http://thisnode.info[thisnode.info].
 
+If none of those work, try going to Connection Information and using the value under Default Route or Primary DNS.
+
+Default username is root with no password.
+
 == Connecting to other nodes
 
 Using the IPv4 or the IPv6 you should be able to connect to any node.

@@ -7,7 +7,7 @@ Hardware Documentation Index
 
 Installing LiMe is not always as easy as we would like to.
 It depends on the router model, revision and so on.
-The best way for getting an updated set of instrucctions is to find your
+The best way for getting an updated set of instructions is to find your
 model on OpenWRT or LEDE web pages. However to cover some specific scenarios,
 we provide a list of articles which might help you.
 
@@ -16,5 +16,4 @@ you find the opportunity send us your contribution via git pull-request or mail.
 
 == Devices
 
-* link:tl-wdr3500.html[Tplink wdr3500]
-
+* link:tp-link.html[TP-Link]
