@@ -2,7 +2,7 @@
 
 title: 'Welcome to the libre-mesh project'
 
-exclude: [ 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README' ]
+exclude: [ 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README', 'vendor' ]
 
 prefix: '/'
 
