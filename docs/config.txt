@@ -1,0 +1,187 @@
+---
+---
+The Configuration file
+======================
+
+== The Configuration file
+
+The configuration file placed on **/etc/config/lime** is one of the key points for LiMe.
+It contains a set of basic options which are used by Libre Mesh backend to perform its magic.
+The special program **lime-config** reads such file and applies the configuration to the operating system.
+The default options (those which are not defined by the user in the config file) are read from **/etc/config/lime-defaults**, 
+however it should not be modified in runtime.
+
+
+Some options are parametrizable with a set of special characters which will be substituted for some specific node data.
+
+. **MAC bytes** [%Mn] refers to the MAC address of the primary interface. Example from CA:FF:EE:BA:BB:EE %M1=CA and %M4=BA
+. **Network Identifier** [%Nn] refers to the cloud identifier byte which is a hash of the AP SSID.
+. **Hostname** [%H] Refers to the hostname of the node
+
+[NOTE]
+==============
+Note that there is no need to manual configure any of the config file options unless you know what are you doing. 
+In most of the scenarios the default options defined in lime-defaults should work fine.
+==============
+
+=== List of sections and options
+
+.System options
+----
+config lime system
+	option hostname 'LiMeNode-%M4%M5%M6' 
+----
+
+
+.Network general options
+----
+config lime network
+	option primary_interface eth0  
+	option bmx6_over_batman
+	option main_ipv4_address '192.0.2.0/24'
+	option main_ipv6_address '2001:db8::%M5:%M6/64'                        
+	list protocols adhoc
+	list protocols lan
+	list protocols anygw
+	list protocols batadv:%N1
+	list protocols bmx6:13
+#	list protocols olsr:14
+#	list protocols olsr6:15
+#	list protocols olsr2:16
+#	list resolvers 8.8.8.8
+#	list resolvers 2001:4860:4860::8844
+----
+
+[NOTE]
+.main_ipv4_address
+================
+Here you have 4 possibilities: 
+
+. set a static IP and the subnet, like '192.0.2.1/16' 
+
+. parametrize with %Mn and %Nn, and set the subnet, like '192.%N1.%M5.%M6/16'; 
+
+. set a whole network address (so not a specific IP) for getting the IP autocompleted in that network with bits from MAC address,  this works also with netmasks other than /24 or /16, like '192.0.128.0/17' 
+
+. set two different parameters, the first for subnet and the second for IP parametrization, like '192.0.128.0/16/17', this results in /16 subnet but IP parametrized in a /17 range.
+
+================
+
+[NOTE]
+.main_ipv6_address
+================
+Parametrizable in the same way as main_ipv4_address. If used, the IP autocompletion will fill maximum the last 24 bits, 
+so specifying an IP autocompletion range bigger than /104 is not useful.
+================
+
+[NOTE]
+.list protocols
+================
+List of protocols configured by LiMe, some of these require the relative package "lime-proto-...". 
+Note that if you set here some protocols, you overwrite the **whole** list of protocols set in /etc/config/lime-defaults.
+================
+
+
+.WiFi general options
+----
+config lime wifi
+	option country 'ES'
+	option channel_2ghz '11'
+	option channel_5ghz '48'
+	option htmode_2ghz 'HT20'
+	option htmode_5ghz 'HT40'
+	list modes 'ap'
+	list modes 'adhoc'
+	option ap_ssid 'libre-mesh.org'
+	option adhoc_ssid '%H'
+	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
+	option adhoc_mcast_rate_2ghz '24000'
+	option adhoc_mcast_rate_5ghz '6000'
+#	option mesh_mesh_fwding '0'
+#	option mesh_mesh_id 'LiMe'
+----
+
+.WiFi interface specific options (override general option), multiple allowed
+----
+config wifi radio11
+	list modes 'adhoc'
+	option channel_2ghz '1'
+	option channel_5ghz '48'
+	option adhoc_mcast_rate '6000'
+	option adhoc_ssid 'libre-mesh'
+	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
+
+#config wifi radio12
+#	list modes 'manual'
+----
+
+[NOTE]
+.Network interface specific options
+=======================
+Available protocols: bmx6, batadv, olsr, olsr6, wan, lan, manual
+
+proto:vlan_number works too (something like bmx6:13 is supported)
+
+If you use manual do not specify other protocols, may result in an unpredictable behavior/configuration.
+=======================
+
+.Ethernet specific options, multple allowed
+----
+#config net port5
+#	option linux_name 'eth1.5'
+#	list protocols 'wan'
+----
+
+[NOTE]
+.config net
+================
+Do not put any "." in the section name.
+
+Use the actual name of the interface as the system shows (execute ip link to see).
+
+Some of these protocols require the relative package "lime-proto-...".
+================
+
+.Ground routing specific sections
+----
+config hwd_gr link1
+	option net_dev 'eth0'
+	option vlan '5'
+	option switch_dev 'switch0'
+	option switch_cpu_port '0'
+	list switch_ports '4'
+----
+
+[NOTE]
+.config hwd_gr
+===============
+* net_dev: Plain ethernet device on top of which 802.1q vlan will be constructed.
+
+* vlan: Vlan id to use for this ground routing link, use little one because cheap switch doesn't supports big ids, this will be used also as 802.1q vid.
+
+* switch_dev: These options regarding switch need to be set only if your ethernet device is connected to a switch chip. If the switch exists you can read its name (like switch0) in /etc/config/network file.
+
+* switch_cpu_port: Refer to switch port map of your device on wiki.openwrt.org to know CPU port index.
+
+* switch_ports: List switch ports on which you want the vlan being passed, refer to wiki.openwrt.org for correspondence with physical ports.
+===============
+
+.Proto BGP specific sections (one section for each BGP peer)
+----
+config bgp_peer peer1
+	option remoteIP '192.0.2.6'
+	option remoteAS '65550'
+
+config bgp_peer peer2
+	option remoteIP '2001:db8::c001'
+	option remoteAS '65549'
+----
+
+[NOTE]
+==============
+One section for each ground routing link.
+With ground routing we mean setups having Libre-Mesh on a router which is connected via cable(s), eventually through a switch, to some wireless routers running the original firmware in WDS (transparent bridge) Ap/Sta mode.
+Likely you want to configure as many sections of ground routing with different vlan numbers or different switch ports as many connected devices in WDS mode.
+==============
+
+
