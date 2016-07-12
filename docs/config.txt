@@ -26,6 +26,8 @@ In most of the scenarios the default options defined in lime-defaults should wor
 
 === List of sections and options
 
+For updated information check the https://raw.githubusercontent.com/libre-mesh/lime-packages/develop/packages/lime-system/files/etc/config/lime.example[Git lime.example] file.
+
 .System options
 ----
 config lime system
