@@ -1,0 +1,100 @@
+---
+---
+Connecting to LiMe nodes
+========================
+
+== Connecting to your own node
+
+Usually you can use DHCP to get an IP configuration for your computer when attached via WiFi or Ethernet.
+The IP for the node where you are attached to, will be the default gateway for your computer (ip route)
+You can also use the special domain names **anygw** or **thisnode.info**.
+
+
+You can access the node by opening your browser and going to http://anygw[http://anygw] or http://thisnode.info[thisnode.info].
+
+First time you can also use TELNET (telnet anygw) and when password is set SSH.
+
+Default username is root with no password.
+
+
+== Connect using ipv6 link-local
+
+Each working network interface in your Linux system have a special IPv6 address configured automatically by the Kernel.
+These are named IPv6 link-local and are inside the special prefix fe80::/10
+The scope of these IPs is to communicate computers which are in the same colision domain, so translated to LiMe it would be the layer2 Cloud.
+
+
+But, how to know the IPv6 link-local address of the host we want to achieve?
+Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::". 
+to discover routers (group 2) we can use the next command:
+
+----
+ping6 ff02::2%eth0
+----
+
+Then each router connected to our colision domain, will reply the ICMP request with its own IPv6 link-local address.
+
+----
+p4u@nomada:~$ $ ping6 ff02::2%eth1 -c2
+PING ff02::2%eth1(ff02::2) 56 data bytes
+64 bytes from fe80::a2f3:c1ff:fe39:1cea: icmp_seq=1 ttl=64 time=0.956 ms
+64 bytes from fe80::a2f3:c1ff:fe39:1cea: icmp_seq=2 ttl=64 time=0.949 ms
+----
+
+We can connect to it using ssh:
+
+----
+ssh fe80::a2f3:c1ff:fe39:1cea%eth1
+----
+
+Or copy files using scp:
+
+----
+scp LiMe-fw.bin [fe80::a2f3:c1ff:fe39:1cea%eth1]:/tmp/
+----
+
+This is a small script which check if there is some router attached to your network device and in case, try to connect to it. 
+If there are not routers it waits until some appears.
+
+[source,bash]
+.disc6
+----
+#!/bin/bash
+INT=${1:-eth0}
+MYIP="$(ip addr show dev $INT | grep -e "inet6.*scope link" | awk '{print $2}' | cut -d/ -f1)" 
+NEIGH="$(ping6 ff02::2%$INT -n -c3 2>/dev/null | grep fe80 2>/dev/null | awk '{print $4}' | sed 's/\(.*\)./\1/' | sort -u)" 
+RNEIGH="$(echo -e "$NEIGH" | grep -v $MYIP | grep -v "^$" | sort -u)" 
+if [ $(echo -e "$RNEIGH" | wc -l) -eq 1 -a $(echo -e "$RNEIGH" | wc -c) -gt 4 ]; then
+    echo "Host found, connecting to it!" 
+    telnet $RNEIGH%$INT || ssh root@$RNEIGH%$INT
+elif [ -z "$RNEIGH" ]; then
+    echo -n "." 
+    exec $0 $@
+else
+    echo "Several Hosts found:" 
+    echo -e "$RNEIGH" 
+fi
+----
+
+An example of execution:
+
+----
+p4u@nomada:~$ $ disc6 eth1
+...........................Host found, connecting to it!
+
+Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of known hosts.
+root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
+----
+
+
+== Connecting to other nodes
+
+Using the IPv4 or the IPv6 you should be able to connect to any node.
+It should appear in the menu BMX6 -> Nodes -> (click on the blue circle).
+
+All the nodes are probably in the same collision domain, so you can use NMAP to discover the nodes in your network and their IPv4s.
+
+pass:[<code>nmap -sT -p 80 10.X.Y.0/24 --open</code>]
+
+**You can also use the IPv6 link-local address to connect with the nodes of your layer2 Cloud.**
+

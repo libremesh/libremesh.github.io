@@ -5,8 +5,10 @@ The Libre-Mesh project
 
 == Introduction to Libre-Mesh
 
-The Libre-Mesh project (LiMe) was started in 2013 by a set of free networks activists from several countries and different projects,
-willing to create a common solution for their networks.
+The Libre-Mesh project (LiMe) was started in 2013 by a set of free network activists from several countries and different projects around the world,
+willing to create a common solution for the deployment of free/mesh networks.
+
+
 The Libre-Mesh project includes the development of several tools used for deploying libre/free mesh networks.
 The firmware (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
 Check link:howitworks.html[How it Works] to see the basic ideas.

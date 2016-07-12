@@ -9,16 +9,5 @@ Once you have http://www.libre-mesh.org/getit.html[installed] LiMe onto your rou
 Like most things you will encounter, LuCI is not unique to LiME.
 It is a common configuration interface for https://github.com/openwrt/luci[OpenWRT].
 
-To access it, connect your computer to the router over ethernet or wifi, open your browser and go to http://anygw[http://anygw] or http://thisnode.info[thisnode.info].
+To know how to connect to your node you can visit the following link: link:connecting_nodes.html[How to connect to the mesh nodes]
 
-If none of those work, try going to Connection Information and using the value under Default Route or Primary DNS.
-
-Default username is root with no password.
-
-== Connecting to other nodes
-
-Using the IPv4 or the IPv6 you should be able to connect to any node.
-It should appear in the menu BMX6 -> Nodes -> (click on the blue circle).
-
-All the nodes are probably in the same collision domain, so you can execute something like: pass:[<code>nmap -sT -p 80 10.X.Y.0/24 --open</code>] to discover the nodes in your network and
-their IPv4s.
