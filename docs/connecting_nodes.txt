@@ -44,13 +44,13 @@ PING ff02::2%eth1(ff02::2) 56 data bytes
 We can connect to it using ssh:
 
 ----
-ssh fe80::a2f3:c1ff:fe39:1cea%eth1
+ssh root@fe80::a2f3:c1ff:fe39:1cea%eth1
 ----
 
 Or copy files using scp:
 
 ----
-scp LiMe-fw.bin [fe80::a2f3:c1ff:fe39:1cea%eth1]:/tmp/
+scp LiMe-fw.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth1\]:/tmp/
 ----
 
 This is a small script which check if there is some router attached to your network device and in case, try to connect to it. 
