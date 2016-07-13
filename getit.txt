@@ -8,7 +8,12 @@ Get it
 
 We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
 
-https://chef.altermundi.net/ls/libre-mesh/[Stable releases with generic configuration] (the bigger the revision number the newer the release).
+Currently there are two available firmware sources:
+
+* http://downloads.libre-mesh.org/[Lime-Build compiled releases and develop branch]
+
+* https://chef.altermundi.net/ls/libre-mesh/[Chef releases with generic configuration] (the bigger the revision number the newer the release).
+
 
 == Use the Chef Application
 
@@ -18,35 +23,49 @@ https://chef.altermundi.net[Chef homepage.]
 
 == Compile Using the Tool lime-build
 
-LiMe build is a tool for developers, it creates a development environment for libre-mesh.
+LiMe build is a tool to easy compile a fresh firmware image and it also creates a development environment.
 Basically it consists in one Makefile, so it is executed using the GNU "make" command.
+See the https://github.com/libre-mesh/lime-build/blob/develop/README.md[README] for more information.
 
 Clone lime-build git repository
 ----
 git clone https://github.com/libre-mesh/lime-build.git
 ----
 
-You can see the list of officialy supported targets by typing:
-----
-make list_targets
-----
-If your target is not listed then you can use some generic target such as _ar71xx_
-
-From now on, you must always use T=<your_target> when invoking _make_. As example we use Tplink wdr4300.
-
-Launch the _menuconfig_ to select extra packages or leave it as is per default
+You must select which LiMe branch you want to compile. There will be one lime-build branch per release available and one for development.
+The default would be always the last release. But you can easy change it using git:
 
 ----
-make T=tl-wdr4300 menuconfig
+git branch -a
+git checkout <your favorite branch>
 ----
 
-Then launch the compilation process using J=<number_of_cpu_cores>
+You can see the list of officialy supported targets and profiles by typing:
+----
+make info
+----
+
+To compile a target/profile just execute (example):
+----
+make T=ar71xx P=generic J=4
+----
+
+[NOTE]
+================
+* T is the target related to the hardware type.
+
+* P is the profile related to the software combination of packets.
+
+* J is the number of cores to use when compiling (can make it faster).
+================
+
+If you need extra packages launch the _menuconfig_ before compiling:
 
 ----
-make T=tl-wdr4300 J=4
+make T=ar71xx P=generic menuconfig
 ----
 
-When finish, if not errors, you will find the binaries ready to install inside directory _images_
+When finish, if not errors, you will find the binaries ready to install in _output_ directory.
 
 
 == Compile the Code Yourself
