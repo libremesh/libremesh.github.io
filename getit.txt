@@ -10,7 +10,7 @@ We offer a list of precompiled **generic** firmware images. This is the easiest 
 
 * The **stable tested release** images can be found at https://chef.altermundi.net/ls/libre-mesh/[Chef] site (the bigger the revision number the newer the release).
 
-* For more targets and LiMe versions you can use the automatic generated, not tested, images from http://downloads.libre-mesh.org/[Lime-Build].
+* For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libre-mesh.org/[Lime-Build].
 
 
 == Use the Chef Application
