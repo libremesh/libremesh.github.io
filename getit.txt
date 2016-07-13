@@ -8,11 +8,9 @@ Get it
 
 We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
 
-Currently there are two available firmware sources:
+* The **stable tested release** images can be found at https://chef.altermundi.net/ls/libre-mesh/[Chef] site (the bigger the revision number the newer the release).
 
-* http://downloads.libre-mesh.org/[Lime-Build compiled releases and develop branch]
-
-* https://chef.altermundi.net/ls/libre-mesh/[Chef releases with generic configuration] (the bigger the revision number the newer the release).
+* For more targets and LiMe versions you can use the automatic generated, not tested, images from http://downloads.libre-mesh.org/[Lime-Build].
 
 
 == Use the Chef Application
