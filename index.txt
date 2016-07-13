@@ -8,11 +8,18 @@ The Libre-Mesh project
 The Libre-Mesh project (LiMe) was started in 2013 by a set of free network activists from several countries and different projects around the world,
 willing to create a common solution for the deployment of free/mesh networks.
 
+image:logo/logo.png["The LIME logo",role="right"]
 
-The Libre-Mesh project includes the development of several tools used for deploying libre/free mesh networks.
-The firmware (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
-Check link:howitworks.html[How it Works] to see the basic ideas.
+The Libre-Mesh project includes the development of several tools.
+The **firmware** (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
 
+[NOTE]
+=======================
+Check link:howitworks.html[How it Works] to see the basic architecture ideas.
+Visit link:getit.html[Get it] to know how to start using it.
+Read some link:docs/index.html[Documentation] to understand better how it works.
+And join us in the link:communication.html[mailing lists] to follow the current discussions.
+=======================
 
 == Mesh Networks
 
@@ -25,13 +32,13 @@ We believe this is the only way for achieving a real free network out of control
 
 We understand a free network as a telecommunications network which accomplish three points:
 
-. It is open, so anyone can connect to it if physically possible
-. It is neutral, so there are not preferences for the kind, origin or destination of the data
-. It is free as the Spanish word libre, so there are not restrictions
+* It is open, so anyone can connect to it if physically possible
+* It is neutral, so there are not preferences for the kind, origin or destination of the data
+* It is free as the Spanish word libre, so there are not restrictions
 
 == Firmware and Embedded Device
 
 An embedded device is a small computer. Usually the operating system running in such small computers is called Firmware.
 Our way of deploying free mesh networks is by installing our own firmware to the devices (usuarlly WiFi routers).
 Our system is based on the OpenWRT/LEDE project, which at the same time is based on the well known Linux operating system.
-Everyting we develop is free software so anyone can use, copy, modify and distribute it with no restrictions.
+Everyting we develop is **free software** so anyone can use, copy, modify and distribute it with no restrictions.
