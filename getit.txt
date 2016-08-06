@@ -28,14 +28,7 @@ See the https://github.com/libre-mesh/lime-build/blob/develop/README.md[README] 
 Clone lime-build git repository
 ----
 git clone https://github.com/libre-mesh/lime-build.git
-----
-
-You must select which LiMe branch you want to compile. There will be one lime-build branch per release available and one for development.
-The default would be always the last release. But you can easy change it using git:
-
-----
-git branch -a
-git checkout <your favorite branch>
+cd lime-build
 ----
 
 You can see the list of officialy supported targets and profiles by typing:
@@ -63,21 +56,28 @@ If you need extra packages launch the _menuconfig_ before compiling:
 make T=ar71xx P=generic menuconfig
 ----
 
-When finish, if not errors, you will find the binaries ready to install in _output_ directory.
+The default branch is always the last stable release. If you need to compile another branch of Libre-Mesh (https://github.com/libre-mesh/lime-build/branches[list] of the existing branches) you can easy change it using git:
+
+----
+git branch -a
+git checkout <your favorite branch>
+----
+
+You will find the binaries ready to install in _output_ directory.
 
 
-== Compile the Code Yourself
+== Compile the Code Using Pristine OpenWrt buildroot
 
 Clone OpenWRT stable repository.
 
 ----
 git clone git://git.openwrt.org/15.05/openwrt.git
+cd openwrt
 ----
 
 Add lime-packages feed to the default ones.
 
 ----
-cd openwrt
 cp feeds.conf.default feeds.conf
 echo "src-git lime https://github.com/libre-mesh/lime-packages.git" >> feeds.conf
 ----
@@ -101,4 +101,4 @@ Compile the firmware images.
 make -j4
 ----
 
-The resulting files will be present in bin/ directory.
+The resulting files will be present in _bin_ directory.
