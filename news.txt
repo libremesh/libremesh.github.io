@@ -7,7 +7,7 @@ News
 
 image:img/lede.png["The LEDE logo",role="right"]
 
-We endorse the LEDE project and we plan to start basing Libre-Mesh releases on Linux Embedded Development Environment (https://www.lede-project.org/[LEDE]) as soon as it will have a stable release. 
+We endorse the https://www.lede-project.org/[LEDE project] and we plan to start basing Libre-Mesh releases on Linux Embedded Development Environment (LEDE) as soon as it will have a stable release. 
 
 === 2016-08-01 - Project Meeting LiMeCat2016q3
 
