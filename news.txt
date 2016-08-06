@@ -3,8 +3,16 @@
 News
 ====
 
-== 20160801 - Project Meeting LiMeCat2016q3
+== 2016-08-01 - Project Meeting LiMeCat2016q3
 
 Naming:	LiMeCat2016q3 +
 Date:	2016-08-06T12:00+02:00/2016-08-07T17:00+02:00 +
 Venue:	CSA La Talaia, Passeig Mas Roig 52-54/ Rambla Jacint Verdaguer 215, FGC: Valldoreix (Sant Cugat Del Vallés), Barcelona. https://csalatalaia.wordpress.com/[Web site].
+
+
+== 2016-04-13 - Project Meeting LiMeCat2016
+
+Naming:	LiMeCat2016 +
+Date:	2016-04-16T12:00+02:00/2016-04-17T17:00+02:00 +
+Venue:	CSOA Matakrostes, Passeig de Sevilla 132, Valldoreix, Barcelona. https://guifi.net/VDXpgSevilla132[Map].
+Report:	http://lists.libre-mesh.org/pipermail/users/2016-April/000101.html[email] in Spanish 
