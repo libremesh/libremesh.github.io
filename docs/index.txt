@@ -17,5 +17,5 @@ If you would like to contribute to the documentation then please send patches to
 
 == Presentations and Documents
 
-1. https://github.com/G10h4ck/presentazione-SAX2016-reveal.js[Interoperability between classic infrastructure and Libre-Mesh networks in Guifi.net
-]
+1. https://github.com/G10h4ck/presentazione-SAX2016-reveal.js[Interoperability between classic infrastructure and Libre-Mesh networks in Guifi.net - Presentation delivered in SAX2016]
+2. http://nicolasacco.diveni.re/~gioacchino/internship-report/main.html[Interoperability between classic infrastructure and Libre-Mesh networks in Guifi.net - Gioacchino Mazzurco bachelor thesis]
