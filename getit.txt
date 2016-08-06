@@ -23,7 +23,6 @@ https://chef.altermundi.net[Chef homepage.]
 
 _lime-build_ is a tool to easily compile locally a firmware image. It also creates a development environment.
 It consists in a Makefile file, so it is executed using the GNU "make" command.
-See the https://github.com/libre-mesh/lime-build/blob/develop/README.md[README] for more information.
 
 Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages (using a graphical software manager or apt-get):
 
@@ -44,7 +43,7 @@ make info
 
 To compile a target/profile just execute (example):
 ----
-make T=ar71xx P=generic J=4
+make T=ar71xx P=generic
 ----
 
 [NOTE]
@@ -52,59 +51,12 @@ make T=ar71xx P=generic J=4
 * T is the target related to the hardware type.
 
 * P is the profile related to the software combination of packets.
-
-* J is the number of cores to use when compiling (can make it faster).
 ================
-
-If you need extra packages launch the _menuconfig_ before compiling:
-
-----
-make T=ar71xx P=generic menuconfig
-----
-
-The default branch is always the last stable release. If you need to compile another branch of Libre-Mesh (https://github.com/libre-mesh/lime-build/branches[list] of the existing branches) you can easy change it using git:
-
-----
-git branch -a
-git checkout <your favorite branch>
-----
 
 You will find the binaries ready to install in _output_ directory.
 
+See the https://github.com/libre-mesh/lime-build/blob/develop/README.md[lime-build README] for more information and options.
 
 == Compile the Code Using Pristine OpenWrt buildroot
 
-Clone OpenWRT stable repository.
-
-----
-git clone git://git.openwrt.org/15.05/openwrt.git
-cd openwrt
-----
-
-Add lime-packages feed to the default ones.
-
-----
-cp feeds.conf.default feeds.conf
-echo "src-git lime https://github.com/libre-mesh/lime-packages.git" >> feeds.conf
-----
-
-Download the new packages.
-
-----
-scripts/feeds update -a
-scripts/feeds install -a
-----
-
-Select needed packages from LiMe menu in menuconfig.
-
-----
-make menuconfig
-----
-
-Compile the firmware images.
-
-----
-make -j4
-----
-
-The resulting files will be present in _bin_ directory.
+Refer to https://github.com/libre-mesh/lime-packages[lime-packages README].
