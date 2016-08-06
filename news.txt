@@ -1,9 +1,9 @@
 ---
 ---
-Project Meetings
-================
+News
+====
 
-== Next Meeting
+== 20160801 - Project Meeting LiMeCat2016q3
 
 Naming:	LiMeCat2016q3 +
 Date:	2016-08-06T12:00+02:00/2016-08-07T17:00+02:00 +
