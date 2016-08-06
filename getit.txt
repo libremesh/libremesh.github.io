@@ -13,7 +13,7 @@ We offer a list of precompiled **generic** firmware images. This is the easiest 
 * For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libre-mesh.org/[Lime-Build].
 
 
-== Use the Chef Application
+== Use the Chef Application (recommended)
 
 Chef is our own web application for generating customized firmware images.
 
@@ -21,9 +21,15 @@ https://chef.altermundi.net[Chef homepage.]
 
 == Compile Using the Tool lime-build
 
-LiMe build is a tool to easy compile a fresh firmware image and it also creates a development environment.
-Basically it consists in one Makefile, so it is executed using the GNU "make" command.
+_lime-build_ is a tool to easily compile locally a firmware image. It also creates a development environment.
+It consists in a Makefile file, so it is executed using the GNU "make" command.
 See the https://github.com/libre-mesh/lime-build/blob/develop/README.md[README] for more information.
+
+Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages (using a graphical software manager or apt-get):
+
+----
+sudo apt-get install subversion zlib1g-dev gawk flex unzip bzip2 gettext build-essential libncurses5-dev libncursesw5-dev libssl-dev binutils cpp psmisc docbook-to-man
+----
 
 Clone lime-build git repository
 ----
@@ -31,7 +37,7 @@ git clone https://github.com/libre-mesh/lime-build.git
 cd lime-build
 ----
 
-You can see the list of officialy supported targets and profiles by typing:
+You can see the list of officially supported targets (supported hardware, refer to https://wiki.openwrt.org/toh/start[OpenWrt Table of Hardware]) and profiles (sets of Libre-Mesh packages) by typing:
 ----
 make info
 ----
