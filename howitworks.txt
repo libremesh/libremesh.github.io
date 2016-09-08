@@ -14,7 +14,7 @@ How it works
 
 == The Basics
 
-The network architecture designed for libre-mesh is based in two layers:
+The network architecture designed for libremesh is based in two layers:
 
 === Cloud layer 2
 

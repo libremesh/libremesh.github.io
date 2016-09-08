@@ -1,6 +1,6 @@
 # jekyll configuration
 
-title: 'Welcome to the libre-mesh project'
+title: 'Welcome to the libremesh project'
 
 exclude: [ 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README', 'vendor' ]
 

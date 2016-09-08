@@ -8,9 +8,9 @@ Get it
 
 We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
 
-* The **stable tested release** images can be found at https://chef.altermundi.net/ls/libre-mesh/[Chef] site (the bigger the revision number the newer the release).
+* The **stable tested release** images can be found at https://chef.altermundi.net/ls/libremesh/[Chef] site (the bigger the revision number the newer the release).
 
-* For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libre-mesh.org/[Lime-Build].
+* For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libremesh.org/[Lime-Build].
 
 
 == Use the Chef Application (recommended)
@@ -32,11 +32,11 @@ sudo apt-get install subversion zlib1g-dev gawk flex unzip bzip2 gettext build-e
 
 Clone lime-build git repository
 ----
-git clone https://github.com/libre-mesh/lime-build.git
+git clone https://github.com/libremesh/lime-build.git
 cd lime-build
 ----
 
-You can see the list of officially supported targets (supported hardware, refer to https://wiki.openwrt.org/toh/start[OpenWrt Table of Hardware]) and profiles (sets of Libre-Mesh packages) by typing:
+You can see the list of officially supported targets (supported hardware, refer to https://wiki.openwrt.org/toh/start[OpenWrt Table of Hardware]) and profiles (sets of LibreMesh packages) by typing:
 ----
 make info
 ----
@@ -55,8 +55,8 @@ make T=ar71xx P=generic
 
 You will find the binaries ready to install in _output_ directory.
 
-See the https://github.com/libre-mesh/lime-build/blob/develop/README.md[lime-build README] for more information and options.
+See the https://github.com/libremesh/lime-build/blob/develop/README.md[lime-build README] for more information and options.
 
 == Compile the Code Using Pristine OpenWrt buildroot
 
-Refer to https://github.com/libre-mesh/lime-packages[lime-packages README].
+Refer to https://github.com/libremesh/lime-packages[lime-packages README].

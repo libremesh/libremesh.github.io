@@ -8,7 +8,7 @@ Development
 The code is stored inside a git tree which contains all branches and releases. 
 
 All repositories can be browsed online through
-http://github.com/libre-mesh/[GitHub] as well.
+http://github.com/libremesh/[GitHub] as well.
 
 == Getting The _LiMe_ Code
 
@@ -16,7 +16,7 @@ Any _LiMe_ development happens in the main git repository which is
 accessible via HTTPS:
 
 ----
-git clone https://github.com/libre-mesh/lime-packages.git
+git clone https://github.com/libremesh/lime-packages.git
 ----
 
 == The Web Presence
@@ -26,7 +26,7 @@ http://www.methods.co.nz/asciidoc/[AsciiDoc] suite plus jekyll. Any changes made
 projects web site will be reflected in our web git repository:
 
 ----
-git clone https://github.com/libre-mesh/lime-web.git
+git clone https://github.com/libremesh/lime-web.git
 ----
 
 == Submitting Patches

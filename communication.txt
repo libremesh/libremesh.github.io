@@ -25,5 +25,5 @@ The project offers the following mailing lists
 
 The project uses an IRC channel on freenode
 
-. #libre-mesh - a public channel for everyone to join and participate
+. #libremesh - a public channel for everyone to join and participate
 

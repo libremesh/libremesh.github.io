@@ -26,7 +26,7 @@ In most of the scenarios the default options defined in lime-defaults should wor
 
 === List of sections and options
 
-For updated information check the https://raw.githubusercontent.com/libre-mesh/lime-packages/develop/packages/lime-system/files/etc/config/lime.example[Git lime.example] file.
+For updated information check the https://raw.githubusercontent.com/libremesh/lime-packages/develop/packages/lime-system/files/etc/config/lime.example[Git lime.example] file.
 
 .System options
 ----
@@ -95,8 +95,8 @@ config lime wifi
 	list modes 'ap'
 	list modes 'apname'
 	list modes 'adhoc'
-	option ap_ssid 'libre-mesh.org'
-	option apname_ssid 'libre-mesh.org/%H'
+	option ap_ssid 'libremesh.org'
+	option apname_ssid 'libremesh.org/%H'
 	option adhoc_ssid '%H'
 	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
 	option adhoc_mcast_rate_2ghz '24000'
@@ -118,7 +118,7 @@ config wifi radio11
 	option channel_2ghz '1'
 	option channel_5ghz '48'
 	option adhoc_mcast_rate '6000'
-	option adhoc_ssid 'libre-mesh'
+	option adhoc_ssid 'libremesh'
 	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
 
 #config wifi radio12
@@ -190,7 +190,7 @@ config bgp_peer peer2
 [NOTE]
 ==============
 One section for each ground routing link.
-With ground routing we mean setups having Libre-Mesh on a router which is connected via cable(s), eventually through a switch, to some wireless routers running the original firmware in WDS (transparent bridge) Ap/Sta mode.
+With ground routing we mean setups having LibreMesh on a router which is connected via cable(s), eventually through a switch, to some wireless routers running the original firmware in WDS (transparent bridge) Ap/Sta mode.
 Likely you want to configure as many sections of ground routing with different vlan numbers or different switch ports as many connected devices in WDS mode.
 ==============
 
