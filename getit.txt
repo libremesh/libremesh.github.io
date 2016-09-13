@@ -51,6 +51,8 @@ make T=ar71xx P=generic
 * T is the target related to the hardware type.
 
 * P is the profile related to the software combination of packets.
+
+* A successful build is dependent on a stable network connection. Poor network connections seem to be exacerbated by compiling using multiple cores. If build fails simply try again or use the option `J=1` if you don't mind waiting longer.
 ================
 
 You will find the binaries ready to install in _output_ directory.
