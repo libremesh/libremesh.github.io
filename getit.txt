@@ -8,7 +8,7 @@ Get it
 
 We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
 
-* The current **stable tested release** is Community Chaos, images can be found at http://downloads.libre-mesh.org/community_chaos[downloads] site (the bigger the revision number the newer the release).
+* The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site (the bigger the revision number the newer the release).
 
 * For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libremesh.org/develop[Lime-Build develop].
 
