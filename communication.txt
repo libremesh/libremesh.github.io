@@ -15,9 +15,9 @@ using direct means of communication.
 
 The project offers the following mailing lists
 
-. https://lists.libremesh.org/mailman/listinfo/dev[dev@lists.libremesh.org] -
+. https://lists.libremesh.org/mailman/listinfo/lime-dev[lime-dev@lists.libremesh.org] -
   This list is used for general development related work.
-. https://lists.libremesh.org/mailman/listinfo/users[users@lists.libremesh.org] - 
+. https://lists.libremesh.org/mailman/listinfo/lime-users[lime-users@lists.libremesh.org] -
   This list is used for project organisational purposes. And for user specific questions.
 
 
