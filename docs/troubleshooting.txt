@@ -1,0 +1,52 @@
+---
+---
+Troubleshooting
+===============
+
+== Troubleshooting
+
+=== Recover from bad flashes with Failsafe mode
+Failsafe mode enables you to recover from bad flashes without much trouble. Learn how to access Failsafe mode  http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here].
+
+Once in failsafe, try to connect. If that does not work, you may need to deactivate DHCP. On Ubuntu:
+
+. Open Network Connections (right click network icon -> edit connections)
+. Edit your Ethernet connection
+. Under IPv4 settings, set method to manual
+. Add a new entry with
+.. Address = 192.168.1.1
+.. Netmask = 24
+.. Gateway = blank
+.. Do not change any other fields, save and continue
+. The connection should not succeed. From the terminal, execute `telnet 192.168.1.1`
+
+=== Unable to establish Ethernet connection
+As an alternative to failsafe, you may create a custom profile to connect over Ethernet.
+
+Create profile:
+
+. Edit connections -> Add -> Select `Ethernet`
+. Give it any name you desire, such as `eth0 libre`
+. General tab: deselect `Automatic connect`
+. IPv4 tab: select `Disabled`
+. IPv6 tab: select `Link-Local only`
+
+Determine router's IPv6 router direction:
+
+. Turn on your router. Using an Ethernet cable, connect your PC to LAN port. WAN should also work.
+. Select the new `eth0 libre` connection from the network manager applet.
+. Open a terminal. Execute `ifconfig` to get the name of the Ethernet interface. It is probably something like `eth0` or `enp3s0`. We will assume `eth0` for the rest of this guide.
+. Execute `ping6 ff02::1%eth0`.
+. When the router is ready, each ping should receive a response. The first will be from your own PC and the next (maked as `DUP`) should be your router.
+. The router direction is a combination of the router's IPv6 address, `%`, and your Ethernet interface name. It should be something like `fe90::aa20:66ff:fe4f:ae87%eth0`. Do not include a trailing `:` or other text from the ping responses.
+
+Connect with IPv6: Using example router direction above.
+
+. Telnet: `telnet fe90::aa20:66ff:fe4f:ae87%eth0`. If the answer is `Connection refused`, try SSH.
+. SSH: `ssh root@fe90::aa20:66ff:fe4f:ae87%eth0`. Remember to include `root@`, otherwise it will attempt to connect using your personal username. The default password is blank. If that doesn't work, try the last password you remember.
+. If that does not work, try the IPv4 instructions below. Although that is unlikely to work either.
+
+Connect with IPv4:
+
+. Execute `dhclient -v eth0` as root, eg `sudo dhclient -v eth0`. This only works using the router's LAN port.
+. Open `http://thisnode.info` in your browser.

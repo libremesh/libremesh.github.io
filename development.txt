@@ -5,7 +5,7 @@ Development
 
 == The Source Code
 
-The code is stored inside a git tree which contains all branches and releases. 
+The code is stored inside a git tree which contains all branches and releases.
 
 All repositories can be browsed online through
 http://github.com/libremesh/[GitHub] as well.
@@ -25,11 +25,14 @@ The pages you're reading are generated from text files using the
 http://www.methods.co.nz/asciidoc/[AsciiDoc] suite plus jekyll. Any changes made to the
 projects web site will be reflected in our web git repository:
 
+In order to generate these docs locally:
 ----
 git clone https://github.com/libremesh/lime-web.git
+cd lime-web && bundler install
+jekyll serve
 ----
+For more details, check the README on Github.
 
 == Submitting Patches
 
 We accept pull requests via GitHub. But patches can also be submitted via the dev mailing list.
-

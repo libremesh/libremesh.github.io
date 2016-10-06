@@ -10,9 +10,9 @@ The IP for the node where you are attached to, will be the default gateway for y
 You can also use the special domain names **anygw** or **thisnode.info**.
 
 
-You can access the node by opening your browser and going to http://anygw[http://anygw] or http://thisnode.info[thisnode.info].
+You can access the node by opening your browser and going to http://anygw[http://anygw] or http://thisnode.info[thisnode.info]. Doing so will give you access to the administration GUI called LuCI. Like most things you will encounter, LuCI is not unique to LiME. It is a common configuration interface for https://github.com/openwrt/luci[OpenWRT].
 
-First time you can also use TELNET (telnet anygw) and when password is set SSH.
+First time you can also use TELNET (`telnet anygw`) and when password is set SSH (`ssh root@IP_ADDRESS`).
 
 Default username is root with no password.
 
@@ -25,7 +25,7 @@ The scope of these IPs is to communicate computers which are in the same colisio
 
 
 But, how to know the IPv6 link-local address of the host we want to achieve?
-Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::". 
+Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::".
 to discover routers (group 2) we can use the next command:
 
 ----
@@ -53,7 +53,7 @@ Or copy files using scp:
 scp LiMe-fw.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth1\]:/tmp/
 ----
 
-This is a small script which check if there is some router attached to your network device and in case, try to connect to it. 
+This is a small script which check if there is some router attached to your network device and in case, try to connect to it.
 If there are not routers it waits until some appears.
 
 [source,bash]
@@ -61,18 +61,18 @@ If there are not routers it waits until some appears.
 ----
 #!/bin/bash
 INT=${1:-eth0}
-MYIP="$(ip addr show dev $INT | grep -e "inet6.*scope link" | awk '{print $2}' | cut -d/ -f1)" 
-NEIGH="$(ping6 ff02::2%$INT -n -c3 2>/dev/null | grep fe80 2>/dev/null | awk '{print $4}' | sed 's/\(.*\)./\1/' | sort -u)" 
-RNEIGH="$(echo -e "$NEIGH" | grep -v $MYIP | grep -v "^$" | sort -u)" 
+MYIP="$(ip addr show dev $INT | grep -e "inet6.*scope link" | awk '{print $2}' | cut -d/ -f1)"
+NEIGH="$(ping6 ff02::2%$INT -n -c3 2>/dev/null | grep fe80 2>/dev/null | awk '{print $4}' | sed 's/\(.*\)./\1/' | sort -u)"
+RNEIGH="$(echo -e "$NEIGH" | grep -v $MYIP | grep -v "^$" | sort -u)"
 if [ $(echo -e "$RNEIGH" | wc -l) -eq 1 -a $(echo -e "$RNEIGH" | wc -c) -gt 4 ]; then
-    echo "Host found, connecting to it!" 
+    echo "Host found, connecting to it!"
     telnet $RNEIGH%$INT || ssh root@$RNEIGH%$INT
 elif [ -z "$RNEIGH" ]; then
-    echo -n "." 
+    echo -n "."
     exec $0 $@
 else
-    echo "Several Hosts found:" 
-    echo -e "$RNEIGH" 
+    echo "Several Hosts found:"
+    echo -e "$RNEIGH"
 fi
 ----
 
@@ -97,4 +97,3 @@ All the nodes are probably in the same collision domain, so you can use NMAP to 
 pass:[<code>nmap -sT -p 80 10.X.Y.0/24 --open</code>]
 
 **You can also use the IPv6 link-local address to connect with the nodes of your layer2 Cloud.**
-
