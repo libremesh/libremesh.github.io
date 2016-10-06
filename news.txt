@@ -3,6 +3,12 @@
 News
 ====
 
+=== 2016-10-06 - LibreRouter
+
+The Libre Router project will design and produce a high performance multi-radio wireless router targeted at Community Networks needs.
+
+For more info visit the https://librerouter.org/[librerouter web]. Or read the https://guifi.net/ca/node/90285[guifi.net article] (spanish).
+
 === 2016-08-06 - Endorsement to LEDE project
 
 image:img/lede.png["The LEDE logo",role="right"]
