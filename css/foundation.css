@@ -2257,7 +2257,7 @@ meta.foundation-mq-topbar {
 
 .top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span {
     line-height: 2.8125rem;
-    font-size: 1.0625rem;
+    font-size: 2.0625rem;
     margin: 0;
 }
 
@@ -2368,7 +2368,7 @@ meta.foundation-mq-topbar {
     padding: 12px 0 12px 0;
     padding-left: 0.9375rem;
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: normal;
     text-transform: none;
 }
