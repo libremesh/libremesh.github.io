@@ -7,7 +7,17 @@ LibreMesh Quick Starting Guide
 WORK IN PROGRESS
 
 == Flashing
+link:/getit.html[Download the LiMe build] for your router. You want the `-sysupgrade.bin` version.
+
+=== GUI / LuCI
 WORK IN PROGRESS
+
+=== Terminal / SSH
+1. Follow the link:/docs/connecting_nodes.html[Connecting to your own node] instructions to `scp` the downloaded build onto your computer. For example `scp /LOCAL/PATH/TO/BUILD root@ROUTER_DIRECTION:/tmp/`.
+* Do not try to copy to `/root`. It has limited memory access.
+2. `sysupgrade -v build.bin`.
+* For more information, see these http://wiki.openwrt.org/doc/howto/generic.sysupgrade[OpenWRT instructions].
+
 
 == First connection
 WORK IN PROGRESS
