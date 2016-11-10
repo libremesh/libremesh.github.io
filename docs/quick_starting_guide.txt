@@ -4,10 +4,29 @@ LibreMesh Quick Starting Guide
 ==============================
 
 == Compatible Hardware
-WORK IN PROGRESS
+
+The hardware needs at least 8MB Flash. Those are the recommended Routers with USB and min 8MB:
+
+* TL-WR842N/ND (v1, v2)
+* TL-WR1043N/ND (v1,v2)
+* TL-WDR3500 (v1)
+* TL-WDR3600 (v1)
+* TL-WDR4300 (v1)
+* TL-WDR4900
+* TL-WR2543ND
+* Linksys WRT160NL
+* DIR-825
+* TL-710 (v1)
+* GliNET
+* Netgear WNDR 3700/3800/4300
+* all Buffalo
+* Archer C5 V1.2
+* Archer C7 V2.0
+
+More models are supported, see through our firmware images at at http://builds.libremesh.org/develop/
 
 == Flashing
-link:/getit.html[Download the LiMe build] for your router. You want the `-sysupgrade.bin` version.
+link:/getit.html[Download the LiMe build] for your router. If you already have some OpenWrt like image on your Router, you must install the `-sysupgrade.bin` version. If your Router is still with the stock firmware by the manufacturer, use the `-factory` image.
 
 === GUI / LuCI
 WORK IN PROGRESS
