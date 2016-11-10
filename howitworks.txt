@@ -14,7 +14,7 @@ How it works
 
 == The Basics
 
-The network architecture designed for libremesh is based in two layers:
+The network architecture designed for LibreMesh is based in two layers:
 
 === Cloud layer 2
 
@@ -23,7 +23,7 @@ The cloud layer 2 uses the dynamic routing protocol BATMAN-ADV
 image::img/bat-adv.png[batmanadv,100,float="left"]
 *******************
 B.A.T.M.A.N. advanced is a mesh routing protocol which runs in kernel space.
-Even if the network topoloby is made by multiple nodes and multiple hops, abstracts it to a single layer 2 colision domain.
+Even if the network topology is made by multiple nodes and multiple hops, abstracts it to a single layer 2 collision domain.
 So from the user perspective the entire mesh will look like a single LAN.
 This architecture is very interesting for roaming purposes, thus TCP and UDP connections are not lost even when moving and changing AP.
 *******************
@@ -34,7 +34,7 @@ The whole network layer 3 uses by default the routing protocol BMX
 
 image::img/bmx7.png[bmx7,100,float="left"]
 *******************
-BMX6 (or the new version BMX7) is a IPv6 native dynamic routing protocol which offers very advanced features and a few
+BMX6 (or the new version BMX7) is a IPv6 native dynamic routing protocol which offers very advanced features and a small
 network overhead (thanks to the distance-vector strategy and a set of optimizations). Version 7 has, in addition, security routing extensions.
 *******************
 
@@ -55,16 +55,16 @@ The BATADV VLAN depends on the cloud identifier which is calculated (by default)
 
 [IMPORTANT]
 =========================
-So the BMX network will be a single one for all the mesh but the BAT-ADV network might be splited in several clouds.
+So the BMX network will be a single one for all the mesh but the BAT-ADV network might be splitted in several clouds.
 =========================
 
 image::img/network1.png[align="center"]
 
 **This configuration allows to isolate the layer 2 clouds**.
-For instance a neighborhood, a company complex or a street level Hotsposts network can choose to isolate their LAN from the rest of the network.
+For instance a neighborhood, a company complex or a street level hotsposts network can choose to isolate their LAN from the rest of the network.
 However at the same time, they will be able to reach the rest of nodes using the layer 3 routed network.
 
-Roaming will be available inside the cloud, so any TCP session, a Video streaming or even a SIP call can be done while moving around.
+Roaming will be available inside the cloud, so any TCP session, a video streaming or even a SIP call can be done while moving around.
 In the other hand, thanks to the layer 3 segmentation, the common problems found in a layer 2 bridged network (such as Broadcast storms or DHCP nightmares)
 will not disturb the correct operation of the network.
 
@@ -118,15 +118,15 @@ The packet is routed through the BMX layer 3 network to the best Internet gatewa
 
 [NOTE]
 =============
-BMX has a powerfull smart gateway functionallity which automatically selects the best Internet gateway node taking into account the bandwidth available.
+BMX has a powerful smart gateway functionality which automatically selects the best Internet gateway node taking into account the available bandwidth.
 =============
 
 image::img/network6.png[align="center"]
 
 [NOTE]
 =============
-In the way back the packet will arrive to some node in the cloud but it might not be the same.
-However the packet will be correctly delivered to the originator.
+In the way back the packet will arrive to some node in the cloud but it might not be the same node.
+Nevertheless the packet will be correctly delivered to the originator.
 This is because BMX smart gateway uses 1-way tunnels to ensure the selected gateway is used.
 =============
 
