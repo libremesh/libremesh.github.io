@@ -5,8 +5,7 @@ The LibreMesh project
 
 == Introduction to LibreMesh
 
-The LibreMesh project (LiMe) was started in 2013 by a set of free network activists from several countries and different projects around the world,
-willing to create a common solution for the deployment of free/mesh networks.
+LibreMesh is a modular framework for creating OpenWrt/LEDE-based firmwares for wireless mesh nodes. Several communities around the world use LibreMesh as the foundation of their local mesh firmwares.
 
 image:logo/logo.png["The LIME logo",role="right"]
 
@@ -39,6 +38,10 @@ We understand a free network as a telecommunications network which accomplish th
 == Firmware and Embedded Device
 
 An embedded device is a small computer. Usually the operating system running in such small computers is called Firmware.
-Our way of deploying free mesh networks is by installing our own firmware to the devices (usuarlly WiFi routers).
-Our system is based on the OpenWRT/LEDE project, which at the same time is based on the well known Linux operating system.
+Our way of deploying free mesh networks is by installing our own firmware to the devices (usually WiFi routers).
+Our system is based on the OpenWrt/LEDE project, which at the same time is based on the well known Linux operating system.
 Everyting we develop is **free software** so anyone can use, copy, modify and distribute it with no restrictions.
+
+== History
+
+The LibreMesh project (LiMe) was started in 2013 by a set of free network activists from several countries and different projects around the world, willing to create a common solution for the deployment of free/mesh networks.
