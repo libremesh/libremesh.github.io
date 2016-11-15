@@ -27,7 +27,7 @@ It consists in a Makefile file, so it is executed using the GNU "make" command.
 Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages (using a graphical software manager or apt-get):
 
 ----
-sudo apt-get install subversion zlib1g-dev gawk flex unzip bzip2 gettext build-essential libncurses5-dev libncursesw5-dev libssl-dev binutils cpp psmisc docbook-to-man
+sudo apt-get install subversion zlib1g-dev gawk flex unzip bzip2 gettext build-essential libncurses5-dev libncursesw5-dev libssl-dev binutils cpp psmisc docbook-to-man wget
 ----
 
 Clone lime-build git repository
