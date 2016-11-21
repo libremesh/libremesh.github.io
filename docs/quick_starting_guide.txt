@@ -7,16 +7,16 @@ LibreMesh Quick Starting Guide
 WORK IN PROGRESS
 
 Hardware currently tested:
- * https://wiki.openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
- * https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1]
- * https://wiki.openwrt.org/toh/tp-link/tl-wdr3500[TP-LINK WDR3500]
- * https://wiki.openwrt.org/toh/tp-link/tl-wdr4300[TP-Link 4300]
- * https://wiki.openwrt.org/toh/pcengines/alix[Alix 2d2 + ath9k radios]
- * https://wiki.openwrt.org/toh/dragino/ms14[Dragino MS14]
- * Ubiquiti NanoBridge M5
- * https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XM]
- * https://wiki.openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation LoCo M2]
- * https://wiki.openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP]
+* https://wiki.openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
+* https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1]
+* https://wiki.openwrt.org/toh/tp-link/tl-wdr3500[TP-LINK WDR3500]
+* https://wiki.openwrt.org/toh/tp-link/tl-wdr4300[TP-Link 4300]
+* https://wiki.openwrt.org/toh/pcengines/alix[Alix 2d2 + ath9k radios]
+* https://wiki.openwrt.org/toh/dragino/ms14[Dragino MS14]
+* Ubiquiti NanoBridge M5
+* https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XM]
+* https://wiki.openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation LoCo M2]
+* https://wiki.openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP]
 
 == Flashing
 link:/getit.html[Download the LiMe build] for your router. You want the `-sysupgrade.bin` version.
