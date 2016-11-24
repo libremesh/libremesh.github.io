@@ -7,6 +7,7 @@ LibreMesh Quick Starting Guide
 WORK IN PROGRESS
 
 Hardware currently tested:
+
  * https://wiki.openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
  * https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1]
  * https://wiki.openwrt.org/toh/tp-link/tl-wdr3500[TP-LINK WDR3500]
