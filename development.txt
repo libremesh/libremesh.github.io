@@ -29,7 +29,7 @@ In order to generate these docs locally:
 ----
 git clone https://github.com/libremesh/lime-web.git
 cd lime-web && bundler install
-jekyll serve
+bundle exec jekyll serve
 ----
 For more details, check the https://github.com/libremesh/lime-web/blob/master/README[README] on Github.
 
