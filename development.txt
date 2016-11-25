@@ -25,13 +25,17 @@ The pages you're reading are generated from text files using the
 http://www.methods.co.nz/asciidoc/[AsciiDoc] suite plus https://jekyllrb.com/[Jekyll]. Any changes made to the
 projects web site will be reflected in our https://github.com/libremesh/lime-web[web git repository].
 
-In order to generate these docs locally:
+In order to generate these pages locally:
 ----
 git clone https://github.com/libremesh/lime-web.git
 cd lime-web && bundler install
 bundle exec jekyll serve
 ----
 For more details, check the https://github.com/libremesh/lime-web/blob/master/README[README] on Github.
+
+If you would like to contribute to the documentation then please send patches to our mailing list and use the prefix "doc:" in the patches subject.
+
+Please use the http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc syntax] for contributions on the web page.
 
 == Submitting Patches
 

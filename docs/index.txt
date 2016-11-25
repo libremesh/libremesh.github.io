@@ -3,19 +3,9 @@
 Documentation Index
 ===================
 
-== The Web Presence
+== Contributing to the Documentation
 
-The documentation  you're reading is generated from text files using the
-http://www.methods.co.nz/asciidoc/[AsciiDoc] suite. Any changes made to the
-projects documentation will be reflected in our +web.git+ repository:
-
-----
-git clone https://github.com/libremesh/lime-web.git
-----
-
-If you would like to contribute to the documentation then please send patches to our mailing list and use the prefix "doc:" in the patches subject.
-
-Please use the http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc syntax] for contributions on the web page.
+Contributions to the documentation are very welcome, check out the web presence section in the link:/development.html[development page].
 
 == Presentations and Documents
 
