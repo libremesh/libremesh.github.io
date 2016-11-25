@@ -7,12 +7,12 @@ Connecting to LiMe nodes
 
 Usually you can use DHCP to get an IP configuration for your computer when attached via WiFi or Ethernet.
 The IP for the node where you are attached to, will be the default gateway for your computer (ip route)
-You can also use the special domain names **anygw** or **thisnode.info**.
+You can also use the special domain name **thisnode.info**.
 
 
-You can access the node by opening your browser and going to http://anygw[http://anygw] or http://thisnode.info[thisnode.info]. Doing so will give you access to the administration GUI called LuCI. Like most things you will encounter, LuCI is not unique to LiME. It is a common configuration interface for https://github.com/openwrt/luci[OpenWRT].
+You can access the node by opening your browser and going to http://thisnode.info[thisnode.info]. Doing so will give you access to the administration GUI called LuCI. Like most things you will encounter, LuCI is not unique to LiME. It is a common configuration interface for https://github.com/openwrt/luci[OpenWRT].
 
-First time you can also use TELNET (`telnet anygw`) and when password is set SSH (`ssh root@IP_ADDRESS`).
+First time you can also use TELNET (`telnet thisnode.info`) and when password is set SSH (`ssh root@IP_ADDRESS`).
 
 Default username is **root with no password**.
 
