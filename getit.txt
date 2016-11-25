@@ -6,11 +6,11 @@ Get it
 
 == Download Precompiled Binaries
 
-We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
+We offer a list of precompiled firmware images with **generic settings**. This is the easiest way to first test and install LiMe in your router.
 
-* The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site (the bigger the revision number the newer the release).
+* The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site.
 
-* For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libremesh.org/develop[Lime-Build develop].
+* For the development version of LiMe including experimental features, you can use the automatic generated, not tested, images from http://builds.libremesh.org/develop[Lime-Build develop].
 
 
 == Use the Chef Application (recommended)
@@ -22,21 +22,20 @@ https://chef.altermundi.net[Chef homepage.]
 == Compile Using the Tool lime-build
 
 _lime-build_ is a tool to easily compile locally a firmware image. It also creates a development environment.
-It consists in a Makefile file, so it is executed using the GNU "make" command.
 
-Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages (using a graphical software manager or apt-get):
+Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages:
 
 ----
 sudo apt-get install subversion zlib1g-dev gawk flex unzip bzip2 gettext build-essential libncurses5-dev libncursesw5-dev libssl-dev binutils cpp psmisc docbook-to-man wget
 ----
 
-Clone lime-build git repository
+Download lime-build git repository:
 ----
 git clone https://github.com/libremesh/lime-build.git
 cd lime-build
 ----
 
-You can see the list of officially supported targets (supported hardware, refer to https://wiki.openwrt.org/toh/start[OpenWrt Table of Hardware]) and profiles (sets of LibreMesh packages) by typing:
+You can see the list of officially supported targets (see our link:docs/hardware/index.html[supported hardware page]) and profiles (sets of LibreMesh packages) by typing:
 ----
 make info
 ----
@@ -48,11 +47,11 @@ make T=ar71xx P=generic
 
 [NOTE]
 ================
-* T is the target related to the hardware type.
+* _T_ is the target related to the hardware type.
 
-* P is the profile related to the software combination of packets.
+* _P_ is the profile related to the software combination of LibreMesh packets.
 
-* A successful build is dependent on a stable network connection. Poor network connections seem to be exacerbated by compiling using multiple cores. If build fails simply try again or use the option `J=1` if you don't mind waiting longer.
+* A successful build relies on a stable network connection. If the build fails, simply try again or add the option `J=1` if you don't mind waiting longer.
 ================
 
 You will find the binaries ready to install in _output_ directory.
