@@ -8,10 +8,23 @@ Get it
 
 We offer a list of precompiled **generic** firmware images. This is the easiest way to first test and install LiMe in your router.
 
-* The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site (the bigger the revision number the newer the release).
+http://downloads.libremesh.org/community_chaos/16.07/ar71xx-mini/[ar71xx-mini] | http://downloads.libremesh.org/community_chaos/16.07/ar71xx/[ar71xx] | http://downloads.libremesh.org/community_chaos/16.07/x86/[x86]
 
-* For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libremesh.org/develop[Lime-Build develop].
+=== Detailed Steps ===
 
+* Download the binaries. The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site (the bigger the revision number the newer the release).
+
+** For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libremesh.org/develop[Lime-Build develop].
+
+* Find the download for your router by name or model number. You may need to search different variations or aliases. You can find more detailed router model instructions https://wiki.lede-project.org/toh/start[here].
+
+* If you are installing for the first time, choose the link ending with `-factory.bin`. If you are upgrading an existing install, choose the link ending with `-sysupgrade.bin`.
+
+* Once downloaded, connect your router via ethernet and log into your router's admin. First, you will need to identify the IP address for the router. You can go to the terminal use `netstat -rn` (mac), or `ip route show default` (linux), then find the IP address for the router. More details on finding your router's ip can be found http://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[here] and http://www.computerworld.com/article/2474776/wireless-networking/network-security-find-the-ip-address-of-your-home-router.html[here].
+
+* Log into the router administration interface with the IP via web browser such as Firefox or Chromium: `http://<your_router_ip>/`. You may need to modify the IP by replacing the last set with 1. For example if the IP is `10.138.21.216`, try `10.138.21.1`. Another option is replacing previous set with a zero, so `10.138.21.216` would become `10.138.0.1`.
+
+* Once you've logged in, find the `Flash new firmware image` option. NOTE: ensure that `Keep Settings` is UNCHECKED. It is checked by default. Then click choose file, and navigate to the location of the file you've downlaoded. Then click `Flash Image`.
 
 == Use the Chef Application (recommended)
 
