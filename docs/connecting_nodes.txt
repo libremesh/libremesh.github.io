@@ -5,19 +5,32 @@ Connecting to LiMe nodes
 
 == Connecting to your own node
 
-Usually you can use DHCP to get an IP configuration for your computer when attached via WiFi or Ethernet.
-The IP for the node where you are attached to, will be the default gateway for your computer (ip route)
-You can also use the special domain name **thisnode.info**.
+=== Connecting to the Web Interface
 
+For opening the web interface of your LibreMesh router, usually is enough to connect to it (either via wireless or via ethernet cable) and opening http://thisnode.info[thisnode.info] in a web browser.
 
-You can access the node by opening your browser and going to http://thisnode.info[thisnode.info]. Doing so will give you access to the administration GUI called LuCI. Like most things you will encounter, LuCI is not unique to LiME. It is a common configuration interface for https://github.com/openwrt/luci[OpenWRT].
+Doing so will give you access to the web interface, from here you can customize LiMe settings or access the OpenWrt/LEDE configuration interface. We discourage the use of OpenWrt/LEDE settings sections as this could produce conflicts with LiMe configuration mechanisms.
 
-First time you can also use TELNET (`telnet thisnode.info`) and when password is set SSH (`ssh root@IP_ADDRESS`).
+=== Connecting to the Console Interface
 
-Default username is **root with no password**.
+If you need to bypass the web interface and modify the configuration directly, you can connect to the console interface. From here you can use basic Linux commands and edit the configuration files present in the +/etc/config/+ directory.
 
-**ATTENTION! THIS IS AN EXTREME SECURITY RISK! You should set a root password immediately!**
+If you did not set an administrator (user +root+) password, you can connect via telnet issuing:
 
+----
+telnet thisnode.info
+----
+
+If the administrator password is set you will be able to open the router console via ssh issuing:
+
+----
+ssh root@thisnode.info
+----
+
+[IMPORTANT]
+=========================
+Leaving the LibreMesh router with no administrator password is a security risk! You should set a root password immediately! Either via the web interface of the +passwd+ command in the console.
+=========================
 
 == Connect using ipv6 link-local
 
