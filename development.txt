@@ -8,22 +8,22 @@ Development
 The code is stored inside a git tree which contains all branches and releases.
 
 All repositories can be browsed online through
-http://github.com/libremesh/[GitHub] as well.
+http://github.com/libremesh/[GitHub].
 
 == Getting The _LiMe_ Code
 
-Any _LiMe_ development happens in the main git repository which is
-accessible via HTTPS:
+Any _LiMe_ development happens in the _lime-packages_ git repository which can be browsed on http://github.com/libremesh/lime-packages[GitHub] or downloaded using git:
 
 ----
 git clone https://github.com/libremesh/lime-packages.git
+cd lime-packages
 ----
 
 == The Web Presence
 
 The pages you're reading are generated from text files using the
-http://www.methods.co.nz/asciidoc/[AsciiDoc] suite plus jekyll. Any changes made to the
-projects web site will be reflected in our web git repository:
+http://www.methods.co.nz/asciidoc/[AsciiDoc] suite plus https://jekyllrb.com/[Jekyll]. Any changes made to the
+projects web site will be reflected in our https://github.com/libremesh/lime-web[web git repository].
 
 In order to generate these docs locally:
 ----
@@ -31,8 +31,8 @@ git clone https://github.com/libremesh/lime-web.git
 cd lime-web && bundler install
 jekyll serve
 ----
-For more details, check the README on Github.
+For more details, check the https://github.com/libremesh/lime-web/blob/master/README[README] on Github.
 
 == Submitting Patches
 
-We accept pull requests via GitHub. But patches can also be submitted via the dev mailing list.
+We accept pull requests via GitHub. But patches can also be submitted via the dev link:communication.html[mailing list].
