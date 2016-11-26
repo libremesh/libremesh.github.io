@@ -12,6 +12,7 @@ We offer a list of precompiled **generic** firmware images. This is the easiest 
 
 * For more targets and LiMe versions you can use the automatic generated, not tested, images from http://builds.libremesh.org/develop[Lime-Build develop].
 
+Store it on your computer under a filename, that has max. 64 characters (otherwise you will not be able to upgrade the firmware in the Routers Webinterface.)
 
 == Use the Chef Application (recommended)
 
