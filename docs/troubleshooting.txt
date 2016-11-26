@@ -3,9 +3,7 @@
 Troubleshooting
 ===============
 
-== Troubleshooting
-
-=== Recover from bad flashes with Failsafe mode
+== Recover from bad flashes with Failsafe mode
 Failsafe mode enables you to recover from bad flashes without much trouble. Learn how to access Failsafe mode  http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here].
 
 Once in failsafe, try to connect. If that does not work, you may need to deactivate DHCP. On Ubuntu:
@@ -20,7 +18,28 @@ Once in failsafe, try to connect. If that does not work, you may need to deactiv
 .. Do not change any other fields, save and continue
 . The connection should not succeed. From the terminal, execute `telnet 192.168.1.1`
 
-=== Unable to establish Ethernet connection
+== Unable to establish Ethernet connection
+If you can't connect to the LibreMesh router as indicated in link:connecting_nodes.html[How to connect to LiMe nodes] you can try other ways.
+
+=== Verify the connection
+
+If you are connected by cable:
+
+* verify that the cable is well plugged and that the ethernet led on the router or on the computer port show some activity;
+* verify that the network manager on your computer is actually trying to connect by this cable;
+* if the network manager is down or not installed, connect by the command line activating the ethernet interface and using a DHCP client for asking for an IPv4 to the router. Refer to your operating system documentation for detailed instructions.
+
+If you are connected by wireless:
+
+* check that the wireless physical switch is ON both on the LiMe router and on the computer;
+* verify that the network manager on your computer is actually trying to connect to the wireless network named as your network community (with default configuration is +LibreMesh.org+) or on the "named AP" (with default configuration is something like +LibreMesh.org-abc123+), connecting to the +LiMe+ wireless SSID is _not_ likely to work;
+* if the network manager is down or not installed, connect by the command line activating the wireless interface, associating to the correct access point, and using a DHCP client for asking for an IPv4 to the router. Refer to your operating system documentation for detailed instructions.
+
+=== Connect using gateway IPv4
+
+
+
+=== Connect using IPv6 link local
 As an alternative to failsafe, you may create a custom profile to connect over Ethernet.
 
 Create profile:
