@@ -5,7 +5,9 @@ LibreMesh Quick Starting Guide
 
 == Compatible Hardware
 
-The hardware needs at least 8MB Flash. Those are the recommended Routers with USB and min 8MB:
+It is recommended that the router has at least 8MB of flash. For 4MB routers use the special firmware named "mini".
+
+Those are the recommended Routers with USB and min 8MB:
 
 * TL-WR842N/ND (v1, v2)
 * TL-WR1043N/ND (v1,v2)
