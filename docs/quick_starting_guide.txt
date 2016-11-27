@@ -5,27 +5,34 @@ LibreMesh Quick Starting Guide
 
 == Compatible Hardware
 
-It is recommended that the router has at least 8MB of flash. For 4MB routers use the special firmware named "mini".
+It is recommended that the router has at least 8 MB of flash memory. For 4 MB routers use the special firmware named +-mini+.
 
-Those are the recommended Routers with USB and min 8MB:
+These wireless routers have been tested with LibreMesh and have 8 MB of flash memory:
 
-* TL-WR842N/ND (v1, v2)
-* TL-WR1043N/ND (v1,v2)
-* TL-WDR3500 (v1)
-* TL-WDR3600 (v1)
-* TL-WDR4300 (v1)
-* TL-WDR4900
-* TL-WR2543ND
-* Linksys WRT160NL
-* DIR-825
-* TL-710 (v1)
-* GliNET
-* Netgear WNDR 3700/3800/4300
-* all Buffalo
-* Archer C5 V1.2
-* Archer C7 V2.0
+* TP-Link WR1043ND
+* TP-Link WDR3500
+* TP-Link WDR3600
+* TP-Link WDR4300
+* Dragino MS14
+* Alix 2d2
+* Ubiquiti Unifi AP
+* Ubiquiti AirRouter
+* Ubiquiti AirGateway
+* Ubiquiti NanoStation M5 XW
+* Ubiquiti NanoStation M5 XM
+* Ubiquiti NanoBridge M5
+* Ubiquiti NanoStation LoCo M2
+* Ubiquiti PicoStation M2
 
-More models are supported, see through our firmware images at at http://builds.libremesh.org/develop/
+Also models with 4 MB have been tested, using the +-mini+ images:
+
+* TP-Link WR740N
+* TP-Link WR741ND
+* TP-Link WR841ND
+
+For detailed information on these routers check out our link:hardware/index.html[hardware] page.
+
+_Many other models are supported_ even if not tested yet (as far as we know), see through our firmware images at http://downloads.libremesh.org/community_chaos/16.07/[download] site.
 
 == Flashing
 link:/getit.html[Download the LiMe build] for your router. If you already have some OpenWrt like image on your Router, you must install the `-sysupgrade.bin` version. If your Router is still with the stock firmware by the manufacturer, use the `-factory` image.
