@@ -14,19 +14,25 @@ we provide a list of articles which might help you.
 Please, take into account that these pages are third-party contributed, so if
 you find the opportunity send us your contribution via git pull-request or mail.
 
-== Hardware currently tested:
+== Currently Tested Hardware
 
- * https://wiki.openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
- * https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1]
- * https://wiki.openwrt.org/toh/tp-link/tl-wdr3500[TP-LINK WDR3500]
- * https://wiki.openwrt.org/toh/tp-link/tl-wdr4300[TP-Link 4300]
- * https://wiki.openwrt.org/toh/pcengines/alix[Alix 2d2 + ath9k radios]
- * https://wiki.openwrt.org/toh/dragino/ms14[Dragino MS14]
- * Ubiquiti NanoBridge M5
- * https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XM]
- * https://wiki.openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation LoCo M2]
- * https://wiki.openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP]
-
+[width="90%",options="header"]
+|=======
+|Device|Flash|RAM|WAN port|2.4 GHz|5 GHz|LiMe target|LiMe profile|factory image |sysupgrade image
+|https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] ||||||||| 
+|https://wiki.openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] |||||||||
+|https://wiki.openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600] |8 MB |128 MB |Yes |Yes |Yes |ar71xx |generic | tl-wdr3600-v1-squashfs-factory | tl-wdr3600-v1-squashfs-sysupgrade
+|https://wiki.openwrt.org/toh/tp-link/tl-wdr4300[TP-Link WDR4300] |||||||||
+|https://wiki.openwrt.org/toh/dragino/ms14[Dragino MS14] |||||||||
+|https://wiki.openwrt.org/toh/pcengines/alix[Alix 2d2] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/airrouter[Ubiquiti AirRouter] |||||||||
+|https://wiki.openwrt.org/toh/hwdata/ubiquiti/ubiquiti_airgateway[Ubiquiti AirGateway] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XW] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XM] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti NanoBridge M5] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation LoCo M2] |||||||||
+|=======
 
 == Devices
 
