@@ -95,17 +95,13 @@ Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of
 root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 ----
 
-== Recover from bad flashes with Failsafe mode
-Failsafe mode enables you to recover from bad flashes without much trouble. Learn how to access Failsafe mode  http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here].
+== Recover from bad configurations with Failsafe mode
+Sometimes you configure things badly and ends in a messed up configuration where you can't connect to the router using any of the techniques listed above. One option is to flash again the router with low level procedures (e.g. TFTP when possible), another is to boot the router in _failsafe mode_.
 
-Once in failsafe, try to connect. If that does not work, you may need to deactivate DHCP. On Ubuntu:
+Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki].
 
-. Open Network Connections (right click network icon -> edit connections)
-. Edit your Ethernet connection
-. Under IPv4 settings, set method to manual
-. Add a new entry with
-.. Address = 192.168.1.1
-.. Netmask = 24
-.. Gateway = blank
-.. Do not change any other fields, save and continue
-. The connection should not succeed. From the terminal, execute `telnet 192.168.1.1`
+Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 via telnet:
+
+----
+telnet 192.168.1.1
+----
