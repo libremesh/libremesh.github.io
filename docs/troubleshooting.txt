@@ -26,8 +26,9 @@ If you can't connect to the LibreMesh router as indicated in link:connecting_nod
 If you are connected by cable:
 
 * verify that the cable is well plugged and that the ethernet led on the router or on the computer port show some activity;
+* verify that you're connected to a LAN port on the router (or main) not to a WAN one (or secondary);
 * verify that the network manager on your computer is actually trying to connect by this cable;
-* if the network manager is down or not installed, connect by the command line activating the ethernet interface and using a DHCP client for asking for an IPv4 to the router. Refer to your operating system documentation for detailed instructions.
+* if the network manager is down or not installed, connect by the command line activating the ethernet interface and using a DHCP client for asking for an IPv4 to the router. Refer to your operating system documentation for detailed instructions (usually is +ip link set dev eth0 up+ or +sudo ifconfig eth0 up+ for activating the interface and +sudo dhclient -x; sudo dhclient + or +sudo dhcpcd -x; sudo dhcpcd+ for obtaining an IPv4).
 
 If you are connected by wireless:
 
@@ -37,7 +38,21 @@ If you are connected by wireless:
 
 === Connect using gateway IPv4
 
+If trying to connect to thisnode.info (as explained in link:connecting_nodes.html[normal connection procedure]) does not work, you can take your gateway address and connect to it.
 
+When you're phisically connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway. Refer to your operating system documentation for how to see it (usually +ip route+ and +route -n+ work). This IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
+
+If no root password was set (in the example we will use +10.13.0.1+ as the gateway address):
+
+----
+telnet 10.13.0.1
+----
+
+If a root password was set:
+
+----
+ssh root@10.13.0.1
+----
 
 === Connect using IPv6 link local
 In case neither the link:connecting_nodes.html[normal connection procedure] nor the gateway IPv4 are working for connecting to your node, you can use _IPv6 link local_.
@@ -72,8 +87,8 @@ The router direction is a combination of the router's IPv6 address, `%`, and you
 
 Now that you have the target IPv6 link local you can connect to the router:
 
-. try with telnet, it will be enabled just if no password was set: `telnet fe90::aa20:66ff:fe4f:ae87%eth0`. If the answer is `Connection refused`, try SSH.
-. SSH: `ssh root@fe90::aa20:66ff:fe4f:ae87%eth0`. Remember to include `root@`, otherwise it will attempt to connect using your personal username. Try the password you remember. If neither that nor a blank password (a blank password is worth to try, it is the default in the development version of LibreMesh).
+. try with telnet, it will be enabled just if no password was set: `telnet fe90::aa20:66ff:fe4f:ae87%eth0`. If the answer is `Connection refused`, try ssh.
+. ssh: `ssh root@fe90::aa20:66ff:fe4f:ae87%eth0`. Remember to include `root@`, otherwise it will attempt to connect using your personal username. Try the password you remember. If neither that nor a blank password (a blank password is worth to try, it is the default in the development version of LibreMesh).
 . If that does not work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt/LEDE failsafe mode.
 
 If you managed to connect via ssh (aka if a root password is set on the router, if is not you can connect via telnet and set it using +passwd+) you can also copy files on the router using IPv6 link local and +scp+ (for copying big files like firmware images use the +/tmp+ directory as a destination):
@@ -88,15 +103,9 @@ If there are not routers it waits until some appears.
 An example of execution:
 
 ----
-p4u@nomada:~$ $ disc6 eth1
+p4u@nomada:~$ ./disc6 eth1
 ...........................Host found, connecting to it!
 
 Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of known hosts.
 root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 ----
-
-
-Connect with IPv4:
-
-. Execute `dhclient -v eth0` as root, eg `sudo dhclient -v eth0`. This only works using the router's LAN port.
-. Open `http://thisnode.info` in your browser.
