@@ -3,21 +3,6 @@
 Troubleshooting
 ===============
 
-== Recover from bad flashes with Failsafe mode
-Failsafe mode enables you to recover from bad flashes without much trouble. Learn how to access Failsafe mode  http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here].
-
-Once in failsafe, try to connect. If that does not work, you may need to deactivate DHCP. On Ubuntu:
-
-. Open Network Connections (right click network icon -> edit connections)
-. Edit your Ethernet connection
-. Under IPv4 settings, set method to manual
-. Add a new entry with
-.. Address = 192.168.1.1
-.. Netmask = 24
-.. Gateway = blank
-.. Do not change any other fields, save and continue
-. The connection should not succeed. From the terminal, execute `telnet 192.168.1.1`
-
 == Unable to establish Ethernet connection
 If you can't connect to the LibreMesh router as indicated in link:connecting_nodes.html[How to connect to LiMe nodes] you can try other ways.
 
@@ -109,3 +94,18 @@ p4u@nomada:~$ ./disc6 eth1
 Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of known hosts.
 root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 ----
+
+== Recover from bad flashes with Failsafe mode
+Failsafe mode enables you to recover from bad flashes without much trouble. Learn how to access Failsafe mode  http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here].
+
+Once in failsafe, try to connect. If that does not work, you may need to deactivate DHCP. On Ubuntu:
+
+. Open Network Connections (right click network icon -> edit connections)
+. Edit your Ethernet connection
+. Under IPv4 settings, set method to manual
+. Add a new entry with
+.. Address = 192.168.1.1
+.. Netmask = 24
+.. Gateway = blank
+.. Do not change any other fields, save and continue
+. The connection should not succeed. From the terminal, execute `telnet 192.168.1.1`
