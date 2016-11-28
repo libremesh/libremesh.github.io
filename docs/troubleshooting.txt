@@ -40,6 +40,11 @@ If you are connected by wireless:
 
 
 === Connect using IPv6 link local
+
+Each working network interface in your Linux system have a special IPv6 address configured automatically by the Kernel.
+These are named IPv6 link-local and are inside the special prefix fe80::/10
+The scope of these IPs is to communicate computers which are in the same collision domain, so translated to LiMe it would be the layer2 Cloud.
+
 As an alternative to failsafe, you may create a custom profile to connect over Ethernet.
 
 Create profile:
@@ -50,12 +55,26 @@ Create profile:
 . IPv4 tab: select `Disabled`
 . IPv6 tab: select `Link-Local only`
 
+
+But, how to know the IPv6 link-local address of the host we want to achieve?
+Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::".
+to discover routers (group 2) we can use the next command:
+
+----
+ping6 ff02::2%eth0
+----
+
 Determine router's IPv6 router direction:
 
 . Turn on your router. Using an Ethernet cable, connect your PC to LAN port. WAN should also work.
 . Select the new `eth0 libre` connection from the network manager applet.
 . Open a terminal. Execute `ifconfig` to get the name of the Ethernet interface. It is probably something like `eth0` or `enp3s0`. We will assume `eth0` for the rest of this guide.
 . Execute `ping6 ff02::1%eth0`.
+
+
+Then each router connected to our colision domain, will reply the ICMP request with its
+ own IPv6 link-local address.
+
 . When the router is ready, each ping should receive a response. The first will be from your own PC and the next (maked as `DUP`) should be your router.
 . The router direction is a combination of the router's IPv6 address, `%`, and your Ethernet interface name. It should be something like `fe90::aa20:66ff:fe4f:ae87%eth0`. Do not include a trailing `:` or other text from the ping responses.
 
@@ -64,6 +83,26 @@ Connect with IPv6: Using example router direction above.
 . Telnet: `telnet fe90::aa20:66ff:fe4f:ae87%eth0`. If the answer is `Connection refused`, try SSH.
 . SSH: `ssh root@fe90::aa20:66ff:fe4f:ae87%eth0`. Remember to include `root@`, otherwise it will attempt to connect using your personal username. The default password is blank. If that doesn't work, try the last password you remember.
 . If that does not work, try the IPv4 instructions below. Although that is unlikely to work either.
+
+Or copy files using scp:
+
+----
+scp LiMe-fw.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth1\]:/tmp/
+----
+
+link:disc6[Click here] for downloading a small script which check if there is some router attached to your network device and in case, try to connect to it.
+If there are not routers it waits until some appears.
+
+An example of execution:
+
+----
+p4u@nomada:~$ $ disc6 eth1
+...........................Host found, connecting to it!
+
+Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of known hosts.
+root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
+----
+
 
 Connect with IPv4:
 
