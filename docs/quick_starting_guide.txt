@@ -34,33 +34,123 @@ For detailed information on these routers check out our link:hardware/index.html
 
 _Many other models are supported_ even if not tested yet (as far as we know), see through our firmware images at http://downloads.libremesh.org/community_chaos/16.07/[download] site.
 
-== Flashing
-link:/getit.html[Download the LiMe build] for your router. If you already have some OpenWrt like image on your Router, you must install the `-sysupgrade.bin` version. If your Router is still with the stock firmware by the manufacturer, use the `-factory` image.
+== Get the Firmware
+=== Choose a source for your firmware
 
-== Installation procedure
-* Find the download for your router by name or model number. You may need to search different variations or aliases. You can find more detailed router model instructions https://wiki.lede-project.org/toh/start[here].
+* For a precompiled firmware with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our http://downloads.libremesh.org/community_chaos[downloads] site;
+* for customizing just the main parameters (e.g. the wireless AP name, adding packages, changing IP ranges) you can use our https://chef.altermundi.net[Chef] platform. It will compile and host a firmware image with your customization;
 
-* If you are installing for the first time, choose the link ending with `-factory.bin`. If you are upgrading an existing install, choose the link ending with `-sysupgrade.bin`.
+for more options check the link:/getit.html[Get It] page.
 
-* Once downloaded, connect your router via ethernet and log into your router's admin. First, you will need to identify the IP address for the router. You can go to the terminal use `netstat -rn` (mac), or `ip route show default` (linux), then find the IP address for the router. More details on finding your router's ip can be found http://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[here] and http://www.computerworld.com/article/2474776/wireless-networking/network-security-find-the-ip-address-of-your-home-router.html[here].
+=== Download the correct firmware image
 
-* Log into the router administration interface with the IP via web browser such as Firefox or Chromium: `http://<your_router_ip>/`. You may need to modify the IP by replacing the last set with 1. For example if the IP is `10.138.21.216`, try `10.138.21.1`. Another option is replacing previous set with a zero, so `10.138.21.216` would become `10.138.0.1`.
+Find the download for your router by name or model number. You may need to search different variations or aliases. You can find more detailed router model instructions https://wiki.lede-project.org/toh/start[here].
 
-* Once you've logged in, find the `Flash new firmware image` option. 
-NOTE: ensure that `Keep Settings` is UNCHECKED. It is checked by default. Then click choose file, and navigate to the location of the file you've downlaoded. Then click `Flash Image`.
+If you are installing for the first time (a router with stock firmware), choose the link ending with `-factory.bin`. If you are upgrading an existing install of LibreMesh, OpenWrt or LEDE, choose the link ending with `-sysupgrade.bin`.
 
-=== GUI / LuCI
-WORK IN PROGRESS
+== Installation Procedure
+=== Open your router web interface
 
-=== Terminal / SSH
-1. Follow the link:/docs/connecting_nodes.html[Connecting to your own node] instructions to `scp` the downloaded build onto your computer. For example `scp /LOCAL/PATH/TO/BUILD root@ROUTER_DIRECTION:/tmp/`.
-* Do not try to copy to `/root`. It has limited memory access.
-2. `sysupgrade -v build.bin`.
-* For more information, see these http://wiki.openwrt.org/doc/howto/generic.sysupgrade[OpenWRT instructions].
+Using an ethernet cable connect to a LAN port on your router. Make sure that the ethernet cable is the only active network interface on your computer (e.g. disable the wireless interface).
 
+_If the router is running stock firmware_, follow manufacturer instructions to connect to the router. Its IP should be written on the original box or under the router. Usually just opening +192.168.0.1+ or +192.168.1.1+ in a web browser lets you reach the router web interface. If you can't connect to the router because you can't find its IP, you can try the IP address of your gateway. For getting it go to the terminal and use `netstat -rn` (mac), or `ip route show default` (Linux). More details on finding your router's IP can be found http://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[here] and http://www.computerworld.com/article/2474776/wireless-networking/network-security-find-the-ip-address-of-your-home-router.html[here].
 
-== First connection
-WORK IN PROGRESS
+_If the router is running OpenWrt or LEDE_ the instructions in the previous paragraph should apply.
+
+_If the router is running LibreMesh_ just opening http://thisnode.info should get you to the web interface.
+
+Then you can log in as admin (if unchanged, the username and password will be on the router's box, on OpenWrt by default there's no admin password, on LEDE by default it's an empty password).
+
+For more connection options see link:connecting_nodes.html[How to connect to nodes] page.
+
+If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
+
+=== Flashing
+Once you've logged in as root or admin in your router, reach the `Flash new firmware image` option.
+
+[IMPORTANT]
+==================
+Ensure that `Keep Settings` is UNCHECKED. It is checked by default.
+==================
+
+Click choose file, navigate to the location of the file you've downloaded and click `Flash Image`. Wait a couple of minutes for the process to complete. Reconnect to the ethernet interface (for getting the new IP) and open http://thisnode.info. Congratulations, you have a working LibreMesh router!
+
+== Connect to Your LibreMesh Router
+Just connect to the router via its wireless AP interface or via ethernet cable on its LAN port and open http://thisnode.info in the web browser.
+
+[IMPORTANT]
+============
+If is the first time you connect to the router, you will have to set an admin/root password. Leaving a LibreMesh router with no admin password is a huge security risk.
+============
+
+For more connection options see link:connecting_nodes.html[How to connect to nodes] page.
+
+If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
 
 == Configuration
 WORK IN PROGRESS
+
+Refer to the link:config.html[LiMe config file] page for detailed information.
+
+---
+---
+---
+
+= Using the Console Interface (optional)
+Until here we went through the installation, connection and configuration procedures using the LibreMesh web interface.
+
+As in every Linux-based system there's the availability of a textual console interface for advanced configuration and hardcore users.
+
+This part of the guide should not be needed for normal LibreMesh use.
+
+== Flashing Via the Console Interface (optional)
+This is possible just if you're upgrading an existing OpenWrt, LEDE or LibreMesh installation, not from stock firmware.
+
+Copy the downloaded firmware image to the +/tmp+ directory on your target router using the `scp` command. 
+
+[IMPORTANT]
+===========
+Do not try to copy the firmware image to directories different from `/tmp`. They have limited memory access.
+===========
+
+In case the router already has LibreMesh you can do this with
+
+```
+scp /LOCAL/PATH/TO/BUILD.bin root@thisnode.info:/tmp/
+```
+
+Otherwise (upgrading from OpenWrt or LEDE) you will need to insert the router IP address in
+
+```
+scp /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
+```
+
+[NOTE]
+===========
+When upgrading from OpenWrt, in order to connect via ssh/scp you will need to have an admin/root password set via the web interface or via telnet and the +passwd+ command.
+Check out link:/docs/connecting_nodes.html[Connecting to your own node] for help on this.
+===========
+
+Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt or LEDE are running.
+
+Then enter the +/tmp+ directory where the firmware is present with +cd /tmp+, check the presence of the file with +ls+ and install it with
+
+```
+sysupgrade -n lede-ROUTERMODEL-squashfs-sysupgrade.bin
+```
+
+[IMPORTANT]
+============
+The +-n+ option for sysupgrade command is needed for discarding the previous configuration files. Omitting the +-n+ option is never a good idea when flashing LibreMesh.
+============
+
+For more information on the sysupgrade process, see these http://wiki.openwrt.org/doc/howto/generic.sysupgrade[OpenWRT instructions].
+
+== Configuring Via the Console Interface (optional)
+Rather than using the web interface, modifying directly +/etc/config/lime+ file allows to access more advanced options but increases the risk of writing broken configuration.
+
+You can use the +vi+ or +vim+ text editor for editing /etc/config/lime, the settings in this file will override the default ones in +/etc/config/lime-defaults+.
+
+You can find examples and documentation in the +/etc/config/lime-example+ file as well as in link:config.html[LiMe config file] page on this website.
+
+After saving the edits to the +lime+ file, apply the changes to system configuration files launching the +lime-config+ command. Next reboot the router with +reboot && exit+ to apply the new settings.
