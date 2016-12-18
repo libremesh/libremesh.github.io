@@ -66,6 +66,11 @@ For more connection options see link:connecting_nodes.html[How to connect to nod
 If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
 
 === Flashing
+[IMPORTANT]
+==================
+For Ubiquiti AirMax serie routers, flashing on top of AirOS versions 5.6.x will brick your device (the recovery procedure requires opening the router chassis and connecting directly to its serial port). If your router has AirOS 5.6.x, you will have to find and download an AirOS 5.5.x version and use it to downgrade your router.
+==================
+
 Once you've logged in as root or admin in your router, reach the firmware upgrade page.
 
 [IMPORTANT]
