@@ -19,7 +19,7 @@ https://chef.altermundi.net[Chef homepage.]
 
 == Installation procedure
 
-
+For installation procedure read our link:docs/quick_starting_guide.html[Quick Starting Guide].
 
 == Compile Using the Tool lime-build
 
