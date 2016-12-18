@@ -66,14 +66,16 @@ For more connection options see link:connecting_nodes.html[How to connect to nod
 If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
 
 === Flashing
-Once you've logged in as root or admin in your router, reach the `Flash new firmware image` option.
+Once you've logged in as root or admin in your router, reach the firmware upgrade page.
 
 [IMPORTANT]
 ==================
-Ensure that `Keep Settings` is UNCHECKED. It is checked by default.
+If there's a `Keep Settings` option, take care to UNCHECK it. It is checked by default on OpenWrt/LEDE.
 ==================
 
-Click choose file, navigate to the location of the file you've downloaded and click `Flash Image`. Wait a couple of minutes for the process to complete. Reconnect to the ethernet interface (for getting the new IP) and open http://thisnode.info. Congratulations, you have a working LibreMesh router!
+Upload the firmware image file you've downloaded and click `Flash Image`. Wait a couple of minutes for the process to complete. Reconnect to the ethernet interface (for getting the new IP) and open http://thisnode.info.
+
+Congratulations, you have a working LibreMesh router!
 
 == Connect to Your LibreMesh Router
 Just connect to the router via its wireless AP interface or via ethernet cable on its LAN port and open http://thisnode.info in the web browser.
