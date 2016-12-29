@@ -19,6 +19,7 @@ you find the opportunity send us your contribution via git pull-request or mail.
 [width="90%",options="header"]
 |=======
 |Device|Flash|RAM|WAN port|2.4 GHz|5 GHz|LiMe target|LiMe profile|factory image |sysupgrade image
+|https://wiki.openwrt.org/toh/tp-link/tl-wr842nd[TP-Link WR842ND] ||||||||| 
 |https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] ||||||||| 
 |https://wiki.openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] |||||||||
 |https://wiki.openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600] |8 MB |128 MB |Yes |Yes |Yes |ar71xx |generic | tl-wdr3600-v1-squashfs-factory | tl-wdr3600-v1-squashfs-sysupgrade
@@ -32,6 +33,8 @@ you find the opportunity send us your contribution via git pull-request or mail.
 |https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XM] |||||||||
 |https://wiki.openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti NanoBridge M5] |||||||||
 |https://wiki.openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation LoCo M2] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/picostationm2[Ubiquiti PicoStation M2] |||||||||
+|https://wiki.openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti Bullet M2] |||||||||
 |=======
 
 == Devices

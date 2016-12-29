@@ -9,6 +9,7 @@ It is recommended that the router has at least 8 MB of flash memory. For 4 MB ro
 
 These wireless routers have been tested with LibreMesh and have 8 MB of flash memory:
 
+* TP-Link WR842ND
 * TP-Link WR1043ND
 * TP-Link WDR3500
 * TP-Link WDR3600
@@ -23,6 +24,7 @@ These wireless routers have been tested with LibreMesh and have 8 MB of flash me
 * Ubiquiti NanoBridge M5
 * Ubiquiti NanoStation LoCo M2
 * Ubiquiti PicoStation M2
+* Ubiquiti Bullet M2
 
 Also models with 4 MB have been tested, using the +-mini+ images:
 
