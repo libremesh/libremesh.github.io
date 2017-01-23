@@ -95,6 +95,7 @@ config lime wifi
 	list modes 'ap'
 	list modes 'apname'
 	list modes 'adhoc'
+#	list modes 'ieee80211s'
 	option ap_ssid 'libremesh.org'
 	option apname_ssid 'libremesh.org/%H'
 	option adhoc_ssid '%H'
@@ -109,6 +110,13 @@ config lime wifi
 .wifi options
 =============
 Any option with name <mode>_<option> will be directly copied to /etc/config/wireless (without the <mode>_ prefix)
+=============
+
+[NOTE]
+.wifi 80211s
+=============
+Mode ieee80211s refers to 802.11s standard (known as mesh). When mesh_mesh_fwding=0, the routing layer is disabled and it can be used only as a link-layer protocol such as adhoc.
+Be aware that it cannot be used together with adhoc on the same interface.
 =============
 
 .WiFi interface specific options (override general option), multiple allowed
