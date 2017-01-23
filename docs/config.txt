@@ -115,8 +115,11 @@ Any option with name <mode>_<option> will be directly copied to /etc/config/wire
 ----
 config wifi radio11
 	list modes 'adhoc'
+  list modes 'ap'
 	option channel_2ghz '1'
 	option channel_5ghz '48'
+  option ap_ssid 'My_private_SSID'
+  option ap_key 'My_PSK_password'
 	option adhoc_mcast_rate '6000'
 	option adhoc_ssid 'libremesh'
 	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
