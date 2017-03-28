@@ -15,14 +15,14 @@ If a configuration option is not found in config/lime, the _config/lime-defaults
 [NOTE]
 .lime config file
 =================
-The idea behind this structe is that the user **only** modifies _/etc/config/lime_ but never _/etc/config/lime-defaults_.
+The idea behind this structure is that the user **only** modifies _/etc/config/lime_ but never _/etc/config/lime-defaults_.
 
 Once the file is modified the command _lime-config_ must be run. To enable the changes you might reboot the node (**reboot** command) or execute **reload_config**.
 =================
 
-The networking options of _config/lime_ are defined in to different blocks.
+The networking options of _config/lime_ are defined in two different blocks.
 
-== The common network options
+== Common network options
 
 If there is not a specific network section for a specific network device, the options from the common section will be used.
 
@@ -50,7 +50,7 @@ In this example, all networks interfaces will be used with the following set of 
 . **batadv** so the Layer2 network routing protocol will be enabled to find possible neighbour nodes (VLAN of the mesh cloud based on SSID)
 . **bmx6** so the Layer3 network routing protocol will be enabled to find possible neighbour nodes (VLAN 13)
 
-== The specific network options
+== Specific network options
 
 But if we want to change the default behavior of one or more network devices we can define a specific configuration.
 
