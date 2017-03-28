@@ -31,7 +31,8 @@ For updated information check the https://raw.githubusercontent.com/libremesh/li
 .System options
 ----
 config lime system
-	option hostname 'LiMeNode-%M4%M5%M6' 
+	option hostname 'LiMeNode-%M4%M5%M6'
+	option keep_on_upgrade 'libremesh base-files-essential /etc/sysupgrade.conf'
 ----
 
 
@@ -41,16 +42,18 @@ config lime network
 	option primary_interface eth0  
 	option bmx6_over_batman
 	option main_ipv4_address '192.0.2.0/24'
-	option main_ipv6_address '2001:db8::%M5:%M6/64'                        
+	option main_ipv6_address '2001:db8::%M5:%M6/64'
+	option bmx6_mtu '1398'
 	list protocols adhoc
 	list protocols lan
 	list protocols anygw
 	list protocols batadv:%N1
 	list protocols bmx6:13
+#	list protocols static:192.168.100.2/24
 #	list protocols olsr:14
 #	list protocols olsr6:15
 #	list protocols olsr2:16
-#	list resolvers 8.8.8.8
+#	list resolvers 141.1.1.1
 #	list resolvers 2001:4860:4860::8844
 ----
 
@@ -121,18 +124,19 @@ Be aware that it cannot be used together with adhoc on the same interface.
 
 .WiFi interface specific options (override general option), multiple allowed
 ----
-config wifi radio11
+config wifi radio1
 	list modes 'adhoc'
-  list modes 'ap'
+	list modes 'ap'
 	option channel_2ghz '1'
 	option channel_5ghz '48'
-  option ap_ssid 'My_private_SSID'
-  option ap_key 'My_PSK_password'
+  	option ap_ssid 'My_private_SSID'
+	option ap_encryption 'psk2'
+	option ap_key 'My_PSK_password'
 	option adhoc_mcast_rate '6000'
 	option adhoc_ssid 'libremesh'
 	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
 
-#config wifi radio12
+#config wifi radio2
 #	list modes 'manual'
 ----
 
@@ -141,15 +145,15 @@ config wifi radio11
 =======================
 Available protocols: bmx6, batadv, olsr, olsr6, wan, lan, manual
 
-proto:vlan_number works too (something like bmx6:13 is supported)
+proto:vlan_number works too (something like bmx6:13 is supported). If VLAN is 0 no VLAN will be used.
 
 If you use manual do not specify other protocols, may result in an unpredictable behavior/configuration.
 =======================
 
 .Ethernet specific options, multple allowed
 ----
-#config net port5
-#	option linux_name 'eth1.5'
+#config net eth1wan
+#	option linux_name 'eth1'
 #	list protocols 'wan'
 ----
 
