@@ -1,0 +1,15 @@
+#!/bin/bash
+INT=${1:-eth0}
+MYIP="$(ip addr show dev $INT | grep -e "inet6.*scope link" | awk '{print $2}' | cut -d/ -f1)"
+NEIGH="$(ping6 ff02::2%$INT -n -c3 2>/dev/null | grep fe80 2>/dev/null | awk '{print $4}' | sed 's/\(.*\)./\1/' | sort -u)"
+RNEIGH="$(echo -e "$NEIGH" | grep -v $MYIP | grep -v "^$" | sort -u)"
+if [ $(echo -e "$RNEIGH" | wc -l) -eq 1 -a $(echo -e "$RNEIGH" | wc -c) -gt 4 ]; then
+    echo "Host found, connecting to it!"
+    telnet $RNEIGH%$INT || ssh root@$RNEIGH%$INT
+elif [ -z "$RNEIGH" ]; then
+    echo -n "."
+    exec $0 $@
+else
+    echo "Several Hosts found:"
+    echo -e "$RNEIGH"
+fi
