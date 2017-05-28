@@ -9,7 +9,7 @@ We offer a list of precompiled firmware images with **generic settings**. This i
 
 * The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site.
 
-* For the development version of LiMe including experimental features, you can use the automatic generated, not tested, images from http://builds.libremesh.org/develop[Lime-Build develop].
+* The current **release candidate** is Dayboot Relay, images can be found at the official http://repo.libremesh.org/lime-17.04/[repository].
 
 == Use the Chef Application (recommended)
 
@@ -21,9 +21,9 @@ https://chef.altermundi.net[Chef homepage.]
 
 For installation procedure read our link:docs/quick_starting_guide.html[Quick Starting Guide].
 
-== Compile Using the Tool lime-build
+== Cook your own firmware using lime-sdk
 
-_lime-build_ is a tool to easily compile locally a firmware image. It also creates a development environment.
+_lime-sdk_ is a tool to easily compile locally a firmware image. It allows you to customize libremesh at your own needs.
 
 Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages:
 
@@ -31,34 +31,13 @@ Install build dependencies, for example on a Debian/Ubuntu based Linux distribut
 sudo apt-get install subversion zlib1g-dev gawk flex unzip bzip2 gettext build-essential libncurses5-dev libncursesw5-dev libssl-dev binutils cpp psmisc docbook-to-man wget git
 ----
 
-Download lime-build git repository:
+Download lime-sdk git repository:
 ----
-git clone https://github.com/libremesh/lime-build.git
-cd lime-build
-----
-
-You can see the list of officially supported targets (see our link:docs/hardware/index.html[supported hardware page]) and profiles (sets of LibreMesh packages) by typing:
-----
-make info
+git clone https://github.com/libremesh/lime-sdk.git
+cd lime-sdk
 ----
 
-To compile a target/profile just execute (example):
-----
-make T=ar71xx P=generic
-----
-
-[NOTE]
-================
-* _T_ is the target related to the hardware type.
-
-* _P_ is the profile related to the software combination of LibreMesh packets.
-
-* A successful build relies on a stable network connection. If the build fails, simply try again or add the option `J=1` if you don't mind waiting longer.
-================
-
-You will find the binaries ready to install in _output_ directory.
-
-See the https://github.com/libremesh/lime-build/blob/develop/README.md[lime-build README] for more information and options.
+And follow the steps to generate the firmware. See https://github.com/libremesh/lime-sdk/blob/master/README.md[lime-sdk README]
 
 == Compile the Code Using Pristine OpenWrt buildroot
 
