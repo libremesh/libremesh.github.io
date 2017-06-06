@@ -3,6 +3,13 @@
 News
 ====
 
+=== 2017-06-06 - Attended Sysupgrades
+
+Within this years https://summerofcode.withgoogle.com/[GSoC] a fellow student tries to setup a new way to perform sysupgrades on LibreMesh Routers (and LEDE/OpenWrt in general).
+The idea is to generate sysupgrade images on demand with all manually installed packages included. 
+
+More details are shown in the official https://blog.freifunk.net/2017/05/30/gsoc-2017-attended-sysupgrade/[Freifunk Blogpost] (english)
+
 === 2016-10-06 - LibreRouter
 
 The Libre Router project will design and produce a high performance multi-radio wireless router targeted at Community Networks needs.
