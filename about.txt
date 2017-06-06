@@ -34,3 +34,17 @@ Here you can find an alphabetically ordered list of the people currently involve
 image:https://tip4commit.com/projects/804.svg["tip for next commit", link="https://tip4commit.com/github/libremesh/lime-packages"]
 
 BitCoin donations to the project are managed via Tip4Commit, they will directly support the developers.
+
+== Related projects
+
+LibreMesh is one of many tools that can be used to implement mesh networks. Below is a non-exhaustive list of some other mesh related projects you may be interested in.
+
+[cols="4*1",options="header"]
+|====
+| Name | Link | Uses LiMe? | Notes
+| Guifi.net | https://guifi.net/ | Sometimes? | -
+| NYC Mesh | https://nycmesh.net/ | No | https://nycmesh.net/faq/#firmware
+| Fumaça | http://nuvem.tk/ | Yes | -
+| The Free Network Foundation | https://thefnf.org/ | ? | -
+| Wireless Battle of the Mesh | http://battlemesh.org/ | - | -
+|====
