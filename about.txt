@@ -28,9 +28,3 @@ Here you can find an alphabetically ordered list of the people currently involve
 | Pau | p4u[at]dabax[dot]net
 | Pedro | -
 |====
-
-== Donations
-
-image:https://tip4commit.com/projects/804.svg["tip for next commit", link="https://tip4commit.com/github/libremesh/lime-packages"]
-
-BitCoin donations to the project are managed via Tip4Commit, they will directly support the developers.
