@@ -43,7 +43,7 @@ In the following list we try to collect some existing free networks (send us an 
 | Guifi.net    | Iberian peninsula | http://guifi.net          | image:img/guifi-logo.png["Guifi.net",role="right"]
 | FreiFunk     | Germany           | http://freifunk.net       | image:img/logo_freifunknet.png["FreiFunk",role="right"]
 | FunkFeuer    | Austria           | https://www.funkfeuer.at  | image:img/0xff_logo.png["FunkFeuer",role="right"]
-| NiNux        | Italy             | http://ninux.org          | image:img/ninux_logo.png["NiNux",role="right"]
+| Ninux.org    | Italy             | http://ninux.org          | image:img/ninux_logo.png["NiNux",role="right"]
 | AlterMundi   | Argentina         | http://altermundi.net     | image:img/altermundi_logo.png["Altermundi",role="right"]
 |=======================================================================================================================
 
