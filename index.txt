@@ -10,7 +10,7 @@ LibreMesh is a modular framework for creating OpenWrt/LEDE-based firmwares for w
 image:logo/logo.png["The LIME logo",role="right"]
 
 The LibreMesh project includes the development of several tools.
-The **firmware** (the main piece) will allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
+The **firmware** (the main piece) allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
 
 [NOTE]
 =======================
