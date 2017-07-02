@@ -9,9 +9,9 @@ LibreMesh Guida Rapida Per Iniziare
 
 == Hardware Compatibile
 
-It is recommended that the router has at least 8 MB of flash memory. For 4 MB routers use the special firmware named +-mini+.
+E’ consigliato che i router abbiamo almeno 8MB di memory flash. Per router con 4MB di memoria usa lo speciale firmware chiamato +-mini+.
 
-These wireless routers have been tested with LibreMesh and have 8 MB of flash memory:
+I router seguenti sono stati testati con LibreMesh ed hanno 8MB di memoria flash:
 
 * TP-Link WR842ND
 * TP-Link WR1043ND
@@ -30,75 +30,84 @@ These wireless routers have been tested with LibreMesh and have 8 MB of flash me
 * Ubiquiti PicoStation M2
 * Ubiquiti Bullet M2
 
-Also models with 4 MB have been tested, using the +-mini+ images:
+I modelli con 4 MB che sono stati testati usando la versione +-mini+:
 
 * TP-Link WR740N
 * TP-Link WR741ND
 * TP-Link WR841ND
 
-For detailed information on these routers check out our link:hardware/index.html[hardware] page.
 
-_Many other models are supported_ even if not tested yet (as far as we know), see through our firmware images at http://downloads.libremesh.org/community_chaos/16.07/[download] site.
+Per informazioni dettagliate su questi router, guarda nelle pagine dedicate all’ link:hardware/index.html[hardware].
 
-== Get the Firmware
-=== Choose a source for your firmware
+_Molti altri modelli sono supportati_ anche se non li abbiamo mai testati (o non lo sappiamo), guarda la lista dei nostri firmware proposti nei http://downloads.libremesh.org/community_chaos/16.07/[download].
 
-* For a precompiled firmware with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our http://downloads.libremesh.org/community_chaos[downloads] site;
-* for customizing just the main parameters (e.g. the wireless AP name, adding packages, changing IP ranges) you can use our https://chef.altermundi.net[Chef] platform. It will compile and host a firmware image with your customization;
 
-for more options check the link:/getit.html[Get It] page.
+== Ottieni il Firmware
+=== Scegli una fonte per il tuo firmware:
 
-=== Download the correct firmware image
+Per un firmware precompilato con i parametri di default (e.g. wireless AP name LibreMesh.org) puoi andare alla pagina di http://downloads.libremesh.org/community_chaos[downloads];
 
-Find the download for your router by name or model number. You may need to search different variations or aliases. You can find more detailed router model instructions https://wiki.lede-project.org/toh/start[here].
+* Per personalizzare almeno i parametri personali (e.g. il nome della rete AP, aggiungere pacchetti, cambiare gli IP assegnati) puoi usare la nostra piattaforma di https://chef.altermundi.net[Cucina]. Ti compilerà e manterra nel tuo profilo le immagini del firmware fatte apposta;
 
-If you are installing for the first time (a router with stock firmware), choose the link ending with `-factory.bin`. If you are upgrading an existing install of LibreMesh, OpenWrt or LEDE, choose the link ending with `-sysupgrade.bin`.
+per avere più opzioni vai alla pagina link:/getit.html[Ottienilo].
 
-== Installation Procedure
-=== Open your router web interface
+=== Scarica il firmware giusto
 
-Using an ethernet cable connect to a LAN port on your router. Make sure that the ethernet cable is the only active network interface on your computer (e.g. disable the wireless interface).
+Trova nei download il modello e nome giusto del tuo router. Potresti incappare in diverse varianti o simili. Puoi trovare istruzioni più dettagliate riguardo al tuo modello di router su https://wiki.lede-project.org/toh/start[lede].
 
-_If the router is running stock firmware_, follow manufacturer instructions to connect to the router. Its IP should be written on the original box or under the router. Usually just opening +192.168.0.1+ or +192.168.1.1+ in a web browser lets you reach the router web interface. If you can't connect to the router because you can't find its IP, you can try the IP address of your gateway. For getting it go to the terminal and use `netstat -rn` (mac), or `ip route show default` (Linux). More details on finding your router's IP can be found http://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[here] and http://www.computerworld.com/article/2474776/wireless-networking/network-security-find-the-ip-address-of-your-home-router.html[here].
+* Se stai installando per la prima volta (il router ha il firmware originale) scegli il link che finisce per +-factory.bin+.
+* Se stai aggiornando una preesistente installazione di Libremesh o di Openwrt o LEDE, scegli il link che finisce per +-sysupgrade.bin+.
 
-_If the router is running OpenWrt or LEDE_ the instructions in the previous paragraph should apply.
 
-_If the router is running LibreMesh_ just opening http://thisnode.info should get you to the web interface.
+== Procedura di installazione
+=== Apri l’interfaccia web del tuo router
 
-Then you can log in as admin (if unchanged, the username and password will be on the router's box, on OpenWrt by default there's no admin password, on LEDE by default it's an empty password).
+Usando un cavo ethernet (rj45) connetti la porta LAN del tuo pc a quella del tuo router.
+Sii sicuro che sul tuo pc ci sia solo una interfaccia di rete attiva e che questa sia la scheda ethernet. (es: disabilità l’interfaccia wireless)
 
-For more connection options see link:connecting_nodes.html[How to connect to nodes] page.
+_Se stai installando per la prima volta e quindi il router ha il firmware di fabbrica_, segui le istruzioni dei costruttori per connettere il router. Di solito c’è scritto un IP sulla scatola originale o sotto il router stesso. Di solito viene assegnato di default l’IP +192.168.0.1+ o +192.168.1.1+ e digitandoli nell’url di un browser, puoi raggiungere la loro interfaccia web.Se non riesci a connetterti al router perchè non riesci a scoprire il suo IP, puoi provare l’indirizzo IP del tuo gateway; ottienilo apri un terminale e digita +netstat -rn+ (mac), o +ip route show default+ (GNU/Linux). Puoi trovare altri suggerimenti per scovare l’IP http://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[qui] e http://www.computerworld.com/article/2474776/wireless-networking/network-security-find-the-ip-address-of-your-home-router.html[qui].
 
-If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
+_Se il router ha già operativo sopra OpenWrt o LEDE_ possono essere applicate le istruzione del paragrafo sotto.
+
+_Se il router ha già sopra LibreMesh_, apri un browser e vai alla pagina http://thisnode.info dovresti trovare l’interfaccia web.
+
+Quindi ti puoi loggare come admin (se sono quelle di default, la username e password sono scritte sulla scatola del router, o in OpenWrt di default non c’è password di amministrazione, in LEDE invece è una password vuota, fai solo invio).
+
+Per più opzini di connessione vai a vedere la pagina link:connecting_nodes.html[Come connettere i nodi].
+
+Se hai il sospetto di non poter connettere il tuo router alla rete per configurazioni danneggiate, segui la guida link:troubleshooting.html[Risolvi i problemi].
 
 === Flashing
 [IMPORTANT]
 ==================
-For Ubiquiti AirMax serie routers, flashing on top of AirOS versions 5.6.x will brick your device (the recovery procedure requires opening the router chassis and connecting directly to its serial port). If your router has AirOS 5.6.x, you will have to find and download an AirOS 5.5.x version and use it to downgrade your router.
+Per i router Ubiquity AirMAx con una installazione di AirOS 5.6.x, se flashati con Libremesh si bloccano e il recupero non è agevole (devi aprirgli la scatola e connetterti direttamente sulla porta seriale, in oltre perderesti irrimediabilmente i dati di calibrazione della radio). Se il tuo router va con una AirOS 5.6.x, devi portarlo ad una versione precedente: la AirOS 5.5.x per poi flasharlo con Libremesh.
 ==================
 
-Once you've logged in as root or admin in your router, reach the firmware upgrade page.
+Una volta che ti sei loggato come admin o come root nel tuo router, cerca la pagina “firmware upgrade”.
 
 [IMPORTANT]
 ==================
-If there's a `Keep Settings` option, take care to UNCHECK it. It is checked by default on OpenWrt/LEDE.
+Se c’è l’opzione “Keep Settings”, ovvero “mantieni le impostazioni”, fai attenzione che NON sia barrata, in OpenWrt/LEDE lo è di default.
 ==================
 
-Upload the firmware image file you've downloaded and click `Flash Image`. Wait a couple of minutes for the process to complete. Reconnect to the ethernet interface (for getting the new IP) and open http://thisnode.info.
+Carica il file prescelto del tuo firmware e clicca su Flash Image. Aspetta qualche minuto fino a quando il processo non è terminato. Riconnetti li l’interfaccia ethernet (per avere un nuovo IP) ed apri nel browser http://thisnode.info.
+Complimenti, ora hai un router con LibreMesh!
 
-Congratulations, you have a working LibreMesh router!
 
-== Connect to Your LibreMesh Router
-Just connect to the router via its wireless AP interface or via ethernet cable on its LAN port and open http://thisnode.info in the web browser.
+== Connettiti al tuo router LibreMesh
+
+Connettiti al router tramite la sua wireless o tramite cavo ethernet ed apri http://thisnode.info nel browser.
+
 
 [IMPORTANT]
 ============
-If is the first time you connect to the router, you will have to set an admin/root password. Leaving a LibreMesh router with no admin password is a huge security risk.
+Se è la prima volta che ti connetti in assoluto, ti chiederà di settare una password di amministrazione. Se lasci il tuo router Libremesh senza password di amministrazione potresti trovarti in seri problemi di gestione degli apparati dal lato della confidenzialità dei dati che ci passano.
+
 ============
 
-For more connection options see link:connecting_nodes.html[How to connect to nodes] page.
+Per avere più opzioni di connessione leggi la pagina link:connecting_nodes.html[Come connettersi ai nodi].
 
-If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
+Se hai il sospetto di non poter connettere il tuo router alla rete per configurazioni danneggiate, segui la guida link:troubleshooting.html[Risolvi i problemi].
 
 == Share the Internet Connection with the LibreMesh Network
 LibreMesh is automatically sharing with the rest of the mesh network any internet connection is connected to the router WAN port. There's no problem if more than one internet gateway is connected to the LiMe network, likely the one closest to the client will be used.
