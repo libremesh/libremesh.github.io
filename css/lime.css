@@ -16,9 +16,16 @@ p {
 }
 
 /* lang */
-.en:lang(en), .fr:lang(fr), .zh:lang(zh){
+.en, .it {
     font-weight: bold;
-	color: white;
+    color: white;
+    text-transform: capitalize !important;
+    border-left: 1px solid white ;
+    text-decoration: underline;
+min-width:2.9rem;
+}
+.it:lang(it){
+
 }
 
 
