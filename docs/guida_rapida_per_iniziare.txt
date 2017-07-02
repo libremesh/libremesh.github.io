@@ -1,13 +1,13 @@
 ---
-title: Quick Starting Guide
+title: Guida Rapida Per Iniziare
 ref: quickstartguide
-lang: en
+lang: it
 ---
 
-LibreMesh Quick Starting Guide
-==============================
+LibreMesh Guida Rapida Per Iniziare
+===================================
 
-== Compatible Hardware
+== Hardware Compatibile
 
 It is recommended that the router has at least 8 MB of flash memory. For 4 MB routers use the special firmware named +-mini+.
 

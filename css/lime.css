@@ -15,6 +15,13 @@ p {
     max-width: 100rem !important;
 }
 
+/* lang */
+.en:lang(en), .fr:lang(fr), .zh:lang(zh){
+    font-weight: bold;
+	color: white;
+}
+
+
 @media only screen and (min-width: 40.063em) {
     .top-bar {
         height: auto;
@@ -25,3 +32,4 @@ p {
 .top-bar .top-bar-title {
     padding-left: 10px;
 }
+
