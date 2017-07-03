@@ -38,6 +38,25 @@
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
+    
+<!-- lang --> 
+<ul class="lng">
+{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+{% for post in posts %}
+  <li>
+    <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+  </li>
+{% endfor %}
+
+{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% for page in pages %}
+  <li>
+    <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+  </li>
+{% endfor %}
+    </ul>
+<!-- fine lang-->
+
     <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
