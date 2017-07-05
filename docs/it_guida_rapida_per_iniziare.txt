@@ -1,6 +1,6 @@
 ---
 title: Guida Rapida Per Iniziare
-ref: quickstartguide
+ref: quick_start_guide
 lang: it
 ---
 
