@@ -6,6 +6,21 @@
 <li{% if page.url == '/development.html' %} class="active"{% endif %}><a href="{{ site.prefix }}development.html">Development</a></li>
 <li{% if page.url contains '/docs/' %} class="active"{% endif %}><a href="{{ site.prefix }}docs/index.html">Documentation</a></li>
 <li{% if page.url == '/about.html' %} class="active"{% endif %}><a href="{{ site.prefix }}about.html">About</a></li>
+<!-- lang -->
 
+{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+{% for post in posts %}
+  <li>
+    <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+  </li>
+{% endfor %}
+
+{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% for page in pages %}
+  <li>
+    <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+  </li>
+{% endfor %}
+<!-- fine lang-->
 
 

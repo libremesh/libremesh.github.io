@@ -1,5 +1,9 @@
 ---
+title: Quick Starting Guide
+ref: quick_start_guide
+lang: en
 ---
+
 LibreMesh Quick Starting Guide
 ==============================
 
