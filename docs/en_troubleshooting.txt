@@ -4,7 +4,7 @@ Troubleshooting
 ===============
 
 == Unable to establish Ethernet connection
-If you can't connect to the LibreMesh router as indicated in link:connecting_nodes.html[How to connect to LiMe nodes] you can try other ways.
+If you can't connect to the LibreMesh router as indicated in link:en_connecting_nodes.html[How to connect to LiMe nodes] you can try other ways.
 
 === Verify the connection
 
@@ -23,7 +23,7 @@ If you are connected by wireless:
 
 === Connect using gateway IPv4
 
-If trying to connect to thisnode.info (as explained in link:connecting_nodes.html[normal connection procedure]) does not work, you can take your gateway address and connect to it.
+If trying to connect to thisnode.info (as explained in link:en_connecting_nodes.html[normal connection procedure]) does not work, you can take your gateway address and connect to it.
 
 When you're phisically connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway. Refer to your operating system documentation for how to see it (usually +ip route+ and +route -n+ work). This IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
 
@@ -40,7 +40,7 @@ ssh root@10.13.0.1
 ----
 
 === Connect using IPv6 link local
-In case neither the link:connecting_nodes.html[normal connection procedure] nor the gateway IPv4 are working for connecting to your node, you can use _IPv6 link local_.
+In case neither the link:en_connecting_nodes.html[normal connection procedure] nor the gateway IPv4 are working for connecting to your node, you can use _IPv6 link local_.
 
 Each working network interface in your Linux system have a special IPv6 address configured automatically by the Kernel.
 These are named IPv6 link-local and are inside the special prefix fe80::/10
@@ -100,7 +100,7 @@ Sometimes you configure things badly and ends in a messed up configuration where
 
 Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki].
 
-Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 via telnet:
+Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 via telnet:
 
 ----
 telnet 192.168.1.1

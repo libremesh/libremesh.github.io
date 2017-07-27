@@ -20,7 +20,7 @@ The idea behind this structure is that the user **only** modifies _/etc/config/l
 Once the file is modified the command _lime-config_ must be run. To enable the changes you might reboot the node (**reboot** command) or execute **reload_config**.
 =================
 
-For a detailed view of the config file options see link:/docs/config.html[config].
+For a detailed view of the config file options see link:/docs/en_config.html[config].
 
 The networking options of _config/lime_ are defined in two different blocks.
 

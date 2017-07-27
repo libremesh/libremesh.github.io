@@ -19,7 +19,7 @@ https://chef.altermundi.net[Chef homepage.]
 
 == Installation procedure
 
-For installation procedure read our link:docs/quick_starting_guide.html[Quick Starting Guide].
+For installation procedure read our link:docs/en_quick_starting_guide.html[Quick Starting Guide].
 
 == Cook your own firmware using lime-sdk
 

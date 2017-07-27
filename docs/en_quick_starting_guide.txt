@@ -67,9 +67,9 @@ _If the router is running LibreMesh_ just opening http://thisnode.info should ge
 
 Then you can log in as admin (if unchanged, the username and password will be on the router's box, on OpenWrt by default there's no admin password, on LEDE by default it's an empty password).
 
-For more connection options see link:connecting_nodes.html[How to connect to nodes] page.
+For more connection options see link:en_connecting_nodes.html[How to connect to nodes] page.
 
-If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
+If you suspect you can't connect to your router because of a damaged configuration, follow the link:en_troubleshooting.html[Troubleshooting] guide.
 
 === Flashing
 [IMPORTANT]
@@ -96,9 +96,9 @@ Just connect to the router via its wireless AP interface or via ethernet cable o
 If is the first time you connect to the router, you will have to set an admin/root password. Leaving a LibreMesh router with no admin password is a huge security risk.
 ============
 
-For more connection options see link:connecting_nodes.html[How to connect to nodes] page.
+For more connection options see link:en_connecting_nodes.html[How to connect to nodes] page.
 
-If you suspect you can't connect to your router because of a damaged configuration, follow the link:troubleshooting.html[Troubleshooting] guide.
+If you suspect you can't connect to your router because of a damaged configuration, follow the link:en_troubleshooting.html[Troubleshooting] guide.
 
 == Share the Internet Connection with the LibreMesh Network
 LibreMesh is automatically sharing with the rest of the mesh network any internet connection is connected to the router WAN port. There's no problem if more than one internet gateway is connected to the LiMe network, likely the one closest to the client will be used.
@@ -108,7 +108,7 @@ If the LiMe router has no WAN port (just LAN ports, or just one ethernet port), 
 == Configuration
 WORK IN PROGRESS
 
-Refer to the link:config.html[LiMe config file] page for detailed information.
+Refer to the link:en_config.html[LiMe config file] page for detailed information.
 
 ---
 ---
@@ -146,7 +146,7 @@ scp /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
 [NOTE]
 ===========
 When upgrading from OpenWrt, in order to connect via ssh/scp you will need to have an admin/root password set via the web interface or via telnet and the +passwd+ command.
-Check out link:/docs/connecting_nodes.html[Connecting to your own node] for help on this.
+Check out link:/docs/en_connecting_nodes.html[Connecting to your own node] for help on this.
 ===========
 
 Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt or LEDE are running.
@@ -169,6 +169,6 @@ Rather than using the web interface, modifying directly +/etc/config/lime+ file 
 
 You can use the +vi+ or +vim+ text editor for editing /etc/config/lime, the settings in this file will override the default ones in +/etc/config/lime-defaults+.
 
-You can find examples and documentation in the +/etc/config/lime-example+ file as well as in link:config.html[LiMe config file] page on this website.
+You can find examples and documentation in the +/etc/config/lime-example+ file as well as in link:en_config.html[LiMe config file] page on this website.
 
 After saving the edits to the +lime+ file, apply the changes to system configuration files launching the +lime-config+ command. Next reboot the router with +reboot && exit+ to apply the new settings.
