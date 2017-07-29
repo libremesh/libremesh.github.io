@@ -94,7 +94,7 @@ image::img/network3.png[align="center"]
 [NOTE]
 ======================
 The DHCP leases file is shared among the cloud to prevent collisions using
-http://en.wiki.guifi.net/A.L.F.R.E.D[A.L.F.R.E.D].
+link:http://en.wiki.guifi.net/wiki/A.L.F.R.E.D.[A.L.F.R.E.D.]
 
 As long as all nodes share the same anycast MAC/IP, from the client point of view it is fully transparent. 
 Thus the gateway is always the same nonetheless the mesh node where they are attached to is different.

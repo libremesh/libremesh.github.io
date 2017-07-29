@@ -9,7 +9,7 @@ We offer a list of precompiled firmware images with **generic settings**. This i
 
 * The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site.
 
-* The current **release candidate** is Dayboot Rely, images can be found at the official http://repo.libremesh.org/lime-17.04/[repository].
+* The current **release candidate** is Dayboot Rely, images can be found at the official http://repo.libremesh.org/[repository].
 
 == Use the Chef Application (recommended)
 
