@@ -8,9 +8,9 @@ Indice della Documentazione
 
 == Contribuire alla Documentazione
 
-Aggiunte alla documentazione sono le benvenute, guarda la sezione relativa alla presenza nel web in link:/development.html[Sviluppo].
+Siamo molto felici se ti va di contribuire alla documentazione, guarda la sezione "The Web Presence" nella pagina di link:/development.html[Sviluppo].
 
-== Presentationi and Documenti
+== Presentazioni e Documenti
 
 1. https://gitlab.com/g10h4ck/presentazione-SAX2016-reveal.js[Interoperabilità tra l'infrastruttura classica e LibreMesh in Guifi.net - Presentazione consegnata al SAX2016]
 2. http://nicolasacco.diveni.re/~gio/internship-report/main.html[Interoperabilità tra l'infrastruttura classica e LibreMesh in Guifi.net - tesi di Gioacchino Mazzurco (HTML)]
