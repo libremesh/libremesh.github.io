@@ -1,0 +1,18 @@
+---
+title: index
+ref: index
+lang: it
+---
+Indice della Documentazione
+===========================
+
+== Contribuire alla Documentazione
+
+Aggiunte alla documentazione sono le benvenute, guarda la sezione relativa alla presenza nel web in link:/development.html[Sviluppo].
+
+== Presentationi and Documenti
+
+1. https://gitlab.com/g10h4ck/presentazione-SAX2016-reveal.js[Interoperabilità tra l'infrastruttura classica e LibreMesh in Guifi.net - Presentazione consegnata al SAX2016]
+2. http://nicolasacco.diveni.re/~gio/internship-report/main.html[Interoperabilità tra l'infrastruttura classica e LibreMesh in Guifi.net - tesi di Gioacchino Mazzurco (HTML)]
+3. http://nicolasacco.diveni.re/~gio/internship-report/internship-report-final.pdf[Interoperabilità tra l'infrastruttura classica e LibreMesh in Guifi.net - tesi di Gioacchino Mazzurco (Stampabile PDF)]
+4. https://gitlab.com/g10h4ck/lime-guifi-interop-internship-report[Interoperabilità tra l'infrastruttura classica e LibreMesh in Guifi.net - tesi di Gioacchino Mazzurco (Sorgente)]
