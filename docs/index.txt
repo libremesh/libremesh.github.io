@@ -1,6 +1,6 @@
 ---
 title: index
-ref: index
+ref: indexdoc
 lang: en
 ---
 Documentation Index

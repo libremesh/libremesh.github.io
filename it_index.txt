@@ -1,0 +1,63 @@
+---
+title: index
+ref: index
+lang: it
+---
+Il progetto LibreMesh
+======================
+
+== Introduzione a LibreMesh
+
+LibreMesh è un framework modulare per generare firmware basati su OpenWrt/LEDE da usare sui nodi di reti mesh senza fili. Molte comunità su tutto il globo usano LibreMesh come pezzo fondamentale per i firmware della loro rete mesh.
+
+image:logo/logo.png["The LIME logo",role="right"]
+
+Il progetto LibreMesh include lo sviluppo di diversi strumenti.
+Il **firmware** (il pezzo principale) permette un facile disposizione di un rete mesh che sia auto-configurata, ma versatile e multi-radiofrequenza.
+
+[NOTE]
+=======================
+Leggi link:howitworks.html[Come funziona] per vedere le idee che sanno alla base dell'architettura.
+Visita link:getit.html[Ottienilo] per sapere dove iniziare.
+Raggiungici nella link:communication.html[mailing lists] per seguire la discussione attuale.
+=======================
+
+== Mesh Networks
+
+Mesh networks sono quelle reti dove tutti i partecipanti (nodi) sono capaci di instradare il traffico verso gli altri partecipanti.
+In questo modo non ci sono nodi centrali e la topologia fisica può essere totalmente casuale. 
+image:img/mesh_topology.png["Mesh Topology",role="left"]
+Di solito le reti mesh sono decentralizzate, organizzate dal basso, installate e mantenute dalle stesse persone che le usano.
+Noi crediamo che questa sia il solo modo per ottenere un network davvero libero, non controllato dai governi o dalle grandi imprese.
+
+
+== Network liberi
+
+Noi descriviamo una rete libera nelle telecomunicazioni se soddisfa questi tre punti:
+
+* E' aperta, così che chiunque possa connettersi se fisicamente possibile
+* E' neutrale, affinchè non ci siano preferenze sul tipo, origine e destinazione dei dati
+* E' libera, ovvero senza restrizioni di proprietà
+
+Nella seguente lista trovi elencati alcuni dei network liberi esistenti (mandaci una mail se vuoi far includere anche quello di cui fai parte).
+
+|=======================================================================================================================
+| Guifi.net    | Iberian peninsula | http://guifi.net          | image:img/guifi-logo.png["Guifi.net",role="right"]
+| FreiFunk     | Germany           | http://freifunk.net       | image:img/logo_freifunknet.png["FreiFunk",role="right"]
+| FunkFeuer    | Austria           | https://www.funkfeuer.at  | image:img/0xff_logo.png["FunkFeuer",role="right"]
+| Ninux.org    | Italy             | http://ninux.org          | image:img/ninux_logo.png["NiNux",role="right"]
+| AlterMundi   | Argentina         | http://altermundi.net     | image:img/altermundi_logo.png["Altermundi",role="right"]
+|=======================================================================================================================
+
+== Firmware e dispositivi Embedded
+
+Un dispositivo embedded è un piccolo computer. Comunemente il sistema operativo (OS) che gira su calcolatori così piccoli è detto firmware.
+Un modo per disporre una rete mesh libera è installando il proprio firmware sui dispositivi (solitamente dei router wifi).
+image:img/lede.png["Lede",role="left"]
+Il nostro sistema si basa sul progetto OpenWrt/LEDE, che a sua volta si basa sul noto sistema operativo GNU/Linux.
+Ogni cosa che sviluppiamo è **free software** così che chiunque possa leggerlo, copiarlo, modificarlo e ridistribuirlo senza restrizioni, tranne quella di mantenere la stessa licenza.
+
+
+== Storia
+
+Il progetto LibreMesh (LiMe) è iniziato nel 2013 da un incontro di persone attive nei network liberi provenienti da diverse nazioni e di diversi progetti distribuiti su tutto il mondo, con lo scopo di creare una soluzione comune per l'installazione di reti mesh libere.
