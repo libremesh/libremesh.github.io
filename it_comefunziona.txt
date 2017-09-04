@@ -10,8 +10,8 @@ Come funziona
 
   - Scalabilità
   - Segmentazione della rete
-  - Possibilità di un doppio livello di roaming
-  - Automagica selezione del gateway con ridondanza, ma mantenendo la scelta utente
+  - Possibilità di roaming al livello 2
+  - Automagica selezione del gateway con ridondanza, ma permettendo la scelta utente
   - Compatibilità con la maggioranza degli scenari esistenti
   - Un singolo firmware per tutto il network (per principianti, per infrastruttura, per professionisti, per un rapido uso, etc.)
 
