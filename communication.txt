@@ -25,5 +25,5 @@ The project offers the following mailing lists
 
 The project uses an IRC channel on freenode
 
-. #libremesh - a public channel for everyone to join and participate
+. https://webchat.freenode.net/?channels=libremesh[#libremesh] - a public channel for everyone to join and participate
 
