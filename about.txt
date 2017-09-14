@@ -20,7 +20,7 @@ Here you can find an alphabetically ordered list of the people currently involve
 | Al | -
 | Axel | -
 | Gabriel | gabriel[at]autistici[dot]org
-| Gio | -
+| Gioacchino Mazzurco | gio[at]eigenlab[dot]org
 | Gui | -
 | Ilario | ilario[at]eigenlab[dot]org
 | Leonaard | -
