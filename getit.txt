@@ -7,15 +7,9 @@ Get it
 
 We offer a list of precompiled firmware images with **generic settings**. This is the easiest way to first test and install LiMe in your router.
 
-* The current **stable tested release** is Community Chaos, images can be found at http://downloads.libremesh.org/community_chaos[downloads] site.
+* The current **stable release** is Dayboot Rely (17.06), images can be found at the http://downloads.libremesh.org/releases/17.06/[downloads] site.
 
-* The current **release candidate** is Dayboot Rely, images can be found at the official http://repo.libremesh.org/[repository].
-
-== Use the Chef Application (recommended)
-
-Chef is our own web application for generating customized firmware images.
-
-https://chef.altermundi.net[Chef homepage.]
+* The previous (old) **stable release** is Community Chaos (16.07), images can be still be found at http://downloads.libremesh.org/community_chaos[downloads] site.
 
 == Installation procedure
 
@@ -43,3 +37,8 @@ And follow the steps to generate the firmware. See https://github.com/libremesh/
 
 Refer to https://github.com/libremesh/lime-packages[lime-packages README].
 
+== Outdated: Use the Chef Application (only for old release Community Chaos 16.07)
+
+Chef is our own web application for generating customized firmware images. The latest release (Dayboot Rely 17.06) is not included yet, so right now it's only possible to generate customized firmwares based on Community Chaos 16.07. We plan at some point to integrate Dayboot Rely 17.06 into Chef, so that it can be used again.
+
+https://chef.altermundi.net[Chef homepage.]
