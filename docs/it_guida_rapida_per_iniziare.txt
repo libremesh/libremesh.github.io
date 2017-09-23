@@ -39,17 +39,22 @@ I modelli con 4 MB che sono stati testati usando la versione +-mini+:
 
 Per informazioni dettagliate su questi router, guarda nelle pagine dedicate all’ link:hardware/index.html[hardware].
 
-_Molti altri modelli sono supportati_ anche se non li abbiamo mai testati (o non lo sappiamo), guarda la lista dei nostri firmware proposti nei http://downloads.libremesh.org/community_chaos/16.07/[download].
+_Molti altri modelli sono supportati_ anche se non li abbiamo mai testati (o non lo sappiamo), guarda la lista dei nostri firmware proposti nei http://downloads.libremesh.org/dayboot_rely/17.06/targets/[download].
 
 
 == Ottieni il Firmware
 === Scegli una fonte per il tuo firmware:
 
-Per un firmware precompilato con i parametri di default (e.g. wireless AP name LibreMesh.org) puoi andare alla pagina di http://downloads.libremesh.org/community_chaos[downloads];
-
-* Per personalizzare almeno i parametri personali (e.g. il nome della rete AP, aggiungere pacchetti, cambiare gli IP assegnati) puoi usare la nostra piattaforma di https://chef.altermundi.net[Cucina]. Ti compilerà e manterra nel tuo profilo le immagini del firmware fatte apposta;
+* Per un firmware precompilato con i parametri di default (e.g. wireless AP name LibreMesh.org) puoi andare alla pagina di http://downloads.libremesh.org/dayboot_rely/17.06/targets/[downloads];
+* è possibile generare una immagine del firmware sul proprio computer, è una procedura più complessa, usando https://github.com/libremesh/lime-sdk[lime-sdk]. Supporta l'utilizzo di profili personalizzati dalle diverse comunità.
 
 per avere più opzioni vai alla pagina link:/getit.html[Ottienilo].
+
+[IMPORTANT]
+==================
+La nostra piattaforma di https://chef.altermundi.net[Cucina] non supporta ancora l'ultima versione di LibreMesh, può essere utilizzata solo per le versioni anteriori.
+==================
+
 
 === Scarica il firmware giusto
 

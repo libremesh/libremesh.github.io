@@ -38,21 +38,27 @@ Also models with 4 MB have been tested, using the +-mini+ images:
 
 For detailed information on these routers check out our link:hardware/index.html[hardware] page.
 
-_Many other models are supported_ even if not tested yet (as far as we know), see through our firmware images at http://downloads.libremesh.org/community_chaos/16.07/[download] site.
+_Many other models are supported_ even if not tested yet (as far as we know), see through our firmware images at http://downloads.libremesh.org/dayboot_rely/17.06/targets/[download] site.
 
 == Get the Firmware
 === Choose a source for your firmware
 
-* For a precompiled firmware with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our http://downloads.libremesh.org/community_chaos[downloads] site;
-* for customizing just the main parameters (e.g. the wireless AP name, adding packages, changing IP ranges) you can use our https://chef.altermundi.net[Chef] platform. It will compile and host a firmware image with your customization;
+* For a precompiled firmware with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our http://downloads.libremesh.org/dayboot_rely/17.06/targets/[downloads] site;
+* you can compile LibreMesh firmware on your computer using https://github.com/libremesh/lime-sdk[lime-sdk] (advanced, supports custom community profiles);
 
 for more options check the link:/getit.html[Get It] page.
+
+[IMPORTANT]
+==================
+Our https://chef.altermundi.net[Chef] platform still does not support the latest stable release, up to now it can be used just for previous release.
+==================
+
 
 === Download the correct firmware image
 
 Find the download for your router by name or model number. You may need to search different variations or aliases. You can find more detailed router model instructions https://wiki.lede-project.org/toh/start[here].
 
-If you are installing for the first time (a router with stock firmware), choose the link ending with `-factory.bin`. If you are upgrading an existing install of LibreMesh, OpenWrt or LEDE, choose the link ending with `-sysupgrade.bin`.
+If you are installing for the first time (a router with stock firmware), choose the link ending with `-factory.bin`. If there's no `-factory.bin` image or you are upgrading an existing install of LibreMesh, OpenWrt or LEDE, choose the link ending with `-sysupgrade.bin`.
 
 == Installation Procedure
 === Open your router web interface
