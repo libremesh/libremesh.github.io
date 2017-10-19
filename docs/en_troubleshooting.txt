@@ -25,19 +25,15 @@ If you are connected by wireless:
 
 If trying to connect to thisnode.info (as explained in link:en_connecting_nodes.html[normal connection procedure]) does not work, you can take your gateway address and connect to it.
 
-When you're phisically connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway. Refer to your operating system documentation for how to see it (usually +ip route+ and +route -n+ work). This IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
+When you're phisically connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway. Refer to your operating system documentation for how to see it (usually +ip route show+ and +route -n+ work). This IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
 
-If no root password was set (in the example we will use +10.13.0.1+ as the gateway address):
-
-----
-telnet 10.13.0.1
-----
-
-If a root password was set:
+In the example we will use +10.13.0.1+ as the gateway address:
 
 ----
 ssh root@10.13.0.1
 ----
+
+In case no root password was set and the password login was not disabled by the network-profile, a blank password access is granted, otherwise the router root password is prompted.
 
 === Connect using IPv6 link local
 In case neither the link:en_connecting_nodes.html[normal connection procedure] nor the gateway IPv4 are working for connecting to your node, you can use _IPv6 link local_.
@@ -58,7 +54,7 @@ If you use NetworkManager, you may create a custom profile to avoid its interven
 Finally swith on your router and connect to it using an ethernet cable from its LAN port (WAN should also work) to the ethernet port of your computer, and select the new NetworkManager profile _eth manual_.
 Then, how to discover the _IPv6 link local_ address of the router we're connected to?
 Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::".
-To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your distro) where the appended %eth0 specifies which network interface to use (could be something like _eth0_ or _enp0s25_, you can see the interface names with the commands +ip link+ or +ifconfig+):
+To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your distro) where the appended %eth0 specifies which network interface to use (could be something like _eth0_ or _enp0s25_, you can see the interface names with the commands +ip link show+ or +ifconfig+):
 
 ----
 ping6 ff02::1%eth0
@@ -72,11 +68,12 @@ The router direction is a combination of the router's IPv6 address, `%`, and you
 
 Now that you have the target IPv6 link local you can connect to the router:
 
-. try with telnet, it will be enabled just if no password was set: `telnet fe90::aa20:66ff:fe4f:ae87%eth0`. If the answer is `Connection refused`, try ssh.
-. ssh: `ssh root@fe90::aa20:66ff:fe4f:ae87%eth0`. Remember to include `root@`, otherwise it will attempt to connect using your personal username. Try the password you remember. If neither that nor a blank password (a blank password is worth to try, it is the default in the development version of LibreMesh).
-. If that does not work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt/LEDE failsafe mode.
+. Try connecting via ssh: `ssh root@fe90::aa20:66ff:fe4f:ae87%eth0`. Remember to include both `root@`, otherwise it will attempt to connect using your personal username, and `%eth0` (or whatever is the name of the interface you used for connecting, you can see all interface names with +ip link show+). 
+. If there's not yet a root password set on the router and the password access was not disabled by the network-profile, a blank password access is granted.
+. Otherwise try the router root password you remember.
+. If neither work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt/LEDE failsafe mode.
 
-If you managed to connect via ssh (aka if a root password is set on the router, if is not you can connect via telnet and set it using +passwd+) you can also copy files on the router using IPv6 link local and +scp+ (for copying big files like firmware images use the +/tmp+ directory as a destination):
+If you managed to connect via ssh you can also copy files on the router using IPv6 link local and +scp+ (for copying big files like firmware images use the +/tmp+ directory as a destination):
 
 ----
 scp LiMe-fw.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth0\]:/tmp/
@@ -100,8 +97,8 @@ Sometimes you configure things badly and ends in a messed up configuration where
 
 Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki].
 
-Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 via telnet:
+Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 via ssh:
 
 ----
-telnet 192.168.1.1
+ssh root@192.168.1.1
 ----
