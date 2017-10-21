@@ -27,9 +27,15 @@ If trying to connect to http://thisnode.info (as explained in link:en_connecting
 
 When you're phisically (either via ethernet cable or via wireless) connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway (default route). Please take care to disconnect from any other wireless or wired networks, otherwise a wrong gateway IPv4 can be obtained.
 
-For obtaining the gateway direction using a Windows, Mac or Linux computer or Android smartphone refer to https://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[this].
+For obtaining the gateway direction using a Windows, Mac or Linux computer or Android smartphone refer to https://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[this guide].
 
-If the above guide does not work and you're on a Linux computer you can find your gateway (default route) IPv4 using the terminal: open a terminal (open your distro menu, type "terminal" and select the first result) and execute the command +ip route show scope global+ the output should be similar to: +default via 10.13.0.1 dev enp0s0 proto static metric 100+ so in this example our gateway IPv4 is +10.13.0.1+. In case the output was instead +command not found: ip+ you can find the same information using the older command +route -n | grep G+ or +netstat -nr | grep G+.
+If the above guide does not work for you and you're on a Linux computer, the gateway (default route) IPv4 can be obtained using the terminal: open a terminal (open your distro menu, type "terminal" and select the first result) and execute the command
+
+----
+ip route show scope global
+----
+
+the output should be similar to: +default via 10.13.0.1 dev enp0s0 proto static metric 100+ so in this example our gateway IPv4 is +10.13.0.1+. In case the output was instead +command not found: ip+ you can find the same information using the older commands +route -n | grep G+ or +netstat -nr | grep G+.
 
 The obtained IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
 
@@ -100,13 +106,24 @@ Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of
 root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 ----
 
-== Recover from bad configurations with Failsafe mode
-Sometimes you configure things badly and ends in a messed up configuration where you can't connect to the router using any of the techniques listed above. One option is to flash again the router with low level procedures (e.g. TFTP when possible), another is to boot the router in _failsafe mode_.
+== No connection possible
+
+If you tried all the instructions above without success, we suggest to ask for help via our link:/communication.html[contacts].
+
+These situations of non-responsivity can arise from bad manual configurations and customizations (network-profile) or bad images being flashed or uncompatible router model. 
+
+If you feel confident enough, you can try to boot your router in LEDE/OpenWrt failsafe mode or to re-flash it using low level procedures e.g. TFTP (if available) or serial connection (risky) or other recovery procedures you can find on link:https://lede-project.org/toh/start[your router's specific page].
+
+=== Recover from bad configurations with Failsafe mode
 
 Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki].
 
-Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 via ssh:
+The generic procedure is to start pressing repeatedly the router reset button during the boot, the LEDs should start blinking and failsafe mode activated instead of normal boot.
+
+Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 inserting the http://192.168.1.1 direction in the URL bar of the browser or via SSH:
 
 ----
 ssh root@192.168.1.1
 ----
+
+if an error like +Unable to connect+ or +No route to host+ is obtained, likely you will have to set an IP for your computer, for example 192.168.1.2, before attempting to connect again. For setting an IP to your computer under Windows follow https://www.howtogeek.com/howto/19249/how-to-assign-a-static-ip-address-in-xp-vista-or-windows-7/[this guide], under Mac https://www.howtogeek.com/howto/22161/how-to-set-up-a-static-ip-in-mac-os-x/[this guide], under Linux https://www.linuxhint.com/change-from-dhcp-to-static-ip-address-ubuntu/[this guide] and under Android http://tunecomp.net/static-ip-android/[this guide].
