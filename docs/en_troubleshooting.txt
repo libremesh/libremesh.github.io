@@ -23,11 +23,19 @@ If you are connected by wireless:
 
 === Connect using gateway IPv4
 
-If trying to connect to thisnode.info (as explained in link:en_connecting_nodes.html[normal connection procedure]) does not work, you can take your gateway address and connect to it.
+If trying to connect to http://thisnode.info (as explained in link:en_connecting_nodes.html[normal connection procedure]) does not work, you can take your gateway (default route) IPv4 address and connect to it.
 
-When you're phisically connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway. Refer to your operating system documentation for how to see it (usually +ip route show+ and +route -n+ work). This IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
+When you're phisically (either via ethernet cable or via wireless) connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway (default route). Please take care to disconnect from any other wireless or wired networks, otherwise a wrong gateway IPv4 can be obtained.
 
-In the example we will use +10.13.0.1+ as the gateway address:
+For obtaining the gateway direction using a Windows, Mac or Linux computer or Android smartphone refer to https://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[this].
+
+If the above guide does not work and you're on a Linux computer you can find your gateway (default route) IPv4 using the terminal: open a terminal (open your distro menu, type "terminal" and select the first result) and execute the command +ip route show scope global+ the output should be similar to: +default via 10.13.0.1 dev enp0s0 proto static metric 100+ so in this example our gateway IPv4 is +10.13.0.1+. In case the output was instead +command not found: ip+ you can find the same information using the older command +route -n | grep G+ or +netstat -nr | grep G+.
+
+The obtained IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
+
+In the example we will use +10.13.0.1+ as the gateway address and we can open the IPv4 direction inserting it directly in the URL bar of the browser (not in the search bar): http://10.13.0.1
+
+If we can't access the web interface (can happen if we installed a LibreMesh version without web interface), we can try connecting via SSH:
 
 ----
 ssh root@10.13.0.1
