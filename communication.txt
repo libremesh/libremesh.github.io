@@ -21,9 +21,9 @@ The project offers the following mailing lists
   This list is used for project organisational purposes. And for user specific questions.
 
 
-== IRC Channels
+== Matrix Channel
 
-The project uses an IRC channel on freenode
+The project uses an https://matrix.org[Matrix] channel to discuss development
 
-. https://webchat.freenode.net/?channels=libremesh[#libremesh] - a public channel for everyone to join and participate
+. https://riot.im/app/#/room/#libremesh-dev:musaik.net[#libremesh-dev] - a public channel for everyone to join and participate
 
