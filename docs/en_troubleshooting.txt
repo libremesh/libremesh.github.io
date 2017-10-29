@@ -133,5 +133,17 @@ if an error like +Unable to connect+ or +No route to host+ is obtained, likely y
 When the aforementioned connection procedures don't work and Failsafe mode doesn't help, likely we will have to reinstall a firmware image. As the normal way to reinstall, explained in link:quick_starting_guide.html[Quick Starting Guide] likely is not going to work, we can try communicating directly with the router bootloader. The bootloader is a tiny piece of software that never gets modified when flashing OpenWrt/LEDE/LibreMesh and includes recovery functions. Usually it includes a TFTP (Trivial File Transfer Protocol) which can be activated keeping the reset button pressed for 10 seconds while plugging the routerserver (common in Ubiquiti routers, the success in this operation is confirmed by a nice blinking pattern of the LEDs) or is active for a short time after plugging the router (in some old TP-Link routers). For specific instructions about how to activate the TFTP server (or, less often, client) in each router refer to https://wiki.openwrt.org/toh/start[OpenWrt] or [LEDE] table of hardware.
 
 To prepare for a TFTP flashing procedure:
+* install a tftp client on your PC, on Linux distro usually the package is named +tftp-hpa+;
+* connect your PC via an ethernet cable to a LAN ethernet port on the unpowered router;
+* use the connection manager of your PC to disconnect from any interface other than ethernet cable (e.g. wireless);
+* set up a profile for the ethernet interface with a manual IPv4, suggested configurations are IPv4 +192.168.1.2+, netmask +24+, broadcast domain +255.255.255.0+, gateway (not really needed) +192.168.1.1+;
+* open a terminal and using the command +cd+ enter the directory where you downloaded the image to flash;
+* issue the command +tftp 192.168.1.1+ which will open TFTP for connecting to 192.168.1.1 that is the most common router IP address in TFTP recovery mode;
+* in tftp execute the commands +binary+ that sets the mode of transfer, +trace on+ which enables a clearer output, +rexmt 1+ which specifies the retransmission timeout, +timeout 60+ which sets the total transmission timeout;
+* then enable the TFTP recovery mode in your router, depending on the specific model procedure;
+* execute in TFTP the command +put <place here the name of the file -factory.bin>+;
+* the output should be a long list of chunks being transferred;
+* wait 5 minutes for the flashing to be complete and reboot the router.
 
-TO BE DONE
+We recommend to follow these instructions only after verifying the goodness of it for the specific device to recover.
+
