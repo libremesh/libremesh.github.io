@@ -4,42 +4,65 @@ Troubleshooting
 ===============
 
 == Unable to establish Ethernet connection
-If you can't connect to the LibreMesh router as indicated in link:en_connecting_nodes.html[How to connect to LiMe nodes] you can try other ways.
+If you can't connect to the LibreMesh router as indicated in link:en_connecting_nodes.html[How to connect to LiMe nodes] opening http://thisnode.info you can try other ways.
 
-=== Verify the connection
+=== First thing: wait 5 minutes
 
-If you are connected by cable:
+After powering up the router, **up to 5 minutes** (our process monitor +smonit+ runs every 5 minutes) **can be needed** for bringing up all the services including the DHCP server needed for receiving an IP when connecting.
 
-* verify that the cable is well plugged and that the ethernet led on the router or on the computer port show some activity;
-* verify that you're connected to a LAN port on the router (or main) not to a WAN one (or secondary);
-* verify that the network manager on your computer is actually trying to connect by this cable;
-* if the network manager is down or not installed, connect by the command line activating the ethernet interface and using a DHCP client for asking for an IPv4 to the router. Refer to your operating system documentation for detailed instructions (usually is +ip link set dev eth0 up+ or +sudo ifconfig eth0 up+ for activating the interface and +sudo dhclient -x; sudo dhclient + or +sudo dhcpcd -x; sudo dhcpcd+ for obtaining an IPv4).
+=== Do not use custom DNS servers
 
-If you are connected by wireless:
+For using the http://thisnode.info address, the Domain Name System server have to be the one from the LibreMesh router you're connecting to. Contrariwise, **a fixed external DNS server would not recognize http://thisnode.info as an existing domain**.
 
-* check that the wireless physical switch is ON both on the LiMe router and on the computer;
-* verify that the network manager on your computer is actually trying to connect to the wireless network named as your network community (with default configuration is +LibreMesh.org+) or on the "named AP" (with default configuration is something like +LibreMesh.org-abc123+), connecting to the +LiMe+ wireless SSID is _not_ likely to work;
-* if the network manager is down or not installed, connect by the command line activating the wireless interface, associating to the correct access point, and using a DHCP client for asking for an IPv4 to the router. Refer to your operating system documentation for detailed instructions.
+=== Verify the physical connection
+
+If you are connecting by cable:
+
+* **disconnect from any other network** (e.g. wireless);
+* verify that the cable is well plugged and that the **ethernet LED are blinking** on the router and on the computer port;
+* verify that you're connected to a **LAN port on the router** (or main) not to a WAN one (or secondary);
+* use a **good quality cable, with intact connector**, avoid half-duplex cables (with just 4 wires, low quality);
+* verify that the **network manager on your computer** is actually trying to connect by this cable;
+* if the network manager is down or not installed (very unlikely, every operating system has one enabled by default), connect activating the ethernet interface. Refer to your operating system documentation for detailed instructions. Using Linux terminal can be done with +sudo ip link set dev eth0 up+ for activating the interface, +eth0+ could be named differently, like +enp0s25+ on your system, check with +ip link show+. Check next section on how to obtain an IP for this connection.
+
+If you are connecting by wireless:
+
+* disconnect from any other network (e.g. ethernet cable);
+* check that the wireless physical switch is ON both on the LibreMesh router and on the computer;
+* verify that the network manager on your computer is actually trying to connect to the wireless network named as your network community (with default configuration is +LibreMesh.org+) or on the "named AP" (with default configuration is something like +LibreMesh.org/abc123+), connecting to the +LiMe+ wireless SSID is _not_ going to work as is used just for meshing;
+* if the network manager is down or not installed (very unlikely, every operating system has one enabled by default) just install one or enable the existing one. Connecting manually is doable on Linux, easy only if the AP is open, not WPA, with +sudo ip link set dev wlan0 up; sudo iw dev wlan0 connect <your router ESSID>+ the ESSID could be your community network name or the default LibreMesh.org, +wlan0+ could be named differently, like +wlp3s0+ on your system, check with +ip link show+. Check next section on how to obtain an IP for this connection.
+
+=== Verify the IPv4 connection
+
+Once the physical layer is set (the previous section), you can try to connect the normal way (opening http://thisnode.info). If it does not work, before following with the next steps **it's needed to check if the LibreMesh router actually gave to our computer/smartphone an IPv4 to use** for communicating on the network.
+
+Every network manager on every operating system should request for an IPv4 to the LibreMesh router, acting as a so-called DHCP client.
+
+The received local private IPv4 can be found following https://www.howtogeek.com/236838/how-to-find-any-devices-ip-address-mac-address-and-other-network-connection-details/[this guide] for most operating systems. An additional method via Linux terminal is launching the command +ip -4 address show scope global+. The local private IP will look something like +10.13.123.123+.
+
+On the Linux terminal there's the possibility to ask manually for an IPv4 with the commands +sudo dhclient -x; sudo dhclient+ or +sudo dhcpcd -x; sudo dhcpcd+.
+
+If no such address coming from the LibreMesh router can be encountered, or there's only a https://en.wikipedia.org/wiki/Zero-configuration_networking[Zeroconf] IP starting with 169.254.x.x, means that the DHCP server on the router is not working (be sure to wait 5 minutes after the power up of the router, as explained above, and try connecting again) or the DHCP client on your computer/smartphone is not working. Make sure to verify the physical connection as described above, specifically make sure to connect to a LAN port on the router and not to a WAN port. In this case the method described on the next section "Connect using gateway IPv4" is not applicable, while the other methods should work anyway.
 
 === Connect using gateway IPv4
 
-If trying to connect to http://thisnode.info (as explained in link:en_connecting_nodes.html[normal connection procedure]) does not work, you can take your gateway (default route) IPv4 address and connect to it.
+If trying to connect to http://thisnode.info (as explained in link:en_connecting_nodes.html[normal connection procedure]) does not work AND an IPv4 was received for your computer/smartphone from the gateway as described in section *Verify the IPv4 connection*, **you can take your gateway (default route) IPv4 address and connect to it**. The address to use in not the one discovered in the previous section.
 
-When you're phisically (either via ethernet cable or via wireless) connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway (default route). Please take care to disconnect from any other wireless or wired networks, otherwise a wrong gateway IPv4 can be obtained.
+When you're physically (either via ethernet cable or via wireless) connected to the router and you receive an IPv4 from it, you receive also the IPv4 direction of the gateway (default route). Please take care to disconnect from any other wireless or wired networks, otherwise a wrong gateway IPv4 can be obtained.
 
 For obtaining the gateway direction using a Windows, Mac or Linux computer or Android smartphone refer to https://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[this guide].
 
 If the above guide does not work for you and you're on a Linux computer, the gateway (default route) IPv4 can be obtained using the terminal: open a terminal (open your distro menu, type "terminal" and select the first result) and execute the command
 
 ----
-ip route show scope global
+ip -4 route show scope global
 ----
 
-the output should be similar to: +default via 10.13.0.1 dev enp0s0 proto static metric 100+ so in this example our gateway IPv4 is +10.13.0.1+. In case the output was instead +command not found: ip+ you can find the same information using the older commands +route -n | grep G+ or +netstat -nr | grep G+.
+The output should be similar to: +default via 10.13.0.1 dev enp0s0 proto static metric 100+ so in this example our gateway IPv4 is +10.13.0.1+. In case the output was instead +command not found: ip+ you can find the same information using the older commands +route -n | grep G+ or +netstat -nr | grep G+.
 
-The obtained IPv4 is not identificative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
+The obtained IPv4 is not relative of a specific LibreMesh router, indeed, because of a feature called _anygw_ this IPv4 is common for all the routers. In our case this doesn't matter because we just want connect to the directly connected one and this will work as expected.
 
-In the example we will use +10.13.0.1+ as the gateway address and we can open the IPv4 direction inserting it directly in the URL bar of the browser (not in the search bar): http://10.13.0.1
+For example let's use +10.13.0.1+ as the gateway address. **You can open the IPv4 direction inserting it directly in the URL bar of the browser** (not in the search bar): http://10.13.0.1
 
 If we can't access the web interface (can happen if we installed a LibreMesh version without web interface), we can try connecting via SSH:
 
@@ -47,16 +70,25 @@ If we can't access the web interface (can happen if we installed a LibreMesh ver
 ssh root@10.13.0.1
 ----
 
-In case no root password was set and the password login was not disabled by the network-profile, a blank password access is granted, otherwise the router root password is prompted.
+**If no root password** was set and the password login was not disabled by the network-profile, **a blank password access is granted**, otherwise the router root password is prompted.
+
+=== Discover IPv4 of your router
+
+Do this **only** if the section *Verify the IPv4 connection* instructions failed and so the easy *Connect using the gateway IPv4* is not a valid way. For following this specific way you likely need a Linux computer.
+
+Install +netdiscover+ package from your distro repositories. Make sure to have a proper physical connection, re-read *Verify the physical connection* and disconnect from any other network. Run +sudo netdiscover -f+. Some IPv4 similar to +10.13.0.1+ should appear. Add an IPv4 to your computer network interface used for connecting with the first three fields of the IP identical to the router one and the fourth different, for example +10.13.0.2+ with netmask +255.255.255.0+ or +/24+. Connect to the router inserting its IP in the browser or via SSH.
 
 === Connect using IPv6 link local
-In case neither the link:en_connecting_nodes.html[normal connection procedure] nor the gateway IPv4 are working for connecting to your node, you can use _IPv6 link local_.
+
+In case neither the link:en_connecting_nodes.html[normal connection procedure] to http://thisnode.info nor the gateway IPv4 (as explained in *Connect using gateway IPv4*) are working for connecting to your node, you can use *IPv6 link local*.
+
+This works even if no IPv4 was received from the gateway, as checked in section "Verify the IPv4 connection". Likely this works only on Linux, maybe also on Macintosh.
 
 Each working network interface in your Linux system have a special IPv6 address configured automatically by the Kernel.
 These are named IPv6 link-local and are inside the special prefix fe80::/10
-The scope of these IPs is to communicate computers which are in the same collision domain, so translated to LiMe it would be the layer2 Cloud.
+The scope of these IPs is to communicate computers which are in the same collision domain, so translated to LibreMesh it would be the layer2 cloud.
 
-If you use NetworkManager, you may create a custom profile to avoid its intervention on the ethernet interface without having to stop it:
+If on Linux you use NetworkManager, you may create a custom profile to avoid its intervention on the ethernet interface without having to stop it:
 
 . Right click the NetworkManager applet
 . Edit connections -> Add -> Select `Ethernet`
@@ -65,18 +97,28 @@ If you use NetworkManager, you may create a custom profile to avoid its interven
 . IPv4 tab: select `Disabled`
 . IPv6 tab: select `Link-Local only`
 
-Finally swith on your router and connect to it using an ethernet cable from its LAN port (WAN should also work) to the ethernet port of your computer, and select the new NetworkManager profile _eth manual_.
-Then, how to discover the _IPv6 link local_ address of the router we're connected to?
+Finally swith on your router and connect to it using an ethernet cable from its LAN port (WAN should also work) to the ethernet port of your computer, and select the new NetworkManager profile _eth0 manual_.
+
+An alternative to create a NetworkManager profile is to stop it with +sudo systemctl stop NetworkManager.service+ and bring up the network interface manually with +sudo ip link set dev eth0 up+ (+eth0+ could be named differently, check with +ip link show+).
+
+Then, how to discover the *IPv6 link local* address of the router we're connected to?
+
 Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::".
-To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your distro) where the appended %eth0 specifies which network interface to use (could be something like _eth0_ or _enp0s25_, you can see the interface names with the commands +ip link show+ or +ifconfig+):
+To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your distro) where the appended %eth0 specifies which network interface to use (could be something like +eth0+ or +enp0s25+, you can see the interface names with the commands +ip link show+ or +ifconfig+):
 
 ----
 ping6 ff02::1%eth0
 ----
 
-Then each device connected to our colision domain, will reply the ICMP request with its
- own IPv6 link-local address.
-The first answer to each ping usually is _your own ethernet interface_ (you can see your own IPv6 link local address with +ip address show dev eth0+) while the ones marked with _DUP!_ are the connected devices, the first one is the fastest to answer, so the one you're directly connected to. You can more or less recognize the routers IPv6 link local addresses comparing them with the final part of their physical MAC address (printed on the router label), which should be similar.
+or just
+
+----
+ping ff02::1%eth0
+----
+
+Then each device connected to our collision domain, will reply the ICMP request with its own IPv6 link-local address.
+
+The first answer to each ping usually is *your own ethernet interface* (you can see your own IPv6 link local address with +ip -6 address show scope link+) while the ones marked with _DUP!_ are the connected devices, the first one is the fastest to answer, so the one you're directly connected to. You can more or less recognize the routers IPv6 link local addresses comparing them with the final part of their physical MAC address (printed on the router label), which should be similar.
 
 The router direction is a combination of the router's IPv6 address, `%`, and your ethernet interface name. It should be something like `fe90::aa20:66ff:fe4f:ae87%eth0`. Do not include a trailing `:` or other text from the ping responses.
 
@@ -84,13 +126,13 @@ Now that you have the target IPv6 link local you can connect to the router:
 
 . Try connecting via ssh: `ssh root@fe90::aa20:66ff:fe4f:ae87%eth0`. Remember to include both `root@`, otherwise it will attempt to connect using your personal username, and `%eth0` (or whatever is the name of the interface you used for connecting, you can see all interface names with +ip link show+). 
 . If there's not yet a root password set on the router and the password access was not disabled by the network-profile, a blank password access is granted.
-. Otherwise try the router root password you remember.
-. If neither work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt/LEDE failsafe mode.
+. Otherwise try all the router root passwords you remember.
+. If neither work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt/LEDE failsafe mode (this last procedure could ask for the password anyway if this was set in the network-profile during compilation of the installation image).
 
 If you managed to connect via ssh you can also copy files on the router using IPv6 link local and +scp+ (for copying big files like firmware images use the +/tmp+ directory as a destination):
 
 ----
-scp LiMe-fw.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth0\]:/tmp/
+scp LiMe-fw-sysupgrade.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth0\]:/tmp/
 ----
 
 link:disc6[Click here] for downloading Pau's script which check if there is some router attached to your network device and in case, try to connect to it.
@@ -106,17 +148,17 @@ Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of
 root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 ----
 
-== No connection possible
+== Still no access possible
 
-If you tried all the instructions above without success, we suggest to ask for help via our link:/communication.html[contacts].
+**If you tried all the instructions above without success, we suggest to ask for help** via our link:/communication.html[contacts] before trying anything else.
 
-These situations of non-responsivity can arise from bad manual configurations and customizations (network-profile) or bad images being flashed or uncompatible router model. 
+These situations of non-responsivity can arise from bad manual configurations and customizations (network-profile) or bad images being flashed or incompatible router model.
 
 If you feel confident enough, you can try to boot your router in LEDE/OpenWrt failsafe mode or to re-flash it using low level procedures e.g. TFTP (if available) or serial connection (risky) or other recovery procedures you can find on link:https://lede-project.org/toh/start[your router's specific page].
 
 === Recover from bad configurations with Failsafe mode
 
-Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki].
+Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki]. If you're trying to reset the router after forgetting the passwor,this procedure could ask for the password anyway in case this was set in the network-profile during compilation of the installation image.
 
 The generic procedure is to start pressing repeatedly the router reset button during the boot, the LEDs should start blinking and failsafe mode activated instead of normal boot.
 
@@ -126,11 +168,11 @@ Once in failsafe, connect by ethernet cable or by wireless to the router and try
 ssh root@192.168.1.1
 ----
 
-if an error like +Unable to connect+ or +No route to host+ is obtained, likely you will have to set an IP for your computer, for example 192.168.1.2, before attempting to connect again. For setting an IP to your computer under Windows follow https://www.howtogeek.com/howto/19249/how-to-assign-a-static-ip-address-in-xp-vista-or-windows-7/[this guide], under Mac https://www.howtogeek.com/howto/22161/how-to-set-up-a-static-ip-in-mac-os-x/[this guide], under Linux https://www.linuxhint.com/change-from-dhcp-to-static-ip-address-ubuntu/[this guide] and under Android http://tunecomp.net/static-ip-android/[this guide].
+If an error like +Unable to connect+ or +No route to host+ is obtained, likely you will have to set an IP for your computer, for example 192.168.1.2, before attempting to connect again. For setting an IP to your computer under Windows follow https://www.howtogeek.com/howto/19249/how-to-assign-a-static-ip-address-in-xp-vista-or-windows-7/[this guide], under Mac https://www.howtogeek.com/howto/22161/how-to-set-up-a-static-ip-in-mac-os-x/[this guide], under Linux https://www.linuxhint.com/change-from-dhcp-to-static-ip-address-ubuntu/[this guide] and under Android http://tunecomp.net/static-ip-android/[this guide].
 
 === Re-flashing via TFTP
 
-When the aforementioned connection procedures don't work and Failsafe mode doesn't help, likely we will have to reinstall a firmware image. As the normal way to reinstall, explained in link:quick_starting_guide.html[Quick Starting Guide] likely is not going to work, we can try communicating directly with the router bootloader. The bootloader is a tiny piece of software that never gets modified when flashing OpenWrt/LEDE/LibreMesh and includes recovery functions. Usually it includes a TFTP (Trivial File Transfer Protocol) which can be activated keeping the reset button pressed for 10 seconds while plugging the routerserver (common in Ubiquiti routers, the success in this operation is confirmed by a nice blinking pattern of the LEDs) or is active for a short time after plugging the router (in some old TP-Link routers). For specific instructions about how to activate the TFTP server (or, less often, client) in each router refer to https://wiki.openwrt.org/toh/start[OpenWrt] or https://lede-project.org/toh/start[LEDE] table of hardware.
+When the aforementioned connection procedures don't work and Failsafe mode doesn't help, likely we will have to reinstall a firmware image. As the normal way to reinstall, explained in link:quick_starting_guide.html[Quick Starting Guide] likely is not going to work, we can try communicating directly with the router bootloader. The bootloader is a tiny piece of software that never gets modified when flashing OpenWrt/LEDE/LibreMesh and includes recovery functions. Usually it includes a TFTP (Trivial File Transfer Protocol) which can be activated keeping the reset button pressed for 10 seconds while plugging the router power cord (common in Ubiquiti routers, the success in this operation is confirmed by a nice blinking pattern of the LEDs) or is active for a short time after plugging the router (in some old TP-Link routers). For specific instructions about how to activate the TFTP server (or, less often, client) in each router refer to https://wiki.openwrt.org/toh/start[OpenWrt] or https://lede-project.org/toh/start[LEDE] table of hardware.
 
 To prepare for a TFTP flashing procedure:
 
@@ -148,3 +190,6 @@ To prepare for a TFTP flashing procedure:
 
 We recommend to follow these instructions only after verifying the goodness of it for the specific device to recover.
 
+=== Serial connection
+
+Recovery through serial connection can be completely different from router to router and highly esoteric. A lot of digging into any form of human knowledge is suggested before attempting to recover a router this way.
