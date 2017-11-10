@@ -22,3 +22,22 @@ In Ubuntu/Debian you would need to install ruby header files
 
     apt-get install ruby-dev
 
+In alternative to install jekyll and all gems on your system you might prefer
+to use docker.
+An image from the jekyll project is available and documented here: https://github.com/jekyll/docker/.
+All you need to do -provided you have configured docker- is to open a terminal
+and move to the folder where you cloned this repo and issue:
+
+```
+$ export JEKYLL_VERSION=3.5
+docker run --rm \
+--publish 8080:4000 \
+--volume="$PWD:/srv/jekyll" \
+-it jekyll/jekyll:$JEKYLL_VERSION \
+jekyll serve
+```
+
+The container just created will install missing dependencies for you and will
+start a developement webserver inside itself.
+You then just need to open a browser visiting http://127.0.0.1:8080 .
+Auto refresh is available and follows the edits you make to the code on your machine
