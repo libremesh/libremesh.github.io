@@ -47,7 +47,7 @@ _Many other models are supported_ even if not tested yet (as far as we know), se
 * you can compile LibreMesh firmware on your computer using https://github.com/libremesh/lime-sdk[lime-sdk] (advanced, supports custom community profiles);
 * Our https://chef.libremesh.org[Chef] platform allows you to build an image of the firmware online. The platform supports custom community profiles.
 
-for more options check the link:/getit.html[Get It] page.
+For more options check the link:/getit.html[Get It] page.
 
 
 === Download the correct firmware image
