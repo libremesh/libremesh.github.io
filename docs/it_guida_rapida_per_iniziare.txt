@@ -47,13 +47,9 @@ _Molti altri modelli sono supportati_ anche se non li abbiamo mai testati (o non
 
 * Per un firmware precompilato con i parametri di default (e.g. wireless AP name LibreMesh.org) puoi andare alla pagina di http://downloads.libremesh.org/dayboot_rely/17.06/targets/[downloads];
 * è possibile generare una immagine del firmware sul proprio computer, è una procedura più complessa, usando https://github.com/libremesh/lime-sdk[lime-sdk]. Supporta l'utilizzo di profili personalizzati dalle diverse comunità.
+* La nostra piattaforma di https://chef.libremesh.org[Cucina] permette di generare una immagine del firmware direttamente online. Supporta l'utilizzo di profili personalizzati dalle diverse comunità.
 
-per avere più opzioni vai alla pagina link:/getit.html[Ottienilo].
-
-[IMPORTANT]
-==================
-La nostra piattaforma di https://chef.altermundi.net[Cucina] non supporta ancora l'ultima versione di LibreMesh, può essere utilizzata solo per le versioni anteriori.
-==================
+Per avere più opzioni vai alla pagina link:/getit.html[Ottienilo].
 
 
 === Scarica il firmware giusto

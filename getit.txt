@@ -37,8 +37,8 @@ And follow the steps to generate the firmware. See https://github.com/libremesh/
 
 Refer to https://github.com/libremesh/lime-packages[lime-packages README].
 
-== Outdated: Use the Chef Application (only for old release Community Chaos 16.07)
+== Use the Chef Application
 
-Chef is our own web application for generating customized firmware images. The latest release (Dayboot Rely 17.06) is not included yet, so right now it's only possible to generate customized firmwares based on Community Chaos 16.07. We plan at some point to integrate Dayboot Rely 17.06 into Chef, so that it can be used again.
+Chef is our own web application for generating customized firmware images. It includes our latest release, Dayboot Rely 17.06
 
-https://chef.altermundi.net[Chef homepage.]
+https://chef.libremesh.net[Chef homepage].
