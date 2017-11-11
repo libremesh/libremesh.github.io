@@ -25,4 +25,6 @@ The project offers the following mailing lists
 
 The project uses an https://matrix.org[Matrix] channel to discuss development
 
-. https://riot.im/app/#/room/#libremesh-dev:matrix.guifi.net[#libremesh-dev:matrix.guifi.net] - a public channel for everyone to join and participate on development discussions
+* https://riot.im/app/#/room/#libremesh-dev:matrix.guifi.net[#libremesh-dev:matrix.guifi.net] - a public channel for everyone to join and participate on development discussions.
+
+IRC enthusiasts can access the Matrix channel also through its bridge on #libremesh-dev IRC channel on freenode.net
