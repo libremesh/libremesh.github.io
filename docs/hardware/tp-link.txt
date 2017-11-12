@@ -3,7 +3,7 @@
 TP-Link
 =======
 
-Because of the http://ml.ninux.org/pipermail/battlemesh/2016-February/004379.html[new FCC rules], new TP-Link models would require a special method to install third party firmwares like LiMe.
+Because of the http://ml.ninux.org/pipermail/battlemesh/2016-February/004379.html[new FCC rules], new TP-Link models would require a special method to install third party firmwares like LibreMesh.
 On TP-Link devices, you can typically identify that your router is FCC locked if you get a 18005 and/or Invalid Filename error when trying to flash.
 These instructions can help bypass these new restrictions.
 
@@ -16,7 +16,7 @@ These instructions can help bypass these new restrictions.
 . Rollback to factory firmware: Follow instructions below to download correct file. You will have to set a username and password before continuing to dd-wrt's Administration Page and selecting Upgrade Firmware. It does not matter if you choose to reset configuration after reset.
   .. Official reverts: Go to the official dd-wrt page for your router. For example, http://www.dd-wrt.com/wiki/index.php/TP-Link_TL-WDR4300[WDR4300]. Download the webrevert.rar package. Don't forget to decompress.
   .. Unofficial reverts: The original instructions for this guide pointed to a http://www.dd-wrt.com/phpBB2/viewtopic.php?t=85237&postdays=0&postorder=asc&start=30[forum] with revert links. To see the files, you will need to http://www.dd-wrt.com/phpBB2/profile_sec.php?mode=register_wtf[register] and http://www.dd-wrt.com/phpBB2/viewtopic.php?t=85237&postdays=0&postorder=asc&start=30[login at the bottom of the page].
-. Install LiMe: Download factory version of LiMe, not sysupgrade. You must rename the file to the name of one of the official
+. Install LibreMesh: Download factory version of LibreMesh, not sysupgrade. You must rename the file to the name of one of the official
 TP-Link firmware files (e.g. wdr3500v1_en_us_3_14_3_up_boot(151104).bin or wdr4300v1_en_3_14_3_up_boot(150518).bin). If you are unsure of the name for your device, try searching the OpenWRT page for your device and searching the page for some variation of the filenames above.
 
 

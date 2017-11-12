@@ -103,14 +103,14 @@ For more connection options see link:en_connecting_nodes.html[How to connect to 
 If you suspect you can't connect to your router because of a damaged configuration, follow the link:en_troubleshooting.html[Troubleshooting] guide.
 
 == Share the Internet Connection with the LibreMesh Network
-LibreMesh is automatically sharing with the rest of the mesh network any internet connection is connected to the router WAN port. There's no problem if more than one internet gateway is connected to the LiMe network, likely the one closest to the client will be used.
+LibreMesh is automatically sharing with the rest of the mesh network any internet connection is connected to the router WAN port. There's no problem if more than one internet gateway is connected to the LibreMesh network, likely the one closest to the client will be used.
 
-If the LiMe router has no WAN port (just LAN ports, or just one ethernet port), one of the ethernet ports has to be configured as WAN port in order to share the internet connection. Refer to next section for configuration.
+If the LibreMesh router has no WAN port (just LAN ports, or just one ethernet port), one of the ethernet ports has to be configured as WAN port in order to share the internet connection. Refer to next section for configuration.
 
 == Configuration
 WORK IN PROGRESS
 
-Refer to the link:en_config.html[LiMe config file] page for detailed information.
+Refer to the link:en_config.html[LibreMesh config file] page for detailed information.
 
 ---
 ---
@@ -171,6 +171,6 @@ Rather than using the web interface, modifying directly +/etc/config/lime+ file 
 
 You can use the +vi+ or +vim+ text editor for editing /etc/config/lime, the settings in this file will override the default ones in +/etc/config/lime-defaults+.
 
-You can find examples and documentation in the +/docs/lime-example+ file (you can find it online https://github.com/libremesh/lime-packages/blob/develop/packages/lime-docs/files/lime-example[here]) as well as in link:en_config.html[LiMe config file] page on this website.
+You can find examples and documentation in the +/docs/lime-example+ file (you can find it online https://github.com/libremesh/lime-packages/blob/develop/packages/lime-docs/files/lime-example[here]) as well as in link:en_config.html[LibreMesh config file] page on this website.
 
 After saving the edits to the +lime+ file, apply the changes to system configuration files launching the +lime-config+ command. Next reboot the router with +reboot && exit+ to apply the new settings.

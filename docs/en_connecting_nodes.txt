@@ -1,6 +1,6 @@
 ---
 ---
-Connecting to LiMe nodes
+Connecting to LibreMesh nodes
 ========================
 
 == Connecting to your own node
@@ -9,7 +9,7 @@ Connecting to LiMe nodes
 
 For opening the web interface of your LibreMesh router, usually is enough to connect to it (either via wireless or via ethernet cable) and opening http://thisnode.info[thisnode.info] in a web browser.
 
-Doing so will give you access to the web interface, from here you can customize LiMe settings or access the OpenWrt/LEDE configuration interface. We discourage the use of OpenWrt/LEDE settings sections as this could produce conflicts with LiMe configuration mechanisms.
+Doing so will give you access to the web interface, from here you can customize LibreMesh settings or access the OpenWrt/LEDE configuration interface. We discourage the use of OpenWrt/LEDE settings sections as this could produce conflicts with LibreMesh configuration mechanisms.
 
 === Connecting to the Console Interface
 

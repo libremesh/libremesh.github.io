@@ -5,7 +5,7 @@ Get it
 
 == Download Precompiled Binaries
 
-We offer a list of precompiled firmware images with **generic settings**. This is the easiest way to first test and install LiMe in your router.
+We offer a list of precompiled firmware images with **generic settings**. This is the easiest way to first test and install LibreMesh in your router.
 
 * The current **stable release** is Dayboot Rely (17.06), images can be found at the http://downloads.libremesh.org/releases/17.06/[downloads] site.
 

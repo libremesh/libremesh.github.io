@@ -10,9 +10,9 @@ The code is stored inside a git tree which contains all branches and releases.
 All repositories can be browsed online through
 http://github.com/libremesh/[GitHub].
 
-== Getting The _LiMe_ Code
+== Getting The _LibreMesh_ Code
 
-Any _LiMe_ development happens in the _lime-packages_ git repository which can be browsed on http://github.com/libremesh/lime-packages[GitHub] or downloaded using git:
+Any _LibreMesh_ development happens in the _lime-packages_ git repository which can be browsed on http://github.com/libremesh/lime-packages[GitHub] or downloaded using git:
 
 ----
 git clone https://github.com/libremesh/lime-packages.git

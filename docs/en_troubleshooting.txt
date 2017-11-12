@@ -4,7 +4,7 @@ Troubleshooting
 ===============
 
 == Unable to establish Ethernet connection
-If you can't connect to the LibreMesh router as indicated in link:en_connecting_nodes.html[How to connect to LiMe nodes] opening http://thisnode.info you can try other ways.
+If you can't connect to the LibreMesh router as indicated in link:en_connecting_nodes.html[How to connect to LibreMesh nodes] opening http://thisnode.info you can try other ways.
 
 === First thing: wait 5 minutes
 

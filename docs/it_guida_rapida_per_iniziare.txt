@@ -111,14 +111,14 @@ Per avere più opzioni di connessione leggi la pagina link:en_connecting_nodes.h
 Se hai il sospetto di non poter connettere il tuo router alla rete per configurazioni danneggiate, segui la guida link:en_troubleshooting.html[Risolvi i problemi].
 
 == Share the Internet Connection with the LibreMesh Network
-LibreMesh is automatically sharing with the rest of the mesh network any internet connection is connected to the router WAN port. There's no problem if more than one internet gateway is connected to the LiMe network, likely the one closest to the client will be used.
+LibreMesh is automatically sharing with the rest of the mesh network any internet connection is connected to the router WAN port. There's no problem if more than one internet gateway is connected to the LibreMesh network, likely the one closest to the client will be used.
 
-If the LiMe router has no WAN port (just LAN ports, or just one ethernet port), one of the ethernet ports has to be configured as WAN port in order to share the internet connection. Refer to next section for configuration.
+If the LibreMesh router has no WAN port (just LAN ports, or just one ethernet port), one of the ethernet ports has to be configured as WAN port in order to share the internet connection. Refer to next section for configuration.
 
 == Configuration
 WORK IN PROGRESS
 
-Refer to the link:en_config.html[LiMe config file] page for detailed information.
+Refer to the link:en_config.html[LibreMesh config file] page for detailed information.
 
 ---
 ---
