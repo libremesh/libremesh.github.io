@@ -25,19 +25,16 @@ https://chef.libremesh.net[Chef homepage].
 
 _lime-sdk_ is a tool to easily compile locally a firmware image. It allows you to customize LibreMesh at your own needs.
 
-Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages:
+Download lime-sdk using _git_ (requires https://git-scm.com/downloads[installing git]):
 
-----
-sudo apt-get install subversion zlib1g-dev gawk flex unzip bzip2 gettext build-essential libncurses5-dev libncursesw5-dev libssl-dev binutils cpp psmisc docbook-to-man wget git
-----
-
-Download lime-sdk git repository:
 ----
 git clone https://github.com/libremesh/lime-sdk.git
 cd lime-sdk
 ----
 
-And follow the steps to generate the firmware. See https://github.com/libremesh/lime-sdk/blob/master/README.md[lime-sdk README]
+other download methods are available on https://github.com/libremesh/lime-sdk[lime-sdk Github page].
+
+Follow the steps for installing the dependencies and generating the firmware on https://github.com/libremesh/lime-sdk/blob/master/README.md[lime-sdk README].
 
 == Compile the Code Using Pristine LEDE buildroot
 
