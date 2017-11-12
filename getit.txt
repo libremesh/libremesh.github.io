@@ -15,9 +15,15 @@ We offer a list of precompiled firmware images with **generic settings**. This i
 
 For installation procedure read our link:docs/en_quick_starting_guide.html[Quick Starting Guide].
 
-== Cook your own firmware using lime-sdk
+== Build online using the Chef application
 
-_lime-sdk_ is a tool to easily compile locally a firmware image. It allows you to customize libremesh at your own needs.
+Chef is our own web application for generating customized firmware images. It includes our latest release, Dayboot Rely 17.06
+
+https://chef.libremesh.net[Chef homepage].
+
+== Build locally using lime-sdk
+
+_lime-sdk_ is a tool to easily compile locally a firmware image. It allows you to customize LibreMesh at your own needs.
 
 Install build dependencies, for example on a Debian/Ubuntu based Linux distribution install the following packages:
 
@@ -33,12 +39,6 @@ cd lime-sdk
 
 And follow the steps to generate the firmware. See https://github.com/libremesh/lime-sdk/blob/master/README.md[lime-sdk README]
 
-== Compile the Code Using Pristine OpenWrt buildroot
+== Compile the Code Using Pristine LEDE buildroot
 
 Refer to https://github.com/libremesh/lime-packages[lime-packages README].
-
-== Use the Chef Application
-
-Chef is our own web application for generating customized firmware images. It includes our latest release, Dayboot Rely 17.06
-
-https://chef.libremesh.net[Chef homepage].
