@@ -5,7 +5,7 @@ Communication
 
 == Contact
 
-It is possible to communicate with the current community members using mail and IRC.
+It is possible to communicate with the current community members using mail and Matrix chat.
 All project related communication should be done on public channels that are
 archived and easily browsable. Specific problems and tasks may be resolved
 using direct means of communication.
