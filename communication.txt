@@ -18,7 +18,7 @@ The project offers the following mailing lists
 . https://lists.libremesh.org/mailman/listinfo/lime-dev[lime-dev at lists.libremesh.org] -
   This list is used for general development related work.
 . https://lists.libremesh.org/mailman/listinfo/lime-users[lime-users at lists.libremesh.org] -
-  This list is used for project organisational purposes. And for user specific questions.
+  This list is used for project organisational purposes and is **the only official user support channel**.
 
 
 == Matrix Channel
