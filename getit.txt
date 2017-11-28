@@ -19,7 +19,7 @@ For installation procedure read our link:docs/en_quick_starting_guide.html[Quick
 
 Chef is our own web application for generating customized firmware images. It includes our latest release, Dayboot Rely 17.06
 
-https://chef.libremesh.net[Chef homepage].
+https://chef.libremesh.org[Chef homepage].
 
 == Build locally using lime-sdk
 
