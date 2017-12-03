@@ -25,10 +25,10 @@ At the Command mode you can
 . delete with "x" and undo with "u"
 . search with "/"
 
-To exit saving the file you type ":wq" and to exist without saving ":q!".
+To exit saving the file you type ":wq" and to exit without saving ":q!".
 
 You can try to type the following on a terminal and all will become clear:
-"vi hello.txt<Enter>ihello world<Escape>:wq<Enter>cat hello.txt<Enter>"
+"vi hello.txt<Enter>ihello world<Escape>onew line<Escape>:wq<Enter>cat hello.txt<Enter>"
 
 That's all!
 
