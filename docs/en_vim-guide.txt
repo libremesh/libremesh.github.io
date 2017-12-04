@@ -9,26 +9,31 @@ Vi tutorial
 
 Vi is an extremely powerful console editor based on a clever idea: 
 the keyboard keys can be used both for normal typing (Insert mode) and for 
-actions (Command mode).
+editing actions (Command mode).
 
 You just have to remember that there are these two modes of operation 
 and how to switch between them!
 
-To switch from Command mode to Insert mode you press 
-. "i" (to type where the cursor is) or 
-. "o" (to create a new line). 
+To switch from Command mode to Insert mode you press
 
-To switch from the Insert mode to the Command mode you press [Escape]. 
+. +i+ (to type where the cursor is) or 
+
+. +o+ (to create a new line). 
+
+To switch from the Insert mode to the Command mode you press +[Escape]+. 
 
 At the Command mode you can 
-. navigate the text with the letters "j", "k", "l", "h" (the arrows might work also)
-. delete with "x" and undo with "u"
+
+. navigate with the letters +j+, +k+, +l+, +h+ (the arrows might work also)
+
+. delete with +x+ (undo with +u+ and redo with +Ctr-r+)
+
 . search with "/"
 
-To exit saving the file you type ":wq" and to exit without saving ":q!".
+To exit saving the file you type +:wq+ and to exit without saving +:q!+.
 
-You can try to type the following on a terminal and all will become clear:
-"vi hello.txt<Enter>ihello world<Escape>onew line<Escape>:wq<Enter>cat hello.txt<Enter>"
+All will become clear if you type the following on a terminal:
++vi hello.txt<Enter>ihello world<Escape>onew line<Escape>:wq<Enter>cat hello.txt<Enter>+
 
 That's all!
 
