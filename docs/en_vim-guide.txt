@@ -26,7 +26,7 @@ At the Command mode you can
 
 . navigate with the letters +j+, +k+, +l+, +h+ (the arrows might work also)
 
-. delete with +x+ (undo with +u+ and redo with +Ctr-r+)
+. delete with +x+ (undo with +u+ and redo with +Ctrl-r+)
 
 . search with "/"
 
