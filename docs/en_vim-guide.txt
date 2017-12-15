@@ -1,9 +1,7 @@
-
 ---
 ---
 Vi tutorial
 ===========
-
 
 == A very short Vi tutorial
 
