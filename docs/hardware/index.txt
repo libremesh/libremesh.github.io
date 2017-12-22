@@ -19,6 +19,7 @@ you find the opportunity send us your contribution via git pull-request or mail.
 [width="90%",options="header"]
 |=======
 |Device|Flash|RAM|WAN port|2.4 GHz|5 GHz|LEDE target|LEDE profile|factory image |sysupgrade image
+|https://wiki.openwrt.org/toh/xiaomi/mir3[Xiaomi MiWiFi R3]|128 MB|128 MB|Yes|Yes|Yes|MT7620NAND||see link below|see link below
 |https://wiki.openwrt.org/toh/tp-link/tl-wr842nd[TP-Link WR842ND] ||||||||| 
 |https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] ||||||||| 
 |https://wiki.openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] |||||||||
@@ -40,3 +41,4 @@ you find the opportunity send us your contribution via git pull-request or mail.
 == Devices
 
 * link:tp-link.html[TP-Link]
+* link:xiaomi-miwifir3.html[Xiaomi MiWiFi R3]

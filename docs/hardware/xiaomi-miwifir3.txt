@@ -1,0 +1,48 @@
+---
+---
+Xiaomi MiWiFi R3
+================
+
+== How to install LibreMesh on the Xiaomi MiWiFi R3
+
+
+This is a pretty good device with lots of memory, one of the last dual band devices easily hackable. Installing LiMe/LEDE/OpenWrt is a bit more work but can be done. Here are the instructions:
+
+Follow these steps:
+
+* First, get ssh/dropbear access: https://wiki.openwrt.org/toh/xiaomi/mir3#to_get_sshdropbear_access (don't forget to downgrade the firmware before)
+
+* Download libremesh rootfs and kernel files from here:
+ - https://mega.nz/#!8A9CUJLQ!gJNC3SfwDdmMZ4y9BXlWp4mcn1FTAU3vWgsVYK2vW4w
+ - https://mega.nz/#!1QdkxKgb!7htQD4bE9AbYotPkEQYriI5zF2LDe27A62h7S2tq9VM
+
+* Copy these files over scp to the router:
+----
+scp lede-ramips-mt7620nand-miwifi-r3-squashfs-kernel1.bin   root@192.168.15.1:/tmp/
+scp lede-ramips-mt7620nand-miwifi-r3-squashfs-rootfs0.bin   root@192.168.15.1:/tmp/
+----
+
+* login through ssh:
+----
+ssh root@192.168.15.1
+----
+
+* type in the commands (from chen's instructions https://github.com/ptpt52/lede-source/issues/1)
+----
+nvram set flag_last_success=1
+nvram set boot_wait=on
+nvram set uart_en=1
+nvram commit
+mtd write /tmp/lede-ramips-mt7620nand-miwifi-r3-squashfs-kernel1.bin kernel1
+mtd write /tmp/lede-ramips-mt7620nand-miwifi-r3-squashfs-rootfs0.bin rootfs0
+reboot
+----
+
+* and it should be meshing already!
+
+== Upgrading from OpenWRT/LEDE
+
+If you somehow installed OpenWRT/LEDE before installing LiMe, here is the sysupgrade file:
+
+https://mega.nz/#!tV0EzJZD!XblvULWZgjvx0d9RqdwJYbKkZOKTeHT-J6oBRQYw0Ls
+
