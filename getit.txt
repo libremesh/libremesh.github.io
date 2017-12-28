@@ -7,9 +7,11 @@ Get it
 
 We offer a list of precompiled firmware images with **generic settings**. This is the easiest way to first test and install LibreMesh in your router.
 
-* The current **stable release** is Dayboot Rely (17.06), images can be found at the http://downloads.libremesh.org/releases/17.06/[downloads] site.
+* The current **stable release** is Dayboot Rely (17.06), images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site.
 
-* The previous (old) **stable release** is Community Chaos (16.07), images can be still be found at http://downloads.libremesh.org/community_chaos[downloads] site.
+* The previous (old) **stable release** is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos[downloads] site.
+
+* For experienced users who want to test last changes and new devices, nightly build firmware is also available at https://snapshots.libremesh.org/snapshots[development snapshots] site.
 
 == Installation procedure
 
