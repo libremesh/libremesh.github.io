@@ -35,6 +35,8 @@ config lime system
 	option keep_on_upgrade 'libremesh base-files-essential /etc/sysupgrade.conf'
 ----
 
+* hostname - Hostname of this node.
+* keep_on_upgrade - Unique configuration files to preserve on upgrade.
 
 .Network general options
 ----
@@ -56,6 +58,7 @@ config lime network
 #	list resolvers 141.1.1.1
 #	list resolvers 2001:4860:4860::8844
 ----
+
 
 [NOTE]
 .main_ipv4_address
@@ -86,40 +89,90 @@ List of protocols configured by LibreMesh, some of these require the relative pa
 Note that if you set here some protocols, you overwrite the **whole** list of protocols set in /etc/config/lime-defaults.
 ================
 
-
 .WiFi general options
 ----
+
 config lime wifi
 	option country 'ES'
 	option channel_2ghz '11'
 	option channel_5ghz '48'
 	option htmode_2ghz 'HT20'
 	option htmode_5ghz 'HT40'
-	list modes 'ap'
-	list modes 'apname'
-	list modes 'adhoc'
-#	list modes 'ieee80211s'
-	option ap_ssid 'libremesh.org'
-	option apname_ssid 'libremesh.org/%H'
-	option adhoc_ssid '%H'
-	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
-	option adhoc_mcast_rate_2ghz '24000'
-	option adhoc_mcast_rate_5ghz '6000'
+	list modes 'ieee80211s'
+#	list modes 'ap'
+#	list modes 'apname'
+#	list modes 'adhoc'
+#	list modes 'client'
+#	option ap_ssid 'LibreMesh.org'
+#	option ap_key 'SomeWPA2PskKey'
+#	option ap_encryption 'psk2'
+#	option apname_ssid 'LibreMesh.org/%H'
+#	option apname_key 'SomeWPA2PskKey'
+#	option apname_encryption 'psk2'
+#	option adhoc_ssid 'LibreMesh.org'
+#	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
+#	option adhoc_mcast_rate_2ghz '24000'
+#	option adhoc_mcast_rate_5ghz '6000'
+	option ieee80211s_mesh_fwding '0'
+	option ieee80211s_mesh_id 'LiMe'
+#	option ieee80211s_encryption 'psk2/aes'
+#	option ieee80211s_key 'SomePsk2AESKey'
 #	option mesh_mesh_fwding '0'
 #	option mesh_mesh_id 'LiMe'
+
 ----
 
+Options:
+
+* country - The ISO / IEC 3166 https://www.iso.org/obp/ui/#iso:pub:PUB500001:en[country code] (ex: ES, US)
+* channel_2ghz - 2.4Ghz channel to use for communications. https://en.wikipedia.org/wiki/List_of_WLAN_channels#2.4_GHz_(802.11b/g/n)[2.4Ghz channels]
+* channel_5ghz - 5.0Ghz channel to use for communications. https://en.wikipedia.org/wiki/List_of_WLAN_channels#5_GHz_(802.11a/h/j/n/ac)[5.0Ghz channels]
+* htmode_2ghz - 2.4Ghz channel width on 802.11n devices.
+** HT20 (1x 20MHz channels)
+** HT40 (2x 20MHz channels)
+* htmode_5ghz - 5.0Ghz channel width on 802.11n devices.
+** HT20 (1x 20MHz channels)
+** HT40 (2x 20MHz channels)
+* mesh_mesh_id
+* mesh_mesh_fwding
+** When mesh_mesh_fwding=0, the routing layer is disabled and it can be used only as a link-layer protocol such as adhoc.
+
 [NOTE]
-.wifi options
+.WiFi options
 =============
 Any option with name <mode>_<option> will be directly copied to /etc/config/wireless (without the <mode>_ prefix)
 =============
 
 [NOTE]
-.wifi 80211s
+.WiFi ieee80211s
 =============
-Mode ieee80211s refers to 802.11s standard (known as mesh). When mesh_mesh_fwding=0, the routing layer is disabled and it can be used only as a link-layer protocol such as adhoc.
-Be aware that it cannot be used together with adhoc on the same interface.
+Mode ieee80211s refers to the 802.11s standard which has superseded adhoc as the wireless standard of choice for mesh networks.
+Be aware that ieee80211s cannot be used together with adhoc on the same interface.
+
+ieee80211s nodes with the same mesh_id will organize.
+
+Options:
+
+* ieee80211s_mesh_fwding
+* ieee80211s_mesh_id - Mesh identifier
+* ieee80211s_encryption - Encryption. none or psk2/aes
+* ieee80211s_key - Key to secure mesh if psk2/aes
+=============
+
+[NOTE]
+.WiFi adhoc
+=============
+Mode adhoc presents an adhoc network for node communications.
+ieee80211s has become preferred over adhoc for mesh communications.
+
+Adhoc nodes with the same ssid will organize.
+
+Options:
+
+* adhoc_ssid - Service Set Identifier
+* adhoc_bssid - Basic Service Set Identifier
+* adhoc_mcast_rate_2ghz - 2.4Ghz multicast rate
+* adhoc_mcast_rate_5ghz - 5.0Ghz multicast rate
 =============
 
 .WiFi interface specific options (override general option), multiple allowed
