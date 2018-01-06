@@ -1,0 +1,39 @@
+---
+---
+Changing WiFi inteface behavior
+===============================
+
+For more information about the LibreMesh config file options see link:/docs/en_config.html[config].
+
+
+The following example shows how to configure specific WiFi devices.
+In the example radio0 is used only for meshing and radio1 is used only for Access Point.
+
+----
+config wifi 'radio0'
+	list modes 'ieee80211s'
+	option ieee80211s_mesh_id 'LiMe'
+	option ieee80211s_mesh_fwding '0'
+	option channel_2ghz '11'
+	option channel_5ghz '48'
+	option distance '1000'
+	
+config wifi 'radio1'
+	list modes 'ap'
+	list modes 'apname'
+	option apname_ssid 'VDXlliure/%H'
+	option apname_key 'laspalmeras'
+	option apname_encryption 'psk2'
+	option ap_ssid 'VDXlliure'
+	option ap_key 'laspalmeras'
+	option ap_encryption 'psk2'
+	option channel_2ghz '11'
+	option channel_5ghz '48'
+	option distance '1000'
+----
+
+These two new sections must be appened in file **/etc/config/lime** in addition to the already existing sections.
+
+To apply the changes run **lime-config++ and **lime-apply**.
+
+=================
