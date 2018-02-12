@@ -6,7 +6,7 @@ The Configuration file
 == The Configuration file
 
 The configuration file placed on **/etc/config/lime** is one of the key points for LibreMesh.
-It contains a set of basic options which are used by Libre Mesh backend to perform its magic.
+It contains a set of basic options which are used by LibreMesh backend to perform its magic.
 The special program **lime-config** reads such file and applies the configuration to the operating system.
 The default options (those which are not defined by the user in the config file) are read from **/etc/config/lime-defaults**, 
 however it should not be modified in runtime.

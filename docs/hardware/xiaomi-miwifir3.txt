@@ -6,13 +6,13 @@ Xiaomi MiWiFi R3
 == How to install LibreMesh on the Xiaomi MiWiFi R3
 
 
-This is a pretty good device with lots of memory, one of the last dual band devices easily hackable. Installing LiMe/LEDE/OpenWrt is a bit more work but can be done. Here are the instructions:
+This is a pretty good device with lots of memory, one of the last dual band devices easily hackable. Installing LibreMesh/LEDE/OpenWrt is a bit more work but can be done. Here are the instructions:
 
 Follow these steps:
 
 * First, get ssh/dropbear access: https://wiki.openwrt.org/toh/xiaomi/mir3#to_get_sshdropbear_access (don't forget to downgrade the firmware before)
 
-* Download libremesh rootfs and kernel files from here:
+* Download LibreMesh rootfs and kernel files from here:
  - https://mega.nz/#!8A9CUJLQ!gJNC3SfwDdmMZ4y9BXlWp4mcn1FTAU3vWgsVYK2vW4w
  - https://mega.nz/#!1QdkxKgb!7htQD4bE9AbYotPkEQYriI5zF2LDe27A62h7S2tq9VM
 
@@ -42,7 +42,7 @@ reboot
 
 == Upgrading from OpenWRT/LEDE
 
-If you somehow installed OpenWRT/LEDE before installing LiMe, here is the sysupgrade file:
+If you somehow installed OpenWRT/LEDE before installing LibreMesh, here is the sysupgrade file:
 
 https://mega.nz/#!tV0EzJZD!XblvULWZgjvx0d9RqdwJYbKkZOKTeHT-J6oBRQYw0Ls
 

@@ -7,7 +7,7 @@ Changing network interface behavior
 
 Most of the LibreMesh configuration is handled by a unified configuration file placed on **/etc/config/lime**.
 This file is part of the https://wiki.openwrt.org/doc/uci[UCI] database which unifies also most of the OpenWRT/LEDE configuration files.
-The main configuration script of libremesh is named _lime-config_ and can be invoked typing **lime-config** in the node's root terminal.
+The main configuration script of LibreMesh is named _lime-config_ and can be invoked typing **lime-config** in the node's root terminal.
 
 In addition to _/etc/config/lime_ there exist also _/etc/config/lime-defaults_. 
 If a configuration option is not found in config/lime, the _config/lime-defaults_ one will be used when running the _lime-config_ command.
