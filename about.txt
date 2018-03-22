@@ -7,26 +7,20 @@ About the project
 
 image:logo/logo.png["The LibreMesh logo",role="right"]
 
-LibreMesh is a community and an open project, so anyone can join us. We consider anyone using the LibreMesh firmware as part of this community.
-The development is mainly carried on by a group of volunteers, which we identify as a team.
+LibreMesh is a community and an open project, so anyone friendly is welcome.
+We encourage anyone using the LibreMesh to become part of this community.
+The software is mainly maintained by it's founders although a huge amount of
+contributors from other individuals and communities have improved it in many
+ways.
 
-== Team
-
-Here you can find an alphabetically ordered list of the people currently involved in the development.
-
+.List of LibreMesh founders
 [cols="2*1",options="header"]
 |====
 | Name | Contact
-| Al | -
-| Axel | -
-| Gabriel | gabriel[at]autistici[dot]org
 | Gioacchino Mazzurco | gio[at]eigenlab[dot]org
 | Gui | -
-| Ilario | ilario[at]eigenlab[dot]org
-| Leonaard | -
 | Nico | -
 | Pau | p4u[at]dabax[dot]net
-| Pedro | -
 |====
 
 == Donations
