@@ -18,6 +18,7 @@ The project communicate on the following mailing lists
 
 == IRC Freenode Channel
 
-The unofficial #libremesh-dev channel of Freenode often hosts realtime
-discussions between LibreMesh community participants.
+The unofficial link:irc://irc.freenode.net/libremesh-dev[#libremesh-dev]
+channel on Freenode often hosts interesting realtime discussions between
+LibreMesh community participants.
 
