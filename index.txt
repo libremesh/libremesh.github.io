@@ -32,7 +32,7 @@ control of the governments and global enterprises.
 
 == Free Networks
 
-We understand a free network as a telecommunications network which accomplish three points:
+We understand that a free network as a telecommunications network should accomplish these three points:
 
 * It is open, so anyone can connect to it if physically possible
 * It is neutral, so there are not preferences for the kind, origin or destination of the data
