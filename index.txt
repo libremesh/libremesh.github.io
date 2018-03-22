@@ -54,10 +54,12 @@ An embedded device is a small computer. Usually the operating system running in 
 Our way of deploying free mesh networks is by installing our own firmware to the devices (usually WiFi routers).
 image:img/lede.png["Lede",role="left"]
 Our system is based on the OpenWrt/LEDE project, which at the same time is based on the well known Linux operating system.
-Everyting we develop is **free software** so anyone can use, copy, modify and distribute it with no restrictions.
-
+Everything we develop is **free software for a free society** so anyone can
+use, copy, modify and distribute according with
+link:https://www.gnu.org/licenses/agpl.html[AGPL license].
 
 == History
 
-The LibreMesh project (LiMe) was started in 2013 by a set of free network activists from several countries and different projects around the world, willing to create a common solution for the deployment of free mesh networks.
+The LibreMesh project (LiMe) was started in 2013 by a set of free network
+activists from several cultures and different projects around the world, willing to create a common solution for the deployment of free mesh networks.
 
