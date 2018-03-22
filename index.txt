@@ -26,7 +26,8 @@ Mesh networks are such networks where all participants (nodes) are able to route
 So there are not central points and the physical topology can be completely random.
 image:img/mesh_topology.png["Mesh Topology",role="left"]
 Usually mesh networks are decentralized, bottom-up organized, deployed and maintained by the people using them.
-We believe this is the only way for achieving a real free network out of control for the governments or big organizations.
+We believe this is the only way for achieving a real free network out of
+control of the governments and global enterprises.
 
 
 == Free Networks
@@ -58,5 +59,5 @@ Everyting we develop is **free software** so anyone can use, copy, modify and di
 
 == History
 
-The LibreMesh project (LiMe) was started in 2013 by a set of free network activists from several countries and different projects around the world, willing to create a common solution for the deployment of free/mesh networks.
+The LibreMesh project (LiMe) was started in 2013 by a set of free network activists from several countries and different projects around the world, willing to create a common solution for the deployment of free mesh networks.
 
