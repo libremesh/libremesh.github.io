@@ -30,7 +30,6 @@ you find the opportunity send us your contribution via git pull-request or mail.
 |https://wiki.openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP] |||||||||
 |https://wiki.openwrt.org/toh/ubiquiti/airrouter[Ubiquiti AirRouter] |||||||||
 |https://wiki.openwrt.org/toh/hwdata/ubiquiti/ubiquiti_airgateway[Ubiquiti AirGateway] |||||||||
-|https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XW] |||||||||
 |https://wiki.openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XM] |||||||||
 |https://wiki.openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti NanoBridge M5] |||||||||
 |https://wiki.openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation LoCo M2] |||||||||
