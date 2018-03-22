@@ -35,7 +35,7 @@ We understand a free network as a telecommunications network which accomplish th
 
 * It is open, so anyone can connect to it if physically possible
 * It is neutral, so there are not preferences for the kind, origin or destination of the data
-* It is free as the Spanish word libre, so there are not restrictions
+* It is free as in freedom (libre means free in Spanish)
 
 In the following list we try to collect some existing free networks (send us an e-mail if you want to include yours).
 
