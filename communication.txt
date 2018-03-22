@@ -3,17 +3,10 @@
 Communication
 =============
 
-== Contact
-
-It is possible to communicate with the current community members using mail and Matrix chat.
-All project related communication should be done on public channels that are
-archived and easily browsable. Specific problems and tasks may be resolved
-using direct means of communication.
-
 
 == Mailing Lists
 
-The project offers the following mailing lists
+The project communicate on the following mailing lists
 
 . https://lists.libremesh.org/mailman/listinfo/lime-dev[lime-dev at lists.libremesh.org] -
   This list is used for general development related work.
@@ -23,10 +16,8 @@ The project offers the following mailing lists
   Lista para recibir soporte e intercambiar información con la comunidad de LibreMesh en español.
 
 
-== Matrix Channel
+== IRC Freenode Channel
 
-The project uses an https://matrix.org[Matrix] channel to discuss development
+The unofficial #libremesh-dev channel of Freenode often hosts realtime
+discussions between LibreMesh community participants.
 
-* https://riot.im/app/#/room/#libremesh-dev:matrix.guifi.net[#libremesh-dev:matrix.guifi.net] - a public channel for everyone to join and participate on development discussions.
-
-IRC enthusiasts can access the Matrix channel also through its bridge on #libremesh-dev IRC channel on freenode.net
