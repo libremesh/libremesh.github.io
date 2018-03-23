@@ -61,5 +61,10 @@ link:https://www.gnu.org/licenses/agpl.html[AGPL license].
 == History
 
 The LibreMesh project (LiMe) was started in 2013 by a set of free network
-activists from several cultures and different projects around the world, willing to create a common solution for the deployment of free mesh networks.
+activists from several cultures and different projects around the world,
+willing to create a common solution for the deployment of free mesh networks.
+
+In 2017 Shuttleworth Foundation awarded us with a
+link:https://www.shuttleworthfoundation.org/fellows/peter-bloom/[Flash Grant]
+image:img/Shuttleworth_Funded.jpg["Shuttleworth Flash Grant"]
 
