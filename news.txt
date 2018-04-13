@@ -3,6 +3,14 @@
 News
 ====
 
+=== 2016-08-06 - Join us at Mesh is in the Air!
+
+We endorse https://www.wireless-meshup.org/[Mesh is in the Air] - this years mesh up of the https://www.battlemesh.org/[Wireless Battle of the Mesh] and https://wiki.freifunk.net/Wireless_Community_Weekend_2018[Wireless Community Weekend].
+
+If you are a mesh networking enthusiast, community activist, have an interest in wifi or dynamic routing protocols, you can't miss this event! Check out more details in the https://www.wireless-meshup.org/[official website].
+
+LibreMesh developers and users will be attending the event, giving talks about development progress and state, and in general sharing a nice time.
+
 === 2017-06-06 - Attended Sysupgrades
 
 Within this years https://summerofcode.withgoogle.com/[GSoC] a fellow student tries to setup a new way to perform sysupgrades on LibreMesh Routers (and LEDE/OpenWrt in general).
