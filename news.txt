@@ -3,7 +3,7 @@
 News
 ====
 
-=== 2016-08-06 - Join us at Mesh is in the Air!
+=== 2018-04-13 - Join us at Mesh is in the Air!
 
 We endorse https://www.wireless-meshup.org/[Mesh is in the Air] - this years mesh up of the https://www.battlemesh.org/[Wireless Battle of the Mesh] and https://wiki.freifunk.net/Wireless_Community_Weekend_2018[Wireless Community Weekend].
 
