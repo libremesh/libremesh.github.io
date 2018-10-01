@@ -8,7 +8,7 @@ If you can't connect to the LibreMesh router as indicated in link:en_connecting_
 
 === First thing: wait 5 minutes
 
-After powering up the router, *up to 5 minutes* (our process monitor +smonit+ runs every 5 minutes) *can be needed* for bringing up all the services including the DHCP server needed for receiving an IP when connecting.
+After powering up the router, *up to 5 minutes* (our process monitor +smonit+ runs every 5 minutes) *can be needed* for bringing up all the services including the DHCP server needed for receiving an IP when connecting. This is a known bug, more details https://github.com/libremesh/lime-packages/issues/281[here].
 
 === Do not use custom DNS servers
 
