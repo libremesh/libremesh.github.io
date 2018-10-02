@@ -11,7 +11,7 @@ We offer a list of precompiled firmware images with **generic settings**. This i
 
 * The previous (old) **stable release** is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos[downloads] site.
 
-* For experienced users who want to test last changes and new devices, nightly build firmware is also available at https://snapshots.libremesh.org/snapshots[development snapshots] site.
+* For experienced users who want to test last changes and new devices, nightly build firmware is also available at https://snapshots.libremesh.org[development snapshots] site.
 
 == Installation procedure
 
