@@ -126,7 +126,7 @@ This part of the guide should not be needed for normal LibreMesh use.
 == Flashing Via the Console Interface (optional)
 This is possible just if you're upgrading an existing OpenWrt, LEDE or LibreMesh installation, not from stock firmware.
 
-Copy the downloaded firmware image to the +/tmp+ directory on your target router using the `scp` command. 
+Copy the downloaded firmware image to the +/tmp+ directory on your target router using the `scp` command.
 
 [IMPORTANT]
 ===========
@@ -151,7 +151,7 @@ When upgrading from OpenWrt, in order to connect via ssh/scp you will need to ha
 Check out link:/docs/en_connecting_nodes.html[Connecting to your own node] for help on this.
 ===========
 
-Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt or LEDE are running.
+Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh \root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt or LEDE are running.
 
 Then enter the +/tmp+ directory where the firmware is present with +cd /tmp+, check the presence of the file with +ls+ and install it with
 
