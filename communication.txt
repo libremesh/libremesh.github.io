@@ -16,9 +16,6 @@ The project communicate on the following mailing lists
   Lista para recibir soporte e intercambiar información con la comunidad de LibreMesh en español.
 
 
-== IRC Freenode Channel
+== Chatroom
 
-The unofficial link:irc://irc.freenode.net/libremesh-dev[#libremesh-dev]
-channel on Freenode often hosts interesting realtime discussions between
-LibreMesh community participants.
-
+The chatroom can be accessed through link:https://webchat.freenode.net/?channels=libremesh-dev[IRC] (#libremesh-dev on irc.freenode.net, user registration required) or link:https://riot.im/app/#/room/#libremesh-dev:matrix.guifi.net[Matrix] (#libremesh-dev:matrix.guifi.net).
