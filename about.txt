@@ -10,7 +10,7 @@ image:logo/logo.png["The LibreMesh logo",role="right"]
 LibreMesh is a community and an open project, so anyone friendly is welcome.
 We encourage anyone using the LibreMesh to become part of this community.
 The software is mainly maintained by it's founders although a huge amount of
-contributors from other individuals and communities have improved it in many
+contributions from other individuals and communities have improved it in many
 ways.
 
 .List of LibreMesh founders
