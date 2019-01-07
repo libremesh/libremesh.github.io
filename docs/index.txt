@@ -16,3 +16,5 @@ Contributions to the documentation are very welcome, check out the web presence 
 2. http://nicolasacco.diveni.re/~gio/internship-report/main.html[Interoperability between classic infrastructure and LibreMesh networks in Guifi.net - Gioacchino Mazzurco thesis (HTML preview)]
 3. http://nicolasacco.diveni.re/~gio/internship-report/internship-report-final.pdf[Interoperability between classic infrastructure and LibreMesh networks in Guifi.net - Gioacchino Mazzurco thesis (Printable PDF)]
 4. https://gitlab.com/g10h4ck/lime-guifi-interop-internship-report[Interoperability between classic infrastructure and LibreMesh networks in Guifi.net - Gioacchino Mazzurco thesis (Source)]
+5. https://github.com/aparcar/meshrc/blob/master/bachelor_thesis/bachelor.pdf[Wireless Mesh as easy deployable
+and scaleable Internet backbone - Paul Spooren bachelor thesis]
