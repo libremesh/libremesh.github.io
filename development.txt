@@ -40,3 +40,99 @@ Please use the http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc syntax]
 == Submitting Patches
 
 We accept pull requests via GitHub. But patches can also be submitted via the dev link:communication.html[mailing list].
+
+
+== Compiling LibreMesh from source code
+
+First of all you need to get the OpenWrt source code
+
+.Download OpenWrt source code
+--------------------------------------------------------------------------------
+git clone https://git.openwrt.org/openwrt/openwrt.git
+--------------------------------------------------------------------------------
+
+.Enter OpenWrt build root
+--------------------------------------------------------------------------------
+cd openwrt
+--------------------------------------------------------------------------------
+
+.Checkout OpenWrt stable release
+--------------------------------------------------------------------------------
+git checkout v18.06.2
+--------------------------------------------------------------------------------
+
+
+Now you have the OpenWrt source code, building OpenWrt has a bunch of
+dependencies on your system, if you are unsure about your system having all the
+dependencies installed you can check if the following commands fails and look at
+the error messages, reading the
+link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[build system installation page]
+on OpenWrt wiki may help you too.
+
+.Optionallly attempt to run a few OpenWrt build tools to spot missing dependencies
+--------------------------------------------------------------------------------
+scripts/feeds update -a
+scripts/feeds install -a
+make V=s menuconfig
+make V=s
+--------------------------------------------------------------------------------
+
+
+Now that you have your system ready, you can procede with:
+
+.Add LibreMesh repositories to the OpenWrt feeds
+--------------------------------------------------------------------------------
+cp feeds.conf.default feeds.conf
+
+cat << EOF >> feeds.conf
+
+src-git libremesh https://github.com/libremesh/lime-packages.git;master
+src-git libremap https://github.com/libremap/libremap-agent-openwrt.git;master
+EOF
+--------------------------------------------------------------------------------
+
+
+.Update the packages from the feeds
+--------------------------------------------------------------------------------
+scripts/feeds update -a
+scripts/feeds install -a
+--------------------------------------------------------------------------------
+
+
+.Run the configuration menu
+--------------------------------------------------------------------------------
+make menuconfig
+--------------------------------------------------------------------------------
+
+Deselect problematic packages:
+
+- Base system -> dnsmasq
+- Base system -> firewall
+- Network -> odhcpd
+- Network -> odhcpd-ipv6only
+
+Optionally deselect unused packages:
+
+- Network -> ppp
+
+Select LibreMesh packages:
+
+- LiMe -> dnsmasq-distributed-hosts
+- LiMe -> lime-app
+- LiMe -> lime-hwd-openwrt-wan
+- LiMe -> lime-proto-anygw
+- LiMe -> lime-proto-babeld
+- LiMe -> lime-proto-batadv
+- LiMe -> lime-proto-wan
+- LiMe -> lime-system
+- LiMe -> smonit
+
+Save and exit
+
+.Finally compile the images
+--------------------------------------------------------------------------------
+make -j$(nproc)
+--------------------------------------------------------------------------------
+
+If everything goes well you should find the produced binaries inside the +bin/+
+directory
