@@ -114,6 +114,7 @@ Deselect problematic packages:
 Optionally deselect unused packages:
 
 - Network -> ppp
+- Kernel modules -> Network Support -> kmod-ppp
 
 Select LibreMesh packages:
 
