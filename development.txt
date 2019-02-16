@@ -118,6 +118,7 @@ Optionally deselect unused packages:
 Select LibreMesh packages:
 
 - LiMe -> dnsmasq-distributed-hosts
+- LiMe -> dnsmasq-lease-share
 - LiMe -> lime-app
 - LiMe -> lime-hwd-openwrt-wan
 - LiMe -> lime-proto-anygw
