@@ -8,8 +8,8 @@ Hardware Documentation Index
 Installing LibreMesh is not always as easy as we would like to.
 It depends on the router model, revision and so on.
 The best way for getting an updated set of instructions is to find your
-model on OpenWRT or LEDE web pages. However to cover some specific scenarios,
-we provide a list of articles which might help you.
+model on the link:https://openwrt.org/toh/start[OpenWRT hardware page]. However
+to cover some specific scenarios, we provide a list of articles which might help you.
 
 Please, take into account that these pages are third-party contributed, so if
 you find the opportunity send us your contribution via git pull-request or mail.
@@ -20,9 +20,9 @@ you find the opportunity send us your contribution via git pull-request or mail.
 |=======
 |Device|Flash|RAM|WAN port|2.4 GHz|5 GHz|LEDE target|LEDE profile|factory image |sysupgrade image
 |https://openwrt.org/toh/xiaomi/mir3[Xiaomi MiWiFi R3]|128 MB|128 MB|Yes|Yes|Yes|MT7620NAND||see link below|see link below
-|https://openwrt.org/toh/xiaomi/mini[Xiaomi Mi WiFi Mini] ||||||||| 
-|https://openwrt.org/toh/tp-link/tl-wr842nd[TP-Link WR842ND] ||||||||| 
-|https://openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] ||||||||| 
+|https://openwrt.org/toh/xiaomi/mini[Xiaomi Mi WiFi Mini] |||||||||
+|https://openwrt.org/toh/tp-link/tl-wr842nd[TP-Link WR842ND] |||||||||
+|https://openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] |||||||||
 |https://openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] |||||||||
 |https://openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600] |8 MB |128 MB |Yes |Yes |Yes |ar71xx |generic | tl-wdr3600-v1-squashfs-factory | tl-wdr3600-v1-squashfs-sysupgrade
 |https://openwrt.org/toh/tp-link/tl-wdr4300[TP-Link WDR4300] |||||||||
