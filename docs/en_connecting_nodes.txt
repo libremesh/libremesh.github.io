@@ -1,7 +1,7 @@
 ---
 ---
 Connecting to LibreMesh nodes
-========================
+=============================
 
 == Connecting to your own node
 
