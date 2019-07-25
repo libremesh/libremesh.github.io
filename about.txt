@@ -22,3 +22,9 @@ ways.
 | Nico | -
 | Pau | p4u[at]dabax[dot]net
 |====
+
+== Donations
+
+Donations to the project are managed via OpenCollective, thanks!
+
+image::img/opencollective.png["Contributions via OpenCollective", link="https://opencollective.com/libremesh/contribute"]
