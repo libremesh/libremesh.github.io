@@ -5,7 +5,7 @@ The LibreMesh project
 
 == Introduction to LibreMesh
 
-LibreMesh is a modular framework for creating OpenWrt/LEDE-based firmwares for wireless mesh nodes. https://github.com/libremesh/network-profiles[Several communities] around the world use LibreMesh as the foundation of their local mesh firmwares.
+LibreMesh is a modular framework for creating OpenWrt-based firmwares for wireless mesh nodes. https://github.com/libremesh/network-profiles[Several communities] around the world use LibreMesh as the foundation of their local mesh firmwares.
 
 image:logo/logo.png["The LibreMesh logo",role="right"]
 
@@ -36,7 +36,7 @@ We understand that a free network as a telecommunications network should accompl
 
 * It is open, so anyone can connect to it if physically possible
 * It is neutral, so there are not preferences for the kind, origin or destination of the data
-* It is free as in freedom (libre means free in Spanish)
+* It is free as in freedom (libre means free as in "free speech" in Spanish)
 
 In the following list we try to collect some existing free networks (send us an e-mail if you want to include yours).
 
@@ -53,7 +53,7 @@ In the following list we try to collect some existing free networks (send us an 
 An embedded device is a small computer. Usually the operating system running in such small computers is called Firmware.
 Our way of deploying free mesh networks is by installing our own firmware to the devices (usually WiFi routers).
 image:img/lede.png["Lede",role="left"]
-Our system is based on the OpenWrt/LEDE project, which at the same time is based on the well known Linux operating system.
+Our system is based on the OpenWrt project, which at the same time is based on the well known Linux operating system.
 Everything we develop is **free software for a free society** so anyone can
 use, copy, modify and distribute according with
 link:https://www.gnu.org/licenses/agpl.html[AGPL license].

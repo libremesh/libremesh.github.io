@@ -25,7 +25,7 @@ For more options check the link:/getit.html[Get It] page.
 
 Find the download for your router by name or model. You can find more detailed router model instructions https://openwrt.org/toh/start[here].
 
-If you are installing for the first time (a router with stock firmware), choose the link ending with `-factory.bin`. If there's no `-factory.bin` image or you are upgrading an existing install of LibreMesh, OpenWrt or LEDE, choose the link ending with `-sysupgrade.bin`.
+If you are installing for the first time (a router with stock firmware), choose the link ending with `-factory.bin`. If there's no `-factory.bin` image or you are upgrading an existing install of LibreMesh or OpenWrt, choose the link ending with `-sysupgrade.bin`.
 
 == Installation Procedure
 === Open your router web interface
@@ -34,7 +34,7 @@ Using an ethernet cable connect to a LAN port on your router. Make sure that the
 
 _If the router is running stock firmware_, follow manufacturer instructions to connect to the router. Its IP should be written on the original box or under the router. Usually just opening +192.168.0.1+ or +192.168.1.1+ in a web browser lets you reach the router web interface. If you can't connect to the router because you can't find its IP, you can try the IP address of your gateway. For getting it go to the terminal and use `netstat -rn` (mac), or `ip route show default` (Linux). More details on finding your router's IP can be found http://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[here] and http://www.computerworld.com/article/2474776/wireless-networking/network-security-find-the-ip-address-of-your-home-router.html[here].
 
-_If the router is running OpenWrt or LEDE_ the instructions in the previous paragraph should apply.
+_If the router is running OpenWrt_ the instructions in the previous paragraph should apply.
 
 _If the router is running LibreMesh_ just opening http://thisnode.info should get you to the web interface.
 

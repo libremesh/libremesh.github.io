@@ -127,7 +127,7 @@ Now that you have the target IPv6 link local you can connect to the router:
 . Try connecting via ssh: +ssh root@fe90::aa20:66ff:fe4f:ae87%eth0+. Remember to include both +root@+, otherwise it will attempt to connect using your personal username, and +%eth0+ (or whatever is the name of the interface you used for connecting, you can see all interface names with +ip link show+).
 . If there's not yet a root password set on the router and the password access was not disabled by the network-profile, a blank password access is granted.
 . Otherwise try all the router root passwords you remember.
-. If neither work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt/LEDE failsafe mode (this last procedure could ask for the password anyway if this was set in the network-profile during compilation of the installation image).
+. If neither work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt failsafe mode (this last procedure could ask for the password anyway if this was set in the network-profile during compilation of the installation image).
 
 If you managed to connect via ssh you can also copy files on the router using IPv6 link local and +scp+ (for copying big files like firmware images use the +/tmp+ directory as a destination):
 
@@ -154,11 +154,11 @@ root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 
 These situations of non-responsivity can arise from bad manual configurations and customizations (network-profile) or bad images being flashed or incompatible router model.
 
-If you feel confident enough, you can try to boot your router in LEDE/OpenWrt failsafe mode or to re-flash it using low level procedures e.g. TFTP (if available) or serial connection (risky) or other recovery procedures you can find on link:https://lede-project.org/toh/start[your router's specific page].
+If you feel confident enough, you can try to boot your router in OpenWrt failsafe mode or to re-flash it using low level procedures e.g. TFTP (if available) or serial connection (risky) or other recovery procedures you can find on link:https://openwrt.org/toh/start[your router's specific page].
 
 === Recover from bad configurations with Failsafe mode
 
-Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki]. If you're trying to reset the router after forgetting the password, this procedure could ask for the password anyway in case this was set in the network-profile during compilation of the installation image.
+Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://openwrt.org/toh/start[OpenWrt table of hardware]. If you're trying to reset the router after forgetting the password, this procedure could ask for the password anyway in case this was set in the network-profile during compilation of the installation image.
 
 The generic procedure is to start pressing repeatedly the router reset button during the boot, the LEDs should start blinking and failsafe mode activated instead of normal boot.
 
@@ -172,7 +172,7 @@ If an error like +Unable to connect+ or +No route to host+ is obtained, likely y
 
 === Re-flashing via TFTP
 
-When the aforementioned connection procedures don't work and Failsafe mode doesn't help, likely we will have to reinstall a firmware image. As the normal way to reinstall, explained in link:en_quick_starting_guide.html[Quick Starting Guide] likely is not going to work, we can try communicating directly with the router bootloader. The bootloader is a tiny piece of software that never gets modified when flashing OpenWrt/LEDE/LibreMesh and includes recovery functions. Usually it includes a TFTP (Trivial File Transfer Protocol) which can be activated keeping the reset button pressed for 10 seconds while plugging the router power cord (common in Ubiquiti routers, the success in this operation is confirmed by a nice blinking pattern of the LEDs) or is active for a short time after plugging the router (in some old TP-Link routers). For specific instructions about how to activate the TFTP server (or, less often, client) in each router refer to https://wiki.openwrt.org/toh/start[OpenWrt] or https://lede-project.org/toh/start[LEDE] table of hardware.
+When the aforementioned connection procedures don't work and Failsafe mode doesn't help, likely we will have to reinstall a firmware image. As the normal way to reinstall, explained in link:en_quick_starting_guide.html[Quick Starting Guide] likely is not going to work, we can try communicating directly with the router bootloader. The bootloader is a tiny piece of software that never gets modified when flashing OpenWrt/LibreMesh and includes recovery functions. Usually it includes a TFTP (Trivial File Transfer Protocol) which can be activated keeping the reset button pressed for 10 seconds while plugging the router power cord (common in Ubiquiti routers, the success in this operation is confirmed by a nice blinking pattern of the LEDs) or is active for a short time after plugging the router (in some old TP-Link routers). For specific instructions about how to activate the TFTP server (or, less often, client) in each router refer to https://openwrt.org/toh/start[OpenWrt table of hardware].
 
 To prepare for a TFTP flashing procedure:
 
