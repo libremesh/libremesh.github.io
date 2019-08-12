@@ -1,11 +1,11 @@
 ---
 ---
-Vi tutorial
+Vim tutorial
 ===========
 
-== A very short Vi tutorial
+== A very short Vim tutorial
 
-Vi is an extremely powerful console editor based on a clever idea: 
+Vim is an extremely powerful console editor based on a clever idea: 
 the keyboard keys can be used both for normal typing (Insert mode) and for 
 editing actions (Command mode).
 
@@ -22,16 +22,16 @@ To switch from the Insert mode to the Command mode you press +[Escape]+.
 
 At the Command mode you can 
 
-. navigate with the letters +j+, +k+, +l+, +h+ (the arrows might work also)
+. navigate with the arrows
 
-. delete with +x+ (undo with +u+ and redo with +Ctrl-r+)
+. delete with +x+ and +X+
 
-. search with "/"
+. search with +/+
 
-To exit saving the file you type +:wq+ and to exit without saving +:q!+.
+To exit saving the file, enter the Command mode pressing +[Escape]+ and type +:wq+. To exit without saving enter Command mode and press +:q!+.
 
 All will become clear if you type the following on a terminal:
-+vi hello.txt<Enter>ihello world<Escape>onew line<Escape>:wq<Enter>cat hello.txt<Enter>+
++vim hello.txt<Enter>ihello world<Escape>onew line<Escape>:wq<Enter>cat hello.txt<Enter>+
 
 That's all!
 
