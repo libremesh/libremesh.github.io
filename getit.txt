@@ -7,37 +7,33 @@ Get it
 
 We offer a list of precompiled firmware images with **generic settings**. This is the easiest way to first test and install LibreMesh in your router.
 
-* The current **stable release** is Dayboot Rely (17.06), images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site.
+* The current **stable release** is Dayboot Rely (17.06), images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site or compiled locally as described below.
 
-* The previous (old) **stable release** is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos[downloads] site.
+* The previous **oldstable** release is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos/16.07/[downloads] site.
 
-* For experienced users who want to test last changes and new devices, nightly build firmware is also available at https://snapshots.libremesh.org[development snapshots] site.
+* For experienced users who want to use the latest LibreMesh code, the firmware can be locally compiled as described https://github.com/LibreRouterOrg/openwrt[here].
 
 == Installation procedure
 
 For installation procedure read our link:docs/en_quick_starting_guide.html[Quick Starting Guide].
 
-== Build online using the Chef application
+== Build stable release 17.06, locally using lime-sdk
 
-Chef is our own web application for generating customized firmware images. It includes our latest release, Dayboot Rely 17.06
-
-https://chef.libremesh.org[Chef homepage].
-
-== Build locally using lime-sdk
-
-_lime-sdk_ is a tool to easily compile locally a firmware image. It allows you to customize LibreMesh at your own needs.
+https://github.com/libremesh/lime-sdk[lime-sdk] is a tool to easily compile locally a firmware image on a GNU/Linux computer.
+It supports up to LibreMesh 17.06 release but has been discontinued and will not be used for future releases.
 
 Download lime-sdk using _git_ (requires https://git-scm.com/downloads[installing git]):
 
 ----
 git clone https://github.com/libremesh/lime-sdk.git
 cd lime-sdk
+git checkout master
 ----
 
-other download methods are available on https://github.com/libremesh/lime-sdk[lime-sdk Github page].
+alternatively, download directly the master branch files as a ZIP file from https://github.com/libremesh/lime-sdk/archive/master.zip[here].
 
 Follow the steps for installing the dependencies and generating the firmware on https://github.com/libremesh/lime-sdk/blob/master/README.md[lime-sdk README].
 
-== Compile the Code Using Pristine LEDE buildroot
+== Build latest LibreMesh code, locally using OpenWrt buildroot
 
-Refer to https://github.com/libremesh/lime-packages[lime-packages README].
+Refer to https://github.com/LibreRouterOrg/openwrt[LibreRouterOrg/openwrt] README.
