@@ -9,50 +9,21 @@ LibreMesh Quick Starting Guide
 
 == Compatible Hardware
 
-It is recommended that the router has at least 8 MB of flash memory. For 4 MB routers use the special firmware named +-mini+.
+It is recommended that the router has at least 8 MB of flash memory and 64 MB of RAM. For routers with 4 MB flsh memory or 32 MB of RAM, use the special firmware named +-mini+.
 
-These wireless routers have been tested with LibreMesh and have 8 MB of flash memory:
-
-* TP-Link WR842ND
-* TP-Link WR1043ND
-* TP-Link WDR3500
-* TP-Link WDR3600
-* TP-Link WDR4300
-* Dragino MS14
-* Alix 2d2
-* Ubiquiti Unifi AP
-* Ubiquiti AirRouter
-* Ubiquiti AirGateway
-* Ubiquiti NanoStation M5 XW
-* Ubiquiti NanoStation M5 XM
-* Ubiquiti NanoBridge M5
-* Ubiquiti NanoStation LoCo M2
-* Ubiquiti PicoStation M2
-* Ubiquiti Bullet M2
-
-Also models with 4 MB have been tested, using the +-mini+ images:
-
-* TP-Link WR740N
-* TP-Link WR741ND
-* TP-Link WR841ND
-
-For detailed information on these routers check out our link:hardware/index.html[hardware] page.
-
-_Many other models are supported_ even if not tested yet (as far as we know), see through our firmware images at http://downloads.libremesh.org/dayboot_rely/17.06/targets/[download] site.
+Not all the OpenWrt supported routers work with LibreMesh (at least, not with its default configuration), for a list of the tested hardware, see our link:hardware/index.html[hardware] page.
 
 == Get the Firmware
 === Choose a source for your firmware
 
-* For a precompiled firmware with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our http://downloads.libremesh.org/dayboot_rely/17.06/targets/[downloads] site;
-* you can compile LibreMesh firmware on your computer using https://github.com/libremesh/lime-sdk[lime-sdk] (advanced, supports custom community profiles);
-* Our https://chef.libremesh.org[Chef] platform allows you to build an image of the firmware online. The platform supports custom community profiles.
+* For the latest stable release with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our http://downloads.libremesh.org/dayboot_rely/17.06/targets/[downloads] site (recommended);
+* For using the latest LibreMesh code, you can compile the firmware on your GNU/Linux computer (or virtual machine) using OpenWrt buildroot forked https://github.com/LibreRouterOrg/openwrt[here] following the documentation in the included readme file (advanced);
 
 For more options check the link:/getit.html[Get It] page.
 
-
 === Download the correct firmware image
 
-Find the download for your router by name or model number. You may need to search different variations or aliases. You can find more detailed router model instructions https://wiki.lede-project.org/toh/start[here].
+Find the download for your router by name or model. You can find more detailed router model instructions https://openwrt.org/toh/start[here].
 
 If you are installing for the first time (a router with stock firmware), choose the link ending with `-factory.bin`. If there's no `-factory.bin` image or you are upgrading an existing install of LibreMesh, OpenWrt or LEDE, choose the link ending with `-sysupgrade.bin`.
 
@@ -67,7 +38,7 @@ _If the router is running OpenWrt or LEDE_ the instructions in the previous para
 
 _If the router is running LibreMesh_ just opening http://thisnode.info should get you to the web interface.
 
-Then you can log in as admin (if unchanged, the username and password will be on the router's box, on OpenWrt by default there's no admin password, on LEDE by default it's an empty password).
+Then you can log in as admin (if unchanged, the username and password will be on the router's box, on OpenWrt by default it's an empty password).
 
 For more connection options see link:en_connecting_nodes.html[How to connect to nodes] page.
 
@@ -76,14 +47,14 @@ If you suspect you can't connect to your router because of a damaged configurati
 === Flashing
 [IMPORTANT]
 ==================
-For Ubiquiti AirMax serie routers, flashing on top of AirOS versions 5.6.x will brick your device (the recovery procedure requires opening the router chassis and connecting directly to its serial port). If your router has AirOS 5.6.x, you will have to find and download an AirOS 5.5.x version and use it to downgrade your router.
+For Ubiquiti AirMax serie routers, flashing on top of AirOS versions 5.6.x will brick your device (the https://web.archive.org/web/20160805173552/bloodhound.aredn.org/products/AREDN/wiki/HowTo/Unbrick[recovery procedure] requires opening the router chassis and connecting directly to its serial port). If your router has AirOS 5.6.x, you will have to download an AirOS 5.5.x version (for XM hardware https://dl.ubnt.com/firmwares/XN-fw/v5.5.11/XM.v5.5.11.28002.150723.1344.bin[here], for XW hardware https://dl.ubnt.com/firmwares/XW-fw/v5.5.10/XW.v5.5.10-u2.28005.150723.1358.bin[here] and for TI hardware https://dl.ubnt.com/firmwares/XN-fw/v5.5.11/TI.v5.5.11.28002.150723.1518.bin[here]) and use it to downgrade your router.
 ==================
 
 Once you've logged in as root or admin in your router, reach the firmware upgrade page.
 
 [IMPORTANT]
 ==================
-If there's a `Keep Settings` option, take care to UNCHECK it. It is checked by default on OpenWrt/LEDE.
+If there's a `Keep Settings` option, take care to UNCHECK it. It is checked by default on OpenWrt.
 ==================
 
 Upload the firmware image file you've downloaded and click `Flash Image`. Wait a couple of minutes for the process to complete. Reconnect to the ethernet interface (for getting the new IP) and open http://thisnode.info.
@@ -110,7 +81,7 @@ If the LibreMesh router has no WAN port (just LAN ports, or just one ethernet po
 == Configuration
 WORK IN PROGRESS
 
-Refer to the link:en_config.html[LibreMesh config file] page for detailed information.
+Refer to the link:en_config.html[LibreMesh config file] page and to https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example] file for detailed information.
 
 ---
 ---
@@ -124,7 +95,7 @@ As in every Linux-based system there's the availability of a textual console int
 This part of the guide should not be needed for normal LibreMesh use.
 
 == Flashing Via the Console Interface (optional)
-This is possible just if you're upgrading an existing OpenWrt, LEDE or LibreMesh installation, not from stock firmware.
+This is possible just if you're upgrading an existing OpenWrt or LibreMesh installation, not from stock firmware.
 
 Copy the downloaded firmware image to the +/tmp+ directory on your target router using the `scp` command.
 
@@ -139,24 +110,18 @@ In case the router already has LibreMesh you can do this with
 scp /LOCAL/PATH/TO/BUILD.bin root@thisnode.info:/tmp/
 ```
 
-Otherwise (upgrading from OpenWrt or LEDE) you will need to insert the router IP address in
+Otherwise (upgrading from OpenWrt) you will need to insert the router IP address (often 192.168.1.1) in
 
 ```
 scp /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
 ```
 
-[NOTE]
-===========
-When upgrading from OpenWrt, in order to connect via ssh/scp you will need to have an admin/root password set via the web interface or via telnet and the +passwd+ command.
-Check out link:/docs/en_connecting_nodes.html[Connecting to your own node] for help on this.
-===========
-
-Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh \root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt or LEDE are running.
+Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt is running.
 
 Then enter the +/tmp+ directory where the firmware is present with +cd /tmp+, check the presence of the file with +ls+ and install it with
 
 ```
-sysupgrade -n lede-ROUTERMODEL-squashfs-sysupgrade.bin
+sysupgrade -n openwrt-ROUTERMODEL-squashfs-sysupgrade.bin
 ```
 
 [IMPORTANT]
@@ -164,13 +129,13 @@ sysupgrade -n lede-ROUTERMODEL-squashfs-sysupgrade.bin
 The +-n+ option for sysupgrade command is needed for discarding the previous configuration files. Omitting the +-n+ option is never a good idea when flashing LibreMesh.
 ============
 
-For more information on the sysupgrade process, see these http://wiki.openwrt.org/doc/howto/generic.sysupgrade[OpenWRT instructions].
+For more information on the sysupgrade process, see these https://openwrt.org/docs/guide-user/installation/generic.sysupgrade[OpenWRT instructions].
 
 == Configuring Via the Console Interface (optional)
 Rather than using the web interface, modifying directly +/etc/config/lime+ file allows to access more advanced options but increases the risk of writing broken configuration.
 
-You can use the +vi+ or +vim+ text editor for editing /etc/config/lime, the settings in this file will override the default ones in +/etc/config/lime-defaults+.
+You can use the +vim+ text editor (a short vim guide link:en_vim-guide.txt[here]) for editing +/etc/config/lime+, the settings in this file will override the default ones in +/etc/config/lime-defaults+.
 
-You can find examples and documentation in the +/docs/lime-example+ file (you can find it online https://github.com/libremesh/lime-packages/blob/develop/packages/lime-docs/files/lime-example[here]) as well as in link:en_config.html[LibreMesh config file] page on this website.
+You can find examples and documentation in the +/docs/lime-example+ file (you can find it online https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[here]) as well as in link:en_config.html[LibreMesh config file] page on this website.
 
-After saving the edits to the +lime+ file, apply the changes to system configuration files launching the +lime-config+ command. Next reboot the router with +reboot && exit+ to apply the new settings.
+After saving the edits to the +lime+ file, apply the changes to system configuration files launching the +lime-config+ command. Next, reboot the router with +reboot && exit+ to apply the new settings.
