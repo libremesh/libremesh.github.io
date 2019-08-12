@@ -10,7 +10,7 @@ This is a pretty good device with lots of memory, one of the last dual band devi
 
 Follow these steps:
 
-* First, get ssh/dropbear access: https://wiki.openwrt.org/toh/xiaomi/mir3#to_get_sshdropbear_access (don't forget to downgrade the firmware before)
+* First, get ssh/dropbear access: https://openwrt.org/toh/xiaomi/mir3#get_sshdropbear_access (don't forget to downgrade the firmware before)
 
 * Download LibreMesh rootfs and kernel files from here:
  - https://mega.nz/#!8A9CUJLQ!gJNC3SfwDdmMZ4y9BXlWp4mcn1FTAU3vWgsVYK2vW4w
