@@ -5,17 +5,10 @@ Get it
 
 == Download Precompiled Binaries
 
-We offer a list of precompiled firmware images with **generic settings**. This is the easiest way to first test and install LibreMesh in your router.
+We offer precompiled firmware images of the LibreMesh stable release (Dayboot Rely 17.06) with **generic settings**. This is the easiest way to first test and install LibreMesh in your router. 
+Images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site or compiled locally as described below.
 
-* The current **stable release** is Dayboot Rely (17.06), images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site or compiled locally as described below.
-
-* The previous **oldstable** release is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos/16.07/[downloads] site.
-
-* For experienced users who want to use the latest LibreMesh code, the firmware can be locally compiled as described https://github.com/LibreRouterOrg/openwrt[here].
-
-== Installation procedure
-
-For installation procedure read our link:docs/en_quick_starting_guide.html[Quick Starting Guide].
+The previous **oldstable** release is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos/16.07/[downloads] site.
 
 == Build stable release 17.06, locally using lime-sdk
 
@@ -28,6 +21,7 @@ Download lime-sdk using _git_ (requires https://git-scm.com/downloads[installing
 git clone https://github.com/libremesh/lime-sdk.git
 cd lime-sdk
 git checkout master
+./cooker
 ----
 
 alternatively, download directly the master branch files as a ZIP file from https://github.com/libremesh/lime-sdk/archive/master.zip[here].
@@ -36,4 +30,8 @@ Follow the steps for installing the dependencies and generating the firmware on 
 
 == Build latest LibreMesh code, locally using OpenWrt buildroot
 
-Refer to https://github.com/LibreRouterOrg/openwrt[LibreRouterOrg/openwrt] README.
+Refer to the link:development.html[Development] page.
+
+== Installation procedure
+
+For installation procedure read our link:docs/en_quick_starting_guide.html[Quick Starting Guide].
