@@ -59,6 +59,6 @@ config wifi 'radio1'
 
 These two new sections must be appended in file **/etc/config/lime** in addition to the already existing ones.
 
-To apply the changes run **lime-config** and **lime-apply**.
+To apply the changes run **lime-config** and **reboot**.
 
 =================
