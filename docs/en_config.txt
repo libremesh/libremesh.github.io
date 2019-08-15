@@ -148,7 +148,7 @@ Any option with name <mode>_<option> will be directly copied to /etc/config/wire
 [NOTE]
 .wifi WPA2 encryption
 =============
-In order to have WPA2-PSK encryptionon the AP and APname interfaces, add a +_key 'somePassword'+ and a +_encryption 'psk2'+ options for each, for having an example see https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example].
+In order to have WPA2-PSK encryption on the AP and APname interfaces, add a +_key 'somePassword'+ and a +_encryption 'psk2'+ options for each, for having an example see https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example].
 =============
 
 [NOTE]

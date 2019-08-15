@@ -69,7 +69,7 @@ the error messages, reading the
 link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[build system installation page]
 on OpenWrt wiki may help you too.
 
-.Optionallly attempt to run a few OpenWrt build tools to spot missing dependencies
+.Optionally attempt to run a few OpenWrt build tools to spot missing dependencies
 --------------------------------------------------------------------------------
 scripts/feeds update -a
 scripts/feeds install -a
@@ -78,7 +78,7 @@ make V=s
 --------------------------------------------------------------------------------
 
 
-Now that you have your system ready, you can procede with:
+Now that you have your system ready, you can proceed with:
 
 .Add LibreMesh repositories to the OpenWrt feeds
 --------------------------------------------------------------------------------

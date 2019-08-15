@@ -8,7 +8,7 @@ If you can't connect to the LibreMesh router as indicated in link:en_connecting_
 
 === First thing: wait 5 minutes
 
-After powering up the router, *up to 5 minutes* (our process monitor +smonit+ runs every 5 minutes) *can be needed* for bringing up all the services including the DHCP server needed for receiving an IP when connecting. This is a known bug, more details https://github.com/libremesh/lime-packages/issues/281[here].
+After powering up the router, *up to 5 minutes* (our process monitor +smonit+ runs every 5 minutes) *can be needed* for bringing up all the services including the DHCP server needed for receiving an IP when connecting. This is a known bug.
 
 === Do not use custom DNS servers
 
@@ -52,7 +52,7 @@ When you're physically (either via ethernet cable or via wireless) connected to 
 
 For obtaining the gateway direction using a Windows, Mac or Linux computer or Android smartphone refer to https://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[this guide].
 
-If the above guide does not work for you and you're on a Linux computer, the gateway (default route) IPv4 can be obtained using the terminal: open a terminal (open your distro menu, type "terminal" and select the first result) and execute the command
+If the above guide does not work for you and you're on a Linux computer, the gateway (default route) IPv4 can be obtained using the terminal: open a terminal (open your Linux distro menu, type "terminal" and select the first result) and execute the command
 
 ----
 ip -4 route show scope global
@@ -76,7 +76,7 @@ ssh root@10.13.0.1
 
 Do this *only* if the section _Verify the IPv4 connection_ instructions failed and so the easy _Connect using the gateway IPv4_ is not a valid way. For following this specific way you likely need a Linux computer.
 
-Install +netdiscover+ package from your distro repositories. Make sure to have a proper physical connection, re-read _Verify the physical connection_ and disconnect from any other network. Run +sudo netdiscover -f+. Some IPv4 similar to +10.13.0.1+ should appear. Add an IPv4 to your computer network interface used for connecting with the first three fields of the IP identical to the router one and the fourth different, for example +10.13.0.2+ with netmask +255.255.255.0+ or +/24+. Connect to the router inserting its IP in the browser or via SSH.
+Install +netdiscover+ package from your Linux distro repositories. Make sure to have a proper physical connection, re-read _Verify the physical connection_ and disconnect from any other network. Run +sudo netdiscover -f+. Some IPv4 similar to +10.13.0.1+ should appear. Add an IPv4 to your computer network interface used for connecting with the first three fields of the IP identical to the router one and the fourth different, for example +10.13.0.2+ with netmask +255.255.255.0+ or +/24+. Connect to the router inserting its IP in the browser or via SSH.
 
 === Connect using IPv6 link local
 
@@ -104,7 +104,7 @@ An alternative to create a NetworkManager profile is to stop it with +sudo syste
 Then, how to discover the _IPv6 link local_ address of the router we're connected to?
 
 Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::".
-To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your distro) where the appended %eth0 specifies which network interface to use (could be something like +eth0+ or +enp0s25+, you can see the interface names with the commands +ip link show+ or +ifconfig+):
+To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your Linux distro) where the appended %eth0 specifies which network interface to use (could be something like +eth0+ or +enp0s25+, you can see the interface names with the commands +ip link show+ or +ifconfig+):
 
 ----
 ping6 ff02::1%eth0
@@ -176,7 +176,7 @@ When the aforementioned connection procedures don't work and Failsafe mode doesn
 
 To prepare for a TFTP flashing procedure:
 
-* install a tftp client on your PC, on Linux distro usually the package is named +tftp-hpa+;
+* install a TFTP client on your PC, on Linux distros usually the package is named +tftp-hpa+;
 * connect your PC via an ethernet cable to a LAN ethernet port on the unpowered router;
 * use the connection manager of your PC to disconnect from any interface other than ethernet cable (e.g. wireless);
 * set up a profile for the ethernet interface with a manual IPv4, suggested configurations are IPv4 +192.168.1.2+, netmask +24+, broadcast domain +255.255.255.0+, gateway (not really needed) +192.168.1.1+;
