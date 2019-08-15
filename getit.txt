@@ -6,27 +6,9 @@ Get it
 == Download Precompiled Binaries
 
 We offer precompiled firmware images of the LibreMesh stable release (Dayboot Rely 17.06) with **generic settings**. This is the easiest way to first test and install LibreMesh in your router. 
-Images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site or compiled locally as described below.
+Images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site.
 
 The previous **oldstable** release is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos/16.07/[downloads] site.
-
-== Build stable release 17.06, locally using lime-sdk
-
-https://github.com/libremesh/lime-sdk[lime-sdk] is a tool to easily compile locally a firmware image on a GNU/Linux computer.
-It supports up to LibreMesh 17.06 release but has been discontinued and will not be used for future releases.
-
-Download lime-sdk using _git_ (requires https://git-scm.com/downloads[installing git]):
-
-----
-git clone https://github.com/libremesh/lime-sdk.git
-cd lime-sdk
-git checkout master
-./cooker
-----
-
-alternatively, download directly the master branch files as a ZIP file from https://github.com/libremesh/lime-sdk/archive/master.zip[here].
-
-Follow the steps for installing the dependencies and generating the firmware on https://github.com/libremesh/lime-sdk/blob/master/README.md[lime-sdk README].
 
 == Build latest LibreMesh code, locally using OpenWrt buildroot
 
