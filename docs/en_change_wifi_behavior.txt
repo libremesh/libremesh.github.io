@@ -5,60 +5,72 @@ Changing WiFi interface behavior
 
 == LibreMesh WiFi config
 
-For more information about the LibreMesh config file options see link:/docs/en_config.html[config].
-
 The general config WiFi section is used for configuring WiFi devices if there are not specific sections.
-The general config looks like the following example.
 
-----
-config lime 'wifi'
-	option channel_2ghz '11'
-	option channel_5ghz '48'
-	option htmode_5ghz 'HT40'
-	option distance '1000'
-	list modes 'ap'
-	list modes 'apname'
-	list modes 'ieee80211s'
-	option ap_ssid 'LibreMesh.org'
-	option apname_ssid 'LibreMesh.org/%H'
-	option adhoc_ssid 'LiMe'
-	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
-	option adhoc_mcast_rate_2ghz '24000'
-	option adhoc_mcast_rate_5ghz '6000'
-	option ieee80211s_mesh_fwding '0'
-	option ieee80211s_mesh_id 'LiMe'
-----
+For more information about the general LibreMesh config file options see link:/docs/en_config.html[config].
 
-To make a specific configuration you must create a new wifi section named radio**N**, where **N** is the radio index (to see WiFi devices list execute: iw list).
+== Specific wireless interface configuration
+
+To make a specific configuration you must create a new wifi section named radio**N**, where **N** is the radio index (to see WiFi devices list execute: +wifi status+).
 
 The following example shows how to configure specific WiFi devices.
-In the example radio0 is used only for meshing and radio1 is used only for Access Point.
 
-----
-config wifi 'radio0'
-	list modes 'ieee80211s'
-	option ieee80211s_mesh_id 'LiMe'
-	option ieee80211s_mesh_fwding '0'
-	option channel_2ghz '11'
-	option channel_5ghz '48'
-	option distance '1000'
+In the example radio0 is used only for wireless client, radio1 is used only for Access Point with a custom ESSID name, and radio2 just for meshing.
 
-config wifi 'radio1'
-	list modes 'ap'
-	list modes 'apname'
-	option apname_ssid 'LibreMesh.org/%H'
-	option apname_key 'mypassword'
-	option apname_encryption 'psk2'
-	option ap_ssid 'LibreMesh.org'
-	option ap_key 'mypassword'
-	option ap_encryption 'psk2'
-	option channel_2ghz '11'
-	option channel_5ghz '48'
-	option distance '1000'
+.WiFi interface specific options (override general option), multiple allowed
 ----
+config wifi radio0
+	list modes 'client'
+	option channel 'auto'
+	option client_ssid 'SomeWiFiNetwork'
+	option client_key 'SomeWPApskPassword'
+	option client_encryption 'psk2'
+
+config net wirelessclientWAN
+	option linux_name 'wlan0-sta'
+	list protocols 'wan'
+----
+
+The first section configures one wireless radio to be only a wireless client of an access point.
+The second section configures the just created client interface for obtaining an IP from the access point DHCP.
 
 These two new sections must be appended in file **/etc/config/lime** in addition to the already existing ones.
 
+Here radio1 is configured for just being an AP with custom ESSID name, each specified option overrides the respective general wifi option (listed in link:en_config.html[config] page), all the non-specified options (like +distance+ or +channel+) are taken from the general wifi section.
+Specifying an entry of a list, replaces the entire list.
+
+----
+config wifi radio1
+	list modes 'apname'
+	option apname_ssid 'MyHouse'
+----
+
+----
+config wifi radio2
+	list modes 'ieee80211s'
+	option ieee80211s_mesh_fwding '0'
+	option ieee80211s_mesh_id 'LiMe'
+----
+
 To apply the changes run **lime-config** and **reboot**.
 
-=================
+[NOTE]
+.interface names
+=======================
+In the just reported example, +radio0+ has to exist (check with +wifi status+) and also +wlan0-sta+ has to be created by the first section in order to be used in the second section (check with +ip link show+). 
+=======================
+
+[NOTE]
+.Network interface specific options
+=======================
+Available protocols: bmx6, bmx7, batadv, olsr, olsr6, olsr2, bgp, wan, lan, manual, static, babeld, apbb, client
+
+proto:vlan_number works too (something like bmx6:13 is supported). If VLAN is 0, no VLAN will be used.
+
+If you use manual do not specify other protocols, may result in an unpredictable behavior/configuration.
+=======================
+
+== Specific ethernet interface configuration
+
+See link:en_changing_network_behavior.html[Change ethernet behavior] page.
+

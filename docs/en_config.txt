@@ -162,4 +162,4 @@ Be aware that it cannot be used together with adhoc on the same interface.
 
 Changing the aforementioned options allows us to have a system-wide configuration.
 
-In cases where different network interfaces should have different configurations, see link:en_changing_network_behavior.html[Change network behavior] page and https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example].
+In cases where different network interfaces should have different configurations, see link:en_changing_network_behavior.html[Change ethernet behavior] and link:en_change_wifi_behavior.html[Change wireless behavior] page and https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example].
