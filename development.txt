@@ -61,7 +61,8 @@ sudo apt update
 sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal python-minimal
 --------------------------------------------------------------------------------
 
-Then you need to get the OpenWrt source code
+Then you need to get the OpenWrt source code.
+Make sure to _git clone_ the source code as normal user (i.e. do not use root): the compilation will refuse to run if the administrator user _root_ is being used.
 
 .Download OpenWrt source code
 --------------------------------------------------------------------------------
