@@ -8,11 +8,11 @@ Development
 The code is stored inside a git tree which contains all branches and releases.
 
 All repositories can be browsed online through
-http://github.com/libremesh/[GitHub].
+https://github.com/libremesh/[GitHub].
 
 == Getting The _LibreMesh_ Code
 
-Any _LibreMesh_ development happens in the _lime-packages_ git repository which can be browsed on http://github.com/libremesh/lime-packages[GitHub] or downloaded using git:
+Most _LibreMesh_ development happens in the _lime-packages_ git repository which can be browsed on https://github.com/libremesh/lime-packages[GitHub] or downloaded using git:
 
 ----
 git clone https://github.com/libremesh/lime-packages.git
@@ -33,7 +33,7 @@ bundle exec jekyll serve
 ----
 For more details, check the https://github.com/libremesh/lime-web/blob/master/README[README] on Github.
 
-If you would like to contribute to the documentation then please send patches to our mailing list and use the prefix "doc:" in the patches subject.
+If you would like to contribute to the documentation then please send patches to our mailing list or open a pull request on Github.
 
 Please use the http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc syntax] for contributions on the web page.
 
@@ -44,7 +44,24 @@ We accept pull requests via GitHub. But patches can also be submitted via the de
 
 == Compiling LibreMesh from source code
 
-First of all you need to get the OpenWrt source code
+This procedure has been tested on GNU/Linux, it could require some modifications for working on other systems.
+
+First of all you need to install a few packages to your system.
+Building OpenWrt has a bunch of
+dependencies, if you are unsure about your system having all the
+dependencies installed you can check if the following commands fails and look at
+the error messages, reading the
+link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[build system installation page]
+on OpenWrt wiki may help you too.
+
+On an Ubuntu system, the following command will install the minimum compilation dependencies:
+
+--------------------------------------------------------------------------------
+sudo apt update
+sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal python-minimal
+--------------------------------------------------------------------------------
+
+Then you need to get the OpenWrt source code
 
 .Download OpenWrt source code
 --------------------------------------------------------------------------------
@@ -58,16 +75,8 @@ cd openwrt
 
 .Checkout OpenWrt stable release
 --------------------------------------------------------------------------------
-git checkout v18.06.2
+git checkout v18.06.4
 --------------------------------------------------------------------------------
-
-
-Now you have the OpenWrt source code, building OpenWrt has a bunch of
-dependencies on your system, if you are unsure about your system having all the
-dependencies installed you can check if the following commands fails and look at
-the error messages, reading the
-link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[build system installation page]
-on OpenWrt wiki may help you too.
 
 .Optionally attempt to run a few OpenWrt build tools to spot missing dependencies
 --------------------------------------------------------------------------------
@@ -104,6 +113,10 @@ scripts/feeds install -a
 make menuconfig
 --------------------------------------------------------------------------------
 
+Check out the +target+ (e.g. +ar71xx+), +subtarget+ (e.g. +generic+) and +profile+ (e.g. +tl-wdr3600-v1+) of your router on https://openwrt.org/toh/start[OpenWrt table of hardware].
+
+Select the _Target System_, _Subtarget_ and _Target Profile_ accordingly.
+
 Deselect problematic packages:
 
 - Base system -> dnsmasq
@@ -111,23 +124,36 @@ Deselect problematic packages:
 - Network -> odhcpd
 - Network -> odhcpd-ipv6only
 
-Optionally deselect unused packages:
+Optionally, deselect unused packages:
 
 - Network -> ppp
 - Kernel modules -> Network Support -> kmod-ppp
 
 Select LibreMesh packages:
 
-- LiMe -> dnsmasq-distributed-hosts
-- LiMe -> dnsmasq-lease-share
-- LiMe -> lime-app
-- LiMe -> lime-hwd-openwrt-wan
-- LiMe -> lime-proto-anygw
-- LiMe -> lime-proto-babeld
-- LiMe -> lime-proto-batadv
-- LiMe -> lime-proto-wan
-- LiMe -> lime-system
-- LiMe -> smonit
+- LiMe -> lime-system (LibreMesh system files)
+- LiMe -> lime-proto-babeld (LiMe babeld proto support)
+- LiMe -> lime-proto-batadv (LiMe batman-adv proto support)
+- LiMe -> lime-proto-anygw (LiMe anygw proto support)
+- LiMe -> lime-hwd-openwrt-wan (Respect openwrt wan interface as default)
+- LiMe -> lime-proto-wan (LiMe wan proto support)
+- LiMe -> shared-state (Very minimal state sharing betwen nodes)
+- LiMe -> hotplug-initd-services (Hotplug events of init.d services)
+- LiMe -> shared-state-babeld_hosts (babeld-hosts module for shared-state)
+- LiMe -> shared-state-bat_hosts (bat-hosts module for shared-state)
+- LiMe -> shared-state-dnsmasq_hosts (dnsmasq hosts module for shared-state)
+- LiMe -> shared-state-dnsmasq_leases (dnsmasq leases module for shared-state)
+- LiMe -> shared-state-nodes_and_links (nodes_and_links module for shared-state)
+- LiMe -> check-date-http (Keep local date under NTP too far away skew)
+- LiMe -> lime-app (LimeApp)
+- LiMe -> Offline Documentation -> lime-docs-minimal (LibreMesh English documentation)
+- LiMe -> Offline Documentation -> lime-docs (LibreMesh minimal documentation)
+- LiMe -> lime-debug (libremesh debug utils)
+- LiMe -> first-boot-wizard (first-boot-wizard)
+- LiMe -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
+- LiMe -> lime-map-agent (LiMe LibreMap agent)
+
+The packages at the bottom of this list are the non strictly required ones, consider removing some of them _only_ if the created image is too large and does not fit in the router memory.
 
 Save and exit
 
@@ -136,5 +162,7 @@ Save and exit
 make -j$(nproc)
 --------------------------------------------------------------------------------
 
+Where you should replace +$(nproc)+ with the number of _physical_ CPU cores obtainable from +lscpu+ command as _Core(s) per socket_.
+
 If everything goes well you should find the produced binaries inside the +bin/+
-directory
+directory.
