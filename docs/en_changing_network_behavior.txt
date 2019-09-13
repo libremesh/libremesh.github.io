@@ -3,84 +3,121 @@
 Changing network interface behavior
 ===================================
 
-== LibreMesh network config
+== LibreMesh interface-specific network configuration
 
-Most of the LibreMesh configuration is handled by a unified configuration file placed on **/etc/config/lime**.
-This file is part of the https://wiki.openwrt.org/doc/uci[UCI] database which unifies also most of the OpenWRT/LEDE configuration files.
-The main configuration script of LibreMesh is named _lime-config_ and can be invoked typing **lime-config** in the node's root terminal.
+If no interface-specific network configuration is present, the general network configuration section is used for all the interfaces.
 
-In addition to _/etc/config/lime_ there exist also _/etc/config/lime-defaults_. 
-If a configuration option is not found in config/lime, the _config/lime-defaults_ one will be used when running the _lime-config_ command.
+For more information about the general LibreMesh config file options see link:/docs/en_config.html[The config file] page.
 
-[NOTE]
-.lime config file
-=================
-The idea behind this structure is that the user **only** modifies _/etc/config/lime_ but never _/etc/config/lime-defaults_.
+For more examples and offline documentation check out `/docs/lime-example` on the router or https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[lime-example file online].
 
-Once the file is modified the command _lime-config_ must be run. To enable the changes you might reboot the node (**reboot** command) or execute **reload_config**.
-=================
+== Specific ethernet interface configuration
 
-For a detailed view of the config file options see link:/docs/en_config.html[config].
+If we want to change the default behavior of just one network interface of the many that are present in a router, we can define a specific configuration.
 
-The networking options of _config/lime_ are defined in two different blocks.
-
-== Common network options
-
-If there is not a specific network section for a specific network device, the options from the common section will be used.
-
-.Networking default options
-----
-config lime network
-	option primary_interface eth0
-	option main_ipv4_address '10.%N1.0.0/16'
-	option main_ipv6_address '2a00:1508:0a%N1:%N200::/64'
-	option bmx6_mtu '1398'
-	list protocols adhoc
-	list protocols lan
-	list protocols anygw
-	list protocols batadv:%N1
-	list protocols bmx6:13
-	list resolvers 4.2.2.2
-	list resolvers 2001:470:20::2
-----
-
-In this example, all networks interfaces will be used with the following set of protocols:
-
-. **lan** so client devices can connect and obtain a valid IP configuration via DHCP
-. **anygw** so roaming will be enabled
-. **adhoc** so if WiFi device, it will be used for meshing in Ad-Hoc mode
-. **batadv** so the Layer2 network routing protocol will be enabled to find possible neighbour nodes (VLAN of the mesh cloud based on SSID)
-. **bmx6** so the Layer3 network routing protocol will be enabled to find possible neighbour nodes (VLAN 13)
-
-== Specific network options
-
-But if we want to change the default behavior of one or more network devices we can define a specific configuration.
+Please make sure to check out how OpenWrt names the physical ports of your router model, for this read the router page accessible from https://openwrt.org/toh/start[OpenWrt table of hardware].
 
 .Ethernet specific options, multiple allowed
 ----
-config net wan_network
-	option linux_name 'eth0'
+config net port5
+	option linux_name 'eth1.5'
 	list protocols 'wan'
-	list protocols 'bmx6:13'
-	list protocols 'batadv:%N1'
 ----
 
-In this case the eth0 device will be used as WAN (so the DHCP client will be enabled) but also for meshing (enable routing protocols does not hurt!).
-
-The option linux_name must coincide with the real interface name of the system, the command _ip link_ can be used to list the network devices.
+In this case the eth1.5 interface will be used as WAN (so the DHCP client will be enabled).
 
 [NOTE]
-.lime config file
+.config net
+================
+Do not put any "." in the section name (e.g. _port5_).
+
+As `linux_name`, use the actual name of the interface as the system shows (check with +ip link show+).
+
+Some of the available protocols require the relative package, for example `lime-proto-wan`, to be installed.
+================
+
+[NOTE]
+.Network interface specific options
+=======================
+Available protocols: bmx6, bmx7, batadv, olsr, olsr6, olsr2, bgp, wan, lan, manual, static, babeld, apbb, client
+
+Note that some of these protocols will require the relative `lime-proto-...` package being installed, otherwise the protocol entry will be ignored. 
+
+proto:vlan_number works too (something like bmx6:13 is supported). If VLAN is 0, no VLAN will be used.
+
+VLAN type defaults to 802.1ad, but it can be set to 80.1q adding another option `proto:vlan_number:8021q`.
+
+If you use manual do not specify other protocols, may result in an unpredictable behavior/configuration.
+=======================
+
+[NOTE]
+.WAN autoconfiguration
 =================
-If the LibreMesh module **lime-hwd-openwrt-wan** is installed (it is by default) and your node have two or more ethernet ports, 
+If the LibreMesh package `lime-hwd-openwrt-wan` is installed and your node have two or more ethernet ports, 
 LibreMesh might autoconfigure as WAN one of these network ethernet device.
 
-In this case there will be a new specific configuration section like this one: 
+In this case you will find a new specific configuration section like this one: 
 ----
 config net 'lm_hwd_openwrt_wan'
 	option autogenerated 'true'
+	...
 ----
 
-If we want to change the behavior of this specific network device we must set autogenerated to **false**.
+If we want to change the behavior of this specific network interface and stop the automatic rewrite of its configuration, we must set the `autogenerated` option to `false`.
+
 =================
+
+== Ground routing configuration
+
+For more information on ground routing concept, check out https://github.com/libremesh/lime-packages/issues/443[these resources].
+
+.Ground routing specific sections
+----
+config hwd_gr link1
+	option net_dev 'eth0'
+	option vlan '5'
+	option switch_dev 'switch0'
+	option switch_cpu_port '0'
+	list switch_ports '4'
+----
+
+[NOTE]
+.config hwd_gr
+===============
+* net_dev: Plain ethernet device on top of which 802.1q VLAN will be constructed.
+
+* vlan: VLAN ID to use for this ground routing link, use little one because cheap switch doesn't supports big IDs, this will be used also as 802.1q VID.
+
+* switch_dev: These options regarding switch need to be set only if your ethernet device is connected to a switch chip. If the switch exists you can read its name (like switch0) in +/etc/config/network+ file.
+
+* switch_cpu_port: Refer to switch port map of your device on https://openwrt.org/toh/start[OpenWrt ToH] to know CPU port index.
+
+* switch_ports: List switch ports on which you want the VLAN being passed, refer to https://openwrt.org/toh/start[OpenWrt ToH] for correspondence with physical ports.
+===============
+
+[NOTE]
+==============
+One section for each ground routing link.
+With ground routing we mean setups having LibreMesh on a router which is connected via cable(s), eventually through a switch, to some wireless routers running the original firmware in WDS (transparent bridge) Ap/Sta mode.
+Likely you want to configure as many sections of ground routing with different VLAN numbers or different switch ports as many connected devices in WDS mode.
+==============
+
+== BGP configuration
+
+.Proto BGP specific sections (one section for each BGP peer)
+----
+config bgp_peer peer1
+	option remoteIP '192.0.2.6'
+	option remoteAS '65550'
+
+config bgp_peer peer2
+	option remoteIP '2001:db8::c001'
+	option remoteAS '65549'
+----
+
+For documentation on BGP configuration see link:http://nicolasacco.diveni.re/~gio/internship-report/main.html#proto:bgp[this thesis].
+
+== Specific wireless interface configuration
+
+See link:en_change_wifi_behavior.help[Change WiFi behavior] page.
 
