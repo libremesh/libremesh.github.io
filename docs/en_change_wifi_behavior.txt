@@ -1,64 +1,76 @@
 ---
 ---
-Changing WiFi inteface behavior
+Changing WiFi interface behavior
 ===============================
 
-== LibreMesh WiFi config
+== LibreMesh interface-specific WiFi configuration
 
-For more information about the LibreMesh config file options see link:/docs/en_config.html[config].
+If no specific WiFi interface configuration is present, the general WiFi configuration section is used for all the interfaces.
 
-The general config WiFi section is used for configuring WiFi devices if there are not specific sections.
-The general config looks like the following example.
+For more information about the general LibreMesh config file options see link:/docs/en_config.html[The config file] page.
 
+For more examples and offline documentation check out `/docs/lime-example` on the router or https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[lime-example file online].
+
+== Specific wireless interface configuration
+
+To create an interface-specific configuration you must create a new wifi section named radio**N**, where **N** is the radio index (to see WiFi devices list execute: +wifi status+).
+
+In the following example radio0 is used only for wireless client, radio1 is used only for Access Point with a custom ESSID name, and radio2 just for meshing.
+
+.WiFi interface-specific options (override general option), multiple allowed
 ----
-config lime 'wifi'
-	option channel_2ghz '11'
-	option channel_5ghz '48'
-	option htmode_5ghz 'HT40'
-	option distance '1000'
-	list modes 'ap'
+config wifi radio0
+	list modes 'client'
+	option channel 'auto'
+	option client_ssid 'SomeWiFiNetwork'
+	option client_key 'SomeWPApskPassword'
+	option client_encryption 'psk2'
+
+config net wirelessclientWAN
+	option linux_name 'wlan0-sta'
+	list protocols 'wan'
+
+config wifi radio1
 	list modes 'apname'
+	option apname_ssid 'MyHouse'
+
+config wifi radio2
 	list modes 'ieee80211s'
-	option ap_ssid 'LibreMesh.org'
-	option apname_ssid 'LibreMesh.org/%H'
-	option adhoc_ssid 'LiMe'
-	option adhoc_bssid 'ca:fe:00:c0:ff:ee'
-	option adhoc_mcast_rate_2ghz '24000'
-	option adhoc_mcast_rate_5ghz '6000'
 	option ieee80211s_mesh_fwding '0'
 	option ieee80211s_mesh_id 'LiMe'
 ----
 
-To make a specific configuration you must create a new wifi section named radio**N**, where **N** is the radio index (to see WiFi devices list execute: iw list).
+The first section configures one radio interface to be only a wireless client (station associated to a wireless access point).
+The second section configures the just created client interface for obtaining an IP from the access point DHCP server. The employed name `wlan0-sta` has to match the name of the interface created by the first section.
 
-The following example shows how to configure specific WiFi devices.
-In the example radio0 is used only for meshing and radio1 is used only for Access Point.
+The specific-interface configuration sections must be appended in file **/etc/config/lime** in addition to the already existing generic configuration.
 
-----
-config wifi 'radio0'
-	list modes 'ieee80211s'
-	option ieee80211s_mesh_id 'LiMe'
-	option ieee80211s_mesh_fwding '0'
-	option channel_2ghz '11'
-	option channel_5ghz '48'
-	option distance '1000'
+In the third section, `radio1` is configured for just being an access point with custom ESSID name, each specified option overrides the respective general WiFi option (listed in link:en_config.html[The config file] page), all the non-specified options (like +distance+ or +channel+) are taken from the general wifi section.
+Specifying an entry of a list, replaces the entire list (for example, setting the `apname` entry to the `modes` list means that for this interface, `apname` will be the only active mode).
 
-config wifi 'radio1'
-	list modes 'ap'
-	list modes 'apname'
-	option apname_ssid 'LibreMesh.org/%H'
-	option apname_key 'mypassword'
-	option apname_encryption 'psk2'
-	option ap_ssid 'LibreMesh.org'
-	option ap_key 'mypassword'
-	option ap_encryption 'psk2'
-	option channel_2ghz '11'
-	option channel_5ghz '48'
-	option distance '1000'
-----
+To apply the changes run `lime-config` and `reboot`.
 
-These two new sections must be appened in file **/etc/config/lime** in addition to the already existing ones.
+[NOTE]
+.interface names
+=======================
+In the just reported example, +radio0+ has to exist (check with +wifi status+) and also +wlan0-sta+ has to be created by the first section in order to be used in the second section (after running `lime-config`, check with +ip link show+).
+=======================
 
-To apply the changes run **lime-config** and **lime-apply**.
+[NOTE]
+.Network interface specific options
+=======================
+Available protocols: bmx6, bmx7, batadv, olsr, olsr6, olsr2, bgp, wan, lan, manual, static, babeld, apbb, client
 
-=================
+Note that some of these protocols will require the relative `lime-proto-...` package being installed, otherwise the protocol entry will be ignored. 
+
+`proto:vlan_number` works too (something like bmx6:13 is supported). If VLAN is 0, no VLAN will be used.
+
+VLAN type defaults to 802.1ad, but it can be set to 80.1q adding another option `proto:vlan_number:8021q`.
+
+If you use manual do not specify other protocols, may result in an unpredictable behavior/configuration.
+=======================
+
+== Specific ethernet interface configuration
+
+See link:en_changing_network_behavior.html[Change ethernet behavior] page.
+
