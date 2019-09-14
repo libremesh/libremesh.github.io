@@ -8,7 +8,7 @@ If you can't connect to the LibreMesh router as indicated in link:en_connecting_
 
 === First thing: wait 5 minutes
 
-After powering up the router, *up to 5 minutes* (our process monitor +smonit+ runs every 5 minutes) *can be needed* for bringing up all the services including the DHCP server needed for receiving an IP when connecting. This is a known bug, more details https://github.com/libremesh/lime-packages/issues/281[here].
+After powering up the router, *up to 5 minutes can be needed* for bringing up all the services including the DHCP server needed for receiving an IP when connecting. This is a known bug.
 
 === Do not use custom DNS servers
 
@@ -52,7 +52,7 @@ When you're physically (either via ethernet cable or via wireless) connected to 
 
 For obtaining the gateway direction using a Windows, Mac or Linux computer or Android smartphone refer to https://www.howtogeek.com/233952/how-to-find-your-routers-ip-address-on-any-computer-smartphone-or-tablet/[this guide].
 
-If the above guide does not work for you and you're on a Linux computer, the gateway (default route) IPv4 can be obtained using the terminal: open a terminal (open your distro menu, type "terminal" and select the first result) and execute the command
+If the above guide does not work for you and you're on a Linux computer, the gateway (default route) IPv4 can be obtained using the terminal: open a terminal (open your Linux distro menu, type "terminal" and select the first result) and execute the command
 
 ----
 ip -4 route show scope global
@@ -76,7 +76,7 @@ ssh root@10.13.0.1
 
 Do this *only* if the section _Verify the IPv4 connection_ instructions failed and so the easy _Connect using the gateway IPv4_ is not a valid way. For following this specific way you likely need a Linux computer.
 
-Install +netdiscover+ package from your distro repositories. Make sure to have a proper physical connection, re-read _Verify the physical connection_ and disconnect from any other network. Run +sudo netdiscover -f+. Some IPv4 similar to +10.13.0.1+ should appear. Add an IPv4 to your computer network interface used for connecting with the first three fields of the IP identical to the router one and the fourth different, for example +10.13.0.2+ with netmask +255.255.255.0+ or +/24+. Connect to the router inserting its IP in the browser or via SSH.
+Install +netdiscover+ package from your Linux distro repositories. Make sure to have a proper physical connection, re-read _Verify the physical connection_ and disconnect from any other network. Run +sudo netdiscover -f+. Some IPv4 similar to +10.13.0.1+ should appear. Add an IPv4 to your computer network interface used for connecting with the first three fields of the IP identical to the router one and the fourth different, for example +10.13.0.2+ with netmask +255.255.255.0+ or +/24+. Connect to the router inserting its IP in the browser or via SSH.
 
 === Connect using IPv6 link local
 
@@ -104,7 +104,7 @@ An alternative to create a NetworkManager profile is to stop it with +sudo syste
 Then, how to discover the _IPv6 link local_ address of the router we're connected to?
 
 Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::".
-To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your distro) where the appended %eth0 specifies which network interface to use (could be something like +eth0+ or +enp0s25+, you can see the interface names with the commands +ip link show+ or +ifconfig+):
+To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your Linux distro) where the appended %eth0 specifies which network interface to use (could be something like +eth0+ or +enp0s25+, you can see the interface names with the commands +ip link show+ or +ifconfig+):
 
 ----
 ping6 ff02::1%eth0
@@ -127,7 +127,7 @@ Now that you have the target IPv6 link local you can connect to the router:
 . Try connecting via ssh: +ssh root@fe90::aa20:66ff:fe4f:ae87%eth0+. Remember to include both +root@+, otherwise it will attempt to connect using your personal username, and +%eth0+ (or whatever is the name of the interface you used for connecting, you can see all interface names with +ip link show+).
 . If there's not yet a root password set on the router and the password access was not disabled by the network-profile, a blank password access is granted.
 . Otherwise try all the router root passwords you remember.
-. If neither work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt/LEDE failsafe mode (this last procedure could ask for the password anyway if this was set in the network-profile during compilation of the installation image).
+. If neither work, and you already tried with all the other methods, likely you will have to reflash your router (e.g. using TFTP) or to reset using OpenWrt failsafe mode (this last procedure could ask for the password anyway if this was set in the network-profile during compilation of the installation image).
 
 If you managed to connect via ssh you can also copy files on the router using IPv6 link local and +scp+ (for copying big files like firmware images use the +/tmp+ directory as a destination):
 
@@ -142,10 +142,6 @@ An example of execution:
 
 ----
 p4u@nomada:~$ ./disc6 eth1
-...........................Host found, connecting to it!
-
-Warning: Permanently added 'fe80::a2f3:c1ff:fe39:7cea%eth1' (RSA) to the list of known hosts.
-root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 ----
 
 == Still no access possible
@@ -154,11 +150,11 @@ root@fe80::a2f3:c1ff:fe39:7cea%eth1's password:
 
 These situations of non-responsivity can arise from bad manual configurations and customizations (network-profile) or bad images being flashed or incompatible router model.
 
-If you feel confident enough, you can try to boot your router in LEDE/OpenWrt failsafe mode or to re-flash it using low level procedures e.g. TFTP (if available) or serial connection (risky) or other recovery procedures you can find on link:https://lede-project.org/toh/start[your router's specific page].
+If you feel confident enough, you can try to boot your router in OpenWrt failsafe mode or to re-flash it using low level procedures e.g. TFTP (if available) or serial connection (risky) or other recovery procedures you can find on link:https://openwrt.org/toh/start[your router's specific page].
 
 === Recover from bad configurations with Failsafe mode
 
-Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://wiki.openwrt.org/toh/start[OpenWrt hardware wiki]. If you're trying to reset the router after forgetting the password, this procedure could ask for the password anyway in case this was set in the network-profile during compilation of the installation image.
+Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://openwrt.org/toh/start[OpenWrt table of hardware]. If you're trying to reset the router after forgetting the password, this procedure could ask for the password anyway in case this was set in the network-profile during compilation of the installation image.
 
 The generic procedure is to start pressing repeatedly the router reset button during the boot, the LEDs should start blinking and failsafe mode activated instead of normal boot.
 
@@ -172,11 +168,15 @@ If an error like +Unable to connect+ or +No route to host+ is obtained, likely y
 
 === Re-flashing via TFTP
 
-When the aforementioned connection procedures don't work and Failsafe mode doesn't help, likely we will have to reinstall a firmware image. As the normal way to reinstall, explained in link:en_quick_starting_guide.html[Quick Starting Guide] likely is not going to work, we can try communicating directly with the router bootloader. The bootloader is a tiny piece of software that never gets modified when flashing OpenWrt/LEDE/LibreMesh and includes recovery functions. Usually it includes a TFTP (Trivial File Transfer Protocol) which can be activated keeping the reset button pressed for 10 seconds while plugging the router power cord (common in Ubiquiti routers, the success in this operation is confirmed by a nice blinking pattern of the LEDs) or is active for a short time after plugging the router (in some old TP-Link routers). For specific instructions about how to activate the TFTP server (or, less often, client) in each router refer to https://wiki.openwrt.org/toh/start[OpenWrt] or https://lede-project.org/toh/start[LEDE] table of hardware.
+When the aforementioned connection procedures don't work and Failsafe mode doesn't help, likely we will have to reinstall a firmware image. As the normal way to reinstall, explained in link:en_quick_starting_guide.html[Quick Starting Guide] likely is not going to work, we can try communicating directly with the router bootloader. The bootloader is a tiny piece of software that never gets modified when flashing OpenWrt/LibreMesh and includes recovery functions. Usually it includes a TFTP (Trivial File Transfer Protocol) service, either server (e.g. on Ubiquiti routers) or client (e.g. on TP-Link routers), which can be activated keeping the reset button pressed for 10 seconds while plugging the router power cord (in Ubiquiti routers the success of this operation is confirmed by a nice blinking pattern of the LEDs) or is active for a short time after plugging the router (in some old Linksys routers). For specific instructions about how to activate the TFTP server or client in each router refer to https://openwrt.org/toh/start[OpenWrt table of hardware].
+
+==== Procedure for routers with a TFTP server
+
+Always read the https://openwrt.org/toh/start[OpenWrt table of hardware] before attempting this procedure.
 
 To prepare for a TFTP flashing procedure:
 
-* install a tftp client on your PC, on Linux distro usually the package is named +tftp-hpa+;
+* install a TFTP client on your PC, on Linux distros usually the package is named +tftp-hpa+;
 * connect your PC via an ethernet cable to a LAN ethernet port on the unpowered router;
 * use the connection manager of your PC to disconnect from any interface other than ethernet cable (e.g. wireless);
 * set up a profile for the ethernet interface with a manual IPv4, suggested configurations are IPv4 +192.168.1.2+, netmask +24+, broadcast domain +255.255.255.0+, gateway (not really needed) +192.168.1.1+;
@@ -189,6 +189,10 @@ To prepare for a TFTP flashing procedure:
 * wait 5 minutes for the flashing to be complete and reboot the router.
 
 We recommend to follow these instructions only after verifying the goodness of it for the specific device to recover.
+
+==== Procedure for routers with a TFTP client
+
+In this case, the procedure can change by a wider extent so that the router-specific instructions need to be followed as reported on https://openwrt.org/toh/start[OpenWrt table of hardware].
 
 === Serial connection
 
