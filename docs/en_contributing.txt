@@ -1,6 +1,0 @@
----
----
-How to contribute
-===========
-
-If you want to improve the documentation do it here: https://github.com/libremesh/lime-web/tree/master/docs
