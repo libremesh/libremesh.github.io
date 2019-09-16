@@ -107,19 +107,17 @@ Check out the +target+ (e.g. +ar71xx+), +subtarget+ (e.g. +generic+) and +profil
 
 Select the _Target System_, _Subtarget_ and _Target Profile_ accordingly.
 
-Deselect problematic packages:
+**Deselect** problematic packages:
 
 - Base system -> dnsmasq
 - Base system -> firewall
-- Network -> odhcpd
 - Network -> odhcpd-ipv6only
 
 Optionally, deselect unused packages:
 
 - Network -> ppp
-- Kernel modules -> Network Support -> kmod-ppp
 
-Select LibreMesh packages:
+Select (press space until when an asterisk `*` appears, like `<*>`) LibreMesh packages:
 
 - LiMe -> lime-system (LibreMesh system files)
 - LiMe -> lime-proto-babeld (LiMe babeld proto support)
