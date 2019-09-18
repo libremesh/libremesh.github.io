@@ -61,7 +61,7 @@ So the BMX network will be a single one for all the mesh but the BAT-ADV network
 image::img/network1.png[align="center"]
 
 **This configuration allows to isolate the layer 2 clouds**.
-For instance a neighborhood, a company complex or a street level hotsposts network can choose to isolate their LAN from the rest of the network.
+For instance a neighborhood, a company complex or a street level hotspots network can choose to isolate their LAN from the rest of the network.
 However at the same time, they will be able to reach the rest of nodes using the layer 3 routed network.
 
 Roaming will be available inside the cloud, so any TCP session, a video streaming or even a SIP call can be done while moving around.

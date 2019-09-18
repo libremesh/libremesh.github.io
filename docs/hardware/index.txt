@@ -18,7 +18,7 @@ you find the opportunity send us your contribution via git pull-request or mail.
 
 [width="90%",options="header"]
 |=======
-|Device|Flash|RAM|WAN port|2.4 GHz|5 GHz|LEDE target|LEDE profile|factory image |sysupgrade image
+|Device|Flash|RAM|WAN port|2.4 GHz|5 GHz|OpenWrt target|OpenWrt profile|factory image |sysupgrade image
 |https://openwrt.org/toh/xiaomi/mir3[Xiaomi MiWiFi R3]|128 MB|128 MB|Yes|Yes|Yes|MT7620NAND||see link below|see link below
 |https://openwrt.org/toh/xiaomi/mir3g[Xiaomi Mi WiFi R3G] |128 MB|256 MB|Yes|Yes|Yes|ramips|mir3g||
 |https://openwrt.org/toh/hwdata/youhua/youhua_wr1200js[YouHua WR1200JS] |16 MB|128 MB|Yes|Yes|Yes|ramips|youhua_wr1200js||
