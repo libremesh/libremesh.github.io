@@ -119,5 +119,5 @@ For documentation on BGP configuration see link:http://nicolasacco.diveni.re/~gi
 
 == Specific wireless interface configuration
 
-See link:en_change_wifi_behavior.help[Change WiFi behavior] page.
+See link:en_change_wifi_behavior.html[Change WiFi behavior] page.
 
