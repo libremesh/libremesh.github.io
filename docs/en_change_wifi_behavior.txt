@@ -4,7 +4,7 @@ Changing WiFi interface behavior
 ===============================
 
 [.text-right]
-icon:edit link:https://github.com/libremesh/lime-web/edit/master/docs/en_change_wifi_behavior.txt[Edit this page]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_change_wifi_behavior.txt[Edit this page]
 
 == LibreMesh interface-specific WiFi configuration
 
