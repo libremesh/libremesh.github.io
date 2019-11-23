@@ -3,6 +3,8 @@
 Communication
 =============
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/communication.txt[Edit this page]
 
 == Mailing Lists
 

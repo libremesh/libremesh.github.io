@@ -7,6 +7,10 @@ lang: en
 LibreMesh Quick Starting Guide
 ==============================
 
+[.text-right]
+icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs[Create new page] and link:https://github.com/libremesh/lime-web/edit/master/_includes/docs_nav.html[Add it to index]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_quick_starting_guide.txt[Edit this page]
+
 == Compatible Hardware
 
 It is recommended that the router has at least 8 MB of flash memory and 64 MB of RAM. For routers with 4 MB flash memory or 32 MB of RAM, use the special firmware named +-mini+ or link:/development.html[compile one yourself] excluding some heavy packages (e.g. +opkg+ or the LuCI and lime-app web interfaces).

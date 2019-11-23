@@ -3,6 +3,9 @@
 Development
 ===========
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/development.txt[Edit this page]
+
 == The Source Code
 
 The code is stored inside a git tree which contains all branches and releases.

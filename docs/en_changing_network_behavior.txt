@@ -3,6 +3,10 @@
 Changing network interface behavior
 ===================================
 
+[.text-right]
+icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs[Create new page] and link:https://github.com/libremesh/lime-web/edit/master/_includes/docs_nav.html[Add it to index]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_changing_network_behavior.txt[Edit this page]
+
 == LibreMesh interface-specific network configuration
 
 If no interface-specific network configuration is present, the general network configuration section is used for all the interfaces.

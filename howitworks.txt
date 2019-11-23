@@ -3,6 +3,9 @@
 How it works
 ============
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/howitworks.txt[Edit this page]
+
 == Objectives to Achieve
 
   - Scalability

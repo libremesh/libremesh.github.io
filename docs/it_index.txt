@@ -6,6 +6,10 @@ lang: it
 Indice della Documentazione
 ===========================
 
+[.text-right]
+icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs[Crea una nuova pagina] and link:https://github.com/libremesh/lime-web/edit/master/_includes/docs_nav.html[Aggiungila all'indice]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/it_index.txt[Modifica questa pagina]
+
 == Contribuire alla Documentazione
 
 Siamo molto felici se ti va di contribuire alla documentazione, guarda la sezione "The Web Presence" nella pagina di link:/development.html[Sviluppo].
