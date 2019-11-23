@@ -4,6 +4,7 @@ TP-Link
 =======
 
 [.text-right]
+icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs/hardware[Create new page] and link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/index.txt[Add it to index]
 icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/tp-link.txt[Edit this page]
  
 Because of the http://ml.ninux.org/pipermail/battlemesh/2016-February/004379.html[new FCC rules], new TP-Link models would require a special method to install third party firmwares like LibreMesh.

@@ -4,6 +4,7 @@ Xiaomi MiWiFi R3
 ================
 
 [.text-right]
+icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs/hardware[Create new page] and link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/index.txt[Add it to index]
 icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/xiaomi-miwifir3.txt[Edit this page]
 
 == How to install LibreMesh on the Xiaomi MiWiFi R3
