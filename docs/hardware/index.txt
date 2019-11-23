@@ -3,6 +3,9 @@
 Hardware Documentation Index
 ============================
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/index.txt[Edit this page]
+
 == Hardware
 
 Installing LibreMesh is not always as easy as we would like to.

@@ -3,6 +3,9 @@
 Connecting to LibreMesh nodes
 =============================
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_connecting_nodes.txt[Edit this page]
+
 == Connecting to your own node
 
 === Connecting to the Web Interface

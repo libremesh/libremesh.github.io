@@ -3,6 +3,9 @@
 Get it
 ======
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/getit.txt[Edit this page]
+
 == Download Precompiled Binaries
 
 We offer precompiled firmware images of the LibreMesh stable release (Dayboot Rely 17.06) with **generic settings**. This is the easiest way to first test and install LibreMesh in your router. 

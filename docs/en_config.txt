@@ -3,6 +3,9 @@
 The Configuration file
 ======================
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_config.txt[Edit this page]
+
 == The Configuration file
 
 The configuration file placed on **/etc/config/lime** is one of the key points for LibreMesh.

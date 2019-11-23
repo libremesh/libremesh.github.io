@@ -3,6 +3,9 @@
 About the project
 =================
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/about.txt[Edit this page]
+
 == About
 
 image:logo/logo.png["The LibreMesh logo",role="right"]

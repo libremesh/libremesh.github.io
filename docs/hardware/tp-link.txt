@@ -3,6 +3,9 @@
 TP-Link
 =======
 
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/tp-link.txt[Edit this page]
+ 
 Because of the http://ml.ninux.org/pipermail/battlemesh/2016-February/004379.html[new FCC rules], new TP-Link models would require a special method to install third party firmwares like LibreMesh.
 On TP-Link devices, you can typically identify that your router is FCC locked if you get a 18005 and/or Invalid Filename error when trying to flash.
 These instructions can help bypass these new restrictions.
