@@ -79,14 +79,17 @@ cd openwrt
 git checkout v18.06.4
 --------------------------------------------------------------------------------
 
-.Add LibreMesh repositories to the OpenWrt feeds
+.Take default OpenWrt repositories feeds
 --------------------------------------------------------------------------------
 cp feeds.conf.default feeds.conf
+--------------------------------------------------------------------------------
 
+.And add LibreMesh repositories to the OpenWrt feeds
+--------------------------------------------------------------------------------
 cat << EOF >> feeds.conf
 
-src-git libremesh https://github.com/libremesh/lime-packages.git;master
-src-git libremap https://github.com/libremesh/libremap-agent.git;master
+src-git libremesh https://github.com/libremesh/lime-packages.git
+src-git libremap https://github.com/libremesh/libremap-agent.git
 EOF
 --------------------------------------------------------------------------------
 
