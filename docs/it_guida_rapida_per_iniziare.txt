@@ -9,6 +9,8 @@ LibreMesh Guida Rapida Per Iniziare
 
 [.text-right]
 icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs[Crea una nuova pagina] and link:https://github.com/libremesh/lime-web/edit/master/_includes/docs_nav.html[Aggiungila all'indice]
+
+[.text-right]
 icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/it_guida_rapida_per_iniziare.txt[Modifica questa pagina]
 
 == Hardware Compatibile

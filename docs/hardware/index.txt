@@ -5,6 +5,8 @@ Hardware Documentation Index
 
 [.text-right]
 icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs/hardware[Create new page] and link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/index.txt[Add it to index]
+
+[.text-right]
 icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/hardware/index.txt[Edit this page]
 
 == Hardware
