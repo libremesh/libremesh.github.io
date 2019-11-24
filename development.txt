@@ -48,7 +48,7 @@ We accept pull requests via GitHub. But patches can also be submitted via the li
 
 == Compiling LibreMesh from source code
 
-This procedure has been tested on GNU/Linux, on other systems it could require some modifications or it can be run in a Linux virtual machine.
+This procedure has been tested on GNU/Linux, on other systems it could require some modifications or it can be run in a Linux virtual machine. Generally, the first compilation takes a few hours and requires at least 10 GB of disk space.
 
 First of all you need to install a few packages to your system.
 Building OpenWrt requires a bunch of installed software.
@@ -79,7 +79,7 @@ cd openwrt
 
 .Checkout OpenWrt stable release
 --------------------------------------------------------------------------------
-git checkout v18.06.4
+git checkout v18.06.5
 --------------------------------------------------------------------------------
 
 .Take default OpenWrt repositories feeds
