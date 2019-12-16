@@ -140,7 +140,6 @@ Some more packages are recommended but not mandatory for a working LibreMesh net
 - LiMe -> Offline Documentation -> lime-docs (LibreMesh minimal documentation)
 - LiMe -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
 - LiMe -> lime-debug (libremesh debug utils)
-- LiMe -> shared-state-persist (Persists shared-state in usb device)
 
 Save and exit.
 
