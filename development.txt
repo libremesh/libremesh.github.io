@@ -133,18 +133,13 @@ Select (press space until when an asterisk `*` appears, like `<*>`) LibreMesh pa
 - LiMe -> check-date-http (Keep local date under NTP too far away skew)
 - LiMe -> lime-app (LimeApp)
 - LiMe -> Offline Documentation -> lime-docs-minimal (LibreMesh English documentation)
-- LiMe -> first-boot-wizard (first-boot-wizard)
 - Ubus -> Applications -> ubus-lime-batman-adv (B.A.T.M.A.N.-Adv ubus status module)
-- Ubus -> Applications -> ubus-lime-fbw (Libremesh first boot wizard ubus module)
 
 Some more packages are recommended but not mandatory for a working LibreMesh network. Consider avoiding to select the following packages _only_ if the created image is too large and does not fit in the router memory.
 
 - LiMe -> Offline Documentation -> lime-docs (LibreMesh minimal documentation)
 - LiMe -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
 - LiMe -> lime-debug (libremesh debug utils)
-- Network -> pirania (pirania)
-- Network -> pirania-app (pirania-app)
-- LiMe -> shared-state-pirania (Pirania vaucher module for shared-stat)
 - LiMe -> shared-state-persist (Persists shared-state in usb device)
 
 Save and exit.
