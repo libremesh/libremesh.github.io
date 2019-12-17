@@ -26,7 +26,7 @@ The cloud layer 2 uses the dynamic routing protocol BATMAN-ADV
 image::img/bat-adv.png[batmanadv,100,float="left"]
 *******************
 B.A.T.M.A.N. Advanced is a mesh routing protocol that runs in kernel space.
-Even if the network topology is made of multiple nodes and multiple hops, B.A.T.M.A.N. Advanced abstracts it to a single layer 2 collision domain.
+Even if the network topology is made of multiple nodes and multiple hops, B.A.T.M.A.N. Advanced abstracts it to a single layer 2 broadcast domain.
 So from the user's perspective the entire mesh will look like a single LAN.
 This architecture is robust for roaming purposes, thus TCP and UDP connections are not lost even when moving and changing access points (AP's).
 *******************
@@ -112,7 +112,9 @@ is physically attached will take care of this.
 
 [NOTE]
 ==============
-An ebtables.footnote:[something like iptables but for network layer 2] rule in the LAN/AP bridge prevents the layer 2 packets, which are sent to the anycast address, from propogating through the cloud.  The mesh node where the client is associated gets the packet but not the other nodes.
+An ebtables.footnote:[something like iptables but for network layer 2] rule in the LAN/AP bridge prevents 
+packets sent to the anycast address from propogating through the cloud.  The mesh node where the client 
+is associated gets the packet but not the other nodes.
 ==============
 
 image::img/network5.png[align="center"]
