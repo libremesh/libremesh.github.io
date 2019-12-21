@@ -203,3 +203,5 @@ In this case, the procedure can change by a wider extent so that the router-spec
 === Serial connection
 
 Recovery through serial connection can be completely different from router to router and highly esoteric. A lot of digging into any form of human knowledge is suggested before attempting to recover a router this way.
+
+Through our page<a href="https://technologymoon.com/write-for-us-technology/">“Write For Us +Technology,”</a> share your thoughts about the latest gadgets and technology trends. Please read our submission guidelines.
