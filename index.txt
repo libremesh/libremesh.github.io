@@ -5,7 +5,7 @@ The LibreMesh project
 
 == Introduction to LibreMesh
 
-LibreMesh is a modular framework for creating OpenWrtE-based firmwares for wireless mesh nodes. https://github.com/libremesh/network-profiles[Several communities] around the world use LibreMesh as the foundation of their local mesh firmwares.
+LibreMesh is a modular framework for creating OpenWrt-based firmwares for wireless mesh nodes. https://github.com/libremesh/network-profiles[Several communities] around the world use LibreMesh as the foundation of their local mesh firmwares.
 
 image:logo/logo.png["The LibreMesh logo",role="right"]
 
