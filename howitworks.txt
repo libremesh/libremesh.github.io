@@ -113,7 +113,7 @@ is physically attached will take care of this.
 [NOTE]
 ==============
 An ebtables.footnote:[something like iptables but for network layer 2] rule in the LAN/AP bridge prevents 
-packets sent to the anycast address from propogating through the cloud.  The mesh node where the client 
+packets sent to the anycast address from propagating through the cloud.  The mesh node where the client 
 is associated gets the packet but not the other nodes.
 ==============
 
