@@ -153,6 +153,28 @@ The country code is not specified by default (so that the default is US), but we
 =============
 
 [NOTE]
+.ap_ssid
+=============
+SSID ("network name") shared by all the access points (nodes) on the mesh cloud.
+Its hash serves as the cloud identifier.
+Clients connected to it can roam across any of the APs that form the mesh cloud.
+=============
+
+[NOTE]
+.apname_ssid
+=============
+SSID specific to each access point.
+Thus, can be used to avoid roaming (switching) between various access points.
+=============
+
+[NOTE]
+.adhoc_ssid
+=============
+SSID of the APs (nodes) when meshing in ad-hoc mode, i.e., the nodes form an IBSS.
+Note that this field is only necessary when the mesh is formed in ad-hoc mode. By default, 802.11s is used instead.
+=============
+
+[NOTE]
 .distance
 =============
 Distance parameter indicates the maximum distance of the wireless connected devices.
@@ -176,6 +198,13 @@ In order to have WPA2-PSK encryption on the AP and APname interfaces, add a +_ke
 =============
 Mode ieee80211s refers to https://en.wikipedia.org/wiki/IEEE_802.11s[802.11s] standard (known as mesh). When +option ieee80211s_mesh_fwding '0'+ is present, the routing layer is disabled and it can be used only as a link-layer protocol such as adhoc.
 Be aware that it cannot be used together with adhoc on the same interface.
+=============
+
+[NOTE]
+.ieee80211s_mesh_id
+=============
+Identifier of the mesh cloud (close to SSID in concept).
+Is used by the mesh stations (nodes) to join and participate in the mesh network.
 =============
 
 === Specific interface configuration
