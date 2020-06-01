@@ -156,7 +156,7 @@ The country code is not specified by default (so that the default is US), but we
 .ap_ssid
 =============
 SSID ("network name") shared by all the access points (nodes) on the mesh cloud.
-It's hash serves as the cloud identifier.
+Its hash serves as the cloud identifier.
 Clients connected to it can roam across any of the APs that form the mesh cloud.
 =============
 
@@ -171,6 +171,7 @@ Thus, can be used to avoid roaming (switching) between various access points.
 .adhoc_ssid
 =============
 SSID of the APs (nodes) when meshing in ad-hoc mode, i.e., the nodes form an IBSS.
+Note that this field is only necessary when the mesh is formed in ad-hoc mode. By default, 802.11s is used instead.
 =============
 
 [NOTE]
