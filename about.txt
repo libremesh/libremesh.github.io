@@ -24,7 +24,7 @@ The software is maintained by some of its founders together with a link:https://
 | Pau | p4u[at]dabax[dot]net
 |====
 
-.List of contributors to LibreMesh development
+.List of contributors to LibreMesh development, detailed list available link:https://www.openhub.net/p/libre-mesh/contributors?sort=commits[at this link].
 image::https://opencollective.com/libremesh/contributors.svg?width=700&button=false["List of contributors to LibreMesh development"]
 
 == Donations
