@@ -140,6 +140,6 @@ bundle exec jekyll serve
 ----
 For more details, check the https://github.com/libremesh/lime-web/blob/master/README[README] on Github.
 
-If you would like to contribute to the documentation then please send patches to our mailing list or open a pull request on GitHub.
+If you would like to contribute to the documentation then please send patches to our mailing list or open a pull request on GitHub. An easy way to edit and file a pull request is clicking the "Edit this page" button at the top right of each page.
 
 Please use the http://www.methods.co.nz/asciidoc/userguide.html[AsciiDoc syntax] for contributions on the web page.
