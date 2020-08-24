@@ -51,6 +51,11 @@ git clone -b openwrt-18.06 --single-branch https://git.openwrt.org/openwrt/openw
 cd openwrt
 --------------------------------------------------------------------------------
 
+[NOTE]
+=========================
+If you need to include a file in all the compiled images, for example a custom configuration file, create here a `files` directory containing the directory structure and files you want to add. For example: `mkdir -p files/etc/config/; touch files/etc/config/lime-community` and then edit the newly created `lime-community` file including your custom content. See more instruction on this on link:https://openwrt.org/docs/guide-developer/build-system/use-buildsystem#custom_files[OpenWrt wiki].
+=========================
+
 .Take default OpenWrt repositories feeds
 --------------------------------------------------------------------------------
 cp feeds.conf.default feeds.conf
