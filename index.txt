@@ -48,6 +48,8 @@ In the following list we try to collect some existing free networks (send us an 
 | AlterMundi   | Argentina         | http://altermundi.net     | image:img/altermundi_logo.png["Altermundi",role="right"]
 |=======================================================================================================================
 
+Several community networks are using LibreMesh on their devices, some of these are listed link:https://github.com/libremesh/network-profiles[here].
+
 == Firmware and Embedded Device
 
 An embedded device is a small computer. Usually the operating system running in such small computers is called Firmware.
