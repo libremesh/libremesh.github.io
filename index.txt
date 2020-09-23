@@ -54,7 +54,7 @@ Several community networks are using LibreMesh on their devices, some of these a
 
 An embedded device is a small computer. Usually the operating system running in such small computers is called Firmware.
 Our way of deploying free mesh networks is by installing our own firmware to the devices (usually WiFi routers).
-image:img/lede.png["Lede",role="left"]
+image:img/openwrt.png["OpenWrt",role="left"]
 Our system is based on the OpenWrt project, which at the same time is based on the well known Linux operating system.
 Everything we develop is **free software for a free society** so anyone can
 use, copy, modify and distribute according with
