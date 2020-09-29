@@ -110,8 +110,8 @@ Optionally, deselect unused packages:
 Select (press space until when an asterisk `*` appears, like `<*>`) LibreMesh packages:
 
 - LiMe -> lime-system (LibreMesh system files)
-- LiMe -> lime-proto-babeld (LiMe babeld proto support)
-- LiMe -> lime-proto-batadv (LiMe batman-adv proto support)
+- LibreMesh -> lime-proto-babeld (LiMe babeld proto support)
+- LibreMesh -> lime-proto-batadv (LiMe batman-adv proto support)
 - LiMe -> lime-proto-anygw (LiMe anygw proto support)
 - LiMe -> lime-hwd-openwrt-wan (Respect openwrt wan interface as default)
 - LiMe -> shared-state-babeld_hosts (babeld-hosts module for shared-state)
