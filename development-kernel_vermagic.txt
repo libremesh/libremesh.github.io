@@ -1,6 +1,6 @@
 ---
 ---
-Additional steps for compiling images compatibles with OpenWrt binary repositories
+Kernel vermagic
 ===========
 
 [.text-right]
