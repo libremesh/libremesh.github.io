@@ -128,6 +128,11 @@ Some more packages are recommended but not mandatory for a working LibreMesh net
 - LiMe -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
 - LiMe -> lime-debug (libremesh debug utils)
 
+[NOTE]
+=========================
+In order to have additional packages, the easiest way is to select them in menuconfig. More packages can be installed afterwards via +opkg+, but some of these require a specific kernel configuration to be in place. This can be achieved following link:development-kernel_vermagic.html[these additional instructions dealing with kernel vermagic]. Beware that this will increase noticeably the time and storage space required for the compilation.
+=========================
+
 Save and exit.
 
 .Finally, compile the images
