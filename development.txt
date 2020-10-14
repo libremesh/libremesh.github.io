@@ -77,7 +77,7 @@ cat << EOF >> feeds.conf
 
 src-git libremesh https://github.com/libremesh/lime-packages.git
 src-git libremap https://github.com/libremesh/libremap-agent.git
-src-git networkprofiles https://github.com/libremesh/network-profiles.git
+src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
 
