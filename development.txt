@@ -104,11 +104,17 @@ Select the _Target System_, _Subtarget_ and _Target Profile_ accordingly.
 - Base system -> firewall
 - Network -> odhcpd-ipv6only
 
-Optionally, deselect unused packages:
+Optionally, **deselect** unused packages:
 
 - Network -> ppp
 
-Select (press space until when an asterisk `*` appears, like `<*>`) LibreMesh packages:
+Optionally, **deselect** erroneous feeds locations:
+
+- Image configuration -> Separate feed repositories -> Enable feed libremesh
+- Image configuration -> Separate feed repositories -> Enable feed libremap
+- Image configuration -> Separate feed repositories -> Enable feed profiles
+
+**Select** (press space until when an asterisk `*` appears, like `<*>`) LibreMesh packages:
 
 - LiMe -> lime-system (LibreMesh system files)
 - LibreMesh -> lime-proto-babeld (LiMe babeld proto support)
