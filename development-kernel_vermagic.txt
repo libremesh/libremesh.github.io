@@ -1,7 +1,7 @@
 ---
 ---
-Kernel vermagic
-===========
+Compiling firmware compatible with OpenWrt repository Kernel vermagic
+=====================================================================
 
 [.text-right]
 icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/development-kernel_vermagic.txt[Edit this page]
