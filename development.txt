@@ -33,7 +33,7 @@ On an Ubuntu system, the following command will install the minimum compilation 
 
 --------------------------------------------------------------------------------
 sudo apt update
-sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal libpython2-stdlib 
+sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal python2-minimal libpython2-stdlib
 --------------------------------------------------------------------------------
 
 For other Linux distributions the packets list could be slightly different, check out the link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[OpenWrt build system installation page].
