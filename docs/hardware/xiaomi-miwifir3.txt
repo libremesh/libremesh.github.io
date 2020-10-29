@@ -50,5 +50,5 @@ reboot
 
 If you somehow installed OpenWrt before installing LibreMesh, here is the sysupgrade file:
 
-https://mega.nz/#!tV0EzJZD!XblvULWZgjvx0d9RqdwJYbKkZOKTeHT-J6oBRQYw0Ls
+https://mega.nz/#!tV0EzJZD!XblvULWZgjvx0d9RqdwJYbKkZOKTeHT-J6oBRQYw0Ls Not available any more
 
