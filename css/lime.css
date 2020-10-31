@@ -50,3 +50,7 @@ ul.lng li{
 .top-bar .top-bar-title {
     padding-left: 10px;
 }
+
+#toc li.active a {
+    font-weight: bold;
+}
