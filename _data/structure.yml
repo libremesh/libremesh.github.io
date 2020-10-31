@@ -1,0 +1,21 @@
+main:
+  - home
+  - news
+  - communication
+  - get_it
+  - how_it_works
+  - development
+  - docs_overview
+  - about
+
+docs:
+  - docs_overview
+  - quick_starting_guide
+  - connecting_to_nodes
+  - configuration
+  - ethernet_config
+  - wifi_config
+  - hardware
+  - troubleshooting
+
+
