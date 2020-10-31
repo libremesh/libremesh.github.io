@@ -46,7 +46,7 @@ Some options are parametrizable with a set of special characters which will be s
 
 === List of sections and options
 
-For detailed information on each of the options, check the https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example] file.
+For detailed information on each of the options, check the https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example.txt] file.
 
 .System options
 ----
@@ -190,7 +190,7 @@ Any option with name <mode>_<option> will be directly copied to /etc/config/wire
 [NOTE]
 .wifi WPA2 encryption
 =============
-In order to have WPA2-PSK encryption on the AP and APname interfaces, add a +_key 'somePassword'+ and a +_encryption 'psk2'+ options for each, for having an example see https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example].
+In order to have WPA2-PSK encryption on the AP and APname interfaces, add a +_key 'somePassword'+ and a +_encryption 'psk2'+ options for each, for having an example see https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example.txt].
 =============
 
 [NOTE]
@@ -211,5 +211,5 @@ Is used by the mesh stations (nodes) to join and participate in the mesh network
 
 Changing the aforementioned options allows us to have a system-wide configuration.
 
-In cases where different network interfaces should have different configurations, see link:en_changing_network_behavior.html[Change ethernet behavior] and link:en_change_wifi_behavior.html[Change wireless behavior] page and https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[/docs/lime-example].
+In cases where different network interfaces should have different configurations, see link:en_changing_network_behavior.html[Change ethernet behavior] and link:en_change_wifi_behavior.html[Change wireless behavior] page and https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example.txt].
 

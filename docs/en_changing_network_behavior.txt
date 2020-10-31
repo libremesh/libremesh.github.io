@@ -15,7 +15,7 @@ If no interface-specific network configuration is present, the general network c
 
 For more information about the general LibreMesh config file options see link:/docs/en_config.html[The config file] page.
 
-For more examples and offline documentation check out `/docs/lime-example` on the router or https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[lime-example file online].
+For more examples and offline documentation check out `/docs/lime-example.txt` or http://thisnode.info/docs/lime-example.txt on the router or https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[lime-example file online].
 
 == Specific ethernet interface configuration
 

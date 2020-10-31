@@ -185,6 +185,6 @@ Rather than using the web interface, modifying directly +/etc/config/lime+ file 
 
 You can use the +vi+ or +vim+ text editor for editing /etc/config/lime, the settings in this file will override the default ones in +/etc/config/lime-defaults+.
 
-Un esempio di configurazione commentata si può trovare nei router in +/docs/lime-example+ o in linea https://github.com/libremesh/lime-packages/blob/develop/packages/lime-docs/files/lime-example[qui] mentre su questo sito si può leggere la pagina link:en_config.html[configurazione di LibreMesh].
+Un esempio di configurazione commentata si può trovare nei router in +/docs/lime-example.txt+ o in linea https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[qui] mentre su questo sito si può leggere la pagina link:en_config.html[configurazione di LibreMesh].
 
 After saving the edits to the +lime+ file, apply the changes to system configuration files launching the +lime-config+ command. Next reboot the router with +reboot && exit+ to apply the new settings.
