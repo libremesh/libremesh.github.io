@@ -49,7 +49,7 @@ config wifi radio2
 The first section configures one radio interface to be only a wireless client (station associated to a wireless access point).
 The second section configures the just created client interface for obtaining an IP from the access point DHCP server. The employed name `wlan0-sta` has to match the name of the interface created by the first section.
 
-The specific-interface configuration sections must be appended in file **/etc/config/lime** in addition to the already existing generic configuration.
+The specific-interface configuration sections must be appended in file **/etc/config/lime-node** in addition to the already existing generic configuration.
 
 In the third section, `radio1` is configured for just being an access point with custom ESSID name, each specified option overrides the respective general WiFi option (listed in link:en_config.html[The config file] page), all the non-specified options (like +distance+ or +channel+) are taken from the general wifi section.
 Specifying an entry of a list, replaces the entire list (for example, setting the `apname` entry to the `modes` list means that for this interface, `apname` will be the only active mode).

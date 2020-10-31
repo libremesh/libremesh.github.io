@@ -11,11 +11,11 @@ icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_confi
 
 == The Configuration file
 
-The configuration file placed on **/etc/config/lime** is one of the key points for LibreMesh.
-It contains a set of basic options which are used by LibreMesh backend to perform its magic.
-This file is part of the https://openwrt.org/docs/guide-user/base-system/uci[UCI] database which unifies also most of the OpenWrt configuration files.
+The configuration files **/etc/config/lime-defaults**, **/etc/config/lime-community** and **/etc/config/lime-node** (with increasing priority, i.e. lime-node settings override lime-defaults ones) are the keystones of a LibreMesh system.
+They contain a set of basic options which are used by LibreMesh backend to perform its magic.
+These files are part of the https://openwrt.org/docs/guide-user/base-system/uci[UCI] database which unifies also most of the OpenWrt configuration files.
 
-The executable `lime-config` reads such file and writes all the resulting complex configuration in many other configuration files.
+The executable `lime-config` reads such files and writes all the resulting complex configuration in many other configuration files.
 In order to apply modifications to the configuration file, it has to be executed running +lime-config+ in the node's root console and the router has to be rebooted with the `reboot` command.
 
 [NOTE]
@@ -26,12 +26,12 @@ In most of the scenarios the default options should work fine.
 
 === Fallback options file
 
-The default options which are used as fallback (in case an option is missing in the `/etc/config/lime` file) are read from `/etc/config/lime-defaults`.
+If an option is missing in `/etc/config/lime-node`, the corresponding value from `/etc/config/lime-community` is used. If that option is not present neither in `/etc/config/lime-community`, then the fallback value from `/etc/config/lime-defaults` is used.
 
 [NOTE]
-.lime config file
+.lime-node config file
 =================
-The idea behind this structure is that the user **only** modifies `/etc/config/lime` but `/etc/config/lime-defaults` always keeps the original configuration.
+The idea behind this structure is that the user **only** modifies `/etc/config/lime-node` but `/etc/config/lime-defaults` always keeps the original configuration.
 =================
 
 

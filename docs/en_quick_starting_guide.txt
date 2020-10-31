@@ -137,11 +137,11 @@ The +-n+ option for sysupgrade command is needed for discarding the previous con
 For more information on the sysupgrade process, see these https://openwrt.org/docs/guide-user/installation/generic.sysupgrade[OpenWRT instructions].
 
 == Configuring Via the Console Interface (optional)
-Rather than using the web interface, modifying directly +/etc/config/lime+ file allows to access more advanced options but increases the risk of writing broken configuration.
+Rather than using the web interface, modifying directly +/etc/config/lime-node+ file allows to access more advanced options but increases the risk of writing broken configuration.
 
-You can use the +vim+ text editor (a short vim guide link:en_vim-guide.txt[here]) for editing +/etc/config/lime+, the settings in this file will override the default ones in +/etc/config/lime-defaults+.
+You can use the +vim+ text editor (a short vim guide link:en_vim-guide.txt[here]) for editing +/etc/config/lime-node+, the settings in this file will override the community ones in +/etc/config/lime-community+ and the default ones in +/etc/config/lime-defaults+.
 
 You can find examples and documentation in the +/docs/lime-example+ file (you can find it online https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[here]) as well as in link:en_config.html[LibreMesh config file] page on this website.
 
-After saving the edits to the +lime+ file, apply the changes to system configuration files launching the +lime-config+ command. Next, reboot the router with +reboot && exit+ to apply the new settings.
+After saving the edits to the +/etc/config/lime-node+ file, apply the changes to system configuration files launching the +lime-config+ command. Next, reboot the router with +reboot && exit+ to apply the new settings.
 
