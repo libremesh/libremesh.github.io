@@ -16,7 +16,7 @@ p {
 }
 
 /* lang */
-.en, .it {
+.lng li {
     font-weight: bold;
     color: #666;
     text-transform: capitalize !important;
@@ -31,7 +31,7 @@ p {
     font-family: mono;
     border: 1px solid #000;
 }
-.en:hover, .it:hover {
+.lng li:hover {
     color: black;
     background-color: lime;
     border: 1px solid #ccc;
@@ -39,10 +39,6 @@ p {
 ul.lng li{
     display: inline-block;
 }
-.it:lang(it){
-
-}
-
 
 @media only screen and (min-width: 40.063em) {
    .top-bar {
@@ -54,4 +50,3 @@ ul.lng li{
 .top-bar .top-bar-title {
     padding-left: 10px;
 }
-
