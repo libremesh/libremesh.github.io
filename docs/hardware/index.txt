@@ -1,4 +1,7 @@
 ---
+title: Hardware
+ref: hardware
+lang: en
 ---
 Hardware Documentation Index
 ============================

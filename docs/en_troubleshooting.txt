@@ -1,4 +1,7 @@
 ---
+title: Troubleshooting
+ref: troubleshooting
+lang: en
 ---
 Troubleshooting
 ===============

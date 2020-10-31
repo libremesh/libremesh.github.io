@@ -1,4 +1,7 @@
 ---
+title: Change Ethernet config
+ref: ethernet_config
+lang: en
 ---
 Changing network interface behavior
 ===================================

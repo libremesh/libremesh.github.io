@@ -1,4 +1,7 @@
 ---
+title: Como funciona
+ref: how_it_works
+lang: pt-br
 ---
 Como funciona
 ============
