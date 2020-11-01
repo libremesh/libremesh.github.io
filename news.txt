@@ -6,6 +6,19 @@ News
 [.text-right]
 icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/news.txt[Edit this page]
 
+=== 2020-09-18 - A release candidate for the next release!
+
+Although the LibreMesh development never stopped, it was since the 17.06
+"Dayboot Rely" release that we didn't have an _official_ release.
+The goal is to have the **final release at the beginning of November**.
+
+This means that the release candidate needs testing, bug fixing and
+loads of community love so that we can have an amazing release that can
+actually ease the creation of community networks everywhere.
+
+Check out the https://lists.libremesh.org/pipermail/lime-users/2020-September/001706.html[announcement]
+for more detailed information.
+
 === 2018-04-13 - Join us at Mesh is in the Air!
 
 We endorse https://www.wireless-meshup.org/[Mesh is in the Air] - this years mesh up of the https://www.battlemesh.org/[Wireless Battle of the Mesh] and https://wiki.freifunk.net/Wireless_Community_Weekend_2018[Wireless Community Weekend].
