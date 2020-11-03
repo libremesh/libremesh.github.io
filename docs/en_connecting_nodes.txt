@@ -1,4 +1,7 @@
 ---
+title: Connecting to LibreMesh nodes
+ref: connecting_to_nodes
+lang: en
 ---
 Connecting to LibreMesh nodes
 =============================

@@ -1,6 +1,6 @@
 ---
 title: Quick Starting Guide
-ref: quick_start_guide
+ref: quick_starting_guide
 lang: en
 ---
 

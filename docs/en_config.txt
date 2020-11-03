@@ -1,4 +1,7 @@
 ---
+title: Configuration
+ref: configuration
+lang: en
 ---
 The Configuration file
 ======================

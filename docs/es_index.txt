@@ -1,0 +1,20 @@
+---
+title: Documentación
+ref: docs_overview
+lang: es
+---
+Documentación
+=============
+
+== Contrubuyendo a la documentación
+
+Las contribuciones a la documentación son muy bienvenidas! Consulte la sección en link:/development.html[desarrollo].
+
+== Presentaciones y Documentos
+
+1. https://gitlab.com/g10h4ck/presentazione-SAX2016-reveal.js[Interoperabilidad entre la infraestructura clásica y las redes LibreMesh en Guifi.net - Presentación realizada en SAX2016]
+2. http://nicolasacco.diveni.re/~gio/internship-report/main.html[Interoperabilidad entre la infraestructura clásica y las redes LibreMesh en Guifi.net - Tesis de Gioacchino Mazzurco (vista previa en HTML)]
+3. http://nicolasacco.diveni.re/~gio/internship-report/internship-report-final.pdf[Interoperabilidad entre la infraestructura clásica y las redes LibreMesh en Guifi.net - Tesis de Gioacchino Mazzurco (PDF)]
+4. https://gitlab.com/g10h4ck/lime-guifi-interop-internship-report[Interoperabilidad entre la infraestructura clásica y las redes LibreMesh en Guifi.net - Tesis de Gioacchino Mazzurco (Código fuente)]
+5. https://github.com/aparcar/meshrc/blob/master/bachelor_thesis/bachelor.pdf[Wireless Mesh, una red troncal de Internet escalable y fácil de desplegar - Tesis de Paul Spooren]
+

@@ -1,0 +1,349 @@
+---
+title: Configuración
+ref: configuration
+lang: es
+---
+Configuración
+=============
+:sectanchors:
+:lime-example: https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example]
+
+== Introducción a la configuración
+
+LibreMesh tiene un sistema de configuración basado en los siguienes principios:
+
+* Ser simple de configurar y entender qué configuraciones están en uso en cada nodo
+* Basado en la idea de configuraciones compartidas a nivel Comunidad con customizaciones posibles por Nodo.
+* Mantenible en el tiempo, por actualizaciones de firmware, agregar nuevos nodos en la comunidad, etc.
+* Poder realizar configuraciones complejas.
+
+El sistema de configuración es fundamental para entender el funcionamiento interno de LibreMesh,
+sin embargo no es necesario entenderlo antes de empezar una red LibreMesh!
+
+== Configuración geek free usando el FirstBootWizard
+
+Si tu comunidad quiere desplegar una red geek free es recomendable hacerlo usando la lime-app
+utilizando el FirstBootWizard. Esta aplicación simplifica la configuración inicial de los nodos y
+permite a nuevos nodos sumarse a una red existente, todo a travez de una interfaz amigable
+que no requiere conocimientos previos de redes.
+
+Para utilzar el FirstBootWizard simplemente sigue los pasos que aparecen en pantalla al
+entrar en http://thisnode.info
+
+image:/img/firstbootwizard-splash.png["FirstBootWizard splash"]
+
+En cambio si tu comunidad es una comunidad de geeks entonces quizas no quieran utilizar el FirstBootWizard.
+
+Una vez iniciada la red utilizando el FBW les participantes pueden realizar algunos
+cambios de configuración a travez de la lime-app.
+A medida que vayan surgiendo necesidades en la comunidad que no se cubran actualmente con la
+lime-app les participantes de la red podrán aprender a realizar estos cambios a travez de `ssh`
+u otras herramientas y siguiendo la documentación a continuación.
+
+== Configuración para administradores de red
+
+LibreMesh utiliza a https://openwrt.org/docs/guide-user/base-system/uci[UCI] como sistema de
+configuración ya que UCI es tambien es utilizado por OpenWrt.
+https://openwrt.org/docs/guide-user/base-system/uci[UCI] es una base de datos de que es
+facilmente modificable tanto desde línea de comandos como editando los archivos de configuración directamente.
+Todos los archivos de configuración de UCI se encuentran en el directorio `/etc/config/`.
+Los archivos de configuración de LibreMesh que pueden ser editados para son: `/etc/config/lime-node` y
+`/etc/config/lime-community`.
+El resto de los archivos de configuración no deben ser modificados.
+
+== Niveles de configuración *_Comunidad_* y *_Nodo_*
+
+Para ayudar a la comunidad a mantener sus configuraciones, la configuración de los nodos de la red
+se estructura jerarquicamente en 3 niveles:
+
+1. *_Nodo_*, archivo `/etc/config/lime-node`
+2. *_Comunidad_*, archivo `/etc/config/lime-community`
+3. *_Defecto_*, archivo `/etc/config/lime-defaults`
+
+Donde la configuración realizada a nivel de *_Nodo_* toma prioridad por sobre *_Comunidad_* y esta  a su
+vez tiene prioridad por sobre el *_Defecto_*.
+De esta forma cuando la mayoria de los nodos comparten cierta caracteristica la misma conviene
+configurarse a nivel comunidad y solo modificarla en el nivel de *_Nodo_* en los nodos donde esa configuración difiere.
+El nivel *_Default_* contiene todos los valores de configuración en su valor por defecto.
+
+=== Ejemplo
+
+Supongamos que queremos configurar la distancia máxima wireless de los nodos de 2.4GHz de la comunidad
+en 300 metros pero en dos de los nodos A y B configurarla en 1000m. Lo podríamos hacer de la siguiente forma:
+
+En `lime-community` de todos los nodos tendriamos:
+
+```python
+config lime 'wifi'
+	# other options
+	option distance_2ghz '300'
+```
+
+Y en los archivos `lime-node` de los nodos A y B:
+
+```python
+config lime 'wifi'
+	option distance_2ghz '1000'
+```
+
+=== Funcionamiento
+
+Al correr el comando `lime-config` lo primero que sucede es que se procesan los niveles *_Nodo_*,
+*_Comunidad_* y *_Default_* y se genera el archivo `/etc/config/lime-autogen`.
+Este archivo es el que contiene la configuración que realmente va a utilizarse por libremesh para configurar el sistema.
+
+
+The executable `lime-config` reads such file and writes all the resulting complex configuration in many other configuration files.
+In order to apply modifications to the configuration file, it has to be executed running `lime-config` in the
+node's root console and the router has to be rebooted with the `reboot` command.
+
+
+=== Lista de secciones y opciones
+
+La configuración se divide en tres secciones principales: `system`, `network` y `wifi`.
+
+Para tener información detallada y actualizada de todas las opciones ver la referencia actualizada
+en {lime-example}.
+
+.Opciones de sistema
+
+Las siguientes opciones de la seccion `system` son las más relevantes:
+----
+config lime system
+	option hostname 'LiMe-%M4%M5%M6'
+	option domain 'thisnode.info'
+----
+
+Te sugerimos que cambies el dominio +thisnode.info+ por el sitio de tu comunidad, por ejemplo +option domain 'altermundi.net'+.
+
+.Configuraciones generales de red
+
+De todas las opciones de red las más relevantes son las siguientes:
+----
+config lime network
+	option primary_interface 'eth0'
+	option main_ipv4_address '10.%N1.0.0/16'
+	option main_ipv6_address '2a00:1508:0a%N1:%N200::/64'
+	list protocols ieee80211s
+	list protocols lan
+	list protocols anygw
+	list protocols batadv:%N1
+----
+
+
+
+[NOTE]
+.Configuración IPv4: `main_ipv4_address`
+================
+
+Hay cuatro posibilidades:
+
+. configurar una IP y subnet estática, por ejemplo `'192.0.2.1/16'`
+
+. parametrizar con `%Mn` y `%Nn`, y configurar la subnet, por ejemplo `'192.%N1.%M5.%M6/16'`
+
+. configurar un dirección de red (no una IP en especifico) para obtener una IP autocompletada
+dentro de la red a partir de los bits de la MAC. Esto tambien funciona con máscaras distintas de
+`/24` or `/16` como `'192.0.128.0/17'`
+
+. configurar dos parámetros distintos, el primero para la subnet y el segundo para la parametrización de la IP,
+por ejemplo `'192.0.128.0/16/17'`, resultando en una subnet `/16`  con dominio de broadcast (`192.0.0.0/16`) pero con la IP del nodo
+calculada en un rango `/17` (desde la `192.0.128.0` a la `192.0.255.254`).
+
+================
+
+[NOTE]
+.Configuración IPv6: `main_ipv6_address`
+================
+La configuración es similar a la `main_ipv4_address`. Si se usa autocompletado como máximo se completan
+los ultimos 24 bits, por lo que en este caso no es útil usar un rango mayor a `/104`.
+================
+
+[NOTE]
+.Lista de protocolos: `list protocols`
+================
+Listado de protocolos configurados por LibreMesh. Algunos de estos require la instalación de su paquete relacionado `lime-proto-...`.
+Notar que por como funcionan las `list` (listas de UCI) configurar algunos protocolos hace que se reescriba la lista
+completa de protocolos que está en los valores por *_Defecto_*.
+No te preocupes si hay mas protocolos definidos que los que realmente necesitas: solamente los protocolos correspondientes a los
+paquetes instalados se van a utilizar. Entonces por ejemplo si el paquete `lime-proto-olsr` no está instalado entonces por mas
+que en la lista esté el protocolo `olsr` el mismo no será usado.
+================
+
+
+.Configuraciones generales WiFi
+
+De todas las opciones de red las más relevantes son las siguientes:
+----
+config lime wifi
+	option channel_2ghz '11'
+	list channel_5ghz '48'
+	list channel_5ghz '157'
+	option distance_2ghz '100'
+	option distance_5ghz '1000'
+	list modes 'ap'
+	list modes 'apname'
+	list modes 'ieee80211s'
+	option ap_ssid 'LibreMesh.org'
+	option apname_ssid 'LibreMesh.org/%H'
+    option country 'ES'
+----
+
+[NOTE]
+.Configuración de país: `country code`
+=============
+El código de país por defecto no viene especificado (entonces por lo tanto el defecto suele ser `US`),
+pero recomendamos encarecidamente que lo configuren. Si la red se encuentra en España entonces la configuración es
+`option country 'ES'`, lo que además permite el uso del canal 13 (permitido en España) que de otra forma está restringido.
+=============
+
+[NOTE]
+.distance
+=============
+Distance parameter indicates the maximum distance of the wireless connected devices.
+El parámetro `distance` indica la máxima distancia a la que pueden estar los otros nodos o clientes.
+Un valor muy grande disminuye el rendimiento pero un valor inferior al necesario resulta en una
+conección con un rendimiento muy muy malo (suelen verse paquetes duplicados (DUPs) al hacer ping).
+=============
+
+[NOTE]
+.wifi options
+=============
+Cualquier opción en la forma `<mode>_<option>` se copia directamente a `/etc/config/wireless` (sin el prefijo `<mode>_`).
+=============
+
+[NOTE]
+.wifi Password de puntos de acceso
+=============
+Para segurizar con WPA2-PSK las interfaces AP y APname, agrega las opciones `key 'MiPasswordSeguro'`
+y `encryption 'psk2'`. Para un ejemplo ver en {lime-example}.
+=============
+
+=== Configuraciones de interfaz especificas
+
+Cambiar las opciones antes mencionadas nos permite tener una configuración de todo el sistema.
+
+En los casos en los que diferentes interfaces de red deben tener configuraciones diferentes, véase {lime-example}.
+
+=== Opciones parametrizables
+
+Algunas opciones son parametrizables usando un conjunto de caracteres especiales que serán
+reemplazados por información específica del nodo.
+
+. **MAC bytes** `%Mn` se refiere a el byte `n` de la dirección de MAC de la interfaz principal.
+Por ejemplo de la MAC `CA:FF:EE:BA:BB:EE` `%M1` se reemplazará por `CA`  (el prime byte de la MAC)
+y `%M4`  por `BA` (el cuarto byte de la MAC).
+. **Network Identifier** `%Nn` refiere al byte `n` del identificador de la nube que es un hash que se calcula
+a partir del SSID del AP (tomado del contenido de `option ap_ssid ...`).
+. **Hostname** `%H` se refiere al hostname del nodo.
+
+== Configurando cosas no previstas en LibreMesh
+
+Si se quiere realizar una configuración para la cual LibreMesh no tiene una opción entonces
+es necesario usar *_configuraciones genéricas_* y *_lime-assets_*.
+
+[[generic-configs,Configuraciones genéricas]]
+=== Configuraciones genéricas: `generic_uci_config`
+
+Se puede configurar otros archivos en `/etc/config/` desde los archivos de configuración de lime usando
+configuraciones genéricas.
+
+Ejemplo para configurar la localización de `/etc/config/libremap` desde `/etc/config/lime-community`:
+
+```python
+ config generic_uci_config libremap
+    list uci_set "libremap.settings=libremap"
+    list uci_set "libremap.settings.community=our.libre.org"
+    list uci_set "libremap.settings.community_lat=-200.123"
+    list uci_set "libremap.settings.community_lon=500.9"
+```
+
+[[lime-assets,lime-assets]]
+=== Los *_lime-assets_*, archivos para configuraciones especiales
+
+Los *_lime-assets_* son archivos que permiten realizar configuraciones especiales. Estos archivos
+se dividen en dos grupos, los del nodo y los de la comunidad. La idea es que los assets de la comunidad
+sean compartidos por todos los nodos y permitan realizar configuraciones que son necesarias en todos los nodos.
+En cambio los archivos (_assets_) del nodo están pensados para realizar configuraciones especificas en el nodo.
+
+==== Definiendo archivos: `copy_asset`
+
+Si se precisa que un archivo esté presente en el sistema de archivos puedes usar la directiva `copy_asset`.
+`copy_asset` copia un archivo desde el directorio de _assets_ hacia una ruta definida por la opción `dst`.
+
+Por ejemplo para configurar el programa `collectd` para tu comunidad puedes crear un archivo `collectd.conf`
+en `/etc/lime-assets/community/collectd.conf` y usarlo definiendo la siguiente configuración en el archivo
+`lime-community` de la siguiente manera:
+
+```python
+config copy_asset collectd
+   option asset 'community/collectd.conf'
+   option dst '/etc/collectd.conf'
+```
+
+
+==== Ejecutando scripts: `run_asset`
+
+Para configurar a LibreMesh para que se ejecute un script se debe usar  la opción `run_asset`.
+Usar este método de configuración como último recurso si los otros métodos no son suficientes.
+
+`run_asset` ejecuta un script del directorio de assets. La ejecución puede ser en el primer booteo
+(o sea, cuando inicia luego de realizarse un upgrade de firmware) usando `ATFIRSTBOOT` o en cada
+vez que se reconfigura LibreMesh (cuando se ejecuta `lime-config`) usando `ATCONFIG`.
+
+Por ejemplo para ejecutar el script `myscript.sh` guardado en `/etc/lime-assets/community/myscript.sh`
+en el primer booteo:
+
+```python
+ config run_asset a_test_script
+     option asset 'community/myscript.sh'
+     option when 'ATFIRSTBOOT'
+```
+
+
+[NOTE]
+==============
+Este método de configuración reemplaza la funcionalidad de los scripts `uci-defaults`.
+==============
+
+== Importante
+
+=== No editar otros archivos de configuración que no sean de libremesh
+
+La configuración de un nodo libremesh solo debe realizarse a travez de los archivos de configuración de libremesh
+y nunca editando directamente los otros archivos de configuración.
+Esto es así ya que los cambios realizados en archivos de configuración por fuera del sistema de
+configuración de libremesh se pueden perder cuando:
+* se realice un cambio en la configuración de libremesh
+* se haga un upgrade de firmware
+
+=== Nunca modificar los archivos con valores por defecto ni los _autogenerados_
+
+A pesar de que podria ser cómodo modificar directamente `/etc/config/lime-defaults` o inclusive
+`/etc/config/lime-autogen` esto no debe hacerse ya que en el futuro cuando querramos entender
+la configuración que tenemos del nodo no vamos a poder distinguir si cambiamos una configuración o no.
+
+=== Quiero cambiar una opción para probar, dónde la cambio?
+
+En la configuración de *_Nodo_*: `/etc/config/lime-node`
+
+=== Tengo que configurar todas las opciones?
+No, las configuraciones por del nivel *_Defecto_* proveen una configuración que permite tener una
+experiencia de red mesh sin tener que cambiar nada.
+
+=== Cómo hago para ver todas las opciones estan en uso actualmente en un nodo?
+Ver el archivo `/etc/config/lime-autogen`
+
+
+=== Quiero cambiar algo pero pero no encuentro una opcion de libremesh para realizarlo
+
+Para eso existen las <<generic-configs>> y los <<lime-assets>>
+
+=== ¿Cómo hago?
+
+* Cómo usar las configuraciones de ap, apnode, mesh
+* Cómo poner una radio como cliente de otra red (para que el nodo haga de gateway)
+* Cómo poner un password de administración para toda la red
+* Cómo ponerle password al wireless
+
+Para información detallada de estas preguntas puedes ver los ejemplos en {lime-example}.

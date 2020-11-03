@@ -1,4 +1,7 @@
 ---
+title: About
+ref: about
+lang: en
 ---
 About the project
 =================

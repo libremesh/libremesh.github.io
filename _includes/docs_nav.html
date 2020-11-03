@@ -2,14 +2,15 @@
 <div class="panel">
     <div id="toc" class="toc">
         <ul class="sectlevel0">
-            <li{% if page.url == '/docs/' %} class="active"{% endif %}><a href="/docs/index.html">Overview</a></li>
-            <li{% if page.url == '/docs/quick_starting_guide.html' %} class="active"{% endif %}><a href="/docs/en_quick_starting_guide.html">Quick Starting Guide</a></li>
-            <li{% if page.url == '/docs/connecting_nodes.html' %} class="active"{% endif %}><a href="/docs/en_connecting_nodes.html">Connecting to nodes</a></li>
-            <li{% if page.url == '/docs/config.html' %} class="active"{% endif %}><a href="/docs/en_config.html">The config file</a></li>
-            <li{% if page.url == '/docs/changing_network_behavior.html' %} class="active"{% endif %}><a href="/docs/en_changing_network_behavior.html">Change ethernet config</a></li>
-            <li{% if page.url == '/docs/change_wifi_behavior.html' %} class="active"{% endif %}><a href="/docs/en_change_wifi_behavior.html">Change WiFi config</a></li>
-            <li{% if page.url == '/docs/hardware/index.html' %} class="active"{% endif %}><a href="/docs/hardware/index.html">Hardware</a></li>
-            <li{% if page.url == '/docs/troubleshooting.html' %} class="active"{% endif %}><a href="/docs/en_troubleshooting.html">Troubleshooting</a></li>
+        {% for item in site.data.structure.docs %}
+            <!-- Use the current language and default to english if doc translation is not found -->
+            {% assign docs_lang_pages=site.pages | where:"ref",item | where:"lang",lang  | default: false %}
+            {% unless docs_lang_pages %}
+            {% assign docs_lang_pages=site.pages | where:"ref",item | where:"lang","en" %}
+            {% endunless %}
+            {% assign doc_page=docs_lang_pages.first %}
+            <li {% if page.url == doc_page.url %} class="active"{% endif %}><a href="{{doc_page.url}}">{{ doc_page.title }}</a></li>
+        {% endfor %}
         </ul>
     </div>
 </div>

@@ -1,4 +1,7 @@
 ---
+title: Change WiFi config
+ref: wifi_config
+lang: en
 ---
 Changing WiFi interface behavior
 ===============================
