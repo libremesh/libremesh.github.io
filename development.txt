@@ -136,6 +136,12 @@ Some more packages are recommended but not mandatory for a working LibreMesh net
 - LiMe -> Offline Documentation -> lime-docs (LibreMesh English documentation)
 - LiMe -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
 - LiMe -> lime-debug (libremesh debug utils)
+- Network -> wpad-mesh-wolfssl (for password protected 802.11s mesh)
+
+Additionally and optionally, httpS for the web interface can be enabled selecting (beware that the web interace will be shown as *not trusted*):
+
+- Libraries -> libustream-wolfssl
+- Utilities -> Encryption -> px5g-standalone
 
 [NOTE]
 =========================
