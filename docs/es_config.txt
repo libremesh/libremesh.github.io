@@ -92,11 +92,9 @@ Al correr el comando `lime-config` lo primero que sucede es que se procesan los 
 *_Comunidad_* y *_Default_* y se genera el archivo `/etc/config/lime-autogen`.
 Este archivo es el que contiene la configuración que realmente va a utilizarse por libremesh para configurar el sistema.
 
-
-The executable `lime-config` reads such file and writes all the resulting complex configuration in many other configuration files.
-In order to apply modifications to the configuration file, it has to be executed running `lime-config` in the
-node's root console and the router has to be rebooted with the `reboot` command.
-
+Luego se escriben los archivos de configuración resultantes para cada paquete en base a `/etc/config/lime-autogen`
+Para que las configuraciones se apliquen, es recomendable correr `reboot` luego de `lime-config`. Si bien hay formas más rápidas
+de aplicar las modificaciones en ciertos casos, correr `reboot` es la única que asegura que todos los cambios se aplicaron.
 
 === Lista de secciones y opciones
 
@@ -114,7 +112,7 @@ config lime system
 	option domain 'thisnode.info'
 ----
 
-Te sugerimos que cambies el dominio +thisnode.info+ por el sitio de tu comunidad, por ejemplo +option domain 'altermundi.net'+.
+Te sugerimos que cambies el dominio +thisnode.info+ a un nuevo *subdominio* del sitio de tu comunidad, por ejemplo +option domain 'mesh.altermundi.net'+. Este dominio ('mesh.altermundi.net') debe ser un dominio que no exista ya afuera de la red (i.e. es una mala idea usar 'altermundi.net'). A todos los clientes que obtienen una dirección IP por DHCP y a todos los nodos de la red se le asignará un *fully qualified domain* (ej. 'lime-ddeeff.mesh.altermundi.net')
 
 .Configuraciones generales de red
 
@@ -200,7 +198,6 @@ pero recomendamos encarecidamente que lo configuren. Si la red se encuentra en E
 [NOTE]
 .distance
 =============
-Distance parameter indicates the maximum distance of the wireless connected devices.
 El parámetro `distance` indica la máxima distancia a la que pueden estar los otros nodos o clientes.
 Un valor muy grande disminuye el rendimiento pero un valor inferior al necesario resulta en una
 conección con un rendimiento muy muy malo (suelen verse paquetes duplicados (DUPs) al hacer ping).
@@ -314,6 +311,7 @@ La configuración de un nodo libremesh solo debe realizarse a travez de los arch
 y nunca editando directamente los otros archivos de configuración.
 Esto es así ya que los cambios realizados en archivos de configuración por fuera del sistema de
 configuración de libremesh se pueden perder cuando:
+
 * se realice un cambio en la configuración de libremesh
 * se haga un upgrade de firmware
 

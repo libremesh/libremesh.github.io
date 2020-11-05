@@ -55,11 +55,11 @@ For detailed information on each of the options, check the https://github.com/li
 ----
 config lime system
 	option hostname 'LiMe-%M4%M5%M6'
-	option domain 'lan'
+	option domain 'thisnode.info'
 	option keep_on_upgrade 'libremesh base-files-essential /etc/sysupgrade.conf'
 ----
 
-We warmly suggest to change the domain from +lan+ to a new *subdomain* of your community's website, for example +option domain 'mesh.altermundi.net'+. Beware that this domain ('mesh.altermundi.net') should not already exist out of the network (i.e. is bad idea to use 'altermundi.net'). All the clients which get their IP by DHCP and all the nodes will get a fully qualified domain name like 'lime-ddeeff.mesh.altermundi.net'.
+We warmly suggest to change the domain from +thisnode.info+ to a new *subdomain* of your community's website, for example +option domain 'mesh.altermundi.net'+. Beware that this domain ('mesh.altermundi.net') should not already exist out of the network (i.e. is bad idea to use 'altermundi.net'). All the clients which get their IP by DHCP and all the nodes will get a fully qualified domain name like 'lime-ddeeff.mesh.altermundi.net'.
 
 .Network general options
 ----
