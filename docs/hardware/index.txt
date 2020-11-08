@@ -17,43 +17,59 @@ icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/hardware
 Installing LibreMesh is not always as easy as we would like to.
 It depends on the router model, revision and so on.
 The best way for getting an updated set of instructions is to find your
-model on the link:https://openwrt.org/toh/start[OpenWRT hardware page]. However
+model on the link:https://openwrt.org/toh/start[OpenWRT hardware page]. However,
 to cover some specific scenarios, we provide a list of articles which might help you.
 
 Please, take into account that these pages are third-party contributed, so if
-you find the opportunity send us your contribution via git pull-request or mail.
+you find the opportunity expand this page with the "Edit this page" button in the upper right corner of this page.
 
-== Currently Tested Hardware
 
-[width="90%",options="header"]
-|=======
-|Device|Flash|RAM|WAN port|2.4 GHz|5 GHz|OpenWrt target|OpenWrt profile|factory image |sysupgrade image
-|https://openwrt.org/toh/xiaomi/mir3[Xiaomi MiWiFi R3]|128 MB|128 MB|Yes|Yes|Yes|MT7620NAND||see link below|see link below
-|https://openwrt.org/toh/xiaomi/mir3g[Xiaomi Mi WiFi R3G] |128 MB|256 MB|Yes|Yes|Yes|ramips|mir3g||
-|https://openwrt.org/toh/hwdata/youhua/youhua_wr1200js[YouHua WR1200JS] |16 MB|128 MB|Yes|Yes|Yes|ramips|youhua_wr1200js||
-|https://openwrt.org/toh/hwdata/librerouter/librerouter_librerouter_v1 |16 MB |128 MB |Yes |Yes |Yes |ar71xx |generic | use sysupgrade | librerouter-v1-squashfs-sysupgrade
-|https://openwrt.org/toh/tp-link/tl-wr842nd[TP-Link WR842ND] |||||||||
-|https://openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] |||||||||
-|https://openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] |||||||||
-|https://openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600] |8 MB |128 MB |Yes |Yes |Yes |ar71xx |generic | tl-wdr3600-v1-squashfs-factory | tl-wdr3600-v1-squashfs-sysupgrade
-|https://openwrt.org/toh/tp-link/tl-wdr4300[TP-Link WDR4300] |||||||||
-|https://openwrt.org/toh/dragino/ms14[Dragino MS14] |||||||||
-|https://openwrt.org/toh/pcengines/alix[Alix 2d2] |||||||||
-|https://openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP] |||||||||
-|https://openwrt.org/toh/ubiquiti/airrouter[Ubiquiti AirRouter] |||||||||
-|https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_airgateway[Ubiquiti AirGateway] |||||||||
-|https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti NanoBridge M2 and M5] |||||||||
-|https://openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation M2 and LoCo M2, both XM and XW] |||||||||
-|https://openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 and LoCo M5, both XM and XW] |||||||||
-|https://openwrt.org/toh/ubiquiti/picostationm2[Ubiquiti PicoStation M2] |||||||||
-|https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti Bullet M2 and M5] |||||||||
-|https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti Rocket M2 and M5] |||||||||
-|https://openwrt.org/toh/buffalo/wsr-1166dhp[Buffalo WSR-1166DHP] |||||||||
-|https://openwrt.org/toh/arc/freestation[Flex mARC] |||||||||
-|https://openwrt.org/toh/wd/n600[Western Digital My Net N600] |||||||||
-|=======
+== Suggested Hardware
 
-== Devices
+Here we list some characteristics which should ensure a full compatibility with LibreMesh.
+Plenty of other OpenWrt-supported devices not matching these characteristics can also be used but some of LibreMesh features could be malfunctioning.
+
+The suggested devices have the following characteristics:
+
+* be supported by OpenWrt 19.07;
+* have at least 8 MB of flash memory;
+* have at least 64 MB of RAM memory;
+* be included in the ATH79 target in OpenWrt;
+* have at least one 2.4 GHz radio and one 5 GHz radio.
+
+The list of devices satisfying these criteria link:https://openwrt.org/toh/views/toh_standard_all\?dataflt\[0\]\=supported+current+rel_%3D19.07.4\&dataflt\[Target_target\*\~\]\=ath79\&dataflt\[WLAN+5.0GHz\*\~\]\=n\&dataflt\[WLAN+2.4GHz\*\~\]\=n[can be found here].
+
+Please check the device-specific installation procedure on the OpenWrt wiki, in some cases it can be prohibitively complex.
+
+== Tested Hardware
+
+This is a list of devices that were tested by the community and reported as fully compatible with LibreMesh, it is by no means a complete list of the working devices.
+
+* https://openwrt.org/toh/xiaomi/mir3[Xiaomi MiWiFi R3]
+* https://openwrt.org/toh/xiaomi/mir3g[Xiaomi Mi WiFi R3G]
+* https://openwrt.org/toh/hwdata/youhua/youhua_wr1200js[YouHua WR1200JS]
+* https://openwrt.org/toh/hwdata/librerouter/librerouter_librerouter_v1[LibreRouter]
+* https://openwrt.org/toh/tp-link/tl-wr842nd[TP-Link WR842ND]
+* https://openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] 
+* https://openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] 
+* https://openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
+* https://openwrt.org/toh/tp-link/tl-wdr4300[TP-Link WDR4300] 
+* https://openwrt.org/toh/dragino/ms14[Dragino MS14] 
+* https://openwrt.org/toh/pcengines/alix[Alix 2d2] 
+* https://openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP] 
+* https://openwrt.org/toh/ubiquiti/airrouter[Ubiquiti AirRouter] 
+* https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_airgateway[Ubiquiti AirGateway] 
+* https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti NanoBridge M2 and M5] 
+* https://openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation M2 and LoCo M2, both XM and XW] 
+* https://openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 and LoCo M5, both XM and XW] 
+* https://openwrt.org/toh/ubiquiti/picostationm2[Ubiquiti PicoStation M2] 
+* https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti Bullet M2 and M5] 
+* https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti Rocket M2 and M5] 
+* https://openwrt.org/toh/buffalo/wsr-1166dhp[Buffalo WSR-1166DHP] 
+* https://openwrt.org/toh/arc/freestation[Flex mARC] 
+* https://openwrt.org/toh/wd/n600[Western Digital My Net N600] 
+
+== Specific Devices Instructions
 
 * link:tp-link.html[TP-Link]
 * link:xiaomi-miwifir3.html[Xiaomi MiWiFi R3]
