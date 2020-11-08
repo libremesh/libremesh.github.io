@@ -34,10 +34,11 @@ The suggested devices have the following characteristics:
 * be supported by OpenWrt 19.07;
 * have at least 8 MB of flash memory;
 * have at least 64 MB of RAM memory;
-* be included in the ATH79 target in OpenWrt;
-* have at least one 2.4 GHz radio and one 5 GHz radio.
+* have Atheros 9k radios (ath9k driver);
+* have at least one 2.4 GHz radio and one 5 GHz radio;
+* have at least one ethernet port labelled as LAN.
 
-The list of devices satisfying these criteria link:https://openwrt.org/toh/views/toh_standard_all\?dataflt\[0\]\=supported+current+rel_%3D19.07.4\&dataflt\[Target_target\*\~\]\=ath79\&dataflt\[WLAN+5.0GHz\*\~\]\=n\&dataflt\[WLAN+2.4GHz\*\~\]\=n[can be found here].
+The list of devices satisfying these criteria link:https://openwrt.org/toh/views/toh_extended_all?dataflt%5BWLAN+driver_wlan-drivers*%7E%5D=ath9k&dataflt%5BSupported+Current+Rel*%7E%5D=19.07&dataflt%5BWLAN+5.0GHz*%7E%5D=n&dataflt%5BWLAN+2.4GHz*%7E%5D=n[can be found here].
 
 Please check the device-specific installation procedure on the OpenWrt wiki, in some cases it can be prohibitively complex.
 
