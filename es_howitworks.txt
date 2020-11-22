@@ -87,9 +87,9 @@ image::img/network2.png[align="center"]
 Los Puntos de Acceso Inalambricos de la misma nube comparten parametros comunes:
 
 * El SSID (El nombre de Identificación del AP Inalámbrico)
-* Anycast.footnote:[IP compartida por multiples dispositivos en la red] especial. Direcciones IPv4  y IPv6
-* Una dirección especial MAC anycast
-* El servidor DHCP/RA para proveer IPs validas de la nube a los clientes.
+* Direcciones IPv4  y IPv6 especiales Anycast.footnote:[IP compartida por multiples dispositivos en la red]. 
+* Una dirección especial de MAC anycast
+* Un servidor DHCP/RA para proveer IPs validas de la nube a los clientes.
 
 Así un cliente conectado a una AP puede moverse por la mesh sin necesidad de renovar su configuración IP.
 Incluso en desde el punto de vista de la capa MAC será la misma.
@@ -99,34 +99,29 @@ image::img/network3.png[align="center"]
 
 [NOTE]
 ======================
-El archivo de concesíon/arrendamiento DHCP se comparte entre la nube para prevenir colisiones usando
-link:http://en.wiki.guifi.net/wiki/A.L.F.R.E.D.[A.L.F.R.E.D.]
+El archivo del listado de IPs entregadas por DHCP se comparte entre la nube para prevenir colisiones.
 
-Siempre que todos los nodos compartan el mismo anycast MAC/IP, desde el punto de vista del cliente, es completamente transparente.
-La puerta de enlace es siempre la misma aunque el nodo mesh (donde estén conectados) puede cambiar.
+Siempre que todos los nodos compartan el mismo anycast MAC/IP, desde el punto de vista del cliente, es completamente transparente. La puerta de enlace es siempre la misma aunque el nodo mesh (donde estén conectados) puede cambiar.
 ======================
 
 
 image::img/network4.png[align="center"]
 
-Cuando un cliente quiere salir de la LAN (nube) para conectarse a Internet o cualquier otra red, enviará los paquetes a la dirección
-de puerta de enlace anycast especial. El nodo donde el cliente esta fisicamente conectado se encargará de esto.
+Cuando un cliente quiere salir de la LAN (nube) para conectarse a Internet o cualquier otra red, enviará los paquetes a la dirección de puerta de enlace anycast especial. El nodo donde el cliente esta fisicamente conectado se encargará de esto.
 
 [NOTE]
 ==============
-Una regla de ebtables.footnote:[algo como iptables pero para la capa 2 de red] en el puente LAN/AP previente que los paquetes enviados a la dirección anycast se propaguen a través de la nube.
+Una regla de ebtables.footnote:[algo como iptables pero para la capa 2 de red] en el puente LAN/AP previene que los paquetes enviados a la dirección anycast se propaguen a través de la nube.
 El nodo mesh en donde el cliente está asociado recibe el paquete, pero no los otros nodos.
 ==============
 
 image::img/network5.png[align="center"]
 
-El paquete es enrutado a través de la capa de red 3 BMX a la mejor puerta de enlace de Internet. Esto puede ser un nodo de la misma nube
-o cualquier otro de otra nube lejana.
+El paquete es enrutado a través de la capa de red 3 BMX a la mejor puerta de enlace de Internet. Esto puede ser un nodo de la misma nube o cualquier otro de otra nube lejana.
 
 [NOTE]
 =============
-BMX tiene una potente función de puerta de enlace inteligente que selecciona automaticamente el mejor nodo de puerta deenlace de Internet
-teniendo en cuenta el ancho de banda disponible.
+BMX tiene una potente función de puerta de enlace inteligente que selecciona automaticamente el mejor nodo de puerta de enlace de Internet teniendo en cuenta el ancho de banda disponible.
 =============
 
 image::img/network6.png[align="center"]
@@ -134,7 +129,6 @@ image::img/network6.png[align="center"]
 [NOTE]
 =============
 En el camino de vuelta el paquete llegará a algún nodo en la nube pero puede que no sea el mismo nodo.
-No obstante el paquete se entregará correctamente al remitente. Esto es por que la puerta de enlace inteligente de BMX utiliza
+No obstante el paquete se entregará correctamente al remitente. Esto es porque la puerta de enlace inteligente de BMX utiliza
 tuneles unidireccionales para garantizar que se utilice la puerta de enlace seleccionada.
 =============
-
