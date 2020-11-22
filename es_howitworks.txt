@@ -1,0 +1,141 @@
+---
+title: Como Funciona
+ref: how_it_works
+lang: es
+---
+Cómo funciona
+============
+
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/es_howitworks.txt[Editar esta página]
+
+== Objetivos a alcanzar
+
+  - Escalabilidad
+  - Segmentación de Red 
+  - Capa 2 Roaming en ciertas áreas 
+  - Selección inteligente de puerta de enlace con redundancia y posibilidad de elección del usuario
+  - Compatibilidad con la mayoriaa de los escenarios existentes 
+  - Una simple imagen de firmware para toda la red (para bajo nivel, para troncales, para empresas, para despliegues rápidos) 
+
+== Básicos 
+
+La arquitectura de red diseñada para LibreMesh se bada en todos capas:
+
+=== Nube Capa 2 
+La nube en la capa 2 utiliza el protocolo de enrutamiento dinámico BATMAN-ADV
+
+image::img/bat-adv.png[batmanadv,100,float="left"]
+*******************
+B.A.T.M.A.N Advanced es un protocolo de enrutamiento mesh que se ejecuta en el espacio del kernel.
+Incluso si la topologia de red esta hecha de multiples nodos y multiples saltos,
+B.A.T.M.A.N Advanced abstrae a un unico dominio de difusión (broadcast)  de la capa 2. Entonces,
+desde la perspectiva del usuario toda la mesh se verá como una sola LAN. Esta arquitectura es robusta
+para propositos de roaming, por lo tanto las conexiones TCP y UDP no se pierden incluso al mover y cambiar de puntos de acceso (AP's).
+*******************
+
+=== Red en capa 3
+
+Toda la capa de red 3 utiliza por defecto el protocolo de enrutamiento BMX
+
+image::img/bmx7.png[bmx7,100,float="left"]
+*******************
+BMX6 (o la nueva versión BMX7) es un protocolo de enrutamiento dinámico nativo de IPv6 el cual ofrece muchas funciones 
+avanzadas y una pequeña sobrecarga de red, gracias a la estrategia vector-distancia y su conjunto de optimizaciones. 
+La versión 7 tiene además extensiones de enrutamiento de seguridad.
+*******************
+
+=== Capas de combinación
+Por defecto, todos los nodos corren ambos protocolos (BMX y BAT-ADV), pero en diferentes VLANs.footnote:[LAN Virtual aíslada, para instalancias for instance wlan0.13]
+Así que el enrutamiento se aísla por la MAC.
+
+
+[NOTE]
+=========================
+La VLAN BMX es siempre la misma, por lo que todos los nodos conectados a la capa de enlace se verán entre sí.
+=========================
+
+[NOTE]
+=========================
+La VLAN BATADV depende del identificador de la nube el cual es calculado (por defecto) usando el SSID del AP.
+=========================
+
+[IMPORTANT]
+=========================
+La red BMX será una para toda la mesh, pero la red BAT-ADV puede dividirse en varias nubes.
+=========================
+
+image::img/network1.png[align="center"]
+
+**Esta configuración aísla la capa 2 de nubes**.
+Por ejemplo, un vecindario, un complejo de empresa o una red de punto de acceso a nivel de calle pueden optar por aíslar su LAN del resto de la red.
+Sin embargo, al mismo tiempo, podrán llegar al resto de los nodos utilizando la red enrutada de capa 3.
+
+El roaming estará disponible dentro de la nube, por lo que se puede realizar sesiones TCP, transmisión de video, o incluso una llamada SIP
+mientras se mueve. Por otra parte, gracias a la segmentación de la capa 3 los problemas comunes que se encuentran en una red puenteada (bridged) -
+tales como tormentas de difusión o nightmares DHCP - no perturbaran el correcto funcionamiento de la red.
+
+[IMPORTANT]
+=========================
+Todo es automático y transparente para la persona usuaria final
+=========================
+
+image::img/network2.png[align="center"]
+
+
+== Los Detalles
+
+Los Puntos de Acceso Inalambricos de la misma nube comparten parametros comunes:
+
+* El SSID (El nombre de Identificación del AP Inalámbrico)
+* Anycast.footnote:[IP compartida por multiples dispositivos en la red] especial. Direcciones IPv4  y IPv6
+* Una dirección especial MAC anycast
+* El servidor DHCP/RA para proveer IPs validas de la nube a los clientes.
+
+Así un cliente conectado a una AP puede moverse por la mesh sin necesidad de renovar su configuración IP.
+Incluso en desde el punto de vista de la capa MAC será la misma.
+
+image::img/network3.png[align="center"]
+
+
+[NOTE]
+======================
+El archivo de concesíon/arrendamiento DHCP se comparte entre la nube para prevenir colisiones usando
+link:http://en.wiki.guifi.net/wiki/A.L.F.R.E.D.[A.L.F.R.E.D.]
+
+Siempre que todos los nodos compartan el mismo anycast MAC/IP, desde el punto de vista del cliente, es completamente transparente.
+La puerta de enlace es siempre la misma aunque el nodo mesh (donde estén conectados) puede cambiar.
+======================
+
+
+image::img/network4.png[align="center"]
+
+Cuando un cliente quiere salir de la LAN (nube) para conectarse a Internet o cualquier otra red, enviará los paquetes a la dirección
+de puerta de enlace anycast especial. El nodo donde el cliente esta fisicamente conectado se encargará de esto.
+
+[NOTE]
+==============
+Una regla de ebtables.footnote:[algo como iptables pero para la capa 2 de red] en el puente LAN/AP previente que los paquetes enviados a la dirección anycast se propaguen a través de la nube.
+El nodo mesh en donde el cliente está asociado recibe el paquete, pero no los otros nodos.
+==============
+
+image::img/network5.png[align="center"]
+
+El paquete es enrutado a través de la capa de red 3 BMX a la mejor puerta de enlace de Internet. Esto puede ser un nodo de la misma nube
+o cualquier otro de otra nube lejana.
+
+[NOTE]
+=============
+BMX tiene una potente función de puerta de enlace inteligente que selecciona automaticamente el mejor nodo de puerta deenlace de Internet
+teniendo en cuenta el ancho de banda disponible.
+=============
+
+image::img/network6.png[align="center"]
+
+[NOTE]
+=============
+En el camino de vuelta el paquete llegará a algún nodo en la nube pero puede que no sea el mismo nodo.
+No obstante el paquete se entregará correctamente al remitente. Esto es por que la puerta de enlace inteligente de BMX utiliza
+tuneles unidireccionales para garantizar que se utilice la puerta de enlace seleccionada.
+=============
+
