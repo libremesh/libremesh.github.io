@@ -56,7 +56,7 @@ git clone -b v18.06.8 --single-branch https://git.openwrt.org/openwrt/openwrt.gi
 Alternatively, for compiling LibreMesh on top of the Stable version of OpenWrt:
 
 --------------------------------------------------------------------------------
-git clone -b v19.07.4 --single-branch https://git.openwrt.org/openwrt/openwrt.git
+git clone -b openwrt-19.07 --single-branch https://git.openwrt.org/openwrt/openwrt.git
 --------------------------------------------------------------------------------
 
 .Enter OpenWrt build root
