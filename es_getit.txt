@@ -1,0 +1,24 @@
+---
+title: ¡Obtener!
+ref: get_it
+lang: es
+---
+Obtener
+======
+
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/getit.txt[Edit this page]
+
+== Descargar Binarios Precompilados
+Ofrecemos imagenes de firmware precompiladas de la versión estable de LibreMesh (Dayboot Rely 17.06) con **configuraciones genericas**. Esta es la 
+forma más facil de obtener e instalar LibreMesh en tu router. La imagen de la  **versión estable** se puede encontrar en el sitio de https://downloads.libremesh.org/releases/17.06/[descargas].
+
+La versión **anterior estable** es Community Chaos (16.07), La imagen aún se puede encontrar en el sitio de https://downloads.libremesh.org/community_chaos/16.07/[descargas].
+
+== Compilar localmente la última versión del codigo de LibreMesh usando buildroot de OpenWrt
+
+Consultar la pagina de link:development.html[Desarrollo].
+
+== Procedimiento de Instalación
+
+Para la instalación, favor de leer nuestra  link:docs/en_quick_starting_guide.html[Guía de Inicio Rápida].
