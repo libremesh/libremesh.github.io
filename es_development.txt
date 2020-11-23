@@ -1,0 +1,203 @@
+---
+title: Desarrollo
+ref: development
+lang: es
+---
+Desarrollo
+===========
+
+[.text-right]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/development.txt[Editar esta página]
+
+== Código Fuente
+
+El código fuente se encuentra almacenado en un árbol de git que contiene todas las ramas y lanzamientos. 
+
+Todos los repositorios se pueden consultar a través de 
+https://github.com/libremesh/[GitHub].
+
+La mayor parte del desarrollo se concentra en el repositorio de ti _lime-packages_ el cual puede ser consultado en 
+ https://github.com/libremesh/lime-packages[GitHub] o descargardo usando git:
+
+----
+git clone https://github.com/libremesh/lime-packages.git
+cd lime-packages
+----
+
+== Compilando el código fuente de LibreMesh
+
+Este procedimiento ha sido probado en GNU/Linux, en otros sistemas podria requerir algunas modificaciones o se puede ejecutar en una maquina virtual de Linux.
+Generalmente la primera compilación  tomar algunas horas y requiere al menos 10GB de espacio disponbile en disco.
+
+Antes de iniciar necesitas instalar algunos paquetes en tu sistema
+Compilar OpenWrt requiere algunos programas instalados
+
+Si no estas seguro(a) sobre si tu sistema tiene las  dependencias ya instaladas, puedes continuar con la compilación (ver más abajo) y si falla, 
+verifica los mensajes de error. 
+
+En un sistema Ubuntu, el siguiente comando instalará las dependencias minimas de compilación:
+
+--------------------------------------------------------------------------------
+sudo apt update
+sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal python2-minimal libpython2-stdlib
+--------------------------------------------------------------------------------
+Para otras distribuciones de Linux la lista de paquetes podría ser ligeramente direferente, revisa la
+link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[página de instalación del sistema de compilación de OpenWrt].
+
+Ahora necesitas obtener el código fuente de OpenWrt.
+Asegurate de clonar (_git clone_) el código fuente como usuario normal (por ejemplo: no usar root): la compilación será rechazada si se ejecuta
+siendo usuario administrador _root_.
+
+
+.Descargar el código fuente de OpenWrt
+LibreMesh se puede compilar sobre varias versiones de OpenWrt. Damos soporte oficialmente a la compilación con la versión anterior estable de OpenWrt (18.06.8) o 
+la versión estable de OpenWrt (19.07.4)
+
+Para compilar LibreMesh sobre la versión anterior estable de OpenWrt:
+--------------------------------------------------------------------------------
+git clone -b v18.06.8 --single-branch https://git.openwrt.org/openwrt/openwrt.git
+--------------------------------------------------------------------------------
+
+De manera alternativa, para compilar LibreMesh sobre la versión Estable de OpenWrt:
+
+--------------------------------------------------------------------------------
+git clone -b openwrt-19.07 --single-branch https://git.openwrt.org/openwrt/openwrt.git
+--------------------------------------------------------------------------------
+
+.Entrar al directorio de compilación de OpenWrt
+--------------------------------------------------------------------------------
+cd openwrt
+--------------------------------------------------------------------------------
+
+[NOTE]
+=========================
+Si necesitas incluir un archivo en la imagen compilada, por ejemplo un archivo de configuración personalizado, crea aqui un directorio `files` 
+que contenga la estructura de directorio y archivos que quieras agregar. Por ejemplo: `mkdir -p files/etc/config/; touch files/etc/config/lime-community`
+y editar el archivo recien creado `lime-community` incluyendo el contenido personalizado. 
+Ver más instrucciones en la 
+ link:https://openwrt.org/docs/guide-developer/build-system/use-buildsystem#custom_files[Wiki de OpenWrt].
+=========================
+
+.Tomar los repositorios feeds por defecto de OpenWrt
+--------------------------------------------------------------------------------
+cp feeds.conf.default feeds.conf
+--------------------------------------------------------------------------------
+
+.Y agregar los repositorios de LibreMesh a los feeds de OpenWrt
+--------------------------------------------------------------------------------
+cat << EOF >> feeds.conf
+
+src-git libremesh https://github.com/libremesh/lime-packages.git
+src-git libremap https://github.com/libremesh/libremap-agent.git
+src-git profiles https://github.com/libremesh/network-profiles.git
+EOF
+--------------------------------------------------------------------------------
+
+.Actualizar los paquetes desde los feeds
+--------------------------------------------------------------------------------
+scripts/feeds update -a
+scripts/feeds install -a
+--------------------------------------------------------------------------------
+
+.Ejecutar el menú de configuración
+--------------------------------------------------------------------------------
+make menuconfig
+--------------------------------------------------------------------------------
+
+Mirar los +target+ (por ejemplo: +ATH79+), +subtarget+ (por ejemplo: +generic+) y +profile+ (por ejemplo: +tl-wdr3600-v1+)
+de tu router en la https://openwrt.org/toh/start[tabla de dispositivos OpenWrt].
+
+Por lo tanto seleccionar  _Target System_, _Subtarget_ y  _Target Profile_ .
+
+**De-seleccionar** paquetes problematicos:
+
+- Base system -> dnsmasq
+- Base system -> firewall
+- Network -> odhcpd-ipv6only
+
+Opcional, **de-seleccionar** paquetes no usados:
+
+- Network -> ppp
+
+Opcional, **de-seleccionar** ubicaciones de feeds erróneas:
+
+- Image configuration -> Separate feed repositories -> Habilitar feed libremesh
+- Image configuration -> Separate feed repositories -> Habilitar feed libremap
+- Image configuration -> Separate feed repositories -> Habilitar feed profiles
+
+**Seleccionar** (Presiona la tecla espacio hasta que un asterisco `*` aparezca, así como  `<*>`) paquetes LibreMesh:
+
+- LiMe -> lime-system (Sistema de archivos de LibreMesh )
+- LibreMesh -> lime-proto-babeld (Soporte del protocolo babeld de LiMe)
+- LibreMesh -> lime-proto-batadv (Soporte del protocolo batman-adv de LiMe)
+- LiMe -> lime-proto-anygw (Soporte del protocolo anygw de LiMe)
+- LiMe -> lime-hwd-openwrt-wan (Respetar la interfaz WAN de OpenWrt por defecto )
+- LiMe -> shared-state-babeld_hosts (Modulo babeld-hosts para estado compartido)
+- LiMe -> shared-state-bat_hosts (Modulo bat-hosts para estado compartido)
+- LiMe -> shared-state-nodes_and_links (modulo nodes_and_links para estado compartido)
+- LiMe -> lime-app (LimeApp)
+- LiMe -> Offline Documentation -> lime-docs-minimal (Documentación mínima de LibreMesh)
+
+Se recomiendan algunos paquetes más, pero no son obligatorios para el funcionamiento de una Red LibreMesh. Considere evitar seleccionar los siguientes
+paquetes _solo_ si la imagen creada es muy grande y no soporta la memoria del router.  
+
+- LiMe -> check-date-http (Mantenga la fecha local bajo NTP demasiado lejana)
+- LiMe -> Offline Documentation -> lime-docs (Documentación en ingles sobre LibreMesh)
+- LiMe -> lime-hwd-ground-routing (Administrar VLANs 802.1q para enrutamiento cableado)
+- LiMe -> lime-debug (utilidades para depurar libremesh)
+
+Además y opcionalmente, https para la interfaz web puede ser habilitar seleccionando ( tenga en cuenta que la interfaz web se mostrará como *no 
+configurable*):
+
+- Libraries -> libustream-wolfssl
+- Utilities -> Encryption -> px5g-standalone
+
+Finalmente, también las conexiones mesh 802.11s pueden protegerse con contraseña, esto requerirá una configuración específica y este paquete
+para ser seleccionado:
+
+- Network -> wpad-mesh-wolfssl
+
+y este para ser **de**-seleccionado:
+
+- Network -> wpad-basic
+
+[NOTE]
+=========================
+Para tener paquetes adicionales, la forma más sencilla es seleccionarlos en menuconfig. Posteriormente se podrán instalar más paquetes por medio de
++opkg+, pero algunos de estos requieren una configuración de kernel específica. Esto se puede lograr siguiendo link:development-kernel_vermagic.html[estas instrucciones adicionales relacionadas con el kernel vermagic]. 
+Tenga en cuenta que esto aumentará considerablemente el tiempo y espacio de almacenamiento de la compilación.
+=========================
+
+Guardar y salir.
+
+.Finalmente, compilar la imagen
+--------------------------------------------------------------------------------
+make -j$(nproc)
+--------------------------------------------------------------------------------
+
+Si todo va bien, deberia de encontrar los binarios producidos dentro del directorio +bin/+. 
+ 
+== Envío de Parches
+
+Aceptamos solicitudes _pull_ a través de GitHub. Pero los parches los parches también se pueden enviar a través de la 
+ link:communication.html[lista de correos] lime-dev.
+
+== Presencia en la Web 
+
+La página que tu estas leyendo es generada de archivos de texto usando 
+http://www.methods.co.nz/asciidoc/[AsciiDoc] además de https://jekyllrb.com/[Jekyll].
+
+Cualquier cambio hecho al https://github.com/libremesh/lime-web[repositorio lime-web] será reflejado en nuestro sitio we `libremesh.org` .
+
+Para generar esta página localmente:
+----
+git clone https://github.com/libremesh/lime-web.git
+cd lime-web && bundle install
+bundle exec jekyll serve
+----
+Para más detalles, revisar el https://github.com/libremesh/lime-web/blob/master/README[README] en Github.
+
+Si deseas contribuir con la documentación, envía parches a nuestra lista de correos o abre una solicitud de _pull_ en GitHub.
+Una forma facil de editar y solicitar un _pull_ de un archivo es haciendo click en el botón "Editar esta página" en la parte superior derecha de la página web.
+
+Por favor, usa la http://www.methods.co.nz/asciidoc/userguide.html[Sintaxis de AsciiDoc] para contribuciones de la página web.
