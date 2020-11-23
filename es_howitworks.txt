@@ -1,5 +1,5 @@
 ---
-title: Como Funciona
+title: Cómo Funciona
 ref: how_it_works
 lang: es
 ---
