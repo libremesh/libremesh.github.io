@@ -7,7 +7,7 @@ Desarrollo
 ===========
 
 [.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/development.txt[Editar esta página]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/es_development.txt[Editar esta página]
 
 == Código Fuente
 
