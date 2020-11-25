@@ -21,4 +21,4 @@ Consultar la pagina de link:development.html[Desarrollo].
 
 == Procedimiento de Instalación
 
-Para la instalación, favor de leer nuestra  link:docs/en_quick_starting_guide.html[Guía de Inicio Rápida].
+Para el procedimiento de instalación, leer nuestra  link:docs/en_quick_starting_guide.html[Guía de Inicio Rápida].
