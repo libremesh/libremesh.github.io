@@ -16,7 +16,7 @@ El código fuente se encuentra almacenado en un árbol de git que contiene todas
 Todos los repositorios se pueden consultar a través de 
 https://github.com/libremesh/[GitHub].
 
-La mayor parte del desarrollo se concentra en el repositorio de ti _lime-packages_ el cual puede ser consultado en 
+La mayor parte del desarrollo se concentra en el repositorio de _lime-packages_ el cual puede ser consultado en 
  https://github.com/libremesh/lime-packages[GitHub] o descargardo usando git:
 
 ----
@@ -27,10 +27,9 @@ cd lime-packages
 == Compilando el código fuente de LibreMesh
 
 Este procedimiento ha sido probado en GNU/Linux, en otros sistemas podria requerir algunas modificaciones o se puede ejecutar en una maquina virtual de Linux.
-Generalmente la primera compilación  tomar algunas horas y requiere al menos 10GB de espacio disponbile en disco.
+Generalmente la primera compilación puede tomar algunas horas y requiere al menos 10GB de espacio disponbile en disco.
 
-Antes de iniciar necesitas instalar algunos paquetes en tu sistema
-Compilar OpenWrt requiere algunos programas instalados
+Antes de iniciar a compilar OpenWrt necesitas instalar algunos paquetes en tu sistema.
 
 Si no estas seguro(a) sobre si tu sistema tiene las  dependencias ya instaladas, puedes continuar con la compilación (ver más abajo) y si falla, 
 verifica los mensajes de error. 
@@ -147,7 +146,7 @@ paquetes _solo_ si la imagen creada es muy grande y no soporta la memoria del ro
 - LiMe -> lime-debug (utilidades para depurar libremesh)
 
 Además y opcionalmente, https para la interfaz web puede ser habilitar seleccionando ( tenga en cuenta que la interfaz web se mostrará como *no 
-configurable*):
+segura*):
 
 - Libraries -> libustream-wolfssl
 - Utilities -> Encryption -> px5g-standalone
@@ -187,7 +186,7 @@ Aceptamos solicitudes _pull_ a través de GitHub. Pero los parches los parches t
 La página que tu estas leyendo es generada de archivos de texto usando 
 http://www.methods.co.nz/asciidoc/[AsciiDoc] además de https://jekyllrb.com/[Jekyll].
 
-Cualquier cambio hecho al https://github.com/libremesh/lime-web[repositorio lime-web] será reflejado en nuestro sitio we `libremesh.org` .
+Cualquier cambio hecho al https://github.com/libremesh/lime-web[repositorio lime-web] será reflejado en nuestro sitio web `libremesh.org` .
 
 Para generar esta página localmente:
 ----
