@@ -7,7 +7,7 @@ Obtener
 ======
 
 [.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/getit.txt[Edit this page]
+icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/es_getit.txt[Edita esta página]
 
 == Descargar Binarios Precompilados
 Ofrecemos imagenes de firmware precompiladas de la versión estable de LibreMesh (Dayboot Rely 17.06) con **configuraciones genericas**. Esta es la 
