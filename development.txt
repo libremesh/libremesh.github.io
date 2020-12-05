@@ -45,12 +45,12 @@ Then you need to get the OpenWrt source code.
 Make sure to _git clone_ the source code as normal user (i.e. do not use root): the compilation will refuse to run if the administrator user _root_ is being used.
 
 .Download OpenWrt source code
-LibreMesh can be built on top of various OpenWrt versions. We officially support the compilation with OpenWrt Old Stable (18.06.8) or OpenWrt Stable (19.07.4) versions.
+LibreMesh can be built on top of various OpenWrt versions. We officially support the compilation with OpenWrt Old Stable (18.06.9) or OpenWrt Stable (19.07.4) versions.
 
 For compiling LibreMesh on top of the Old Stable version of OpenWrt:
 
 --------------------------------------------------------------------------------
-git clone -b v18.06.8 --single-branch https://git.openwrt.org/openwrt/openwrt.git
+git clone -b v18.06.9 --single-branch https://git.openwrt.org/openwrt/openwrt.git
 --------------------------------------------------------------------------------
 
 Alternatively, for compiling LibreMesh on top of the Stable version of OpenWrt:
