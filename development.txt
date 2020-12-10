@@ -105,7 +105,7 @@ Select the _Target System_, _Subtarget_ and _Target Profile_ accordingly.
 Optionally, **deselect** erroneous feeds locations:
 - Image configuration → Separate feed repositories → Enable feed libremesh
 - Image configuration → Separate feed repositories → Enable feed libremap
-- Image configuration → Separate feed repositories → Enable feed profiles**Deselect** problematic packages:
+- Image configuration → Separate feed repositories → Enable feed profiles
 
 **Deselect problematic packages:
 - Base system -> dnsmasq
