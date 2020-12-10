@@ -103,11 +103,13 @@ Select the _Target System_, _Subtarget_ and _Target Profile_ accordingly.
 
 
 Optionally, **deselect** erroneous feeds locations:
+
 - Image configuration → Separate feed repositories → Enable feed libremesh
 - Image configuration → Separate feed repositories → Enable feed libremap
 - Image configuration → Separate feed repositories → Enable feed profiles
 
-**Deselect problematic packages:
+**Deselect** problematic packages:
+
 - Base system -> dnsmasq
 - Base system -> firewall
 - Network -> odhcpd-ipv6only
@@ -125,9 +127,9 @@ Optionally, **deselect** unused packages:
 - LibreMesh → LibreMesh-proto-babeld (LibreMesh babeld proto support)
 - LibreMesh → LibreMesh-proto-batadv (LibreMesh batman-adv proto support)
 - LibreMesh → shared-state
-	  - babeld_hosts (babeld-hosts module for shared-state)
-	  - bat_hosts (bat-hosts module for shared-state)
-	  - nodes_and_links (nodes_and_links module for shared-state)
+-- shared-state-babeld_hosts (babeld-hosts module for shared-state)
+-- shared-state-bat_hosts (bat-hosts module for shared-state)
+-- shared-state-nodes_and_links (nodes_and_links module for shared-state)
 
 Some more packages are recommended but not mandatory for a working LibreMesh network. Consider avoiding to select the following packages _only_ if the created image is too large and does not fit in the router memory.
 
