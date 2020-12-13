@@ -40,14 +40,3 @@ ssh root@thisnode.info
 =========================
 Leaving the LibreMesh router with no administrator password is a security risk! You should set a root password immediately! Either via the web interface of the +passwd+ command in the console.
 =========================
-
-== Connecting to other nodes
-
-Using the IPv4 or the IPv6 you should be able to connect to any node.
-It should appear in the menu BMX6 -> Nodes -> (click on the blue circle).
-
-All the nodes are probably in the same collision domain, so you can use NMAP to discover the nodes in your network and their IPv4s.
-
-pass:[<code>nmap -sT -p 80 10.X.Y.0/24 --open</code>]
-
-**You can also use the IPv6 link-local address to connect with the nodes of your layer2 Cloud.**
