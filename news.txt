@@ -6,9 +6,6 @@ lang: en
 News
 ====
 
-[.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/news.txt[Edit this page]
-
 === 2020-09-18 - A release candidate for the next release!
 
 Although the LibreMesh development never stopped, it was since the 17.06

@@ -6,9 +6,6 @@ lang: en
 Communication
 =============
 
-[.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/communication.txt[Edit this page]
-
 == Mailing Lists
 
 The project communicate on the following mailing lists
