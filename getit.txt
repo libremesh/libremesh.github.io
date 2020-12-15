@@ -6,16 +6,15 @@ lang: en
 Get it
 ======
 
-== Download Precompiled Binaries
-
-We offer precompiled firmware images of the LibreMesh stable release (Dayboot Rely 17.06) with **generic settings**. This is the easiest way to first test and install LibreMesh in your router. 
-**Stable release** images can be found at the https://downloads.libremesh.org/releases/17.06/[downloads] site.
-
-The previous **oldstable** release is Community Chaos (16.07), images can be still be found at https://downloads.libremesh.org/community_chaos/16.07/[downloads] site.
-
 == Build latest LibreMesh code, locally using OpenWrt buildroot
 
-Refer to the link:development.html[Development] page.
+Refer to the link:development.html[Development] page, use the 2020.1 branch for compiling the latest release: *LibreMesh 2020.1 ExpansiveEmancipation*.
+
+== Download Precompiled Binaries
+
+The latest stable release is not yet available as a precompiled binary.
+
+The previous releases compiled with generic settings can be found on https://downloads.libremesh.org/
 
 == Installation procedure
 
