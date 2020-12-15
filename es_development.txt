@@ -83,11 +83,13 @@ cp feeds.conf.default feeds.conf
 --------------------------------------------------------------------------------
 cat << EOF >> feeds.conf
 
-src-git libremesh https://github.com/libremesh/lime-packages.git
-src-git libremap https://github.com/libremesh/libremap-agent.git
+src-git libremesh https://github.com/libremesh/lime-packages.git;master
 src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
+
+Si quieres compilar la version estable de libremesh reemplaza `master` por `2020.1`
+al final de la línea del feed de libremesh para especificar el branch `2020.1`.
 
 .Actualizar los paquetes desde los feeds
 --------------------------------------------------------------------------------
@@ -118,7 +120,6 @@ Opcional, **de-seleccionar** paquetes no usados:
 Opcional, **de-seleccionar** ubicaciones de feeds erróneas:
 
 - Image configuration -> Separate feed repositories -> Habilitar feed libremesh
-- Image configuration -> Separate feed repositories -> Habilitar feed libremap
 - Image configuration -> Separate feed repositories -> Habilitar feed profiles
 
 **Seleccionar** (Presiona la tecla espacio hasta que un asterisco `*` aparezca, así como  `<*>`) paquetes LibreMesh:
