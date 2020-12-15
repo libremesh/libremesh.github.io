@@ -76,7 +76,6 @@ cp feeds.conf.default feeds.conf
 cat << EOF >> feeds.conf
 
 src-git libremesh https://github.com/libremesh/lime-packages.git
-src-git libremap https://github.com/libremesh/libremap-agent.git
 src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
@@ -102,7 +101,6 @@ Select the _Target System_, _Subtarget_ and _Target Profile_ accordingly.
 Optionally, **deselect** erroneous feeds locations:
 
 - Image configuration → Separate feed repositories → Enable feed libremesh
-- Image configuration → Separate feed repositories → Enable feed libremap
 - Image configuration → Separate feed repositories → Enable feed profiles
 
 **Deselect** problematic packages:
