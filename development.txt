@@ -75,10 +75,13 @@ cp feeds.conf.default feeds.conf
 --------------------------------------------------------------------------------
 cat << EOF >> feeds.conf
 
-src-git libremesh https://github.com/libremesh/lime-packages.git
+src-git libremesh https://github.com/libremesh/lime-packages.git;master
 src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
+
+If you want to build a stable version of libremesh replace `master` with `2020.1` at the end of the
+line of the libremesh feed to specify the branch `2020.1`.
 
 
 .Update the packages from the feeds
