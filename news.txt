@@ -6,6 +6,40 @@ lang: en
 News
 ====
 
+=== 2020-12-15 - LibreMesh 2020.1 release
+
+The LibreMesh team is happy to announce a new version of LibreMesh, 2020.1 "Expansive Emancipation".
+Three years of work, 882 commits, 23 developers, tons of bug fixes and improvements!
+
+This release is compatible with OpenWrt stable 19.07.5 and old-stable 18.06.9. For the time  source-only
+release so you will need compile it yourself for the devices used by your community using the easy to
+follow instructions in https://libremesh.org/development.html
+
+
+==== What's new in 2020.1 "Expansive Emancipation"
+
+It is imposible to do a meaninful list of all the changes. A non complete list of the most relevant
+developments:
+
+* https://github.com/libremesh/lime-app/[LimeApp]: an app to for the maintenance and deploy of community networks targeted to non-technical
+community members.
+* A new community-oriented configuration system that facilitates collective maintenance of configurations.
+* shared-state, a shared database for the network.
+* first-boot-wizard, an optional helper to deploy and extend the network that it is well integrated with the LimeApp.
+* https://github.com/libremesh/lime-packages/blob/master/packages/pirania/Readme.md[Pirania], an optional boucher and captive portal solution for community networks
+
+* Hundreds of fixes and code improvement.
+
+
+==== Contributors
+
+This release has contributions from communities and individuals from all around the world. Testing, software development, documentation, community building. Thank you all!!
+
+A list of the software developers that contributed to this release was easily gathered from the git history:
+AngiieOG, Brad, Daniel Golle, FreifunkUFO, German Ferrero, Gioacchino Mazzurco, Gui Iribarren, Ilario Gelmetti,
+Jess, Luandro, Marcos Gutierrez, Michael Jones, Mike Russell, Nicolás Pace, PatoGit, Pau, Paul Spooren, Pedro Mauro,
+Santiago Piccinini, Vittorio Cuculo, hiure, radikalbjr, valo.
+
 === 2020-09-18 - A release candidate for the next release!
 
 Although the LibreMesh development never stopped, it was since the 17.06
