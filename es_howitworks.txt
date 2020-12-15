@@ -6,9 +6,6 @@ lang: es
 Cómo funciona
 ============
 
-[.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/es_howitworks.txt[Editar esta página]
-
 == Objetivos a alcanzar
 
   - Escalabilidad

@@ -3,12 +3,6 @@
 Vim tutorial
 ===========
 
-[.text-right]
-icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs[Create new page] and link:https://github.com/libremesh/lime-web/edit/master/_includes/docs_nav.html[Add it to index]
-
-[.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_vim-guide.txt[Edit this page]
-
 == A very short Vim tutorial
 
 Vim is an extremely powerful console editor based on a clever idea: 

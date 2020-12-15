@@ -6,12 +6,6 @@ lang: en
 Troubleshooting
 ===============
 
-[.text-right]
-icon:plus-square[] link:https://github.com/libremesh/lime-web/new/master/docs[Create new page] and link:https://github.com/libremesh/lime-web/edit/master/_includes/docs_nav.html[Add it to index]
-
-[.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/docs/en_troubleshooting.txt[Edit this page]
-
 == Unable to establish Ethernet connection
 If you can't connect to the LibreMesh router as indicated in link:en_connecting_nodes.html[How to connect to LibreMesh nodes] opening http://thisnode.info you can try other ways.
 

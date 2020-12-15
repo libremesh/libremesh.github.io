@@ -6,9 +6,6 @@ lang: es
 Desarrollo
 ===========
 
-[.text-right]
-icon:edit[] link:https://github.com/libremesh/lime-web/edit/master/es_development.txt[Editar esta página]
-
 == Código Fuente
 
 El código fuente se encuentra almacenado en un árbol de git que contiene todas las ramas y lanzamientos. 
