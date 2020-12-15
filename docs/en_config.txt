@@ -43,7 +43,7 @@ or other tools and following the documentation below.
 == Configuration for network administrators
 
 LibreMesh uses https://openwrt.org/docs/guide-user/base-system/uci[UCI] as its
-configuration as UCI is also used by OpenWrt.
+configuration, so does OpenWrt.
 https://openwrt.org/docs/guide-user/base-system/uci[UCI] is a database that is
 easily modified both from the command line and by editing the configuration files directly
 All UCI configuration files are located in the `/etc/config/` directory.
@@ -60,8 +60,8 @@ is structured hierarchically on 3 levels:
 2. *_Community_*, `/etc/config/lime-community` file
 3. *_Default_*, `/etc/config/lime-defaults` file
 
-Where the configuration made at *_Node_* level takes priority over *_Community_* and is at your
-time has priority over the *_Default_*.
+Where the configuration made at the *_Node_* level takes priority over the *_Community_* and the latter has
+priority over the *_Default_*.
 This way, when most of the nodes share a certain characteristic, it is convenient
 be configured at the community level and only modified at the *_Node_* level in the nodes where that configuration differs.
 The *_Default_* level contains all configuration values at their default value.
