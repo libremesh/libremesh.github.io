@@ -117,23 +117,23 @@ Optionally, **deselect** unused packages:
 
 **Select** (press space until when an asterisk `*` appears, like `<*>`) LibreMesh packages:
 
-* LibreMesh → Offline Documentation → lime-docs-minimal (LibreMesh minimal documentation)
-* LibreMesh → LibreMesh-app (LibreMeshApp)
-* LibreMesh → lime-hwd-openwrt-wan (Respect openwrt wan interface as default)
-* LibreMesh → LibreMesh-proto-anygw (LibreMesh anygw proto support)
-* LibreMesh → LibreMesh-proto-babeld (LibreMesh babeld proto support)
-* LibreMesh → LibreMesh-proto-batadv (LibreMesh batman-adv proto support)
-* LibreMesh → shared-state
+* LibreMesh (or LiMe) → Offline Documentation → lime-docs-minimal (LibreMesh minimal documentation)
+* LibreMesh (or LiMe) → lime-app (LibreMeshApp)
+* LibreMesh (or LiMe) → lime-hwd-openwrt-wan (Respect openwrt wan interface as default)
+* LibreMesh (or LiMe) → lime-proto-anygw (LibreMesh anygw proto support)
+* LibreMesh (or LiMe) → lime-proto-babeld (LibreMesh babeld proto support)
+* LibreMesh (or LiMe) → lime-proto-batadv (LibreMesh batman-adv proto support)
+* LibreMesh (or LiMe) → shared-state
 ** shared-state-babeld_hosts (babeld-hosts module for shared-state)
 ** shared-state-bat_hosts (bat-hosts module for shared-state)
 ** shared-state-nodes_and_links (nodes_and_links module for shared-state)
 
 Some more packages are recommended but not mandatory for a working LibreMesh network. Consider avoiding to select the following packages _only_ if the created image is too large and does not fit in the router memory.
 
-- LibreMesh -> check-date-http (Keep local date under NTP too far away skew)
-- LibreMesh -> Offline Documentation -> lime-docs (LibreMesh full documentation)
-- LibreMesh -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
-- LibreMesh -> lime-debug (libremesh debug utils)
+- LibreMesh (or LiMe) -> check-date-http (Keep local date under NTP too far away skew)
+- LibreMesh (or LiMe) -> Offline Documentation -> lime-docs (LibreMesh full documentation)
+- LibreMesh (or LiMe) -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
+- LibreMesh (or LiMe) -> lime-debug (libremesh debug utils)
 
 Additionally and optionally, httpS for the web interface can be enabled selecting (beware that the web interace will be shown as *not trusted*):
 
