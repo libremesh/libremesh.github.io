@@ -1,4 +1,7 @@
 ---
+title: Compiling firmware compatible with OpenWrt repository Kernel vermagic
+ref: development-kernel_vermagic
+lang: en
 ---
 Compiling firmware compatible with OpenWrt repository Kernel vermagic
 =====================================================================
@@ -49,7 +52,7 @@ If you don't know the target and subtarget of your router, check out link:https:
 
 |Atheros ATH79 (DTS)
 |Generic
-|Select: Kernel modules -> Other modules -> kmod-rtc-pcf8563
+|Select: Kernel modules -> Other modules -> kmod-rtc-pcf8563;
 Select: Kernel modules -> Other modules -> kmod-rtc-ds1307
 
 |MediaTek Ralink MIPS
@@ -59,6 +62,11 @@ Select: Kernel modules -> Other modules -> kmod-rtc-ds1307
 |MediaTek Ralink MIPS
 |MT7621 based boards
 |--
+
+|Atheros AR7xxx/AR9xxx
+|ar71xx
+|Select: Kernel modules → Other modules → kmod-rtc-pcf8563; 
+Select: Kernel modules → Other modules → kmod-rtc-pcf2123
 |===
 
 == My target/subtarget is not present in the table
@@ -84,22 +92,24 @@ you can try to find out which kernel modules you're missing (you don't actually 
 +
 Do not remove the following lines:
 +
+ CONFIG_TARGET_name_of_wanted_target=y
  CONFIG_ALL_KMODS=y
  CONFIG_DEVEL=y
  # CONFIG_KERNEL_KALLSYMS is not set
  CONFIG_KERNEL_BUILD_DOMAIN="buildhost"
  CONFIG_KERNEL_BUILD_USER="builder"
 +
-neither the one looking commented out, they are all needed as they are the ones mentioned in the "General instructions" above.
+neither the CONFIG_KERNEL_KALLSYMS one which is needed even if it is commented out. All these options are the ones mentioned in the "General instructions" above.
 +
-. copy it into your OpenWrt buildroot compilation directory and rename the copy as +.config+ (overwrite if necessary) which is the hidden file containing the configuration for the compilation, which will get modified from menuconfig;
-. run +make defconfig+ to generate the rest of the +.config+ file (you can do the same using +make menuconfig+);
-. run +make target/linux/compile+ to compile the minimum amount of stuff needed to obtain the kernel vermagic hash;
-. check the kernel vermagic which will be in a file in your OpenWrt buildroot like this: +./build_dir/target-mips_24kc_musl/linux-ath79_generic/linux-4.14.195/.vermagic+ you can try with the command:
+. Copy it into your OpenWrt buildroot compilation directory and rename the copy as +.config+ (overwrite if necessary) which is the hidden file containing the configuration for the compilation, which will get modified from menuconfig.
+. Run +make defconfig+ to generate the rest of the +.config+ file (you can do the same using +make menuconfig+).
+. Run +make target/linux/compile+ to compile the minimum amount of stuff needed to obtain the kernel vermagic hash (even if the compilation got an error and did not reach completion).
+. Check the kernel vermagic which will be in a file in your OpenWrt buildroot like this: +./build_dir/target-mips_24kc_musl/linux-ath79_generic/linux-4.14.195/.vermagic+ you can try with the command:
 
  cat ./build_dir/target-*/linux-*/linux-*/.vermagic
 
-. if the string matches the kernel vermagic hash from point 1, good! Otherwise, repeat from point 4 removing more lines, compiling again and checking again if the hash matches.
-. confirm that this works compiling a full image (continuing with the compilation guide), flashing it on your device and installing some package depending on a kernel module (e.g. the +tc+ package) using +opkg install+ command;
+. If the string matches the kernel vermagic hash from point 1, good! Otherwise, repeat from point 4 removing more lines, compiling again and checking again if the hash matches.
+. The minimum set of lines needed to have a matching hash are enough, but if you want to take it down to the single kernel configuration you can check which lines appears in the +./build_dir/target-mips_24kc_musl/linux-ath79_generic/linux-4.14.195/.config.set+ file (adapt the path to your target) due to the new content of the +.config+ file.
+. Confirm that this works compiling a full image (continuing with the compilation guide), flashing it on your device and installing some package depending on a kernel module (e.g. the +tc+ package) using +opkg install+ command.
 . If you had to keep the lines of some profiles (devices) in order to obtain the good vermagic, please check which kernel modules they depend upon, you can find this information in the menuconfig using the "Help" function when you are on the selected profile: all the packages starting with +kmod-+ are kernel modules, most of them are selected by default but there will be some that are not. Note them down and check which are not selected when running the menuconfig after deleting the +.config+ file.
 . If you go through all of this craziness, please report to this page your discoveries! You can file a pull request on the link:https://github.com/libremesh/lime-web[lime-web] repository using the "Edit this page" button at the top right of this page or link:https://libremesh.org/communication.html[contacting us]. Thanks!
