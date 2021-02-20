@@ -63,8 +63,8 @@ Select: Kernel modules -> Other modules -> kmod-rtc-ds1307
 |MT7621 based boards
 |--
 
-|Atheros AR7xxx/AR9xxx
-|ar71xx
+|Atheros AR7xxx/AR9xxx (ar71xx)
+|Generic
 |Select: Kernel modules → Other modules → kmod-rtc-pcf8563; 
 Select: Kernel modules → Other modules → kmod-rtc-pcf2123
 |===
