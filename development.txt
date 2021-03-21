@@ -127,6 +127,7 @@ Optionally, **deselect** unused packages:
 ** shared-state-babeld_hosts (babeld-hosts module for shared-state)
 ** shared-state-bat_hosts (bat-hosts module for shared-state)
 ** shared-state-nodes_and_links (nodes_and_links module for shared-state)
+* Utilities -> babeld-auto-gw-mode
 
 Some more packages are recommended but not mandatory for a working LibreMesh network. Consider avoiding to select the following packages _only_ if the created image is too large and does not fit in the router memory.
 
