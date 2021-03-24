@@ -151,7 +151,7 @@ and this to be **de**-selected:
 
 [IMPORTANT]
 =========================
-Due to a link:https://bugs.openwrt.org/index.php?do=details&task_id=3441[known bug], can happen that wpad-mesh-wolfssl gets automatically deselected. Each time you use menuconfig, please check if wpad-mesh-wolfssl is still selected.
+Due to a link:https://bugs.openwrt.org/index.php?do=details&task_id=3441[known bug], can happen that wpad-mesh-wolfssl gets automatically deselected. **Each time you use menuconfig, please check if wpad-mesh-wolfssl is still selected.**
 =========================
 
 [NOTE]
