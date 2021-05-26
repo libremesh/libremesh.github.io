@@ -44,7 +44,6 @@ This is a list of devices that were tested by the community and reported as full
 * https://openwrt.org/toh/xiaomi/mir3g[Xiaomi Mi WiFi R3G]
 * https://openwrt.org/toh/hwdata/youhua/youhua_wr1200js[YouHua WR1200JS]
 * https://openwrt.org/toh/hwdata/librerouter/librerouter_librerouter_v1[LibreRouter]
-* https://openwrt.org/toh/tp-link/tl-wr842nd[TP-Link WR842ND]
 * https://openwrt.org/toh/tp-link/tl-wr1043nd[TP-Link WR1043ND-v1] 
 * https://openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] 
 * https://openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
