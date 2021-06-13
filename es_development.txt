@@ -110,7 +110,6 @@ Por lo tanto seleccionar  _Target System_, _Subtarget_ y  _Target Profile_ .
 **De-seleccionar** paquetes problematicos:
 
 - Base system -> dnsmasq
-- Base system -> firewall
 - Network -> odhcpd-ipv6only
 
 Opcional, **de-seleccionar** paquetes no usados:
