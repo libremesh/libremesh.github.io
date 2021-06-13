@@ -109,7 +109,6 @@ Optionally, **deselect** erroneous feeds locations:
 **Deselect** problematic packages:
 
 - Base system -> dnsmasq
-- Base system -> firewall
 - Network -> odhcpd-ipv6only
 
 Optionally, **deselect** unused packages:
