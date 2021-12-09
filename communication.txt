@@ -20,4 +20,4 @@ The project communicate on the following mailing lists
 
 == Chatroom
 
-The chatroom can be accessed through Element webapp from link:https://app.element.io/#/room/#libremesh-dev:matrix.guifi.net[here] or link:https://element.guifi.net/\#/room/\#libremesh-dev:matrix.guifi.net[here], using link:https://element.io/get-started[Element client or app] and entering the +#libremesh-dev:matrix.guifi.net+ chatroom or via link:https://webchat.freenode.net/?channels=libremesh-dev[IRC] (+#libremesh-dev+ on irc.freenode.net, user registration required).
+The chatroom can be accessed through Element webapp from link:https://app.element.io/#/room/#libremesh-dev:matrix.guifi.net[here] or link:https://element.guifi.net/\#/room/\#libremesh-dev:matrix.guifi.net[here], using link:https://element.io/get-started[Element client or app] and entering the +#libremesh-dev:matrix.guifi.net+ chatroom.
