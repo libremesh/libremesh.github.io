@@ -20,4 +20,4 @@ The project communicate on the following mailing lists
 
 == Chatroom
 
-The chatroom can be accessed through Element webapp from link:https://app.element.io/#/room/#libremesh-dev:matrix.guifi.net[here] or link:https://element.guifi.net/\#/room/\#libremesh-dev:matrix.guifi.net[here], using link:https://element.io/get-started[Element client or app] and entering the +#libremesh-dev:matrix.guifi.net+ chatroom.
+The chatroom can be accessed through link:https://element.io/personal[Element app, desktop software or web client] and entering the +#libremesh-dev:matrix.guifi.net+ chatroom. To write in the chatroom you'll need to register a user on any of the Matrix nodes (the default on element.io will also work). Other options for connecting can be found link:https://matrix.to/#/#libremesh-dev:matrix.guifi.net[clicking here]. 
