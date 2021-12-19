@@ -32,7 +32,7 @@ The suggested devices have the following characteristics:
 * have at least one 2.4 GHz radio and one 5 GHz radio;
 * have at least one ethernet port labelled as LAN.
 
-The list of the dual band devices with Atheros 9k radio supported by OpenWrt pass:macros[link:https://openwrt.org/toh/views/toh_extended_all?datasrt=availability&dataflt%5BWLAN%20driver_wlan-drivers%2A~%5D=ath9k&dataflt%5BWLAN%205.0GHz%2A~%5D=n&dataflt%5BWLAN%202.4GHz%2A~%5D=n&dataflt%5BSupported%20Current%20Rel%2A~%5D=.0[can be found here]].
+The list of the dual band devices with Atheros 9k radio supported by OpenWrt link:https://openwrt.org/toh/views/$$toh_extended_all?datasrt=availability&dataflt%5BWLAN%20driver_wlan-drivers%2A~%5D=ath9k&dataflt%5BWLAN%205.0GHz%2A~%5D=n&dataflt%5BWLAN%202.4GHz%2A~%5D=n&dataflt%5BSupported%20Current%20Rel%2A~%5D=.0$$[can be found here].
 
 Please check the device-specific installation procedure on the OpenWrt wiki, in some cases it can be prohibitively complex.
 
