@@ -8,6 +8,8 @@ How it works
 
 == Objectives to Achieve
 
+  - Enable non-expert users to set up a mesh network and perform basic configuration and management via a web interface usable on smartphones
+  - Encourage non-expert users to empower themselves deepening their technical understanding of mesh networks
   - Scalability
   - Network segmentation
   - Layer 2 roaming inside certain areas
