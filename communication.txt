@@ -11,7 +11,7 @@ Communication
 The project communicate on the following mailing lists
 
 . https://www.autistici.org/mailman/listinfo/libremesh[lime at krutt.org] -
-  This list is used for project organisational purposes and is **the only official user support channel**.
+  This list is used for project organisational purposes, user support, and development discussions. Any language is welcome.
 
 == Chatroom
 
