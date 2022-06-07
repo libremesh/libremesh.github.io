@@ -8,9 +8,9 @@ Communication
 
 == Mailing Lists
 
-The project communicate on the following mailing lists
+The project communicate on the following mailing list
 
-. https://www.autistici.org/mailman/listinfo/libremesh[lime at krutt.org] -
+* https://www.autistici.org/mailman/listinfo/libremesh[libremesh at krutt.org] -
   This list is used for project organisational purposes, user support, and development discussions. Any language is welcome.
 
 == Chatroom
