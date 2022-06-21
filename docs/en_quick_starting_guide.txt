@@ -17,7 +17,7 @@ Not all the OpenWrt supported routers work with LibreMesh (at least, not with it
 == Get the Firmware
 === Choose a source for your firmware
 
-* For the latest stable release with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our http://downloads.libremesh.org/dayboot_rely/17.06/targets/[downloads] site (recommended);
+* For the latest stable release with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our https://downloads.libremesh.org/releases/2020.1/[downloads] site (recommended);
 * For using the latest LibreMesh code, you can compile the firmware on your GNU/Linux computer (or virtual machine) using OpenWrt buildroot as described in the link:/development.html[Development] page (advanced);
 
 For more options check the link:/getit.html[Get It] page.

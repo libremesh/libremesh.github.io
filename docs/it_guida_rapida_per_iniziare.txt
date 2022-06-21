@@ -39,13 +39,13 @@ I modelli con 4 MB che sono stati testati usando la versione +-mini+:
 
 Per informazioni dettagliate su questi router, guarda nelle pagine dedicate all’ link:hardware/index.html[hardware].
 
-_Molti altri modelli sono supportati_ anche se non li abbiamo mai testati (o non lo sappiamo), guarda la lista dei nostri firmware proposti nei http://downloads.libremesh.org/dayboot_rely/17.06/targets/[download].
+_Molti altri modelli sono supportati_ anche se non li abbiamo mai testati (o non lo sappiamo), guarda la lista dei nostri firmware proposti nei https://downloads.libremesh.org/releases/2020.1/[download].
 
 
 == Ottieni il Firmware
 === Scegli una fonte per il tuo firmware:
 
-* Per un firmware precompilato con i parametri di default (e.g. wireless AP name LibreMesh.org) puoi andare alla pagina di http://downloads.libremesh.org/dayboot_rely/17.06/targets/[downloads];
+* Per un firmware precompilato con i parametri di default (e.g. wireless AP name LibreMesh.org) puoi andare alla pagina di https://downloads.libremesh.org/releases/2020.1/[downloads];
 * è possibile generare una immagine del firmware sul proprio computer, è una procedura più complessa, usando https://github.com/libremesh/lime-sdk[lime-sdk]. Supporta l'utilizzo di profili personalizzati dalle diverse comunità.
 * La nostra piattaforma di https://chef.libremesh.org[Cucina] permette di generare una immagine del firmware direttamente online. Supporta l'utilizzo di profili personalizzati dalle diverse comunità.
 
