@@ -7,7 +7,7 @@ fontawesome_icon: fa-cogs
 Configuration
 =============
 :sectanchors:
-:lime-example: https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt [/docs/lime-example]
+:lime-example: https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example]
 
 == Introduction to the configuration
 
