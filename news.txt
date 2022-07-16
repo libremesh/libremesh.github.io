@@ -50,7 +50,7 @@ This means that the release candidate needs testing, bug fixing and
 loads of community love so that we can have an amazing release that can
 actually ease the creation of community networks everywhere.
 
-Check out the https://lists.libremesh.org/pipermail/lime-users/2020-September/001706.html[announcement]
+Check out the https://web.archive.org/web/20220716110806/https://lists.libremesh.org/archives/list/lime-users@lists.libremesh.org/thread/72K6ZKQEKSOOVSPPXCD77ZP4EZWOSWBN/[announcement]
 for more detailed information.
 
 === 2018-04-13 - Join us at Mesh is in the Air!
