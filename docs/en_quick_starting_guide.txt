@@ -2,6 +2,7 @@
 title: Quick Starting Guide
 ref: quick_starting_guide
 lang: en
+fontawesome_icon: fa-rocket
 ---
 
 LibreMesh Quick Starting Guide
