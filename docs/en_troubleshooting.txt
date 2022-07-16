@@ -157,7 +157,7 @@ If you feel confident enough, you can try to boot your router in OpenWrt failsaf
 
 === Recover from bad configurations with Failsafe mode
 
-Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode http://wiki.villagetelco.org/OpenWrt_Failsafe_Mode_and_Flash_Recovery[here] or on the specific router page in https://openwrt.org/toh/start[OpenWrt table of hardware]. If you're trying to reset the router after forgetting the password, this procedure could ask for the password anyway in case this was set in the network-profile during compilation of the installation image.
+Failsafe mode enables you to recover from bad configurations without much trouble. Learn how to access Failsafe mode https://openwrt.org/docs/guide-user/troubleshooting/failsafe_and_factory_reset[here] or on the specific router page in https://openwrt.org/toh/start[OpenWrt table of hardware]. If you're trying to reset the router after forgetting the password, this procedure could ask for the password anyway in case this was set in the network-profile during compilation of the installation image.
 
 The generic procedure is to start pressing repeatedly the router reset button during the boot, the LEDs should start blinking and failsafe mode activated instead of normal boot.
 
