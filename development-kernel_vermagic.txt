@@ -8,7 +8,7 @@ Compiling firmware compatible with OpenWrt repository Kernel vermagic
 
 == Reference
 
-This page is an optional expansion to the normal compilation procedure suggested in the link:development.html[development page] and is an expansion of link:https://lists.libremesh.org/pipermail/lime-users/2020-September/001682.html[this explorative email].
+This page is an optional expansion to the normal compilation procedure suggested in the link:development.html[development page] and is an expansion of link:https://web.archive.org/web/20220716110253/https://lists.libremesh.org/archives/list/lime-users@lists.libremesh.org/message/AWSAUYSKEXN5GNORLIYHPJP5LIWAC5EQ/[this explorative email].
 Beware that these additional steps result in a more time and disk space consuming compilation.
 
 == The problem
