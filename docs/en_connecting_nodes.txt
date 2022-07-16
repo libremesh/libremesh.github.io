@@ -34,3 +34,7 @@ ssh root@thisnode.info
 =========================
 Leaving the LibreMesh router with no administrator password is a security risk! You should set a root password immediately! Either via the web interface of the +passwd+ command in the console.
 =========================
+
+=== Cannot connect?
+
+Visit the link:/docs/en_troubleshooting.html[Troubleshooting] page.
