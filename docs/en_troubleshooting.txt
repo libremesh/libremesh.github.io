@@ -147,7 +147,7 @@ An example of execution:
 p4u@nomada:~$ ./disc6 eth1
 ----
 
-== Still no access possible
+== Still no access possible (e.g. access password lost)
 
 *If you tried all the instructions above without success, we suggest to ask for help* via our link:/communication.html[contacts] before trying anything else.
 
