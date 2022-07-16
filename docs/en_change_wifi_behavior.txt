@@ -12,7 +12,7 @@ If no specific WiFi interface configuration is present, the general WiFi configu
 
 For more information about the general LibreMesh config file options see link:/docs/en_config.html[The config file] page.
 
-For more examples and offline documentation check out `/docs/lime-example.txt` on the router or https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/lime-example[lime-example file online].
+For more examples and offline documentation check out `/docs/lime-example.txt` on the router or, still on the router, on http://thisnode.info/docs/lime-example.txt, or https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[lime-example.txt file online].
 
 == Specific wireless interface configuration
 
