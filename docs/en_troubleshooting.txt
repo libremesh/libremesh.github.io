@@ -161,13 +161,16 @@ Failsafe mode enables you to recover from bad configurations without much troubl
 
 The generic procedure is to start pressing repeatedly the router reset button during the boot, the LEDs should start blinking and failsafe mode activated instead of normal boot.
 
-Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 inserting the http://192.168.1.1 direction in the URL bar of the browser or via SSH:
+Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 or 10.13.0.1 (the IP could be even different if you flashed an image compiled with the preset configuration from your community) inserting the http://192.168.1.1 or http://10.13.0.1 direction in the URL bar of the browser or via SSH:
 
 ----
 ssh root@192.168.1.1
+ssh root@10.13.0.1
 ----
 
-If an error like +Unable to connect+ or +No route to host+ is obtained, likely you will have to set an IP for your computer, for example 192.168.1.2, before attempting to connect again. For setting an IP to your computer under Windows follow https://www.howtogeek.com/howto/19249/how-to-assign-a-static-ip-address-in-xp-vista-or-windows-7/[this guide], under Mac https://www.howtogeek.com/howto/22161/how-to-set-up-a-static-ip-in-mac-os-x/[this guide], under Linux https://www.linuxhint.com/change-from-dhcp-to-static-ip-address-ubuntu/[this guide] and under Android http://tunecomp.net/static-ip-android/[this guide].
+If an error like +Unable to connect+ or +No route to host+ is obtained, likely you will have to set an IP for your computer, for example 192.168.1.2 or 10.13.0.2, before attempting to connect again. For setting an IP to your computer under Windows follow https://www.howtogeek.com/howto/19249/how-to-assign-a-static-ip-address-in-xp-vista-or-windows-7/[this guide], under Mac https://www.howtogeek.com/howto/22161/how-to-set-up-a-static-ip-in-mac-os-x/[this guide], under Linux https://www.linuxhint.com/change-from-dhcp-to-static-ip-address-ubuntu/[this guide] and under Android http://tunecomp.net/static-ip-android/[this guide].
+
+If you still cannot connect, make sure you are pressing the reset button at the right time, as explained https://openwrt.org/docs/guide-user/troubleshooting/failsafe_and_factory_reset[in this guide]. Then, if the problem persists, it's likely that the IP is the one customized by your community (e.g. 10.XXX.0.1) so you can ask any member of your community or find it following the instructions above.
 
 === Re-flashing via TFTP
 
