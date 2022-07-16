@@ -2,6 +2,7 @@
 title: Change WiFi config
 ref: wifi_config
 lang: en
+fontawesome_icon: fa-wifi
 ---
 Changing WiFi interface behavior
 ===============================

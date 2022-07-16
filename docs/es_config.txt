@@ -2,6 +2,7 @@
 title: Configuración
 ref: configuration
 lang: es
+fontawesome_icon: fa-cogs
 ---
 Configuración
 =============

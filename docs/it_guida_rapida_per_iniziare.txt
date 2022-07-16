@@ -2,6 +2,7 @@
 title: Guida Rapida Per Iniziare
 ref: quick_starting_guide
 lang: it
+fontawesome_icon: fa-rocket
 ---
 
 LibreMesh Guida Rapida Per Iniziare

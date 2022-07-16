@@ -2,6 +2,7 @@
 title: Connecting to LibreMesh nodes
 ref: connecting_to_nodes
 lang: en
+fontawesome_icon: fa-hand-o-right
 ---
 Connecting to LibreMesh nodes
 =============================

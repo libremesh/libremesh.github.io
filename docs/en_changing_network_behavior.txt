@@ -2,6 +2,7 @@
 title: Change Ethernet config
 ref: ethernet_config
 lang: en
+fontawesome_icon: fa-plug
 ---
 Changing network interface behavior
 ===================================

@@ -2,6 +2,7 @@
 title: Troubleshooting
 ref: troubleshooting
 lang: en
+fontawesome_icon: fa-wrench
 ---
 Troubleshooting
 ===============
