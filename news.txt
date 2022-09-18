@@ -6,7 +6,7 @@ lang: en
 News
 ====
 
-=== 2020-09-18 - Participation to BattleMesh v14 in Rome
+=== 2022-09-18 - Participation to BattleMesh v14 in Rome
 
 LibreMesh supports this year's "Wireless Battle of the Mesh - Building Community Networks for Fun and Non-Profit".
 
@@ -16,7 +16,7 @@ We envision 4 days of expert presentations, practical workshops, hacking session
 
 The Battlemesh is free of charge and open for all.
 
-This year, the event will take place from Monday 19th to Wednesday 22nd of September, 2022 in Rome, Italy!
+This year, the event will take place from Monday 19th to Thursday 22nd of September, 2022 in Rome, Italy!
 Check out more information at https://www.battlemesh.org/BattleMeshV14
 
 === 2020-12-15 - LibreMesh 2020.1 release
