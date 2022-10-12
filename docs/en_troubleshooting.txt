@@ -139,6 +139,24 @@ If you managed to connect via ssh you can also copy files on the router using IP
 scp LiMe-fw-sysupgrade.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth0\]:/tmp/
 ----
 
+[IMPORTANT]
+=========================
+You could get an error like this:
+
+---
+ash: /usr/libexec/sftp-server: not found
+scp: Connection closed
+---
+
+In this case, you just have to add a `-O` option to the ssh command, like this:
+
+---
+ssh -O root@thisnode.info
+---
+
+for more details, link:https://github.com/openwrt/openwrt/issues/9889[see here].
+=========================
+
 link:disc6[Click here] for downloading Pau's script which check if there is some router attached to your network device and in case, try to connect to it.
 If there are not routers it waits until some appears.
 
