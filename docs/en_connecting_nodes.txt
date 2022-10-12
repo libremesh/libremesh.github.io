@@ -27,6 +27,20 @@ ssh root@thisnode.info
 
 [IMPORTANT]
 =========================
+You could get an error like this:
+---
+Unable to negotiate with 10.13.0.1 port 22: no matching host key type found. Their offer: ssh-rsa
+---
+
+In this case, you just have to add two options to the SSH command: `-o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa`, like this:
+
+---
+ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa root@thisnode.info
+---
+=========================
+
+[IMPORTANT]
+=========================
 Leaving the LibreMesh router with no administrator password is a security risk! You should set a root password immediately! Either via the web interface of the +passwd+ command in the console.
 =========================
 
