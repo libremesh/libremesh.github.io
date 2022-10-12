@@ -19,13 +19,7 @@ Doing so will give you access to the web interface, from here you can customize 
 
 If you need to bypass the web interface and modify the configuration directly, you can connect to the console interface. From here you can use basic Linux commands and edit the configuration files present in the +/etc/config/+ directory.
 
-If you did not set an administrator (user +root+) password, you can connect via telnet issuing:
-
-----
-telnet thisnode.info
-----
-
-If the administrator password is set you will be able to open the router console via ssh issuing:
+You can connect via SSH issuing:
 
 ----
 ssh root@thisnode.info
