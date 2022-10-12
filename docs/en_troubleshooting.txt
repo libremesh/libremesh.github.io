@@ -151,7 +151,7 @@ scp: Connection closed
 In this case, you just have to add a `-O` option to the ssh command, like this:
 
 ---
-ssh -O root@thisnode.info
+scp -O LiMe-fw-sysupgrade.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth0\]:/tmp/
 ---
 
 for more details, link:https://github.com/openwrt/openwrt/issues/9889[see here].
