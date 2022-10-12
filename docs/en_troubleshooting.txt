@@ -76,6 +76,22 @@ ssh root@10.13.0.1
 
 *If no root password* was set and the password login was not disabled by the network-profile, *a blank password access is granted*, otherwise the router root password is prompted.
 
+[IMPORTANT]
+=========================
+You could get an error like this:
+
+---
+Unable to negotiate with 10.13.0.1 port 22: no matching host key type found. Their offer: ssh-rsa
+---
+
+In this case, you just have to add two options to the SSH command: `-o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa`, like this:
+
+---
+ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa root@10.13.0.1
+---
+
+=========================
+
 === Discover IPv4 of your router
 
 Do this *only* if the section _Verify the IPv4 connection_ instructions failed and so the easy _Connect using the gateway IPv4_ is not a valid way. For following this specific way you likely need a Linux computer.
