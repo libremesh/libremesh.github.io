@@ -12,9 +12,11 @@ Refer to the link:development.html[Development] page, use the v2020.1 tag for co
 
 == Download Precompiled Binaries
 
-The latest stable release is not yet available as a precompiled binary.
+The latest stable release is available as a precompiled binary only for devices within the ath79 target of OpenWrt. Look for your router model in our downloads website:
 
-The previous releases compiled with generic settings can be found on https://downloads.libremesh.org/
+https://downloads.libremesh.org/expansive_emancipation/2020.1/targets/
+
+and double check the correct file to use using the information available on the OpenWrt wiki, see their link:https://openwrt.org/toh/start[Table of Hardware here].
 
 == Installation procedure
 
