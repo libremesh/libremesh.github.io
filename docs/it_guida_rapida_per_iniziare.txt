@@ -156,7 +156,7 @@ scp /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
 
 [NOTE]
 ===========
-When upgrading from OpenWrt, in order to connect via ssh/scp you will need to have an admin/root password set via the web interface or via telnet and the +passwd+ command.
+When upgrading from OpenWrt, in order to connect via ssh/scp you will need to have an admin/root password set via the web interface or via SSH and the +passwd+ command.
 Check out link:/docs/en_connecting_nodes.html[Connecting to your own node] for help on this.
 ===========
 
