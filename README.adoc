@@ -1,6 +1,6 @@
 This is the repository of the LibreMesh web pages.
 
-All pages should be written using [asciidoc syntax](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/)
+All pages should be written using https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[asciidoc syntax].
 
 Top level pages are located in this directory while the "Documentation"
 can be found in the docs/ sub-folder.
