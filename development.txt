@@ -77,6 +77,16 @@ EOF
 **If you want to build the stable version of LibreMesh:** replace `master` with `v2020.1` at the end of the
 line of the libremesh feed to specify the tag `v2020.1`.
 
+Network profiles are the specific configuration from the communities, and are stored in this collective link:
+https://github.com/libremesh/network-profiles/[repository], but they can be also be keep locally, depend how every community network manages itself.
+In Network profiles is interesting set the file: root/etc/config/lime-community to have the domain name of the community.
+
+The buildroot has a directory called files/ where we overwrite our configuration files from our Network profile.
+For example:
+--------------------------------------------------------------------------------
+rsync -aPh --delete ~/network-profiles/valsamoggia.ninux.org/vs-ninux-generic/files/ ~/openwrt/files/
+--------------------------------------------------------------------------------
+
 
 .Update the packages from the feeds
 --------------------------------------------------------------------------------
