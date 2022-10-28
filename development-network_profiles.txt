@@ -1,0 +1,9 @@
+In Network profiles is interesting set the file: root/etc/config/lime-community to have the domain name of the community.
+
+The buildroot has a directory called files/ where we overwrite our configuration files from our Network profile.
+For example:
+--------------------------------------------------------------------------------
+rsync -aPh --delete ~/network-profiles/valsamoggia.ninux.org/vs-ninux-generic/files/ ~/openwrt/files/
+--------------------------------------------------------------------------------
+
+
