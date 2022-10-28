@@ -77,16 +77,6 @@ EOF
 **If you want to build the stable version of LibreMesh:** replace `master` with `v2020.1` at the end of the
 line of the libremesh feed to specify the tag `v2020.1`.
 
-Network profiles are the specific configuration from the communities, and are stored in this collective link:
-https://github.com/libremesh/network-profiles/[repository], but they can be also be keep locally, depend how every community network manages itself.
-In Network profiles is interesting set the file: root/etc/config/lime-community to have the domain name of the community.
-
-The buildroot has a directory called files/ where we overwrite our configuration files from our Network profile.
-For example:
---------------------------------------------------------------------------------
-rsync -aPh --delete ~/network-profiles/valsamoggia.ninux.org/vs-ninux-generic/files/ ~/openwrt/files/
---------------------------------------------------------------------------------
-
 
 .Update the packages from the feeds
 --------------------------------------------------------------------------------
@@ -118,6 +108,16 @@ Optionally, **deselect** erroneous feeds locations:
 
 Optionally, **deselect** unused packages:
 - Network -> ppp
+
+If you local community has a profile in the https://github.com/libremesh/network-profiles/[network-profiles repository], you can select it in:
+
+- LibreMesh -> network-profile -> profile-your_community-your_profile
+
+[IMPORTANT]
+=========================
+Network profiles are the specific configuration from the communities, and are stored in this collective 
+https://github.com/libremesh/network-profiles/[repository], but they can also be kept locally, depending on how every community network manages itself. For more instructions on how to create a profile or how to use a local one, check out the link:development-network_profiles.html[network profiles page].
+=========================
 
 **Select** (press space until when an asterisk `*` appears, like `<*>`) LibreMesh packages:
 
@@ -164,6 +164,12 @@ In order to have additional packages, the easiest way is to select them in menuc
 =========================
 
 Save and exit.
+
+If more files should be included in the final firmware image, they can be added in a directory named +files/+. If a file from a package has the same name and path as a file in this directory, it will be overwritten. This is a convenient way to include a custom configuration file, without the need to create an online link:development-network_profiles.html[network profile]. For example:
+--------------------------------------------------------------------------------
+mkdir files
+rsync -aPh --delete ~/my_local_profiles/valsamoggia.ninux.org/vs-ninux-generic/files/ files/
+--------------------------------------------------------------------------------
 
 .Finally, compile the images
 --------------------------------------------------------------------------------
