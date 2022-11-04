@@ -1,3 +1,16 @@
+--
+title: Network Profiles
+ref: development-network_profiles
+lang: en
+---
+Network Profiles
+===========
+
+Network profiles are the most convenient way for a community to organize its configuration files. During the link:development.html[compilation process], the users can select the desired network profile, which will automatically select all the needed software and include the configuration files for this community.
+
+Practically, each community can create a folder in the https://github.com/libremesh/network-profiles[network-profiles repository] with the community's name, and, inside this, create one or more profiles (for example you can have different profiles for nodes of the backbone or access points).
+
+
 In Network profiles is interesting set the file: root/etc/config/lime-community to have the domain name of the community.
 
 The buildroot has a directory called files/ where we overwrite our configuration files from our Network profile.
