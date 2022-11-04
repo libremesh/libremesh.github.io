@@ -10,9 +10,22 @@ Network profiles are the most convenient way for a community to organize its con
 
 Practically, each community can create a folder in the https://github.com/libremesh/network-profiles[network-profiles repository] with the community's name, and, inside this, create one or more profiles (for example you can have different profiles for nodes of the backbone or access points).
 
-== Including files
+= How to create a Network Profile
+
+You will need to create a new folder with some content in the https://github.com/libremesh/network-profiles[network-profiles repository].
+
+In order to do that, you will need to create a Github user, fork the https://github.com/libremesh/network-profiles[network-profiles repository], clone your fork on a computer, create the directories, create a +Makefile+, add some content in the +root/+ folder (for example some custom configuration file), commit the changes, push them to your forked repository and finally open a pull request from your repository to the official https://github.com/libremesh/network-profiles[network-profiles one].
+
+Here we will skip the explanation on the git-related steps, please search on the internet how to perform them or ask us on the link:communication.html[project's communication channels].
+
+== Adding files to the "root" folder
 
 In Network profiles is interesting set the file: root/etc/config/lime-community to have the domain name of the community.
+
+== Selecting packages
+
+The Network Profile get converted to packages which, as mentioned above, will include some files but can also select some new software to be installed as a dependency.
+
 
 
 == Alternative to the usage of Network Profiles
