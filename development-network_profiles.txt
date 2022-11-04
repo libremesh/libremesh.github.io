@@ -10,13 +10,22 @@ Network profiles are the most convenient way for a community to organize its con
 
 Practically, each community can create a folder in the https://github.com/libremesh/network-profiles[network-profiles repository] with the community's name, and, inside this, create one or more profiles (for example you can have different profiles for nodes of the backbone or access points).
 
+== Including files
 
 In Network profiles is interesting set the file: root/etc/config/lime-community to have the domain name of the community.
 
-The buildroot has a directory called files/ where we overwrite our configuration files from our Network profile.
+
+== Alternative to the usage of Network Profiles
+
+Using a network profile is a convenient way to share the files over the internet with all the other members of your community; but it can be exhaggerated if you just want to test adding a file from time to time.
+
+In the buildroot (which is the system that you can use for compiling LibreMesh as described in the link:development.html[development page]) you can create a directory named +files+, and the content of this directory will, in the final LibreMesh image, overwrite every file with the same path and name, including the ones from the selected Network Profile.
+
 For example:
 --------------------------------------------------------------------------------
-rsync -aPh --delete ~/network-profiles/valsamoggia.ninux.org/vs-ninux-generic/files/ ~/openwrt/files/
+cd openwrt
+mkdir files
+rsync -aPh --delete ~/network-profiles/valsamoggia.ninux.org/vs-ninux-generic/root/ files/
 --------------------------------------------------------------------------------
 
 
