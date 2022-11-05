@@ -4,7 +4,7 @@ ref: development-network_profiles
 lang: en
 ---
 Network Profiles
-===========
+================
 
 Network profiles are the most convenient way for a community to organize its configuration files. During the link:development.html[compilation process], the users can select the desired network profile, which will automatically select all the needed software and include the configuration files for this community.
 
