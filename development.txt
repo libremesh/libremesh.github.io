@@ -113,7 +113,7 @@ If you local community has a profile in the https://github.com/libremesh/network
 
 - LibreMesh -> network-profile -> profile-your_community-your_profile
 
-[IMPORTANT]
+[NOTE]
 =========================
 Network profiles are the specific configuration from the communities, and are stored in this collective 
 https://github.com/libremesh/network-profiles/[repository], but they can also be kept locally, depending on how every community network manages itself. For more instructions on how to create a profile or how to use a local one, check out the link:development-network_profiles.html[network profiles page].
