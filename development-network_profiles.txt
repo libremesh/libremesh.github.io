@@ -6,17 +6,40 @@ lang: en
 Network Profiles
 ================
 
+= What is a Network Profile?
+
 Network profiles are the most convenient way for a community to organize its configuration files. During the link:development.html[compilation process], the users can select the desired network profile, which will automatically select all the needed software and include the configuration files for this community.
 
-Practically, each community can create a folder in the https://github.com/libremesh/network-profiles[network-profiles repository] with the community's name, and, inside this, create one or more profiles (for example you can have different profiles for nodes of the backbone or access points).
+They are organized in folders with some content in the https://github.com/libremesh/network-profiles[network-profiles repository].
 
 = How to create a Network Profile
 
-You will need to create a new folder with some content in the https://github.com/libremesh/network-profiles[network-profiles repository].
+Practically, each community can create a folder in the https://github.com/libremesh/network-profiles[network-profiles repository] with the community's name, and, inside this, create one or more profiles (for example you can have different profiles for nodes of the backbone or for access points, or for nodes with large or small flash or RAM memory).
 
-In order to do that, you will need to create a Github user, fork the https://github.com/libremesh/network-profiles[network-profiles repository], clone your fork on a computer, create the directories, create a +Makefile+, add some content in the +root/+ folder (for example some custom configuration file), commit the changes, push them to your forked repository and finally open a pull request from your repository to the official https://github.com/libremesh/network-profiles[network-profiles one].
+= Steps for creating a Network Profile
 
-Here we will skip the explanation on the git-related steps, please search on the internet how to perform them or ask us on the link:communication.html[project's communication channels].
+You will need to create a Github user, fork the https://github.com/libremesh/network-profiles[network-profiles repository], clone your fork on a computer, create the directories, create a +Makefile+ (see below), add some content in the +root/+ folder (see below), commit the changes, push them to your forked repository and finally open a pull request from your repository to the official https://github.com/libremesh/network-profiles[network-profiles one].
+
+Here we will skip the explanation on the git and Github-related steps, please search on the internet how to perform them or ask us on the link:communication.html[project's communication channels].
+
+== Creating a Makefile
+
+In the Makefile you can indicate a description and include a list of the dependencies, which are the packages that gets selected by selecting your network-profile.
+
+A Makefile for the network-profiles repository looks like this:
+
+-----------
+include $(TOPDIR)/rules.mk
+
+PROFILE_DESCRIPTION:=Profile for MyMesh community
+PROFILE_DEPENDS:=+lime-proto-babeld +lime-proto-batadv +lime-proto-anygw
+
+include ../../profile.mk
+
+# call BuildPackage - OpenWrt buildroot signature
+-----------
+
+and the lines you should customize are only the PROFILE_DESCRIPTION and PROFILE_DEPENDS ones. In the list of the PROFILE_DEPENDS, please note that each package's name is preceeded by a `+`.
 
 == Adding files to the "root" folder
 
