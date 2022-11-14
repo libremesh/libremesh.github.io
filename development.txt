@@ -55,11 +55,6 @@ git clone -b v19.07.10 --single-branch https://git.openwrt.org/openwrt/openwrt.g
 cd openwrt
 --------------------------------------------------------------------------------
 
-[NOTE]
-=========================
-If you need to include a file in all the compiled images, for example a custom configuration file, create here a `files` directory containing the directory structure and files you want to add. For example: `mkdir -p files/etc/config/; touch files/etc/config/lime-community` and then edit the newly created `lime-community` file including your custom content. See more instruction on this on link:https://openwrt.org/docs/guide-developer/build-system/use-buildsystem#custom_files[OpenWrt wiki].
-=========================
-
 .Take default OpenWrt repositories feeds
 --------------------------------------------------------------------------------
 cp feeds.conf.default feeds.conf
@@ -165,11 +160,14 @@ In order to have additional packages, the easiest way is to select them in menuc
 
 Save and exit.
 
-If more files should be included in the final firmware image, they can be added in a directory named +files/+. If a file from a package has the same name and path as a file in this directory, it will be overwritten. This is a convenient way to include a custom configuration file, without the need to create an online link:development-network_profiles.html[network profile]. For example:
---------------------------------------------------------------------------------
-mkdir files
-rsync -aPh --delete ~/my_local_profiles/valsamoggia.ninux.org/vs-ninux-generic/files/ files/
---------------------------------------------------------------------------------
+At this stage there is the possibility to include custom files in the compiled firmware image. For this, you will have to create, inside the `openwrt/` directory, a `files/` directory containing the directory structure and files you want to add. For example, if you want to have a `/etc/config/lime-community` file you need to do the following:
+
+-----------------------------
+mkdir -p files/etc/config/
+touch files/etc/config/lime-community
+-----------------------------
+
+and then edit the newly created `lime-community` file including your custom content. If a file from a package has the same name and path as a file in this directory, it will be overwritten. This is a quick way to include a custom configuration file, without the need to create an online link:development-network_profiles.html[network profile].
 
 .Finally, compile the images
 --------------------------------------------------------------------------------
