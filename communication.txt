@@ -16,3 +16,27 @@ The project communicate on the following mailing list
 == Chatroom
 
 The chatroom can be accessed through Element app, desktop software or web client (link:https://element.io/personal[click here for checking out these chat clients]) and entering the `#libremesh-dev:matrix.guifi.net` chatroom. To write in the chatroom you'll need to register a user on any of the Matrix nodes (the default on element.io will also work). Other options for connecting can be found link:https://matrix.to/#/#libremesh-dev:matrix.guifi.net[clicking here]. 
+
+== Online meetings
+
+Last meeting of 2022 will be on: 
+* 17th of December at 13:00 UTC (14:00 CET European time, 9:00 ART Argentina time).
+
+For the year 2023, we decided to meet the "first Saturday of the month, every two months", so:
+
+* Saturday the 4th of February 2023 at 13:00 UTC (14:00 CET, 9:00 ART).
+* Saturday the 1st of April 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+* Saturday the 3rd of June 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+* Saturday the 5th of August 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+* Saturday the 7th of October 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+* Saturday the 2th of December 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+
+You can freely partecipate as listener, but.. the link of the meeting pass in chat and via mailinglist just at the end of the month before.
+You can also add topics at the meeting, but we prefer that inform us before brings them.
+During the meetings we use this format:
+  * we prefer have a list of the topics to discuss before the meeting,
+  * we do report for the people that can't be present in the assembly,
+  * we use a pad for a collaborative reporting of discussion and decisions,
+  * we take the time of the speakers to not have unique long speeches
+  * we decide at the begin of every meeting the languages that we use, so sometimes our assembly are in different languages because people understand more than what they speak (italoportish) and sometimes we use english.
+  * we not decide for majority and for do-cracy, we try to reach consensus and we are friendly in the conversations, but to be honest we are not already established a written "decision making workflow".
