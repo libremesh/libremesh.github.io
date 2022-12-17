@@ -4,7 +4,7 @@ title: 'Welcome to the LibreMesh project'
 
 exclude: [ 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README', 'vendor' ]
 
-prefix: '/'
+prefix: '/lime-web/'
 
 asciidoctor:
   attributes:
