@@ -11,7 +11,7 @@ LibreMesh Quick Starting Guide
 
 == Compatible Hardware
 
-It is recommended that the router has at least 8 MB of flash memory and 64 MB of RAM. For routers with 4 MB flash memory or 32 MB of RAM, use the special firmware named +-mini+ or link:/development.html[compile one yourself] excluding some heavy packages (e.g. +opkg+ or the LuCI and lime-app web interfaces).
+It is recommended that the router has at least 8 MB of flash memory and 64 MB of RAM. For routers with 4 MB flash memory or 32 MB of RAM, use the special firmware named +-mini+ or link:../development.html[compile one yourself] excluding some heavy packages (e.g. +opkg+ or the LuCI and lime-app web interfaces).
 
 Not all the OpenWrt supported routers work with LibreMesh (at least, not with its default configuration), for a list of the tested hardware, see our link:hardware/index.html[hardware] page.
 
@@ -19,7 +19,7 @@ Not all the OpenWrt supported routers work with LibreMesh (at least, not with it
 === Choose a source for your firmware
 
 * For the latest stable release with default configuration (e.g. wireless AP name +LibreMesh.org+) you can use our https://downloads.libremesh.org/releases/2020.1/[downloads] site (recommended);
-* For using the latest LibreMesh code, you can compile the firmware on your GNU/Linux computer (or virtual machine) using OpenWrt buildroot as described in the link:/development.html[Development] page (advanced);
+* For using the latest LibreMesh code, you can compile the firmware on your GNU/Linux computer (or virtual machine) using OpenWrt buildroot as described in the link:../development.html[Development] page (advanced);
 
 For more options check the link:/getit.html[Get It] page.
 
