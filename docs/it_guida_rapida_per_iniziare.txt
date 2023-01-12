@@ -50,7 +50,7 @@ _Molti altri modelli sono supportati_ anche se non li abbiamo mai testati (o non
 * è possibile generare una immagine del firmware sul proprio computer, è una procedura più complessa, usando https://github.com/libremesh/lime-sdk[lime-sdk]. Supporta l'utilizzo di profili personalizzati dalle diverse comunità.
 * La nostra piattaforma di https://chef.libremesh.org[Cucina] permette di generare una immagine del firmware direttamente online. Supporta l'utilizzo di profili personalizzati dalle diverse comunità.
 
-Per avere più opzioni vai alla pagina link:/getit.html[Ottienilo].
+Per avere più opzioni vai alla pagina link:../getit.html[Ottienilo].
 
 
 === Scarica il firmware giusto
@@ -157,7 +157,7 @@ scp /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
 [NOTE]
 ===========
 When upgrading from OpenWrt, in order to connect via ssh/scp you will need to have an admin/root password set via the web interface or via SSH and the +passwd+ command.
-Check out link:/docs/en_connecting_nodes.html[Connecting to your own node] for help on this.
+Check out link:en_connecting_nodes.html[Connecting to your own node] for help on this.
 ===========
 
 Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh \root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt or LEDE are running.
