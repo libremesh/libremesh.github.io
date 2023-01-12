@@ -37,4 +37,4 @@ Leaving the LibreMesh router with no administrator password is a security risk! 
 
 === Cannot connect?
 
-Visit the link:/docs/en_troubleshooting.html[Troubleshooting] page.
+Visit the link:en_troubleshooting.html[Troubleshooting] page.
