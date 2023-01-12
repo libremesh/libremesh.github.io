@@ -8,7 +8,7 @@ Documentation Index
 
 == Contributing to the Documentation
 
-Contributions to the documentation are very welcome, check out the web presence section in the link:/development.html[development page].
+Contributions to the documentation are very welcome, check out the web presence section in the link:../development.html[development page].
 
 == Presentations and Documents
 
