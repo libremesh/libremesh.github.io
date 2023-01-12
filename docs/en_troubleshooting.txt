@@ -170,7 +170,7 @@ p4u@nomada:~$ ./disc6 eth1
 
 == Still no access possible (e.g. access password lost)
 
-*If you tried all the instructions above without success, we suggest to ask for help* via our link:/communication.html[contacts] before trying anything else.
+*If you tried all the instructions above without success, we suggest to ask for help* via our link:../communication.html[contacts] before trying anything else.
 
 These situations of non-responsivity can arise from bad manual configurations and customizations (network-profile) or bad images being flashed or incompatible router model.
 
