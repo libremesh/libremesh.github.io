@@ -31,7 +31,7 @@ which does not require prior knowledge of networks.
 To use the FirstBootWizard simply follow the steps on the screen when
 enter http://thisnode.info
 
-image:/img/firstbootwizard-splash.png["FirstBootWizard splash"]
+image:../img/firstbootwizard-splash.png["FirstBootWizard splash"]
 
 However, if your community is a geek community, then you may not want to use the FirstBootWizard.
 
