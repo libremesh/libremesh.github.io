@@ -8,7 +8,7 @@ Documentación
 
 == Contrubuyendo a la documentación
 
-Las contribuciones a la documentación son muy bienvenidas! Consulte la sección en link:/development.html[desarrollo].
+Las contribuciones a la documentación son muy bienvenidas! Consulte la sección en link:../development.html[desarrollo].
 
 == Presentaciones y Documentos
 
