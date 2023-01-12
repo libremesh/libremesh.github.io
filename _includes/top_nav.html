@@ -5,5 +5,5 @@
     {% assign docs_lang_pages=site.pages | where:"ref",item | where:"lang","en" %}
     {% endunless %}
     {% assign doc_page=docs_lang_pages.first %}
-    <li {% if page.url == doc_page.url %} class="active"{% endif %}><a href="{{doc_page.url}}">{{ doc_page.title }}</a></li>
+    <li {% if page.url == doc_page.url %} class="active"{% endif %}><a href="{{site.prefix}}{{doc_page.url}}">{{ doc_page.title }}</a></li>
 {% endfor %}
