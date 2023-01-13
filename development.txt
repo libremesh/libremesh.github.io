@@ -185,15 +185,15 @@ We accept pull requests via GitHub. But patches can also be submitted via the li
 The pages you're reading are generated from text files using the
 http://www.methods.co.nz/asciidoc/[AsciiDoc] suite plus https://jekyllrb.com/[Jekyll].
 
-Any changes made to https://github.com/libremesh/lime-web[lime-web repository] will be reflected on our `libremesh.org` website.
+Any changes made to https://github.com/libremesh/libremesh.github.io[the website repository] will be reflected on our `libremesh.org` website.
 
 In order to generate these pages locally:
 ----
-git clone https://github.com/libremesh/lime-web.git
-cd lime-web && bundle install
+git clone https://github.com/libremesh/libremesh.github.io.git
+cd libremesh.github.io && bundle install
 bundle exec jekyll serve
 ----
-For more details, check the https://github.com/libremesh/lime-web/blob/master/README[README] on Github.
+For more details, check the https://github.com/libremesh/libremesh.github.io/blob/master/README.adoc[README] on Github.
 
 If you would like to contribute to the documentation then please send patches to our mailing list or open a pull request on GitHub. An easy way to edit and file a pull request is clicking the "Edit this page" button at the top right of each page.
 

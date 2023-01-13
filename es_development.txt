@@ -184,15 +184,15 @@ Aceptamos solicitudes _pull_ a través de GitHub. Pero los parches los parches t
 La página que tu estas leyendo es generada de archivos de texto usando 
 http://www.methods.co.nz/asciidoc/[AsciiDoc] además de https://jekyllrb.com/[Jekyll].
 
-Cualquier cambio hecho al https://github.com/libremesh/lime-web[repositorio lime-web] será reflejado en nuestro sitio web `libremesh.org` .
+Cualquier cambio hecho al https://github.com/libremesh/libremesh.github.io[repositorio de la web] será reflejado en nuestro sitio web `libremesh.org` .
 
 Para generar esta página localmente:
 ----
-git clone https://github.com/libremesh/lime-web.git
-cd lime-web && bundle install
+git clone https://github.com/libremesh/libremesh.github.io.git
+cd libremesh.github.io && bundle install
 bundle exec jekyll serve
 ----
-Para más detalles, revisar el https://github.com/libremesh/lime-web/blob/master/README[README] en Github.
+Para más detalles, revisar el https://github.com/libremesh/libremesh.github.io/blob/master/README.adoc[README] en Github.
 
 Si deseas contribuir con la documentación, envía parches a nuestra lista de correos o abre una solicitud de _pull_ en GitHub.
 Una forma facil de editar y solicitar un _pull_ de un archivo es haciendo click en el botón "Editar esta página" en la parte superior derecha de la página web.

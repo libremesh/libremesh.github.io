@@ -15,7 +15,7 @@ http://127.0.0.1:4000/ with your browser.
 Jekyll and its dependencies can also be installed using gem and bundler:
 
     gem install bundler
-    cd lime-web && bundle install
+    cd libremesh.github.io && bundle install
     jekyll build
 
 In Ubuntu/Debian you would need to install ruby header files
