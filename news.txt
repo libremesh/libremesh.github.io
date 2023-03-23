@@ -6,6 +6,19 @@ lang: en
 News
 ====
 
+=== 2023-03-10 - Endorsement to BattleMesh v15 in Calafou, Barcelona
+
+LibreMesh community supports and will participate in this year's Wireless BattleMesh (WBM) v15 in Calafou, Barcelona.
+
+LibreMesh will be one of the topics that will be discussed there, together with routing protocols for mesh networks, human communities below the wireless nodes, and much more technical and political topics related to community networks!
+
+You can see the full announcement email here
+https://lists.autistici.org/message/20230310.090007.3ae9dd40.en.html
+And the event website here: 
+https://battlemesh.org/BattleMeshV15
+
+Enjoy meshing!
+
 === 2022-09-18 - Participation to BattleMesh v14 in Rome
 
 LibreMesh supports this year's "Wireless Battle of the Mesh - Building Community Networks for Fun and Non-Profit".
