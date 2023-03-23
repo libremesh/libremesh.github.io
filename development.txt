@@ -64,13 +64,15 @@ cp feeds.conf.default feeds.conf
 --------------------------------------------------------------------------------
 cat << EOF >> feeds.conf
 
-src-git libremesh https://github.com/libremesh/lime-packages.git;master
+src-git libremesh https://github.com/libremesh/lime-packages.git;OpenWrt_19.07_compatible
 src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
 
-**If you want to build the stable version of LibreMesh:** replace `master` with `v2020.1` at the end of the
+**If you want to build the stable version of LibreMesh:** replace `OpenWrt_19.07_compatible` with `v2020.1` at the end of the
 line of the libremesh feed to specify the tag `v2020.1`.
+
+**The `master` branch is *not* compatible with OpenWrt 19.07.** Instead, it is being tested for OpenWrt 22.03.
 
 
 .Update the packages from the feeds
@@ -126,7 +128,7 @@ https://github.com/libremesh/network-profiles/[repository], but they can also be
 ** shared-state-babeld_hosts (babeld-hosts module for shared-state)
 ** shared-state-bat_hosts (bat-hosts module for shared-state)
 ** shared-state-nodes_and_links (nodes_and_links module for shared-state)
-* Utilities -> babeld-auto-gw-mode --only available in master branch--
+* Utilities -> babeld-auto-gw-mode
 
 
 [NOTE]
