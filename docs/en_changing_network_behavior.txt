@@ -7,6 +7,42 @@ fontawesome_icon: fa-plug
 Changing network interface behavior
 ===================================
 
+== WAN port configuration
+
+The recommended `lime-hwd-openwrt-wan` package detects the WAN port and configures it for getting connectivity to the internet.
+
+=== Connecting via SSH also from the WAN port
+
+If the OpenWrt's firewall is present, it will block incoming connections on the WAN port, for security reasons.
+If you need to connect via SSH from the WAN port (likely from the internet), you can allow the incoming connection to the port 22 (the default port for SSH) adding these lines in `/etc/config/firewall` and rebooting your router:
+
+----
+config rule
+	option name 'Allow-SSH'
+	option src 'wan'
+	option proto 'tcp'
+	option dest_port '22'
+	option target 'ACCEPT'
+----
+
+=== Using the WAN port for connecting with another cloud
+
+When two neighboring LibreMesh networks want to interconnect without flooding each other with local broadcast traffic, they use two different WiFi access point names `ap_name`. But if they want to do the same via cable, they can do so with a WAN-WAN connection, connecting two border nodes via their WAN ports. This is absolutely not the intended use for a WAN port but works.
+
+Important: if you have the OpenWrt firewall installed, you will need to allow all the incoming connections on the WAN port of both border routers. For doing this, edit the `/etc/config/firewall` file like this and reboot your routers:
+
+----
+config zone
+	option name		wan
+	list   network		'wan'
+	list   network		'wan6'
+	option input		REJECT --> change to ACCEPT
+	option output		ACCEPT
+	option forward		REJECT --> change to ACCEPT
+	option masq		1
+	option mtu_fix		1
+----
+
 == LibreMesh interface-specific network configuration
 
 If no interface-specific network configuration is present, the general network configuration section is used for all the interfaces.
