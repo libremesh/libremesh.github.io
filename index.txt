@@ -49,9 +49,15 @@ In the following list we try to collect some existing free networks (send us an 
 | FunkFeuer    | Austria           | https://www.funkfeuer.at  | image:img/0xff_logo.png["FunkFeuer",role="right"]
 | Ninux.org    | Italy             | http://ninux.org          | image:img/ninux_logo.png["NiNux",role="right"]
 | AlterMundi   | Argentina         | http://altermundi.net     | image:img/altermundi_logo.png["Altermundi",role="right"]
+| Wakoma       | Global            | https://wakoma.co/        |
 |=======================================================================================================================
 
 Several community networks are using LibreMesh on their devices, some of these are listed link:https://github.com/libremesh/network-profiles[here].
+
+|=======================================================================================================================
+| Antennine    | Italy             | https://antennine.noblogs.org| image:img/ninux_logo.png["NiNux",role="right"]
+|=======================================================================================================================
+
 
 == Firmware and Embedded Device
 
