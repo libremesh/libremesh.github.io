@@ -2,6 +2,7 @@
 title: Hardware
 ref: hardware
 lang: en
+fontawesome_icon: fa-server
 ---
 Hardware Documentation Index
 ============================
