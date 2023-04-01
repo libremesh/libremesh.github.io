@@ -41,7 +41,7 @@ We understand that a free network as a telecommunications network should accompl
 * It is neutral, so there are not preferences for the kind, origin or destination of the data
 * It is free as in freedom (libre means free as in "free speech" in Spanish)
 
-In the following list we try to collect some existing free networks (send us an e-mail if you want to include yours).
+Organizations supporting LibreMesh:
 
 |=======================================================================================================================
 | Guifi.net    | Iberian peninsula | http://guifi.net          | image:img/guifi-logo.png["Guifi.net",role="right"]
@@ -50,15 +50,17 @@ In the following list we try to collect some existing free networks (send us an 
 | Ninux.org    | Italy             | http://ninux.org          | image:img/ninux_logo.png["NiNux",role="right"]
 | AlterMundi   | Argentina         | http://altermundi.net     | image:img/altermundi_logo.png["Altermundi",role="right"]
 | Wakoma       | Global            | https://wakoma.co/        |
+| LibreRouter   | Global           | https://librerouter.org/   | image:img/librerouter_isologo.png["LibreRouter",role="right"]
 |=======================================================================================================================
 
-Several community networks are using LibreMesh on their devices, some of these are listed link:https://github.com/libremesh/network-profiles[here].
+Community mesh networks using Libremesh:
 
 |=======================================================================================================================
 | Antennine       | Appennino Bolognese | https://antennine.noblogs.org            | image:img/ninux_logo.png["NiNux",role="right"]
 | Janastu CowMesh | Rural Karnataka     | https://open.janastu.org/projects/cowmesh| 
 |=======================================================================================================================
 
+Several other community networks are using or used LibreMesh on their devices with their own customizations (network profiles), some of these are listed link:https://github.com/libremesh/network-profiles[here].
 
 == Firmware and Embedded Device
 
