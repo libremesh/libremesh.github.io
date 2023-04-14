@@ -108,13 +108,22 @@ Do not try to copy the firmware image to directories different from `/tmp`. They
 In case the router already has LibreMesh you can do this with
 
 ```
-scp -O /LOCAL/PATH/TO/BUILD.bin root@thisnode.info:/tmp/
+scp /LOCAL/PATH/TO/BUILD.bin root@thisnode.info:/tmp/
 ```
 
-Otherwise (upgrading from OpenWrt) you will need to insert the router IP address (often 192.168.1.1) in
+[IMPORTANT]
+===========
+You could get an error like this:
+`/usr/libexec/sftp-server: not found`
+`Connection closed`
+In this case, you just have to add a `-O` option to the ssh command, like this:
+`scp -O /LOCAL/PATH/TO/BUILD.bin root@thisnode.info:/tmp/`
+===========
+
+Otherwise (upgrading from OpenWrt) you will need to insert the router IP address (often 192.168.1.1) in (see above for solving the `/usr/libexec/sftp-server: not found` error):
 
 ```
-scp -O /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
+scp /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
 ```
 
 Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh \root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt is running.
