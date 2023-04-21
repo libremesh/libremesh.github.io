@@ -69,7 +69,7 @@ src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
 
-With the lines above, you will compile the LibreMesh 2020.3 release. **The `master` branch is *not* compatible with OpenWrt 19.07.** Instead, it is being tested for OpenWrt 22.03.
+With the lines above, you will compile the LibreMesh 2020.3 release. This is indicated by the `;v2020.3` suffix. Without this suffix, the `master` branch would be used, but **the `master` branch is *not* compatible with OpenWrt 19.07.** Instead, it is being developed for supporting OpenWrt 22.03.
 
 
 .Update the packages from the feeds
