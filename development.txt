@@ -69,8 +69,8 @@ src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
 
-**If you want to build the stable version of LibreMesh:** replace `OpenWrt_19.07_compatible` with `v2020.1` at the end of the
-line of the libremesh feed to specify the tag `v2020.1`.
+**If you want to build the stable version of LibreMesh:** replace `OpenWrt_19.07_compatible` with `v2020.2` at the end of the
+line of the libremesh feed to specify the tag `v2020.2`.
 
 **The `master` branch is *not* compatible with OpenWrt 19.07.** Instead, it is being tested for OpenWrt 22.03.
 
