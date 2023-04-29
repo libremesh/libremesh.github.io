@@ -12,6 +12,7 @@ asciidoctor:
     - source-highlighter=coderay
     - icons=font
     - hardbreaks!
+    - toc=auto
 
 asciidoc_ext: txt
 

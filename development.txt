@@ -64,15 +64,12 @@ cp feeds.conf.default feeds.conf
 --------------------------------------------------------------------------------
 cat << EOF >> feeds.conf
 
-src-git libremesh https://github.com/libremesh/lime-packages.git;OpenWrt_19.07_compatible
+src-git libremesh https://github.com/libremesh/lime-packages.git;v2020.3
 src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
 
-**If you want to build the stable version of LibreMesh:** replace `OpenWrt_19.07_compatible` with `v2020.1` at the end of the
-line of the libremesh feed to specify the tag `v2020.1`.
-
-**The `master` branch is *not* compatible with OpenWrt 19.07.** Instead, it is being tested for OpenWrt 22.03.
+With the lines above, you will compile the LibreMesh 2020.3 release. This is indicated by the `;v2020.3` suffix. Without this suffix, the `master` branch would be used, but **the `master` branch is *not* compatible with OpenWrt 19.07.** Instead, it is being developed for supporting OpenWrt 22.03.
 
 
 .Update the packages from the feeds
@@ -92,7 +89,7 @@ Check out the +target+ (e.g. +ATH79+), +subtarget+ (e.g. +generic+) and +profile
 Select the _Target System_, _Subtarget_ and _Target Profile_ accordingly.
 
 
-Optionally, **deselect** erroneous feeds locations:
+**Deselect** erroneous feeds locations:
 
 - Image configuration → Separate feed repositories → Enable feed libremesh
 - Image configuration → Separate feed repositories → Enable feed profiles
