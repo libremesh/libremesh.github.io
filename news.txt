@@ -17,13 +17,6 @@ The dates and venue have been set by the WBM community:
      https://www.openstreetmap.org/#map=19/41.51115/1.70263
      https://calafou.org/web/index.php/sobre-calafou#eng
 
-Please find the information we gathered so-far on the wiki page:
-     https://battlemesh.org/BattleMeshV15
-
-Different accommodation options are available at Calafou:
-* Camping - the great outdoors is calling. Please bring your own camping gear (tent, caravan, etc).
-* Bunk Bed - pick one of the available bunk beds covered by a proper roof. 
-
 LibreMesh community supports and will participate in this year's Wireless BattleMesh (WBM) v15 in Calafou, Barcelona.
 
 LibreMesh will be one of the topics that will be discussed there, together with routing protocols for mesh networks, human communities below the wireless nodes, and much more technical and political topics related to community networks!
