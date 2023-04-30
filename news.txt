@@ -8,6 +8,15 @@ News
 
 === 2023-03-10 - Endorsement to BattleMesh v15 in Calafou, Barcelona
 
+The Wireless Battle of the Mesh is going live for its 15th edition. This time for a full *week* again!
+
+The dates and venue have been set by the WBM community:
+
+     8-14th of May 2023
+     Calafou, Vallbona d'Anoia, Barcelona
+     https://www.openstreetmap.org/#map=19/41.51115/1.70263
+     https://calafou.org/web/index.php/sobre-calafou#eng
+
 LibreMesh community supports and will participate in this year's Wireless BattleMesh (WBM) v15 in Calafou, Barcelona.
 
 LibreMesh will be one of the topics that will be discussed there, together with routing protocols for mesh networks, human communities below the wireless nodes, and much more technical and political topics related to community networks!
