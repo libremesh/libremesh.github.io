@@ -52,8 +52,7 @@ If you don't know the target and subtarget of your router, check out link:https:
 
 |Atheros ATH79 (DTS)
 |Generic
-|Select: Kernel modules -> Other modules -> kmod-rtc-pcf8563;
-Select: Kernel modules -> Other modules -> kmod-rtc-ds1307
+|--
 
 |MediaTek Ralink MIPS
 |MT7620 based boards
