@@ -63,6 +63,7 @@ This is a list of devices that were tested by the community and reported as full
 * https://openwrt.org/toh/arc/freestation[Flex mARC] 
 * https://openwrt.org/toh/wd/n600[Western Digital My Net N600] 
 * https://openwrt.org/toh/gl.inet/gl-ar300m[GL.iNet GL-AR300M16]
+* https://openwrt.org/inbox/toh/xiaomi/xiaomi_mi_router_4a_gigabit_edition[Xiaomi Mi Router 4A Gigabit Edition v1] v2 cannot be flashed with OpenWrt and there is no indication on the box for understanding if you are buying v1 or v2
 
 == Specific Devices Instructions
 
