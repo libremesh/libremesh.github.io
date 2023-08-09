@@ -62,6 +62,7 @@ This is a list of devices that were tested by the community and reported as full
 * https://openwrt.org/toh/buffalo/wsr-1166dhp[Buffalo WSR-1166DHP] 
 * https://openwrt.org/toh/arc/freestation[Flex mARC] 
 * https://openwrt.org/toh/wd/n600[Western Digital My Net N600] 
+* https://openwrt.org/toh/gl.inet/gl-ar300m[GL.iNet GL-AR300M16]
 
 == Specific Devices Instructions
 
