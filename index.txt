@@ -60,6 +60,7 @@ Community mesh networks using Libremesh:
 |=======================================================================================================================
 | Antennine       | Appennino Bolognese | https://antennine.noblogs.org            | image:img/ninux_logo.png["NiNux",role="right"]
 | Calafou       | Catalunia | https://calafou.org/            | 
+| Coolab      | Brasil | https://www.coolab.org/           | 
 | Janastu CowMesh | Rural Karnataka     | https://open.janastu.org/projects/cowmesh| 
 |=======================================================================================================================
 
