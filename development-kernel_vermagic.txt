@@ -64,8 +64,7 @@ If you don't know the target and subtarget of your router, check out link:https:
 
 |Atheros AR7xxx/AR9xxx (ar71xx)
 |Generic
-|Select: Kernel modules → Other modules → kmod-rtc-pcf8563; 
-Select: Kernel modules → Other modules → kmod-rtc-pcf2123
+|--
 
 |x86
 |x86_64
