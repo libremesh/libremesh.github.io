@@ -6,6 +6,31 @@ lang: en
 News
 ====
 
+=== 2023-10-07 - A new stable release and a release candidate for Openwrt 22!
+
+We released a new version of Libremesh based on OpenWrt 19!
+
+     https://downloads.libremesh.org/releases/2020.4-ow19/
+
+and a new release candidate based on OpenWrt 22:
+
+     https://downloads.libremesh.org/releases/2023.1-rc2-ow22/
+
+This means that the release candidate needs testing, bug fixing and
+loads of community love so that we can have an amazing release that can
+actually ease the creation of community networks everywhere.
+
+Check out the: https://lists.autistici.org/message/20230929.142923.34529fc1.en.html
+https://lists.autistici.org/message/20230929.152044.f1940e95.en.html
+for more detailed information.
+
+Another great gourgeous news is that from now we have a Firmware Selector, check it out here:
+https://repo.libremesh.org/selector
+
+This release has contributions from communities and individuals from all around the world. 
+Testing, software development, documentation, community building. Thank you all!!
+
+
 === 2023-03-10 - Endorsement to BattleMesh v15 in Calafou, Barcelona
 
 The Wireless Battle of the Mesh is going live for its 15th edition. This time for a full *week* again!
