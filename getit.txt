@@ -14,7 +14,7 @@ Refer to the link:development.html[Development] page, use the v2020.4 tag for co
 
 The latest stable release is available as a precompiled binary only for devices within the ath79 target of OpenWrt. Look for your router model in our downloads website:
 
-https://downloads.libremesh.org/expansive_emancipation/2020.4-ow19/targets/
+https://downloads.libremesh.org/current/
 
 and double check the correct file to use using the information available on the OpenWrt wiki, see their link:https://openwrt.org/toh/start[Table of Hardware here].
 
