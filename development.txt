@@ -125,6 +125,7 @@ https://github.com/libremesh/network-profiles/[repository], but they can also be
 ** shared-state-bat_hosts (bat-hosts module for shared-state)
 ** shared-state-nodes_and_links (nodes_and_links module for shared-state)
 * Utilities -> babeld-auto-gw-mode
+* Network -> batctl-default (B.A.T.M.A.N. Advanced user space configuration tool)
 
 
 [NOTE]
