@@ -2,28 +2,24 @@
 title: Connecting to LibreMesh nodes
 ref: connecting_to_nodes
 lang: en
-fontawesome_icon: fa-hand-o-right
+fontawesome_icon: fa-hand-point-right
 ---
-Connecting to LibreMesh nodes
-=============================
 
-== Connecting to your own node
-
-=== Connecting to the Web Interface
+== Connecting to the Web Interface
 
 For opening the web interface of your LibreMesh router, usually is enough to connect to it (either via wireless or via ethernet cable) and opening http://thisnode.info[thisnode.info] in a web browser.
 
 Doing so will give you access to the web interface, from here you can customize LibreMesh settings or access the OpenWrt configuration interface. We discourage the use of OpenWrt settings sections as this could produce conflicts with LibreMesh configuration mechanisms.
 
-=== Connecting to the Console Interface
+== Connecting to the Console Interface
 
 If you need to bypass the web interface and modify the configuration directly, you can connect to the console interface. From here you can use basic Linux commands and edit the configuration files present in the +/etc/config/+ directory.
 
 You can connect via SSH issuing:
 
-----
+```bash
 ssh root@thisnode.info
-----
+```
 
 [IMPORTANT]
 =========================
@@ -35,6 +31,6 @@ You could get an error like this: `Unable to negotiate with 10.13.0.1 port 22: n
 Leaving the LibreMesh router with no administrator password is a security risk! You should set a root password immediately! Either via the web interface of the +passwd+ command in the console.
 =========================
 
-=== Cannot connect?
+== Cannot connect?
 
 Visit the link:en_troubleshooting.html[Troubleshooting] page.

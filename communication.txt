@@ -3,8 +3,6 @@ title: Communication
 ref: communication
 lang: en
 ---
-Communication
-=============
 
 == Mailing Lists
 

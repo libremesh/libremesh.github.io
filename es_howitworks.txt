@@ -3,8 +3,6 @@ title: Cómo Funciona
 ref: how_it_works
 lang: es
 ---
-Cómo funciona
-============
 
 == Objetivos a alcanzar
 
@@ -22,7 +20,7 @@ La arquitectura de red diseñada para LibreMesh se basa en dos capas:
 === Nube Capa 2 
 La nube en la capa 2 utiliza el protocolo de enrutamiento dinámico BATMAN-ADV
 
-image::img/bat-adv.png[batmanadv,100,float="left"]
+image::/assets/img/bat-adv.png[batmanadv,100,float="left"]
 *******************
 B.A.T.M.A.N Advanced es un protocolo de enrutamiento mesh que se ejecuta en el espacio del kernel.
 Incluso si la topologia de red esta hecha de multiples nodos y multiples saltos,
@@ -35,7 +33,7 @@ para propositos de roaming, por lo tanto las conexiones TCP y UDP no se pierden 
 
 La capa de red 3 utiliza por defecto el protocolo de enrutamiento BMX
 
-image::img/bmx7.png[bmx7,100,float="left"]
+image::/assets/img/bmx7.png[bmx7,100,float="left"]
 *******************
 BMX6 (o la nueva versión BMX7) es un protocolo de enrutamiento dinámico nativo de IPv6 el cual ofrece muchas funciones 
 avanzadas y una pequeña sobrecarga de red, gracias a la estrategia vector-distancia y su conjunto de optimizaciones. 
@@ -63,7 +61,7 @@ La VLAN BATADV depende del identificador de la nube el cual es calculado (por de
 La red BMX será una para toda la mesh, pero la red BAT-ADV puede dividirse en varias nubes.
 =========================
 
-image::img/network1.png[align="center"]
+image::/assets/img/network1.png[align="center"]
 
 **Esta configuración aísla las nubes de capa 2**.
 Por ejemplo, un vecindario, un complejo de empresa o una red de punto de acceso a nivel de calle pueden optar por aislar su LAN del resto de la red.
@@ -76,7 +74,7 @@ El roaming estará disponible dentro de la nube, por lo que se puede realizar se
 Todo es automático y transparente para la persona usuaria
 =========================
 
-image::img/network2.png[align="center"]
+image::/assets/img/network2.png[align="center"]
 
 
 == En detalle
@@ -91,7 +89,7 @@ Los Puntos de Acceso Inalambricos de la misma nube comparten parametros comunes:
 Así un cliente conectado a una AP puede moverse por la mesh sin necesidad de renovar su configuración IP.
 Incluso en desde el punto de vista de la capa MAC será la misma.
 
-image::img/network3.png[align="center"]
+image::/assets/img/network3.png[align="center"]
 
 
 [NOTE]
@@ -102,7 +100,7 @@ Siempre que todos los nodos compartan el mismo anycast MAC/IP, desde el punto de
 ======================
 
 
-image::img/network4.png[align="center"]
+image::/assets/img/network4.png[align="center"]
 
 Cuando un cliente quiere salir de la LAN (nube) para conectarse a Internet o cualquier otra red, enviará los paquetes a la dirección de puerta de enlace anycast especial. El nodo donde el cliente esta fisicamente conectado se encargará de esto.
 
@@ -112,7 +110,7 @@ Una regla de ebtables.footnote:[algo como iptables pero para la capa 2 de red] e
 El nodo mesh en donde el cliente está asociado recibe el paquete, pero no los otros nodos.
 ==============
 
-image::img/network5.png[align="center"]
+image::/assets/img/network5.png[align="center"]
 
 El paquete es enrutado a través de la capa de red 3 BMX a la mejor puerta de enlace de Internet. Esto puede ser un nodo de la misma nube o cualquier otro de otra nube lejana.
 
@@ -121,7 +119,7 @@ El paquete es enrutado a través de la capa de red 3 BMX a la mejor puerta de en
 BMX tiene una potente función de puerta de enlace inteligente que selecciona automaticamente el mejor nodo de puerta de enlace de Internet teniendo en cuenta el ancho de banda disponible.
 =============
 
-image::img/network6.png[align="center"]
+image::/assets/img/network6.png[align="center"]
 
 [NOTE]
 =============

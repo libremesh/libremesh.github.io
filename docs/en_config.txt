@@ -4,8 +4,7 @@ ref: configuration
 lang: en
 fontawesome_icon: fa-cogs
 ---
-Configuration
-=============
+
 :sectanchors:
 :lime-example: https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example]
 
@@ -31,7 +30,7 @@ which does not require prior knowledge of networks.
 To use the FirstBootWizard simply follow the steps on the screen when
 enter http://thisnode.info
 
-image:../img/firstbootwizard-splash.png["FirstBootWizard splash"]
+image:/assets/img/firstbootwizard-splash.png["FirstBootWizard splash"]
 
 However, if your community is a geek community, then you may not want to use the FirstBootWizard.
 
@@ -43,13 +42,10 @@ or other tools and following the documentation below.
 
 == Configuration for network administrators
 
-LibreMesh uses https://openwrt.org/docs/guide-user/base-system/uci[UCI] as its
-configuration, so does OpenWrt.
-https://openwrt.org/docs/guide-user/base-system/uci[UCI] is a database that is
-easily modified both from the command line and by editing the configuration files directly
+LibreMesh uses https://openwrt.org/docs/guide-user/base-system/uci[UCI] as its configuration, so does OpenWrt.
+https://openwrt.org/docs/guide-user/base-system/uci[UCI] is a database that is easily modified both from the command line and by editing the configuration files directly.
 All UCI configuration files are located in the `/etc/config/` directory.
-The LibreMesh configuration files that can be edited for are: `/etc/config/lime-node` and
-`/etc/config/lime-community`
+The LibreMesh configuration files that can be edited for are: `/etc/config/lime-node` and `/etc/config/lime-community`
 All other configuration files should not be modified.
 
 == Configuration levels *_Community_* and *_Node_*
@@ -74,7 +70,7 @@ in 300 meters but in two of the nodes A and B configure it in 1000m. We could do
 
 In the `lime-community` of all the nodes we would have
 
-```python
+```
 config lime 'wifi'
 	# other options
 	option distance_2ghz '300'
@@ -82,20 +78,18 @@ config lime 'wifi'
 
 And in the `lime-node` files of nodes A and B:
 
-```python
+```
 config lime 'wifi'
 	option distance_2ghz '1000'
 ```
 
 === Operation
 
-When running the `lime-config` command the first thing that happens is that the *_Node_* levels are processed,
-*_Community_* and *_Default_* and the `/etc/config/lime-autogen` file is generated.
+When running the `lime-config` command the first thing that happens is that the *_Node_* levels are processed, *_Community_* and *_Default_* and the `/etc/config/lime-autogen` file is generated.
 This file is the one that contains the configuration that is really going to be used by libremesh to configure the system.
 
 The resulting configuration files are then written for each package based on `/etc/config/lime-autogen`.
-For the settings to be applied, it is recommended to run `reboot` after `lime-config`. While there are faster ways
-of applying the modifications in certain cases, running `reboot` is the only way to ensure that all changes were applied.
+For the settings to be applied, it is recommended to run `reboot` after `lime-config`. While there are faster ways of applying the modifications in certain cases, running `reboot` is the only way to ensure that all changes were applied.
 
 === List of sections and options
 
@@ -132,42 +126,36 @@ config lime network
 
 
 [NOTE]
-IPv4 configuration: `main_ipv4_address`
-================
-
+.IPv4 configuration: `main_ipv4_address`
+====
 There are four possibilities:
-
 . set a static IP and subnet, e.g. `'192.0.2.1/16'`
-
 . parameterize with `%Mn` and `%Nn`, and configure the subnet, for example `'192.%N1.%M5.%M6/16'`.
-
 . configure a network address (not a specific IP) to obtain an auto-complete IP
 within the network from the bits of the MAC. This also works with masks other than
 `/24` or `/16` as in `'192.0.128.0/17'`.
-
 . set two different parameters, the first for the subnet and the second for the IP setting,
 for example `'192.0.128.0/16/17'`, resulting in a `/16` subnet with broadcast domain (`192.0.0.0/16`) but with the IP of the node
 calculated in a `/17` range (from `192.0.128.0` to `192.0.255.254`).
-
-================
+====
 
 [NOTE]
 .IPv6 configuration: `main_ipv6_address`
-================
+====
 The configuration is similar to the `max_ipv4_address`. If autocompletion is used as a maximum, it completes
 the last 24 bits, so in this case it is not useful to use a range greater than `/104`.
-================
+====
 
 [NOTE]
 .List of protocols
-================
+====
 List of protocols configured by LibreMesh. Some of these require the installation of your related package `lime-proto...`.
 Note that because of the way the `list` (ICU lists) work, configuring some protocols causes the list to be rewritten
 The complete set of protocols that is in the values for *_Default_*.
 Don't worry if there are more protocols defined than you really need: only the protocols corresponding to
 installed packages will be used. So for example if the package `lime-proto-olsr` is not installed then by more
 that the protocol `olsr` is listed, it will not be used.
-================
+====
 
 
 .General WiFi settings
@@ -185,37 +173,37 @@ config lime wifi
 	list modes 'ieee80211s'
 	option ap_ssid 'LibreMesh.org'
 	option apname_ssid 'LibreMesh.org/%H'
-    option country 'ES'
+	option country 'ES'
 ----
 
 [NOTE]
 .Country setting: `country code`
-=============
+====
 The default country code is not specified (so the default is usually `US`),
 but we strongly recommend that you set it up. If the network is in Spain then the configuration is
 `option country 'ES'`, which also allows the use of channel 13 (permitted in Spain) which is otherwise restricted.
-=============
+====
 
 [NOTE]
 .distance
-=============
+====
 The `distance` parameter indicates the maximum distance the other nodes or clients can be.
 A very large value decreases the performance but a lower value than necessary results in a
 connection with a very very bad performance (you often see duplicate packets (DUPs) when pinging).
-=============
+====
 
 [NOTE]
 .wifi options
-=============
+====
 Any options in the form `<mode>_<option>` are copied directly to `/etc/config/wireless` (without the `<mode>_` prefix).
-=============
+====
 
 [NOTE]
 .wifi Access point password
-=============
+====
 To secure the AP and APname interfaces with WPA2-PSK, add the `key 'MySecurePassword'` and
 `encryption 'psk2'` options. For an example see in {lime-example}.
-=============
+====
 
 === Specific interface configurations
 
@@ -241,15 +229,15 @@ If you want to make a configuration for which LibreMesh does not have an option 
 it is necessary to use *_generic configs* and *_lime-assets_*.
 
 [[generic-configs,Generic configurations]]
-=== Generic configurations: `generic_uci_config`
+=== generic_uci_config
 
 Other files can be configured in `/etc/config/` from the lime configuration files using
 generic configurations.
 
 Example to configure the location of `/etc/config/libremap` from `/etc/config/lime-community`:
 
-```python
- config generic_uci_config libremap
+```
+config generic_uci_config libremap
     list uci_set "libremap.settings=libremap"
     list uci_set "libremap.settings.community=our.libre.org"
     list uci_set "libremap.settings.community_lat=-200.123"
@@ -257,14 +245,14 @@ Example to configure the location of `/etc/config/libremap` from `/etc/config/li
 ```
 
 [[lime-assets,lime-assets]]
-=== The *_lime-assets_*, files for special configurations
+=== lime-assets
 
 The *_lime-assets_* are files that allow you to make special configurations. These files
 are divided into two groups, those of the node and those of the community. The idea is that the assets of the community
 are shared by all the nodes and allow configurations that are necessary in all the nodes.
 On the other hand, the files (_assets_) of the node are designed to make specific configurations in the node.
 
-==== Defining files: `copy_asset`
+==== copy_asset
 
 If a file is required to be present on the file system you can use the `copy_asset` directive.
 `copy_asset` copies a file from the _assets_ directory to a path defined by the `dst` option.
@@ -273,14 +261,14 @@ For example to configure the collectd program for your community you can create 
 in `/etc/lime-assets/community/collectd.conf` and use it by defining the following settings in the file
 `lime-community` in the following way:
 
-```python
+```
 config copy_asset collectd
    option asset 'community/collectd.conf'
    option dst '/etc/collectd.conf'
 ```
 
 
-==== Running scripts: `run_asset`
+==== run_asset
 
 To configure LibreMesh to run a script you should use the `run_asset` option.
 Use this configuration method as a last resort if the other methods are not sufficient.
@@ -292,57 +280,14 @@ once you reconfigure LibreMesh (when you run `lime-config`) using `ATCONFIG`.
 For example to run the script `myscript.sh` saved in `/etc/lime-assets/community/myscript.sh`
 on the first boot:
 
-```python
- config run_asset a_test_script
-     option asset 'community/myscript.sh'
-     option when 'ATFIRSTBOOT'
+```
+config run_asset a_test_script
+    option asset 'community/myscript.sh'
+    option when 'ATFIRSTBOOT'
 ```
 
 
 [NOTE]
-==============
+====
 This configuration method replaces the functionality of the `uci-defaults` scripts.
-==============
-
-== Important
-
-=== Do not edit other configuration files that are not free mesh
-
-The configuration of a libremesh node should only be done through the libremesh configuration files
-and never by directly editing the other configuration files.
-This is because changes made to configuration files outside the
-freemesh settings can be lost when
-
-* a change is made to the libremesh configuration
-* a firmware upgrade is made
-
-=== Never modify the files with default values or the _autogenerated_ ones
-
-Although it might be convenient to directly modify `/etc/config/lime-defaults` or even
-This should not be done because in the future when we want to understand
-the configuration that we have of the node we will not be able to distinguish if we change a configuration or not.
-
-=== I want to change an option to test, where do I change it?
-
-In the *_Node_* configuration: `/etc/config/lime-node`
-
-=== Do I have to configure all the options?
-No, the configurations by the *_Default_* level provide a configuration that allows you to have a
-mesh network experience without having to change anything
-
-=== How do I see all the options currently in use on a node?
-See the `/etc/config/lime-autogen` file.
-
-=== I want to change something but I can't find a freemaster option to do it
-
-This is why there are <<generic-configs>> and <<lime-assets>>
-
-=== How do I do it?
-
-* How to use the ap, apnode, mesh settings
-* How to put a radio as a client of another network (so that the node acts as a gateway)
-* How to set an administration password for the whole network
-* How to password protect the wireless
-
-For detailed information on these questions you can see the examples in {lime-example}.
-
+====

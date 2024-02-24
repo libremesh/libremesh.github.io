@@ -1,0 +1,34 @@
+{% for item in site.data.structure.development %}
+{% assign docs_lang_pages=site.pages | where:"ref",item.ref | where:"lang",lang  | default: false %}
+{% unless docs_lang_pages %} {% assign docs_lang_pages=site.pages | where:"ref",item.ref | where:"lang","en" %} {% endunless %}
+{% assign doc_page=docs_lang_pages.first %}
+  <li class="md-nav__item {% if page.url == doc_page.url %} md-nav__item--active {% endif %}
+    {% if item.subpages %} md-nav__item--nested {% endif %} {% if page.url contains doc_page.ref %} md-nav__item--nested-open {% endif %}">
+  {% if item.subpages %}
+    <div>
+      <div>
+        {% if doc_page.fontawesome_icon %}<i class="fa {{doc_page.fontawesome_icon}}" aria-hidden="true"></i>{% endif %}
+        <span>{{ doc_page.title }}</span>
+      </div>
+      <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+    </div>
+    <ul class="md-nav__list {% if page.url contains doc_page.url %} md-nav__list-open {% endif %}" data-md-scrollfix="">
+      {% for subpage in item.subpages %}
+        {% assign docs_lang_subpages=site.pages | where:"ref",subpage.ref | where:"lang",lang  | default: false %}
+        {% unless docs_lang_subpages %} {% assign docs_lang_subpages=site.pages | where:"ref",subpage.ref | where:"lang","en" %} {% endunless %}
+        {% assign doc_page=docs_lang_subpages.first %}
+        <li class="md-nav__item {% if page.url == doc_page.url %} md-nav__link--active{% endif %}">
+          <a class="md-nav__link" href="{{site.prefix}}{{doc_page.url}}"> 
+            <span>{{ doc_page.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+  {% else %}
+    <a class="md-nav__link" href="{{site.prefix}}{{doc_page.url}}">
+      {% if doc_page.fontawesome_icon %}<i class="fa {{doc_page.fontawesome_icon}}" aria-hidden="true"></i>{% endif %}
+      <span>{{ doc_page.title }}</span>
+    </a>
+  {% endif %}
+  </li>
+{% endfor %}

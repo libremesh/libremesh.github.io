@@ -1,0 +1,12 @@
+---
+title: lime-example
+ref: lime-example
+lang: en
+no_toc: true
+---
+
+https://github.com/libremesh/lime-packages/tree/master/packages/lime-docs/files/www/docs/lime-example.txt[https://github.com/libremesh/lime-packages/master/packages/lime-docs/files/www/docs/lime-example.txt]
+
+```awk
+{% github_sample libremesh/lime-packages/master/packages/lime-docs/files/www/docs/lime-example.txt %}
+```

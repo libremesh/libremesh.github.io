@@ -4,8 +4,7 @@ ref: configuration
 lang: es
 fontawesome_icon: fa-cogs
 ---
-Configuración
-=============
+
 :sectanchors:
 :lime-example: https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example]
 
@@ -31,7 +30,7 @@ que no requiere conocimientos previos de redes.
 Para utilzar el FirstBootWizard simplemente sigue los pasos que aparecen en pantalla al
 entrar en http://thisnode.info
 
-image:/img/firstbootwizard-splash.png["FirstBootWizard splash"]
+image:/assets/img/firstbootwizard-splash.png["FirstBootWizard splash"]
 
 En cambio si tu comunidad es una comunidad de geeks entonces quizas no quieran utilizar el FirstBootWizard.
 
@@ -74,7 +73,7 @@ en 300 metros pero en dos de los nodos A y B configurarla en 1000m. Lo podríamo
 
 En `lime-community` de todos los nodos tendriamos:
 
-```python
+```
 config lime 'wifi'
 	# other options
 	option distance_2ghz '300'
@@ -82,7 +81,7 @@ config lime 'wifi'
 
 Y en los archivos `lime-node` de los nodos A y B:
 
-```python
+```
 config lime 'wifi'
 	option distance_2ghz '1000'
 ```
@@ -248,8 +247,8 @@ configuraciones genéricas.
 
 Ejemplo para configurar la localización de `/etc/config/libremap` desde `/etc/config/lime-community`:
 
-```python
- config generic_uci_config libremap
+```
+config generic_uci_config libremap
     list uci_set "libremap.settings=libremap"
     list uci_set "libremap.settings.community=our.libre.org"
     list uci_set "libremap.settings.community_lat=-200.123"
@@ -273,7 +272,7 @@ Por ejemplo para configurar el programa `collectd` para tu comunidad puedes crea
 en `/etc/lime-assets/community/collectd.conf` y usarlo definiendo la siguiente configuración en el archivo
 `lime-community` de la siguiente manera:
 
-```python
+```
 config copy_asset collectd
    option asset 'community/collectd.conf'
    option dst '/etc/collectd.conf'
@@ -292,10 +291,10 @@ vez que se reconfigura LibreMesh (cuando se ejecuta `lime-config`) usando `ATCON
 Por ejemplo para ejecutar el script `myscript.sh` guardado en `/etc/lime-assets/community/myscript.sh`
 en el primer booteo:
 
-```python
- config run_asset a_test_script
-     option asset 'community/myscript.sh'
-     option when 'ATFIRSTBOOT'
+```
+config run_asset a_test_script
+    option asset 'community/myscript.sh'
+    option when 'ATFIRSTBOOT'
 ```
 
 
@@ -303,46 +302,3 @@ en el primer booteo:
 ==============
 Este método de configuración reemplaza la funcionalidad de los scripts `uci-defaults`.
 ==============
-
-== Importante
-
-=== No editar otros archivos de configuración que no sean de libremesh
-
-La configuración de un nodo libremesh solo debe realizarse a travez de los archivos de configuración de libremesh
-y nunca editando directamente los otros archivos de configuración.
-Esto es así ya que los cambios realizados en archivos de configuración por fuera del sistema de
-configuración de libremesh se pueden perder cuando:
-
-* se realice un cambio en la configuración de libremesh
-* se haga un upgrade de firmware
-
-=== Nunca modificar los archivos con valores por defecto ni los _autogenerados_
-
-A pesar de que podria ser cómodo modificar directamente `/etc/config/lime-defaults` o inclusive
-`/etc/config/lime-autogen` esto no debe hacerse ya que en el futuro cuando querramos entender
-la configuración que tenemos del nodo no vamos a poder distinguir si cambiamos una configuración o no.
-
-=== Quiero cambiar una opción para probar, dónde la cambio?
-
-En la configuración de *_Nodo_*: `/etc/config/lime-node`
-
-=== Tengo que configurar todas las opciones?
-No, las configuraciones por del nivel *_Defecto_* proveen una configuración que permite tener una
-experiencia de red mesh sin tener que cambiar nada.
-
-=== Cómo hago para ver todas las opciones estan en uso actualmente en un nodo?
-Ver el archivo `/etc/config/lime-autogen`
-
-
-=== Quiero cambiar algo pero pero no encuentro una opcion de libremesh para realizarlo
-
-Para eso existen las <<generic-configs>> y los <<lime-assets>>
-
-=== ¿Cómo hago?
-
-* Cómo usar las configuraciones de ap, apnode, mesh
-* Cómo poner una radio como cliente de otra red (para que el nodo haga de gateway)
-* Cómo poner un password de administración para toda la red
-* Cómo ponerle password al wireless
-
-Para información detallada de estas preguntas puedes ver los ejemplos en {lime-example}.

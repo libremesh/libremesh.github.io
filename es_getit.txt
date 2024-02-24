@@ -3,8 +3,6 @@ title: ¡Obtener!
 ref: get_it
 lang: es
 ---
-Obtener
-======
 
 == Descargar Binarios Precompilados
 Ofrecemos imagenes de firmware precompiladas de la versión estable de LibreMesh 2020.1 con **configuraciones genericas**. Esta es la

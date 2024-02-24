@@ -1,10 +1,9 @@
 ---
-title: Documentation
+title: LibreMesh Documentation
 ref: docs_overview
 lang: en
+fontawesome_icon: fa-book
 ---
-Documentation Index
-===================
 
 == Contributing to the Documentation
 

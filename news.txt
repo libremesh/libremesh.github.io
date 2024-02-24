@@ -3,10 +3,8 @@ title: News
 ref: news
 lang: en
 ---
-News
-====
 
-=== 2023-10-07 - A new stable release and a release candidate for Openwrt 22!
+== 2023-10-07 - A new stable release and a release candidate for Openwrt 22!
 
 We released a new version of Libremesh based on OpenWrt 19!
 
@@ -31,7 +29,7 @@ This release has contributions from communities and individuals from all around 
 Testing, software development, documentation, community building. Thank you all!!
 
 
-=== 2023-03-10 - Endorsement to BattleMesh v15 in Calafou, Barcelona
+== 2023-03-10 - Endorsement to BattleMesh v15 in Calafou, Barcelona
 
 The Wireless Battle of the Mesh is going live for its 15th edition. This time for a full *week* again!
 
@@ -53,7 +51,7 @@ https://battlemesh.org/BattleMeshV15
 
 Enjoy meshing!
 
-=== 2022-09-18 - Participation to BattleMesh v14 in Rome
+== 2022-09-18 - Participation to BattleMesh v14 in Rome
 
 LibreMesh supports this year's "Wireless Battle of the Mesh - Building Community Networks for Fun and Non-Profit".
 
@@ -66,7 +64,7 @@ The Battlemesh is free of charge and open for all.
 This year, the event will take place from Monday 19th to Thursday 22nd of September, 2022 in Rome, Italy!
 Check out more information at https://www.battlemesh.org/BattleMeshV14
 
-=== 2020-12-15 - LibreMesh 2020.1 release
+== 2020-12-15 - LibreMesh 2020.1 release
 
 The LibreMesh team is happy to announce a new version of LibreMesh, 2020.1 "Expansive Emancipation".
 Three years of work, 882 commits, 23 developers, tons of bug fixes and improvements!
@@ -76,7 +74,7 @@ release so you will need compile it yourself for the devices used by your commun
 follow instructions in https://libremesh.org/development.html
 
 
-==== What's new in 2020.1 "Expansive Emancipation"
+=== What's new in 2020.1 "Expansive Emancipation"
 
 It is imposible to do a meaninful list of all the changes. A non complete list of the most relevant
 developments:
@@ -91,7 +89,7 @@ community members.
 * Hundreds of fixes and code improvement.
 
 
-==== Contributors
+=== Contributors
 
 This release has contributions from communities and individuals from all around the world. Testing, software development, documentation, community building. Thank you all!!
 
@@ -113,7 +111,7 @@ actually ease the creation of community networks everywhere.
 Check out the https://web.archive.org/web/20220716110806/https://lists.libremesh.org/archives/list/lime-users@lists.libremesh.org/thread/72K6ZKQEKSOOVSPPXCD77ZP4EZWOSWBN/[announcement]
 for more detailed information.
 
-=== 2018-04-13 - Join us at Mesh is in the Air!
+== 2018-04-13 - Join us at Mesh is in the Air!
 
 We endorse https://www.wireless-meshup.org/[Mesh is in the Air] - this years mesh up of the https://www.battlemesh.org/[Wireless Battle of the Mesh] and https://wiki.freifunk.net/Wireless_Community_Weekend_2018[Wireless Community Weekend].
 
@@ -121,32 +119,32 @@ If you are a mesh networking enthusiast, community activist, have an interest in
 
 LibreMesh developers and users will be attending the event, giving talks about development progress and state, and in general sharing a nice time.
 
-=== 2017-06-06 - Attended Sysupgrades
+== 2017-06-06 - Attended Sysupgrades
 
 Within this years https://summerofcode.withgoogle.com/[GSoC] a fellow student tries to setup a new way to perform sysupgrades on LibreMesh Routers (and LEDE/OpenWrt in general).
 The idea is to generate sysupgrade images on demand with all manually installed packages included. 
 
 More details are shown in the official https://blog.freifunk.net/2017/05/30/gsoc-2017-attended-sysupgrade/[Freifunk Blogpost] (english)
 
-=== 2016-10-06 - LibreRouter
+== 2016-10-06 - LibreRouter
 
 The Libre Router project will design and produce a high performance multi-radio wireless router targeted at Community Networks needs.
 
 For more info visit the https://librerouter.org/[librerouter web]. Or read the https://guifi.net/ca/node/90285[guifi.net article] (spanish).
 
-=== 2016-08-06 - Endorsement to LEDE project
+== 2016-08-06 - Endorsement to LEDE project
 
-image:img/lede.png["The LEDE logo",role="right"]
+image:/assets/img/lede.png["The LEDE logo",role="right"]
 
 We endorse the https://www.lede-project.org/[LEDE project] and we plan to start basing LibreMesh releases on Linux Embedded Development Environment (LEDE) as soon as it will have a stable release.
 
-=== 2016-08-01 - Project Meeting LiMeCat2016q3
+== 2016-08-01 - Project Meeting LiMeCat2016q3
 
 Naming:	LiMeCat2016q3 +
 Date:	2016-08-06T12:00+02:00/2016-08-07T17:00+02:00 +
 Venue:	CSA La Talaia, Passeig Mas Roig 52-54/ Rambla Jacint Verdaguer 215, FGC: Valldoreix (Sant Cugat Del Vallés), Barcelona. https://csalatalaia.wordpress.com/[Web site].
 
-=== 2016-04-13 - Project Meeting LiMeCat2016
+== 2016-04-13 - Project Meeting LiMeCat2016
 
 Naming:	LiMeCat2016 +
 Date:	2016-04-16T12:00+02:00/2016-04-17T17:00+02:00 +

@@ -3,8 +3,6 @@ title: Get it!
 ref: get_it
 lang: en
 ---
-Get it
-======
 
 == Build latest LibreMesh code, locally using OpenWrt buildroot
 

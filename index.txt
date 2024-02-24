@@ -3,31 +3,29 @@ title: Home
 ref: home
 lang: en
 ---
-The LibreMesh project
-======================
 
 == Introduction to LibreMesh
 
 LibreMesh is a modular framework for creating OpenWrt-based firmwares for wireless mesh nodes. https://github.com/libremesh/network-profiles[Several communities] around the world use LibreMesh as the foundation of their local mesh firmwares.
 
-image:logo/logo.png["The LibreMesh logo",role="right"]
+image:/assets/logo/logo.png["The LibreMesh logo",role="right"]
 
 The LibreMesh project includes the development of several tools.
 The **firmware** (the main piece) allow simple deployment of auto-configurable, yet versatile, multi-radio mesh networks.
 
 [NOTE]
-=======================
+=========================
 Check link:howitworks.html[How it Works] to see the basic architecture ideas.
 Visit link:getit.html[Get it] to know how to start using it.
 Read some link:docs/index.html[Documentation] to understand better how it works.
 And join us in the link:communication.html[mailing lists] to follow the current discussions.
-=======================
+=========================
 
 == Mesh Networks
 
 Mesh networks are such networks where all participants (nodes) are able to route traffic from other participants. 
 So there are not central points and the physical topology can be completely random.
-image:img/mesh_topology.png["Mesh Topology",role="left"]
+image:/assets/img/mesh_topology.png["Mesh Topology",role="left"]
 Usually mesh networks are decentralized, bottom-up organized, deployed and maintained by the people using them.
 We believe this is the only way for achieving a real free network out of
 control of the governments and global enterprises.
@@ -43,26 +41,25 @@ We understand that a free network as a telecommunications network should accompl
 
 Organizations supporting LibreMesh:
 
-|=======================================================================================================================
-| AlterMundi   | Argentina         | http://altermundi.net     | image:img/altermundi_logo.png["Altermundi",role="right"]
-| FreiFunk     | Germany           | http://freifunk.net       | image:img/logo_freifunknet.png["FreiFunk",role="right"]
-| FunkFeuer    | Austria           | https://www.funkfeuer.at  | image:img/0xff_logo.png["FunkFeuer",role="right"]
-| Guifi    | Iberian peninsula | http://guifi.net          | image:img/guifi-logo.png["Guifi.net",role="right"]
-| Ibebrasil    | Brasil | https://ibebrasil.org.br/         | ]
-| LibreRouter   | Global           | https://librerouter.org/   | image:img/librerouter_isologo.png["LibreRouter",role="right"]
-| Ninux.org    | Italy             | http://ninux.org          | image:img/ninux_logo.png["NiNux",role="right"]
+|===
+| AlterMundi   | Argentina         | http://altermundi.net     | image:/assets/img/altermundi_logo.png["Altermundi",role="right"]
+| FreiFunk     | Germany           | http://freifunk.net       | image:/assets/img/logo_freifunknet.png["FreiFunk",role="right"]
+| FunkFeuer    | Austria           | https://www.funkfeuer.at  | image:/assets/img/0xff_logo.png["FunkFeuer",role="right"]
+| Guifi    | Iberian peninsula | http://guifi.net          | image:/assets/img/guifi-logo.png["Guifi.net",role="right"]
+| Ibebrasil    | Brasil | https://ibebrasil.org.br/         | 
+| LibreRouter   | Global           | https://librerouter.org/   | image:/assets/img/librerouter_isologo.png["LibreRouter",role="right"]
+| Ninux.org    | Italy             | http://ninux.org          | image:/assets/img/ninux_logo.png["NiNux",role="right"]
 | Wakoma       | Global            | https://wakoma.co/        |
-
-|=======================================================================================================================
+|===
 
 Community mesh networks using Libremesh:
 
-|=======================================================================================================================
-| Antennine       | Appennino Bolognese | https://antennine.noblogs.org            | image:img/ninux_logo.png["NiNux",role="right"]
+|===
+| Antennine       | Appennino Bolognese | https://antennine.noblogs.org            | image:/assets/img/ninux_logo.png["NiNux",role="right"]
 | Calafou       | Catalunia | https://calafou.org/            | 
 | Coolab      | Brasil | https://www.coolab.org/           | 
 | Janastu CowMesh | Rural Karnataka     | https://open.janastu.org/projects/cowmesh| 
-|=======================================================================================================================
+|===
 
 Several other community networks are using or used LibreMesh on their devices with their own customizations (network profiles), some of these are listed link:https://github.com/libremesh/network-profiles[here].
 
@@ -70,7 +67,7 @@ Several other community networks are using or used LibreMesh on their devices wi
 
 An embedded device is a small computer. Usually the operating system running in such small computers is called Firmware.
 Our way of deploying free mesh networks is by installing our own firmware to the devices (usually WiFi routers).
-image:img/openwrt.png["OpenWrt",role="left"]
+image:/assets/img/openwrt.png["OpenWrt",role="left"]
 Our system is based on the OpenWrt project, which at the same time is based on the well known Linux operating system.
 Everything we develop is **free software for a free society** so anyone can
 use, copy, modify and distribute according with
@@ -84,5 +81,5 @@ willing to create a common solution for the deployment of free mesh networks.
 
 In 2017 Shuttleworth Foundation awarded us with a
 link:https://www.shuttleworthfoundation.org/fellows/peter-bloom/[Flash Grant]
-image:img/Shuttleworth_Funded.jpg["Shuttleworth Flash Grant"]
+image:/assets/img/Shuttleworth_Funded.jpg["Shuttleworth Flash Grant"]
 

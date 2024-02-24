@@ -5,10 +5,6 @@ lang: en
 fontawesome_icon: fa-rocket
 ---
 
-LibreMesh Quick Starting Guide
-==============================
-
-
 == Compatible Hardware
 
 It is recommended that the router has at least 8 MB of flash memory and 64 MB of RAM. For routers with 4 MB flash memory or 32 MB of RAM, use the special firmware named +-mini+ or link:../development.html[compile one yourself] excluding some heavy packages (e.g. +opkg+ or the LuCI and lime-app web interfaces).
@@ -83,70 +79,3 @@ If the LibreMesh router has no WAN port (just LAN ports, or just one ethernet po
 == Configuration
 
 Refer to the link:en_config.html[LibreMesh config file] page and to https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[/docs/lime-example.txt] file for detailed information.
-
----
----
----
-
-= Using the Console Interface (optional)
-Until here we went through the installation, connection and configuration procedures using the LibreMesh web interface.
-
-As in every Linux-based system there's the availability of a textual console interface for advanced configuration and hardcore users.
-
-This part of the guide should not be needed for normal LibreMesh use.
-
-== Flashing Via the Console Interface (optional)
-This is possible just if you're upgrading an existing OpenWrt or LibreMesh installation, not from stock firmware.
-
-Copy the downloaded firmware image to the +/tmp+ directory on your target router using the `scp` command.
-
-[IMPORTANT]
-===========
-Do not try to copy the firmware image to directories different from `/tmp`. They have limited memory access.
-===========
-
-In case the router already has LibreMesh you can do this with
-
-```
-scp /LOCAL/PATH/TO/BUILD.bin root@thisnode.info:/tmp/
-```
-
-[IMPORTANT]
-===========
-You could get an error like this:
-`/usr/libexec/sftp-server: not found`
-`Connection closed`
-In this case, you just have to add a `-O` option to the ssh command, like this:
-`scp -O /LOCAL/PATH/TO/BUILD.bin root@thisnode.info:/tmp/`
-===========
-
-Otherwise (upgrading from OpenWrt) you will need to insert the router IP address (often 192.168.1.1) in (see above for solving the `/usr/libexec/sftp-server: not found` error):
-
-```
-scp /LOCAL/PATH/TO/BUILD.bin root@ROUTERIPADDRESS:/tmp/
-```
-
-Now connect to the console interface using +ssh+, if LibreMesh is already running with +ssh \root@thisnode.info+ or with +ssh root@ROUTERIPADDRESS+ if OpenWrt is running.
-
-Then enter the +/tmp+ directory where the firmware is present with +cd /tmp+, check the presence of the file with +ls+ and install it with
-
-```
-sysupgrade -n openwrt-ROUTERMODEL-squashfs-sysupgrade.bin
-```
-
-[IMPORTANT]
-============
-The +-n+ option for sysupgrade command is needed for discarding the previous configuration files. Omitting the +-n+ option is never a good idea when flashing LibreMesh.
-============
-
-For more information on the sysupgrade process, see these https://openwrt.org/docs/guide-user/installation/generic.sysupgrade[OpenWRT instructions].
-
-== Configuring Via the Console Interface (optional)
-Rather than using the web interface, modifying directly +/etc/config/lime-node+ file allows to access more advanced options but increases the risk of writing broken configuration.
-
-You can use the +vim+ text editor (a short vim guide link:en_vim-guide.html[here]) for editing +/etc/config/lime-node+, the settings in this file will override the community ones in +/etc/config/lime-community+ and the default ones in +/etc/config/lime-defaults+.
-
-You can find examples and documentation in the +/docs/lime-example.txt+ file (you can find it online https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt[here]) as well as in link:en_config.html[LibreMesh config file] page on this website.
-
-After saving the edits to the +/etc/config/lime-node+ file, apply the changes to system configuration files launching the +lime-config+ command. Next, reboot the router with +reboot && exit+ to apply the new settings.
-

@@ -2,9 +2,8 @@
 title: Development
 ref: development
 lang: en
+fontawesome_icon: fa-brands fa-linux
 ---
-Development
-===========
 
 == The Source Code
 
@@ -15,10 +14,10 @@ https://github.com/libremesh/[GitHub].
 
 Most of the development happens in the _lime-packages_ git repository which can be browsed on https://github.com/libremesh/lime-packages[GitHub] or downloaded using git:
 
-----
+```bash
 git clone https://github.com/libremesh/lime-packages.git
 cd lime-packages
-----
+```
 
 == Compiling LibreMesh from source code
 
@@ -31,10 +30,10 @@ If you are unsure about your system having all the dependencies installed, you c
 
 On an Ubuntu system, the following command will install the minimum compilation dependencies:
 
---------------------------------------------------------------------------------
+```
 sudo apt update
 sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal python2-minimal libpython2-stdlib
---------------------------------------------------------------------------------
+```
 
 For other Linux distributions the packets list could be slightly different, check out the link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[OpenWrt build system installation page].
 
@@ -112,7 +111,7 @@ Network profiles are the specific configuration from the communities, and are st
 https://github.com/libremesh/network-profiles/[repository], but they can also be kept locally, depending on how every community network manages itself. For more instructions on how to create a profile or how to use a local one, check out the link:development-network_profiles.html[network profiles page].
 =========================
 
-**Select** (press space until when an asterisk `*` appears, like `<*>`) LibreMesh packages:
+**Select** (press space until when an asterisk appears, like `<*>`) LibreMesh packages:
 
 * LibreMesh (or LiMe) → Offline Documentation → lime-docs-minimal (LibreMesh minimal documentation)
 * LibreMesh (or LiMe) → lime-app (LibreMeshApp)

@@ -4,8 +4,6 @@ ref: troubleshooting
 lang: en
 fontawesome_icon: fa-wrench
 ---
-Troubleshooting
-===============
 
 == Unable to establish Ethernet connection
 If you can't connect to the LibreMesh router as indicated in link:en_connecting_nodes.html[How to connect to LibreMesh nodes] opening http://thisnode.info you can try other ways.
@@ -58,9 +56,9 @@ For obtaining the gateway direction using a Windows, Mac or Linux computer or An
 
 If the above guide does not work for you and you're on a Linux computer, the gateway (default route) IPv4 can be obtained using the terminal: open a terminal (open your Linux distro menu, type "terminal" and select the first result) and execute the command
 
-----
+```
 ip -4 route show scope global
-----
+```
 
 The output should be similar to: +default via 10.13.0.1 dev enp0s0 proto static metric 100+ so in this example our gateway IPv4 is +10.13.0.1+. In case the output was instead +command not found: ip+ you can find the same information using the older commands +route -n | grep G+ or +netstat -nr | grep G+.
 
@@ -70,9 +68,9 @@ For example let's use +10.13.0.1+ as the gateway address. *You can open the IPv4
 
 If we can't access the web interface (can happen if we installed a LibreMesh version without web interface), we can try connecting via SSH:
 
-----
+```
 ssh root@10.13.0.1
-----
+```
 
 *If no root password* was set and the password login was not disabled by the network-profile, *a blank password access is granted*, otherwise the router root password is prompted.
 
@@ -115,15 +113,15 @@ Then, how to discover the _IPv6 link local_ address of the router we're connecte
 Using ICMPv6 we can discover machines in our network thanks to the special Multicast address "ff02::".
 To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your Linux distro) where the appended %eth0 specifies which network interface to use (could be something like +eth0+ or +enp0s25+, you can see the interface names with the commands +ip link show+ or +ifconfig+):
 
-----
+```
 ping6 ff02::1%eth0
-----
+```
 
 or just
 
-----
+```bash
 ping ff02::1%eth0
-----
+```
 
 Then each device connected to our collision domain, will reply the ICMP request with its own IPv6 link-local address.
 
@@ -140,22 +138,22 @@ Now that you have the target IPv6 link local you can connect to the router:
 
 If you managed to connect via ssh you can also copy files on the router using IPv6 link local and +scp+ (for copying big files like firmware images use the +/tmp+ directory as a destination):
 
-----
+```bash
 scp LiMe-fw-sysupgrade.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth0\]:/tmp/
-----
+```
 
 You could get an error like this:
 
----
+```bash
 ash: /usr/libexec/sftp-server: not found
 scp: Connection closed
----
+```
 
 In this case, you just have to add a `-O` option to the ssh command, like this:
 
----
+```bash
 scp -O LiMe-fw-sysupgrade.bin root@\[fe80::a2f3:c1ff:fe39:1cea%eth0\]:/tmp/
----
+```
 
 for more details, link:https://github.com/openwrt/openwrt/issues/9889[see here].
 
@@ -164,9 +162,9 @@ If there are not routers it waits until some appears.
 
 An example of execution:
 
-----
+```bash
 p4u@nomada:~$ ./disc6 eth1
-----
+```
 
 == Still no access possible (e.g. access password lost)
 
@@ -184,10 +182,10 @@ The generic procedure is to start pressing repeatedly the router reset button du
 
 Once in failsafe, connect by ethernet cable or by wireless to the router and try to connect to it as if was a freshly flashed LibreMesh router as explained in the link:en_connecting_nodes.html[connection procedure] on this site. If that does not work, try connecting to 192.168.1.1 or 10.13.0.1 (the IP could be even different if you flashed an image compiled with the preset configuration from your community) inserting the http://192.168.1.1 or http://10.13.0.1 direction in the URL bar of the browser or via SSH:
 
-----
+```bash
 ssh root@192.168.1.1
 ssh root@10.13.0.1
-----
+```
 
 If an error like +Unable to connect+ or +No route to host+ is obtained, likely you will have to set an IP for your computer, for example 192.168.1.2 or 10.13.0.2, before attempting to connect again. For setting an IP to your computer under Windows follow https://www.howtogeek.com/howto/19249/how-to-assign-a-static-ip-address-in-xp-vista-or-windows-7/[this guide], under Mac https://www.howtogeek.com/howto/22161/how-to-set-up-a-static-ip-in-mac-os-x/[this guide], under Linux https://www.linuxhint.com/change-from-dhcp-to-static-ip-address-ubuntu/[this guide] and under Android http://tunecomp.net/static-ip-android/[this guide].
 

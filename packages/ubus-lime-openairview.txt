@@ -1,0 +1,59 @@
+---
+title: ubus-lime-openairview
+ref: ubus-lime-openairview
+lang: en
+---
+
+== Readme
+____
+# Openairview (Align / Spectrun scan) ubus status module
+
+| Path             | Procedure          | Signature                          | Description                                                                                                                                |
+| ---------------- | ------------------ | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| lime-openairview | spectral_scan      | {device:STRING, spectrum:STRING}   | Get the fft-eval scan results. specturm can by: 2ghz, 5ghz or current. "current" means scan only the channel on which the interface is set. This will work only if fft-eval is installed |
+
+## Examples
+
+### ubus -v list lime-openairview
+
+If the openairview was never established, return the openairview of the community
+
+```
+'lime-openairview' @4bd5f4f5
+	"spectral_scan":{"device":"String","spectrum":"String"}
+```
+____
+
+== Makefile
+[,make]
+----
+
+include $(TOPDIR)/rules.mk
+
+PKG_NAME:=ubus-lime-openairview
+PKG_VERSION=$(GIT_COMMIT_DATE)-$(GIT_COMMIT_TSTAMP)
+GIT_COMMIT_DATE:=$(shell git log -n 1 --pretty=%ad --date=short . )
+GIT_COMMIT_TSTAMP:=$(shell git log -n 1 --pretty=%at . )
+
+include $(INCLUDE_DIR)/package.mk
+
+define Package/$(PKG_NAME)
+  SECTION:=ubus
+  CATEGORY:=Ubus
+  MAINTAINER:=Marcos Gutierrez <gmarcos87@gmail.com>
+  SUBMENU:=3. Applications
+  TITLE:=Openairview ubus module
+  DEPENDS:= +lua +libubox-lua +libubus-lua +libiwinfo-lua +luci-lib-nixio +luci-lib-jsonc +lime-system
+  PKGARCH:=all
+endef
+
+define Build/Compile
+endef
+
+define Package/$(PKG_NAME)/install
+	$(INSTALL_DIR) $(1)/
+	$(CP) ./files/* $(1)/
+endef
+
+$(eval $(call BuildPackage,$(PKG_NAME)))
+----

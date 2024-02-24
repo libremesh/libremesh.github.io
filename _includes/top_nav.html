@@ -1,9 +1,16 @@
+<div class="md-flex hs no-scrollbar" style="background-color: #333;">
+    <ul class="md-tabs__list">
 {% for item in site.data.structure.main %}
     <!-- Use the current language and default to english if doc translation is not found -->
-    {% assign docs_lang_pages=site.pages | where:"ref",item | where:"lang",lang  | default: false %}
+    {% assign docs_lang_pages=site.pages | where:"ref",item | where:"lang",lang | default: false %}
     {% unless docs_lang_pages %}
     {% assign docs_lang_pages=site.pages | where:"ref",item | where:"lang","en" %}
     {% endunless %}
     {% assign doc_page=docs_lang_pages.first %}
-    <li {% if page.url == doc_page.url %} class="active"{% endif %}><a href="{{site.prefix}}{{doc_page.url}}">{{ doc_page.title }}</a></li>
+    <li class="md-tabs__item {% if page.url == doc_page.url %} md-tabs__item--active {% endif %}">
+        <a class="md-tabs__link" href="{{site.prefix}}{{doc_page.url}}">{{ doc_page.title }}</a>
+    </li>
 {% endfor %}
+    </ul>
+
+</div>

@@ -3,22 +3,20 @@ title: Network Profiles
 ref: development-network_profiles
 lang: en
 ---
-Network Profiles
-================
 
-= What is a Network Profile?
+== What is a Network Profile?
 
 Network profiles are the most convenient way for a community to organize its configuration files. During the link:development.html[compilation process], the users can select the desired network profile, which will automatically select all the needed software and include the configuration files for this community.
 
 They are organized in folders with some content in the https://github.com/libremesh/network-profiles[network-profiles repository].
 
-= How to create a Network Profile
+== How to create a Network Profile
 
 Practically, each community can create a folder in the https://github.com/libremesh/network-profiles[network-profiles repository] with the community's name, and, inside this, create one or more profiles (for example you can have different profiles for nodes of the backbone or for access points, or for nodes with large or small flash or RAM memory).
 
 You will need to create a Github user, fork the https://github.com/libremesh/network-profiles[network-profiles repository], clone your fork on a computer, create the directories, create a +Makefile+ (see below), add some content in the +root/+ folder (see below), commit the changes, push them to your forked repository and finally open a pull request from your repository to the official https://github.com/libremesh/network-profiles[network-profiles one].
 
-== Cloning your fork
+=== Cloning your fork
 
 Here we will skip the explanation on most of the git and Github-related steps, please search on the internet how to perform them or ask us on the link:communication.html[project's communication channels].
 
@@ -28,7 +26,7 @@ Once you forked the https://github.com/libremesh/network-profiles[network-profil
 git clone git@github.com:your_username/network-profiles.git
 ------
 
-== Creating the directories
+=== Creating the directories
 
 Each community will have to create its directory.
 
@@ -46,7 +44,7 @@ mkdir lowmem
 mkdir gateway
 ------
 
-== Creating a Makefile
+=== Creating a Makefile
 
 The Network Profiles get converted to packages which, as mentioned above, will include some files but can also select some new software to be installed as a dependency. In order to compile them as packages, a Makefile is needed.
 
@@ -67,7 +65,7 @@ include ../../profile.mk
 
 and the lines you should customize are only the PROFILE_DESCRIPTION and PROFILE_DEPENDS ones. In the list of the PROFILE_DEPENDS, please note that each package's name is preceeded by a `+`. There is no need to specify the `lime-system` package as it is already included.
 
-== Adding files to the "root" folder
+=== Adding files to the "root" folder
 
 For including custom files in the compiled image, you can create a `root/` folder in the profile folder, for example `network-profiles/MyMesh.iscool/standard/root/`. In this directory, you will have to create the folders structure and the files you want to have in the compiled firmware.
 
@@ -75,7 +73,7 @@ What is always interesting to include, is a `lime-community` file, which is the 
 
 The options that are not set in the lime-community file, are taken from the lime-defaults one. For more information on this, please read the link:docs/en_config.html[documentation on the website].
 
-= Alternative to the usage of Network Profiles
+=== Alternative to the usage of Network Profiles
 
 Using a network profile is a convenient way to share the files over the internet with all the other members of your community; but it can be exhaggerated if you just want to test adding a file from time to time.
 
