@@ -193,7 +193,7 @@ a.anchor:before { display: none !important;}
 }
 
 @media only screen and (max-width: 76.1875em) {
-  .md-sidebar--primary ul.md-nav__list .md-nav__item--nested.md-nav__item--nested-open ul.md-nav__list li:first-child .md-nav__link { padding-top: 1em}
+  .md-sidebar--primary ul.md-nav__list .md-nav__item--nested.md-nav__item--nested-open ul.md-nav__list li:first-child .md-nav__link { padding-top: 1.2em}
   .md-typeset h1 { font-size: 1.8em;}
   .md-nav--primary .md-nav__item, .md-nav--primary .md-nav__title {font-size: 0.95em;border: none;}
 
@@ -204,7 +204,10 @@ a.anchor:before { display: none !important;}
   .md-nav--primary .md-nav__item.caption { padding: 2em 1em .5em !important}
 
   .md-nav--primary .md-nav__item:not(.md-nav__item--nested) .md-nav__link, .md-nav--primary .md-nav__item--nested {
-    padding: 0.5em 0;
+    padding: 0.7em 0;
+  }
+  .md-nav--primary .md-nav__item--nested-open {
+    padding-bottom: 0;
   }
   .md-sidebar--primary ul.md-nav__list .md-nav__item--nested.md-nav__item--nested-open ul.md-nav__list li { padding-left: calc(3rem + 1em) !important; margin-top: 0em }
 
