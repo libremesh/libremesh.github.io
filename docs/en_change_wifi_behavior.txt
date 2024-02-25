@@ -4,8 +4,6 @@ ref: wifi_config
 lang: en
 fontawesome_icon: fa-wifi
 ---
-Changing WiFi interface behavior
-===============================
 
 == LibreMesh interface-specific WiFi configuration
 
@@ -73,8 +71,4 @@ VLAN type defaults to 802.1ad, but it can be set to 80.1q adding another option 
 
 If you use manual do not specify other protocols, may result in an unpredictable behavior/configuration.
 =======================
-
-== Specific ethernet interface configuration
-
-See link:en_changing_network_behavior.html[Change ethernet behavior] page.
 

@@ -2,10 +2,8 @@
 title: Change Ethernet config
 ref: ethernet_config
 lang: en
-fontawesome_icon: fa-plug
+fontawesome_icon: fa-ethernet
 ---
-Changing network interface behavior
-===================================
 
 == WAN port configuration
 
@@ -156,8 +154,3 @@ config bgp_peer peer2
 ----
 
 For documentation on BGP configuration see link:http://nicolasacco.diveni.re/~gio/internship-report/main.html#proto:bgp[this thesis].
-
-== Specific wireless interface configuration
-
-See link:en_change_wifi_behavior.html[Change WiFi behavior] page.
-

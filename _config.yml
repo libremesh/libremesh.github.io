@@ -1,19 +1,58 @@
 # jekyll configuration
 
-title: 'Welcome to the LibreMesh project'
-
+title: LibreMesh
+author: LibreMesh
 exclude: [ 'Gemfile', 'Gemfile.lock', 'Rakefile', 'README', 'vendor' ]
-
 prefix: ''
+asciidoc_ext: txt
+
+# Social (First three Required)
+repo: "https://github.com/libremesh/libremesh.github.io" # edit url
+github_user: "libremesh"
+github_repo: "lime-packages"
+main_repo: "https://github.com/libremesh/lime-packages"
+
+matrix: libremesh-dev:matrix.guifi.net
+mailinglist: https://www.autistici.org/mailman/listinfo/libremesh
+
+
+logo: "assets/logo/logo_nano.png"
+
+color: "#333" # primary color for header, buttons
+accentColor: black  # purple, green, etc.
+themeColor: black  # purple, green, blue, orange, purple, grey
+# fixedNav: 'true' # true or false
+
+defaults:
+  - scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "posts"
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "packages"
+      type: "pages"
+    values:
+      layout: "packages"
+
+plugins: 
+  - jekyll_github_sample
 
 asciidoctor:
   attributes:
     - idseparator=_
-    - source-highlighter=coderay
+    - source-highlighter=rouge
     - icons=font
-    - hardbreaks!
-    - toc=auto
 
-asciidoc_ext: txt
-
-# end of configuration
+exclude:
+  - collect_packages.sh

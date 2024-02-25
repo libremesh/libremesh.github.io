@@ -3,12 +3,8 @@ title: About
 ref: about
 lang: en
 ---
-About the project
-=================
 
-== About
-
-image:logo/logo.png["The LibreMesh logo",role="right"]
+image:/assets/logo/logo.png["The LibreMesh logo",role="right"]
 
 LibreMesh is a community and an open project, so anyone friendly is welcome.
 We encourage anyone using the LibreMesh to become part of this community.
@@ -31,4 +27,4 @@ image::https://opencollective.com/libremesh/contributors.svg?width=700&button=fa
 
 Donations to the project are managed via OpenCollective, thanks!
 
-image::img/opencollective.png["Contributions via OpenCollective", link="https://opencollective.com/libremesh/contribute"]
+image::/assets/img/opencollective.png["Contributions via OpenCollective", link="https://opencollective.com/libremesh/contribute"]

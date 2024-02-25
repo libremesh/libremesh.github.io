@@ -1,10 +1,10 @@
 ---
-title: Compiling firmware compatible with OpenWrt repository Kernel vermagic
+title: Kernel vermagic
 ref: development-kernel_vermagic
 lang: en
 ---
+
 Compiling firmware compatible with OpenWrt repository Kernel vermagic
-=====================================================================
 
 == Reference
 

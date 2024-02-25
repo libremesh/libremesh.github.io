@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 3.5.0'
-gem 'asciidoctor', '~> 1.5.0'
+gem 'jekyll'
 gem 'coderay', '~> 1.1.0'
-gem 'rake-jekyll', '~> 1.1.0'
+
+gem 'kramdown-parser-gfm'
 
 group :jekyll_plugins do
   gem "jekyll-asciidoc", '~> 1.0.0'
-  gem 'jekyll-last-modified-at'
 end
+
+gem 'webrick'
+gem 'jekyll_github_sample', git: "https://github.com/bwillis/jekyll-github-sample", ref: 'master'

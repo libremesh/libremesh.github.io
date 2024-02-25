@@ -1,0 +1,19 @@
+<li class="md-nav__item md-nav__item--nested {% if page.url == doc_page.url %} md-nav__item--active {% endif %}
+{% if page.url contains '/packages/' %} md-nav__item--nested-open {% endif %}">
+  <div>
+    <div>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      <span>Packages</span>
+    </div>
+    <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+  </div>
+  <ul class="md-nav__list{% if page.url contains '/packages/' %} md-nav__list-open {% endif %}" data-md-scrollfix="">
+    {% for item in site.pages %}{% if item.path contains 'packages/' %}
+      <li class="md-nav__item{% assign current_item = '/packages/' | append: item.ref | append: '.html' %}{% if page.url == current_item %} md-nav__item--active {% endif %}">
+        <a class="md-nav__link" href="{{site.prefix}}/packages/{{item.ref}}.html">
+          <span>{{ item.ref }}</span>
+        </a>
+      </li>
+    {% endif %}{% endfor %}
+  </ul>
+</li>

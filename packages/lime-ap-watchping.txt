@@ -1,0 +1,69 @@
+---
+title: lime-ap-watchping
+ref: lime-ap-watchping
+lang: en
+---
+
+== Readme
+____
+In MESH networks with high density of nodes, 
+if a single node is working in a wrong way (bad channel, VLAN, random crash, etc.),
+as the AP SSID is always the same, the client devices attached to it 
+will keep trying to use it, but their network connection will be broken.
+
+Instead, lime-ap-watchping provides a simple ICMP based watching system
+which changes the AP SSID to let other working nodes handle the clients.
+By default the new SSID will be $HOSTNAME-down, so it will be easy to find and fix it if possible.
+Because of the layer2 batman-adv roaming feature included in LibreMesh,
+clients won't even notice the difference if there is another neighbour node which can handle them.
+
+There are two options available in /etc/config/lime config file under the lime network section:
+
+1. autoap_enabled: [1/0] turn on/off this feature 
+2. autoap_hosts: list of hosts used for watchping, usually one or more backbone nodes of the network
+____
+
+== Makefile
+[,make]
+----
+# 
+# Copyright (C) 2017 Pau Escrich
+#
+# This is free software, licensed under the GNU General Public License v3.
+#
+
+include $(TOPDIR)/rules.mk
+
+GIT_COMMIT_DATE:=$(shell git log -n 1 --pretty=%ad --date=short . )
+GIT_COMMIT_TSTAMP:=$(shell git log -n 1 --pretty=%at . )
+
+PKG_NAME:=lime-ap-watchping
+PKG_VERSION=$(GIT_COMMIT_DATE)-$(GIT_COMMIT_TSTAMP)
+
+include $(INCLUDE_DIR)/package.mk
+
+define Package/$(PKG_NAME)
+  CATEGORY:=LibreMesh
+  Section:=net
+  TITLE:= Watchping hooks to manage AP SSID if network problems
+  MAINTAINER:=Pau Escrich <p4u@dabax.et>
+  URL:=http://libremesh.org
+  DEPENDS:= +watchping +lime-system
+  PKGARCH:=all
+endef
+
+define Package/$(PKG_NAME)/description
+  Watchping hooks to change AP ssid when the network is down (i.e LibreMesh-Error).
+  So the WiFi roaming is broken and the clients are not using the AP anymore until fixed.
+endef
+
+define Build/Compile
+endef
+
+define Package/$(PKG_NAME)/install
+	$(INSTALL_DIR) $(1)/
+	$(CP) ./files/* $(1)/
+endef
+
+$(eval $(call BuildPackage,$(PKG_NAME)))
+----

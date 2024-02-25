@@ -1,7 +1,6 @@
 ---
+language: en
 ---
-Vim tutorial
-===========
 
 == A very short Vim tutorial
 

@@ -1,8 +1,8 @@
 ---
+title: Xiaomi MiWiFi R3
+ref: xiaomi-miwifir3
+lang: en
 ---
-Xiaomi MiWiFi R3
-================
-
 
 == How to install LibreMesh on the Xiaomi MiWiFi R3
 

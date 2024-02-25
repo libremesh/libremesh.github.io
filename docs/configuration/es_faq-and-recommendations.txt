@@ -1,0 +1,46 @@
+---
+title: FAQ y recomendación
+ref: faq-and-recommendations
+lang: es
+---
+
+== No editar otros archivos de configuración que no sean de libremesh
+
+La configuración de un nodo libremesh solo debe realizarse a travez de los archivos de configuración de libremesh
+y nunca editando directamente los otros archivos de configuración.
+Esto es así ya que los cambios realizados en archivos de configuración por fuera del sistema de
+configuración de libremesh se pueden perder cuando:
+
+* se realice un cambio en la configuración de libremesh
+* se haga un upgrade de firmware
+
+== Nunca modificar los archivos con valores por defecto ni los _autogenerados_
+
+A pesar de que podria ser cómodo modificar directamente `/etc/config/lime-defaults` o inclusive
+`/etc/config/lime-autogen` esto no debe hacerse ya que en el futuro cuando querramos entender
+la configuración que tenemos del nodo no vamos a poder distinguir si cambiamos una configuración o no.
+
+== Quiero cambiar una opción para probar, dónde la cambio?
+
+En la configuración de *_Nodo_*: `/etc/config/lime-node`
+
+== Tengo que configurar todas las opciones?
+No, las configuraciones por del nivel *_Defecto_* proveen una configuración que permite tener una
+experiencia de red mesh sin tener que cambiar nada.
+
+== Cómo hago para ver todas las opciones estan en uso actualmente en un nodo?
+Ver el archivo `/etc/config/lime-autogen`
+
+
+== Quiero cambiar algo pero pero no encuentro una opcion de libremesh para realizarlo
+
+Para eso existen las <<generic-configs>> y los <<lime-assets>>
+
+== ¿Cómo hago?
+
+* Cómo usar las configuraciones de ap, apnode, mesh
+* Cómo poner una radio como cliente de otra red (para que el nodo haga de gateway)
+* Cómo poner un password de administración para toda la red
+* Cómo ponerle password al wireless
+
+Para información detallada de estas preguntas puedes ver los ejemplos en {lime-example}.

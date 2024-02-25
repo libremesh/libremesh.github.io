@@ -1,0 +1,96 @@
+packages:
+  - name: altermundi-grafana
+  - name: auto-usb-wwan
+    readme: Readme.md
+  - name: babeld-auto-gw-mode
+    readme: Readme.md
+  - name: bandwidth-test
+  - name: batman-adv-auto-gw-mode
+  - name: bmx6-auto-gw-mode
+  - name: bmx7-auto-gw-bw-mode
+  - name: bmx7-auto-gw-mode
+  - name: bmx7-mdns
+  - name: check-date-http
+    readme: Readme.md
+  - name: check-internet
+    readme: Readme.md
+  - name: cotonete
+    readme: README.md
+    makefile_external_url: https://raw.githubusercontent.com/nicopace/cotonete/master/packages/cotonete/Makefile
+  - name: deferable-reboot
+  - name: eupgrade
+  - name: first-boot-wizard
+  - name: hotplug-initd-services
+  - name: lime-app
+  - name: lime-ap-watchping
+    readme: README
+  - name: lime-debug
+  - name: lime-docs
+  - name: lime-hwd-ground-routing
+  - name: lime-hwd-openwrt-wan
+  - name: lime-hwd-usbradio
+  - name: lime-proto-anygw
+  - name: lime-proto-babeld
+  - name: lime-proto-batadv
+  - name: lime-proto-bgp
+  - name: lime-proto-bmx6
+  - name: lime-proto-bmx7
+  - name: lime-proto-olsr2
+  - name: lime-proto-olsr6
+  - name: lime-proto-olsr
+  - name: lime-proto-wan
+  - name: lime-report
+  - name: lime-smart-wifi
+  - name: lime-system
+  - name: lime-webui
+  - name: lua-argparse
+    readme: Readme.md
+  - name: luci-app-batman-adv
+  - name: luci-app-openairview
+  - name: luci-lib-jquery-flot
+  - name: luci-mod-status
+  - name: miniserver-client
+  - name: pirania
+    readme: Readme.md
+  - name: prometheus-node-exporter-lua-location-latlon
+  - name: prometheus-node-exporter-lua-wifi-params
+  - name: prometheus-node-exporter-lua-wifi-stations-extra
+  - name: prometheus-node-exporter-lua-wifi-survey
+  - name: prometheus-node-push-influx
+  - name: random-numgen
+  - name: safe-reboot
+  - name: safe-upgrade
+    readme: Readme.md
+  - name: shared-state-async
+    readme: README.adoc
+  - name: shared-state-babeld_hosts
+  - name: shared-state-bat_hosts
+  - name: shared-state-dnsmasq_hosts
+  - name: shared-state-dnsmasq_leases
+  - name: shared-state-dnsmasq_servers
+  - name: shared-state-network_nodes
+  - name: shared-state-node_info
+  - name: shared-state-nodes_and_links
+  - name: shared-state-persist
+  - name: shared-state-pirania
+  - name: shared-state
+  - name: shared-state-wifi_links_info
+  - name: soporteremoto
+  - name: sprunge
+  - name: ubus-lime-batman-adv
+    readme: Readme.md
+  - name: ubus-lime-bmx6
+    readme: Readme.md
+  - name: ubus-lime-groundrouting
+    readme: Readme.md
+  - name: ubus-lime-location
+    readme: Readme.md
+  - name: ubus-lime-metrics
+  - name: ubus-lime-openairview
+    readme: Readme.md
+  - name: ubus-lime-utils
+    readme: README.md
+  - name: ubus-tmate
+    readme: README.md
+  - name: watchping
+  - name: wifi-unstuck-wa

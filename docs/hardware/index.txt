@@ -2,21 +2,15 @@
 title: Hardware
 ref: hardware
 lang: en
-fontawesome_icon: fa-server
+fontawesome_icon: fa-microchip
 ---
-Hardware Documentation Index
-============================
-
-== Hardware
 
 Installing LibreMesh is not always as easy as we would like to.
 It depends on the router model, revision and so on.
-The best way for getting an updated set of instructions is to find your
-model on the link:https://openwrt.org/toh/start[OpenWRT hardware page]. However,
-to cover some specific scenarios, we provide a list of articles which might help you.
+The best way for getting an updated set of instructions is to find your model on the link:https://openwrt.org/toh/start[OpenWrt hardware page]. 
+However, to cover some specific scenarios, we provide a list of articles which might help you.
 
-Please, take into account that these pages are third-party contributed, so if
-you find the opportunity expand this page with the "Edit this page" button in the upper right corner of this page.
+Please, take into account that these pages are third-party contributed, so if you find the opportunity expand this page with the "Edit this page" button in the upper right corner of this page.
 
 
 == Suggested Hardware

@@ -1,0 +1,25 @@
+---
+excluded_in_search: true
+layout: null
+---
+
+{"config":{
+  "lang":["en"],
+  "prebuild_index":false,
+  "separator":"[\\s\\-]+"
+},
+"docs":[
+{% for page in site.pages %}{% unless page.excluded_in_search %}{% unless page.url contains '/packages/' %}{% if added %},{% endif %}{% assign added = false %}{
+"location": "{{ page.url }}",
+"lang": {% if page.lang %}"{{ page.lang }}"{% else %}"en"{% endif %},
+"title": "{{ page.title }}",
+"content": {{ page.content | strip_html | jsonify }}}
+{% assign added = true %}{% endunless %}{% endunless %}{% endfor %}
+{% for page in site.pages %}{% unless page.excluded_in_search %}{% if page.url contains '/packages/' %}{% if added %},{% endif %}{% assign added = false %}{
+"location": "{{ page.url }}",
+"lang": {% if page.lang %}"{{ page.lang }}"{% else %}"en"{% endif %},
+"title": "{{ page.title }}",
+"content": {{ page.content | strip_html | jsonify }}}
+{% assign added = true %}{% endif %}{% endunless %}{% endfor %}
+]}
+  

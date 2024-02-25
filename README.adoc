@@ -29,11 +29,10 @@ An image from the jekyll project is available and documented here: https://githu
 All you need to do -provided you have Docker installed- is to open a terminal
 and move to the folder where you cloned this repo and issue:
 
-    $ export JEKYLL_VERSION=3.5
-    docker run --rm \
+    $ docker run --rm \
         --publish 4000:4000 \
         --volume="$PWD:/srv/jekyll" \
-        -it jekyll/jekyll:$JEKYLL_VERSION \
+        -it jekyll/jekyll \
         jekyll serve
 
 The container just created will install missing dependencies for you and will

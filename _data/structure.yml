@@ -1,21 +1,37 @@
 main:
   - home
+  - about
   - news
   - communication
   - get_it
   - how_it_works
   - development
-  - docs_overview
-  - about
 
 docs:
-  - docs_overview
-  - quick_starting_guide
-  - connecting_to_nodes
-  - configuration
-  - ethernet_config
-  - wifi_config
-  - hardware
-  - troubleshooting
-
+  - ref: docs_overview
+  - ref: quick_starting_guide
+    subpages:
+      - ref: quick_starting_guide
+      - ref: connecting_to_nodes
+      - ref: cli_configuration
+  - ref: configuration
+    subpages:
+      - ref: configuration
+      - ref: faq-and-recommendations
+      - ref: lime-example
+  - ref: ethernet_config
+  - ref: wifi_config
+  - ref: troubleshooting
+  - ref: hardware
+    subpages:
+      - ref: hardware
+      - ref: tp-link
+      - ref: xiaomi-miwifir3
+  
+development:
+  - ref: development
+    subpages:
+    - ref: development
+    - ref: development-network_profiles
+    - ref: development-kernel_vermagic
 

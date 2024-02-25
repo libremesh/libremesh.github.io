@@ -2,9 +2,8 @@
 title: Documentación
 ref: docs_overview
 lang: es
+fontawesome_icon: fa-book
 ---
-Documentación
-=============
 
 == Contrubuyendo a la documentación
 

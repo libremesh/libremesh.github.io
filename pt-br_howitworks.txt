@@ -3,8 +3,6 @@ title: Como funciona
 ref: how_it_works
 lang: pt-br
 ---
-Como funciona
-============
 
 == Objetivos a alcançar
 
@@ -23,7 +21,7 @@ A infraestrutura de rede do LibreMesh é baseada em 2 camadas:
 
 A camada 2 nuvem usa ao protocolo dinâmico de roteamento BATMAN-ADV
 
-image::img/bat-adv.png[batmanadv,100,float="left"]
+image::/assets/img/bat-adv.png[batmanadv,100,float="left"]
 *******************
 advanced é um protocolo de roteamento mesh que é executado no kernel space. Mesmo se a topologia da rede é feita de múltiplos nós e múltiplos hops (saltos), ele a abstrai para um único domínio de
 colisão na camada 2. Então, da perspectiva do usuário, toda   a   mesh   vai   parecer   uma   única   LAN.   Essa   arquitetura   é   muito   interessante   para fins de roaming, então conexões TCP e UDP não se perdem quando você troca de Access Point (AP).
@@ -33,7 +31,7 @@ colisão na camada 2. Então, da perspectiva do usuário, toda   a   mesh   vai 
 
 Toda rede de camada 3 usa por padrão o protocolo de roteamento BMX
 
-image::img/bmx7.png[bmx7,100,float="left"]
+image::/assets/img/bmx7.png[bmx7,100,float="left"]
 *******************
 BMX6   (ou   a   nova   versão   BMX7)   é   um   protocolo   de   roteamento
 dinâmico IPV6 que oferece funções muito avançadas e baixo overhead
@@ -59,7 +57,7 @@ A VLAN BATADV depende do identificador cloud que é calculado (por padrão) usan
 Portanto a rede BMX vai ser única para toda a MESH, mas a rede BAT-ADV pode ficar dividida em muitas nuvens.
 =========================
 
-image::img/network1.png[align="center"]
+image::/assets/img/network1.png[align="center"]
 
 **Essa configuração permite isolar a camada 2/nuvem.**   Por   exemplo   num   bairro,   um complexo empresarial ou numa rede de hotspots abertos você pode escolher isolar sua LAN do resto da rede. Porém ao mesmo tempo, você pode alcançar os outros nós usando a rede de roteamento da camada 3.
 
@@ -70,7 +68,7 @@ Roaming vai ser disponível dentro da nuvem, então qualquer sessão TCP, video 
 E tudo isso automático, auto-mágico e transparente para o usuário final.
 =========================
 
-image::img/network2.png[align="center"]
+image::/assets/img/network2.png[align="center"]
 
 
 == Detalhes
@@ -84,7 +82,7 @@ Os WiFI Access Points da mesma cloud compartilham alguns parâmetros:
 Então um cliente conectado em um AP pode se mover pela mesh sem precisar renovar seu IP. Até a camada MAC vai ser sempre a mesma do seu ponto de vista.
 
 
-image::img/network3.png[align="center"]
+image::/assets/img/network3.png[align="center"]
 
 
 [NOTE]
@@ -100,7 +98,7 @@ mesh que ele esteja anexado seja outro.
 ======================
 
 
-image::img/network4.png[align="center"]
+image::/assets/img/network4.png[align="center"]
 
 Quando um cliente quer sair da LAN (cloud) para conectar a internet ou outra rede, ele vai enviar
 um pacote para o anycast especial do gateway. Então o nó onde o cliente está fisicamente conectado
@@ -112,7 +110,7 @@ Uma regra de ebtables .footnote:[ebtables é como uma iptables mas para a camada
 
 ==============
 
-image::img/network5.png[align="center"]
+image::/assets/img/network5.png[align="center"]
 
 O pacote é roteado através do BMX para o melhor gateway de internet. Pode ser o nó da mesma
 cloud ou de alguma outra cloud distante. 
@@ -124,7 +122,7 @@ automaticamente detecta o melhor nó de gateway de internet levando em considera
 a largura de banda
 =============
 
-image::img/network6.png[align="center"]
+image::/assets/img/network6.png[align="center"]
 
 [NOTE]
 =============

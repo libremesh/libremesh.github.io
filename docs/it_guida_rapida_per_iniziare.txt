@@ -5,9 +5,6 @@ lang: it
 fontawesome_icon: fa-rocket
 ---
 
-LibreMesh Guida Rapida Per Iniziare
-===================================
-
 == Hardware Compatibile
 
 E’ consigliato che i router abbiamo almeno 8MB di memory flash. Per router con 4MB di memoria usa lo speciale firmware chiamato +-mini+.
@@ -173,7 +170,7 @@ sysupgrade -n lede-ROUTERMODEL-squashfs-sysupgrade.bin
 The +-n+ option for sysupgrade command is needed for discarding the previous configuration files. Omitting the +-n+ option is never a good idea when flashing LibreMesh.
 ============
 
-For more information on the sysupgrade process, see these http://wiki.openwrt.org/doc/howto/generic.sysupgrade[OpenWRT instructions].
+For more information on the sysupgrade process, see these http://wiki.openwrt.org/doc/howto/generic.sysupgrade[OpenWrt instructions].
 
 == Configuring Via the Console Interface (optional)
 Rather than using the web interface, modifying directly +/etc/config/lime+ file allows to access more advanced options but increases the risk of writing broken configuration.

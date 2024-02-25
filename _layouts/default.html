@@ -1,145 +1,26 @@
-<!doctype html>
-{% assign lang=page.lang %}
-<!--[if IE 9]>
-<html class="lt-ie10" lang="{{ lang }}"> <![endif]-->
-<html lang="{{ lang }}" class="no-js" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{{page.title}}</title>
+<!DOCTYPE html>
+<html>
+  {% assign lang=page.lang %}
+  {% include head.html %}
 
-
-    <meta name="description"
-          content="The LibreMesh project, a set of tools for making the free networks possible"/>
-	
-    <link rel="stylesheet" href="{{site.prefix}}/css/foundation.css"/>
-    <link rel="stylesheet" href="{{site.prefix}}/css/font-awesome.css"/>
-    <link rel="stylesheet" href="{{site.prefix}}/css/coderay.css"/>
-    <link rel="stylesheet" href="{{site.prefix}}/css/asciidoctor.css"/>
-    <link rel="stylesheet" href="{{site.prefix}}/css/lime.css"/>
-    <script src="{{site.prefix}}/js/vendor/modernizr.js"></script>
-    <script src="{{site.prefix}}/js/toc.js"></script>
-
-</head>
-<body>
-
-
-<!-- Nav Bar -->
-
-<nav class="top-bar" data-topbar>
-    <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-            <h1>
-                <a href="{{site.prefix}}">
-                    <img src="{{site.prefix}}/logo/logo_nano.png"></img>
-                    <span class="top-bar-title">LibreMesh</span>
-                </a>
-            </h1>
-        </li>
-	<li class="toggle-topbar menu-icon"><a href="{{site.prefix}}"><span>Menu</span></a></li>
-    </ul>
+  <body dir="ltr" data-md-color-primary="{{ site.themeColor }}" data-md-color-accent="{{ site.accentColor }}" class="{% if page.url contains '/packages/' or page.no_toc %}no-toc{% endif %}">
     
-<!-- lang --> 
-<ul class="lng">
-{% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-{% for post in posts %}
-  <li>
-    <a href="{{site.prefix}}{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
-  </li>
-{% endfor %}
+    {% include header.html %}
 
-{% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-{% for page in pages %}
-  <li>
-    <a href="{{site.prefix}}{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
-  </li>
-{% endfor %}
-    </ul>
-<!-- fine lang-->
+    <div class="md-container"> 
+        <main class="md-main">
+            <div class="md-main__inner md-grid" data-md-component="container">
+              <!-- <div class="intersection-rect"></div>     -->
 
-    <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-            {% include top_nav.html %}
-        </ul>
-    </section>
-</nav>
-<!-- End Nav -->
-
-
-<!-- Main Page Content and Sidebar -->
-
-<div class="row">
-    <!-- Docs Sidebar -->
-
-    {% if page.url contains '/docs/' %}
-    <aside class="large-3 columns">
-        {% include docs_nav.html %}
-    </aside>
-    {% endif %}
-
-    <!-- End Docs Sidebar -->
-
-    <!-- Main Blog Content -->
-    <div class="large-9 columns" role="content">
-
-        <div class="sectionbody ">
-            {% if page.url contains '/docs/' %}
-            <div class="paragraph text-right">
-                <p><span class="icon"><i class="fa fa-plus-square"></i></span>
-                    <a href="https://github.com/libremesh/libremesh.github.io/new/master/docs">{{ site.data.translations['create_page'][page.lang] }}</a>
-                </p>
+            {% include sidebar.html %}
+                <div id="md-container-pancakes">
+                {{ content }}
+                </div>
             </div>
-            {% endif %}
-            <div class="paragraph text-right">
-                <p>
-                    <span class="icon"><i class="fa fa-edit"></i></span>
-                    <a href="https://github.com/libremesh/libremesh.github.io/edit/master/{{ page.path }}">{{ site.data.translations['edit_page'][page.lang] }}</a>
-                </p>
-            </div>
-        </div>
-
-        {{ content }}
-
+        </main>
     </div>
-
-    <!-- End Main Content -->
-
-    <!-- Sidebar -->
-
-    {% unless page.url contains '/docs/' %}
-    <aside class="large-3 columns">
-        {% include side_nav.html %}
-    </aside>
-    {% endunless %}
-
-    <!-- End Sidebar -->
-</div>
-
-<!-- End Main Content and Sidebar -->
-
-
-<!-- Footer -->
-
-<footer class="row">
-    <div class="large-12 columns">
-        <hr/>
-        <div class="row">
-            <div class="large-12 columns">
-                <p>Last updated {{ page.last_modified_at | date: '%Y-%m-%d %H:%M:%S' }}</p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="{{site.prefix}}/js/vendor/jquery.js"></script>
-<script src="{{site.prefix}}/js/foundation.min.js"></script>
-<script>
-    $(document).foundation();
-
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-</script>
-</body>
+    {% include footer.html %}
+    {% include headers.html %}
+    {% include tags.html %}
+  </body>
 </html>
