@@ -118,11 +118,13 @@ window.addEventListener("DOMContentLoaded", function() {
   let searchCheckbox = document.querySelector("[data-md-toggle='search']")
   let searchIconMobile = document.querySelector(".md-icon.md-icon--search.md-header-nav__button")
   let searchMeta = document.querySelector(".md-search-result__meta")
+  let searchMetaContent = searchMeta.textContent
   let resultCount = 0
 
   searchInputReset.addEventListener('click', () => {
     searchResultOutputList.innerHTML = '';
     resultCount = 0
+    searchMeta.textContent = searchMetaContent
     if (searchInput.value == '') { searchCheckbox.checked = false }
   })
 
@@ -137,6 +139,7 @@ window.addEventListener("DOMContentLoaded", function() {
     if (searchInput?.value?.length === 0) {
        searchResultOutputList.innerHTML = '';
        resultCount = 0
+       searchMeta.textContent = searchMetaContent
     }
     if (Object.keys(jsonData).length === 0) {
       fetch('/search/search_index.json').then(
@@ -152,10 +155,14 @@ window.addEventListener("DOMContentLoaded", function() {
 
   searchInput.addEventListener('keyup', () => {
     const searched = searchInput.value.toLowerCase()
-    if (searched.length < 4) { return }
+    searchResultOutputList.innerHTML = '';
+    resultCount = 0;
+    if (searched.length < 3) { 
+      searchMeta.textContent = searchMetaContent 
+      return 
+    }
     else { 
-      searchResultOutputList.innerHTML = '';
-      resultCount = 0;
+      searchMeta.textContent = "No matching documents";
       (Object.keys(jsonData).length !== 0) && jsonData.docs.forEach((e,i) => {
 
         let matchTitle = false
