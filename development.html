@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-language" content="en">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Development | LibreMesh</title>
+  <meta name="description" content="">
+  <meta name="author" content="LibreMesh">
+  <meta name="theme-color" content="black">    
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+  <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="canonical" href="/development.html">
+  <link rel="alternate" type="application/rss+xml" title="LibreMesh" href="/feed.xml">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">      
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">  
+  <link rel="shortcut icon" href="/assets/logo/logo_nano.png"> 
+
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/palette.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js"></script>
+
+
+  <body dir="ltr" data-md-color-primary="black" data-md-color-accent="black" class="">
+    
+    <svg class="md-svg">
+  <defs>
+    <path d="M160 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360 304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25 2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75 1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75 0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5 46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z" fill="currentColor"></path>
+  </defs>
+</svg>
+
+<input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off>
+<input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off>
+<label class=md-overlay data-md-component=overlay for=__drawer></label> <a href="#development" tabindex=1 class=md-skip> Skip to content </a>
+
+<header class=md-header data-md-component=header>
+  <nav class="md-header-nav md-grid">
+    <div class=md-flex>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a class="md-header-nav__button md-logo" href="" title="LibreMesh">
+          <img height="" src="/assets/logo/logo_nano.png" width=""></a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button" for=__drawer></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title" data-md-component=title> 
+              <span class=md-header-nav__topic>LibreMesh</span>
+              <span class=md-header-nav__topic>Development</span>
+          </div>
+      </div>
+
+      <!-- lang --> 
+      <div class="md-flex__cell md-flex__cell--shrink md-grid">
+        <ul style="display: flex" class="lng md-tabs__list">
+          
+          
+          
+          
+          
+            <li class="md-tabs__item " style="padding: 0 .5rem">
+              <a href="/development.html" class="md-tabs__link en lng-active ">EN</a>
+            </li>
+          
+            <li class="md-tabs__item " style="padding: 0 .5rem">
+              <a href="/es_development.html" class="md-tabs__link es ">ES</a>
+            </li>
+          
+              </ul>
+      </div>
+      <!-- fine lang-->
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+          
+          <label class="md-icon md-icon--search md-header-nav__button" for=__search></label>
+          <div class=md-search data-md-component=search role=dialog>
+              <label class=md-search__overlay for=__search></label>
+              <div class=md-search__inner role=search>
+                  <form class=md-search__form name=search>
+                      <input type=text class=md-search__input name=query placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=query data-md-state=active>
+                      <label class="md-icon md-search__icon" for=__search></label>
+                      <button type=reset class="md-icon md-search__icon" data-md-component=reset tabindex=-1> &#xE5CD; </button>
+                  </form>
+                  <div class=md-search__output>
+                      <div class=md-search__scrollwrap data-md-scrollfix>
+                          <div class=md-search-result data-md-component=result>
+                              <div class=md-search-result__meta> Type to start searching </div>
+                              <ol class=md-search-result__list></ol>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          <a class="md-source" data-md-source="github" href="https://github.com/libremesh/lime-packages" title="Go to repository">
+          <div class="md-source__icon" style="padding-top:5px">
+            <i class="fa-brands fa-github fa-3x"></i>
+          </div>
+          <div class="md-source__repository">
+            libremesh/lime-packages
+          </div></a>
+        </div>
+      </div>
+    </div>
+    <div class="md-flex hs no-scrollbar" style="background-color: #333;">
+    <ul class="md-tabs__list">
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/">Home</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/about.html">About</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/news.html">News</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/communication.html">Communication</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/getit.html">Get it!</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/howitworks.html">How it works</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item  md-tabs__item--active ">
+        <a class="md-tabs__link" href="/development.html">Development</a>
+    </li>
+
+    </ul>
+
+</div>
+  </nav>
+</header>
+
+
+    <div class="md-container"> 
+        <main class="md-main">
+            <div class="md-main__inner md-grid" data-md-component="container">
+              <!-- <div class="intersection-rect"></div>     -->
+
+            <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      <nav class="md-nav md-nav--primary" data-md-level="0">
+        <ul class="md-nav__list" data-md-scrollfix="">
+
+          <li class="md-nav__item caption">
+  <strong class="text-grey">Documentation</strong>
+</li>
+<!-- Use the current language and default to english if doc translation is not found -->
+ 
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span>LibreMesh Documentation</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+         md-nav__item--nested ">
+      
+        <div>
+          <div>
+          <i class="fa fa-rocket" aria-hidden="true"></i>
+            <span>Quick Starting Guide</span>
+          </div>
+          <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </div>
+        <ul class="md-nav__list " data-md-scrollfix="">
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/en_quick_starting_guide.html"> 
+                <span>Quick Starting Guide</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/en_connecting_nodes.html"> 
+                <span>Connecting to LibreMesh nodes</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/quick_start_guide/en_cli_configuration.html"> 
+                <span>CLI configuration</span>
+              </a>
+            </li>
+          
+          </ul>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+         md-nav__item--nested ">
+      
+        <div>
+          <div>
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+            <span>Configuration</span>
+          </div>
+          <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </div>
+        <ul class="md-nav__list " data-md-scrollfix="">
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/en_config.html"> 
+                <span>Configuration</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/configuration/faq-and-recommendations.html"> 
+                <span>FAQ and recommendations</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/configuration/lime-example.html"> 
+                <span>lime-example</span>
+              </a>
+            </li>
+          
+          </ul>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/en_changing_network_behavior.html">
+          <i class="fa fa-ethernet" aria-hidden="true"></i>
+          <span>Change Ethernet config</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/en_change_wifi_behavior.html">
+          <i class="fa fa-wifi" aria-hidden="true"></i>
+          <span>Change WiFi config</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/en_troubleshooting.html">
+          <i class="fa fa-wrench" aria-hidden="true"></i>
+          <span>Troubleshooting</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+         md-nav__item--nested ">
+      
+        <div>
+          <div>
+          <i class="fa fa-microchip" aria-hidden="true"></i>
+            <span>Hardware</span>
+          </div>
+          <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </div>
+        <ul class="md-nav__list " data-md-scrollfix="">
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/hardware/"> 
+                <span>Hardware</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/hardware/tp-link.html"> 
+                <span>tp-link</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/hardware/xiaomi-miwifir3.html"> 
+                <span>Xiaomi MiWiFi R3</span>
+              </a>
+            </li>
+          
+          </ul>
+      
+      </li>
+  
+          
+
+
+
+  <li class="md-nav__item  md-nav__item--active 
+     md-nav__item--nested   md-nav__item--nested-open ">
+  
+    <div>
+      <div>
+        <i class="fa fa-brands fa-linux" aria-hidden="true"></i>
+        <span>Development</span>
+      </div>
+      <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+    </div>
+    <ul class="md-nav__list  md-nav__list-open " data-md-scrollfix="">
+      
+        
+        
+        
+        <li class="md-nav__item  md-nav__link--active">
+          <a class="md-nav__link" href="/development.html"> 
+            <span>Development</span>
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="md-nav__item ">
+          <a class="md-nav__link" href="/development-network_profiles.html"> 
+            <span>Network Profiles</span>
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="md-nav__item ">
+          <a class="md-nav__link" href="/development-kernel_vermagic.html"> 
+            <span>Kernel vermagic</span>
+          </a>
+        </li>
+      
+      </ul>
+  
+  </li>
+
+          <li class="md-nav__item md-nav__item--nested 
+">
+  <div>
+    <div>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      <span>Packages</span>
+    </div>
+    <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+  </div>
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/altermundi-grafana.html">
+          <span>altermundi-grafana</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/auto-usb-wwan.html">
+          <span>auto-usb-wwan</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/babeld-auto-gw-mode.html">
+          <span>babeld-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bandwidth-test.html">
+          <span>bandwidth-test</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/batman-adv-auto-gw-mode.html">
+          <span>batman-adv-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx6-auto-gw-mode.html">
+          <span>bmx6-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx7-auto-gw-bw-mode.html">
+          <span>bmx7-auto-gw-bw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx7-auto-gw-mode.html">
+          <span>bmx7-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx7-mdns.html">
+          <span>bmx7-mdns</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/check-date-http.html">
+          <span>check-date-http</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/check-internet.html">
+          <span>check-internet</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/cotonete.html">
+          <span>cotonete</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/deferable-reboot.html">
+          <span>deferable-reboot</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/eupgrade.html">
+          <span>eupgrade</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/first-boot-wizard.html">
+          <span>first-boot-wizard</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/hotplug-initd-services.html">
+          <span>hotplug-initd-services</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-ap-watchping.html">
+          <span>lime-ap-watchping</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-app.html">
+          <span>lime-app</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-debug.html">
+          <span>lime-debug</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-docs.html">
+          <span>lime-docs</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-hwd-ground-routing.html">
+          <span>lime-hwd-ground-routing</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-hwd-openwrt-wan.html">
+          <span>lime-hwd-openwrt-wan</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-hwd-usbradio.html">
+          <span>lime-hwd-usbradio</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-anygw.html">
+          <span>lime-proto-anygw</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-babeld.html">
+          <span>lime-proto-babeld</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-batadv.html">
+          <span>lime-proto-batadv</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-bgp.html">
+          <span>lime-proto-bgp</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-bmx6.html">
+          <span>lime-proto-bmx6</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-bmx7.html">
+          <span>lime-proto-bmx7</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-olsr.html">
+          <span>lime-proto-olsr</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-olsr2.html">
+          <span>lime-proto-olsr2</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-olsr6.html">
+          <span>lime-proto-olsr6</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-wan.html">
+          <span>lime-proto-wan</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-report.html">
+          <span>lime-report</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-smart-wifi.html">
+          <span>lime-smart-wifi</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-system.html">
+          <span>lime-system</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-webui.html">
+          <span>lime-webui</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lua-argparse.html">
+          <span>lua-argparse</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-app-batman-adv.html">
+          <span>luci-app-batman-adv</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-app-openairview.html">
+          <span>luci-app-openairview</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-lib-jquery-flot.html">
+          <span>luci-lib-jquery-flot</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-mod-status.html">
+          <span>luci-mod-status</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/miniserver-client.html">
+          <span>miniserver-client</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/pirania.html">
+          <span>pirania</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-location-latlon.html">
+          <span>prometheus-node-exporter-lua-location-latlon</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-wifi-params.html">
+          <span>prometheus-node-exporter-lua-wifi-params</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-wifi-stations-extra.html">
+          <span>prometheus-node-exporter-lua-wifi-stations-extra</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-wifi-survey.html">
+          <span>prometheus-node-exporter-lua-wifi-survey</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-push-influx.html">
+          <span>prometheus-node-push-influx</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/random-numgen.html">
+          <span>random-numgen</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/safe-reboot.html">
+          <span>safe-reboot</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/safe-upgrade.html">
+          <span>safe-upgrade</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-async.html">
+          <span>shared-state-async</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-babeld_hosts.html">
+          <span>shared-state-babeld_hosts</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-bat_hosts.html">
+          <span>shared-state-bat_hosts</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-dnsmasq_hosts.html">
+          <span>shared-state-dnsmasq_hosts</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-dnsmasq_leases.html">
+          <span>shared-state-dnsmasq_leases</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-dnsmasq_servers.html">
+          <span>shared-state-dnsmasq_servers</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-network_nodes.html">
+          <span>shared-state-network_nodes</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-node_info.html">
+          <span>shared-state-node_info</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-nodes_and_links.html">
+          <span>shared-state-nodes_and_links</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-persist.html">
+          <span>shared-state-persist</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-pirania.html">
+          <span>shared-state-pirania</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-wifi_links_info.html">
+          <span>shared-state-wifi_links_info</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state.html">
+          <span>shared-state</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/soporteremoto.html">
+          <span>soporteremoto</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/sprunge.html">
+          <span>sprunge</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-batman-adv.html">
+          <span>ubus-lime-batman-adv</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-bmx6.html">
+          <span>ubus-lime-bmx6</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-groundrouting.html">
+          <span>ubus-lime-groundrouting</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-location.html">
+          <span>ubus-lime-location</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-metrics.html">
+          <span>ubus-lime-metrics</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-openairview.html">
+          <span>ubus-lime-openairview</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-utils.html">
+          <span>ubus-lime-utils</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-tmate.html">
+          <span>ubus-tmate</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/watchping.html">
+          <span>watchping</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/wifi-unstuck-wa.html">
+          <span>wifi-unstuck-wa</span>
+        </a>
+      </li>
+    
+  </ul>
+</li>
+          <li class="md-nav__item caption">
+    <strong class="text-grey">Links</strong>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://downloads.libremesh.org/current/">
+    <div>
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <span>Latest Release Firmware</span>
+    </div>
+    </a>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://github.com/libremesh/">
+    <div>
+        <i class="fa fa-code-fork" aria-hidden="true"></i>
+        <span>Source Code</span>
+    </div>
+    </a>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://www.autistici.org/mailman/listinfo/libremesh">
+    <div>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <span>Mailing List</span>
+    </div>
+    </a>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://matrix.to/#/#libremesh-dev:matrix.guifi.net">
+    <div>
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <span>Element Chatroom</span>
+    </div>
+    </a>
+</li>
+      
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      <nav class="md-nav md-nav--secondary">
+        <p class="md-nav__title text-grey">Table of contents</p>
+        <!-- toc will be appended here!-->
+        <ul class="md-nav__list" id="nav_toc"><li class="md-nav__item"><a href="#the_source_code" class="md-nav__link">The Source Code</a></li><li class="md-nav__item"><a href="#compiling_libremesh_from_source_code" class="md-nav__link">Compiling LibreMesh from source code</a></li><li class="md-nav__item"><a href="#submitting_patches" class="md-nav__link">Submitting Patches</a></li><li class="md-nav__item"><a href="#the_web_presence" class="md-nav__link">The Web Presence</a></li></ul>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+                <div id="md-container-pancakes">
+                <div class="md-content"> 
+    <article class="md-content__inner md-typeset">
+      <h1 id="Development" style="margin-bottom:0px">Development</h1>
+      <div class="sect1">
+<h2 id="the_source_code">The Source Code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The code is stored inside a git tree which contains all branches and releases.</p>
+</div>
+<div class="paragraph">
+<p>All repositories can be browsed online through<br>
+<a href="https://github.com/libremesh/">GitHub</a>.</p>
+</div>
+<div class="paragraph">
+<p>Most of the development happens in the <em>lime-packages</em> git repository which can be browsed on <a href="https://github.com/libremesh/lime-packages">GitHub</a> or downloaded using git:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git clone https://github.com/libremesh/lime-packages.git
+<span class="nb">cd </span>lime-packages</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="compiling_libremesh_from_source_code">Compiling LibreMesh from source code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This procedure has been tested on GNU/Linux, on other systems it could require some modifications or it can be run in a Linux virtual machine. Generally, the first compilation takes a few hours and requires at least 10 GB of disk space.</p>
+</div>
+<div class="paragraph">
+<p>First of all you need to install a few packages to your system.<br>
+Building OpenWrt requires a bunch of installed software.</p>
+</div>
+<div class="paragraph">
+<p>If you are unsure about your system having all the dependencies installed, you can just go on with the OpenWrt compilation (see below) and, if it fails, check out the error messages.</p>
+</div>
+<div class="paragraph">
+<p>On an Ubuntu system, the following command will install the minimum compilation dependencies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>sudo apt update
+sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal python2-minimal libpython2-stdlib</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For other Linux distributions the packets list could be slightly different, check out the <a href="https://openwrt.org/docs/guide-developer/build-system/install-buildsystem">OpenWrt build system installation page</a>.</p>
+</div>
+<div class="paragraph">
+<p>Then you need to get the OpenWrt source code.<br>
+Make sure to <em>git clone</em> the source code as normal user (i.e. do not use root): the compilation will refuse to run if the administrator user <em>root</em> is being used.</p>
+</div>
+<div class="paragraph">
+<div class="title">Download OpenWrt source code</div>
+<p>LibreMesh can be built on top of various OpenWrt versions. We officially support the compilation with OpenWrt Old Stable (19.07.10) versions (LibreMesh still have to be adapted to work with the latest OpenWrt 21.02 version).</p>
+</div>
+<div class="paragraph">
+<p>For compiling LibreMesh on top of the Old Stable version of OpenWrt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git clone -b v19.07.10 --single-branch https://git.openwrt.org/openwrt/openwrt.git</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Enter OpenWrt build root</div>
+<div class="content">
+<pre>cd openwrt</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Take default OpenWrt repositories feeds</div>
+<div class="content">
+<pre>cp feeds.conf.default feeds.conf</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">And add LibreMesh repositories to the OpenWrt feeds</div>
+<div class="content">
+<pre>cat &lt;&lt; EOF &gt;&gt; feeds.conf
+
+src-git libremesh https://github.com/libremesh/lime-packages.git;v2020.4
+src-git profiles https://github.com/libremesh/network-profiles.git
+EOF</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With the lines above, you will compile the LibreMesh 2020.4 release. This is indicated by the <code>;v2020.4</code> suffix. Without this suffix, the <code>master</code> branch would be used, but <strong>the <code>master</code> branch is <strong>not</strong> compatible with OpenWrt 19.07.</strong> Instead, it is being developed for supporting OpenWrt 22.03.</p>
+</div>
+<div class="listingblock">
+<div class="title">Update the packages from the feeds</div>
+<div class="content">
+<pre>scripts/feeds update -a
+scripts/feeds install -a</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Run the configuration menu</div>
+<div class="content">
+<pre>make menuconfig</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check out the target (e.g. ATH79), subtarget (e.g. generic) and profile (e.g. tl-wdr3600-v1) of your router on <a href="https://openwrt.org/toh/start">OpenWrt table of hardware</a>.</p>
+</div>
+<div class="paragraph">
+<p>Select the <em>Target System</em>, <em>Subtarget</em> and <em>Target Profile</em> accordingly.</p>
+</div>
+<div class="paragraph">
+<p><strong>Deselect</strong> erroneous feeds locations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Image configuration → Separate feed repositories → Enable feed libremesh</p>
+</li>
+<li>
+<p>Image configuration → Separate feed repositories → Enable feed profiles</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Deselect</strong> problematic packages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Base system &#8594; dnsmasq</p>
+</li>
+<li>
+<p>Network &#8594; odhcpd-ipv6only</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Optionally, <strong>deselect</strong> unused packages:<br>
+- Network &#8594; ppp</p>
+</div>
+<div class="paragraph">
+<p>If you local community has a profile in the <a href="https://github.com/libremesh/network-profiles/">network-profiles repository</a>, you can select it in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LibreMesh &#8594; network-profile &#8594; profile-your_community-your_profile</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Network profiles are the specific configuration from the communities, and are stored in this collective<br>
+<a href="https://github.com/libremesh/network-profiles/">repository</a>, but they can also be kept locally, depending on how every community network manages itself. For more instructions on how to create a profile or how to use a local one, check out the <a href="development-network_profiles.html">network profiles page</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Select</strong> (press space until when an asterisk appears, like <code>&lt;*&gt;</code>) LibreMesh packages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LibreMesh (or LiMe) → Offline Documentation → lime-docs-minimal (LibreMesh minimal documentation)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) → lime-app (LibreMeshApp)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) → lime-hwd-openwrt-wan (Respect openwrt wan interface as default)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) → lime-proto-anygw (LibreMesh anygw proto support)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) → lime-proto-babeld (LibreMesh babeld proto support)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) → lime-proto-batadv (LibreMesh batman-adv proto support)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) → shared-state</p>
+<div class="ulist">
+<ul>
+<li>
+<p>shared-state-babeld_hosts (babeld-hosts module for shared-state)</p>
+</li>
+<li>
+<p>shared-state-bat_hosts (bat-hosts module for shared-state)</p>
+</li>
+<li>
+<p>shared-state-nodes_and_links (nodes_and_links module for shared-state)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Utilities &#8594; babeld-auto-gw-mode</p>
+</li>
+<li>
+<p>Network &#8594; batctl-default (B.A.T.M.A.N. Advanced user space configuration tool)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If after the compilation you don&#8217;t see the compiled image in the <code>bin/targets/&#8230;&#8203;/&#8230;&#8203;/</code> folder, it is possible that your router has such a small flash memory that the aforementioed packages don&#8217;t fit in it (it can happen with routers having 4 MB of flash memory, check this on the <a href="https://openwrt.org/toh/start">OpenWrt Table of Hardware</a>, or when selecting huge packages to be included). In this case, you can remove the <code>.config</code> generated packages list and repeat the packages selection without including <code>lime-app</code>. If the compiled image is still too large, try selecting only <code>lime-proto-anygw</code>, <code>lime-proto-batadv</code> and <code>lime-proto-babeld</code> or following <a href="https://openwrt.org/docs/guide-user/additional-software/saving_space">this guide</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Some more packages are recommended but not mandatory for a working LibreMesh network. Consider avoiding to select the following packages <em>only</em> if the created image is too large and does not fit in the router memory.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LibreMesh (or LiMe) &#8594; check-date-http (Keep local date under NTP too far away skew)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) &#8594; Offline Documentation &#8594; lime-docs (LibreMesh full documentation)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) &#8594; lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)</p>
+</li>
+<li>
+<p>LibreMesh (or LiMe) &#8594; lime-debug (libremesh debug utils)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally and optionally, httpS for the web interface can be enabled selecting (beware that the web interace will be shown as <strong>not trusted</strong>):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Libraries &#8594; libustream-wolfssl</p>
+</li>
+<li>
+<p>Utilities &#8594; Encryption &#8594; px5g-standalone</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Finally, also the 802.11s mesh connections can be password protected, this will require a specific configuration and this package to be selected:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Network &#8594; wpad-mesh-wolfssl</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and this to be <strong>de</strong>-selected:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Network &#8594; wpad-basic</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Due to a <a href="https://bugs.openwrt.org/index.php?do=details&amp;task_id=3441">known bug</a>, can happen that wpad-mesh-wolfssl gets automatically deselected. <strong>Each time you use menuconfig, please check if wpad-mesh-wolfssl is still selected.</strong></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In order to have additional packages, the easiest way is to select them in menuconfig. More packages can be installed afterwards via opkg, but some of these require a specific kernel configuration to be in place. This can be achieved following <a href="development-kernel_vermagic.html">these additional instructions dealing with kernel vermagic</a>. Beware that this will increase noticeably the time and storage space required for the compilation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Save and exit.</p>
+</div>
+<div class="paragraph">
+<p>At this stage there is the possibility to include custom files in the compiled firmware image. For this, you will have to create, inside the <code>openwrt/</code> directory, a <code>files/</code> directory containing the directory structure and files you want to add. For example, if you want to have a <code>/etc/config/lime-community</code> file you need to do the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>mkdir -p files/etc/config/
+touch files/etc/config/lime-community</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and then edit the newly created <code>lime-community</code> file including your custom content. If a file from a package has the same name and path as a file in this directory, it will be overwritten. This is a quick way to include a custom configuration file, without the need to create an online <a href="development-network_profiles.html">network profile</a>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Finally, compile the images</div>
+<div class="content">
+<pre>make -j$(nproc)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If everything goes well you should find the produced binaries inside the bin/ directory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="submitting_patches">Submitting Patches</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We accept pull requests via GitHub. But patches can also be submitted via the lime-dev <a href="communication.html">mailing list</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the_web_presence">The Web Presence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The pages you&#8217;re reading are generated from text files using the<br>
+<a href="http://www.methods.co.nz/asciidoc/">AsciiDoc</a> suite plus <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+</div>
+<div class="paragraph">
+<p>Any changes made to <a href="https://github.com/libremesh/libremesh.github.io">the website repository</a> will be reflected on our <code>libremesh.org</code> website.</p>
+</div>
+<div class="paragraph">
+<p>In order to generate these pages locally:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git clone https://github.com/libremesh/libremesh.github.io.git
+cd libremesh.github.io &amp;&amp; bundle install
+bundle exec jekyll serve</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more details, check the <a href="https://github.com/libremesh/libremesh.github.io/blob/master/README.adoc">README</a> on Github.</p>
+</div>
+<div class="paragraph">
+<p>If you would like to contribute to the documentation then please send patches to our mailing list or open a pull request on GitHub. An easy way to edit and file a pull request is clicking the "Edit this page" button at the top right of each page.</p>
+</div>
+<div class="paragraph">
+<p>Please use the <a href="http://www.methods.co.nz/asciidoc/userguide.html">AsciiDoc syntax</a> for contributions on the web page.</p>
+</div>
+</div>
+</div>
+      <script src="/assets/js/jquery.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#nav-toc');
+
+    // Select each header
+    sections = $('#md-container-pancakes h2');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            // console.log(section)
+
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil( "h2" );
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+
+    });
+</script>
+
+      <!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+<style>
+.more {
+    float:right;
+    font-size: 1.0rem !important;
+}
+.more:hover {
+    color: cornflowerblue !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    font-weight: 200;
+    box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.2);
+    padding: 0px 10px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+<script>
+$(document).ready(function() {
+
+    var divs = $("#h1,h2,h3,h4"); 
+    $.each(divs, function(i,e){
+
+        // Edit
+        var did = $(e).attr('id');
+        var start = '<div class="dropdown more"><span><i class="fa fa-ellipsis-h more" title="Edit"></i></span><div class="dropdown-content">';
+
+        // Edit (assuming deployed under main organization repo)
+        var link = "https://github.com/libremesh/libremesh.github.io/edit/master/development.txt#" + did;
+        var button = "<p><a href='" + link + "' target='_blank'>Edit this page</a></p>";
+        start += button;
+
+        // Issues;
+        var link = "https://github.com/libremesh/libremesh.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/libremesh/libremesh.github.io/tree/master/development.txt%23" + did;
+
+        var button = "<p><a href='" + link + "' target='_blank'>Ask a Question</a></p>";
+        start += button;
+        start += "</div></div>";
+        $(e).append(start)
+
+    })
+});
+</script>
+
+    </article>
+</div>      
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="c-footer md-footer-nav">
+  <div class="u-container c-footer__container">
+    <nav class="md-footer-nav__inner md-grid">
+         
+      </nav>
+    </div>
+  
+   <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2024 - LibreMesh
+          </div>        
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+      <a href="https://github.com/libremesh" target="_blank" class="md-footer-social__link fa-brands fa-github"></a>
+      <a href="https://matrix.to/#/#libremesh-dev:matrix.guifi.net" target="_blank" class="md-footer-social__link fa fa-comments"></a>
+      <a href="https://www.autistici.org/mailman/listinfo/libremesh" target="_blank" class="md-footer-social__link fa fa-envelope"></a>
+      
+  </div>
+
+    </div>
+  </div>
+
+</footer>
+
+
+    <script>
+  var headers = ["h1", "h2", "h3", "h4"]
+  var colors = ["var(--color-primary)", "orange", "green", "blue"]
+  
+  $.each(headers, function(i, header){
+    //   var color = colors[i];
+      var color = colors[0];
+      $(header).each(function () {
+          var href=$(this).attr("id");
+          $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+      });
+  })
+  
+  </script>
+  
+    
+
+  </body>
+</html>

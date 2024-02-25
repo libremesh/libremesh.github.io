@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-language" content="en">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Configuración | LibreMesh</title>
+  <meta name="description" content="">
+  <meta name="author" content="LibreMesh">
+  <meta name="theme-color" content="black">    
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+  <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="canonical" href="/docs/es_config.html">
+  <link rel="alternate" type="application/rss+xml" title="LibreMesh" href="/feed.xml">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">      
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">  
+  <link rel="shortcut icon" href="/assets/logo/logo_nano.png"> 
+
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/palette.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js"></script>
+
+
+  <body dir="ltr" data-md-color-primary="black" data-md-color-accent="black" class="">
+    
+    <svg class="md-svg">
+  <defs>
+    <path d="M160 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75 19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360 304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25 2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75 1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75 0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5 46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z" fill="currentColor"></path>
+  </defs>
+</svg>
+
+<input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off>
+<input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off>
+<label class=md-overlay data-md-component=overlay for=__drawer></label> <a href="#configuración" tabindex=1 class=md-skip> Skip to content </a>
+
+<header class=md-header data-md-component=header>
+  <nav class="md-header-nav md-grid">
+    <div class=md-flex>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a class="md-header-nav__button md-logo" href="" title="LibreMesh">
+          <img height="" src="/assets/logo/logo_nano.png" width=""></a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button" for=__drawer></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title" data-md-component=title> 
+              <span class=md-header-nav__topic>LibreMesh</span>
+              <span class=md-header-nav__topic>Configuración</span>
+          </div>
+      </div>
+
+      <!-- lang --> 
+      <div class="md-flex__cell md-flex__cell--shrink md-grid">
+        <ul style="display: flex" class="lng md-tabs__list">
+          
+          
+          
+          
+          
+            <li class="md-tabs__item " style="padding: 0 .5rem">
+              <a href="/docs/en_config.html" class="md-tabs__link en ">EN</a>
+            </li>
+          
+            <li class="md-tabs__item " style="padding: 0 .5rem">
+              <a href="/docs/es_config.html" class="md-tabs__link es lng-active ">ES</a>
+            </li>
+          
+              </ul>
+      </div>
+      <!-- fine lang-->
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+          
+          <label class="md-icon md-icon--search md-header-nav__button" for=__search></label>
+          <div class=md-search data-md-component=search role=dialog>
+              <label class=md-search__overlay for=__search></label>
+              <div class=md-search__inner role=search>
+                  <form class=md-search__form name=search>
+                      <input type=text class=md-search__input name=query placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=query data-md-state=active>
+                      <label class="md-icon md-search__icon" for=__search></label>
+                      <button type=reset class="md-icon md-search__icon" data-md-component=reset tabindex=-1> &#xE5CD; </button>
+                  </form>
+                  <div class=md-search__output>
+                      <div class=md-search__scrollwrap data-md-scrollfix>
+                          <div class=md-search-result data-md-component=result>
+                              <div class=md-search-result__meta> Type to start searching </div>
+                              <ol class=md-search-result__list></ol>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          <a class="md-source" data-md-source="github" href="https://github.com/libremesh/lime-packages" title="Go to repository">
+          <div class="md-source__icon" style="padding-top:5px">
+            <i class="fa-brands fa-github fa-3x"></i>
+          </div>
+          <div class="md-source__repository">
+            libremesh/lime-packages
+          </div></a>
+        </div>
+      </div>
+    </div>
+    <div class="md-flex hs no-scrollbar" style="background-color: #333;">
+    <ul class="md-tabs__list">
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/es_index.html">Inicio</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/about.html">About</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/news.html">News</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/communication.html">Communication</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/es_getit.html">¡Obtener!</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/es_howitworks.html">Cómo Funciona</a>
+    </li>
+
+    <!-- Use the current language and default to english if doc translation is not found -->
+    
+    
+    
+    <li class="md-tabs__item ">
+        <a class="md-tabs__link" href="/es_development.html">Desarrollo</a>
+    </li>
+
+    </ul>
+
+</div>
+  </nav>
+</header>
+
+
+    <div class="md-container"> 
+        <main class="md-main">
+            <div class="md-main__inner md-grid" data-md-component="container">
+              <!-- <div class="intersection-rect"></div>     -->
+
+            <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      <nav class="md-nav md-nav--primary" data-md-level="0">
+        <ul class="md-nav__list" data-md-scrollfix="">
+
+          <li class="md-nav__item caption">
+  <strong class="text-grey">Documentation</strong>
+</li>
+<!-- Use the current language and default to english if doc translation is not found -->
+ 
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/es_index.html">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span>Documentación</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+         md-nav__item--nested ">
+      
+        <div>
+          <div>
+          <i class="fa fa-rocket" aria-hidden="true"></i>
+            <span>Quick Starting Guide</span>
+          </div>
+          <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </div>
+        <ul class="md-nav__list " data-md-scrollfix="">
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/en_quick_starting_guide.html"> 
+                <span>Quick Starting Guide</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/en_connecting_nodes.html"> 
+                <span>Connecting to LibreMesh nodes</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/quick_start_guide/en_cli_configuration.html"> 
+                <span>CLI configuration</span>
+              </a>
+            </li>
+          
+          </ul>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item  md-nav__item--active 
+         md-nav__item--nested  md-nav__item--nested-open ">
+      
+        <div>
+          <div>
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+            <span>Configuración</span>
+          </div>
+          <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </div>
+        <ul class="md-nav__list  md-nav__list-open " data-md-scrollfix="">
+          
+            
+            
+            
+            <li class="md-nav__item  md-nav__link--active">
+              <a class="md-nav__link" href="/docs/es_config.html"> 
+                <span>Configuración</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/configuration/es_faq-and-recommendations.html"> 
+                <span>FAQ y recomendación</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/configuration/lime-example.html"> 
+                <span>lime-example</span>
+              </a>
+            </li>
+          
+          </ul>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/en_changing_network_behavior.html">
+          <i class="fa fa-ethernet" aria-hidden="true"></i>
+          <span>Change Ethernet config</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/en_change_wifi_behavior.html">
+          <i class="fa fa-wifi" aria-hidden="true"></i>
+          <span>Change WiFi config</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+        ">
+      
+        <a class="md-nav__link" href="/docs/en_troubleshooting.html">
+          <i class="fa fa-wrench" aria-hidden="true"></i>
+          <span>Troubleshooting</span>
+        </a>
+      
+      </li>
+  
+    
+    
+    
+      <li class="md-nav__item 
+         md-nav__item--nested ">
+      
+        <div>
+          <div>
+          <i class="fa fa-microchip" aria-hidden="true"></i>
+            <span>Hardware</span>
+          </div>
+          <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </div>
+        <ul class="md-nav__list " data-md-scrollfix="">
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/hardware/"> 
+                <span>Hardware</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/hardware/tp-link.html"> 
+                <span>tp-link</span>
+              </a>
+            </li>
+          
+            
+            
+            
+            <li class="md-nav__item ">
+              <a class="md-nav__link" href="/docs/hardware/xiaomi-miwifir3.html"> 
+                <span>Xiaomi MiWiFi R3</span>
+              </a>
+            </li>
+          
+          </ul>
+      
+      </li>
+  
+          
+
+
+
+  <li class="md-nav__item 
+     md-nav__item--nested  ">
+  
+    <div>
+      <div>
+        <i class="fa fa-brands fa-linux" aria-hidden="true"></i>
+        <span>Desarrollo</span>
+      </div>
+      <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+    </div>
+    <ul class="md-nav__list " data-md-scrollfix="">
+      
+        
+        
+        
+        <li class="md-nav__item ">
+          <a class="md-nav__link" href="/es_development.html"> 
+            <span>Desarrollo</span>
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="md-nav__item ">
+          <a class="md-nav__link" href="/development-network_profiles.html"> 
+            <span>Network Profiles</span>
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="md-nav__item ">
+          <a class="md-nav__link" href="/development-kernel_vermagic.html"> 
+            <span>Kernel vermagic</span>
+          </a>
+        </li>
+      
+      </ul>
+  
+  </li>
+
+          <li class="md-nav__item md-nav__item--nested 
+">
+  <div>
+    <div>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      <span>Packages</span>
+    </div>
+    <span style="text-align: right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+  </div>
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/altermundi-grafana.html">
+          <span>altermundi-grafana</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/auto-usb-wwan.html">
+          <span>auto-usb-wwan</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/babeld-auto-gw-mode.html">
+          <span>babeld-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bandwidth-test.html">
+          <span>bandwidth-test</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/batman-adv-auto-gw-mode.html">
+          <span>batman-adv-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx6-auto-gw-mode.html">
+          <span>bmx6-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx7-auto-gw-bw-mode.html">
+          <span>bmx7-auto-gw-bw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx7-auto-gw-mode.html">
+          <span>bmx7-auto-gw-mode</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/bmx7-mdns.html">
+          <span>bmx7-mdns</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/check-date-http.html">
+          <span>check-date-http</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/check-internet.html">
+          <span>check-internet</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/cotonete.html">
+          <span>cotonete</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/deferable-reboot.html">
+          <span>deferable-reboot</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/eupgrade.html">
+          <span>eupgrade</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/first-boot-wizard.html">
+          <span>first-boot-wizard</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/hotplug-initd-services.html">
+          <span>hotplug-initd-services</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-ap-watchping.html">
+          <span>lime-ap-watchping</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-app.html">
+          <span>lime-app</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-debug.html">
+          <span>lime-debug</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-docs.html">
+          <span>lime-docs</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-hwd-ground-routing.html">
+          <span>lime-hwd-ground-routing</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-hwd-openwrt-wan.html">
+          <span>lime-hwd-openwrt-wan</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-hwd-usbradio.html">
+          <span>lime-hwd-usbradio</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-anygw.html">
+          <span>lime-proto-anygw</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-babeld.html">
+          <span>lime-proto-babeld</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-batadv.html">
+          <span>lime-proto-batadv</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-bgp.html">
+          <span>lime-proto-bgp</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-bmx6.html">
+          <span>lime-proto-bmx6</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-bmx7.html">
+          <span>lime-proto-bmx7</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-olsr.html">
+          <span>lime-proto-olsr</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-olsr2.html">
+          <span>lime-proto-olsr2</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-olsr6.html">
+          <span>lime-proto-olsr6</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-proto-wan.html">
+          <span>lime-proto-wan</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-report.html">
+          <span>lime-report</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-smart-wifi.html">
+          <span>lime-smart-wifi</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-system.html">
+          <span>lime-system</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lime-webui.html">
+          <span>lime-webui</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/lua-argparse.html">
+          <span>lua-argparse</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-app-batman-adv.html">
+          <span>luci-app-batman-adv</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-app-openairview.html">
+          <span>luci-app-openairview</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-lib-jquery-flot.html">
+          <span>luci-lib-jquery-flot</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/luci-mod-status.html">
+          <span>luci-mod-status</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/miniserver-client.html">
+          <span>miniserver-client</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/pirania.html">
+          <span>pirania</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-location-latlon.html">
+          <span>prometheus-node-exporter-lua-location-latlon</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-wifi-params.html">
+          <span>prometheus-node-exporter-lua-wifi-params</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-wifi-stations-extra.html">
+          <span>prometheus-node-exporter-lua-wifi-stations-extra</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-exporter-lua-wifi-survey.html">
+          <span>prometheus-node-exporter-lua-wifi-survey</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/prometheus-node-push-influx.html">
+          <span>prometheus-node-push-influx</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/random-numgen.html">
+          <span>random-numgen</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/safe-reboot.html">
+          <span>safe-reboot</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/safe-upgrade.html">
+          <span>safe-upgrade</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-async.html">
+          <span>shared-state-async</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-babeld_hosts.html">
+          <span>shared-state-babeld_hosts</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-bat_hosts.html">
+          <span>shared-state-bat_hosts</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-dnsmasq_hosts.html">
+          <span>shared-state-dnsmasq_hosts</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-dnsmasq_leases.html">
+          <span>shared-state-dnsmasq_leases</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-dnsmasq_servers.html">
+          <span>shared-state-dnsmasq_servers</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-network_nodes.html">
+          <span>shared-state-network_nodes</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-node_info.html">
+          <span>shared-state-node_info</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-nodes_and_links.html">
+          <span>shared-state-nodes_and_links</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-persist.html">
+          <span>shared-state-persist</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-pirania.html">
+          <span>shared-state-pirania</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state-wifi_links_info.html">
+          <span>shared-state-wifi_links_info</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/shared-state.html">
+          <span>shared-state</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/soporteremoto.html">
+          <span>soporteremoto</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/sprunge.html">
+          <span>sprunge</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-batman-adv.html">
+          <span>ubus-lime-batman-adv</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-bmx6.html">
+          <span>ubus-lime-bmx6</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-groundrouting.html">
+          <span>ubus-lime-groundrouting</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-location.html">
+          <span>ubus-lime-location</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-metrics.html">
+          <span>ubus-lime-metrics</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-openairview.html">
+          <span>ubus-lime-openairview</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-lime-utils.html">
+          <span>ubus-lime-utils</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/ubus-tmate.html">
+          <span>ubus-tmate</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/watchping.html">
+          <span>watchping</span>
+        </a>
+      </li>
+    
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="/packages/wifi-unstuck-wa.html">
+          <span>wifi-unstuck-wa</span>
+        </a>
+      </li>
+    
+  </ul>
+</li>
+          <li class="md-nav__item caption">
+    <strong class="text-grey">Links</strong>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://downloads.libremesh.org/current/">
+    <div>
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <span>Latest Release Firmware</span>
+    </div>
+    </a>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://github.com/libremesh/">
+    <div>
+        <i class="fa fa-code-fork" aria-hidden="true"></i>
+        <span>Source Code</span>
+    </div>
+    </a>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://www.autistici.org/mailman/listinfo/libremesh">
+    <div>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <span>Mailing List</span>
+    </div>
+    </a>
+</li>
+<li class="md-nav__item">
+    <a class="md-nav__link" href="https://matrix.to/#/#libremesh-dev:matrix.guifi.net">
+    <div>
+        <i class="fa fa-comments" aria-hidden="true"></i>
+        <span>Element Chatroom</span>
+    </div>
+    </a>
+</li>
+      
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      <nav class="md-nav md-nav--secondary">
+        <p class="md-nav__title text-grey">Table of contents</p>
+        <!-- toc will be appended here!-->
+        <ul class="md-nav__list" id="nav_toc"><li class="md-nav__item"><a href="#introducción_a_la_configuración" class="md-nav__link">Introducción a la configuración</a></li><li class="md-nav__item"><a href="#configuración_geek_free_usando_el_firstbootwizard" class="md-nav__link">Configuración geek free usando el FirstBootWizard</a></li><li class="md-nav__item"><a href="#configuración_para_administradores_de_red" class="md-nav__link">Configuración para administradores de red</a></li><li class="md-nav__item"><a href="#niveles_de_configuración_comunidad_y_nodo" class="md-nav__link">Niveles de configuración Comunidad y Nodo</a><ul class="md-nav__list"><li class="md-nav__item"><a href="#ejemplo" class="md-nav__link">Ejemplo</a></li><li class="md-nav__item"><a href="#funcionamiento" class="md-nav__link">Funcionamiento</a></li><li class="md-nav__item"><a href="#lista_de_secciones_y_opciones" class="md-nav__link">Lista de secciones y opciones</a></li><li class="md-nav__item"><a href="#configuraciones_de_interfaz_especificas" class="md-nav__link">Configuraciones de interfaz especificas</a></li><li class="md-nav__item"><a href="#opciones_parametrizables" class="md-nav__link">Opciones parametrizables</a></li></ul></li><li class="md-nav__item"><a href="#configurando_cosas_no_previstas_en_libremesh" class="md-nav__link">Configurando cosas no previstas en LibreMesh</a><ul class="md-nav__list"><li class="md-nav__item"><a href="#generic-configs" class="md-nav__link">Configuraciones genéricas: generic_uci_config</a></li><li class="md-nav__item"><a href="#lime-assets" class="md-nav__link">Los lime-assets, archivos para configuraciones especiales</a><ul class="md-nav__list"><li class="md-nav__item"><a href="#definiendo_archivos_copy_asset" class="md-nav__link">Definiendo archivos: copy_asset</a></li><li class="md-nav__item"><a href="#ejecutando_scripts_run_asset" class="md-nav__link">Ejecutando scripts: run_asset</a></li></ul></li></ul></li></ul>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+                <div id="md-container-pancakes">
+                <div class="md-content"> 
+    <article class="md-content__inner md-typeset">
+      <h1 id="Configuración" style="margin-bottom:0px">Configuración</h1>
+      <div class="sect1">
+<h2 id="introducción_a_la_configuración"><a class="anchor" href="#introducción_a_la_configuración"></a>Introducción a la configuración</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LibreMesh tiene un sistema de configuración basado en los siguienes principios:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ser simple de configurar y entender qué configuraciones están en uso en cada nodo</p>
+</li>
+<li>
+<p>Basado en la idea de configuraciones compartidas a nivel Comunidad con customizaciones posibles por Nodo.</p>
+</li>
+<li>
+<p>Mantenible en el tiempo, por actualizaciones de firmware, agregar nuevos nodos en la comunidad, etc.</p>
+</li>
+<li>
+<p>Poder realizar configuraciones complejas.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>El sistema de configuración es fundamental para entender el funcionamiento interno de LibreMesh,<br>
+sin embargo no es necesario entenderlo antes de empezar una red LibreMesh!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuración_geek_free_usando_el_firstbootwizard"><a class="anchor" href="#configuración_geek_free_usando_el_firstbootwizard"></a>Configuración geek free usando el FirstBootWizard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si tu comunidad quiere desplegar una red geek free es recomendable hacerlo usando la lime-app<br>
+utilizando el FirstBootWizard. Esta aplicación simplifica la configuración inicial de los nodos y<br>
+permite a nuevos nodos sumarse a una red existente, todo a travez de una interfaz amigable<br>
+que no requiere conocimientos previos de redes.</p>
+</div>
+<div class="paragraph">
+<p>Para utilzar el FirstBootWizard simplemente sigue los pasos que aparecen en pantalla al<br>
+entrar en <a href="http://thisnode.info" class="bare">http://thisnode.info</a></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="/assets/img/firstbootwizard-splash.png" alt="FirstBootWizard splash"></span></p>
+</div>
+<div class="paragraph">
+<p>En cambio si tu comunidad es una comunidad de geeks entonces quizas no quieran utilizar el FirstBootWizard.</p>
+</div>
+<div class="paragraph">
+<p>Una vez iniciada la red utilizando el FBW les participantes pueden realizar algunos<br>
+cambios de configuración a travez de la lime-app.<br>
+A medida que vayan surgiendo necesidades en la comunidad que no se cubran actualmente con la<br>
+lime-app les participantes de la red podrán aprender a realizar estos cambios a travez de <code>ssh</code><br>
+u otras herramientas y siguiendo la documentación a continuación.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuración_para_administradores_de_red"><a class="anchor" href="#configuración_para_administradores_de_red"></a>Configuración para administradores de red</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LibreMesh utiliza a <a href="https://openwrt.org/docs/guide-user/base-system/uci">UCI</a> como sistema de<br>
+configuración ya que UCI es tambien es utilizado por OpenWrt.<br>
+<a href="https://openwrt.org/docs/guide-user/base-system/uci">UCI</a> es una base de datos de que es<br>
+facilmente modificable tanto desde línea de comandos como editando los archivos de configuración directamente.<br>
+Todos los archivos de configuración de UCI se encuentran en el directorio <code>/etc/config/</code>.<br>
+Los archivos de configuración de LibreMesh que pueden ser editados para son: <code>/etc/config/lime-node</code> y<br>
+<code>/etc/config/lime-community</code>.<br>
+El resto de los archivos de configuración no deben ser modificados.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="niveles_de_configuración_comunidad_y_nodo"><a class="anchor" href="#niveles_de_configuración_comunidad_y_nodo"></a>Niveles de configuración <strong><em>Comunidad</em></strong> y <strong><em>Nodo</em></strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para ayudar a la comunidad a mantener sus configuraciones, la configuración de los nodos de la red<br>
+se estructura jerarquicamente en 3 niveles:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>Nodo</em></strong>, archivo <code>/etc/config/lime-node</code></p>
+</li>
+<li>
+<p><strong><em>Comunidad</em></strong>, archivo <code>/etc/config/lime-community</code></p>
+</li>
+<li>
+<p><strong><em>Defecto</em></strong>, archivo <code>/etc/config/lime-defaults</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Donde la configuración realizada a nivel de <strong><em>Nodo</em></strong> toma prioridad por sobre <strong><em>Comunidad</em></strong> y esta  a su<br>
+vez tiene prioridad por sobre el <strong><em>Defecto</em></strong>.<br>
+De esta forma cuando la mayoria de los nodos comparten cierta caracteristica la misma conviene<br>
+configurarse a nivel comunidad y solo modificarla en el nivel de <strong><em>Nodo</em></strong> en los nodos donde esa configuración difiere.<br>
+El nivel <strong><em>Default</em></strong> contiene todos los valores de configuración en su valor por defecto.</p>
+</div>
+<div class="sect2">
+<h3 id="ejemplo"><a class="anchor" href="#ejemplo"></a>Ejemplo</h3>
+<div class="paragraph">
+<p>Supongamos que queremos configurar la distancia máxima wireless de los nodos de 2.4GHz de la comunidad<br>
+en 300 metros pero en dos de los nodos A y B configurarla en 1000m. Lo podríamos hacer de la siguiente forma:</p>
+</div>
+<div class="paragraph">
+<p>En <code>lime-community</code> de todos los nodos tendriamos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>config lime 'wifi'
+	# other options
+	option distance_2ghz '300'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Y en los archivos <code>lime-node</code> de los nodos A y B:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>config lime 'wifi'
+	option distance_2ghz '1000'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="funcionamiento"><a class="anchor" href="#funcionamiento"></a>Funcionamiento</h3>
+<div class="paragraph">
+<p>Al correr el comando <code>lime-config</code> lo primero que sucede es que se procesan los niveles <strong><em>Nodo</em></strong>,<br>
+<strong><em>Comunidad</em></strong> y <strong><em>Default</em></strong> y se genera el archivo <code>/etc/config/lime-autogen</code>.<br>
+Este archivo es el que contiene la configuración que realmente va a utilizarse por libremesh para configurar el sistema.</p>
+</div>
+<div class="paragraph">
+<p>Luego se escriben los archivos de configuración resultantes para cada paquete en base a <code>/etc/config/lime-autogen</code><br>
+Para que las configuraciones se apliquen, es recomendable correr <code>reboot</code> luego de <code>lime-config</code>. Si bien hay formas más rápidas<br>
+de aplicar las modificaciones en ciertos casos, correr <code>reboot</code> es la única que asegura que todos los cambios se aplicaron.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lista_de_secciones_y_opciones"><a class="anchor" href="#lista_de_secciones_y_opciones"></a>Lista de secciones y opciones</h3>
+<div class="paragraph">
+<p>La configuración se divide en tres secciones principales: <code>system</code>, <code>network</code> y <code>wifi</code>.</p>
+</div>
+<div class="paragraph">
+<p>Para tener información detallada y actualizada de todas las opciones ver la referencia actualizada<br>
+en <a href="https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt">/docs/lime-example</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">Opciones de sistema</div>
+<p>Las siguientes opciones de la seccion <code>system</code> son las más relevantes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>config lime system
+	option hostname 'LiMe-%M4%M5%M6'
+	option domain 'thisnode.info'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Te sugerimos que cambies el dominio thisnode.info a un nuevo <strong>subdominio</strong> del sitio de tu comunidad, por ejemplo option domain 'mesh.altermundi.net'. Este dominio ('mesh.altermundi.net') debe ser un dominio que no exista ya afuera de la red (i.e. es una mala idea usar 'altermundi.net'). A todos los clientes que obtienen una dirección IP por DHCP y a todos los nodos de la red se le asignará un <strong>fully qualified domain</strong> (ej. 'lime-ddeeff.mesh.altermundi.net')</p>
+</div>
+<div class="paragraph">
+<div class="title">Configuraciones generales de red</div>
+<p>De todas las opciones de red las más relevantes son las siguientes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>config lime network
+	option primary_interface 'eth0'
+	option main_ipv4_address '10.%N1.0.0/16'
+	option main_ipv6_address '2a00:1508:0a%N1:%N200::/64'
+	list protocols ieee80211s
+	list protocols lan
+	list protocols anygw
+	list protocols batadv:%N1</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Configuración IPv4: <code>main_ipv4_address</code></div>
+<div class="paragraph">
+<p>Hay cuatro posibilidades:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>configurar una IP y subnet estática, por ejemplo <code>'192.0.2.1/16'</code></p>
+</li>
+<li>
+<p>parametrizar con <code>%Mn</code> y <code>%Nn</code>, y configurar la subnet, por ejemplo <code>'192.%N1.%M5.%M6/16'</code></p>
+</li>
+<li>
+<p>configurar un dirección de red (no una IP en especifico) para obtener una IP autocompletada<br>
+dentro de la red a partir de los bits de la MAC. Esto tambien funciona con máscaras distintas de<br>
+<code>/24</code> or <code>/16</code> como <code>'192.0.128.0/17'</code></p>
+</li>
+<li>
+<p>configurar dos parámetros distintos, el primero para la subnet y el segundo para la parametrización de la IP,<br>
+por ejemplo <code>'192.0.128.0/16/17'</code>, resultando en una subnet <code>/16</code>  con dominio de broadcast (<code>192.0.0.0/16</code>) pero con la IP del nodo<br>
+calculada en un rango <code>/17</code> (desde la <code>192.0.128.0</code> a la <code>192.0.255.254</code>).</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Configuración IPv6: <code>main_ipv6_address</code></div>
+<div class="paragraph">
+<p>La configuración es similar a la <code>main_ipv4_address</code>. Si se usa autocompletado como máximo se completan<br>
+los ultimos 24 bits, por lo que en este caso no es útil usar un rango mayor a <code>/104</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Lista de protocolos: <code>list protocols</code></div>
+<div class="paragraph">
+<p>Listado de protocolos configurados por LibreMesh. Algunos de estos require la instalación de su paquete relacionado <code>lime-proto-&#8230;&#8203;</code>.<br>
+Notar que por como funcionan las <code>list</code> (listas de UCI) configurar algunos protocolos hace que se reescriba la lista<br>
+completa de protocolos que está en los valores por <strong><em>Defecto</em></strong>.<br>
+No te preocupes si hay mas protocolos definidos que los que realmente necesitas: solamente los protocolos correspondientes a los<br>
+paquetes instalados se van a utilizar. Entonces por ejemplo si el paquete <code>lime-proto-olsr</code> no está instalado entonces por mas<br>
+que en la lista esté el protocolo <code>olsr</code> el mismo no será usado.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Configuraciones generales WiFi</div>
+<p>De todas las opciones de red las más relevantes son las siguientes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>config lime wifi
+	option channel_2ghz '11'
+	list channel_5ghz '48'
+	list channel_5ghz '157'
+	option distance_2ghz '100'
+	option distance_5ghz '1000'
+	list modes 'ap'
+	list modes 'apname'
+	list modes 'ieee80211s'
+	option ap_ssid 'LibreMesh.org'
+	option apname_ssid 'LibreMesh.org/%H'
+    option country 'ES'</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Configuración de país: <code>country code</code></div>
+<div class="paragraph">
+<p>El código de país por defecto no viene especificado (entonces por lo tanto el defecto suele ser <code>US</code>),<br>
+pero recomendamos encarecidamente que lo configuren. Si la red se encuentra en España entonces la configuración es<br>
+<code>option country 'ES'</code>, lo que además permite el uso del canal 13 (permitido en España) que de otra forma está restringido.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">distance</div>
+<div class="paragraph">
+<p>El parámetro <code>distance</code> indica la máxima distancia a la que pueden estar los otros nodos o clientes.<br>
+Un valor muy grande disminuye el rendimiento pero un valor inferior al necesario resulta en una<br>
+conección con un rendimiento muy muy malo (suelen verse paquetes duplicados (DUPs) al hacer ping).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">wifi options</div>
+<div class="paragraph">
+<p>Cualquier opción en la forma <code>&lt;mode&gt;_&lt;option&gt;</code> se copia directamente a <code>/etc/config/wireless</code> (sin el prefijo <code>&lt;mode&gt;_</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">wifi Password de puntos de acceso</div>
+<div class="paragraph">
+<p>Para segurizar con WPA2-PSK las interfaces AP y APname, agrega las opciones <code>key 'MiPasswordSeguro'</code><br>
+y <code>encryption 'psk2'</code>. Para un ejemplo ver en <a href="https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt">/docs/lime-example</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuraciones_de_interfaz_especificas"><a class="anchor" href="#configuraciones_de_interfaz_especificas"></a>Configuraciones de interfaz especificas</h3>
+<div class="paragraph">
+<p>Cambiar las opciones antes mencionadas nos permite tener una configuración de todo el sistema.</p>
+</div>
+<div class="paragraph">
+<p>En los casos en los que diferentes interfaces de red deben tener configuraciones diferentes, véase <a href="https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt">/docs/lime-example</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="opciones_parametrizables"><a class="anchor" href="#opciones_parametrizables"></a>Opciones parametrizables</h3>
+<div class="paragraph">
+<p>Algunas opciones son parametrizables usando un conjunto de caracteres especiales que serán<br>
+reemplazados por información específica del nodo.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>MAC bytes</strong> <code>%Mn</code> se refiere a el byte <code>n</code> de la dirección de MAC de la interfaz principal.<br>
+Por ejemplo de la MAC <code>CA:FF:EE:BA:BB:EE</code> <code>%M1</code> se reemplazará por <code>CA</code>  (el prime byte de la MAC)<br>
+y <code>%M4</code>  por <code>BA</code> (el cuarto byte de la MAC).</p>
+</li>
+<li>
+<p><strong>Network Identifier</strong> <code>%Nn</code> refiere al byte <code>n</code> del identificador de la nube que es un hash que se calcula<br>
+a partir del SSID del AP (tomado del contenido de <code>option ap_ssid &#8230;&#8203;</code>).</p>
+</li>
+<li>
+<p><strong>Hostname</strong> <code>%H</code> se refiere al hostname del nodo.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configurando_cosas_no_previstas_en_libremesh"><a class="anchor" href="#configurando_cosas_no_previstas_en_libremesh"></a>Configurando cosas no previstas en LibreMesh</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si se quiere realizar una configuración para la cual LibreMesh no tiene una opción entonces<br>
+es necesario usar <strong><em>configuraciones genéricas</em></strong> y <strong><em>lime-assets</em></strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="generic-configs"><a class="anchor" href="#generic-configs"></a>Configuraciones genéricas: <code>generic_uci_config</code></h3>
+<div class="paragraph">
+<p>Se puede configurar otros archivos en <code>/etc/config/</code> desde los archivos de configuración de lime usando<br>
+configuraciones genéricas.</p>
+</div>
+<div class="paragraph">
+<p>Ejemplo para configurar la localización de <code>/etc/config/libremap</code> desde <code>/etc/config/lime-community</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>config generic_uci_config libremap
+    list uci_set "libremap.settings=libremap"
+    list uci_set "libremap.settings.community=our.libre.org"
+    list uci_set "libremap.settings.community_lat=-200.123"
+    list uci_set "libremap.settings.community_lon=500.9"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lime-assets"><a class="anchor" href="#lime-assets"></a>Los <strong><em>lime-assets</em></strong>, archivos para configuraciones especiales</h3>
+<div class="paragraph">
+<p>Los <strong><em>lime-assets</em></strong> son archivos que permiten realizar configuraciones especiales. Estos archivos<br>
+se dividen en dos grupos, los del nodo y los de la comunidad. La idea es que los assets de la comunidad<br>
+sean compartidos por todos los nodos y permitan realizar configuraciones que son necesarias en todos los nodos.<br>
+En cambio los archivos (<em>assets</em>) del nodo están pensados para realizar configuraciones especificas en el nodo.</p>
+</div>
+<div class="sect3">
+<h4 id="definiendo_archivos_copy_asset"><a class="anchor" href="#definiendo_archivos_copy_asset"></a>Definiendo archivos: <code>copy_asset</code></h4>
+<div class="paragraph">
+<p>Si se precisa que un archivo esté presente en el sistema de archivos puedes usar la directiva <code>copy_asset</code>.<br>
+<code>copy_asset</code> copia un archivo desde el directorio de <em>assets</em> hacia una ruta definida por la opción <code>dst</code>.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo para configurar el programa <code>collectd</code> para tu comunidad puedes crear un archivo <code>collectd.conf</code><br>
+en <code>/etc/lime-assets/community/collectd.conf</code> y usarlo definiendo la siguiente configuración en el archivo<br>
+<code>lime-community</code> de la siguiente manera:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>config copy_asset collectd
+   option asset 'community/collectd.conf'
+   option dst '/etc/collectd.conf'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ejecutando_scripts_run_asset"><a class="anchor" href="#ejecutando_scripts_run_asset"></a>Ejecutando scripts: <code>run_asset</code></h4>
+<div class="paragraph">
+<p>Para configurar a LibreMesh para que se ejecute un script se debe usar  la opción <code>run_asset</code>.<br>
+Usar este método de configuración como último recurso si los otros métodos no son suficientes.</p>
+</div>
+<div class="paragraph">
+<p><code>run_asset</code> ejecuta un script del directorio de assets. La ejecución puede ser en el primer booteo<br>
+(o sea, cuando inicia luego de realizarse un upgrade de firmware) usando <code>ATFIRSTBOOT</code> o en cada<br>
+vez que se reconfigura LibreMesh (cuando se ejecuta <code>lime-config</code>) usando <code>ATCONFIG</code>.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo para ejecutar el script <code>myscript.sh</code> guardado en <code>/etc/lime-assets/community/myscript.sh</code><br>
+en el primer booteo:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>config run_asset a_test_script
+    option asset 'community/myscript.sh'
+    option when 'ATFIRSTBOOT'</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Este método de configuración reemplaza la funcionalidad de los scripts <code>uci-defaults</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+      <script src="/assets/js/jquery.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#nav-toc');
+
+    // Select each header
+    sections = $('#md-container-pancakes h2');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            // console.log(section)
+
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil( "h2" );
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+
+    });
+</script>
+
+      <!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+<style>
+.more {
+    float:right;
+    font-size: 1.0rem !important;
+}
+.more:hover {
+    color: cornflowerblue !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    font-weight: 200;
+    box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.2);
+    padding: 0px 10px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+<script>
+$(document).ready(function() {
+
+    var divs = $("#h1,h2,h3,h4"); 
+    $.each(divs, function(i,e){
+
+        // Edit
+        var did = $(e).attr('id');
+        var start = '<div class="dropdown more"><span><i class="fa fa-ellipsis-h more" title="Edit"></i></span><div class="dropdown-content">';
+
+        // Edit (assuming deployed under main organization repo)
+        var link = "https://github.com/libremesh/libremesh.github.io/edit/master/docs/es_config.txt#" + did;
+        var button = "<p><a href='" + link + "' target='_blank'>Edit this page</a></p>";
+        start += button;
+
+        // Issues;
+        var link = "https://github.com/libremesh/libremesh.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/libremesh/libremesh.github.io/tree/master/docs/es_config.txt%23" + did;
+
+        var button = "<p><a href='" + link + "' target='_blank'>Ask a Question</a></p>";
+        start += button;
+        start += "</div></div>";
+        $(e).append(start)
+
+    })
+});
+</script>
+
+    </article>
+</div>      
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="c-footer md-footer-nav">
+  <div class="u-container c-footer__container">
+    <nav class="md-footer-nav__inner md-grid">
+         
+      </nav>
+    </div>
+  
+   <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2024 - LibreMesh
+          </div>        
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+      <a href="https://github.com/libremesh" target="_blank" class="md-footer-social__link fa-brands fa-github"></a>
+      <a href="https://matrix.to/#/#libremesh-dev:matrix.guifi.net" target="_blank" class="md-footer-social__link fa fa-comments"></a>
+      <a href="https://www.autistici.org/mailman/listinfo/libremesh" target="_blank" class="md-footer-social__link fa fa-envelope"></a>
+      
+  </div>
+
+    </div>
+  </div>
+
+</footer>
+
+
+    <script>
+  var headers = ["h1", "h2", "h3", "h4"]
+  var colors = ["var(--color-primary)", "orange", "green", "blue"]
+  
+  $.each(headers, function(i, header){
+    //   var color = colors[i];
+      var color = colors[0];
+      $(header).each(function () {
+          var href=$(this).attr("id");
+          $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+      });
+  })
+  
+  </script>
+  
+    
+
+  </body>
+</html>
