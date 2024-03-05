@@ -14,6 +14,25 @@ and a new release candidate based on OpenWrt 22:
 
      https://downloads.libremesh.org/releases/2023.1-rc2-ow22/
 
+
+[NOTE]
+===========
+Firmware images of libremesh-2020.4 based on openwrt-19.07.10, were signed with the wrong signing keys.
+To install additional `kernel_modules` via `opkg`:
+
+- Add the build repository for the selected `target/subtarget` here *ar71xx/generic*:
+```
+echo "src/gz libremesh_kmods http://downloads.libremesh.org/releases/2020.4-ow19/targets/ar71xx/generic/packages" >> /etc/opkg/limefeeds.conf
+```
+- Then add the signing key:
+```
+cat << EOF > /etc/opkg/keys/c37d41571f77f282
+untrusted comment: signed by libremesh.org for 2020.4 release builds
+RWTDfUFXH3fygrM5F7kON6UQTWjWG9aNVBSNFnUv3cHXJjFVmZrGJ6Iw
+EOF
+```
+===========
+
 This means that the release candidate needs testing, bug fixing and
 loads of community love so that we can have an amazing release that can
 actually ease the creation of community networks everywhere.
