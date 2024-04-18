@@ -114,13 +114,13 @@ Using ICMPv6 we can discover machines in our network thanks to the special Multi
 To discover all the devices we can use the next command (using +ping6+ or +ping+ depending on your Linux distro) where the appended %eth0 specifies which network interface to use (could be something like +eth0+ or +enp0s25+, you can see the interface names with the commands +ip link show+ or +ifconfig+):
 
 ```
-ping6 ff02::1%eth0
+ping6 -v ff02::1%eth0
 ```
 
 or just
 
 ```bash
-ping ff02::1%eth0
+ping -v ff02::1%eth0
 ```
 
 Then each device connected to our collision domain, will reply the ICMP request with its own IPv6 link-local address.
