@@ -45,3 +45,7 @@ During the meetings we use this format:
 * we take the time of the speakers to not have unique long speeches
 * we decide at the begin of every meeting the languages that we use, so sometimes our assembly are in different languages because people understand more than what they speak (italoportish) and sometimes we use english.
 * we not decide for majority and for do-cracy, we try to reach consensus and we are friendly in the conversations, but to be honest we are not already established a written "decision making workflow".
+
+== Report of our meetings
+
+* link:./report_2023.html[2023]

@@ -1,0 +1,1275 @@
+---
+title: LibreMesh 2023 Meetings
+ref: communication
+lang: en
+---
+
+
+== 2023-10-07 PROJECT MEETING
+
+**People & list of Topics**
+
+cri, ilario, mwarning42
+
+* Annuncing the new releases
+
+* Scheduling next meeting
+
+* Testing release candidate
+
+* Checking status of decisions of last meeting
+
+* Communication problem
+
+
+*Chatting for audio test*
+
+Nice fresh video:  https://media.ccc.de/v/camp2023-57058-resilient_solar_energy_autonomous_infrastructure_with_freifunk_openmppt_controllers
+
+
+=== Annuncing the new releases
+\o/ yhuuuu Lime 2023.1 is out!
+https://lists.autistici.org/message/20230929.142923.34529fc1.en.html
+https://lists.autistici.org/message/20230929.152044.f1940e95.en.html
+
+firmware selector!!  
+https://repo.libremesh.org/selector
+
+One small problem with the compiled images:
+they already include a populated /etc/config/lime-community.
+This should create a conflict when someone will include (compiling it in or via OPKG) a network-profile
+Gothos will compile them again. He originally included the libremesh-default network-profile
+Also, some lines are different from the lime-defaults: https://github.com/libremesh/network-profiles/issues/91
+    
+**TO DO:**
+- write a News in the news section (Cri, done)
+- change the menu item in the website: Get the last release! (ilario, done)
+
+*A new stable release and a release candidate for Openwrt 22!*
+
+We released a new version of Libremesh based on OpenWrt 19!
+
+https://downloads.libremesh.org/releases/2020.4-ow19/
+
+and a new release candidate based on OpenWrt 22:
+https://downloads.libremesh.org/releases/2023.1-rc2-ow22/
+
+This means that the release candidate needs testing, bug fixing and
+loads of community love so that we can have an amazing release that can
+actually ease the creation of community networks everywhere.
+
+Check out the: https://lists.autistici.org/message/20230929.142923.34529fc1.en.html
+https://lists.autistici.org/message/20230929.152044.f1940e95.en.html
+for more detailed information.
+
+Another great gourgeous news is that from now we have a Firmware Selector, check it out here:
+https://repo.libremesh.org/selector
+
+=== Scheduling meetings 2024
+Keeping each 2 months, first Saturday of month, but adding some extra infraweek days to ease the participation to people who cannot on Saturdays
+
+Next year we use a new pad XD  -> disroot use the plugin to have header and it is possible have a Table of Contents 
+https://pad.disroot.org/p/LibreMesh_meetup_2024
+
+Adding some meetings matching the Spanish bank holidays...
+Remember to invite developers that we never see during 2023 and remember to them about "community meeting": konejo, javier, 
+
+Update: https://libremesh.org/communication.html -> 
+Wednesday the 1st of November 2023 at 13:00 UTC (14:00 CET, 10:00 ART).
+Saturday the 2th of December 2023 at 13:00 UTC (14:00 CET, 10:00 ART).
+Thursday 4th of January 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+Saturday the 3rd of February 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+Saturday the 6th of April 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+Saturday the 1st of June 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+Monday the 24th of June 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+Saturday the 3rd of August 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+Wednesday the 11th of September 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+Saturday the 5th of October 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+Friday the 1st of November 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+Saturday the 7th of Dicember 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+...
+
+=== Tech topics to discuss:
+* firmware signatures
+* il server delle releases has barely enough storage space and old software.
+
+=== Donations
+* Fatto curioso di donazioni "spontanee" in chat, che ne pensiamo? Good, but it would be better to have them managed via OpenCollective.
+* We should announce that the donation money is available for buying hardware for developers
+* FSFE sono interessati a community wireless network per sapere che hardware proprietario ma con software libero usiamo, Cristina gli scrive..
+
+== 2023-08-05 PROJECT MEETING
+
+**People & list of topics**
+ilario(cat), Cri(it), Troian(br), mwarning(berlin), Arinc(Türkiye), Gothos(it)
+15:07 - hope to finish 16:07
+
+* new release based on old OpenWrt
+
+* new release candidate based on recent OpenWrt
+
+* adding and removing people with access to repo server and Github organization
+
+* stickers done for battlemesh - https://repo.libremesh.org/tmp/stickers/
+
+* Starting using Attended SysUpgrade
+
+* Technical meeting: - proposal-
+
+
+=== New release based on old OpenWrt
+
+* based OpenWrt 19
+There is a tag
+https://github.com/libremesh/lime-packages/tree/2020.3
+
+https://github.com/libremesh/lime-packages/commits/master
+
+We are waiting to decide whether to increase the default distance parameter
+
+we want relase after decide about "default distance"
+https://github.com/libremesh/lime-packages/issues/201
+https://github.com/libremesh/lime-packages/blob/v2020.3/packages/lime-system/files/etc/config/lime-defaults#L62-L75
+
+Some data from Gothos and Ilario, with a script for replicating the analysis
+https://github.com/ilario/wifi-distance-setting-exploration
+
+Experience on distance parameter:
+Cri: in our community with directional links, 10 km is a good default because people can flash the antenna/router by themself and see that Lime works. in other case, they 
+Troian: we are using omnidirectional routers 80 m away from each other, in a line of 3 to 5 routers, so we flash the firmwares with other distances
+
+
+=== New release candidate based on recent OpenWrt
+* based OpenWrt 22
+
+Possible point for a release: https://github.com/a-gave/lime-packages/tree/v2023.1
+
+Ansible tool used to do this release candidate: https://gitlab.com/a-gave/libremesh-ansible-playbooks
+
+here local community repo with this release, but with name Master, that is not the best..
+https://firmware-libremesh.antennine.campiinrete.org/releases/master-ow22/targets/
+
+Let's create the 2023.1 branch, add the commit for setting the release name
+https://github.com/libremesh/lime-packages/commit/88251b8dbca19783a24b56d29205f8c1d63244ca
+and tag v2023.1-rc1
+Ilario will do this.
+
+Gothos will use the new Ansible tools for compiling the release candidate
+
+=== Adding and removing people with access to repo server and Github organization
+
+People with access to the repo.libremesh.org:
+
+* aparcar
+
+* dbellomo
+
+* gio
+
+* gui
+
+* ilario
+
+* nicopace
+
+* pablo
+
+* spiccinini
+
+* daniel
+
+* gferrero
+
+* guido
+
+* joaquin
+
+* nicolas
+
+* p4u
+
+
+Adding: Gothos, Cri
+Ilario asks if it is ok to add them, with a deadline of a week.
+
+People in the LibreMesh organization on Github:
+
+* altergui    Gui
+
+* amuuza    amuza
+
+* andrenarchy    André Gaul
+
+* AngiieOG    Angie
+
+* aparcar    Paul Spooren
+
+* axn    Axel Neumann
+
+* bennlich    Benny Lichtner
+
+* brunovianna    bruno vianna
+
+* dangowrt    Daniel Golle
+
+* fnbellomo    fnbellomo
+
+* FreifunkUFO    FreifunkUFO
+
+* G10h4ck    G10h4ck
+
+* gabri94    Gabriele Gemmi
+
+* germanferrero    Germán Ferrero
+
+* hiurequeiroz    Hiure
+
+* ilario    Ilario Gelmetti
+
+* nicoechaniz    nicoechaniz
+
+* nicopace    Nicolás Pace
+
+* nordurljosahvida    Nicolas North
+
+* p4u    Pau
+
+* PabloCastellano    Pablo Castellano
+
+* raylas    Raymond Douglas
+
+* selankon    selankon
+
+* spiccinini    Santiago Piccinini
+
+
+How to add people: once per year sending an email explaining the criteria for applying. Then during the community meetings in August, accept people is there are not contrary reason.
+Cri sends the first email
+
+Adding: 
+* Cri github.com/digitigrafo
+* Daniel Golle? https://github.com/dangowrt - let's ask
+* Gothos https://github.com/a-gave
+* Jorge https://github.com/javierajorge - let's ask
+
+Ilario asks to Jorge, Daniel Golle
+Update: I don't have any contact of Jorge
+
+=== Stickers
+
+we have to give back the money to ilario
+Ilario will try to collect them from OpenCollective
+Update: I managed to request the money on OpenCollective, it is easy!
+
+Some people on the chat asked stickers
+If a big community or an event wants to have the stickers they can print them and we pay the printing with the money from donations on OpenCollective
+
+details for printing stickers:
+https://lists.autistici.org/message/20230509.143549.d28a5cc1.en.html
+
+files:
+https://repo.libremesh.org/tmp/stickers/
+
+some events where we can be and give stickers https://foss.events/:
+   *  https://hackmeeting.org/hackit23/
+   * https://www.internetfreedomfestival.org/
+   * https://2k22.balccon.org/
+   
+=== Starting using Attended SysUpgrade
+
+ASU is amazing. It uses the OpenWrt ImageBuilder
+   If we want to use the official ASU server, we need to use ODHCPD for IPv6:
+       https://github.com/libremesh/lime-packages/issues/294
+   I we set up our own ASU server, then there are just tiny things to fix:
+       https://github.com/libremesh/lime-packages/issues/1000
+
+=== Technical meeting: - proposal-
+
+13 UTC Thursday 17th August
+    
+finish at 16:20
+
+== 2023-07-03 PROJECT MEETING
+
+**People & list of topics**
+
+Cri, Gio, gothos
+
+Thurdayday the 13rd of July 2023 at 14:00 UTC (16:00 CEST, 11:00 ART).
+
+=== Updates
+
+Gio sta lavorando sul plugin(?) shared state, non è un pacchetto essenziale nell'ultima release LiMe2020, ma lo sarà nel futuro xchè da un sacco di info, in pratica lo si sta riscrivendo da LUA a C++. il tempo per fare altro è poco.
+
+Come supportare Openwrt 22.05? stan cambiando un sacco di cose, si rischia che la prossima non sia di nuovo compatibile con la precedente
+
+dalla comunity antennine.noblogs.org abbiamo sperimentato e funziona LiMe 2023.1 per le tplink CPE 510 v3
+, che non supportano la versione 19 di OpenWrt, ora stiam testando anche le mikrotik Router Board Light Head 5 https://openwrt.org/toh/hwdata/mikrotik/mikrotik_lhg_5
+
+Gio per lavorare si basa perlo più su OpenWrt development
+
+Cri dice che pubblicherebbe i devices provati in valle per dare segno dal sito che LiMe sta andando a supportare le nuove release di OpenWrt
+
+Come si fa una release candidate?
+
+in teoria si fa un tag e poi si fa andare una suite di test, e poi un po a mano la lime-app
+
+Individuare il commit che si è testato:
+    siam sulla master
+Commit: 10e9bf65684708d5739ada850fd280a6abf3cc72  di https://github.com/libremesh/lime-packages
+
+ATTENZIONE ci sn differenze di build tra il buildroot e l'imagebuilder: non ci stampa nel banner il commit della versione libremesh usata per buildare, non abbiam indagato sul perchè..
+Altro esempio inserisce batctl-tiny invece che completo
+
+Conveniamo che Libremesh è basato sul buildroot, e in realtà non garantiamo da nessuna parte che davvero concluda le build identiche con l'image builder
+
+Architetture da compilare x la Release Candidate: 
+    ath79 
+    mediatek   ( per tutti e 2 ? )
+    qualcom atheros 
+    ralink 
+    x86 
+    usermod linux 
+
+verificati in questa lista: https://downloads.openwrt.org/releases/22.03.4/targets/
+    ath79
+    mediatek
+    x86
+
+
+una volta compilati i pacchetti con la buildroot...  o anche la buildroot completa, conviene metterla sul server http che esponiamo: https://downloads.libremesh.org/releases/
+
+Mettere anche i pacchetti volendo tutti buildati uno per uno, però è una mega sbatta, mettendo la buildroot intera, cmq ha tutto. Pacchetti singoli flaggato M, si potrebbe mettere anche nel file di configurazione di opkg.. alcuni device vogliono i pacchetti aggiuntivi compilati nella stessa build con cui è stato compilato il kernel.
+
+https://downloads.libremesh.org/releases/2020.1/targets/ath79/generic/packages/
+
+oppure un tar.gz con tutta la buildroot che ha buildato.
+Oppure mettere una immagine docker che ha dentro  il tutto, così è riproducibile totalmente.
+
+OK, ci vuole un po di tempo per buildarle tutte.. le mettiamo a fare.
+
+Una volta che si hanno i bin e il tar.gz della buildroot. scrivere in lista LiMe ed o Ilario o .. che possono pubblicare il tutto.
+
+VARIE: rispetto a libremesh curtigghio, è  una possibile strada del futuro in quanto 802.11s è una vita che non lo aggiornano.
+Gio riprenderebbe più avanti a lavorare su quello. Bello se ci lavorano altri di OpenWrt.. lui può supportare
+
+
+
+== 2023-06-03 PROJECT MEETING
+
+**People & list of topics**
+
+Saturday the 3rd of June 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+
+Topics:
+* Analysis of the implementation status of last meeting's decisions
+* Next tech meeting dates
+* sending stickers to communities or allowing communities to print stickers and pay them from the donations on the OpenCollective?
+* check if communication channel is working and if is clear the decision making workflow (the method is not decided but the workflow yes-> dic 2021 ), write in website.
+* write a roadmap of LibreMesh for the next 6month
+
+    - release of lime 2020.3 (openwrt19)
+
+    - release of lime 2023.1 (openwrt22)
+
+
+=== To do for next meetings
+
+- check the design of the project after half and 1 year (dic 2021->june 2023)
+- checking our web presence match with the design of the project
+- update the list of "owners" and "members" on the Github organization "libremesh"
+- fix translation from ...
+- decide and planning where move the website (we said that github is temporary...)
+- fix the list of older release, 
+- test how publish next release,  (2023.1 release based on OpenWrt 22.03 is quite far from being ready)
+- annuncing/documenting next release (2020.3 based on OpenWrt 19.07 would be ready to release, but we could release it as 2020.4 with an increased default "distance" parameter for the 5 GHz radios)
+- update list of used hardware.. (e.g. adding PlasmaCloud PA1200, Xiaomi MiRouter 4A Gigabit Edition)
+
+=== Long list of topics by the previous meetings: decision making, etc... 
+https://pad.codigosur.org/LibreMesh_meetup_dic_2021#L1438
+- resume of the BattleMesh
+- resume of the network installed at Calafou for the BattleMesh with the technical tricks included in its network-profile https://github.com/libremesh/network-profiles/tree/master/calafou
+- list of issues observed during BattleMesh and traspassing this list to the LibreMesh issues list
+
+*   test OpenWISP with LibreMesh (install both OpenWISP packages https://github.com/openwisp/openwrt-openwisp-monitoring/tree/0.1.0#install-pre-compiled-packages and https://openwisp.io/docs/user/configure-device.html#install-openwisp-config , figure out how to set up an OpenWISP server and set it up, maybe virtualized with Docker Compose)
+
+*   analyze the poor performances of the mesh link (maybe due to VHT80 channel width? The routers see each other at -80 dBm that is too low for this very good line of sight)
+
+*   get two outdoor routers (PlasmaCloud PA1200, Duy should have some) and flash them as the mesh link, check the speed and check if with different channels, channel width or other things it gets better
+
+*   understand how BATMAN_V is getting the master interface (now it does not find it. It runs on a VLAN, but needs info from the original interface) and fix something so that it works in LibreMesh
+
+*  (unrelated to Calafou) make a release of LibreMesh 2020.3, still based on old OpenWrt 19.07
+
+*   implement Opportunistic Wireless Encryption easy setup in LibreMesh and use it in Calafou. Also, encrypt the mesh link
+
+*   fix the super annoying Makefile of hostapd (wpad-*) in OpenWrt (see https://github.com/openwrt/openwrt/issues/8312 )
+
+*   set up monitoring with prometheus (in case doing it with OpenWISP is too difficult)
+
+*   double check the documentation from Aparcar on the usage of the ImageBuilder
+
+*   update unit testing script to work with OpenWrt 22.03
+
+*   understand what should we/odhcpd developers do for stopping using dnsmasq-dhcpv6 and start using odhcpd for DHCP on IPv6 as in OpenWrt. Someone (Aparcar? Marek?) said that in LibreMesh we are not using odhcpd because it cannot read the leases list from and external source (e.g. a file). Maybe Daniel Golle can implement that.
+
+*   reboot the router once every week only if the internet connectivity is not present https://github.com/libremesh/lime-packages/issues/1023
+
+*   txt.file mentioned that there are two settings in OpenWrt that would be useful:1) for telling the clients to use a specific country code (e.g. if the router country code is set to ES, also the clients should use the same)2) for telling the clients which channels are in use in the current network (I hope it can increase the speed of the roaming switching)
+
+*   Make sure that from the "events' network" clients cannot ping/reach hosts in "classic network" except the fiber router * Put LibreMesh and BattleMesh stickers on every router of the "events' network" * Label the ports with a marker writing on the router * Coordinate with Konejo for fixing the support of lime-app for OpenWrt 22.03  Please add anything you consider useful :) then we can take this list and use its items to create new tickets-issues on Github :) 
+
+*   understand why eth1 (wan) in PlasmaCloud PA1200 router used as gateway gets added in br-lan, and this should not happen. Checking network.lua in lime-system. If we don't have time for fixing this, hardcode a fix.
+
+*   understand why static IP configuration didn't work as expected. For the gateway LibreMesh node, at some point the dhcp client was not getting anything, so we tried with a static IP but did not do anything. What we added to /etc/config/lime-node is:
+
+        config net usingLANasWAN
+        option linux_name 'eth1'
+        list protocols 'wan'
+        list protocols 'static'
+        option static_ipv4 '172.31.17.254/24'
+        option static_gateway_ipv4 '172.31.17.1'
+
+
+== 2023-05-12 TECH MEETING
+
+**People & list of topics**
+
+Cri, Gothos, Arinç, DangoWrt, notplants, Catuaba, Ilario, Ivana, Sergey, robbe, Jesi, Ivan, Cypherhippie, txt.file
+    
+* how to connect a new device
+* how to use cable connections, wan and mesh
+* list of mesh routing protocols
+
+- batman-adv on layer-2
+
+- babeld per default on layer-3, but also bmx6 an bmx7 are in active use, olsrd is also supported but probably not use anywhere
+
+
+situations for which routing protocol 
+how to understand which interface is which (example interface list: https://pad.commoninternet.net/p/lr-interfaces)
+process to build the firmware on top of OpenWrt 22.03
+still present bug on LibreMesh support of OpenWrt 22.03
+
+* web interface bugs, something changed between 19.07 and 22.03 and things are broken now... we will fix it last once everything else works
+
+* thisnode.info (anygw) doesn't work well to connect to next router when conneting via wired link
+
+* diagnostic info (traceroute?)
+
+* thisnode.info (anygw) should have been fixed now by p0ny
+
+* pirania captive portal may need adjustment to nftables
+
+* tell babeld to silently ignore interfaces which are down or without addresses (log spam)
+
+* wireless band names have changed (not very important)
+
+* dependency mess of wpad-*
+
+imagebuiler support status
+
+* x86 images are broken?
+
+* config.buildinfo? => it's next to where you downloaded ImageBuilder
+
+* config.buildinfo? Doesn't it should change if I add feeds and rebuild? => but then you should also have a new ImageBuilder. If you are only building a single feed from source, then this would change config.buildinfo, but it cannot be easily merged or represented again in a single file
+
+* bzImage for x86 (needed for qemu) is missing => using *generic-kernel.bin instead and it works
+
+* BATMAN V protocol doesn't work well in situations when ExpectedThroughput is not available from the hardware. Also hidden-link behind a wifi-link can limit bandwidth and is not discovered by BATMAN V.
+
+
+Altermundi roadmap
+how to isolate your home network if you do not want to have people from the mesh to see your local shares or reach your printer
+
+=== How to connect a new device
+as a community approach of managing mesh, so if you are 1 probably libremesh is overkill, but you can use as range extender for example. you flash 2 devices and you try. minimal configuraion. the difficult is at the begin to flashing the device but after you should not need a tech team. also Lime is modular. double mesh protocol, in layer 2 batman and 3 with babbeld. you isolate the layer 3 in your house or the place that you want isolated. 
+
+=== How to use cable connections, wan and mesh
+wan just plug and works...
+LAN-LAN if you connect two libremesh nodes via their LAN ports with a cable, you should configure the port for not being included in the br-lan bridge, see https://github.com/libremesh/network-profiles/commit/57eeae71781abb2403ff61afda9ca7d2664bfc7e
+anyway, modern routers have a chip that cuts the loops or the CPU should realize and stop the loops
+
+=== How to understand which interface is which
+
+ip6tnl created by a kernel module even if not used
+ifb0 for traffic shaping
+br-lan switch
+dummy0 fake interface for having a stable MAC that does not depend on interfaces going up or down
+eth0.1 virtual interface with all the LAN ports
+anygw a dummy interface, member of br-lan
+
+https://openwrt.org/playground/arinc9/network.interfaces
+
+=== Still present bug on LibreMesh support of OpenWrt 22.03
+
+lime app with some issues, coneco is workin on this. 
+https://github.com/libremesh/lime-app/issues/378
+
+connecting by cable to a router connected by cable
+and using the thisnode.info IP, all the wire-connected nodes answer, breaking ssh connections
+bug present also in previous versions!!!
+https://github.com/libremesh/lime-packages/issues/1008
+it could have been fixed by Pony
+
+we need a filter for babeld over batman
+
+babeld is complaining a lot
+https://github.com/libremesh/lime-packages/issues/1003
+
+wpad-* for mesh encryption has a weird Makefile that makes thing complicated to select in menuconfig
+https://github.com/openwrt/openwrt/issues/8312
+one option, to write what you want in the .config:
+https://github.com/libremesh/network-profiles/blob/master/calafou/indoor2/DOTconfig-xiaomi_mirouter_4A_gigabit_edition
+
+=== Imagebuiler support status
+
+aparcar added documentation for using the ImageBuilder in the readme:
+https://github.com/libremesh/lime-packages/blob/master/README.md#using-the-imagebuilder
+
+gothos: using it with x86 does not work on qemu
+
+documentation on network-profiles
+https://libremesh.org/development-network_profiles.html
+https://github.com/libremesh/network-profiles/tree/master/calafou
+
+=== Company for stickers
+
+german company
+explain them the project, they are community-friendly
+https://www.stickma.de/
+
+
+== 2023-04-07 TECH MEETING
+
+**People & list of topics**
+Cri, Sam, Ilario
+
+=== Updates
+
+Creating the "v2020.2" tag for the release based on OpenWrt 19.07
+
+        git pull upstream OpenWrt_19.07_compatible:OpenWrt_19.07_compatible
+        git tag -a v2020.2
+        git push upstream-git --tags
+
+And now build!
+
+Build on repo.libremesh.org stops with an error. Maybe due to the old software running on the server??
+
+
+== 2023-04-01 PROJECT MEETING
+
+**People & list of topics**
+Cri, Sam, Ilario
+
+Topics:
+* news
+* website and documentation update
+* need of a Docker image for unit testing on OpenWrt 22.03
+* decide the list of targets for being compiled for release 2020.2 based on OpenWrt 19.07
+* upcoming release LibreMesh 2020.2
+* News about Altermundi roadmap 2023 ?
+* how to use the donations on OpenCollective (e.g. a compilation server, or donation to Battlemesh) https://opencollective.com/libremesh
+* news about battlemesh
+* next meetings dates
+* resume of previous technical meetings and announcement of next technical meeting date
+
+for the next TECH meeting:
+
+* proposal: move the report in the wiki of github? another wiki? what is thi?https://gitlab.com/libremesh
+* Check that issues and the label is:issue is:open label:"in progress"  is actulized
+https://github.com/libremesh/lime-packages/issues/
+* future release LibreMesh 2023.1 (based on openwrt-22.03)
+* prioritise a list of issues to be resolved for the next LibreMesh 2023.1 release based on OpenWrt 22.03 https://github.com/orgs/libremesh/projects/3/views/1
+* decide a list of packages to be included in next LibreMesh 2023.1 https://github.com/libremesh/libremesh.github.io/issues/103
+   * This question from Elektra during past tech meeting: - How are people porting new devices?
+
+Relevant?: 
+
+https://communitynetworks.group/t/expanding-openwrt-libremesh-hardware-support/790/5
+
+https://communitynetworks.group/t/openwrt-libremesh-image-building-learning-group/823
+
+
+
+For next project meeting:
+* introductions and recent projects and contributions related with LibreMesh
+   
+
+
+=== News
+
+In the Google Summer of Code we have a solid application by "samlo" for the LibreMesh-related project
+Resume about the workflow of GsoC for mentors and students: send reports, write posts in the freifunk website
+
+Super nice that Gluon is a new tag standard of hardware supporting openwrt.
+Gluon added Librerouter in supported hardware
+
+
+=== Website and documentation update
+
+There are translations on TranslateWiki that have not been copied to LibreRouterOrg/docs
+https://github.com/libremesh/lime-packages/issues/257#issuecomment-1453891582
+
+=== Translations 
+https://translatewiki.net/wiki/Category:LibreMesh we need to have an appointment with Altermundi and Libremesh so we organize to update translation on the website.
+
+WHEN?
+
+
+Updates about Home page of website https://libremesh.org/ , update of organizations
+Note about website:  https://pad.disroot.org/p/libremeshwebsitechecks_ifuemhfjk
+ 
+ - email back the organizations that aswered: Cri
+ - send to Luandro email to have feedback about:  https://www.redfusalibre.org,
+https://www.coolab.org/ -  https://ibebrasil.org.br/  - https://nupef.org.br (Cri) DONE
+- Send email Gio to ask about the names of the 25 new community this year of Semillero (Cri) DONE
+---> https://communitynetworks.group/ Chiedo, ? aggiungiamo nei promotori Sì 
+
+**Organizations supporting LibreMesh:**
+
+
+    | Guifi.net    | Iberian peninsula | http://guifi.net          | image:img/guifi-logo.png["Guifi.net",role="right"]
+    | FreiFunk     | Germany           | http://freifunk.net       | image:img/logo_freifunknet.png["FreiFunk",role="right"]
+    | FunkFeuer    | Austria           | https://www.funkfeuer.at  | image:img/0xff_logo.png["FunkFeuer",role="right"]
+    | Ninux.org    | Italy             | http://ninux.org          | image:img/ninux_logo.png["NiNux",role="right"]
+    | AlterMundi   | Argentina         | http://altermundi.net     | image:img/altermundi_logo.png["Altermundi",role="right"]
+    | Wakoma       | Global            | https://wakoma.co/        |
+    | LibreRouter   | Global           | https://librerouter.org/   | image:img/librerouter_isologo.png["LibreRouter",role="right"]
+
+
+**Community mesh networks using Libremesh:**
+
+
+    | Antennine       | Appennino Bolognese | https://antennine.noblogs.org            | image:img/ninux_logo.png["NiNux",role="right"]
+    | Janastu CowMesh | Rural Karnataka     | https://open.janastu.org/projects/cowmesh| 
+
+Several other community networks are using or used LibreMesh on their devices with their own customizations (network profiles), some of these are listed link:https://github.com/libremesh/network-profiles[here].
+
+
+* Add News on the website? the last is about battlemesh, ok. we can update with the date..( Cri)
+
+
+* Add list of sure supported device?
+https://libremesh.org/docs/hardware/
+we have a long list of hardware used in various communities, but we don't know whether they used LibreMesh or not on that!
+
+* Add icon for hardware in documentation page menu
+we are using FontAwesome 4.3, which is old. We could use newer FontAwesome...
+https://fontawesome.com/v4/icons/
+Ilario will update FontAwesome
+
+Ilario rewrites the Get It! page once we have the 2020.2 release
+
+=== Need of a Docker image for unit testing on OpenWrt 22.03
+
+Question: about virtualization for testing Libremesh?-> there is the project of the last year and docker images.. moved the conversation on the next topic: need of a Docker image for unit testing on OpenWrt 22.03
+
+https://github.com/libremesh/lime-packages/pull/938
+https://github.com/libremesh/lime-packages/issues/389
+
+Sam can ask to aparcar on Element/Matrix list how to buid a Docker image for that
+
+* decide the list of targets for being compiled for release 2020.2 based on OpenWrt 19.07
+ath79/generic
+ramips/mt7621
+x86/64
+
+??ar71xx/generic??
+
+* Add targets to the firmware? https://downloads.libremesh.org/releases/2020.1/targets/
+we can add more target for the new release that will be soon?
+sam: I would propose to keep ar71xx/generic targets like   
+
+- ubnt-lbe-m5
+
+- ubnt-loco-m-xw
+
+- ubnt-nano-m-xw
+
+- ubnt-nano-m
+
+ar71xx/generic will also be compiled
+
+
+=== Upcoming release LibreMesh 2020.2
+
+vorremmo compilarla ed esporre dal server da cui esponiamo ora: https://downloads.libremesh.org/releases/
+Il server non è aggiornato e non builda, quindi bisogna compilare in locale e poi solo uploadarli.
+Una volta che ci sono dalla Valsamoggia possiamo testare alcuni target
+Poi facciamo annuncio ufficiale
+https://github.com/libremesh/lime-packages/tags
+
+Ilario creates a v2020.2 tag at the commit where G10h4ck created the OpenWrt_19.07_compatible branch.
+
+https://libremesh.org/development-kernel_vermagic.html
+
+
+=== News about Altermundi roadmap 2023 ?
+
+We have no news, so we can write an email in list and personally to know news.. (Cri)
+
+
+=== How to use the donations on OpenCollective 
+
+(e.g. a compilation server, or donation to Battlemesh) https://opencollective.com/libremesh
+
+Whishlist:
+- pay the travel to the battlemesh for some of librerouter/altermundi (maybe next year or another event)
+- pay the travel for the travel to battlemesh for some people of Antennine (maybe next year or another event)
+- pay the update of the server of downloads CodigoSur? Chiede Cri
+- buy some stickers LibreMesh YES
+- donation for the domain name? for the newsletter ?
+- email @libremesh.org? 
+- hardware per testare il supporto?
+
+=== News about battlemesh
+
+This year there is not support for the travel
+C'è stata un acquisto economico di router per fare la rete di Calafou, c'è il piano di usare Libremesh,
+plasmacloud pa1200, che hanno openwrt 22.03(?)
+quindi vorremmo arrivare al battlemesh con libremesh basato su openwrt22.03
+
+
+=== Next meetings dates
+
+* project meeting:
+
+During battlemesh, online and in real life , 13utc, 3rd day of the vent -> 10 may
+
+Saturday the 3rd of June 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+
+* technical meeting:
+
+Friday the 7th of April 2023 at 13:00 UTC (15:00 CEST, 9:00 ART).
+
+
+
+Closing at 17:24 CEST
+
+
+== 2023-02-15 TECH MEETING
+
+=== People & list of topics
+
+Cri, Gio
+
+* Hardware support 
+* Update doc & homepage 
+* GSoC news 
+* Next meeting 
+
+=== Support for OpenWrt 22.03
+
+We  use this issue for keeping track of the updates:
+https://github.com/libremesh/lime-packages/issues/951
+
+ https://github.com/libremesh/lime-packages/pull/959 
+When I wrote that pull request, I thought that the new configuration format was due to the swconfig-DSA migration.  But instead it is due to the OpenWrt 19.07 vs >19.07 versions, so I have to rewrite the pull request. 
+
+Proposing:
+* supporting only OpenWrt 22.03 in the lime-packages' "master" branch.
+* create a "target_OpenWrt_19.07" branch for the extended support to OpenWrt 19.07 and a tag with a minor release "2020.2" which can be considered as an updated version of the 2020.1 LibreMesh release "Expansive Emancipation". 
+
+HOW we will make available this to the users as builded firmware?
+- images of master on Owrt22.03 will be linked here: https://libremesh.org/getit.html
+- the extended support to Openwrt19.07 can be explicited here: https://libremesh.org/development.html
+
+Other relevant issues for using OpenWrt 22.03 are: 
+https://github.com/libremesh/lime-packages/pull/971 (Dnsmasq now can access only specific folders) 
+https://github.com/libremesh/lime-packages/pull/950 (we were creating a file that now is provided by an OpenWrt package) 
+
+=== QoS,using TC (traffic control) 
+
+FROM Ilario by mailinglist:
+My (too complex) dream-solution would be to have an integrated solution with: 
+* if you access the AP via a WPA interface, you access a VPN made with Tinc (or Wireguard) and have max priority access to the gateway you own in your house, and mid priority access to the other gateways 
+* if you access the AP via an open interface, you get Pirania captive portal, if you have granted access, you have mid-priority access to all the gateways 
+* instead, if you Pirania does not grant you the access, you have low priority access to all the gateways 
+
+
+
+
+== 2023-02-06 GSoC MEETING
+
+Projects page:
+https://projects.freifunk.net
+
+All the mentors mentioned on the projects page were added in CC to these emails:
+https://lists.autistici.org/thread/20230206.101747.6e33f174.en.html
+and also contacted directly either on Element/Matrix or on Telegram.
+
+SAn answered he will not manage to mentor this year.
+
+Deleted the disabled projects
+Disabled the open projects
+
+New project:
+
+collaborating_projects:
+  - libremesh
+desc: "Automate the compilation system, configuration and monitoring of LibreMesh using Ansible. Integrate with its web interface Lime-App"
+
+developers_involved:
+  - cristina
+  - ilario
+difficulty: medium
+size: "350 hours"
+status: open
+email: 
+- ilario@sindominio.net
+- kiki@digitigrafo.it
+initiatives:
+  - GSoC
+  - GSoC2023
+markdown: libremesh-automation_monitoring.md
+mentors:
+  - cristina
+  - ilario
+name: "Automation tools for Lime firmware build and monitoring"
+requirements:
+  - "Analyzing and coding"
+  - "Prometheus"
+  - "Grafana"
+  - "Ansible"
+  - "OpenWrt"
+  - "lua, bash"
+tags:
+  - GSoC2023
+  - libremesh
+
+Create a set of automated tasks to install services on a Raspberry Pi to meet the needs of small community-network with an administration/tech team, e.g. a set of commonly needed monitoring tools, such as Prometheus, Prometheus-node-exporter, Blackbox-exporter, Altermanager, Grafana, VPN and an editing map service.
+
+Similar projects or packages:
+https://gitlab.com/librerouter/miniserver
+https://github.com/libremesh/lime-packages/blob/master/packages/altermundi-grafana
+
+The use case is a growing fragmented network with islands of nodes and users; but with a collective management having an overarching vision on what is happening in the network and giving feedback to the users by the [Lime-App](https://github.com/libremesh/lime-app). 
+
+Create a set of Ansible roles to replicate the OpenWrt build-system, to speed-up the process of self-building images for OpenWrt and/or LibreMesh for newcomers, and to easily setup a dedicated machine, with the possibility to later extend the process of build to other automated tasks, like a pub-keys-exchange needed for configuring a VPN, or to update documentations or a webapp.
+The Ansible roles would include tasks to build for: different architectures and targets; different OpenWrt and LibreMesh versions; keeping trace of devices with particular needs and related patches; keeping a local list of supported targets; provide a basic functionality to setup a VPN. This should also provide a main configuration file for each device, and the use of the main configuration tools available on LibreMesh, like +/etc/config/lime-*+ and especially +lime-macaddress+ files, "generic-uci-config, lime-asset" functionalities, and configurations and packages provided by community [network-profiles](https://github.com/libremesh/network-profiles) or local packages.
+These will be published and shared also on Ansible Galaxy or similar repository as a standalone project.
+
+**Milestones**
+
+* Automation on LibreMesh build system
+* Automation on monitoring
+* Collectors of data
+* Data visualization
+* Integration in Lime-App
+
+**Preparation/Bonding**
+
+* Getting familiar with LibreMesh compilation using the OpenWrt buildroot
+* Learn to develop a basic LibreMesh package and compile it in a firmware image
+* Flashing of at least 3 wifi routers with the compiled LibreMesh
+* Have these routers connected in a (indoor) mesh network
+* Get familiar with the LibreMesh web interface "Lime-App"
+* Get familiar with the OpenWrt basic folders structure and acquainted with its command line interface
+* Get familiar with the tools for quantifying the quality of single wireless links, both the ones provided by the Linux kernel and the ones from the router protocols employed in LibreMesh (Batman-adv, Babeld)
+* Deploying the already existing monitoring systems on at least 1 Raspberry-Pi
+* Document the entire process at least with a post on the Freifunk blog
+
+**Coding period**
+
+* Develop automation on LibreMesh build system
+* Write and publish sets of configuration management on Ansible Galaxy
+* Deploying automated LibreMesh build system on at least 2 computers
+* Publish a "LibreMesh observer" deploy instruction for Arm architecture
+* Set up multiple observation points, including at least 2 Raspberry-Pi, to collect data from LibreMesh routers
+* Verify if it is possible to integrate a Grafana dashboard in Lime-App to receive feedback about traffic and develop a basic demonstrator
+* Write a post on the Freifunk blog detailing which of the monitoring tools under development are suited for being integrated with the LibreMesh web interface "lime-app" and documenting the proof-of-concept integration of Grafana in Lime-App, if achieved
+* Propose in the LibreMesh repositories the pieces of code that are standalone
+
+**GSoC final**
+
+* Pushing upstream to OpenWrt or to other repositories all the general interest code
+* Pushing on Ansible Galaxy 
+* Pushing on Lime-App repository of LibreMesh
+
+
+== 2023-02-04 PROJECT MEETING
+
+**List of topics:**
+
+* presentations and recent projects and contributions related with LibreMesh
+* resume of previous technical meetings and announcement of next technical meeting date: 15th February 2023 wednesday
+* how to use the donations on OpenCollective (e.g. a compilation server, or donation to Battlemesh) https://opencollective.com/libremesh
+* remove old projects and add new projects to Freifunk list for GSoC https://projects.freifunk.net before the 7th of February
+* update of organizations on the website homepage (explicit consent by...? Cowmesh, Ninux...)
+
+
+== 2023-01-21 TECH MEETING
+
+**People and List of topics**
+Cri, Hiure, Elektra, Eric, Tania
+
+* Services
+
+* debug connectivity problems with local services (Hiure) 2 router connected by wifi and both cable, interest most BATMAN (level2), 
+
+* Integration w/ local services and content (LokaLR and beyond)
+
+Hiure: Looping issue investigation. Sanketh found solution? https://www.open-mesh.org/projects/batman-adv/wiki/Bridge-loop-avoidance
+
+Is a new version needed where this is included? What work is entailed?
+
+Elektra: Potential easy Fix. Shellscript to execute. LM system doesn't currently enable this. Workaround: Add the line "batctl bl 1" to /etc/rc.local
+
+UCI: add commands to change /etc/config/batman, or manually edit this. 
+
+Hiure: need to find this in LM. 
+
+Elektra: To investigate and propose way forward and any support required. (Done. See 1.5 ;)
+
+Cristina: network profile of our community, and to show where some comunity configuration can be written and applied: https://github.com/libremesh/network-profiles/blob/master/valsamoggia.ninux.org/vs-ninux-generic/root/etc/config/lime-community
+
+=== Next meeting dates
+
+* 4th february Organizaion of LiMe http://libremesh.org/communication.html
+
+* wednesday tech meeting 1 of February  (same week of the other meeting) or 8 of February (just near to the other) or 15 of february
+
+=== Hardware
+
+"Legacy hardware that is actually in use in real world community networks"
+
+What hardware are others already using.  What hardware CAN be used.
+
+Where is the most up to date list? Should/how can this be organized, and shared on LM website/github, etc
+
+  http://libremesh.org/docs/en_quick_starting_guide.html
+
+**Compatible Hardware**
+
+It is recommended that the router has at least 8 MB of flash memory and 64 MB of RAM. For routers with 4 MB flash memory or 32 MB of RAM, use the special firmware named -mini or compile one yourself excluding some heavy packages (e.g. opkg or the LuCI and lime-app web interfaces).
+
+Not all the OpenWrt supported routers work with LibreMesh (at least, not with its default configuration), for a list of the tested hardware, see our hardware page. http://libremesh.org/docs/hardware/index.html
+
+**Tested Hardware (from the list in the website)**
+
+This is a list of devices that were tested by the community and reported as fully compatible with LibreMesh, it is by no means a complete list of the working devices.
+
+* Xiaomi MiWiFi R3
+* Xiaomi Mi WiFi R3G
+* YouHua WR1200JS
+* LibreRouter
+* TP-Link WDR3500
+* TP-Link WDR3600
+* TP-Link WDR4300
+* Dragino MS14
+* Alix 2d2
+* Ubiquiti UniFi AP
+* Ubiquiti AirRouter
+* Ubiquiti AirGateway
+* Ubiquiti NanoBridge M2 and M5
+* Ubiquiti NanoStation M2 XW and LoCo M2 XW
+* Ubiquiti NanoStation M5 XW and LoCo M5 XW
+* Ubiquiti PicoStation M2
+* Ubiquiti Bullet M2 and M5
+* Ubiquiti Rocket M2 and M5
+* Buffalo WSR-1166DHP
+* Flex mARC
+* Western Digital My Net N600
+
+EXAMPLE, now I'm using Cristina : Device Ubiquiti Litebeam M5
+
+Firmware LiMe 2020.1 ExpansiveEmancipation ((no branch) rev. 6f1730e 20210612_1552)
+
+openwrt-19.07 branch (git-21.044.30835-34e0d65) And we have the same firmware also on CPE 510 v2
+
+
+**Updated Hardware List**
+
+* G10h4ck:
+
+- LibreRouter v1
+
+- TP-Link TL-WDR3600
+
+- TP-Link TL-WDR4300
+
+- TP-Link TL-WDR4310
+
+- TP-Link TL-WDR3500
+
+* Troian - Nupef : TPLinks-  WDR 3500, 3600, 4300 Archer C7v5 Archer C50v4, CPE210v1-3, 
+
+Equippment ported only to owrt22 - Archer C50 v5, Archer C6 (to test new LIME version)
+
+* bologna appennino:  Ubiquity Litebeam M5 - TPlink CPE 510 (ath79)
+
+https://antennine.noblogs.org/post/2021/12/15/tipi-di-antenne-che-usiamo/
+
+* Hiure - Brasil / India : Cpe510/v1,v2,v3, Cpe210/v1,v2,v3 Cpe220, A7v5, tl-wdr3500, tl-wdr3600, tl-wdr4310, C60, C7, C5
+
+
+Are we limited to the devices on the OpenWRT list? https://openwrt.org/toh/start
+
+How are people porting new devices?
+
+Big changes w/ new OpenWRT version.  Sometimes previous LM versions on OpenWRT 18 worked, now with v.19, things break.
+
+How do we define the process of using more hardware, including hardware not on OpenWRT listhttps://github.com/libremesh/lime-packages/issues/.
+
+Relevant?: 
+
+https://communitynetworks.group/t/expanding-openwrt-libremesh-hardware-support/790/5
+
+https://communitynetworks.group/t/openwrt-libremesh-image-building-learning-group/823
+
+
+=== QoS,using TC (traffic control)
+
+what do yuo think about aplly QoS in a mesh network, how to know how much bandwith do you share with the others. can you set a distribution of this.
+on AP and Client, but difficult in nodes of mesh, because that are running the mesh routing
+
+Bologna: we collect the data by Prometheus + Graphana and show to the community, we have meeting to show with the others, 1 meeting closed with everyone inside the mesh network; ither 3 public meeting in a public place, and we have every season a public tech meeting. we started to do that meeting for show the privacy problem but at he end is usefull for the know the consumtion of bandwith
+in my island we are 15 with a connction of 30Mbs down /10Mbs up
+
+Elektra: traffic shaping to go on AP that clients are using. 
+Is there a more centralized way to do this? 
+
+Traffic Control Talk:
+https://videos.apc.org/u/nicopace/m/traffic-control-on-openwrt-and-libremesh/
+
+https://communitynetworks.group/t/traffic-control-on-openwrt-and-libremesh-second-round/888
+
+Who else is doing this, or interested in this?  
+
+Hiure:
+Pirhana, in Brazil. Allow people to access by Voucher. PiHole - to block sites.  
+
+=== Support for OpenWrt 22.03
+  
+A the moment, about the support for OpenWrt 22.03, from Bologna/appennino we have in use a link done on Tplink CPE 510 v2.3
+
+working to merge this https://github.com/libremesh/lime-packages/pull/959
+
+
+Closing at 14:27 utc
+Next tech meeting will be on Wednesday 15th February 2023
+
+
+== 2023-01-04 TECH MEETING
+
+**People & list of topics:**
+
+Rodrigo, Cri, Hiure, Gio, Ilario, Henrik, S K, Dinesh, Ger
+
+Wish list:
+
+* decide if both swconfig and DSA should be supported in the next release
+
+* Legacy hardware that is actually in use in real world community networks
+
+* Next meeting dates
+
+* debug connectivity problems with local services (Hiure)
+
+* Channel for technical discussions
+
+* LibreMesh support for OpenWrt 22.03 (or better next release?)
+
+* support for OpenWrt 22.03, QoS,using TC (traffic control)
+
+* review all the pull requests
+
+* prioritise a list of issues to be resolved for the next LibreMesh release
+
+
+=== Next Meeting
+
+Saturday 21 of january at 13 UTC
+
+=== Decide if both swconfig and DSA should be supported in the next release
+
+Gio: to introduce the topic: openwrt22.3 is using DSA (Distributed Switch Architecture), [1] [2]and we in Lime2020 we use SWconfig. Support both could be difficult.
+[1] https://openwrt.org/docs/guide-user/network/dsa/start
+[2]https://openwrt.org/docs/guide-user/network/dsa/dsa-mini-tutorial
+[3] https://openwrt.org/docs/guide-user/network/dsa/converting-to-dsa
+Talk at battlemesh https://youtu.be/1BqrX0-ICBQ?t=3462
+
+Not all targets that we use a lot have been ported to DSA, like:
+- LibreRouter v1
+- TP-Link TL-WDR3600
+- TP-Link TL-WDR4300
+- TP-Link TL-WDR4310
+- TP-Link TL-WDR3500
+
+There is a big pull request in OpenWrt porting all ath79 to DSA.
+https://github.com/openwrt/openwrt/pull/4622 
+We can take that PR and split it in smaller ones to send to OpenWrt for easing its merging.
+
+Henrik: it is too messy to support both. There are many devices still with swconfig. Have anyone used any router with two real ports (like HiveAP), no switches?
+
+Ilario: The proposal to wait for the merge of DSA for our favourite ATH79 routers would mean waiting for more years and our last release is already very old (2020). Can we make one release that supports both and then dropping swconfig for the following one?
+
+Henrik: Some routers do not work well with swconfig, so if possible we should move to DSA.
+
+Cri: we use Ubiquiti LiteBeam (Atheros). We are patching LibreMesh for using it on OpenWrt 22.03, we listed our patches in the mailing list
+https://lists.autistici.org/message/20221210.180941.ac807e16.en.html
+
+Ilario: some of your patches have been used for making this pull request https://github.com/libremesh/lime-packages/pull/959
+
+Henrik: what has been planned?
+
+Ilario: does Altermundi have planning? This meeting is also for making this planning
+
+Gio: old devices are important to support Libremesh, The new devices will be all DSA, but how we do with the old? Are we sure that old devices will support DSA?
+
+Ilario: we have old devices to test and I already checked that can support it
+the DSA presence check is already included in https://github.com/libremesh/lime-packages/pull/959
+
+Henrik: OpenWrt is moving away from Lua, going to ucode (own scripting language, better integrated with UCI, similar to JavaScript), rewriting all their scripts. How is this going to affect LibreMesh? Lua is not going to be included by default. I think they do a great work but the problem is the conversion to the new scripts.
+
+https://lxr.openwrt.org/source/ucode/README.md
+https://forum.openwrt.org/t/luci-rewrite-in-ucode-testers-wanted/137250
+ucode https://github.com/ynezz/openwrt-ucode 
+ucode git https://github.com/jow-/ucode#about 
+
+Ilario: hopefully, if we include the Lua interpreter, our stuff should go on working
+
+Gio: I hate JavaScript
+
+Henrik: they fixed many things, seems like a good step. The major issue is the memory impact of having both UCode and Lua. Anyway Lua is not too big and the impact should be ok.
+
+Rodrigo: Archer C660 C50 C600 only work with OpenWrt 22
+Is there some line where help to move forward? Where I can start?
+
+Ilario: start testing a couple of pull request:  this for example https://github.com/libremesh/lime-packages/pull/959 is useful if you try others devices. I can propose to use the chat element of Lime, or in the Mailinglist.
+Also you will need to include https://github.com/libremesh/lime-packages/pull/950
+
+Rodrigo: I can build myself and test, I can open this server to you for compiling http://compila.ax.org.br:5000/
+Sounds good to open a specific channel for testing.
+
+Gio: why not move to a json like format for configuration of.. ?
+
+Henrik: the config format is trying to stay compatible. There are issues with the use of labels and names. E.g. the main device in the /etc/config/network does not have a name. Important that the config file is human readable
+
+Ilario: this issue we hit when preparing the pull request, it is the [0] here: https://github.com/libremesh/lime-packages/pull/959/files#diff-f3b71b4df527c1cf41e8c74bddde83a63cc2424814a06db3e415a640c0e480efR54
+
+Henrik: I made a script for getting around the positional reference issue, I will try to share it on the linked pull request in a few days
+
+Ilario: let's test the pull requests and talk about this swconfig+DSA vs DSA-only decision in the next meeting
+
+Cri: ok we finshed the first hour of meeting, lets' go to try to set the next meeting
+
+=== Legacy hardware that is actually in use in real world community networks
+
+// Please be specific and put the exact models, many models have same branding name but quite differents versions
+
+G10h4ck:
+- LibreRouter v1
+- TP-Link TL-WDR3600
+- TP-Link TL-WDR4300
+- TP-Link TL-WDR4310
+- TP-Link TL-WDR3500
+
+Troian - Nupef : TPLinks-  WDR 3500, 3600, 4300 Archer C7v5 Archer C50v4, CPE210v1-3, 
+
+Equippment ported only to owrt22 - Archer C50 v5, Archer C6 (to test new LIME version)
+
+bologna appennino:  Ubiquity Litebeam M5 - TPlink CPE 510 (ath79)
+
+Hiure - Brasil / India : Cpe510/v1,v2,v3, Cpe210/v1,v2,v3 Cpe220, A7v5, tl-wdr3500, tl-wdr3600, tl-wdr4310, C60, C7, C5
+
+=== Next meeting dates
+
+Ilario: what about one technical meeting every two months?
+
+Hiure: what about one or two weeks?
+
+Ilario: ok 2 weeks
+Cri: ok,could be on 18th of January? wednesday..
+
+Ilario: is Saturday ok?
+
+Gio: better for me to do it in weekdays, but my agenda is changing so you can organize it in any day and then I will try to join
+
+Hiure, for me is good, but after of 19th of january
+
+ilario: not able to connect during week, available only at night. And weekends.
+Ilario: what about alternating meetings on Saturdays with meetings on Wednesdays?
+
+Rodrigo: better during week days at work time
+
+Cri: Saturday the 21st?
+
+Ilario: great! Same time?
+
+Hiure: yes
+Cri: yes
+Troian: yes
+
+NEXTmeeting: saturday 21 of january at 13 UTC
+
+===  Debug connectivity problems with local services (Hiure)
+
+--> from India some feedbacks about issues on "How he data are routed inside of the network"?
+ex: wireless network, more wired connection, more internal service exposed also to external, DNS configuration works, the server sometimes is not connected due to routing of network..
+
+The problem starts when we use cables, things get unstable
+if I try to extend network by cable, I get the problem: the 2 libremesh routers use .....  and start loops and
+callbacks, problems with Batman-adv
+
+Ilario: Can you list a minumal setup for reproducing? Do you only use the LAN ports or also the WAN ports? If you connect via cable a LAN port to a WAN port of another LibreMesh router things are going to be broken for sure.
+
+Gio: are not supperted connect WAN and LAN by cable
+
+S K: The problem appears when you are doing ethernet mesh and connect local servers on the same router 
+
+Cri: how do you keep the problem? just a pig with DUP? or what? 
+
+Gio: the local server is just as the other clients, should not trigger any issue. Maybe the already existing issue gets more visible when it happens with a server.
+
+S K: One problem is that ip of the local server changes now and then. But the main problem is latency. 
+
+Hiure: yes we use the local server with fixed ip in libremesh, editing /etc/config/dhcp and /etc/dnsmasq.d/localserver.conf 
+
+Ilario: for leaving some IP ranges out of the auto-configuration and the IP assigned to the DHCP clients https://github.com/libremesh/lime-packages/blob/master/packages/lime-docs/files/www/docs/lime-example.txt#L33-L35
+
+S K: Sorry, my point is that the problem could be that there are two DHCP servers (two nodes) connected with each other through ethernet and then there are clients on the same switch. So that might cause routing problems? 
+
+Hiure: when we have only one service it works.
+nginx servers with lot of services, using CNAME, some servers have fixed IP.
+
+Ilario: can you share the modifications you do to those two files, for understanding?
+
+Hiure:
+    /etc/config/dhcp
+    config hostrecord 'server'
+      option ip '10.x.y.z'
+        list name 'servidor.com' 
+
+    /etc/dnsmasq.d/localservice.conf
+    cname=serv2.iruway.in,janastunuc
+    cname=nextcloud.iruway.in,serv2.iruway.in
+    cname=prometheus.iruway.in,janastu.iruway.in
+    cname=grafana.iruway.in,janastu.iruway.in
+    cname=collaborate.iruway.in,janastu.iruway.in
+
+and we copy this on every router.
+
+=== Channel for technical discussions
+
+We have two channels:
+https://libremesh.org/communication.html
+and also the Github Issues and Pull Requests.
+
+Gio: no time for following the chat but I follow the mailing list
+
+Ilario: prefer to use the chat, so that is easier to share simple observations in a casual way
+
+Rodrigo: I prefer the chat
+
+Ilario: no consensus, no decision.
+
+=== Closing
+
+Closing at 14:56 UTC
+Next technical meeting is going to be on Saturday the 21st of January 2023 at 13:00 UTC
+
+
