@@ -1,0 +1,629 @@
+---
+title: LibreMesh 2022 Meetings
+ref: report 2022
+lang: en
+---
+
+
+== 2022-12-17
+
+**People & list of Topics**
+
+pedro, hiure, gio, ilario, cristina, luandro, duy
+
+- updates from Altermundi
+- future meetings schedule
+- website
+- list active LibreMesh communities on the homepage
+- next BattleMesh
+- recent development
+- technical meeting
+
+
+=== Updates from Altermundi
+
+
+Gio: babeld is the one with active developing and we are using in the framework of Libremesh.
+
+NEW from dev side of Librerouter/Libremesh: - 2 MIMO antennas have 2 different perception of the quality of the signal and Konejo is working on the UI in the Lime APP to give better feedback. The next interface for antenna alignment in lime-app will show two signals for each antenna that is MIMO 2x2, one signal for each "chain". This should work on most wifi chipsets (most routers). 
+
+Cristina: Are you doing this for all the devices that Libremesh actually support or only for Librerouter?
+Altermundi is focusing on LibreRouter (it has priority, if possible things are implemented for working also on other routers or easy for other people to adapt to every hardware) but Gio recognizes the importance of supporting other routers.
+
+Luandro: Is there a public roadmap for what u've been working?
+Gio: I didn't have the time to write a public roadmap. Lime-app is an important part of the roadmap.
+
+Gio: a big hat that take together librerouter and libremesh
+The goal of LibreMesh-LibreRouter developers is to make something useful for communities where there are no specialized people able to go deep in the networking.
+
+Work on Alter Mundi roadmap:
+- Lime-App: alignment with multiple chains
+- Rewrite of shared-state
+- Core parts: wifi driver, routing protocols (layer 2 & 3)
+- El Repo
+- Ad-hoc -> 802.11s -> Access Point Mode with mesh support
+
+Alfred was the old tool we used for sharing information between nodes implemented by the B.AT.M.A.N-adv developers
+Alfred had problems on non-small networks and caused flooding in the networks
+"shared-state" is the new one implemented in the LibreMesh repository. For example, one of the features it has is that in the lime-app you see the information of the other antennas talking by "shared-state", like the hostname, SSID, the mac address..
+The improvements of shared-state are being written by Javier supervised by Gio.
+They will stop relying on OpenWrt's HTTP server
+
+Ilario: this code wil be pushed on the openwrt upstream packages? at the moment "shared-state" is a feature inside LIbremesh framework
+Gio: at the moment not. Shared-state makes a lot of assumptions on how the network is configured, so it is likely to work only for LibreMesh networks, until now. There is work to do for making it general.
+
+Luandro: will the plugins need to be rewritten with the next version of shared-state?
+Gio: we don't know yet
+
+Gio: we want to allow the communities to edit more parameters in a community-wide way from lime-app (now it is possible for the nodes' password), for example the wifi channel and to flash all the routers at once
+
+Gio: another thing I am doing is to ensure that the low level stuff (wifi drivers, routing protocols) are improving. The problems could arise from the batman-adv not receiving enough active support, and maybe we could abandon L2 entirely. We also are looking into Babeld because it is not designed for our usecase so maybe we will need to add stuff to it.
+
+Gio: we are also working on elrepo.io, which is the app-level stuff for network communities, for sharing contents between clients
+
+Gio: regarding the wifi links, at the beginning we used adhoc that now is quite abandoned, then 802.11s that also is on the way of getting abandoned as in the new radios it does not work well. To avoid getting stuck with old radios, which means old routers, I am looking in a way to use Access Point mode instead of 802.11s, modifying it a bit so that we use it in a mesh way using something that is very well supported (AP mode). Anyway in LibreRouter we can always add PCI wifi cards.
+
+
+=== future meeting schedule
+
+
+next meeting schedules seems ok
+* Saturday the 4th of February 2023 at 13:00 UTC (14:00 CET, 10:00 ART). 
+* Saturday the 1st of April 2023 at 13:00 UTC (15:00 CEST, 10:00 ART). 
+* Saturday the 3rd of June 2023 at 13:00 UTC (15:00 CEST, 10:00 ART). 
+* Saturday the 5th of August 2023 at 13:00 UTC (15:00 CEST, 10:00 ART). 
+* Saturday the 7th of October 2023 at 13:00 UTC (15:00 CEST, 10:00 ART). 
+* Saturday the 2nd of December 2023 at 13:00 UTC (14:00 CET, 10:00 ART). 
+Remeber one with the others with an email just a week before, ad promemoria
+
+
+=== website
+
+
+Ilario: the website is not keeping up with the changes on github/libremesh/lime-web
+Gio: the website is hosted in Cordova but probably has not maintaince for years, so we have to fix this issue, where host the website..
+Ilario: maybe some other community can host?
+Gio: temporarily we can have it hosted on Github or Gitlab, as the website is generated as a static website, it should be enough to create a continuous integration for that.
+Cri: better if we avoid Github, but it is ok if it is temporary
+Luandro: not a fan of Github either, but Github makes sense as the repository is already on Github
+Gio: not sure who is maintaining the DNS
+Ilario: better to fix what we have before doing it somewhere else.
+Ilario & Cri volunteer to maintain the server
+Gio: the current maintainer for Altermundi's servers didn't mainain the servers (did other useful stuff anyway). The machines are in a critical state, many problems are there and some physical interventions are going to be needed.
+Ilario: ok, you know the situation firsthand and suggest to move it, let's do it
+Gio: when we will have the server working again, the current integration stuff can be kept as a backup
+Luandro voluntering to the CI for the website and Ilario will give the access to the repo.
+Documentation o how to setup Github pages: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+=== next battlemesh
+
+pedro: next battlemesh in calafou! https://battlemesh.org/BattleMeshV15
+looking for funding, to facilitate the travel of the farer people, Battlemesh will be between the 8 and the 14 of May.
+Battlemesh has the intent to compare an dialogate between the diferent community that develop the differents mesh protocols.  In the pas edition there where two firmware based on openwrt: libremesh and Gluon develop from freifunk, and was interesting the meetings. here video of the last https://battlemesh.org/BattleMeshV14
+In the final assembly people move the attention on the community more that on the performance of the routing protocols.
+so is really good if we can yearly meeting in that event, in Battlemesh, as Libremeshh community, 
+
+from 8 of 14 may in Calafou, bring hardwares! because the new calafou network needs. Because BEFORE the event we want restyle the network of the settlement (an old textile industry on a river) to give connectivity to their workshape and residential, but also set a testbed for net. There there is optical fiber, so we have to see how manage that expect, and some problem with rats. Plan to deploy 7 or 8 routers on differents levels of the building, some internal and some external. We have 5 good outdoor routers (Plasma Cloud PA1200).
+Duy, ilario and pedro are documenting in a private repository that intend to be public at some point https://0xacab.org/duy/wbmv15. Write to duy at sytemli dot org if you would like to be added
+
+
+=== Recent development
+
+Need to update LibreMesh to work with  openwrt22, we will drop some devices that will be abandoned after OpenWrt19
+The outdoor routers that we are going to use in BattleMesh are supported since OpenWrt 21.02, so that we need to update LibreMesh in order to use them.
+different people are touching files and testing, but need work together
+
+=== Technical meeting
+
+Cri: we could have a meeting for testing LibreMesh on OpenWrt22
+Ilario: important to test it on different routers (e.g. routers with only one ethernet port or routers with only 2.4 GHz etc etc)
+ilario proposes to have a technical online meeting on Wednesday the 4th of January 2023 at 13 UTC -- 14 CET, 10 ART
+
+
+== 2022-10-28 
+
+**People & list of Topics**
+
+Cri, at 13:15 utc, not other people come at the meeting.
+So I took the time to move on the task of the last meeting, assigned to ilario and me: document the network profile in LiMe.
+https://github.com/libremesh/lime-web/pull/142
+
+I think we can try to call another meeting giving us before a list of topics to discuss, for december.
+
+== 2022-09-20 
+
+**People & list of Topics**
+
+Cri, Ilario, Sam
+
+we need to write a page on the website guiding the communities to write a network-profile - Cri & Ilario will do that
+
+aggiornare/scrivere lista delle comunità che usano libremesh, chiedere consenso di metterli in home page:
+
+Comunity mesh network using Libremesh:
+
+- https://antennine.noblogs.org   d'accordo
+
+- https://moinho.app/sobre
+
+- https://villagetelco.org/ (south africa)
+
+- https://www.redfusalibre.org (colombia)
+
+- inethi (south africa)
+
+- ? https://docutopia.tupale.co/s/NuestraRedOrg#
+
+Organization promoting Libremesh:
+
+- https://www.coolab.org/
+
+- https://ibebrasil.org.br/
+
+- https://altermundi.org
+
+- https://ninux.org
+
+- wakoma?
+
+- Librerouter.org
+
+** Promuovere i contatti mastodon di questi gruppi!!**
+
+we have a big problem with the "distance" parameter, now it is 1 km for 5 GHz and 100 m for 2.4 GHz. There is an "auto" setting for the ath9k???????????????????????? We have to underline this setting everywhere. https://github.com/aredn/aredn_ar71xx/search?q=distance&type=issues we could have a setting like this: if a positive value is provided, just use the value; if a negative distance is provided, check somehow if the "auto" value can be used, otherwise use the absolute value as the distance. In Aredn they check for the existence of /sys/kernel/debug/ieee80211/$phy/ath9k before activating the auto setting. 
+ 
+For Freifunk communities based on Gluon the automatic distance / dynack feature is enabled by default (distance = 0 in UCI). However some communities have experienced issues with using dynack, leading to TX path hangs (stuck transmissions until resetting the wifi chip) especially in croweded areas and went back to a static distance setting.
+ 
+Freifunk Vogtland went first to 3km distance setting and still / again got TX path hangs and now settled to 1km:
+ 
+https://github.com/FreifunkVogtland/gluon/commit/86f517054c3ba4f352eee57db29f4d3de3e34f1d
+https://github.com/FreifunkVogtland/gluon/commit/a024c9ce6926
+https://github.com/FreifunkVogtland/gluon/commit/4f3d4edfe3
+
+== 2022-08-25 
+
+**People & list of Topics**
+
+troian, cri, bruno
+
+1- charla libre - chiacchiere libere- conversa libre
+2- prosima reuniao - nextmeeting
+vamos a fazer un encuntro durante o Battlemesh con a pessoas que ficam: https://battlemesh.org/BattleMeshV14
+Setembro - Battlemesh
+Outubro - Online
+
+1-  conversa libre sobra o firmwares
+
+Troian está compilando LibreRouter para diferentes hardwares tp-link
+http://compila.ax.org.br:5000/
+
+Cri usa o Libremesh e o Librerouter compilado para nos com estos profilo
+ https://github.com/libremesh/network-profiles/tree/master/valsamoggia.ninux.org
+ FIzeram esse perfil e nunca mais mudaram (muito poco :)
+ 
+Bruno: precisamos organizar e publicar essa documentação
+
+troian: o Librerouter já vem com tudo pronto e com muitos pacotes/recursos que os routers baratos não tem (usa memória demais). Ele vem com as últimas versões do LibreApp, PIrania, tá muito mais atualizado.
+Porque o LIbreRouter precisa de firmware específico? Por isso:
+https://www.youtube.com/watch?v=ZAfhClVVMMo&t=25s
+https://www.youtube.com/watch?v=OmPXiS7P01s&t=44s
+
+O Chef faz falta! Gerenciamento de perfis de comunidade, etc. Estava bem porque nos nao compilaram :)
+
+we look together sharing the screen some new features that are missing by Libremesh (new piranha, remote support, wifi hot spot sharing, ...)
+Trazer limeapp, pirania, suporte remoto para o Libremesh
+Nos em bologna as veces usamos tambem Luci porque esta bem por veder Rotes e ARP table, e tambem usamos ssh da cli. Mas a persona "connectada" usam so a App o telefonano a o contactos.
+
+Chegaram duas domandas: - purque troquamos da bmx a babeld?
+- que diferencia esta tra librerouter e libremesh e que relazione entre os dues?
+
+
+== 2022-06-30 
+
+**People & list of Topics**
+
+luandro,cri, pedro,san, hiure, bruno
+
+1- round about what we are working on..libremesh or mesh topic
+2- news? about Altermundi/Gsoc works..
+3- new libremesh mailinglist .. comments?
+4- o nuovo metodo de revisao de PR, 1 revisao, trabalha?
+5- stato  libremesh in router que nao sao libre-router
+6- prosima reuniao
+
+Bruno:
+Hacer una ronda sobre el uso de otros routers com libremesh
+
+1e2- German esta trabalhando sobra o wizard de limeapp, optimizar a performance, .. (una otra que nao intendi)
+està acompanhando Irina che principiò da uma semana o GsoC, esta fazendo estudo pareter uma rede virtuales de dispositivos libremesh , esta preparando o desenvolvimento do projecto AMPR.org .
+
+Lime-app wizard/pantalla para conectarse a red ya existente
+Tarda mucho para conectar a una red porque descarga informacion sobre todos los nodos antes de unirse
+Proyecto AMPR - desarollo libremesh estabilidad de roteo (batman) y mas herramientas de monitorei
+
+Cristina, no update
+  
+San:
+No hizo trabajo nos ultimos meses, ma fizeste o cambio de lista (obrigado!! :)
+
+Hiure:
+
+Nueva versión de Pirana en la comunidad, instalación de librerouter os 1.5 con el nbuevo piraña
+
+Librerouter, cpe210 e cpe510. Em Monteiro Lobato.
+
+chilombos=sao insediamento de umanos fugidos da esclavitù no seculo pasado. 
+hanno montato una nuova rete in un chilombo
+cambiando el sistema a pirania, porque algunos pagan y otros no.
+hay solo una salido de 1mb a internet
+
+bruno:
+no update
+
+3- feedback do uso da lista: bueno
+
+4- PR se encerró en la ultima reuniao - solo habrá un review para los PR
+
+5-stato  libremesh in router que nao sao libre-router:
+coolab quer invertir em   dar mais suporte para modelos que não são librerouter
+
+san: ver se hay algun dispositivo que use el mismo chip que librerouter2 (SOC) 
+
+https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/
+
+https://www.mediatek.com.es/products/home-networking/mt7621
+
+
+Antenne que usamos https://antennine.noblogs.org/post/2021/12/15/tipi-di-antenne-che-usiamo/
+Versioni firmware: https://bin.campiinrete.org/openwrt19.07.7_lime2020.1/
+
+
+ger: vai melhorar a confirguração dos poros ethernet cuando são redes que não são libremesh
+
+
+== 2022-04-23 
+
+**People & list of Topics**
+
+- cri,txt,german,ilario, SAn
+
+1) round about what we are working on..libremesh or mesh topic
+2) News from AlterMundi's: We got funded by AMPR.org
+3) News from GsoC (?)
+
+- Irina Argarañás will be working on 
+
+4) libremesh mailinglist ... check subscriptions and working (Cri..maybe Ilario?)
+5)Analysis of the implementation status of last meeting's decisions
+6) Revisit double review for PRs in libremesh repos.
+7) Próxima reunión de proyecto / Next project meeting
+
+
+Quick Comunications: https://battlemesh.org/
+
+Temas dejados para próximos meetings - Topics left for next meetings:
+
+
+- Metodos de participación para mejorar la inclusividad del proyecto (foro, wiki) / Participation methods for increasing the inclusion of community in the project (forum, wiki)
+
+- Documentación / Documentation
+
+- Como usar las donaciones / How to use the donations
+
+- Temas tecnicos? (soporte OpenWrt 21.02, QoS con TC) / Technical topics? (support for OpenWrt 21.02, QoS,using TC)
+
+- Abierto para propuestas y otros temas / Open for proposals and other topics
+
+
+1) round about what we are working on..libremesh or mesh topic
+Ilario: changed cityes, so in the last month has other topics to complete 
+german: we got funded by AMPR, so I'll be back working soon. I helped Selankon with the FirstBootWizard as he is improving the interface so that it gives more information.
+cri: maintaining the local mesh network, mounted new node, communication inside of the network, focus on contents creation inside the network and on human network between nodes, setting up Grafana found the good dashboard from and customized that is quite ready to share, working with Wireguard. I invited in this meeting Angelichi, who wrote a thesis on a greek mesh network. Battlemesh this year will be in September in Italy/Rome: 
+https://dudle.inf.tu-dresden.de/battlemesh_v14/
+https://ml.ninux.org/mailman/listinfo/battlemesh
+txt.file: listening :)
+
+2) News from AlterMundi's: We got funded by AMPR.org (german)
+There's a roadmap, contributions are welcome and also let us know if you want to participate.
+From last meeting, https://docs.google.com/spreadsheets/d/1-dgUv9LE-VBIE6GDDUDDjVm9h4IrH9uqk8YXi-u3b18/edit#gid=0
+Altermundi received the grant, lasts 18 months, to work on it you need to talk with Altermundi members (e.g. German Ferrero), collaborations are possible, check the list of the topics
+The grant is for software development and documentation.
+Cri can help with the UX (user experience) and frontend, and sharing their usecase
+Some help could be needed to understand if Babeld and Batman-adv are correctly working in our setup; and whether there are missing content in lime-app
+
+Ilario: We should collaborate with Babeld and Batman-adv developers for understanding whether our setup is optimal. In my opinion looks messy, it works but does not look correct. Some related discussions here:
+https://github.com/libremesh/lime-packages/issues/666
+
+Cri: when using OpenWrt 21.02 seems that L2 is not working, as the mesh works only when using a different subnet (changing ap_name), so seems that level3 works (Babeld). it would be very interesting to understand more on how LibreMesh work internally with Batman-adv and Babeld.
+
+Ilario: it is important to test LibreMesh on OpenWrt release candidates as in the past we managed to spot bugs in OpenWrt that were fixed in the final release, making it working amazingly for us
+
+Cri: are we going to have a specific meeting for this?
+
+Ger: in the AMPR roadmap we have a point on that, we can do the meeting and hackatons at that point
+
+3) News from GsoC (German)
+- Irina Argarañás (computer science student) will be working on "Try LibreMesh without router" which is for having virtual nodes and virtual mesh network. The scripts are more or less ready but they are not easy to find and the documentation is not enough. For sure we need a link from the webpage pointing to clear instructions for having virtualization running on one's laptop. The goal is to have more contributors. 
+https://projects.freifunk.net/#/projects?project=try_libremesh_without_having_a_router&lang=en
+
+- Raamiz Ali applied to Priorities with Pirania
+https://projects.freifunk.net/#/projects?project=implement_traffic_priorization_in_pirania_captive_portal_for_mesh_networks&lang=en
+
+now the mentors have to prioritize the students
+
+4) libremesh mailinglist ... check subscriptions and working (Cri..maybe Ilario?)
+
+Ilario, Cri: Who are the maintainers?
+Ger: Gui & NicoE
+Cri: how can we help?
+Ger: writing an email to Gui
+SAn: Gui already knows that there's the problem, is related to the reverse DNS that causes the bouncing of emails. But he does not have time to maintain.
+Ilario: he has to accept help, because we really need the mailing list. Also Amuza volunteered for that.
+Ger: I'll ask Gui for access on the server.
+Cri: Who does manage the DNS?
+SAn: Codigosur manages the DNS, so maybe we need to ask Codigosur for editing that. But nobody has time to support that. Codigosur was hosting that but when they stopped, Gui started hosting it. We can ask to other mailing list providers.
+Ilario: Ninux server?
+Cri: they did not implement DMARC which is a big problem with anybody using gmail. Framasoft? https://framalistes.org/sympa/ Autistici? https://www.autistici.org/services/lists Riseup? Mayfirst? Chatons? https://www.chatons.org/search/other
+ https://www.chatons.org/search/by-service?service_type_target_id=114&field_alternatives_aux_services_target_id=All&field_software_target_id=All&field_is_shared_value=All&title=
+SAn: we could also donate money to the server that will host us.
+Ilario: we have money from donations on OpenCollective
+https://opencollective.com/libremesh
+
+Ger: los servidores de Altermundi estan caidos
+http://lists.libremesh.org/  -> 404 Not Found
+
+Ilario: We thank Gui for the great work done with keeping the list running when Codigosur stopped hosting. Should we propose on the list or on the chat asking where to host? SAn, can you take a backup of the subscribers list so that we can re-subscribe them in the new list? Should we do it right now or ask and wait one week?
+
+Cri: I trust Autistici, Riseup and Mayfirst
+
+SAn: maybe we will not be able to keep the domain lists.libremesh.org but the direction will be different
+
+Ilario, Cri: no problem.
+
+Cri: when the situation will be stable and working, we can go back
+
+Ilario: the collective we know more people from are Autistici, let's use that
+
+Cri: I can ask them. But the management will be done together? They are using Mailman2, thinking of migrating to Mailman3
+
+Ilario: the 4 participants in this moment of the meeting could be the people having access to the mailing list management (SAn, Ger, Ilario, Cri). Maybe we'll warn the people before mass subscription to the new list.
+
+Draft of mail:
+Dear subscriber to the LibreMesh project mailing list,
+as you maybe noticed, we're experiencing issues with the mail server hosted by Altermundi. We thank Altermundi for managing this service, but during this outage we are going to use an additional mailing list, in which we're going to subscribe all the subscribers.
+The new mailing list is going to be on Autistici/Inventati servers and you'll receive a notification subscription shortly.
+Cheers and have a good meshing!
+LibreMesh community
+Improved draft: https://pad.codigosur.org/kd0TzuZB1RWfYh-DGISH
+
+5) Analysis of the implementation status of last meeting's decisions
+Ger: we didn't look very much for students for GSoC
+
+6) Revisit double review for PRs in libremesh repos.
+Ger: this is keeping back the releases of LibreRouterOS, maybe one review is enough
+Ilario: one is enough
+SAn: one is enough, I will change that
+
+7) Próxima reunión de proyecto / Next project meeting
+
+next meeting in June
+
+Ger: I will send out the Framadate
+
+
+== 2022-02-20 
+
+**People and topics**
+
+guifipedro (hasta las 13:40 UTC), cri, hiure, ilario, luandro, ger, nicop, Mark Birss, may
+
+empezamos a las 13:15 UTC
+
+Temas - Topics - Orden del día:
+
+- Qué presentó AlterMundi a ARDC para financiar desarrollo en Libremesh. (ger ferrero)
+
+- Qué estuvimos haciendo en los ultimos meses (nicop)
+
+- Analysis of the implementation status of last meeting's decisions
+
+- GSoC projects presentation deadline is tomorrow
+
+- Próxima reunión de proyecto / Next project meeting
+
+
+Temas dejados para próximos meetings - Topics left for next meetings:
+
+
+- Metodos de participación para mejorar la inclusividad del proyecto (foro, wiki) / Participation methods for increasing the inclusion of community in the project (forum, wiki)
+
+- Documentación / Documentation
+
+- Como usar las donaciones / How to use the donations
+
+- Temas tecnicos? (soporte OpenWrt 21.02, QoS con TC) / Technical topics? (support for OpenWrt 21.02, QoS,using TC)
+
+- Abierto para propuestas y otros temas / Open for proposals and other topics
+
+
+Acta de reunión / Minutes of the meeting
+
+- NicoP:
+propone añadir al orden del día el punto "Qué estuvimos haciendo en los ultimos meses"
+- Cri:
+programadora, centros sociales, brasil, 2016 salió de la ciudad para vivir, nodo LibreMesh v15 en montaña, ahora 50 nodos, muchas veces herida por dificultades con configuración LibreMesh, ajuda de Ilario y G10h4ck per configuración, aprender buildroot y linea mando LibreMesh, traducí unas paginas de la web, amore y odio por LibreMesh
+- guifipedro:
+participo en guifi.net y exo.cat, usé qmp, libremesh, pero ahora gestiona con https://gitlab.com/guifi-exo/temba . interesado en facilitar conexión a personas, generar comunidades. compartir configuraciones que funcionan. por aquí estamos en bmx6 y esperamos algún día movernos a 
+
+
+*THE ETHERPAD STOPPED SYNCING HERE, SO FROM HERE ON THE LOG IS RECONSTRUCTED BASED ON THE PARTICIPANTS' MEMORY*
+
+- Qué presentó AlterMundi a ARDC para financiar desarrollo en Libremesh. (ger ferrero)
+
+
+Altermundi applied for a big grant from a amateur radio association https://www.ampr.org/ , they found the grant with short notice, maybe the content of the project can be edited also once it has been granted?
+Ger wrote a large list of ideas with a planning spanning over one year and a half.
+https://docs.google.com/spreadsheets/d/1-dgUv9LE-VBIE6GDDUDDjVm9h4IrH9uqk8YXi-u3b18/edit#gid=0
+Altermundi is applying for grants as Altermundi is financially supporting some of the LibreRouter & LibreMesh & lime-app developers.
+The amount of ideas and work is so huge that if the project is approved it is likely that more developers will be needed!
+Specifically, if there's someone with experience in UX (user experience) it would for sure be needed.
+
+
+- Qué estuvimos haciendo en los ultimos meses (nicop)
+
+
+Ger, SAn & Luandro were working on Pirania
+Luandro was working also on translations, shared this interesting local app (some not properti work in internet) https://moinho.app/
+The others were also doing many amazingly cool stuff I cannot exactly recall.
+Cri  said that in their network have now 1, and soon 3 antennas working with lime based on openwrt21, because discovered that the CPE512 V.3.2 tplink antennas are supported now starting from that version, so we are building for ourself to use the antennas, that where with airos, but we have some problem... seems that level 2 not discovery other nodes, so changing the domain of our IP, mesh works ..... ^^
+shared a presentation with the status of their 57 people for 25nodes network and the included services
+https://campiaperti.org/infra/2021-rc3.html
+Mark Birss shared an interesting post from Luandro about LoRA+LibreMesh
+https://meshtastic.discourse.group/t/meshtastic-to-connect-remote-villages-deep-in-the-amazon/2643
+
+- Analysis of the implementation status of last meeting's decisions
+
+
+traspasar usuarios de lime-dev a lime-users y dejar de usar lime-dev - move the users from lime-dev to lime-users mailing list and stop using lime-dev mailing list
+
+SAn executed this
+
+red inicialmente geek-free: proponer en la lista de correo [ger ferrero: yo podría iniciar este hilo, luego de que San traspase los usuarios] - defining LibreMesh as a "initially geek-free" project, which means that we want to develop LibreMesh so that non-geek users can start using LibreMesh, but will be encouraged to understand the inner mechanisms if they want
+
+ilario edited a bit the website https://github.com/libremesh/lime-web/commit/97223e8a830ca3e18e05b0b104a499db7d1e3583
+but deeper edits are needed, mostly at the homepage
+Cri proposes to add guides/interviews/pra for dealing with community management and human problems
+Ger proposes to set the flow of the website so that is more human and less technical-topics oriented
+A submeeting has to be set for actually discussing the details and implementing them on the website
+
+publicamos el acta en la lista de correo - this meeting log will be published in the lime-users mailing list
+
+Done, but the archive of the mailing list is not working.
+SAn will push Gui to fix that
+
+la próxima reunión debería ser en febrero - the next meeting should be on February
+
+The meeting has been in February (thanks to Cri for managing the scheduling) and the participation was of 8-9 people (more than what we expected from the Framadate)
+
+
+- GSoC projects presentation deadline is tomorrow
+
+
+https://developers.google.com/open-source/gsoc/timeline
+
+ilario points out that we should review our communication systems for avoiding that we get to know this the day before the deadline
+
+the existing projects proposals are here https://projects.freifunk.net and all the LibreMesh-related proposals are from the last year.
+In order for Freifunk to be accepted in the program, the projects are important.
+We should contribute new projects here (and maybe delete some old ones):
+https://github.com/freifunk/projects.freifunk.net-contents/tree/main/collections/_projects
+the template is here:
+https://github.com/freifunk/projects.freifunk.net-contents/blob/main/README.md
+All of us will write the projects
+SAn will make the pull requests
+
+A brainstorming follows, more or less with the following proposals:
+
+SAn:
+the projects have to be centered on coding
+
+ilario:
+Quality of Service (Traffic Control) included in Pirania, for having a guests access with low priority and a "node owner" or "person with voucher" with high priority. This should be more or less easy for the gateway node (just creating two interfaces, an open one with low priority and a closed one with high priority), but less so for the others. Amuza and SAn could be mentors.
+
+name: "Implement Smart Queue Management in Pirania captive portal for mesh networks"
+desc: "Pirania captive portal is a voucher-based captive portal used in LibreMesh. In order to have guest access, this should have a lower priority, managed via Traffic Control."
+requirements:
+ - "The applicant needs to have understanding of networking in mesh networks."
+difficulty: "high"
+size: "full-time"
+issues:
+ - "https://github.com/libremesh/lime-packages/issues/261"
+ - "https://github.com/libremesh/lime-packages/issues/244"
+mentors:
+ - SAn
+ - ??????????????????Amuza??????????
+ - Ilario
+initiatives:
+ - GSoC
+tags:
+ - LibreMesg
+ - Pirania
+ - TC
+ - SQM
+collaborating_projects:
+ - "LibreMesh"
+
+Pirania captive portal is already in production in some community networks running LibreMesh on their routers.
+The usage of Pirania helps the community to pay the bill from the internet service provider.
+But LibreMesh project also tries to open the access to the local and remote digital resources to everyone, and for this reason the availability of a guest access would be reccomended.
+This will require that the presence of a connected guest client does not slow down the connection of the owner of the gateway or of who actually paid for having a Pirania voucher.
+In order to achieve this, the data packets needs to have different priorities depending on the originating client, diregard the mesh node (access point) this client is connected to.
+The problem is absolutely non-trivial, and the technical tools needed will be at least Traffic Control, Smart Queue Management, and iptables.
+
+### Milestones GSOC 2022
+
+**GSOC 2022 COMMUNITY BONDING**
+
+* Conceptual work should produce a coherent proposal to be submitted to the community for the review.
+* The student have a fork of the lime-packages repository and have learnt the basics of Git.
+* The applicant should have joined all of the communication channel of the project and met the community in the periodic online meetings.
+* An initial blog post will be written, with the invitation to propose alternative solutions for the identified challenges.
+
+**GSOC 2022 MIDTERM**
+
+* Conceptual work should be completed, the functions to be implemented and the tools should be fixed.
+* The applicant should have a working testing platform, either physical or virtual.
+* The applicant should be familiarized with LibreMesh configuration and running.
+* The applicant should be familiarized with Pirania configuration and running.
+* The applicant should be familiarized with iptables configuration and running.
+* The applicant should be familiarized with Traffic Control for Smart Queue Management configuration and running.
+* A mid term blog post will be written.
+
+**GSOC 2022 FINAL**
+
+* The patch for Pirania should be functional even if not completely polished.
+* Everything has to be reviewed and merged.
+* Unit testing tests should be ready.
+* Documentation should be available.
+* A final blog post will be written.
+
+
+Cri:
+problem of self-signed SSL certificates for services internal to mesh networks (e.g. if one member offers a file server, its HTTPS certificate should be recognized as valid), should we offer some solution? Or a guide on how to register a certificate for the public domain and how to use this for issuing certificates for the subdomains to copy on the local services? Luandro could be mentor.
+
+Cri:
+LibreMesh on OpenWrt 21.02 seems working but surely it will require more work
+
+
+Ger:
+documenting a clear way for techie people to test LibreMesh in a virtual environment so that they can understand and try it before actually buying the routers. SAn proposes to make a Docker with everything configured for this scope.
+some ways of managing the virtual machines with LibreMesh are described here: 
+https://github.com/libremesh/lime-packages/issues/389
+
+
+ilario:
+an smartphone app for easing the connection to thisnode.info
+Ger & SAn: this is already included in Thomas' app made in last year's GSoC
+https://github.com/Patacon13/LimeApp
+but more work could be needed and it could be included in an app store (F-Droid?)
+
+Ger?:
+problems with the routing protocols, which are made for dealing with stuff like mobility that we do not usually have (nodes are fixed)
+
+- Próxima reunión de proyecto / Next project meeting
+
+
+There is consensus on the fact that the next meeting should be in April.
+
+
+
+
+
+
+
+
+
+
+
+
+

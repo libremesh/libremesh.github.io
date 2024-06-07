@@ -1,0 +1,203 @@
+---
+title: LibreMesh 2021 Meetings
+ref: report 2021
+lang: es
+---
+
+
+== 2021-12
+
+**Participantes - Attendees**
+
+- Ilario, Hiure, Luandro , Tania, Tomás Assenza, SAn, William Suarez, amuza, NicoPace, Angie, Al, Elio, Fauno, Gui, Germán
+Meeting link: https://meet.jit.si/LibreMesh
+
+Temas - Topics:
+
+ - Toma de decisiones en el proyecto (modelo de governanza) / How to take project-related decisions (governance model)
+
+ - Germán Ferrero: Redes Comunitarias Geek-Free.
+
+ - Canales de comunicación (Element, listas de correo, que se discute en lime-dev, Github) / Communication channels (Element, mailing lists, what to discuss on lime-dev, Github)
+
+
+== Temas dejados para próximos meetings 
+*Topics left for next meetings*
+
+  - Metodos de participación para subir la inclusividad del proyecto (foro, wiki) / Participation methods for increasing the inclusion of community in the project (forum, wiki)
+
+ - Documentación / Documentation
+
+ - Como usar las donaciones / How to use the donations
+
+ - Temas tecnicos? (soporte OpenWrt 21.02, QoS con TC) / Technical topics? (support for OpenWrt 21.02, QoS,using TC)
+
+ - Abierto para propuestas y otros temas / Open for proposals and other topics
+
+ - Próxima reunión de proyecto / Next project meeting
+
+
+Acta de reunión / Minutes of the meeting
+
+Presentation of each participant
+
+Ger de AlterMundi, developing the LiMeApp
+
+Amuza, no se desarrollar, mantengo una pequeña comunidad. Aprendi a utilizar calidad de servicio, tc
+
+Tomas, trabajé en el último GSoC, trabaje en la LimeApp para Android. Estoy estudiando en la facultad, retomar el desarrollo y tengo interes en colaborar.
+
+Ilario, no estoy manteniendo ninguna comunidad. me encanta libremesh y hago testeo de hace siglos. soy quimico.
+
+Hiure de Coolab, soy fisico. no soy desarrollador. siempre metiendo mano en lo que puedo. vivo en una comunidad con una red comunitaria con muchos nodos. soy de brasil.
+
+Luandro desde Brasil parte de Coolab. tengo una experiencia con la red comunitaria de mi comunidad en Moinho. Desarrollo algo de LiMeApp, pero mayormente despliego redes.
+
+Tania. Trabaje en desarrollo de software para una aplicacion de mensajeria. quisiera platicar mas sobre ello. use libremesh en algunos dispositivos. involucrada en pirania.
+
+William de Colombia. acompañamos algunas comunidades. haciendo pruebas de uso, probando como funciona en las comunidades.
+
+NicoPace divulgación y desarrollo y testeo, ahora algunas cosas las lleva Ger
+
+Gui
+
+SAn participo de AlterMundi, 2019 empecé a desarrollar en LibreMesh. Diseño del LibreRouter hardware, y proyectos de redes comunitarias en Argentina. Vivo en prov. Buenos Aires, Argentina.
+
+Fauno, participado de varios proyectos de redes comuntarias, talleres. Participo tambien en la coop Sutty. Los sitios estáticos pueden alojarse en redes comunitarias.
+
+Angie ex-ColNodo, trabajando en LibreMesh y lime-app, interese sobre el tema técnico. Colombia
+
+Al mantengo una red en el jardín botanico de Barcelona de 12 nodos por 10 años con el ayuntamiento de Barcelona y ahora ya no se hacen cargo. Catalunya - si alguien se ofrece a hacerse cargo o se le ocurre una idea al respecto, que me contacte en al@blogmail.cc
+
+
+## Toma de decisiones en el proyecto (modelo de governanza) + Canales de comunicación (Element, listas de correo, que se discute en lime-dev, Github) / 
+* How to take project-related decisions (governance model) + Communication channels (Element, mailing lists, what to discuss on lime-dev, Github)*
+
+Ilario:
+Ahora que la comunidad ha crecido, la toma de decisiones tiene que ser mas abierta y transparente.
+canal transparente
+reuniones
+
+SAn:
+Estaría buenisimo tener un mecanismo simple, muy simple, que nos permite tomar decisiones. En los temas técnicos tenemos una forma de gobernanza a traves de los issues. para algunas cosas técnicas venía sirviendo. En otras cosas no, como mover un servidor, si se le cambia el enfoque. Cuando una propuesta se volvía decisión. Estaría bueno algo que no genere overhead.
+
+Ger:
+si dentro de los canales de comunicación logramos uno que sea para conversaciones asincrónicas sobre un tópico específico, luego las preguntas sobre la comunidad puede llegar a ser uno de esos hilos, y podemos apostar a 
+
+NicoPace:
+
+hay decisiones sobre el codigo y sobre el proyecto, hubo decisiones técnicas pero las pocas decisiones que no tenian canal para tomarlas eran las sobre los canales de comunicación. Una vez que los canales funcionen se veran los mecanismos actuales que aún que no estean ahora explicitos estan en marcha, y las decisiones de proyecto también correran allí. Tener comunicación efectiva en los canales debería resolver los problemas de govenzanza porque se pueden discutir allí.
+
+Amuza:
+
+Cuál es el problema con usar solo la lista de correo?
+
+NicoPace:
+hemos tenido problemas de infrastructura y no hemos conseguido recuperar rapidamente la lista de correo
+dentro de AlterMundi hemos dejado de usar Mattermost y hemos empezado a usar Zulip (https://zulipchat.com) (que es un chat y lista de correo, mucho mas segura de Matrix pero con posibilidad de bridge (https://zulip.com/integrations/doc/matrix) pero bien usar las listas de correo
+
+SAn:
+los correos que enviava no llegavan, ahora funciona bien la lista de correo. Bien el mail para la comunicación asincrona. Se seguimos con las reuniónes se pueden tomar decisiones aquí y preguntar a la lista de correo si alguien más quiere comentar. Importancia de la comunidad no-desarrolladora. Abrir decisiones y contribuciones (por ejemplo a la web) a no-desarrolladores. Problema que la web sea en Git porque los no-tecnicos tienen una barrera a modificarla. Pero para los tecnicos es lo que nos gusta más.
+
+NicoPace:
+definir la comunicación y revisar a la próxima reunión lo de la governanza
+
+Ilario: metodos de comunicacion efectivos/transparentes. Si la lista de correo funciona, genial... pero a la gente le gusta usar las apps. Me parece bien si definimos medios de comunicaciones, y lo de la gobernanza, me parece estupendo!
+
+Fauno: genial que se esté hablando de gobernanza. Las conclusiones que hemos ido sacando es que los modelos de gobernanza tienen que ser explícitos para que puedan ser referidos. para ver que algo está funcionando o no, para poder cambiarlo o no. En ese sentido puedo compartir algunas cosas que hemos producido, en cuanto acuerdos de convivencia, dinámicas nosivas para los grupos.
+
+https://utopia.partidopirata.com.ar/quiero_ser_pirata.html
+https://utopia.partidopirata.com.ar/la_tirania_de_la_falta_de_estructuras.html
+https://utopia.partidopirata.com.ar/democracia_directa.html
+https://utopia.partidopirata.com.ar/zines/codigos_para_compartir.html
+
+Ger: la gobernanza va a decantar bien si tenemos los canales de comunicacion. Por la falta de práctica tengo mis dudas si la lista de correo solucione el tema de discusión.
+
+NicoPace:
+damole una esperancia a la lista de correo y ya veremos si funciona. Con LibreRouter tenemos un foro: foro.librerouter.org
+
+SAn:
+damo de baja a la lista de lime-es y que sean aceptados todos los idiomas en lime-users. 
+
+Ilario:
+lime-dev cambios en arquitectura
+lime-users
+dar de baja lime-es
+
+Ger:
+todas las discusiones no de código se pueden llevar en lime-dev
+
+SAn:
+una sola lista
+
+NicoPace:
+que tema no se discute en issues?
+
+Ilario:
+bmx/babel
+luci/limeapp
+source release
+
+Amuza:
+una única lista. Las personas un poquito técnicas suelen ser. En cualquier idioma. Siempre que el subject esté bien definido.
+
+NicoPace:
+para que más gente pueda participar, a favor de tener una sola lista. De toda manera las discusiones de código estan en Github, mientras las otras decisiones impactan también a los usuarios, mejor involucrarlos. Así también tenemos que esforzarnos para comunicar la idea sin que se quede demasiado técnica. Por ejemplo luci/lime-app se hubiera podido debatir por el lado técnico o más desde el punto de vista del usuario. Hay usuarios de LibreMesh que no son técnicos (e.g. si compra un LibreRouter y lo usa porque necesita la conectividad, sin hackear).
+
+SAn: como recolectar y traer esas voces, no participaran en listas de correo, pero si en el dia a dia usan al red comunitaria. A nivel político/lineamiento, todas las personas que usan libremesh estaría bueno que se vayan enterando de que lo hacen con una curva baja, una persona no solo técnicos sino de activista/politicos... y que pueda participar/aportar que no sea codear.
+
+## Redes Comunitarias Geek-Free.
+
+Ger: si enfocamos LibreMesh a Redes Comunitarias que no tienen conocimientos expertos, puede que implique cambios de comunicación. Si me permiten cuento algo de ese tema descolgado. Hace ya mucho tiempo que las personas que formamos parte de AlterMundi y otras que estamos aqui como coolab y colombia, hacemos software que para que comunidades rurales pueda autogestionar sus propias redes, y que lo haga sin la necesidad de que haya expertos técnicos en la red. De ahi es que queremos que la LiMeApp permita a que desplieguen redes y que gradualmente aprendan como funciona una red mesh, que es importante mirar, que no es tan importante y hay que dejarla mas allá en su curva de desarrollo. Todas esas conversaciones de que es prioritario para las comunidades, esas conversaciones vienen sucediendo en nuestros canales privados y no en los publicos, por el entendimiento de que no todos están orientados en esa dirección. La propuesta es de que tal que Libremesh sea el software para Redes Comunitarias Geek-Free, y que además que si podemos llevar estas conversaciones a los canales de comunicación públicos de LibreMesh. ... La Mesh tiene que andar, por lo que lo técnico que no tiene que ver con la experiencia de aprendizaje del no-tecnico, eso va a estar empujado siempre.
+La propuesta concreta es enfocar libremesh a redes comunitarias geek-free.
+
+Amuza: totalmente de acuerdo, no sabia bien que habia esa separación. pero Me gustaría que sigan funcionando los cacharros de bajos recursos.
+
+Ilario: más que una división del proyecto, faltaba comunicacion. Me parece estupendo para redes geek-free, que puede tener más impacto que una red para frikis.
+
+Amuza: geek-free a favor totalmente. pero los routers que funcionan solo por consola... no dejar fuera a los que no funcionan con limeapp.
+
+SAn: creo que definitivamente va a haber items técnicos y decisiones de que impacto tiene, la página, el sitio web actual. La primera impresión es más académico, no plantea lo de geek-free. De repente no hay que cambiar cosas técnicas. El día a día de AlterMundi va en esa linea, sino que esto que contaba Ger.
+
+Gui: eu gostaria muito d escutar o sentir do @hiure ao respeito da proposta pois lembro q faz tempo tinha me compartilha uma prsspretiva de q fazer tudo "facinho" afastava de meter mão 
+
+Hiure: tengo una idea, un poco más filosófica. A mi me parece que la experiencia que tengo de la red comunitaria, con lo que tengo visto es que no me parece que el concepto de geek-free sea lo mejor. geek-friendly. Es posible que se tenga en la red que pueda ... la idea de separar a personas en expertos y no expertos, no me encanta. me parece que los esfuerzos en traer las personas en hacer parte de esto, desmitificarlo.. tal vez sea mas impactante... si todo está camuflado/escondido... las personas no meten las manos. tengo visto que necesita de alguien en las comunidades para mantener las cosas. Así en la comunidad que vivo, es muy dificil que una red comunitaria que no tenga alguien que haga eso, meter las manos, manejar consola y eso... no se si eso puede cambiar. no me parece que una red... menos que tenga una aplicación que sea más fácil de manejar... no me parece que con el tiempo eso se mantiene. hay muchas cosas que entender, que manejar. no simplificar.
+
+Gui: creo que si se ha logrado con los librerouters, hay muchas redes asi
+
+NicoPace:
+hay redes sin entusiastas técnicos, gracias a lime-app. Es necesario encontrar caminos que ayuden las personas a interiorizarsse, más en estas tecnologias, que los medios de telecomunicación que fabricamos facilite el aprendizaje y concienciación de las tecnologias, dibujar caminos para que los usuarios puedan profundizar. Importancia de los canales de comunicación.
+
+SAn:
+está claro que si cada persona tiene que compilar es una barrera de entrada muy alta. Lo ideal es que una comunidad pueda empezar a desplegar sin tener estos conocimientos al principio, pero que luego puedan profundizar. El objetivo no es esconder la profundidad pero amenizar la entrada en el tema. Hay comunidades a quien hemos enviado cajas de librerouter con documentación, comunidades donde nadie tiene una computadora, solo móbiles. La interfaz te tiene que llevar, que no haya un botón de "modo experto". Estetica que no dea miedo a los usuarios. Pedir ayuda a quien sabe de pedagogia, para que el aprendizaje sea más fácil. Pero hay temas técnicos que no hace falta que la gente aprende.
+
+Ger:
+bajar la barrera de entrada y al mismo tiempo convidar quien quiera a meterse más. El soporteremoto (herramienta para recibir ayuda por internet https://foro.librerouter.org/t/nueva-herramienta-acceso-remoto/219/2) evita tener que instalar una VPN y muchas mas complejidades. Permite que otro te ayude compartiendote conocimiento.
+
+SAn: de repente no es geek-free.. se podría revisar.
+
+Tomas: me parece interesante el objetivo final de que la persona tenga estos conocimientos técnicos. me parece que haya un punto inicial no demasiado complicado, ya que un conocimiento técnico no se puede aprender de un día para el otro. Me pasa con compañeros que me piden una mano para instalar un conocimiento técnico. Por ejemplo, puede ser usar un administrador de paquetes en un sistema como Linux. En windows les propongo chocolatey que es un administrador de paquetes para windows, que reduce la complejidad. La idea no es para descartar. Puede ser que hagamos discriminacion expertos/inexpertos... sino terminamos por no usar aplicaciones visuales, solo consola...
+
+NicoPace:
+hay consenso que los usuarios de primeras no tienen porque tener conocimiento pero que colectivamiente tendremos que intentar que la gente vaya aprendiendo. Hay mucha abstración que hemos implementado para generar la configuración, y esto ha complicado la comprensión de lo técnico que hay de abajo. Es importante documentar bien lo que hacemos para cuando alguien quiere entrar a modificar cosas o incluir un servicio local con, por ejemplo, un IP fijo o un nombre de dominio. Hemos vivido esta situación muchas veces y podemos aprender de esto sobre como transpasar conocimientos, en algún punto deberíamos priorizar a que los usuarios técnicos gestionemos la barrera de los no-técnico. Que el proyecto sigua siento geek-friendly y que haya espacio para no-geek.
+
+Hiure:
+trabajamos con comunidades indigenas y cuando logramos que tengan conectividad tiene impacto en la vida de las personas, por las informaciones que reciben por internet, sea positivas que negativas, pero tienen derecho de recibir esta información. Le llevamos los conocimientos mínimos técnicos. El LibreRouter vale en Brasil lo mismo que una computadora, por cuestión de tasas. Es importante hacer la formación de alguien en la comunidad y esto lleva mucho tiempo. La gente está encantada de ser el experto de la comunidad.
+
+SAn:
+una lucha en paralelo sensibilizar la gente sobre el contenido que van a recibir una vez que tengan acceso a internet
+
+William:
+encuentro con una empresa que da conectividad a comunidades, ellos lo gestionan en estilo de empresa, sueltando los cacharros y marchandose. Es importante hacer un seguimiento a las comunidades. Es importante entregar el conocimiento completo también.
+
+NicoPace:
+ponemos un termino máximo para la próxima reunión en 2 meses
+
+Ger:
+ideal próxima reunión en febrero
+
+CONSENSUADO:
+traspasar usuarios de lime-dev a lime-users y dejar de usar lime-dev - move the users from lime-dev to lime-users mailing list and stop using lime-dev mailing list
+red inicialmente geek-free: proponer en la lista de correo [ger ferrero: yo podría iniciar este hilo, luego de que San traspase los usuarios] - defining LibreMesh as a "initially geek-free" project, which means that we want to develop LibreMesh so that non-geek users can start using LibreMesh, but will be encouraged to understand the inner mechanisms if they want
+publicamos el acta en la lista de correo - this meeting log will be published in the lime-users mailing list
+la próxima reunión debería ser en febrero - the next meeting should be on February

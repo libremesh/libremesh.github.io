@@ -49,3 +49,5 @@ During the meetings we use this format:
 == Report of our meetings
 
 * link:./report_2023.html[2023]
+* link:./report_2022.html[2022]
+* link:./report_2021.html[2021]
