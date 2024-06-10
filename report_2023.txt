@@ -4,6 +4,256 @@ ref: report 2023
 lang: en
 ---
 
+## 2023-12-02 PROJECT MEETING
+
+*Saturday the 2th of December 2023 at 13:00 UTC (14:00 CET, 10:00 ART).*
+
+Time: 13:00-14:16 UTC
+
+**People:** Cri, Chris
+
+Welcome Chris, he is a Linux System Administrator from Minnesota, U.S.A
+Cri shared documentation from antennine network
+
+### Website
+
+we have the possibility to keep the same structure of the old website: jeckyll + ascii-doc but with a different theme: this is good because the content input can be txt file, and we reuse txt file to put the doc in the firmware and be readable by browser. 
+
+Cris: I'm happy that we keep the old habits about the structure oof the content, but with this restyl we move in a more fashionable shape. And I think is motivating also to update the documentation :) that probably the next work that we have to do... for the new year
+Chris: I think the new theme looks nice. (But I am not a designer)
+
+From this assembly the opinion looks positive to the merge of the "new restyle" of the website. we wait a week to see reaction in mailinglist, and after I(Cris) can accept merge request.
+
+### Testing
+
+two people answered to this call https://lists.autistici.org/message/20231101.163202.5a0742ed.en.html
+I, Cris, think that both are trustable people.. I expected that some of them come to this meeting, but this not happen.
+
+Scenarios to check:
+
+* checking if the internet connection internet1 goes down, if the wifi
+clients (common AP name) still have connection
+* checking if the internet connection internet2 goes down, if the wifi
+clients (common AP name) still have connection
+* checking if the internet connection internet1 goes down, if the cabled
+clients (on dual_band#2) still have connection
+* checking if the internet connection internet2 goes down, if the cabled
+clients (on dual_band#2) still have connection
+* checking roaming, e.g. with an audio call
+* define exactly how router wire to router is connected: LAN to LAN with
+mesh configuration e.g.
+https://github.com/libremesh/network-profiles/tree/master/calafou#lime-community-configuration-3
+
+Pony proposal and devices: https://lists.autistici.org/message/20231126.160655.2b35dc1f.en.html
+Cris: good point that the devices are with DSA.. not clear "None of them are running babeld though" and not clear if this is give problem to test, for example the first 2 scenarios: 
+
+Hiure https://lists.autistici.org/message/20231106.130003.64e0e1be.en.html
+Cris: Good point is that can have a test in a real infrastructure. I would like know if the devices are with DSA or not..
+
+we can wait answer in the mailinglist, if is present DSA on the devices is better to test because is one of the new feature present in openwrt23 and 23.
+
+### Name of the new release
+
+Gio proposed Fantastic Forwarder https://lists.autistici.org/message/20231027.124816.b94a37d1.en.html
+
+For this assembly the name sounds good! 
+
+### GSoC2024
+
+we just introduced the topics.. we are happy to listen proposals in the next weeks in the mailinglist.
+the last year with the opportunity and money (circa 3k euro) from th GSoC we wrote Ansible roles to automated the build of the Libremesh release candidate. and this was really good for the Libremesh project.
+So lets go to think something of improving for the next year. The work will be done in summer 2024 and we need also 2 people that apply as Mentor.
+we can propose probably 2 projects.. but all the year depend from freifunk and google how many project can be really realized.
+
+Topics:
+* Assign the work-grant for testing the release candidate
+* Website restyling, e.g. https://libremesh.antennine.campiinrete.org
+* Next release name 
+* GSoC2024
+
+## 2023-11-01 PROJECT MEETING
+
+*Wednesday the 1st of November 2023 at 13:00 UTC (14:00 CET, 10:00 ART).*
+
+**People**
+
+SAn, Ilario, Ger, Cri, Gothos, Maden
+
+**Topics**
+
+* How to use donations (buying hardware?)
+* News about Altermundi roadmap 2023
+* Where to store the log of the meetings
+* OpenWrt 22 or OpenWrt 23 as a base for the next release candidate?
+* Outdated release server
+* Free discussion about other projects and LibreMesh
+* Firmware signatures
+* Next meeting
+
+
+Past meeting topics:
+* news
+* website and documentation update
+* need of a Docker image for unit testing on OpenWrt 22.03
+* decide the list of targets for being compiled for release 2020.2 based on OpenWrt 19.07
+* upcoming release LibreMesh 2020.2
+* News about Altermundi roadmap 2023 ?
+* how to use the donations on OpenCollective (e.g. a compilation server, or donation to Battlemesh) https://opencollective.com/libremesh
+* news about battlemesh
+* next meetings dates
+* resume of previous technical meetings and announcement of next technical meeting date
+for the next TECH meeting:
+* proposal: move the report in the wiki of github? another wiki? what is thi?https://gitlab.com/libremesh
+* Check that issues and the label is:issue is:open label:"in progress"  is actulized
+    https://github.com/libremesh/lime-packages/issues/
+* future release LibreMesh 2023.1 (based on openwrt-22.03)
+* prioritise a list of issues to be resolved for the next LibreMesh 2023.1 release based on OpenWrt 22.03 https://github.com/orgs/libremesh/projects/3/views/1
+* decide a list of packages to be included in next LibreMesh 2023.1 https://github.com/libremesh/libremesh.github.io/issues/103
+* This question from Elektra during past tech meeting: - How are people porting new devices?
+    Relevant?: 
+    https://communitynetworks.group/t/expanding-openwrt-libremesh-hardware-support/790/5
+    https://communitynetworks.group/t/openwrt-libremesh-image-building-learning-group/823
+For next project meeting:
+* introductions and recent projects and contributions related with LibreMesh
+
+
+### How to use donations (buying hardware?)
+
+Old decision: stickers to be printed by people attending events.
+
+Currently we have 617 $
+https://opencollective.com/libremesh#category-BUDGET
+
+We need to write an email defining for what the money can be spent. The decision would be taken in the project meetings.
+
+From the meeting minute of 2023-04-01:
+
+* pay the travel to the battlemesh for some of librerouter/altermundi (maybe next year or another event)
+* pay the travel for the travel to battlemesh for some people of Antennine (maybe next year or another event)
+* pay the update of the server of downloads CodigoSur? Chiede Cri
+* buy some stickers LibreMesh YES
+* donation for the domain name? for the newsletter?
+* email @libremesh.org? [20231101 nah]
+* hardware per testare il supporto?
+
+Ger: the priority should be having a release
+
+New proposals:
+
+* Pay someone for some testing hours
+    * Gothos? (Ilario asks)
+    * Proposing to everyone in the mailing list (Ilario writes) and the final decision is taken in the project meeting
+    * We can offer 550 $, keeping 67 $ for stickers
+    * Define object for payment: make a release
+    * Test on two different router models
+    * Report the observed issues
+    * Solve the issues if possible
+    * Define price per hour: 20 $/h
+    * This could also attract more donations, as now they will have a clear use
+* Pay hardware for testing for the release
+
+
+Minimum testing scenario:
+
+internet1 --wire-- dual_band#1 --wifi-- dual_band#2 --wire-- single_band#1 --wifi-- single_band#2 --wire or wifi-- internet2
+
+Requirements for dual_band router:
+* at least 1 radio at 2.4 GHz
+* at least 1 radio at 5 GHz
+* DSA supported
+
+Requirements for single_band router:
+* maximum 1 radio at either 2.4 GHz or 5 GHz
+* DSA supported
+
+Requirements for internet connections:
+* internet1 and internet2 should preferably be two different internet connections, but if they are the same it is ok
+
+Physical setup requirements:
+* none, even if all the routers are on the same table it is ok
+* wifi channels have to be selected for avoiding wifi connections between routers that are not indicated as connected (i.e. dual_band#1 and dual_band#2 should be on the same channels. single_band#1 and single_band#2 should be on the same channel, but a different one from the one used by the dual band routers)
+
+Scenarios to check:
+
+* checking if the internet connection internet1 goes down, if the wifi clients (common AP name) still have connection
+* checking if the internet connection internet2 goes down, if the wifi clients (common AP name) still have connection
+* checking if the internet connection internet1 goes down, if the cabled clients (on dual_band#2) still have connection
+* checking if the internet connection internet2 goes down, if the cabled clients (on dual_band#2) still have connection
+* checking roaming, e.g. with an audio call
+* define exactly how router wire to router is connected: LAN to LAN with mesh configuration e.g. https://github.com/libremesh/network-profiles/tree/master/calafou#lime-community-configuration-3
+
+Additional tasks:
+
+* document how to set ethernet interfaces for mesh only or clients only
+
+### News about Altermundi roadmap 2023
+
+Cri asked in the ML
+SAn answered that is working in the hardware of LibreRouter2
+
+### Where to store the log of the meetings
+
+ML is ok
+Website also ok (the archive of the ML is public anyway, so public is ok)
+Cri will copy the info to the website
+
+### OpenWrt 22 or OpenWrt 23 as a base for the next release candidate?
+Currently, the release candidate 2023.1 is based on OpenWrt 22
+
+Ilario: 23
+SAn: 23
+Madez: 23
+Cri: 22 or 23 are ok
+Gothos: 23
+
+Ilario: let's name the new release candidate 2024.1-rc1
+
+SCENARIO ESISTENTE:
+
+rete mista openwrt & libremesh, feedback that the developing of libremesh is not enought fast as openwrt to releasing. Which relation there is with gluon? and which different?
+
+IMAGES ARE ALREADY AVAILABLE:
+https://firmware-libremesh.antennine.campiinrete.org/releases/master-ow23/
+
+
+### Free discussion about other projects and LibreMesh
+
+Discussing technical solutions in Gluon
+Gothos: Would be good to have a network-profile compatible with Gluon
+Discussing the problem of slow release cycle in LibreMesh
+
+
+### Outdated release server
+
+The server is outdated and is impossible to install anything.
+For some next meetings we need to think about it!
+
+
+### Firmware signatures
+
+Check the "### Add new signing keys" section of this email:
+https://lists.autistici.org/message/20230929.142923.34529fc1.en.html
+
+Screenshots from Github:
+
+![](http://pad.cas.cat/uploads/upload_4b83edf87044537c4fb31a3d41dff49d.png)
+
+---
+
+Seems that the keys cannot be accessed, so we either find who has the original key or we upload a new one.
+
+---
+
+![](http://pad.cas.cat/uploads/upload_e233e33ddc420710505b5d67e86df88d.png)
+
+Ilario writes to the people who could have the original key.
+If noone has it, we will just upload a new one/pair during the next project meeting.
+Maybe the key on Github is the same also on the repo server.
+Gothos will check.
+
+### Next meeting
+Saturday the 2th of December 2023 at 13:00 UTC (14:00 CET, 10:00 ART).
+
 
 == 2023-10-07 PROJECT MEETING
 
