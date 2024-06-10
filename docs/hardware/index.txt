@@ -42,6 +42,8 @@ This is a list of devices that were tested by the community and reported as full
 * https://openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] 
 * https://openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
 * https://openwrt.org/toh/tp-link/tl-wdr4300[TP-Link WDR4300] 
+* https://openwrt.org/toh/tp-link/archer-c5-c7-wdr7500[TP-Link Archer C5]
+* https://openwrt.org/toh/tp-link/archer-c5-c7-wdr7500[TP-Link Archer C7]
 * https://openwrt.org/toh/dragino/ms14[Dragino MS14] 
 * https://openwrt.org/toh/pcengines/alix[Alix 2d2] 
 * https://openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP] 
@@ -64,6 +66,11 @@ This is hardware that has been tested and works, but only with the latest LibreM
 
 * https://openwrt.org/inbox/toh/xiaomi/xiaomi_mi_router_4a_gigabit_edition[Xiaomi Mi Router 4A Gigabit Edition v1] v2 cannot be flashed with OpenWrt and there is no indication on the box for understanding if you are buying v1 or v2. Also, requires the 
 * https://openwrt.org/toh/hwdata/plasma_cloud/plasma_cloud_pa1200[Plasma Cloud PA1200]
+* https://github.com/openwrt/openwrt/commit/47de2c686291e69afc9f443e27e1dfd11ed5fbe7[Mercusys MR70X]
+* https://github.com/mikeeq/xiaomi_ax3200_openwrt#tutorial-how-to-install-openwrt[Xiaomi AX3200 / Redmi AX6S]
+* https://openwrt.org/toh/tp-link/re650_v1[TP-Link RE650 v1]
+* https://openwrt.org/toh/avm/fritz.box.4020[AVM FRITZ!Box 4020]
+* https://openwrt.org/toh/avm/avm_fritz_box_4040[AVM FRITZ!Box 4040]
 
 == Specific Devices Instructions
 
