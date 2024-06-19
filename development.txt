@@ -180,6 +180,20 @@ make -j$(nproc)
 
 If everything goes well you should find the produced binaries inside the +bin/+ directory.
 
+== Emulating on your computer with qemu
+
+Its possible to emulate a image compiled for x86_64 systems. See link:https://github.com/libremesh/lime-packages/tree/master/tools[script] qemu_dev_start.sh and qemu_dev_stop.sh scripts.
+
+[NOTE]
+=========================
+You will be running something like:
+```
+sudo ./qemu_dev_start openwrt-x86-64-combined-ext4.img openwrt-x86-64-ramfs.bzImage
+```
+More information link:https://github.com/libremesh/lime-packages/blob/master/TESTING.md[here]
+
+=========================
+
 == Submitting Patches
 
 We accept pull requests via GitHub. But patches can also be submitted via the lime-dev link:communication.html[mailing list].
