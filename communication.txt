@@ -3,6 +3,7 @@ title: Communication
 ref: communication
 lang: en
 ---
+:page-liquid:
 
 == Mailing Lists
 
@@ -13,7 +14,9 @@ The project communicate on the following mailing list
 
 You can see the https://lists.autistici.org/list/libremesh.html[mailing list archive here] and search in it using this form:
 
+++++
 {% include mailing_list_search_form.html %}
+++++
 
 == Chatroom
 
