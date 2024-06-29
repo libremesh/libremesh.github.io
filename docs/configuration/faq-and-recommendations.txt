@@ -33,7 +33,7 @@ See the `/etc/config/lime-autogen` file.
 
 == I want to change something but I can't find a freemaster option to do it
 
-This is why there are <<generic-configs>> and <<lime-assets>>
+This is why there are link:https://libremesh.org/docs/quick_start_guide/en_cli_configuration.html[generic-configs] and link:https://libremesh.org/docs/en_config.html#lime-assets[lime-assets]
 
 == How do I do it?
 
@@ -42,4 +42,5 @@ This is why there are <<generic-configs>> and <<lime-assets>>
 * How to set an administration password for the whole network
 * How to password protect the wireless
 
-For detailed information on these questions you can see the examples in {lime-example}.
+For detailed information on these questions you can see the examples in link:https://libremesh.org/docs/configuration/lime-example.html[lime-example].
+
