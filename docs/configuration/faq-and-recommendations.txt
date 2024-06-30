@@ -33,7 +33,7 @@ See the `/etc/config/lime-autogen` file.
 
 == I want to change something but I can't find a freemaster option to do it
 
-This is why there are link:https://libremesh.org/docs/quick_start_guide/en_cli_configuration.html[generic-configs] and link:https://libremesh.org/docs/en_config.html#lime-assets[lime-assets]
+This is why there are link:https://libremesh.org/docs/en_config.html#setting_up_things_not_foreseen_in_libremesh[generic-configs] and link:https://libremesh.org/docs/en_config.html#lime-assets[lime-assets]
 
 == How do I do it?
 

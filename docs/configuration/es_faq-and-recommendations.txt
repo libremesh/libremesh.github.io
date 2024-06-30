@@ -34,7 +34,7 @@ Ver el archivo `/etc/config/lime-autogen`
 
 == Quiero cambiar algo pero pero no encuentro una opcion de libremesh para realizarlo
 
-Para eso existen las <<generic-configs>> y los <<lime-assets>>
+Para eso existen las link:https://libremesh.org/docs/en_config.html#setting_up_things_not_foreseen_in_libremesh[generic-configs] y los link:https://libremesh.org/docs/es_config.html#lime-assets[lime-assets]
 
 == ¿Cómo hago?
 
@@ -43,4 +43,4 @@ Para eso existen las <<generic-configs>> y los <<lime-assets>>
 * Cómo poner un password de administración para toda la red
 * Cómo ponerle password al wireless
 
-Para información detallada de estas preguntas puedes ver los ejemplos en {lime-example}.
+Para información detallada de estas preguntas puedes ver los ejemplos en link:https://libremesh.org/docs/configuration/lime-example.html[lime-example].
