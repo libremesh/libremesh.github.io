@@ -4,7 +4,6 @@ ref: luci-lib-jquery-flot
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

@@ -4,7 +4,6 @@ ref: lime-proto-olsr6
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

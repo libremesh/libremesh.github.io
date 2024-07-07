@@ -1,8 +1,8 @@
 ---
+ref: vim-guide
+title: A very short Vim tutorial
 language: en
 ---
-
-== A very short Vim tutorial
 
 Vim is an extremely powerful console editor based on a clever idea: 
 the keyboard keys can be used both for normal typing (Insert mode) and for 

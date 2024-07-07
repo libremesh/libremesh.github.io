@@ -23,6 +23,9 @@ window.addEventListener("load", function() {
       siteTopic.setAttribute("data-md-state", "");
     } else if (currentScrollPos < 100) {
       siteTopic.setAttribute("data-md-state", "active");
+      topNav.style.display = "none";
+      sidebarPrimary.setAttribute("data-md-state", "lock");
+      sidebarSecondary.setAttribute("data-md-state", "lock");
     } else {
       topNav.style.display = "none";
       sidebarPrimary.setAttribute("data-md-state", "lock");

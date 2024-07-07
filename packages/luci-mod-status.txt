@@ -4,7 +4,6 @@ ref: luci-mod-status
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

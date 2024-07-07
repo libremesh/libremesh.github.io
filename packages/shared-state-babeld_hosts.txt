@@ -4,7 +4,6 @@ ref: shared-state-babeld_hosts
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

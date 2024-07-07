@@ -4,7 +4,6 @@ ref: shared-state-dnsmasq_servers
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

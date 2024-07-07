@@ -109,7 +109,7 @@ config lime system
 
 We suggest you change the domain +thisnode.info+ to a new *subdomain* of your community site, for example +option domain 'mesh.altermundi.net'+. This domain ('mesh.altermundi.net') should be a domain that does not already exist outside the network (i.e. it is a bad idea to use 'altermundi.net'). All clients that get an IP address by DHCP and all network nodes will be assigned a *fully qualified domain* (e.g. 'lime-ddeeff.mesh.altermundi.net')
 
-General network configurations
+.General network configurations
 
 Of all the network options, the following are the most relevant
 ----

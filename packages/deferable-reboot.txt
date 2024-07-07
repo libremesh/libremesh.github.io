@@ -4,7 +4,6 @@ ref: deferable-reboot
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

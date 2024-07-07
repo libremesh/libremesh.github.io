@@ -4,7 +4,6 @@ ref: safe-reboot
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

@@ -4,7 +4,6 @@ ref: prometheus-node-exporter-lua-wifi-params
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

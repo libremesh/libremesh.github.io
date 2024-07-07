@@ -11,12 +11,10 @@ docs:
   - ref: docs_overview
   - ref: quick_starting_guide
     subpages:
-      - ref: quick_starting_guide
       - ref: connecting_to_nodes
       - ref: cli_configuration
   - ref: configuration
     subpages:
-      - ref: configuration
       - ref: faq-and-recommendations
       - ref: lime-example
   - ref: ethernet_config
@@ -24,14 +22,12 @@ docs:
   - ref: troubleshooting
   - ref: hardware
     subpages:
-      - ref: hardware
       - ref: tp-link
       - ref: xiaomi-miwifir3
   
 development:
   - ref: development
     subpages:
-    - ref: development
     - ref: development-network_profiles
     - ref: development-kernel_vermagic
 

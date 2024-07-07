@@ -4,7 +4,6 @@ ref: shared-state-wifi_links_info
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

@@ -6,7 +6,6 @@ packages:
     readme: Readme.md
   - name: bandwidth-test
   - name: batman-adv-auto-gw-mode
-  - name: bmx6-auto-gw-mode
   - name: bmx7-auto-gw-bw-mode
   - name: bmx7-auto-gw-mode
   - name: bmx7-mdns
@@ -33,7 +32,6 @@ packages:
   - name: lime-proto-babeld
   - name: lime-proto-batadv
   - name: lime-proto-bgp
-  - name: lime-proto-bmx6
   - name: lime-proto-bmx7
   - name: lime-proto-olsr2
   - name: lime-proto-olsr6
@@ -42,10 +40,8 @@ packages:
   - name: lime-report
   - name: lime-smart-wifi
   - name: lime-system
-  - name: lime-webui
   - name: lua-argparse
     readme: Readme.md
-  - name: luci-app-batman-adv
   - name: luci-app-openairview
   - name: luci-lib-jquery-flot
   - name: luci-mod-status
@@ -64,7 +60,9 @@ packages:
   - name: shared-state-async
     readme: README.adoc
   - name: shared-state-babeld_hosts
+  - name: shared-state-babel_links_info
   - name: shared-state-bat_hosts
+  - name: shared-state-bat_links_info
   - name: shared-state-dnsmasq_hosts
   - name: shared-state-dnsmasq_leases
   - name: shared-state-dnsmasq_servers
@@ -78,8 +76,6 @@ packages:
   - name: soporteremoto
   - name: sprunge
   - name: ubus-lime-batman-adv
-    readme: Readme.md
-  - name: ubus-lime-bmx6
     readme: Readme.md
   - name: ubus-lime-groundrouting
     readme: Readme.md

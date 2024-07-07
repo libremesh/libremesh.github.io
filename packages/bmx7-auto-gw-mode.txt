@@ -4,7 +4,6 @@ ref: bmx7-auto-gw-mode
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

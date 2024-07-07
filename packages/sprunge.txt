@@ -4,7 +4,6 @@ ref: sprunge
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

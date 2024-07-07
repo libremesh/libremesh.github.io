@@ -4,7 +4,6 @@ ref: batman-adv-auto-gw-mode
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

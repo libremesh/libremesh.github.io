@@ -4,7 +4,6 @@ ref: hotplug-initd-services
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

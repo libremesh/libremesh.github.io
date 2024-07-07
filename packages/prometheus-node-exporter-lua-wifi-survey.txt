@@ -4,7 +4,6 @@ ref: prometheus-node-exporter-lua-wifi-survey
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

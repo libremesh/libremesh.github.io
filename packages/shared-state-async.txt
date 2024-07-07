@@ -54,6 +54,28 @@ https://openwrt.org/docs/guide-developer/gdb
 
 VoCore2: Develop for OpenWrt on Qt Creator
 https://vonger.cn/?p=14657
+
+=== Plugin related notes
+Plugins must be registered into shared-state-async by using the config file. UCI infrastructure is preferred
+
+[source,console]
+--------------------------------------------------------------------------------
+mSc="plugin_name"
+
+uci set shared-state.${mSc}=dataType
+uci set shared-state.${mSc}.name='plugin-name'
+uci set shared-state.${mSc}.scope='community'
+uci set shared-state.${mSc}.ttl='1200'
+uci set shared-state.${mSc}.update_interval='120'
+uci commit shared-state
+--------------------------------------------------------------------------------
+
+Publishers must be located at +/usr/share/shared-state/publishers+ 
+All Publishers will be called at least once using shared-state-async-publish-all
+
+Sync is called automatically by shared-state-async according to "update_interval" parameter
+"ttl" stands for "time to live" and will decrease until 0.
+Data contents will be erased if "ttl" reaches 0. 
 ____
 
 == Makefile
@@ -90,7 +112,7 @@ PKG_VERSION=$(GIT_COMMIT_DATE)-$(GIT_COMMIT_TSTAMP)
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/libremesh/shared-state-async.git
-PKG_SOURCE_VERSION:=575a4774a5fa38e6d5549e08e217f6299dc16742
+PKG_SOURCE_VERSION:=db58e3d16e8658417956f9bb42e7e87f6aadcd4d
 PKG_MAINTAINER:=Asociación Civil Altermundi <info@altermundi.net>
 PKG_LICENSE:=AGPL-3.0
 

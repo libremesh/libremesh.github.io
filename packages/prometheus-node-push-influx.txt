@@ -4,7 +4,6 @@ ref: prometheus-node-push-influx
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

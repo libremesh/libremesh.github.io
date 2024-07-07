@@ -9,15 +9,14 @@ fontawesome_icon: fa-brands fa-linux
 
 The code is stored inside a git tree which contains all branches and releases.
 
-All repositories can be browsed online through
-https://github.com/libremesh/[GitHub].
+All repositories can be browsed online through https://github.com/libremesh/[GitHub].
 
 Most of the development happens in the _lime-packages_ git repository which can be browsed on https://github.com/libremesh/lime-packages[GitHub] or downloaded using git:
 
-```bash
+----
 git clone https://github.com/libremesh/lime-packages.git
 cd lime-packages
-```
+----
 
 == Compiling LibreMesh from source code
 
@@ -30,17 +29,17 @@ If you are unsure about your system having all the dependencies installed, you c
 
 On an Ubuntu system, the following command will install the minimum compilation dependencies:
 
-```
+----
 sudo apt update
 sudo apt install --no-install-recommends git ca-certificates subversion wget make gcc g++ libncurses5-dev gawk unzip file patch python3-distutils python3-minimal python2-minimal libpython2-stdlib
-```
+----
 
 For other Linux distributions the packets list could be slightly different, check out the link:https://openwrt.org/docs/guide-developer/build-system/install-buildsystem[OpenWrt build system installation page].
 
 Then you need to get the OpenWrt source code.
 Make sure to _git clone_ the source code as normal user (i.e. do not use root): the compilation will refuse to run if the administrator user _root_ is being used.
 
-.Download OpenWrt source code
+.*Download OpenWrt source code*
 LibreMesh can be built on top of various OpenWrt versions. We officially support the compilation with OpenWrt Old Stable (19.07.10) versions (LibreMesh still have to be adapted to work with the latest OpenWrt 21.02 version).
 
 For compiling LibreMesh on top of the Old Stable version of OpenWrt:
@@ -113,13 +112,13 @@ https://github.com/libremesh/network-profiles/[repository], but they can also be
 
 **Select** (press space until when an asterisk appears, like `<*>`) LibreMesh packages:
 
-* LibreMesh (or LiMe) → Offline Documentation → lime-docs-minimal (LibreMesh minimal documentation)
-* LibreMesh (or LiMe) → lime-app (LibreMeshApp)
-* LibreMesh (or LiMe) → lime-hwd-openwrt-wan (Respect openwrt wan interface as default)
-* LibreMesh (or LiMe) → lime-proto-anygw (LibreMesh anygw proto support)
-* LibreMesh (or LiMe) → lime-proto-babeld (LibreMesh babeld proto support)
-* LibreMesh (or LiMe) → lime-proto-batadv (LibreMesh batman-adv proto support)
-* LibreMesh (or LiMe) → shared-state
+* LibreMesh → Offline Documentation → lime-docs-minimal (LibreMesh minimal documentation)
+* LibreMesh → lime-app (LibreMeshApp)
+* LibreMesh → lime-hwd-openwrt-wan (Respect openwrt wan interface as default)
+* LibreMesh → lime-proto-anygw (LibreMesh anygw proto support)
+* LibreMesh → lime-proto-babeld (LibreMesh babeld proto support)
+* LibreMesh → lime-proto-batadv (LibreMesh batman-adv proto support)
+* LibreMesh → shared-state
 ** shared-state-babeld_hosts (babeld-hosts module for shared-state)
 ** shared-state-bat_hosts (bat-hosts module for shared-state)
 ** shared-state-nodes_and_links (nodes_and_links module for shared-state)
@@ -134,10 +133,10 @@ If after the compilation you don't see the compiled image in the `bin/targets/..
 
 Some more packages are recommended but not mandatory for a working LibreMesh network. Consider avoiding to select the following packages _only_ if the created image is too large and does not fit in the router memory.
 
-- LibreMesh (or LiMe) -> check-date-http (Keep local date under NTP too far away skew)
-- LibreMesh (or LiMe) -> Offline Documentation -> lime-docs (LibreMesh full documentation)
-- LibreMesh (or LiMe) -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
-- LibreMesh (or LiMe) -> lime-debug (libremesh debug utils)
+- LibreMesh -> check-date-http (Keep local date under NTP too far away skew)
+- LibreMesh -> Offline Documentation -> lime-docs (LibreMesh full documentation)
+- LibreMesh -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
+- LibreMesh -> lime-debug (libremesh debug utils)
 
 Additionally and optionally, httpS for the web interface can be enabled selecting (beware that the web interace will be shown as *not trusted*):
 

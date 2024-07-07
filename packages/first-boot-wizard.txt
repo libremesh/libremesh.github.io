@@ -4,7 +4,6 @@ ref: first-boot-wizard
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

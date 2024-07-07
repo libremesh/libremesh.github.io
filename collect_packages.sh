@@ -24,7 +24,6 @@ README=$(curl "$GITHUB_URL/$name/$readme") && \
 cat << EOF >> $PACKAGES_DIR/$name.txt
 
 == Readme
-[,markdown]
 ____
 $README
 ____

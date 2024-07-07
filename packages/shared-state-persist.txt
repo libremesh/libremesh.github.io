@@ -4,7 +4,6 @@ ref: shared-state-persist
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----

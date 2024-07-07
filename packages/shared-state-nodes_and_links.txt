@@ -4,7 +4,6 @@ ref: shared-state-nodes_and_links
 lang: en
 ---
 
-
 == Makefile
 [,make]
 ----
