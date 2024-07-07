@@ -2,7 +2,7 @@
 {% if page.url contains '/packages/' %} md-nav__item--nested-open {% endif %}">
   <a class="md-nav__link  {% if page.url == doc_page.url %} md-nav__link--active{% endif %}" 
     style="display: flex; justify-content: space-between" 
-    href="{% if page.url != 'packages/' %}{{site.prefix}}/packages/{% else %}#{% endif %}">
+    href="{% if page.url != '/packages/' %}{{site.prefix}}/packages/#{% else %}{{site.prefix}}/packages/#{% endif %}">
     <div>
       <i class="fa fa-cube" aria-hidden="true"></i>
       <span>Packages</span>
