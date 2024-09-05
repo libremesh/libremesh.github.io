@@ -45,8 +45,8 @@ defaults:
     values:
       layout: "packages"
 
-plugins: 
-  - jekyll_github_sample
+plugins:
+  - jekyll-fetch
 
 asciidoctor:
   attributes:

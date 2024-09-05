@@ -10,4 +10,4 @@ group :jekyll_plugins do
 end
 
 gem 'webrick'
-gem 'jekyll_github_sample', git: "https://github.com/bwillis/jekyll-github-sample", ref: 'master'
+gem "jekyll-fetch", '~> 0.2.1'
