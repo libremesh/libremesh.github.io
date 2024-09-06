@@ -4,6 +4,12 @@ ref: news
 lang: en
 ---
 
+== 2023-09-06 - LibreMesh on the waves
+
+On Friday the 19th of July, one of us was invited to Radio Campus in Brussels, for the "Radio Source" program, where they talk about current Free Software news and the world of Open Source development.
+We had the opportunity to talk with the hosts for about an hour about LibreMesh, why the project was created, how it was used in 2024 and about what a mesh network is, what are its purposes, and what LibreMesh offers regarding mesh networks. 
+The archive is available here https://redif.src.brussels/ under 2024 and then select the file from the 19th of July!
+
 == 2023-10-07 - A new stable release and a release candidate for Openwrt 22!
 
 We released a new version of Libremesh based on OpenWrt 19!
