@@ -145,7 +145,7 @@ Additionally and optionally, httpS for the web interface can be enabled selectin
 
 Finally, also the 802.11s mesh connections can be password protected, this will require a specific configuration and this package to be selected:
 
-- Network -> wpad-mesh-wolfssl
+- Network -> wpad-mesh-openssl
 
 and this to be **de**-selected:
 
@@ -153,7 +153,7 @@ and this to be **de**-selected:
 
 [IMPORTANT]
 =========================
-Due to a link:https://bugs.openwrt.org/index.php?do=details&task_id=3441[known bug], can happen that wpad-mesh-wolfssl gets automatically deselected. **Each time you use menuconfig, please check if wpad-mesh-wolfssl is still selected.**
+Due to a link:https://bugs.openwrt.org/index.php?do=details&task_id=3441[known bug], can happen that wpad-mesh-openssl gets automatically deselected. **Each time you use menuconfig, please check if wpad-mesh-openssl is still selected.**
 =========================
 
 [NOTE]
