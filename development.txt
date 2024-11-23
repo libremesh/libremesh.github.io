@@ -140,7 +140,6 @@ Some more packages are recommended but not mandatory for a working LibreMesh net
 
 Additionally and optionally, httpS for the web interface can be enabled selecting (beware that the web interace will be shown as *not trusted*):
 
-- Libraries -> libustream-wolfssl
 - Utilities -> Encryption -> px5g-standalone
 
 Finally, also the 802.11s mesh connections can be password protected, this will require a specific configuration and this package to be selected:
