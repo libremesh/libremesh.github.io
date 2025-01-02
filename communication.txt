@@ -18,6 +18,11 @@ You can see the https://lists.autistici.org/list/libremesh.html[mailing list arc
 {% include mailing_list_search_form.html %}
 ++++
 
+Old mailing list archives can be consulted at: 
+
+* lime-dev https://listas.altermundi.net/archives/list/lime-dev@lists.libremesh.org/latest
+* lime-users https://listas.altermundi.net/archives/list/lime-users@lists.libremesh.org/latest
+
 == Chatroom
 
 The chatroom can be accessed through Element app, desktop software or web client (link:https://element.io/personal[click here for checking out these chat clients]) and entering the `#libremesh-dev:matrix.guifi.net` chatroom. To write in the chatroom you'll need to register a user on any of the Matrix nodes (the default on element.io will also work). Other options for connecting can be found link:https://matrix.to/#/#libremesh-dev:matrix.guifi.net[clicking here]. 
