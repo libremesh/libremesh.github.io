@@ -22,6 +22,10 @@ You can see the https://lists.autistici.org/list/libremesh.html[mailing list arc
 
 The chatroom can be accessed through Element app, desktop software or web client (link:https://element.io/personal[click here for checking out these chat clients]) and entering the `#libremesh-dev:matrix.guifi.net` chatroom. To write in the chatroom you'll need to register a user on any of the Matrix nodes (the default on element.io will also work). Other options for connecting can be found link:https://matrix.to/#/#libremesh-dev:matrix.guifi.net[clicking here]. 
 
+== Social networks
+
+The LibreMesh project has an official PeerTube account on: [@libremesh@media.exo.cat](https://media.exo.cat/a/libremesh/).
+
 == Online meetings
 
 We decided to meet the "first Saturday of the month, every two months", with additional meetings in weekdays, so:
