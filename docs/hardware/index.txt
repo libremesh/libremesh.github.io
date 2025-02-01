@@ -23,7 +23,7 @@ The suggested devices have the following characteristics:
 * be supported by OpenWrt 19.07;
 * have at least 8 MB of flash memory;
 * have at least 64 MB of RAM memory;
-* have Atheros 9k radios (ath9k driver);
+* have Atheros 9k radios (ath9k driver), Atheros 10k (ath10k driver), Mediatek MT76xx, ;
 * have at least one 2.4 GHz radio and one 5 GHz radio;
 * have at least one ethernet port labelled as LAN.
 
@@ -39,32 +39,21 @@ This is a list of devices that were tested by the community and reported as full
 * https://openwrt.org/toh/xiaomi/mir3g[Xiaomi Mi WiFi R3G]
 * https://openwrt.org/toh/hwdata/youhua/youhua_wr1200js[YouHua WR1200JS]
 * https://openwrt.org/toh/hwdata/librerouter/librerouter_librerouter_v1[LibreRouter]
-* https://openwrt.org/toh/tp-link/tl-wdr3500[TP-Link WDR3500] 
-* https://openwrt.org/toh/tp-link/tl-wdr3600[TP-Link WDR3600]
-* https://openwrt.org/toh/tp-link/tl-wdr4300[TP-Link WDR4300] 
+* https://openwrt.org/toh/tp-link/tl-wdr3500_v1[TP-Link WDR3500] 
+* https://openwrt.org/toh/tp-link/tl-wdr3600_v1[TP-Link WDR3600]
+* https://openwrt.org/toh/tp-link/tl-wdr4300_v1[TP-Link WDR4300] 
 * https://openwrt.org/toh/tp-link/archer-c5-c7-wdr7500[TP-Link Archer C5]
 * https://openwrt.org/toh/tp-link/archer-c5-c7-wdr7500[TP-Link Archer C7]
-* https://openwrt.org/toh/dragino/ms14[Dragino MS14] 
 * https://openwrt.org/toh/pcengines/alix[Alix 2d2] 
-* https://openwrt.org/toh/ubiquiti/unifi[Ubiquiti UniFi AP] 
-* https://openwrt.org/toh/ubiquiti/airrouter[Ubiquiti AirRouter] 
-* https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_airgateway[Ubiquiti AirGateway] 
-* https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti NanoBridge M2 and M5] 
+* https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_unifi_ap[Ubiquiti UniFi AP] 
 * https://openwrt.org/toh/ubiquiti/nanostationm2[Ubiquiti NanoStation M2 XW and LoCo M2 XW] 
 * https://openwrt.org/toh/ubiquiti/nanostationm5[Ubiquiti NanoStation M5 XW and LoCo M5 XW] 
-* https://openwrt.org/toh/ubiquiti/picostationm2[Ubiquiti PicoStation M2] 
-* https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti Bullet M2 and M5] 
-* https://openwrt.org/toh/ubiquiti/airmaxm[Ubiquiti Rocket M2 and M5] 
+* https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_bullet_m_xw[Ubiquiti Bullet M2 XW and M5 XW] 
+* https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m2_xm[Ubiquiti Rocket M2] and https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm[M5] 
 * https://openwrt.org/toh/buffalo/wsr-1166dhp[Buffalo WSR-1166DHP] 
-* https://openwrt.org/toh/arc/freestation[Flex mARC] 
-* https://openwrt.org/toh/wd/n600[Western Digital My Net N600] 
+* https://openwrt.org/toh/western_digital/n600[Western Digital My Net N600] 
 * https://openwrt.org/toh/gl.inet/gl-ar300m[GL.iNet GL-AR300M16]
-
-== Supported only in the release candidate
-
-This is hardware that has been tested and works, but only with the latest LibreMesh code that is compiled on top of OpenWrt 22.03.
-
-* https://openwrt.org/inbox/toh/xiaomi/xiaomi_mi_router_4a_gigabit_edition[Xiaomi Mi Router 4A Gigabit Edition v1] v2 cannot be flashed with OpenWrt and there is no indication on the box for understanding if you are buying v1 or v2. Also, requires the 
+* https://openwrt.org/inbox/toh/xiaomi/xiaomi_mi_router_4a_gigabit_edition[Xiaomi Mi Router 4A Gigabit Edition v1] v2 cannot be flashed with OpenWrt and there is no indication on the box for understanding if you are buying v1 or v2.
 * https://openwrt.org/toh/hwdata/plasma_cloud/plasma_cloud_pa1200[Plasma Cloud PA1200]
 * https://github.com/openwrt/openwrt/commit/47de2c686291e69afc9f443e27e1dfd11ed5fbe7[Mercusys MR70X]
 * https://github.com/mikeeq/xiaomi_ax3200_openwrt#tutorial-how-to-install-openwrt[Xiaomi AX3200 / Redmi AX6S]
