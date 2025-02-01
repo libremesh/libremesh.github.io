@@ -40,12 +40,12 @@ Then you need to get the OpenWrt source code.
 Make sure to _git clone_ the source code as normal user (i.e. do not use root): the compilation will refuse to run if the administrator user _root_ is being used.
 
 .*Download OpenWrt source code*
-LibreMesh can be built on top of various OpenWrt versions. We officially support the compilation with OpenWrt Old Stable (19.07.10) versions (LibreMesh still have to be adapted to work with the latest OpenWrt 21.02 version).
+LibreMesh can be built on top of OpenWrt version 23.05.5.
 
-For compiling LibreMesh on top of the Old Stable version of OpenWrt:
+For compiling LibreMesh on top of the stable version of OpenWrt, first download the OpenWrt BuildRoot code:
 
 --------------------------------------------------------------------------------
-git clone -b v19.07.10 --single-branch https://git.openwrt.org/openwrt/openwrt.git
+git clone -b v23.05.5 --single-branch https://git.openwrt.org/openwrt/openwrt.git
 --------------------------------------------------------------------------------
 
 .Enter OpenWrt build root
@@ -62,12 +62,12 @@ cp feeds.conf.default feeds.conf
 --------------------------------------------------------------------------------
 cat << EOF >> feeds.conf
 
-src-git libremesh https://github.com/libremesh/lime-packages.git;v2020.4
+src-git libremesh https://github.com/libremesh/lime-packages.git;v2024.1
 src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 --------------------------------------------------------------------------------
 
-With the lines above, you will compile the LibreMesh 2020.4 release. This is indicated by the `;v2020.4` suffix. Without this suffix, the `master` branch would be used, but **the `master` branch is *not* compatible with OpenWrt 19.07.** Instead, it is being developed for supporting OpenWrt 22.03.
+With the lines above, you will compile the LibreMesh 2024.1 release. This is indicated by the `;v2024.1` suffix. Without this suffix, the `master` branch would be used, but **the `master` branch is *not* compatible with OpenWrt 23.05.5.** Instead, it is being developed for supporting the yet-to-be-released OpenWrt 24.10 version.
 
 
 .Update the packages from the feeds
@@ -122,20 +122,17 @@ https://github.com/libremesh/network-profiles/[repository], but they can also be
 ** shared-state-babeld_hosts (babeld-hosts module for shared-state)
 ** shared-state-bat_hosts (bat-hosts module for shared-state)
 ** shared-state-nodes_and_links (nodes_and_links module for shared-state)
-* Utilities -> babeld-auto-gw-mode
-* Network -> batctl-default (B.A.T.M.A.N. Advanced user space configuration tool)
-
+* LibreMesh -> babeld-auto-gw-mode
 
 [NOTE]
 =========================
-If after the compilation you don't see the compiled image in the `bin/targets/.../.../` folder, it is possible that your router has such a small flash memory that the aforementioed packages don't fit in it (it can happen with routers having 4 MB of flash memory, check this on the https://openwrt.org/toh/start[OpenWrt Table of Hardware], or when selecting huge packages to be included). In this case, you can remove the `.config` generated packages list and repeat the packages selection without including `lime-app`. If the compiled image is still too large, try selecting only `lime-proto-anygw`, `lime-proto-batadv` and `lime-proto-babeld` or following https://openwrt.org/docs/guide-user/additional-software/saving_space[this guide].
+If after the compilation you don't see the compiled image in the `bin/targets/.../.../` folder, it is possible that your router has such a small flash memory that the aforementioed packages don't fit in it (it can happen also with routers having 8 MB of flash memory when selecting huge packages to be included). In this case, you can remove the `.config` generated packages list and repeat the packages selection without including `lime-app`. If the compiled image is still too large, try selecting only `lime-proto-anygw`, `lime-proto-batadv` and `lime-proto-babeld` or following https://openwrt.org/docs/guide-user/additional-software/saving_space[this guide].
 =========================
 
 Some more packages are recommended but not mandatory for a working LibreMesh network. Consider avoiding to select the following packages _only_ if the created image is too large and does not fit in the router memory.
 
 - LibreMesh -> check-date-http (Keep local date under NTP too far away skew)
 - LibreMesh -> Offline Documentation -> lime-docs (LibreMesh full documentation)
-- LibreMesh -> lime-hwd-ground-routing (Manage 802.1q VLANs for ground routing)
 - LibreMesh -> lime-debug (libremesh debug utils)
 
 Additionally and optionally, httpS for the web interface can be enabled selecting (beware that the web interace will be shown as *not trusted*):
@@ -148,12 +145,7 @@ Finally, also the 802.11s mesh connections can be password protected, this will 
 
 and this to be **de**-selected:
 
-- Network -> wpad-basic
-
-[IMPORTANT]
-=========================
-Due to a link:https://bugs.openwrt.org/index.php?do=details&task_id=3441[known bug], can happen that wpad-mesh-openssl gets automatically deselected. **Each time you use menuconfig, please check if wpad-mesh-openssl is still selected.**
-=========================
+- Network -> wpad-basic-mbedtls
 
 [NOTE]
 =========================
@@ -192,16 +184,9 @@ More information link:https://github.com/libremesh/lime-packages/blob/master/TES
 
 =========================
 
-[NOTE]
-=========================
-This script only works with Libremesh version 2020.4 Openwrt version 19.07.10.
-See more link:https://github.com/libremesh/lime-packages/pull/938[here].
-
-=========================
-
 == Submitting Patches
 
-We accept pull requests via GitHub. But patches can also be submitted via the lime-dev link:communication.html[mailing list].
+We accept pull requests via GitHub. But patches can also be submitted via the libremesh link:communication.html[mailing list].
 
 == The Web Presence
 
