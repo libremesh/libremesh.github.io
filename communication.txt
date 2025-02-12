@@ -24,7 +24,7 @@ The chatroom can be accessed through Element app, desktop software or web client
 
 == Social networks
 
-The LibreMesh project has an official PeerTube account on: link:https://media.exo.cat/a/libremesh/[@libremesh@media.exo.cat].
+The LibreMesh project has an official PeerTube account on: link:https://media.exo.cat/a/libremesh/[@\libremesh@media.exo.cat].
 
 == Online meetings
 
