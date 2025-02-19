@@ -141,11 +141,11 @@ Additionally and optionally, httpS for the web interface can be enabled selectin
 
 Finally, also the 802.11s mesh connections can be password protected, this will require a specific configuration and this package to be selected:
 
-- Network -> wpad-mesh-openssl
+- Network -> WirelessAPD -> wpad-mesh-openssl
 
 and this to be **de**-selected:
 
-- Network -> wpad-basic-mbedtls
+- Network -> WirelessAPD -> wpad-basic-mbedtls
 
 [NOTE]
 =========================
