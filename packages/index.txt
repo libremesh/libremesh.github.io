@@ -1,13 +1,15 @@
 ---
-title: Index of packages
-ref: packages_index
 lang: en
+ref: packages_list
 layout: page
 ---
+
+= Index of Packages
 
 https://github.com/libremesh/lime-packages/tree/master/packages
 
 == Packages list
+[start=1]
 {% for p in site.data.packages.packages %}
-https://github.com/libremesh/lime-packages/tree/master/packages/{{ p.name }}[{{ p.name }}]
+. https://github.com/libremesh/lime-packages/tree/master/packages/{{ p.name }}[{{ p.name }}]
 {% endfor %}

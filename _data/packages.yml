@@ -1,29 +1,23 @@
 packages:
   - name: altermundi-grafana
   - name: auto-usb-wwan
-    readme: Readme.md
   - name: babeld-auto-gw-mode
-    readme: Readme.md
   - name: bandwidth-test
   - name: batman-adv-auto-gw-mode
   - name: bmx7-auto-gw-bw-mode
   - name: bmx7-auto-gw-mode
   - name: bmx7-mdns
   - name: check-date-http
-    readme: Readme.md
   - name: check-internet
-    readme: Readme.md
-  - name: cotonete
-    readme: README.md
-    makefile_external_url: https://raw.githubusercontent.com/nicopace/cotonete/master/packages/cotonete/Makefile
-  - name: deferable-reboot
+  - name: deferrable-reboot
   - name: eupgrade
   - name: first-boot-wizard
   - name: hotplug-initd-services
-  - name: lime-app
   - name: lime-ap-watchping
-    readme: README
+  - name: lime-app
   - name: lime-debug
+  - name: lime-docs-it
+  - name: lime-docs-minimal
   - name: lime-docs
   - name: lime-hwd-ground-routing
   - name: lime-hwd-openwrt-wan
@@ -41,13 +35,10 @@ packages:
   - name: lime-smart-wifi
   - name: lime-system
   - name: lua-argparse
-    readme: Readme.md
-  - name: luci-app-openairview
-  - name: luci-lib-jquery-flot
+  - name: luci-lib-jquery-flot-0-8
   - name: luci-mod-status
   - name: miniserver-client
   - name: pirania
-    readme: Readme.md
   - name: prometheus-node-exporter-lua-location-latlon
   - name: prometheus-node-exporter-lua-wifi-params
   - name: prometheus-node-exporter-lua-wifi-stations-extra
@@ -56,11 +47,9 @@ packages:
   - name: random-numgen
   - name: safe-reboot
   - name: safe-upgrade
-    readme: Readme.md
   - name: shared-state-async
-    readme: README.adoc
-  - name: shared-state-babeld_hosts
   - name: shared-state-babel_links_info
+  - name: shared-state-babeld_hosts
   - name: shared-state-bat_hosts
   - name: shared-state-bat_links_info
   - name: shared-state-dnsmasq_hosts
@@ -71,22 +60,17 @@ packages:
   - name: shared-state-nodes_and_links
   - name: shared-state-persist
   - name: shared-state-pirania
-  - name: shared-state
+  - name: shared-state-ref_state_commons
   - name: shared-state-wifi_links_info
+  - name: shared-state
   - name: soporteremoto
   - name: sprunge
   - name: ubus-lime-batman-adv
-    readme: Readme.md
   - name: ubus-lime-groundrouting
-    readme: Readme.md
   - name: ubus-lime-location
-    readme: Readme.md
   - name: ubus-lime-metrics
   - name: ubus-lime-openairview
-    readme: Readme.md
   - name: ubus-lime-utils
-    readme: README.md
   - name: ubus-tmate
-    readme: README.md
   - name: watchping
   - name: wifi-unstuck-wa

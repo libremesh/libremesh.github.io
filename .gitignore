@@ -1,6 +1,9 @@
 html
 _site
 Gemfile.lock
+*~
+/packages/
+!/packages/index.txt
 
 .sass-cache
 .jekyll-cache
