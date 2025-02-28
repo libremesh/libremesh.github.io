@@ -67,7 +67,6 @@ li.fa-li { display: flex; align-items: baseline; }
 
 /* h1 */
 .md-typeset h1[id]:first-of-type {margin: 0; padding-bottom: 2rem; transition: .15s ease-out ;}
-.md-sidebar--primary[data-md-state="lock"] ~ div[id] .md-typeset h1[id] {padding-top: 4rem}
 
 header .md-tabs__list { margin-left: 0;}
 .md-footer-nav { margin-top: 0; background-color: transparent;}
