@@ -3,7 +3,7 @@
 PACKAGES_LIST=$(curl https://feed.libremesh.org/master/index.json | jq -r '.packages | to_entries[] | "\(.key)"')
 GITHUB_URL="https://raw.githubusercontent.com/libremesh/lime-packages/master/packages"
 PACKAGES_DIR=packages
-READMES=(Readme.md README.md README README.adoc) 
+READMES="Readme.md README.md README README.adoc"
 
 mkdir -p $PACKAGES_DIR
 
@@ -23,8 +23,9 @@ lang: en
 EOF
 
 	README=""
-	for file in READMES; do
-		README=$(curl "$GITHUB_URL/$name/$file" || "")
+	for file in $READMES; do
+		echo "Retrieving readme at $GITHUB_URL/$name/$file"
+		README=$(curl -s "$GITHUB_URL/$name/$file")
 		if [ "$README" != "404: Not Found" ]; then break; fi
 	done
 
@@ -38,7 +39,7 @@ ____
 EOF
 	fi
 
-	MAKEFILE=$(curl "$GITHUB_URL/$name/Makefile") && \
+	MAKEFILE=$(curl -s "$GITHUB_URL/$name/Makefile") && \
 	cat << EOF >> $PACKAGES_DIR/$name.txt
 
 == Makefile
