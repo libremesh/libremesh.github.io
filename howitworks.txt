@@ -12,8 +12,8 @@ lang: en
   - Network segmentation
   - Layer 2 roaming inside certain areas
   - Smart gateway selection with redundancy and possibility of user-choice
-  - Compatibility of most of the existing scenarios
-  - A single firmware image for all of your network (for ground level, for backbone, for companies, for quick deployments, etc.)
+  - Compatibility with many different scenarios
+  - A single firmware image for all the routers of your network
 
 == The Basics
 
@@ -21,44 +21,41 @@ The network architecture designed for LibreMesh is based on two layers:
 
 === Cloud layer 2
 
-The cloud layer 2 uses the dynamic routing protocol BATMAN-ADV
+The cloud layer 2 uses the dynamic routing protocol link:https://en.wikipedia.org/wiki/B.A.T.M.A.N.[BATMAN-adv].
 
 image::/assets/img/bat-adv.png[batmanadv,100,float="left"]
 *******************
 B.A.T.M.A.N. Advanced is a mesh routing protocol that runs in kernel space.
 Even if the network topology is made of multiple nodes and multiple hops, B.A.T.M.A.N. Advanced abstracts it to a single layer 2 broadcast domain.
 So from the user's perspective the entire mesh will look like a single LAN.
-This architecture is robust for roaming purposes, thus TCP and UDP connections are not lost even when moving and changing access points (AP's).
+This architecture is robust for roaming purposes, thus TCP and UDP connections are not lost even when moving and changing access points.
 *******************
 
 === Network layer 3
 
-The whole network layer 3 uses by default the routing protocol BMX
+The whole network layer 3 uses by default the routing protocol link:https://en.wikipedia.org/wiki/Babel_(protocol)[Babel].
 
-image::/assets/img/bmx7.png[bmx7,100,float="left"]
 *******************
-BMX6 (or the new version BMX7) is an IPv6 native dynamic routing protocol which offers very advanced features and a small
-network overhead, thanks to the distance-vector strategy and its set of optimizations. Version 7 has, in addition, security routing extensions.
+Babel is a robust and efficient routing protocol for both wireless mesh networks and wired networks.
 *******************
 
 === Mixing layers
 
-By default, all nodes are running both routing protocols (BMX and BAT-ADV), but on different VLANs.footnote:[Virtual isolated LAN, for instance wlan0.13].
-So the routing is isolated by the MAC layer.
+By default, all nodes are running both routing protocols (Babel and BATMAN-adv), but on different VLANs.footnote:[Virtual isolated LAN, for instance wlan0.13].
 
 [NOTE]
 =========================
-The BMX VLAN is always the same, so all link-layer connected nodes will see each other.
+The Babel VLAN is always the same, so all link-layer connected nodes will see each other.
 =========================
 
 [NOTE]
 =========================
-The BATADV VLAN depends on the cloud identifier which is calculated (by default) using the AP SSID.
+The BATMAN-adv VLAN depends on the cloud identifier which is calculated (by default) using the AP SSID.
 =========================
 
 [IMPORTANT]
 =========================
-The BMX network will be a single one for all of the mesh, but the BAT-ADV network may be split across several clouds.
+The Babel network will be a single one for all of the mesh, but the BATMAN-adv network may be separated between different local clouds.
 =========================
 
 image::/assets/img/network1.png[align="center"]
@@ -97,7 +94,7 @@ image::/assets/img/network3.png[align="center"]
 [NOTE]
 ======================
 The DHCP lease file is shared among the cloud to prevent collisions using
-link:http://en.wiki.guifi.net/wiki/A.L.F.R.E.D.[A.L.F.R.E.D.]
+link:https://github.com/libremesh/shared-state-async/[shared-state].
 
 As long as all nodes share the same anycast MAC/IP, from the client point of view it is fully transparent. 
 The gateway is always the same even though the mesh node (where they are attached) may change.
@@ -107,31 +104,18 @@ The gateway is always the same even though the mesh node (where they are attache
 image::/assets/img/network4.png[align="center"]
 
 When a client wants to go out from the LAN (cloud) to reach the Internet or any other network,
-it will send the packets to the special anycast gateway address.  The node where the client
+it will send the packets to the special anycast gateway address. The node where the client
 is physically attached will take care of this.
 
 [NOTE]
 ==============
-An ebtables.footnote:[something like iptables but for network layer 2] rule in the LAN/AP bridge prevents 
-packets sent to the anycast address from propagating through the cloud.  The mesh node where the client 
+An nftables.footnote:[a modern firewall software] rule in the LAN/AP bridge prevents 
+packets sent to the anycast address from propagating through the cloud. The mesh node where the client 
 is associated gets the packet but not the other nodes.
 ==============
 
 image::/assets/img/network5.png[align="center"]
 
-The packet is routed through the BMX layer 3 network to the best Internet gateway. It may be a node from the same cloud or any other from another cloud far away.
-
-[NOTE]
-=============
-BMX has a powerful smart gateway functionality which automatically selects the best Internet gateway node taking into account the available bandwidth.
-=============
+The packet is routed through the Babel layer 3 network to the closest Internet gateway. It may be a node from the same cloud or any other from another cloud far away.
 
 image::/assets/img/network6.png[align="center"]
-
-[NOTE]
-=============
-On the way back the packet will arrive to some node in the cloud but it might not be the same node.
-Nevertheless the packet will be correctly delivered to the originator.
-This is because BMX smart gateway uses 1-way tunnels to ensure the selected gateway is used.
-=============
-
