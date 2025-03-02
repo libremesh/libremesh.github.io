@@ -6,17 +6,19 @@ lang: en
 
 == Download it: The firmware selector
 
-At this page you can search for your router model and download the adequate file: "factory", for the first installation, or "sysupgrade", for replacing OpenWrt or from an older LibreMesh version:
+At this page you can search for your router model and download the adequate file
 
 https://repo.libremesh.org/selector/
 
-If no result is displayed, please select the "mini" version from the list of the available LibreMesh versions and search again.
+[NOTE]
+=========================
+You will need the "factory" file for the first installation from the vendor firmware. Or the "sysupgrade" file for replacing OpenWrt or for upgrading from an older LibreMesh version. When upgrading, make sure to **not** keep the previous configuration.
+=========================
 
-For finding all the LibreMesh firmware images, including old versions, check out this page:
-
-https://repo.libremesh.org/
-
-To find the right file to use, please refer to the OpenWrt wiki, see their link:https://openwrt.org/toh/start[Table of Hardware here].
+[IMPORTANT]
+=========================
+If you cannot find your router model, please select the `-mini` version from the list of the available LibreMesh versions and search again. If you cannot find your router neither like this, 
+=========================
 
 == Build it online: The firmware selector with custom packages
 
@@ -31,6 +33,14 @@ When you are happy with the settings, press "Request build" and the system will 
 == Build it locally: The OpenWrt buildroot with the LibreMesh modules
 
 Refer to the link:development.html[Development] page, use the v2024.1 tag and use OpenWrt 23.05.5 for compiling the latest release: *LibreMesh 2024.1 Fantastic Forwarder*.
+
+== Old versions
+
+For finding all the LibreMesh firmware images, including old versions, check out this page:
+
+https://repo.libremesh.org/
+
+To find the right file to use, please refer to the OpenWrt wiki, see their link:https://openwrt.org/toh/start[Table of Hardware here].
 
 == Installation procedure
 
