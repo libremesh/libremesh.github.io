@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES_LIST=$(curl https://feed.libremesh.org/master/index.json | jq -r '.packages | to_entries[] | "\(.key)"')
+PACKAGES_LIST=$(curl https://api.github.com/repos/libremesh/lime-packages/contents/packages | grep \"name\" | sed 's|.*"name": "\(.*\)",|\1|' )
 GITHUB_URL="https://raw.githubusercontent.com/libremesh/lime-packages/master/packages"
 PACKAGES_DIR=packages
 READMES="Readme.md README.md README README.adoc"
@@ -8,7 +8,7 @@ READMES="Readme.md README.md README README.adoc"
 mkdir -p $PACKAGES_DIR
 
 # cleanup
-rm -r `ls packages/ | grep -v "index.txt" | sed 's|^|packages/|g'`
+rm -rf `ls packages/ | grep -v "index.txt" | sed 's|^|packages/|g'`
 echo "packages:" > _data/packages.yml
 
 for name in $PACKAGES_LIST; do

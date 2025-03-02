@@ -33,4 +33,4 @@ jobs:
           ruby_ver: ''               # Default is 3.2.0 version
           cname: ''                  # Default is to not use a cname
           actor: ''                  # Default is the GITHUB_ACTOR
-          pre_build_commands: 'pacman -Sy --noconfirm jq && ./collect_packages.sh'     # Installing additional dependencies (Arch Linux)
+          pre_build_commands: './collect_packages.sh'     # Installing additional dependencies (Arch Linux)
