@@ -4,17 +4,33 @@ ref: get_it
 lang: en
 ---
 
-== Build latest LibreMesh code, locally using OpenWrt buildroot
+== Download it: The firmware selector
 
-Refer to the link:development.html[Development] page, use the v2020.4 tag for compiling the latest release: *LibreMesh 2020.4 ExpansiveEmancipation*.
+At this page you can search for your router model and download the adequate file: "factory", for the first installation, or "sysupgrade", for replacing OpenWrt or from an older LibreMesh version:
 
-== Download Precompiled Binaries
+https://repo.libremesh.org/selector/
 
-The latest stable release is available as a precompiled binary only for devices within the ath79 target of OpenWrt. Look for your router model in our downloads website:
+If no result is displayed, please select the "mini" version from the list of the available LibreMesh versions and search again.
 
-https://downloads.libremesh.org/current/
+For finding all the LibreMesh firmware images, including old versions, check out this page:
 
-and double check the correct file to use using the information available on the OpenWrt wiki, see their link:https://openwrt.org/toh/start[Table of Hardware here].
+https://repo.libremesh.org/
+
+To find the right file to use, please refer to the OpenWrt wiki, see their link:https://openwrt.org/toh/start[Table of Hardware here].
+
+== Build it online: The firmware selector with custom packages
+
+After selecting the LibreMesh version and the router model on the https://repo.libremesh.org/selector[LibreMesh firmware selector page], you will see a "Customize installed packages and/or first boot script" button. Click it and you will be able to add or remove packages to the firmware.
+
+Also, you can add custom configuration adding the package of a https://libremesh.org/development-network_profiles.html[network profile] (for example, the package of the network profile for the "calafou" community and the "indoor2" type will be named `profile-calafou-indoor2`).
+
+Additionally, you can add BASH commands to be run just after flashing the LibreMesh firmware in the "Script to run on first boot (uci-defaults)" section.
+
+When you are happy with the settings, press "Request build" and the system will compile a new LibreMesh image just for you!
+
+== Build it locally: The OpenWrt buildroot with the LibreMesh modules
+
+Refer to the link:development.html[Development] page, use the v2024.1 tag and use OpenWrt 23.05.5 for compiling the latest release: *LibreMesh 2024.1 Fantastic Forwarder*.
 
 == Installation procedure
 
