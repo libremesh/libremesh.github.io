@@ -4,6 +4,33 @@ ref: news
 lang: en
 ---
 
+== 2025-05-04 - LibreMesh 2024.1 release
+
+The LibreMesh community is enthusiast to finally announce a new release of LibreMesh:
+LibreMesh 2024.1 "Fantastic Forwarder".
+
+Four years of work and testing, link:https://github.com/libremesh/lime-packages/compare/v2020.4...v2024.1[334 commits] since LibreMesh 2020.4 in the lime-packages repository only, 10 developers, many improvements and the updated support for OpenWrt 23.05!
+
+A big news first: this LibreMesh release can be downloaded and customized online (!!!) using a tool developed by the OpenWrt community: the firmware selector. This is a large step forward in one of our main objective: enable everyone to build a network community, without being a shell-ninja. Enjoy it at this link: https://repo.libremesh.org/selector/
+
+=== What's new in 2024.1 "Expansive Emancipation"
+
+It is impossible to do a meaningful list of all the changes. A non complete list of the most relevant
+developments:
+
+* Compatibility with the new firewall adopted by modern OpenWrt: nftables;
+* Compatibility with the new configuration method for switches (DSA) while maintaining the compatibility with the old one (swconfig);
+* Compatibility with the usage of ujail introduced in OpenWrt for additional security;
+* Incorporate a link:https://github.com/libremesh/lime-packages/tree/master/packages/shared-state-async[new version of shared-state] written from scratch for performances;
+* Many fixes and code improvement, also coming from the testing grants funded with the link:https://opencollective.com/libremesh[donations collected on OpenCollective].
+
+=== Contributors
+
+This release has contributions from communities and individuals from all around the world. Testing, software development, documentation, community building. Thank you all!!
+
+Additionally to the link:https://openhub.net/p/libre-mesh/contributors?query=&time_span=&sort=twelve_month_commits[many many people] who contributed to set the foundations of LibreMesh, this specific release was made with the contributions of these people:
+link:https://github.com/G10h4ck[Gioacchino Mazzurco], link:https://github.com/a-gave[Gothos], link:https://github.com/altergui[Gui Iribarren], link:https://github.com/henmohr[Henrique Mohr], link:https://github.com/ilario[Ilario Gelmetti], link:https://github.com/javierbrk[Javier Jorge], link:https://github.com/aparcar[Paul Spooren], link:https://github.com/pony1k[Pony], link:https://github.com/spiccinini[Santiago Piccinini], link:https://github.com/selankon[Selankon].
+
 == 2023-09-06 - LibreMesh on the waves
 
 On Friday the 19th of July, one of us was invited to Radio Campus in Brussels, for the "Radio Source" program, where they talk about current Free Software news and the world of Open Source development.
