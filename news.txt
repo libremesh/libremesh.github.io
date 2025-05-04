@@ -13,7 +13,7 @@ Four years of work and testing, link:https://github.com/libremesh/lime-packages/
 
 A big news first: this LibreMesh release can be downloaded and customized online (!!!) using a tool developed by the OpenWrt community: the firmware selector. This is a large step forward in one of our main objective: enable everyone to build a network community, without being a shell-ninja. Enjoy it at this link: https://repo.libremesh.org/selector/
 
-=== What's new in 2024.1 "Expansive Emancipation"
+=== What's new in 2024.1 "Fantastic Forwarder"
 
 It is impossible to do a meaningful list of all the changes. A non complete list of the most relevant
 developments:
