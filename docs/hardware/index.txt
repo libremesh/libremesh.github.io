@@ -20,22 +20,21 @@ Plenty of other OpenWrt-supported devices not matching these characteristics can
 
 The suggested devices have the following characteristics:
 
-* be supported by OpenWrt 19.07;
+* be supported by OpenWrt 23.05;
 * have at least 8 MB of flash memory;
 * have at least 64 MB of RAM memory;
-* have Atheros 9k radios (ath9k driver), Atheros 10k (ath10k driver), Mediatek MT76xx, ;
-* have at least one 2.4 GHz radio and one 5 GHz radio;
-* have at least one ethernet port labelled as LAN.
+* have at least one 2.4 GHz radio and one 5 GHz radio (recommended but optional);
+* have at least one ethernet port labelled as LAN;
+* have a radio that supports the combination of AP + IEEE802.11s mesh (if unsure, ask for help on the link:/communication.html[communication channels]).
 
-The list of the dual band devices with Atheros 9k radio supported by OpenWrt link:https://openwrt.org/toh/views/$$toh_extended_all?datasrt=availability&dataflt%5BWLAN%20driver_wlan-drivers%2A~%5D=ath9k&dataflt%5BWLAN%205.0GHz%2A~%5D=n&dataflt%5BWLAN%202.4GHz%2A~%5D=n&dataflt%5BSupported%20Current%20Rel%2A~%5D=.0$$[can be found here].
+You can find two convenient tables of existing hardware, possible to filter by specific features link:https://openwrt.org/toh/start[here] (old format) and link:https://toh.openwrt.org/[here] (same data, new format).
 
-Please check the device-specific installation procedure on the OpenWrt wiki, in some cases it can be prohibitively complex.
+Please check the device-specific installation procedure on the OpenWrt wiki, in some cases it can be prohibitively complex and/or involve soldering on the router's motherboard.
 
 == Tested Hardware
 
 This is a list of devices that were tested by the community and reported as fully compatible with LibreMesh, it is by no means a complete list of the working devices.
 
-* https://openwrt.org/toh/xiaomi/mir3[Xiaomi MiWiFi R3]
 * https://openwrt.org/toh/xiaomi/mir3g[Xiaomi Mi WiFi R3G]
 * https://openwrt.org/toh/hwdata/youhua/youhua_wr1200js[YouHua WR1200JS]
 * https://openwrt.org/toh/hwdata/librerouter/librerouter_librerouter_v1[LibreRouter]
@@ -55,11 +54,12 @@ This is a list of devices that were tested by the community and reported as full
 * https://openwrt.org/toh/gl.inet/gl-ar300m[GL.iNet GL-AR300M16]
 * https://openwrt.org/inbox/toh/xiaomi/xiaomi_mi_router_4a_gigabit_edition[Xiaomi Mi Router 4A Gigabit Edition v1] v2 cannot be flashed with OpenWrt and there is no indication on the box for understanding if you are buying v1 or v2.
 * https://openwrt.org/toh/hwdata/plasma_cloud/plasma_cloud_pa1200[Plasma Cloud PA1200]
-* https://github.com/openwrt/openwrt/commit/47de2c686291e69afc9f443e27e1dfd11ed5fbe7[Mercusys MR70X]
-* https://github.com/mikeeq/xiaomi_ax3200_openwrt#tutorial-how-to-install-openwrt[Xiaomi AX3200 / Redmi AX6S]
+* https://openwrt.org/toh/hwdata/mercusys/mercusys_mr70x_v1[Mercusys MR70X]
+* https://openwrt.org/toh/xiaomi/ax3200[Xiaomi AX3200 / Redmi AX6S]
 * https://openwrt.org/toh/tp-link/re650_v1[TP-Link RE650 v1]
 * https://openwrt.org/toh/avm/fritz.box.4020[AVM FRITZ!Box 4020]
 * https://openwrt.org/toh/avm/avm_fritz_box_4040[AVM FRITZ!Box 4040]
+* https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr841n_v13[TP-Link TL-WR841ND v13]
 
 == Specific Devices Instructions
 
