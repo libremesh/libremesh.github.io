@@ -1,0 +1,41 @@
+This is the repository of the LibreMesh web pages.
+
+All pages should be written using https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[asciidoc syntax].
+
+Top level pages are located in this directory while the "Documentation"
+can be found in the docs/ sub-folder.
+
+The website is generated from asciidoc using jekyll invoked by a cron script
+every 15 minutes.
+
+In order to generate the pages locally for testing your changes,
+install https://jekyllrb.com/, issue "jekyll serve" and navigate to
+http://127.0.0.1:4000/ with your browser.
+
+Jekyll and its dependencies can also be installed using gem and bundler:
+
+    gem install bundler
+    cd libremesh.github.io && bundle install
+    jekyll build
+
+In Ubuntu/Debian you would need to install ruby header files
+
+    apt-get install ruby-dev
+
+An alternative to install Jekyll and all the gems required on your system
+can be to use Docker containers.
+
+An image from the jekyll project is available and documented here: https://github.com/jekyll/docker/.
+All you need to do -provided you have Docker installed- is to open a terminal
+and move to the folder where you cloned this repo and issue:
+
+    $ docker run --rm \
+        --publish 4000:4000 \
+        --volume="$PWD:/srv/jekyll" \
+        -it jekyll/jekyll \
+        jekyll serve
+
+The container just created will install missing dependencies for you and will
+start a developement webserver inside itself.
+You then just need to open a browser visiting http://127.0.0.1:4000 .
+Auto refresh is available and follows the edits you make to the code on your machine

@@ -1,0 +1,56 @@
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.2;
+}
+
+.top-bar .toggle-topbar span,
+.fa-ul a {
+    font-family:"Open Sans","DejaVu Sans",sans-serif;
+}
+
+.top-bar-section {
+    max-width: 100rem !important;
+}
+
+/* lang */
+.lng li {
+    font-weight: bold;
+    color: #666;
+    text-transform: capitalize !important;
+    text-decoration: underline;
+    min-width: 2rem;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    border-radius: 27%;
+    min-height: 1.4rem;
+    margin: 2px;
+    font-family: mono;
+    border: 1px solid #000;
+}
+.lng li:hover {
+    color: black;
+    background-color: lime;
+    border: 1px solid #ccc;
+}
+ul.lng li{
+    display: inline-block;
+}
+
+@media only screen and (min-width: 40.063em) {
+   .top-bar {
+	height: auto;
+	min-height: 3rem;
+	}
+}
+
+.top-bar .top-bar-title {
+    padding-left: 10px;
+}
+
+#toc li.active a {
+    font-weight: bold;
+}
