@@ -8,7 +8,7 @@ lang: en
 
 At this page you can search for your router model and download the adequate file
 
-https://repo.libremesh.org/selector/
+https://firmware-libremesh.antennine.org/selector/
 
 [NOTE]
 =========================
@@ -22,7 +22,7 @@ If you cannot find your router model, please select the `-mini` version from the
 
 == Build it online: The firmware selector with custom packages
 
-After selecting the LibreMesh version and the router model on the https://repo.libremesh.org/selector[LibreMesh firmware selector page], you will see a "Customize installed packages and/or first boot script" button. Click it and you will be able to add or remove packages to the firmware.
+After selecting the LibreMesh version and the router model on the https://firmware-libremesh.antennine.org/selector/[LibreMesh firmware selector page], you will see a "Customize installed packages and/or first boot script" button. Click it and you will be able to add or remove packages to the firmware.
 
 Also, you can add custom configuration adding the package of a https://libremesh.org/development-network_profiles.html[network profile] (for example, the package of the network profile for the "calafou" community and the "indoor2" type will be named `profile-calafou-indoor2`).
 
@@ -38,7 +38,7 @@ Refer to the link:development.html[Development] page, use the v2024.1 tag and us
 
 For finding all the LibreMesh firmware images, including old versions, check out this page:
 
-https://repo.libremesh.org/
+https://firmware-libremesh.antennine.org/
 
 To find the right file to use, please refer to the OpenWrt wiki, see their link:https://openwrt.org/toh/start[Table of Hardware here].
 
