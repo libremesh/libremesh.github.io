@@ -11,3 +11,4 @@ end
 
 gem 'webrick'
 gem "jekyll-fetch", '~> 0.2.1'
+gem "openssl"
