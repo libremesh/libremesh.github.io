@@ -6,7 +6,7 @@ lang: es
 
 == Descargar Binarios Precompilados
 Ofrecemos imagenes de firmware precompiladas de la versión estable de LibreMesh 2020.1 con **configuraciones genericas**. Esta es la
-forma más facil de obtener e instalar LibreMesh en tu router. La imagen de la  **versión estable** se puede encontrar en el sitio de https://firmware-libremesh.antennine.org/selector/[seleccion].
+forma más facil de obtener e instalar LibreMesh en tu router. La imagen de la  **versión estable** se puede encontrar en el sitio de https://firmware-selector.libremesh.org/selector/[seleccion].
 
 == Compilar localmente la última versión del codigo de LibreMesh usando buildroot de OpenWrt
 
