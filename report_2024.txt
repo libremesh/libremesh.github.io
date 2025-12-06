@@ -1,0 +1,1155 @@
+---
+title: LibreMesh 2023 Meetings
+ref: report 2023
+lang: en
+---
+
+## Saturday the 7th of December 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+### People
+
+Cristina, Ilario, Javier
+
+### Topics
+
+* Release 2024.1, what is missing
+* Testing grant: status of Hiure's one and funding a new one
+* Scheduling next meetings
+* Google Summer of Code evaluation of 2024 andu projects for 2025
+* Updating the list of admins of the repositories on Github
+* eth configuration
+
+### Release 2024.1, what is missing
+
+https://github.com/orgs/libremesh/projects/3/views/1
+
+We agree to make a release!
+
+Checking the list of issue, none of them is blocking for a release
+
+Ilario: The most "noteworthy" issues are:
+
+1) Include auto-defer mechanism in deferable-reboot https://github.com/libremesh/lime-packages/issues/1023
+deferrable reboot can be very useful once the auto-defer mechanism is in place. There is a pull request ready to merge for this:
+https://github.com/libremesh/lime-packages/pull/1147
+
+2) Problems with ethernet connections between routers in default configuration https://github.com/libremesh/lime-packages/issues/1121
+The router-router ethernet conection requires manual configuration, as with the default configuration it is working in a very unreliable and unstable way.
+
+3) Consider new interface names https://github.com/libremesh/lime-packages/issues/1132
+Routers with unusual interface names are completely unusable.
+
+
+### Testing grant: status of Hiure's one and funding a new one
+
+Seems that Hiure is waiting the release (?) for completing the testing grant.
+
+Currently, there are $1415 in the OpenCollective:
+https://opencollective.com/libremesh#category-BUDGET
+
+Of these, $500 will be given to Hiure for the testing grant.
+
+What to do with the remaining $915?
+
+Ilario: Another testing grant.
+Cri: A testing grant with funds for buying hardware and also a development grant for fixing the issues identified during the previous testing grants.
+Javier: If we fund the acquisition of hardware, there should be some clause that says that such hardware will be used also for testing next releases.
+Ilario: Pony fixed every issue they found, still, the "fixing things" grant would be amazing. If we want to fund a testing grant with more money for the hardware, we do not have enough money for also funding a "fix stuff found in testing grant" grant. Which one do we prioritize?
+Cristina: the testing + hardware one
+Javier: we should define a testing protocol
+Ilario: in the testing grant agreement a minimal list of stuff to test and of hardware to use was already included
+
+### Scheduling next meetings
+
+A meeting in December-January?
+https://framadate.org/otffJfChn3Ulv1FN
+will happen on the 3rd of January at the usual time: 13:00 UTC  (14:00 CET, 10:00 ART). 
+
+We will continue with the meetings on the 1st Saturday of February, April, June, August, October and December.
+
+* **Friday** the 3rd of January 2025 at 13:00 UTC (14:00 CET, 10:00 ART).
+* Saturday the 1st of February 2025 at 13:00 UTC (14:00 CET, 10:00 ART).
+* Saturday the 5th of April 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+* Saturday the 7th of June 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+* Saturday the 2nd of August 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+* **Wednesday** the 24th of September 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+* Saturday the 4th of October 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+* Saturday the 6th of December 2025 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+We closed the meeting here without discussing when to add meetings during the weekdays.
+
+--- END OF MEETING ---
+
+Participation during weekdays:
+
+* Friday the 1st of November 2024 ---
+* Wednesday the 11th of September 2024 --- Henrique, cri
+* Monday the 24th of June 2024 --- Javier Jorge, Ilario, Nemael, Cri
+* Wednesday the 5th of June 2024 --- Bruno, Cri, Henrique, Hiure, Ilario, Nemael, Gio, Batata
+* Thursday 4th of January 2024 --- Gothos, Pony, Nele, Ilario, Javier Jorge, Hiure, Cri
+
+Participation during Saturdays:
+
+* Saturday the 7th of December 2024 --- Cristina, Ilario, Javier
+* Saturday the 5th of October 2024 --- Cri, Hiure
+* Saturday the 3rd of August 2024 --- Nemael
+* Saturday the 1st of June 2024 --- Cri, Nemael, Henrique, Ilario, Gothos, Andrea
+* Saturday the 6th of April 2024 --- Hiure, Batata, Javier, Pony
+* Saturday the 3rd of February 2024 --- Hiure, Cri
+
+[not discussed] Non-weekend Ilario proposes: Wednesday the 24th of September 2025
+
+### Google Summer of Code evaluation 2024 and projects for 2025
+
+[not discussed] Crisina: we should start writing projects for GSoC 2025
+
+### Updating the list of admins of the repositories on Github
+
+[not discussed] List in October's meeting minute
+
+### eth configuration
+
+[not discussed] Javier is implementing something for configuring interfaces from lime-app (?)
+
+
+
+# Friday the 1st of November 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+# Saturday the 5th of October 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+## People
+
+Cri, Hiure
+
+## Topics
+
+* Closing thoughts on GSoC projects
+* Is it time to make a release?!
+* Updating the list of admins of the repositories on Github
+
+### Closing thoughts on GSoC projects
+
+Pirania updating project:
+https://gist.github.com/henmohr/6a1903f14fdd081e8b0560af2e8b7850
+https://github.com/libremesh/lime-packages/pull/1133
+
+should we add pirania to the suggested packages of LiMe?  sounds a good thing
+
+Hiure have to finish some test, before the new release of pirania.
+
+Cable purpose autodetection:
+https://blog.freifunk.net/2024/09/23/gsoc-2024-libremesh-cable-purpose-autodetection-2/
+
+Cri writes to G10hack about https://github.com/Nemael/lime-packages/commit/7129ff9a9d0f77be0fd5025ccdb7c01ef126cc1e
+
+Cri: we can start to planned for the next year projects to submit, before the end of january.
+
+Cri: a things that could be usefull in our network is have possibility to decide which gateway use a nodes in a set with many that one gateway.
+Hiure: check doc of shared-state, that possible already exist something doing this.
+
+### Is it time to make a release?!
+
+Is the testing from Hiure finished?
+Hiure: Looks working well 
+Cri: we are in the community only on 2 devices with last rc and looks working well
+
+here the links looks broken http://repo.libremesh.org/development/, 
+example: http://repo.libremesh.org/development/master-ow23.05.0/
+
+We can organize the release in mailinglist
+
+### Updating the list of admins of the repositories on Github
+
+Can we confirm the next meeting?
+Person proposed this list is not in this meeting.
+We don't know "criteri di scelta"
+
+#### Current list of admins:
+
+a-gave
+altergui
+amuuza
+André	Gaul andrenarchy
+AngiieOG
+Axel	Neumann
+Benny	Lichtner
+bruno	vianna
+Daniel	Golle dangowrt
+digitigrafo
+FreifunkUFO
+G10h4ck
+Gabriele	Gemmi gabri94
+hiurequeiroz
+Ilario	Gelmetti
+javierbrk
+luandro
+nicoechaniz
+Nicolás	Pace
+Nicolas	North nordurljosahvida
+p4u
+Pablo	Castellano
+Paul	Spooren aparcar
+raylas
+Santiago	Piccinini
+
+#### Consider keeping only:
+
++ a-gave
+bruno	vianna (?)
+Daniel	Golle dangowrt (?)
+digitigrafo
+G10h4ck
+hiurequeiroz
+Ilario	Gelmetti
+javierbrk
+Paul	Spooren aparcar
+Santiago	Piccinini
+
+#### Additionally, consider adding:
+
+pony1k
+????
+
+
+# Wednesday the 11th of September 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+## People
+Henrique, cri
+
+## Topics
+* GSoC New Pirania release
+    * final meeting of Gsoc 
+    * make a video about how to use pirania --> proposal for the future
+    * Cri questions: should my community implement Pirania?
+    * Cri question: should we add pirania to the suggested packages of LiMe? (because is also integrated in the limeapp..)
+    * Pirania listen also in physical interfaces?
+
+* use case section on the website:
+For example: 
+* extend a local network (example you are a University or big house and you flash more devices..)
+* create a network in a rural area, because you have only a place with a gateway
+* shared local resourses in a network
+* extend temporary network for a events
+
+Propose where to add in the website: in Quick starting guide
+
+
+
+# Saturday the 3rd of August 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+## People
+Nemael
+
+## Topics
+None
+
+# Monday the 24th of June 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+## People
+Javier Jorge, Ilario, Nemael, Cri
+
+
+## Topics
+
+* Publication of old meeting logs
+* GSoC New Pirania release
+* GSoC Cable purpose autodetection
+
+### Publication of old meeting logs -> mailinglist search
+Cri made a lot of editing to the logs and uploaded them on the website
+https://libremesh.org/communication.html#report_of_our_meetings
+
+Ilario: Do you think we should do something similar for the mailing list?
+
+Nemael: it is difficult to search the email from the Mailman archive. It has no search function.
+https://lists.autistici.org/list/libremesh.en.html
+
+Cri: I used the archive link in a search engine with the prompt "site:https://lists.autistici.org/list/libremesh.en.html come si cucinano gli scampi"
+
+Nemael: I tried but did not give me anything
+
+Ilario: I would suggest to create a file archive of all the emails and to upload it on the website. So that people could download the big file and import it in a local mail client (Mozilla Thunderbird)
+
+Nemael: It is not urgent. One could forward all the emails.
+
+Cri: we can investigate how to make it and define what to do in a following meeting. We can also ask to the mailing list server.
+
+Jorge: https://lists.autistici.org/splash/index.en.html here it has a search function! -> problem solved
+
+### GSoC Cable purpose autodetection
+
+Nemael:
+Sent an email with some comments: 
+https://lists.inventati.org/message/20240624.052254.7baf61e9.en.html
+
+Virtualization was a challenge, to get everything working and bridges between interfaces and how Ansible and qEmu work together. Gained a lot of understanding.
+
+There is a lot to learn here.
+
+Jorge: There are sooo many small details for having things working, you can find amazing technical solutions in this project.
+
+Nemael: Understanding how to make a package and having it work with the rest of the code. For now on qEmu.
+
+Javier: a small tip, we usually create an image for development, and then import the new script into the virtual machines just copying it, without compiling every time the whole thing. Gio compiles more frequently but he has a server for compiling. I can share the script to Nemael.
+
+
+#### Discussion of previous emails in the mailing list
+Ilario: Gio presented an interesting situation, when you use an access point in your network that does not run LibreMesh. It could be possible to filter the DHCP offers, because you can see if they are obviously wrong because LibreMesh has his own DHCP server. Lime-proto-anygw is the package that manage the dhcp server, and it could include more rules that would filter. A firewall rule is a solution to filter those DHCP.
+
+https://lists.inventati.org/message/20240621.154512.993eef6b.en.html
+
+Nemael: This is something I asked for at the beginning of GSoC, but communication was more scarce back then so it wasn't really considered. It would be good to go through the code with someone and ask questions. Also there are a lot of technical vocabulary, and I made a vocabulary list explaining how each words relate to LibreMesh.
+
+Ilario: It would be useful to do and record it to make it watchable later
+
+Javier: This would be a great help to onboard people.
+
+Ilario: In the past there was stuff uploaded here, we could do the same https://communitynetworks.group/t/traffic-control-on-openwrt-and-libremesh/822
+https://videos.apc.org/u/nicopace/m/openwrt-libremesh-image-building-learning-group/
+
+Jorge: Until now there is no frontend nor backend for notifications in lime-app, at some point will happen. A protoype of the backend would be useful. Maybe it will be a daemon collecting notifications and use ubus to ask for notifications, or shared-state for spreading the info. The most important part is the detection.
+
+Ilario: the ARP spoofing solution proposed in the email works but it would be maybe too aggressive, it is basically an attack towards the local network
+https://lists.inventati.org/message/20240621.154512.993eef6b.en.html
+
+Javier: I also don't understand what the CPU ports are used for, but they are present in commercial routers. It happens in situations where you have "5" ethernet ports, and 4 of them are connected to a switch and one single port in the 'back-end'
+
+example of board.json?
+https://lxr.openwrt.org/source/netifd/config/board.json
+
+Ilario: I vaguely remember that if a port is listed in all the interfaces, it is the CPU port. For example in the link above it would be lan1
+
+Jorge: I sent Nemael the scripts for updating the files in a running image. They are useful only for development.
+
+board.json from Pony email
+https://lists.inventati.org/message/20240621.153757.1eab7dbb.en.html
+
+config switch_vlan
+    option device 'switch0'
+    option vlan '1'
+    option ports '1 2 3 0t'
+
+Ilario: The CPU poirt is labelled "0t"
+
+Ilario: The board.json file gets generated from the info in /etc/board.d/... present for each target (family of routers), like this:
+https://github.com/robimarko/openwrt/blob/master/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+as you can see, the interfaces could have arbitrary names like ethblack and ethblue.
+Those files in /etc/board.d/ get executed by:
+https://github.com/openwrt/openwrt/blob/main/package/base-files/files/bin/board_detect
+And the board.json file gets generated using the functions in this file:
+https://github.com/openwrt/openwrt/blob/main/package/base-files/files/lib/functions/uci-defaults.sh
+
+# Wednesday the 5th of June 2024 at 13:00 UTC (15:00 CEST, 10:00 ART)
+
+## People
+Bruno, Cri, Henrique, Hiure, Ilario, Nemael, Gio, Batata
+
+## Topics
+* GSoC New Pirania release
+* GSoC Cable purpose autodetection
+* Reports from BattleMesh
+
+## Reports from BattleMesh
+
+Gio: I presented the peering between AP and AP, to replace ieee802.11s mesh and adhoc, as the driver support for these is getting worse.
+There are other stuff named mesh, but they are not useful.
+I am modifying the AP driver as little as possible, I am just modifying hostapd to recognize other APs like if they were clients/stations, so that the driver can be used as it is already working for AP-sta connections.
+Working for merging it in LibreMesh, but there are issues with netifd in OpenWrt.
+Gio: I am working also with LibreRouter2 prototype. Still not ready.
+
+Hiure: first time at the battlemesh. Resort environment, expensive, organization made some mistakes/misunderstandings, not easy to participate from the global south. 2 hours per day in a bus for going and coming back from the venue.
+
+Gio: not much hacking with hardware, few routers, no physical space for sitting and working with routers. There was the OpenWrt One router. Venue suited for presentations.
+
+## GSoC Cable purpose autodetection
+
+Hiure: some discussion at the BattleMesh. Discussion with Gio and Javier.
+-> Use shared-state packages to discover what kind of clients is behind the cable.
+
+Gio: Shared-states is more about sharing discoverability info with other notes
+Also, we could expand the functions of DHCP client from OpenWrt (command: dhcpcd -T eth0) so that it shows the info of the received IP offer but does not apply it.
+This can be used for getting info on what is connected to the ethernet port.
+This feature is very likely not present in OpenWrt.
+Example output:
+```$ sudo dhcpcd -T flw0
+dhcpcd-10.0.6 starting
+DUID 00:01:00:01:2c:84:82:4c:9c:.....:0d:00:2f:ad
+flw0: IAID f4:32:75:0d
+flw0: soliciting an IPv6 router
+flw0: soliciting a DHCP lease
+flw0: offered 172.20.10.6 from 172.20.10.1 RE11693i-server-name
+interface=flw0
+pid=21082
+protocol=dhcp
+reason=TEST
+ifcarrier=up
+ifflags=69699
+ifmetric=3003
+ifmtu=1350
+ifssid='RE11693i server name'
+ifwireless=1
+new_broadcast_address=172.20.10.15
+new_dhcp_lease_time=85536
+new_dhcp_message_type=2
+new_dhcp_server_identifier=172.20.10.1
+new_domain_name_servers=172.20.10.1
+new_ip_address=172.20.10.6
+new_network_number=172.20.10.0
+new_routers=172.20.10.1
+new_server_name=RE11693i-server-name
+new_subnet_cidr=28
+new_subnet_mask=255.255.255.240
+dhcpcd exited
+```
+Another test: check if via that port other peers can be reached. This can also be done via shared-state, to see if shared-state can find some other devices on the other side (and these devices are going to be LibreMesh devices, very likely).
+
+Ilario: Run detection at runtime or only when the user runs a config? During the meeting on the 1st of June we decided it was easier to have the auto-config happening when the user wants it, and  what Gio is proposing sounds like something running contantly.
+
+Gio: Yes, the idea is to have it done at runtime. This way we can also inform user the user about what changed on their netwwork. The main way to warn the user would be to send a notification through the lime app
+
+Javier: We can use the trigger that we already have that checks for interfaces going up and down.There are also some other events that have triggers  that might be useful.
+
+Ilario: I think that if it runs in runtime, the features should be very limited and we should be sure that they are safe. We need to write a short short list of situtions that we want to detect and why. Otherwise, the network changing in runtime could cause bugs that would be hard to track.
+
+Gio: the detection sould suggest the users that some broken router has been connected to the network, without configuring it. Via a notification in the lime-app.
+
+Ilario: there could be a useful use for this autodetection which is discerning between cable-connected client or client-connected LibreMesh router. The system could configure the port for avoiding Batman-adv loops.
+
+Gio: shared-state has a reference state, so lime-app can show what changed and show a notification saying it is broken now. The goal is to make troubleshooting easier for the user. The configuration of batman-adv vs client connected to ethernet is useful but could be suggested to the user from the lime-app, not necessarily applied automatically. Troubleshooting is very important, and this could help.
+
+Ilario: Should there be some modules that the user activates to receive these notifications and features?
+
+Gio: Every bit of this thing should be a module, that can be enabled and disabled.
+
+Ilario: Notifications should also be possible to be disabled from the lime-app directly.
+
+Ilario: Should Nemael develope shared-states module?
+
+Gio: It depends, some things are useful in shared-states, but dhcpcp -T is independant to shared-state, it is a modification to udhcpcd. Better to stat with one module , dhscp configuration start, and implement one feature using that.
+
+## GSoC New Pirania release
+
+Hiure: Pirania config file contains which interface Pirania will monitor, so it is normal that it does not check the APname interface, but only the AP one. But it can be configured.
+Moving to nftables.
+
+Henrique: Ilario mentioned possible changes due to swconfig -> DSA configuration of switches. I could try to install nftables on OpenWrt 19 to migrate features in place.
+
+Gio: better to work on the latest OpenWrt code.
+Pirania should not be affected by DSA.
+
+Hiure: ipset?
+
+Gio: ipset should be migrated also to nftables.
+
+Hiure: ebtables?
+
+Gio: Pirania should not touch ebtables. Anyway also ebtables can be migrated to nftables, but check if that ebtables line makes sense first.
+
+Henrique: https://wiki.nftables.org/wiki-nftables/index.php/Nftables_families
+should I flash a router with a LibreMesh branch and work on the router directly?
+
+Gio: I would work with the development version of LibreMesh and OpenWrt
+
+Javier: you can work with qemu first, and then move to real hardware, if this is easier for you.
+There are some scripts and pending fixes in the documentation:
+https://github.com/libremesh/lime-packages/pull/1065
+
+## Next meeting
+
+24th of June, same time same Jitsi server (if it works)
+
+# Saturday the 1st of June 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+## People
+Cri, Nemael, Henrique, Ilario, Gothos, Andrea
+
+## Topics
+
+* Introductions
+* Updated PicoPeer agreement
+* GSoC New Pirania release
+* GSoC Cable purpose autodetection
+* Reports from BattleMesh
+* Updates on the testing grant?
+* When to make the release
+* Next meetings
+* Extra news
+
+### Introductions
+
+### Updated PicoPeer agreement
+
+Cri: Most of the mesh networks in the world are using a Picopeer agreement.
+Started from a community in London (London Mesh Network) and from another in Catalonia (Guifinet)
+4 points to a Picopeer agreement:
+    - Build a network between peers
+    - Give/keep net neutrality
+    - Give free transit on the network
+    - Every mesh network can have local agreements
+    
+Cri: Freifunk asked to discuss about adding:
+    - copyleft to contents shared freely in the network, so that members will agree to have copyleft content passing over their nodes.
+    - No need to share a personal contact, someone can be have community being the contact
+
+https://antennine.noblogs.org/post/2024/06/01/report-nuova-release-del-pico-peer-agreement/
+
+### GSoC New Pirania release
+
+https://blog.freifunk.net/2024/05/31/gsoc-2024-new-release-for-project-libremesh-pirania/
+
+HMohr: Cri and Gothos, are you using any captive portal?
+Gothos: Not yet
+HMohr: I will speak to Luandro
+
+Vouchers are needed for the economic sustainability of the network. In Brasil it is legal to share the connectivity but you cannot make profit (income has to be equal or less than the ISP fees).
+Start: virtualizing with qemu, then with physical routers
+
+Main problem: OpenWrt 19 (and the current Pirania code works on OpenWrt 19) uses iptables, OpenWrt 23 uses nftables
+
+https://github.com/freifunk/projects/blob/f602dd6da862040854e78d6f9585bfa81da01738/_projects/libremeshpiranianewrelease.md
+
+Splash page without need of vouchers is not implemented (???), even if it is mentioned in some parts of the documentation.
+Splash page is like a captive portal also for communities that does not use vouchers. Just for welcoming users and informing them about the network they are using.
+
+Cri: Beware! AP (e.g. ESSID LibreMesh.org) is showing the portal, but APNAME (e.g. ESSID LibreMesh.org/12345678) is not. Maybe this is ok? Communities can put a password to the APNAME or disable it.
+
+Cri: Problem with lime-app & Pirania: you can activate the voucher and deactivate the captive portal, that makes no sense.
+
+we have a meeting next wednesday 5 june to do deeper in the topic
+
+next tasks
+
+1) undestand what Pirania do and what not do
+2) build workflow to have the package builded
+3) 
+
+### GSoC Cable purpose autodetection
+
+Nemael: 
+how to apply configuration/s that works out of the box.. or have a button to push?
+
+4 main situations to detect:
+
+https://blog.freifunk.net/2024/05/31/gsoc-2024-libremesh-cable-purpose-autodetection/
+
+If we want to have the realtime detection and instantaneous configuration, we should warn the user that the change happened. Or one time configuration (first boot wizard)? but maybe this is out-of-scope of the project.
+
+Ilario: It seems very risky to have the runtime autodetection, if things go wrong, the debugging will be very complicated.
+
+Nemael: Let's start from the autoconfiguration triggered by the user, then we can see how difficult it is to have the runtime autoconfiguration (do we want it?).
+
+FOR NEXT YEAR'S GSOC: we could buy routers spending LibreMesh donations money on OpenCollective. Right now, most of the money we have are destinated for the testing grant.
+https://opencollective.com/libremesh
+but we can keep next money from mentors from GSoC24 for buy hardware in the future.
+
+Cri: From Italy, here some description of the hardware that we are using: https://antennine.noblogs.org/?s=antenne
+
+### Reports from BattleMesh
+
+Nobody in this meeting has been to BattleMesh
+    -> Reported to next meeting
+
+### Updates on the testing grant?
+
+Pony reported and also received the payment
+
+Hiure is still working on the details
+
+both improved a lot the next release quality
+
+### When to make the release
+
+Until now, the release candidates has only two commits of difference from the head of the release branch.
+A new release candidate now is not very different to the current release.
+Should a release candidate be before or after release candidate?
+ -> If before gsoc, maybe it could ease the work of GSoC?
+ -> If after gsoc, there would be more time to squash the bugs and the possibility to add the code written during the GSoC itself
+
+The second option has been preferred.
+
+### Next meetings
+
+https://libremesh.org/communication.html
+
+Wednesday the 5th of June 13:00 UTC (15:00 CEST, 10:00 ART)
+-> probably there will be Hiure (coolab) and Gio (altermundi)
+
+Monday the 24th of June 13:00 UTC (15:00 CEST, 10:00 ART)
+
+### Extra news
+
+Ilario: Tomorrow in Barcelona there will be an experimental deploy: libremesh devices connected with other OpenWrt devices. to make a Mesh with Libremesh used to connect the Openwrt devices that need to be flashed/configured for experimenting.
+LibreMesh routers will be used for managing the experimental network constituted by OpenWrt routers.
+This is useful for testing experimental mesh networks also for BattleMesh event. This has been organized with the help of Pedro from eXO (https://exo.cat/, an association born from Guifinet) and Bruno from Coolab.
+
+https://comunitat.canodrom.barcelona/assemblies/comunitat/f/1651/meetings/2812?locale=en
+
+# Saturday the 6th of April 2024 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+## People
+Hiure, Batata, Javier, Pony
+
+
+## Topics
+
+* New release candidate
+* Sorting of students for GSoC
+* Updates on the testing grant
+* Are we going to BattleMesh?
+
+### New release candidate
+
+Pre-meeting info: a new release candidate has been tagged. It points to the fixed lime-app https://github.com/libremesh/lime-packages/tree/v2024.1-rc1
+    Javier feels that we need to test a little bit more
+    Hiure will test the release candidate. After his repport, we can release it (or not)
+
+
+### Sorting of students for GSoC
+
+Pre-meeting info: we have a few students who applied for the Google Summer of Code. The last year, we had to sort them in order to allow Freifunk to select one-two from each sub-project.
+Applications here:
+https://uz.sns.it/~ilario/gsoc2024/
+Note: Mael Panouillot applied for two projects, but wrote us specifying that would prefer to work on Cable Purpose Autodetection
+
+Sorted as:
+   - LibreMesh Cable Purpose Autodetection: Mael Panouillot
+   - LibreMesh Internet Control: Ajay Chauhan
+   - Libremesh Pirania, new release: Henrique Mohr
+
+### Updates on the testing grant
+
+Pre-meeting info: Pony sent the report https://lists.autistici.org/message/20240224.195742.4837407c.en.html
+if this is approved during the meeting, we can give the second half of the grant.
+    The group defined that this report was approved
+    
+Hiure seems will test the just-released new version of lime-app before sending the final report.
+https://lists.autistici.org/message/20240318.233153.a7c8e534.en.html
+https://lists.autistici.org/message/20240403.205657.5738251a.en.html
+
+  
+
+Hiure started a new round of tests in a small testbed, he also found some problems recently where not all network profiles are able to compile the firmware (seems some depencencies issue)
+
+Pony are using wpa_cli, a command line tool to switch APs and seems its taking some time to reconect (roaming test)
+
+Test about name resolution: 
+    Hiure: problem with local server with offline ssl certificate, the server was in one cloud (network) and then when he tried to access it from another cloud (connected by cable) it's wasn't reachable (2 different meshs connected by cable)
+    
+Pony tested name resolution of routers in 2 clouds and it worked fine
+
+Hiure mentioned about shared'state package for DNS local server resolution but it wasn't tested yet
+
+Javier asked Hiure to write down what his found to improve bat name
+
+### Are we going to BattleMesh?
+Javier asked if we are going to BattleMesh 
+
+Date: May 15 - 19, 2024
+OpenWrt Summit Date: May 18 - 19, 2024
+Location: Cyprus
+Details: Battlemesh v16 & OpenWrt Summit 2024
+
+Can we go? Can we do some hackathon there? 
+
+
+# Saturday the 3rd of February 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+## People
+Hiure, Cri
+
+## Topics
+
+* Test New release
+* Projects for GSoC
+* Website
+
+
+### Work-grant for testing new release update
+
+Hiure:
+- https://github.com/libremesh/network-profiles/tree/master/LibremeshTestBed
+
+is testing su master of Libremesh, based on 22.03
+
+In the firmware selector https://openwrt.org/docs/guide-user/installation/attended.sysupgrade#asu_server
+you can choose which openwrt is based, if 22 or 23, and the last Lime commit available is of the 1 of november
+https://github.com/libremesh/lime-packages/commits/master/
+
+### Projects for GSoC
+
+- https://github.com/hiurequeiroz/projects/blob/pirania/_projects/libremeshpiranianewrelease.md
+
+- https://github.com/luandro/projects/blob/lime-internet-control/_projects/libremesh-internet-control.md
+
+Hiure will send email to ab@andi95.de
+
+Dead line 6th febbraio, to submit the projects
+
+This is the work done last year:
+https://blog.freifunk.net/2023/05/27/gsoc23-automation-tools-for-libremesh-firmware-build-and-monitoring/
+https://blog.freifunk.net/2023/07/08/gsoc23-automation-tools-for-libremesh-firmware-build-and-monitoring-part-2/
+https://blog.freifunk.net/2023/08/26/gsoc23-automation-tools-for-libremesh-firmware-build-and-monitoring-final/
+
+
+### Website
+
+work in progress, Cristina.. to change the jekyll theme.
+
+
+# Thursday 4th of January 2024 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+## People
+Gothos, Pony, Nele, Ilario, Javier Jorge, Hiure, Cri
+
+## Topics
+
+* Website
+* Assign the work-grant for testing the release candidate
+* GSoC2024
+* Tasks for the next release
+
+### Website
+The restyling has been approved in the previous meeting.
+The new website will look like this:
+https://libremesh.antennine.campiinrete.org
+ 
+### Assign the work-grant for testing the release candidate
+Hiure routers:
+https://md.coolab.org/YaNewwIUSGuETd1uJRw1kw?view
+they have routers with DSA.
+
+Ilario:
+There will be 500$ extra from GSoC mentor money, so we can fund 2 grants! 500$ per person should be enough for funding approx 30 hours of work (one week).
+
+Pony:
+I would test in both levels. I just wanted to point out in my Email that I have no experience with babeld. 
+
+as libremesh we decided to accept the proposal of working for testing the last RC, from Hiure and Pony!
+
+Money will be sent from:
+https://opencollective.com/libremesh
+we plan to divide a first part of the payament in the next week and another when they finish the hours of testing.
+
+Send bank details to Cri or Ilario (others admins are Pau, GMarcos, Aparcar and an anonymous account (WTF)) for payment. Half now, half later.
+
+
+#### Grant agreement
+
+from email of 9/11/23:
+"During the meeting, a person will be selected, and this person will be entitled to receive the donations' money in an amount of 20 $ per worked hour. Until now, we have available 617-70 = 547 $ so we can fund 27 work hours. If the testing is not completed in the hours that the donations can pay (likely) it is ok, the rest of the testing will be done by the community as usual."
+
+Reunited,
+the LibreMesh project meeting participants, taking decisions on behalf the whole LibreMesh community for topics related to the LibreMesh project and infrastructure;
+Pony pny@posteo.net;
+Hiure hiure@riseup.net.
+
+Observed,
+that Pony and Hiure fulfill the requirements exposed in the email from 2023-11-09 sent by Ilario to the official LibreMesh mailing list, which can be read here:
+https://lists.autistici.org/message/20231101.163202.5a0742ed.en.html
+applying a decision of the LibreMesh project meeting of 2023-11-01, whose minutes can be read here:
+https://pad.cas.cat/LibreMesh_meetup_2024?view#How-to-use-donations-buying-hardware
+
+Decided,
+that both and individually Pony and Hiure will receive the testing grant.
+
+Clauses,
+1) each of the grant holders will justify 30 hours of work with a short report sent on the official project mailing list and the official chatroom;
+2) the work of the recipients will have to be aimed to the grant goal defined in the initial email as "Help the release of a LibreMesh release based on OpenWrt 23.05: testing with a realistic setup, reporting issues and, if enough time is available, fixing blocking issues."
+3) specifically, the receivers are required to check if the observed issues are already reported in the project bug tracker on Github, add there any useful information gathered, and file a new bug report for issues that are not yet properly described. The recipients are not required to fix the observed bugs, but they are strongly encouraged to use their work-hours for fixing the issues that they perceive as useful in pursuing the grant goal of "Help the release of a LibreMesh release based on OpenWrt 23.05"; 
+4) both and each of the recipients will have to build a setup matching the minimum requirements defined in the initial email:
+
+*The minimal simple topology we drew is a linear one, represented here:*
+
+*internet1 --wire-- dual_band#1 --wifi-- dual_band#2 --wire--
+single_band#1 --wifi-- single_band#2 --wire or wifi-- internet2*
+
+*If the topology is going to be different, it is ok, as far as it is
+useful to test the release in a realistic setup.*
+
+*Requirements for dual_band router:*
+* *at least 1 radio at 2.4 GHz*
+* *at least 1 radio at 5 GHz*
+* *DSA supported*
+
+*Requirements for single_band router:*
+* *maximum 1 radio at either 2.4 GHz or 5 GHz*
+* *DSA supported*
+
+*Requirements for internet connections:*
+* *internet1 and internet2 should preferably be two different internet
+connections (P.S. either wireless WAN or ethernet WAN, both are fine), but if they are the same it is ok*
+
+5) the minimum scenarios to test are, as defined in the initial email:
+
+* *checking if the internet connection internet1 goes down, if the wifi
+clients (common AP name) still have connection*
+* *checking if the internet connection internet2 goes down, if the wifi
+clients (common AP name) still have connection*
+* *checking if the internet connection internet1 goes down, if the cabled
+clients (on dual_band#2) still have connection*
+* *checking if the internet connection internet2 goes down, if the cabled
+clients (on dual_band#2) still have connection*
+* *checking roaming, e.g. with an audio call*
+* *define exactly how router wire to router is connected: LAN to LAN with
+mesh configuration e.g.
+https://github.com/libremesh/network-profiles/tree/master/calafou#lime-community-configuration-3*
+
+6) some additional interesting things to inspect are included here but are not required:
+
+* document how to set ethernet interfaces for mesh only or clients only
+* inspect local DNS configuration
+* split the test network in two different clouds and checking the connection via wireless and via cable
+
+7) the LibreMesh project meeting will send 270 $ to each of the recipients as soon as bank details are provided. The received amount could be lower due to the bank transfer expenses.
+8) the LibreMesh project meeting will send 270 $ to each of the recipients as soon as each of them sends their reports on the mailing list. The received amount could be lower due to the bank transfer expenses.
+
+
+
+### GSoC2024
+
+https://projects.freifunk.net/#/projects
+https://github.com/freifunk/projects/tree/main/_projects
+
+https://developers.google.com/open-source/gsoc/timeline
+
+DEADLINE 6th of FEBRUARY
+
+
+#### Enable wifi simulations for qemu
+Javier:
+NIIT (INTI) + Altermundi
+
+https://github.com/freifunk/projects/blob/main/_projects/_template.md
+
+#### Pirania
+Hiure
+
+
+#### lime-app
+Cri
+
+additionally to LibreRouter fix some part that are not working to generic routers with libremesh, create an app external of the firmware that replaces lime-app, can be an android or a PWA, progressive web app. A the moment is not clear where the devoloping od lime-app is happening, here is stuck from 3of may 2023: https://github.com/libremesh/lime-app
+
+
+
+### Tasks for the next release
+
+* testing
+* lime-app release (Javier)
+* update the website removing mentions to LuCI
+* testing x86 images with virtual machines https://github.com/libremesh/lime-packages/pull/938
+* firmware selector https://repo.libremesh.org/selector/
+    * Gothos will fork (include feature to append configs, e.g. CONFIG_VERSION_DIST) the Attended System Upgrade software for having the files named LibreMesh
+https://firmware-selector.openwrt.org/
+* Gothos will compile the release
+* remove images with ath10k-ct
+* document the usage of the imagebuilder
+
+######### gothos proposals
+I recently rebuilded libremesh based on openwrt 23.05.2
+I've done another development build `libremesh-master-ow23.05.2-361645e-20231224` [0]
+https://downloads.libremesh.org/selector/?version=master-ow23.05.2-361645e-20231224
+https://downloads.libremesh.org/development/master-ow23.05.2-361645e-20231224/
+
+Since the default configuration of libremesh use 802.11s for wireless mesh networking
+In this build all 'ath10k-ct' packages are replaced with the default not '-ct' driver [1]
+
+I'm going to add the following steps for next development-builds/releases
+
+- include by default the package `wifi-unstuck-wa`, that contains a userspace workaround, in each devices that have the buggy ath9k driver [2]
+- ??include by default `wpad-mesh-wolfssl` or `wpad-mesh-mbedtls` in devices that has enough space, to allow by default to encrypt the mesh traffic [3]
+- do a mini release
+
+[0] the name follow this scheme: [version_dist]-[libremesh_branch]-ow[openwrt_version]-[libremesh_commit]-[build_start_date]
+[1] https://openwrt.org/docs/guide-user/network/wifi/mesh/80211s#wireless_hardware_support
+changes are documented here https://gitlab.com/a-gave/libremesh-ansible-collection/-/tree/master/target/libremesh_master/openwrt_23.05.2?ref_type=heads
+[2] https://github.com/openwrt/openwrt/issues/7016
+https://github.com/libremesh/lime-packages/issues/144
+https://github.com/freifunk-gluon/gluon/issues/130
+[3] https://libremesh.org/development.html
+################# /end of gothos proposals
+
+#### Discussion - Mini image
+Gothos: we could make a release mini with less packages to fit in routers with small flash memories. Trying to not get far away from the default ones for not adding too much maintenance stress.
+Ilario: no need. It would be harder to use (one of the values of the project is to make things easy for non-technical people), so the people able to use it would be technical enough to compile it by themselves.
+Hiure: good idea to have a small release. There are people able to use the CLI interface but cannot compile. It allows us to use old routers.
+Ilario: ok!
+
+KEEP lime-docs-minimal (LibreMesh minimal documentation)
+NOT NEEDED lime-app (LibreMeshApp)
+KEEP lime-hwd-openwrt-wan (Respect openwrt wan interface as default)
+KEEP lime-proto-anygw (LibreMesh anygw proto support)
+KEEP lime-proto-babeld (LibreMesh babeld proto support)
+KEEP lime-proto-batadv (LibreMesh batman-adv proto support)
+KEEP shared-state-babeld_hosts (babeld-hosts module for shared-state)
+NOT NEEDED shared-state-bat_hosts (bat-hosts module for shared-state)
+NOT NEEDED shared-state-nodes_and_links (nodes_and_links module for shared-state)
+KEEP babeld-auto-gw-mode
+NOT NEEDED batctl-default (B.A.T.M.A.N. Advanced user space configuration tool)
+
+Gothos: what about including WolfSSL or Mbed-TLS? It is better to keep safe.
+Ilario: OpenWrt moved from WolfSSL to Mbed-TLS. So for sure we should avoid WolfSSL. During BattleMesh, Marek mentioned that OpenSSL is the one that deals better with encrypted mesh over lossy links. But OpenSSL increases the size of the images of about 1 MB, so it could be that it does not fit on some routers. For people just wanting HTTPS on the web interface, Mbed-TLS should be more than enough.
+
+#### Discussion: differences between ImageBuilder and BuildRoot
+Cri: there is no documentation from openWRT about the differences in output, we need that before suggesting to our users to use the ImageBuilder
+
+Gothos: selecting batctl-default or other versions, this changes between the build methods
+
+Ilario: for sure these settings will not be present in the ImageBuilder, but they are not important.
+
+bmx7-auto-gw-bw-mode/Makefile:  select CONFIG_BUSYBOX_CONFIG_CROND
+bmx7-auto-gw-bw-mode/Makefile:  select CONFIG_BUSYBOX_CONFIG_CRONTAB
+bmx7-mdns/Makefile:  select CONFIG_BUSYBOX_CONFIG_CROND
+bmx7-mdns/Makefile:  select CONFIG_BUSYBOX_CONFIG_CRONTAB
+lime-debug/Makefile:	select BUSYBOX_CUSTOM
+lime-debug/Makefile:	select BUSYBOX_CONFIG_NC
+lime-debug/Makefile:	select BUSYBOX_CONFIG_NC_SERVER
+
+Someone, at some point, should ask to some OpenWrt guru about the differences.
+
+# Saturday the 2th of December 2023 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+Time: 13:00-14:16 UTC
+
+People: Cri, Chris
+
+Welcome Chris, he is a Linux System Administrator from Minnesota, U.S.A
+Cri shared documentation from antennine network
+
+## Website
+
+we have the possibility to keep the same structure of the old website: jeckyll + ascii-doc but with a different theme: this is good because the content input can be txt file, and we reuse txt file to put the doc in the firmware and be readable by browser. 
+
+Cris: I'm happy that we keep the old habits about the structure oof the content, but with this restyl we move in a more fashionable shape. And I think is motivating also to update the documentation :) that probably the next work that we have to do... for the new year
+Chris: I think the new theme looks nice. (But I am not a designer)
+
+From this assembly the opinion looks positive to the merge of the "new restyle" of the website. we wait a week to see reaction in mailinglist, and after I(Cris) can accept merge request.
+
+## Testing
+
+two people answered to this call https://lists.autistici.org/message/20231101.163202.5a0742ed.en.html
+I, Cris, think that both are trustable people.. I expected that some of them come to this meeting, but this not happen.
+
+Scenarios to check:
+
+* checking if the internet connection internet1 goes down, if the wifi
+clients (common AP name) still have connection
+* checking if the internet connection internet2 goes down, if the wifi
+clients (common AP name) still have connection
+* checking if the internet connection internet1 goes down, if the cabled
+clients (on dual_band#2) still have connection
+* checking if the internet connection internet2 goes down, if the cabled
+clients (on dual_band#2) still have connection
+* checking roaming, e.g. with an audio call
+* define exactly how router wire to router is connected: LAN to LAN with
+mesh configuration e.g.
+https://github.com/libremesh/network-profiles/tree/master/calafou#lime-community-configuration-3
+
+Pony proposal and devices: https://lists.autistici.org/message/20231126.160655.2b35dc1f.en.html
+Cris: good point that the devices are with DSA.. not clear "None of them are running babeld though" and not clear if this is give problem to test, for example the first 2 scenarios: 
+
+Hiure https://lists.autistici.org/message/20231106.130003.64e0e1be.en.html
+Cris: Good point is that can have a test in a real infrastructure. I would like know if the devices are with DSA or not..
+
+we can wait answer in the mailinglist, if is present DSA on the devices is better to test because is one of the new feature present in openwrt23 and 23.
+
+## Name of the new release
+
+Gio proposed Fantastic Forwarder https://lists.autistici.org/message/20231027.124816.b94a37d1.en.html
+
+For this assembly the name sounds good! 
+
+## GSoC2024
+
+we just introduced the topics.. we are happy to listen proposals in the next weeks in the mailinglist.
+the last year with the opportunity and money (circa 3k euro) from th GSoC we wrote Ansible roles to automated the build of the Libremesh release candidate. and this was really good for the Libremesh project.
+So lets go to think something of improving for the next year. The work will be done in summer 2024 and we need also 2 people that apply as Mentor.
+we can propose probably 2 projects.. but all the year depend from freifunk and google how many project can be really realized.
+
+Topics:
+* Assign the work-grant for testing the release candidate
+* Website restyling, e.g. https://libremesh.antennine.campiinrete.org
+* Next release name 
+* GSoC2024
+
+# Wednesday the 1st of November 2023 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+People:
+SAn, Ilario, Ger, Cri, Gothos, Maden
+
+PROJECT MEETING
+
+Topics:
+
+* How to use donations (buying hardware?)
+* News about Altermundi roadmap 2023
+* Where to store the log of the meetings
+* OpenWrt 22 or OpenWrt 23 as a base for the next release candidate?
+* Outdated release server
+* Free discussion about other projects and LibreMesh
+* Firmware signatures
+* Next meeting
+
+
+Past meeting topics:
+* news
+* website and documentation update
+* need of a Docker image for unit testing on OpenWrt 22.03
+* decide the list of targets for being compiled for release 2020.2 based on OpenWrt 19.07
+* upcoming release LibreMesh 2020.2
+* News about Altermundi roadmap 2023 ?
+* how to use the donations on OpenCollective (e.g. a compilation server, or donation to Battlemesh) https://opencollective.com/libremesh
+* news about battlemesh
+* next meetings dates
+* resume of previous technical meetings and announcement of next technical meeting date
+for the next TECH meeting:
+* proposal: move the report in the wiki of github? another wiki? what is thi?https://gitlab.com/libremesh
+* Check that issues and the label is:issue is:open label:"in progress"  is actulized
+    https://github.com/libremesh/lime-packages/issues/
+* future release LibreMesh 2023.1 (based on openwrt-22.03)
+* prioritise a list of issues to be resolved for the next LibreMesh 2023.1 release based on OpenWrt 22.03 https://github.com/orgs/libremesh/projects/3/views/1
+* decide a list of packages to be included in next LibreMesh 2023.1 https://github.com/libremesh/libremesh.github.io/issues/103
+* This question from Elektra during past tech meeting: - How are people porting new devices?
+    Relevant?: 
+    https://communitynetworks.group/t/expanding-openwrt-libremesh-hardware-support/790/5
+    https://communitynetworks.group/t/openwrt-libremesh-image-building-learning-group/823
+For next project meeting:
+* introductions and recent projects and contributions related with LibreMesh
+
+
+## How to use donations (buying hardware?)
+
+Old decision: stickers to be printed by people attending events.
+
+Currently we have 617 $
+https://opencollective.com/libremesh#category-BUDGET
+
+We need to write an email defining for what the money can be spent. The decision would be taken in the project meetings.
+
+From the meeting minute of 2023-04-01:
+
+* pay the travel to the battlemesh for some of librerouter/altermundi (maybe next year or another event)
+* pay the travel for the travel to battlemesh for some people of Antennine (maybe next year or another event)
+* pay the update of the server of downloads CodigoSur? Chiede Cri
+* buy some stickers LibreMesh YES
+* donation for the domain name? for the newsletter?
+* email @libremesh.org? [20231101 nah]
+* hardware per testare il supporto?
+
+Ger: the priority should be having a release
+
+New proposals:
+
+* Pay someone for some testing hours
+    * Gothos? (Ilario asks)
+    * Proposing to everyone in the mailing list (Ilario writes) and the final decision is taken in the project meeting
+    * We can offer 550 $, keeping 67 $ for stickers
+    * Define object for payment: make a release
+    * Test on two different router models
+    * Report the observed issues
+    * Solve the issues if possible
+    * Define price per hour: 20 $/h
+    * This could also attract more donations, as now they will have a clear use
+* Pay hardware for testing for the release
+
+
+Minimum testing scenario:
+
+internet1 --wire-- dual_band#1 --wifi-- dual_band#2 --wire-- single_band#1 --wifi-- single_band#2 --wire or wifi-- internet2
+
+Requirements for dual_band router:
+* at least 1 radio at 2.4 GHz
+* at least 1 radio at 5 GHz
+* DSA supported
+
+Requirements for single_band router:
+* maximum 1 radio at either 2.4 GHz or 5 GHz
+* DSA supported
+
+Requirements for internet connections:
+* internet1 and internet2 should preferably be two different internet connections, but if they are the same it is ok
+
+Physical setup requirements:
+* none, even if all the routers are on the same table it is ok
+* wifi channels have to be selected for avoiding wifi connections between routers that are not indicated as connected (i.e. dual_band#1 and dual_band#2 should be on the same channels. single_band#1 and single_band#2 should be on the same channel, but a different one from the one used by the dual band routers)
+
+Scenarios to check:
+
+* checking if the internet connection internet1 goes down, if the wifi clients (common AP name) still have connection
+* checking if the internet connection internet2 goes down, if the wifi clients (common AP name) still have connection
+* checking if the internet connection internet1 goes down, if the cabled clients (on dual_band#2) still have connection
+* checking if the internet connection internet2 goes down, if the cabled clients (on dual_band#2) still have connection
+* checking roaming, e.g. with an audio call
+* define exactly how router wire to router is connected: LAN to LAN with mesh configuration e.g. https://github.com/libremesh/network-profiles/tree/master/calafou#lime-community-configuration-3
+
+Additional tasks:
+
+* document how to set ethernet interfaces for mesh only or clients only
+
+## News about Altermundi roadmap 2023
+
+Cri asked in the ML
+SAn answered that is working in the hardware of LibreRouter2
+
+## Where to store the log of the meetings
+
+ML is ok
+Website also ok (the archive of the ML is public anyway, so public is ok)
+Cri will copy the info to the website
+
+## OpenWrt 22 or OpenWrt 23 as a base for the next release candidate?
+Currently, the release candidate 2023.1 is based on OpenWrt 22
+
+Ilario: 23
+SAn: 23
+Madez: 23
+Cri: 22 or 23 are ok
+Gothos: 23
+
+Ilario: let's name the new release candidate 2024.1-rc1
+
+SCENARIO ESISTENTE:
+
+rete mista openwrt & libremesh, feedback that the developing of libremesh is not enought fast as openwrt to releasing. Which relation there is with gluon? and which different?
+
+IMAGES ARE ALREADY AVAILABLE:
+https://firmware-libremesh.antennine.campiinrete.org/releases/master-ow23/
+
+
+## Free discussion about other projects and LibreMesh
+
+Discussing technical solutions in Gluon
+Gothos: Would be good to have a network-profile compatible with Gluon
+Discussing the problem of slow release cycle in LibreMesh
+
+
+## Outdated release server
+
+The server is outdated and is impossible to install anything.
+For some next meetings we need to think about it!
+
+
+## Firmware signatures
+
+Check the "### Add new signing keys" section of this email:
+https://lists.autistici.org/message/20230929.142923.34529fc1.en.html
+
+Screenshots from Github:
+
+![](http://pad.cas.cat/uploads/upload_4b83edf87044537c4fb31a3d41dff49d.png)
+
+---
+
+Seems that the keys cannot be accessed, so we either find who has the original key or we upload a new one.
+
+---
+
+![](http://pad.cas.cat/uploads/upload_e233e33ddc420710505b5d67e86df88d.png)
+
+Ilario writes to the people who could have the original key.
+If noone has it, we will just upload a new one/pair during the next project meeting.
+Maybe the key on Github is the same also on the repo server.
+Gothos will check.
+
+## Next meeting
+Saturday the 2th of December 2023 at 13:00 UTC (14:00 CET, 10:00 ART).
