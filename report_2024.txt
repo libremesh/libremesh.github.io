@@ -1,6 +1,6 @@
 ---
-title: LibreMesh 2023 Meetings
-ref: report 2023
+title: LibreMesh 2024 Meetings
+ref: report 2024
 lang: en
 ---
 
