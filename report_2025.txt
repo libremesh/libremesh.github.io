@@ -1,0 +1,1165 @@
+---
+title: LibreMesh 2025 Meetings
+ref: report 2025
+lang: en
+---
+
+## Saturday the 6th of December 2025 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+### People
+Cri \o/ in person at the meeting online, and Ilario remotly by messages
+
+### Topics
+
+1. updates about repo server and DNS
+1. mastodon account: approving usage rules
+1. Status of inclusion of GSoC 2025 contributed code
+1. Next GSoC
+1. Scheduling 2026 meetings and publish in the website
+1. Archive meetings' minutes 2025
+
+
+### updates about repo server and DNS
+
+Javier spoke in person with NicoEchaniz, that is currently the only one who has the contact of CodigoSur for modifying the DNS entries.
+
+Ilario: This is clearly a problem. 
+Should we buy the domain and transfer it (we need NicoE collaboration for this). We can afford this with the money from the donations.
+
+Javier and NicoE created a subdomain requested by Gothos
+https://firmware-selector.libremesh.org/
+
+Currently the repo server is down, and its content has been re-created and hosted on Valsamoggia's Antennine server, thanks! The links to repo.libremesh.org and downloads.libremesh.org have been removed from the website, waiting for that server to be restored (we need NicoE to ask CodigoSur or give us the contact with CodigoSur).
+
+### mastodon account: approving usage rules
+
+Our Mastodon account is:
+https://social.freifunk.net/@libremesh
+
+The proposed usage rules are:
+https://lists.autistici.org/message/20251006.060502.27fd514f.en.html 
+
+
+### Status of inclusion of GSoC 2025 contributed code
+
+#### Virtualizing LibreMesh with WiFi
+
+The project is complete and it works, with some patience for setting up all its components.
+
+https://github.com/VGDSpehar/libremesh-virtual-mesh
+
+We can ask Victor to merge that documentation with the one present here:
+https://github.com/libremesh/lime-packages/blob/master/VIRTUALIZING.md
+
+#### VLANs and Babeld
+
+Removing VLANs from Babeld requires much more testing:
+https://github.com/libremesh/lime-packages/pull/1210
+
+#### odhcpd shared-state leases
+
+Sharing DHCP leases with odhcpd requires just minimal testing, to be done!
+https://github.com/libremesh/lime-packages/pull/1199
+
+### Next GSoC
+
+Timeline for 2026 is available
+https://developers.google.com/open-source/gsoc/timeline
+
+we can start proposing projects here:
+https://github.com/freifunk/project
+
+ideas:
+complete the babeld-only version of LibreMesh
+
+### Scheduling 2026 meetings
+
+So far it has been: "first Saturday of Feb, Apr, Jun, Ago, Oct, Dec at 13 UTC".
+
+For this year for me can be good also on friday, better than saturday... we can add some saturday to be inclusive..
+
+but we could use thesame algorithm so the first friday of the month!
+
+
+Ilario: An extra meeting in the first week on January? when?
+
+Cri: for me the 6th of january can be nice because in Italy is holiday, is the holiday of a witch, la befana.
+same time? also sunday 4 of january can be fine for me! or friday 2th.
+
+So.. I have to decide because I'm the only one in the meeting..
+
+Friday 2th of january!
+
+Meeting for the year 2026:
+
+Friday 6th February 13UTC
+Friday 3th April 13UTC
+Friday 5th June 13UTC
+Friday 7th August 13UTC
+Friday 2th October 13UTC
+Friday 4th December 13UTC
+
+### Archive meetings' minutes 2025
+
+Cri takes the task
+
+-------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+## Saturday the 4nd of October 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+### People
+
+Cri, Patrick, Ilario
+
+### Topics
+
+1. about repo server
+2. mastodon account
+3. Pirania
+4. mailing list
+5. translation
+
+
+### 1. about repo server
+
+at the reboot, the machine doesn't come up again.
+So now we have some broken links: 
+
+1.https://repo.libremesh.org/selector/
+( this is linked from our page: https://libremesh.org/getit.html)
+
+2.https://repo.libremesh.org/
+
+Cri: I think we can plan to buy a small VPS just to expose the last firmwares, Probably the expense can be of 50e (hetzner (DE) price for the smallest machine)..
+
+Plan A: in the meanwhile we can link the repo we have in our network (https://antennine.org):
+https://firmware-libremesh.antennine.org/
+
+3. https://downloads.libremesh.org
+
+We have probably to change the DNS of this 2 records:
+https://repo.libremesh.org/
+https://downloads.libremesh.org
+
+Who can do this?
+
+Plan B: If know who manage the domain take time, I think we can just change the link in the website.
+I can do this (Cri) 
+
+Follow answers in mailinlist, a deadline can be 2weeks, to switch from the plan A to plan B.
+
+NEWS: Ilario wrote to Nico Echaniz, but we have not answer. 
+Maybe we can ping Jesi, Cri can write to Jesi.
+
+### 2. mastodon account
+
+https://social.freifunk.net/@libremesh
+
+the account is open! the recovery email is this libremesh@krutt.org, our mailinglist!
+
+Me and ilario, we have success to activate it and now we receive in moderation the recovery passw if we need.
+
+The other moderators are: 
+Ilario
+Cri
+Javier
+
+Next: customization and decide lineguide to publish:
+
+Example:
+- the news from the website (2 or 3 a year)
+- meetings
+- reboot news about battlemesh
+- ..
+
+we can take input in mailinglist..
+
+
+### 3. Pirania
+
+Patrick report about usage in a community network, heard about news on a new version for this year or the next.
+
+Maybe about how ended the GSoC on that part, we can find info, and also there are note in this pad in the meeting of january:
+
+https://blog.freifunk.net/2024/05/31/gsoc-2024-new-release-for-project-libremesh-pirania/
+https://blog.freifunk.net/2024/07/12/gsoc-2024-new-release-for-project-libremesh-pirania-part-ii/
+https://blog.freifunk.net/2024/09/10/gsoc-2024-new-release-for-project-libremesh-pirania-part-iii/
+
+
+### 4. Mailinglist
+
+on air we resolved a small issue on receiving/sending email
+
+### 5. Translation
+
+- limeapp
+- documentations on the website
+- others
+
+At which point are we?
+
+-translatewiki.net was a great point to receive contribution of translators.. and Altermundi used it for translating lime-app and some PDF documentation about how to set up a community network. But they did not want to provide TranslateWiki with the direct write access to the repositories, so they set up a temporary repository where the translations would go, but then they should have been manually copied and pasted from this temporary repository to the official lime-app and Altermundi's documentation repository. For some years, Nico Pace did this copy and paste work. When Nico Pace stopped, nobody from Altermundi took over this task. When TranslateWiki realized that the effort of their volunteers was wasted (they commented this here https://github.com/libremesh/lime-packages/issues/257#issuecomment-1941026915 and here https://github.com/libremesh/lime-app/issues/431#issuecomment-2476178385), they gave some time for fixing this. Ilario contacted all the Altermundi people but no one stepped forward for managing this. So TranslateWiki removed all LibreMesh-related things from their website.
+
+What would still make sense to translate is lime-app and the LibreMesh website.
+
+the website example as some pages translated:
+https://libremesh.org/
+https://libremesh.org/docs/en_quick_starting_guide.html
+
+there are some translation in ES and in IT, but there are not engine that manage translate, but thereare different version of the same page in different language ( like wikipedia)
+Operative, to translate the website we use git: 
+example https://github.com/libremesh/libremesh.github.io/tree/master/docs
+
+
+
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+## Wednesday the 24th of September 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+### People
+
+Cri, Gothos, Blaudio, Ilario, Victor, Javier, Agustin
+
+### Topics
+
+* Updates on GSoC 2025
+* Updates on testing grant by Gothos
+* Integration of Victor's GSoC into a permanent testbed CI/CD
+* Updates on opening a Mastodon account, Cri
+* Review of roles on the mailing list
+* Updating roles on Github
+* Proposals sent by Gothos via email
+1. Do maintenance on the repo server
+2. Use the repo server as endpoint to add a minimal telemetry of libremesh
+3. Add to repo server a minimal public stats of downloads (may be a simple grafana dashboard that read a prometheus-nginx)
+4. Add a dns entry for firmware-selector.libremesh.org
+5. Install an openwisp server on top of the repo server to experiment with libremesh-openwisp
+6. Create imagebuilders with a reduced kernel and let's see how far the devices 8/64 go (kernel config SMALL_FLASH suggested by Javier [0])
+7. Rework lime-docs asciidoc inclusion and packaging and substitute the actual jekyll with a more modern vitepress or docusaurus 
+
+### Updates on GSoC 2025
+
+Victor: good! It would be very nice if the work can be integrated in the CI/CD permanent testbed. There are many tests to add. Also it would be nice to test the lime-app web interface.
+
+Final blog post by Victor:
+https://blog.freifunk.net/2025/09/01/gsoc-2025-bringing-wi-fi-support-to-qemu-simulations-for-libremesh/
+
+Ilario: thanks Javier for the students' selection, the results this year have been amazing!
+
+Agustin: 4 tasks about simplifying LibreMesh and getting it closer to vanilla OpenWrt:
+1. watchcat (created custom package lime-hwd-watchcat that uses watchcat. Can be used instead of deferrable-reboot package that was unmaintained)
+2. odhcpd (harder project. Created shared-state-odhcpd-leases that converts the leases and shares them)
+3. removing VLANs from Babeld (modify lime-proto-babeld that now runs directly on network interfaces (e.g. on lan1 without VLAN). Needed to filter Babeld packages that go on the bridge and into Batman-adv. Solution tested with DSA routers, to be checked how to have it working with swconfig routers)
+4. layer3-only LibreMesh version (just a proposal, didn't complete this. Trying to create a network that does not have lime-proto-batadv, just Babeld)
+
+Javier: Gio said that maybe we should filter also Babeld hello packages going to other interfaces like APs. We have to have a discussion about whether we need the VLAN. About the selection process: what I did was speaking to the people and handing out easy tasks.
+
+Javier: Andi is positive on continuing GSoC for Freifunk.
+
+Ilario: mentors' stipends half to Freifunk half to LibreMesh OpenCollective account (for funding testing grants). Ok by mentors (Javier and Cri)
+
+### Updates on testing grant by Gothos
+
+Original text of the grant proposal agreement:
+https://lists.autistici.org/message/20250504.153057.850a1bae.en.html
+
+Formal application by Gothos:
+https://lists.autistici.org/message/20250515.134927.f52ad85a.en.html
+
+Report by Gothos
+https://lists.autistici.org/message/20250919.164615.9feb1461.en.html
+
+Gothos most time spent studying LibreMesh and how to solve the issue of cabled DSA-DSA connections
+https://github.com/libremesh/lime-packages/issues/1192 "Default anygw route working intermittently via cable #1192"
+
+Proposed a solution here:
+https://github.com/libremesh/lime-packages/pull/1214 "fix: anygw not working via cable in dsa devices #1214"
+
+Future work: how to handle MAC spoofing and MAC collisions. It is not only a DSA issue, also swconfig gets crazy if another router presents itself with the same mac address on it's br-lan/primary interface. This anygw issue was a form of mac collision. The solution is to edit manually the mac bridge forwarding database, it can be done using the ip-bridge package. This happens when the interfaces are included in the bridge.
+Sorry I did not add logs in the report, I can send them on request. Also, I added firewall rules blocking packages coming from anygw of another node.
+A problem remaining: Babeld neighbour nodes are being seen on the same interface, even if there should be only one neighbour seen and the second one, that is further away, should be seen by the other router alone.
+
+Ilario: with a layer3-only network we would not have this issue, right?
+
+Javier: yes, this is also an issue for batman-adv. Nowadays that everything is streamed, maybe you don't want to stream to your neighbours, so that a netowork with only Babeld would be more adequate to the modern usecases.¿what are the interfaces that colide? What is the root of this problem? In the case of ap-up there is a pull to fix a similar issue. 
+
+Ilario: in my opinion the testing grant is fulfilled, thanks Gothos for the amazing work. We can unlock the money transfer from OpenCollective to Gothos as agreed. We can discuss in December for a new minor release (still based on OpenWrt 23) and a new major release (based on OpenWrt 24, as tested by Gothos).
+
+Ilario and Gothos will manage the payment of the testing grant.
+
+### Integration of Victor's GSoC into a permanent testbed CI/CD
+
+Javier: do you think we can have some scripts for automating the tests in a virtual environment? Quesiton linked to Victor's job.
+
+Gothos: Problem with GitHub actions' ImageBuilders that were not creating the x86_64 images, that was needed for the testing. More work to do with QEMU. I can do part of the job in the next period and setting up the tests.
+
+Javier: part of work of Victor was to adapt the OpenWrt's infrastructure for automated testing (even on real hardware) to LibreMesh. Now we want to set up a hardware real testbed.
+
+Victor: I set up, for the GSoC, a virtual network with star topology.
+https://github.com/VGDSpehar/openwrt-tests-libremesh
+
+We started using labgrid for running automated tests on the virtual network. The work is based on Aparcar's work done for OpenWrt.
+https://github.com/aparcar/openwrt-tests
+
+It would be great to run the tests on real hardware or at least a permanent setup, we need to self host the Github actions.
+
+Javier: so far we have Github actions running automatically Lua tests. OpenWrt has distributed laboratories, so they can run tests on different hardware even if some routers are in some place and some in another place. Makes sense for a distributed project to distribute also the testing. Maybe some tests with QEMU can be run inside Github actions run by Github? Or must these be self-hosted?
+
+Gothos: we can host, Codeberg can run tests on our hardware, maybe also Github?
+
+Javier: once we have this, we can also offer our labs to OpenWrt for their testing. Planning a meeting with Aparcar. People are welcome to join this meeting, let me know if you are interested.
+
+https://aparcar.org/openwrt-tests-ui/
+
+### Updates on opening a Mastodon account, Cri
+
+Cri: I checked the conditions for using Freifunk's Mastodon server. If we open an email, we have to decide who reads and answers the emails. I tried to register inserting the mailing list direction as the registration email, but the activation link did not arrive. And it did not appear in the moderation page.
+
+Ilario: let's create an email. If we don't advertise it, nobody will write there. We could define that we just answer to contact the mailing list and the chat, in case anyone writes.
+
+Blaudio: I can ask to Andi Brau.
+
+Cri: the email is used for activation and password reset.
+
+### Review of roles on the mailing list
+
+Subscribers 178 people!
+
+Currently admins/moderators:
+German Ferrero
+Santiago Piccinini
+Ilario
+Cri
+
+Removed German and Santiago
+
+Added Javier
+
+### Updating roles on Github
+
+Adding or removing people? No.
+
+### Proposals sent by Gothos via email
+
+https://lists.autistici.org/message/20250924.075322.66356327.en.html
+
+1. Do maintenance on the repo server
+2. Use the repo server as endpoint to add a minimal telemetry of libremesh
+3. Add to repo server a minimal public stats of downloads (may be a simple grafana dashboard that read a prometheus-nginx)
+4. Add a dns entry for firmware-selector.libremesh.org
+5. Install an openwisp server on top of the repo server to experiment with libremesh-openwisp
+6. Create imagebuilders with a reduced kernel and let's see how far the devices 8/64 go (kernel config SMALL_FLASH suggested by Javier [0])
+7. Rework lime-docs asciidoc inclusion and packaging and substitute the actual jekyll with a more modern vitepress or docusaurus 
+
+Gothos: on Saturday I will not be able to connect.
+
+Point 1: is it ok to have downtime for upgrading? Ok to replace Apache with Nginx? Should we continue to use the repo server for binaries (it does not have much space)? Rather we could use it for monitoring.
+
+Javier: excellent.
+Telemetry, we can use https://grafana.altermundi.net. Some nodes are sending there their statistics. Different nodes from different organziations are using it.
+OpenWISP, I created a package similar to a distributed version of OpenWISP, but it is not exposed to the web interface yet. It is a collection of shared-state packages, all the ones containing the "info" string, they collect info to show on the map. But the graphical interface with the map and the representation is finished yet (v3 candidate branch form lime-app has all the latest changes). Still it would be useful to have a self-hosted OpenWISP server for seeing what it offers.
+
+Ilario: let's keep at least the binaries for the latest release
+
+Gothos: let's delete the release candidates and let's keep the release based on OpenWrt 19 and the latest release. Also let's keep all the x86 ones.
+
+Point 7: it is long term, we just improved the website, so the next iteration can be left for 2026.
+
+All other topics and proposals are left for discussion on the next meeting that will be just in few days, on Saturday the 4th of October.
+
+
+
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+
+
+## Saturday the 2nd of August 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+### People
+
+Cri, Victor Spehar, Tania
+
+### Topics
+
+* Updates on GSoC 2025
+* Updates on opening a Mastodon account
+* Tales from BattleMesh
+* DSA-DSA cabled connection issue
+* How to have custom script on a build
+* Troubleshooting on a TP-Link
+
+### Updates on GSoC 2025
+
+#### Adding wifi to QEMU simulations
+
+Victor Spehar
+
+Blog post on Freifunk website: https://blog.freifunk.net/2025/07/15/virtual-wifi-in-libremesh-real-virtual-mesh-midterm-project-update/
+It's is possible to emulate wifi completely in a qemu virtual machine using mac80211_hwsim (package kmod-mac80211-hwsim in Openwrt)
+Using https://github.com/Raizo62/vwifi we can also have multiple VMs talking to each other using emulated Wifi.
+
+
+New video about testing in LibreMesh https://media.exo.cat/w/vRcjqfLkvqYAXYhYVTkswa
+
+Removed a configuration failure with 6 GHz routers:
+https://github.com/libremesh/lime-packages/pull/1207
+=> Still some issues when using the high end of the 5g band - no IR)
+
+He improved the TESTING.md file: https://github.com/libremesh/lime-packages/pull/1171
+
+The project can be followed checking these tickets: https://github.com/libremesh/lime-packages/issues/1178
+
+Integrating https://github.com/aparcar/openwrt-tests framework for Libremesh specificities ? So far it's the tests are tailored for Openwrt, some of them could be ported to Libremesh. A fork specific to Libremesh could be made.
+The framework is based on Labgrind https://labgrid.readthedocs.io/en/latest/ - it allows to run the tests agnostic of the platform (same tests can be run for a physical router or a virtual device)
+
+#### Simplifying LibreMesh
+
+Agustin and Matteo
+
+Blog post on Freifunk website: https://blog.freifunk.net/2025/07/14/midterm-simplifying-libremesh-with-openwrt-native-solutions/
+
+##### Watchcat
+
+Support for watchcat (replacing deferrable-reboot) has already been merged: https://github.com/libremesh/lime-packages/pull/1186
+
+##### Virtualizing
+
+The GSoC work from Irina has been merged but some things needed fixing, they listed these things here: https://github.com/libremesh/lime-packages/issues/1172
+They fixed some of these things here: https://github.com/libremesh/lime-packages/pull/1173
+
+##### odhcpd
+
+Most of the discussion is on the issue https://github.com/libremesh/lime-packages/issues/1189 or on their pull request https://github.com/libremesh/lime-packages/pull/1199
+
+The dnsmasq->odhcpd part of the GSoC project was wrong in some parts, this resulted in the development of a lease-share code for odhcpd that will be useful for who wants to use only odhcpd but it is not strictly needed for the overall goal of the project (getting closer to OpenWrt).
+It is still a mistery why in LibreMesh we are not using dnsmasq+odhcpd-ipv6only as the OpenWrt people do, instead we are still using dnsmasq-dhcpv6. Why? No idea. Asked to Gio here: https://github.com/libremesh/lime-packages/pull/1199#issuecomment-3124678982
+
+
+### Updates on opening a Mastodon account
+
+Do we have a contact with someone on the Freifunk's Mastodon server?
+
+Some basic rules.
+
+These are defined and enforced by the freifunk.social moderators.
+
+
+*   Pay attention to a respectful approach and a fair culture of discussion.
+*    Do not annoy anyone and omission personal attacks. The publishing or threat of publication of personal-identifying information (doxing) is considered to be harassment.
+*    Proven misinformation (so-called. Fake news) and conspiracy myths are undesirable here.
+*    Racist, sexist, homophobic, transphobic, anti-ancious and otherwise discriminatory or hateful language are not tolerated.
+*    The promotion of hostile and hateful ideologies is not tolerated.
+*    Discuss moderation decisions with the moderators first and give them a chance of explanation. Communication with the moderation is direct personal communication and is carried out via direct messages, a public distribution of this moderation communication is to be omitted.
+*    Don't post Spam. A toot with nothing but a link is interpreted as spam, as well as any commercial advertising. Commercial advertising in this context means if the published content is not personal.
+*   Use content warnings on subtle, controversial, or presumably triggering topics.
+*    Pornographic and highly sexualized content is undesirable.
+*    Stick to the laws in force in Germany.
+
+--> Accept
+
+I have to provide an email, but stil not asked to create :/
+I'm in late but I'll do soon.
+
+*Why you want join?*
+we are a team of people all around the world developing  a software project form Mesh community. This software is an OS for routers that auto-configure mesh connections. https://Libremesh.org
+So we would like have this account to spread news about our work
+
+
+### Tales from BattleMesh
+
+Victor was there, enjoyed the talks about
+
+https://pretalx.freifunktag.de/battlemesh-v17-2025/talk/LVC8TZ/
+
+Good news from this topic: GSoC - Review and Outlook
+
+https://pretalx.freifunktag.de/battlemesh-v17-2025/talk/833K9R/
+
+### DSA-DSA cabled connection issue
+
+Severe issue affecting even the 2024.1 release.
+
+Described on https://github.com/libremesh/lime-packages/issues/1192
+
+Is being addressed by Gothos with some help by Pony https://github.com/libremesh/lime-packages/pull/1203
+
+
+### Update on "Routers from Nemael and customs"
+
+The customs have been paid with the funds on OpenCollective and now Agustin has 
+
+
+### How to have custom script on a build
+
+In the selector is possible ask to add a custom script that will be execute on te first boot the device.
+Could be also used to change configuration on that specific device
+
+https://repo.libremesh.org/selector/
+
+Example
+https://share.riseup.net/#DE2qVi37F4Qak03qBBOVxw
+
+### Troubleshooting on a TP-Link
+
+Tania pointed out an issue, we will update in mailinglist
+
+
+## Saturday the 7th of June 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+### People
+Ilario, Agustin T., Victor S. cri, Chris M., Gothos, batatania, Javi J.
+
+### Topics
+
+* Updates on GSoC 2025
+* Testing grant 2025
+* Opening a Mastodon account
+* Presentation of LibreMesh and GSoC @BattleMesh
+* Routers from Nemael and customs
+
+### Updates on GSoC 2025
+
+The onboarding meeting has been published on our PeerTube account (which is connected to the fediverse). It includes an introduction about the whole LibreMesh project.
+https://media.exo.cat/w/iPxzNmduAT8pYRikwtgNua
+
+#### Adding wifi to QEMU simulations
+
+Victor Spehar
+Ticket for following the progress https://github.com/libremesh/lime-packages/issues/1178
+
+Blog post on Freifunk website: https://blog.freifunk.net/2025/06/01/gsoc-2025-adding-wi-fi-support-to-qemu-simulations-in-libremesh/
+
+#### Simplifying LibreMesh
+
+Agustin Trachta
+
+First pull request is here :D
+https://github.com/libremesh/lime-packages/pull/1186
+
+https://blog.freifunk.net/2025/06/02/simplifying-libremesh-with-openwrt-native-solutions/
+
+### Testing grant 2025
+
+The project gets money from donations on:
+https://opencollective.com/libremesh
+
+And we get part of the money that GSoC gives to mentors. The rest of this money goes to Freifunk.
+
+The grant proposal has been published on the mailing list:
+https://lists.autistici.org/message/20250504.153057.850a1bae.en.html
+
+Gothos proposed himself by email:
+https://lists.autistici.org/message/20250515.134927.f52ad85a.en.html
+
+No other person proposed during the meeting, so the grant has been assigned to Gothos.
+
+Gothos: in our community, LibreMesh on OpenWrt 24.10 is already in production, with one small workarounds (creating a VLAN on the swconfig device). Devices with DSA and LAN-LAN connection, without any specific configuration, LibreMesh configures the port as LAN-only port. So these devices cannot ping the anygw address. We could resume the cable autodetection project from GSoC 2024 (started by Nemael). I can test lime-app (I did not test it so far, as some routers in our community do not have enough flash memory). If we wanted to skip testing lime-app for focussing on the next release, we could do that.
+
+Ilario: are you proposing to skip OpenWrt 24 and go directly to the next?
+
+Gothos: seems that the next will be OpenWrt 26. We can still test on top of OpenWrt 24 but with more focus on other components like lime-app.
+
+Javier: testing on both OpenWrt 23 and OpenWrt 24?
+
+Ilario: testing latest LibreMesh code on top of OpenWrt 24. If Gothos finds an issue with lime-app, is there anyone able to fix it?
+
+Javier: it's just JavaScript, I can fix it or find people to fix it. Even if we could not fix it, better to test lime-app and to know what works/does not work rather than relying on reports from users.
+
+Gothos: good to test on OpenWrt 24. If we find and fix bugs that could be backported to LibreMesh 2024.1, we could make a release 2024.2 including the fixes.
+
+Ilario: we can pay immediately the hardware, attaching the invoice on the OpenCollective
+
+Gothos: let's buy an OpenWrt One and one low cost device with DSA supported and WiFi 6. In our community we don't need this hardware so we can send it to someone else when it will be needed. Will do between June and July
+
+### Opening a Mastodon account
+
+An email has been sent asking whether people had a favoured server, but no answer was received:
+https://lists.autistici.org/message/20250405.165608.914fff7d.en.html
+
+Chris: Freifunk has its own Mastodon server
+https://freifunk.social/auth/sign_up
+
+Victor: exo.cat is a fediverse server
+
+Ilaro: exo.cat is a snac server https://exo.cat/fedi/, snac is extremely minimalist, and there is no button for requesting an account, there is only their own account... 
+
+Ilario: fosstodon.org requires invitation. Rules for Freifunk server make sense. Let's join Freifunk's Mastodon server.
+
+Cri: we can migrate later to another server, if we want to. This is a feature of Mastodon.
+
+Ilario: who opens the account?
+
+Cri: I can do that, but do we have any email we can use for opening the account?
+
+Victor: why is LibreMesh not self-hosted?
+
+Ilario: it was kind of self-hosted, now it is still mostly hosted in friendly collectives' servers. So, a few years ago the situation was like this:
+
+* the mailing lists was hosted by Altermundi, you can still see the archive here https://listas.altermundi.net/archives/list/lime-dev@lists.libremesh.org/latest and here https://listas.altermundi.net/archives/list/lime-users@lists.libremesh.org/latest from the latest 2 threads in the archive of the lime-dev mailing list you can see that the hosting was not really working well. So we moved to a server by the Autistici/Inventati collective.
+* the web server was hosted by either Altermundi or Codigosur, I am not sure. But at some point (in December 2022 https://lists.autistici.org/message/20221217.145552.c123572f.en.html) it had some problems and stopped working. So we started using Github Pages as a temporary solution and we still have to move it to a hosting we actually like.
+* the binary repository for the firmware images was also hosted by Altermundi or Codigosur. The server was extremely outdated and out of space and faulty so we moved to a server hosted by the Val Samoggia network community: https://antennine.noblogs.org/
+
+Ilario: the PeerTube account is registered with my personal email. I can change the email address for the one of the project as soon as we have one.
+
+Cri: I will ask for an email to Autistici/Inventati https://www.autistici.org/
+
+### Presentation of LibreMesh and GSoC @BattleMesh
+
+Victor and Javier are attending.
+
+AndiBrau proposed Victor to present at BattleMesh the GSoC project with an introduction on LibreMesh.
+
+BattleMesh starts on the 10th of June.
+
+Let's draft the outline of the presentation at this document:
+https://pad.exo.cat/pad/#/2/pad/edit/RD5xh7L7fhV34ADzDazIgCCy/
+
+Victor: a video with easy setup of a network for your house is missing.
+
+Ilario: Javier, can you do a small workshop during BattleMesh, as it will be recorded?
+
+Javier: it will be cool, and Agustin just did that so they can help. We can do it, I will bring routers.
+
+Cri: will there be any LibreRouter?
+
+Javier: yes, at least one with its box, maybe another without case.
+
+Cri: will there be some LibreRouter to keep in Europe?
+
+Javier: I can bring more, what's the plan?
+
+Cri: in my community maybe we will want some :)
+
+### Routers from Nemael and customs
+
+Nemael sent some routers to Javier, that were sent to them by Aparcar.
+
+The problem is that customs asked around 80 dollars to Javier for receiving the routers. Javier is asking if the project can refund this.
+
+Ilario: let's do that, that's what the money on OpenCollective are for. We just need to upload on OpenCollective the invoice.
+
+Victor, Cri, Gothos: ok!
+
+Ilario and Javier will manage this.
+
+
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+
+## Saturday the 5th of April 2025 at 13:00 UTC (15:00 CEST, 10:00 ART).
+
+### People
+Aryan, batata-coolab, gothos, Ilario, Javier, Purva, vgds, Cri, Gio
+
+### Topics
+
+* Updates on GSoC 2025
+* Finalizing the 2024.1 release - 
+* Testing grant 2025
+* Opening a Mastodon account?
+* Current errors on Lime-App with latest version https://github.com/libremesh/lime-app/issues/480
+* Sharing info about monitoring
+* APuP
+* Dave Täht loss
+
+### Updates on GSoC 2025
+
+Aryan - Adding wifi support to qemu
+Purva - Adding wifi support to qemu
+
+Deadline for applications: 8th of April, in 2-3 days!!
+
+How many "students" we can accept depends on Google and on Freifunk. Last year we got assigned 2 projects.
+Original projects are welcome!
+
+Official announcement of accepted project on the 8th of May.
+
+Javier: Agustin applied for Simplify LibreMesh
+
+Javier: an original idea could be to develop a small firmware image for old routers that can load the rest of the software from an USB key.
+
+Gio: another GSoC idea: dinamic devices support in Netifd. Would be needed for many OpenWrt devices
+Gio: another GSoC idea: WPA encryption for APuP
+
+### Finalizing the 2024.1 release
+
+Writing a text for the news page on the website and to be sent by email on the mailing list:
+https://pad.codigosur.org/libremesh-2024.1-news
+
+Ilario: Next weekend let's send the text to the mailing list and on the news section of the website.
+
+https://repo.libremesh.org/selector/
+
+### Testing grant 2025
+
+The draft is here:
+https://pad.exo.cat/pad/#/2/pad/edit/X27kEbYUhJiJ5twKIBVHHVlT/
+
+Deadline for publication: 5th of May.
+
+On OpenWrt 24 or trunk?
+
+There is a new packages version in OpenWrt trunk.
+Gothos: better to stay on OpenWrt 24.10 to go a bit slower.
+The pull request Gothos wrote for APK packaging will work also on OpenWrt 24.
+As soon as Gothos considers it ready we can merge it.
+
+Javier will add the requirement to test also lime-app
+
+### Opening a Mastodon account?
+
+Ilario: we have a Peertube account but it works only
+Javier: +1
+Ilario: you can see and comment Peertube videos from Mastodon, they are federated
+Gothos: +1
+Cri: https://forum.openwrt.org/t/need-a-mastodon-social-media-account/146228/11
+
+fosstodon.org
+floss.social
+
+Ilario: will send an email asking for which server to use
+
+Content to publish:
+Releases
+Important pull requests that got merged
+New features
+Documentation
+Media (pictures from BattleMesh talks, poster at Fossdem)
+
+Gothos: also on the website: new page with link medias, link of articles, link of videos
+Gothos will make the new page on the website
+
+### Current errors on Lime-App with latest version https://github.com/libremesh/lime-app/issues/480 
+
+Javier: Has anyone else experienced issues with lime-app?
+
+Gothos: anyone can change the administrator password and it is not clear which menu entries are for admin only and which ones are for everyone.
+
+Javier: let's add lime-app testing to the testing grant 2025
+Javier will add this to the testing grant
+Javier: I spoke with Selankon and they will fix the issues spotted by Javier
+
+Ilario: after that is anyone going to continue developing lime-app?
+Javier: don't know yet
+
+Batata: do you people use the terminal or lime-app?
+
+Ilario: personally not a user of LibreMesh, got used to do things via /etc/config/lime-node
+
+Gothos: browsers were blocking the thisnode.info page also for the https certificate. For the monitoring we use Prometheus + Grafana. Managed by us as a small team of technicians, not much by the users.
+
+Javier: personally not a user of LibreMesh, people I know use a very old version of LibreMesh.
+
+### Sharing info about monitoring
+
+Javier: https://grafana.altermundi.net/d/Jjp28jlMk/trafico-todos-los-nodos?orgId=3
+
+Javier: Tipi. Degoogling is easier if done inside network communities. https://montelibre.net
+https://github.com/runtipi/runtipi
+Tipi makes easier to host services.
+Maybe similar to Yunohost
+
+Cri: Yunohost is good for non-technical people. But we just create the containers so that they are just the needed ones and we spare computational resources
+
+Cri: https://mappe.antennine.org/en/
+ 
+Cri: works from inside the networks without password, but requires password from the internet https://panorama.antennine.org/
+
+Cri: useful checklist for troubleshooting https://antennine.noblogs.org/post/2020/09/30/piccola-mini-lista-in-caso-di-malfunzionamento/
+ 
+Next version of lime-app will have a map with at least 3 layers: wifi, batman-adv, babeld.
+
+Cri: https://sandstorm.org/
+
+### APuP
+
+
+Ilario: Gio developed an alternative to classic wifi mesh connection systems called APuP. It has already been accepted in OpenWrt. The implementation in LibreMesh is pending: 
+https://github.com/libremesh/lime-packages/pull/1134
+
+Javier: it is very easy to use
+
+Ilario: is it available in OpenWrt 24.10?
+Gio: checking...
+Ilario: would be good to have APuP in the next LibreMesh release
+
+Gio: some quirks with the speed negotiation. The driver does not even know that the connection is different from normal AP-sta.
+
+Gothos: possible to have 802.11s and APuP up at the same time for easing the transition?
+Gio: should be possible. Did not try. To use APuP, both nodes will have to understand APuP.
+
+Ilario: how many AP interfaces will the user see?
+Gio: AP interfaces will be created for each peer that gets detected
+Gio: the user will just see the normal AP, not the APuP ones because they are all the same network. There is just one AP network.
+Ilario: do the extra interfaces disappear when peer goes away?
+Gio: yes, kernel will delete them after a timeout
+Ilario: will you continue to work on it?
+Gio: will support but hope that more people will develop. I started working on other routing things
+Ilario: WPA encryption?
+Gio: WPA can be set for the clients connection, but APuP peers will not use encryption. Encryption needs to be implemented. The work was to demonstrate the idea, mostly. Will help people who want to implement the WPA. It would be a good GSoC project.
+
+### Dave Täht loss
+
+Gio: Dave Täht passed away few days ago. Will send an email about this on the mailing list
+
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+## Saturday the 1st of February 2025 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+### People
+
+Cri, Ilario, Pedro, Javier, Luandro, Gothos
+
+### Topics
+
+* Selecting projects for Google Summer of Code 2025
+* Release 2024.1 has been released
+* Testing grant 2025
+* Archive meetings' minutes 2024
+* Ethernet configuration
+* lime-app status
+* dev case use and personas: time steps
+* Scheduling more meetings?
+
+### Selecting projects for Google Summer of Code 2025
+
+INFO: Mentoring Org applications now open until Feb 11 1800 UTC
+
+Drafts:
+https://pad.exo.cat/code/#/2/code/edit/9IRFoOCL1mUnEXWDwdjgfR09/
+
+https://developers.google.com/open-source/gsoc/timeline
+Students work on June, July, August
+
+https://developers.google.com/open-source/gsoc/help/student-stipends
+Stipends for large project:
+Italy $4800
+Spain $4200
+Argentina $3000
+
+Money for mentors usually go 50% to Freifunk and 50% to LibreMesh as donations.
+
+The projects ideas will be published here:
+https://projects.freifunk.net/#/projects
+
+And they have to be proposed with pull requests here:
+https://github.com/freifunk/projects
+
+"Students" do not have to be university students, anyone can be a GSoC student.
+
+**Adding Wi-Fi Support to QEMU Simulations in LibreMesh**
+
+Author/Mentor: Javier Jorge
+
+Only the timeline is missing.
+
+**Simplify LibreMesh and get it closer to OpenWrt**
+
+Author: Ilario
+Mentor: Javier
+
+Complete. https://github.com/freifunk/projects/pull/74
+
+**BIRD2 and Babel**
+
+Author: Pedro
+Mentor: Ilario, Bruno
+https://pad.cas.cat/gsoc2025-bird2-bgp-babel#
+
+Continuation of Eloi GSoC (UCI integration for BIRD1, but requires more work and updating to BIRD2)
+
+Project about Guifinet infrastructure. Independently useful both for LibreMesh and OpenWrt.
+Previous works: G10h4ck master thesis, Eloi GSoC
+
+Moving from Babeld to BIRD2 implementation of Babel seems more professional and stable, but it is missing the UCI integration with OpenWrt.
+
+The project is not complete yet.
+
+**Improving the roaming on LibreMesh networks**
+
+Author: Pony
+Mentor: Cri
+
+Has not been written yet (?)
+
+
+### Release 2024.1 has been released
+
+https://github.com/libremesh/lime-packages/tree/v2024.1
+
+* Update the website development page and supported hardware page (Ilario) which packages?
+* Compiling (Gothos is doing it)
+* Firmware selector (Gothos?)
+* Updating the default network profile https://github.com/libremesh/network-profiles/blob/master/libremesh/suggested-packages/Makefile (no changes required)
+ 
+
+Javier: the only shared-state package package that is needed by lime-app is bat-hosts. The others can be optional, they just give additional information. They are small so it should be ok to include them. The map is not included in this version of lime-app, so many of these packages are not going to be useful.
+
+Ilario: maybe dnsmasq-leases?
+
+nodes_and_links is an old package, with the new shared-state-async it will be split in many smaller packages. But for the 2024.1 version we still need nodes_and_links
+
+Ilario: do we want to write a news on the website? Yes. Do we want to have a profile in the fediverse (Mastodon) for announcing and advertising the release?
+
+Javier: Yes
+
+Gothos: We have a PeerTube profile https://media.exo.cat/c/libremesh_channel/videos
+ 
+Ilario: That is only for videos. Let's discuss in the next meeting if we want to open an account.
+
+Gothos will check if there is an integration between the website and the fediverse.
+
+Javier let's add the link to the PeerTube on the website.
+
+Ilario will do this, adding the link
+
+### Testing grant 2025
+
+https://pad.exo.cat/pad/#/2/pad/edit/X27kEbYUhJiJ5twKIBVHHVlT/
+
+Pony will improve the grant, no hurry
+
+### Archive meetings' minutes 2024
+
+Cri will do :)
+
+### Ethernet configuration
+
+https://github.com/libremesh/lime-packages/pull/1161
+
+Ilario: Pony realized that the ethernet problem was due to DSA switches, and fixed detecting the DSA routers and configuring the ethernet interfaces for clients connections only (LAN) and not for mesh, by default. But if 
+
+Javier: wants to add the option to lime-app for configuring the interface from LAN to mesh.
+
+### lime-app status
+
+Luandro: We have a micro grant from APC.
+
+Luandro: Adding internet control, very useful in Brasil, to block some websites. Seems that lime-app is not working well, UBUS is not connected. I am developing an interface with lime-app for adding a blacklist of website. Which branch should I use? I observed the problems with the firmware selector (2024.1-rc1). Pirania is also not working enough: it shows a captive portal page but it does not block the internet connection. I am trying to fix Pirania myself.
+
+Javier: Selankon is not working on lime-app anymore. There is a new branch "v3". Many new shared-state-async packages are required for that. Please open a ticket listing the errors you see. There is a pull request for mesh-upgrade. Select all shared-state-* packages. The main branch of lime-packages should be good.
+
+Ilario: With the firmware selector you will get the old lime-app release included in the 2024.1 release. If you want to develop lime-app you should compile the latest code on lime-packages locally.
+
+### dev case use and personas: time steps
+
+Usecases to be added on the website. No updates on this topic.
+
+### Scheduling more meetings?
+
+No need for more meetings before April the 5th
+
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
+
+## Friday the 3rd of January 2025 at 13:00 UTC (14:00 CET, 10:00 ART).
+
+### People
+
+Cri, Pony, Gio, Ilario, Gothos
+
+### Topics
+
+* Archive meetings' minutes 2024
+* Release 2024.1
+* Testing grant: status of Hiure's one and funding a new one
+* Google Summer of Code 2025
+* Scheduling more meetings?
+* Updating the list of admins of the repositories on Github
+* Ethernet configuration
+* dev case use and personas: time steps
+
+### Archive meetings' minutes 2024
+
+Cri did this for 2023, can do it again for 2024
+Cri will do it for 2024 also
+
+### Release 2024.1
+
+A few small fixes have been cherry picked to 2024.1 branch, they should be safe to include in the release.
+https://github.com/libremesh/lime-packages/tree/2024.1
+
+Gothos can compile the release.
+
+Gothos is improving the build process using Docker, will send am email with the details of the process.
+
+Gio: currently LibreRouterOS uses most things from LibreMesh and is built with a script that takes OpenWrt and adds LibreMesh files. There should be no more stuff to pick to LibreMesh.
+
+Ilario: should we include by default also deferrable-reboot?
+
+Gio: it is difficult to make a 8 MB image, so I would avoid adding stuff that can be spared, but deferrable-reboot is small, so it should be ok. It can be disabled in the configuration (setting a long delay before reboot). The name is confusing. It should be something watchdog related.
+
+Pony: in OpenWrt there is WatchCat https://openwrt.org/docs/guide-user/advanced/watchcat
+
+Gio: if it does the same, we can drop deferrable-reboot and adopt watchcat. deferrable-reboot is coming from QuintanaLibre network, maybe they did not check if such a tool exists.
+
+Cri: we are going OT. Anyway it will not be included in mini image.
+
+Ilario: ok, let's not include it in this release, we have to try watchcat before.
+
+The version should be set with a commit like this:
+https://github.com/libremesh/lime-packages/commit/2e50c6c45fb166b3ba16fbd062dc8e4f66923cd5
+
+Name of the release "Fantastic Forwarder" https://lists.autistici.org/message/20231027.124816.b94a37d1.en.html
+
+Ilario makes the tag and sets the release name.
+
+### Testing grant: status of Hiure's one and funding a new one
+
+Draft of the next grant:
+https://pad.exo.cat/pad/#/2/pad/edit/X27kEbYUhJiJ5twKIBVHHVlT/
+
+Cri&Ilario: In the previous meeting we observed that 400-500 $ was not enough for working on the grant and acquiring the required hardware. 800 $ for the next grant.
+
+Cri: part of the money go to fix the issues found in the testing. People who receive the grant could be unable to fix the issues. We can have two separate grants: testing and fixing. Personally not interested to take the grant, nor anyone in the Valsamoggia community. Good occasion for writing properly the grant.
+
+Pony: Personally no time until the beginning of April.
+
+Ilario: No hurry, let's improve the grant text and send it around March and let's see who applies.
+
+Pony: Testing DSA is useful but we need to test also swconfig. Difficult to test the roaming, it mostly depends on the client when to switch AP. The grant currently says that the bought devices should be available for future testing, but this depends on the future availability of the person. In this case, these devices could be sent to someone else. The testing grant should be more clear on this.
+
+Cri: We can keep money for paying the shipment of the devices. Until when we buy another set of routers, so that we don't have to send the routers around.
+
+Ilario: let's remove the tests about the roaming.
+
+### Google Summer of Code 2025
+
+Ilario: In 2024 I did not feel I was mentoring closely enough. Cannot be mentor for 2025.
+
+Cri: Can be mentor for 2025.
+
+Ilario: The project should be well defined.
+
+Cri: GSoC is our main income, we should participate for 2025 also.
+
+Unused projects from 2024:
+* https://projects.freifunk.net/#/projects?project=libremesh_internet_control&lang=en
+ maybe we are not really interested in this as it is questionable from a network neutrality point of view.
+
+* https://projects.freifunk.net/#/projects?project=implement_traffic_prioritization_in_pirania_captive_portal_for_mesh_networks&lang=en
+ this requires a lot of hard skills, maybe it is too difficult.
+
+Gio: Tests on the network, that can be done between two nodes, like ping watch. Testing the MTU of a path (fast ethernet cannot support more than 1500 B of MTU, while gigabit can support jumbo frames). Useful for setting a bigger MTU on the links that support it. Also, the nodes could suggest the user to change channel. The new shared state could be useful for that.
+
+Ilario: A project could be about a layer2-only image of LibreMesh for small and easy networks. Pedro proposed a project for supporting Babel via BIRD2 instead than Babeld.
+
+Gio: Good the BIRD2, as it could resurrect the BGP implementation also.
+
+Cri: Roaming for phone calls.
+
+Ilario: 802.11r for roaming? Auto-distance feature.
+
+Pony: There are two packages in OpenWrt improve roaming, a project could be to include them in LibreMesh.
+
+Let's draft the projects here:
+https://pad.exo.cat/code/#/2/code/edit/9IRFoOCL1mUnEXWDwdjgfR09/
+
+Internal deadline end of January 2025
+
+### Scheduling more meetings?
+
+https://libremesh.org/communication.html#online_meetings
+For now not, in the future we can add more meetings.
+
+### Updating the list of admins of the repositories on Github
+
+Current list of admins:
+
+* a-gave
+* altergui
+* amuuza
+* André Gaul andrenarchy
+* AngiieOG
+* Axel Neumann
+* Benny Lichtner
+* bruno vianna
+* Daniel Golle dangowrt
+* digitigrafo
+* FreifunkUFO
+* G10h4ck
+* Gabriele Gemmi gabri94
+* hiurequeiroz
+* Ilario Gelmetti
+* javierbrk
+* luandro
+* nicoechaniz
+* Nicolás Pace
+* Nicolas North nordurljosahvida
+* p4u
+* Pablo Castellano
+* Paul Spooren aparcar
+* raylas
+* Santiago Piccinini
+* selankon
+
+
+Keeping only:
+
+* a-gave
+* bruno vianna (?)
+* Daniel Golle dangowrt (?)
+* digitigrafo
+* G10h4ck
+* hiurequeiroz
+* Ilario Gelmetti
+* javierbrk
+* Paul Spooren aparcar
+* Santiago Piccinini
+* selankon
+
+Additionally, adding:
+
+* pony1k
+
+Pony agreed.
+
+
+### Ethernet configuration
+
+This is the issue:
+https://github.com/libremesh/lime-packages/issues/1121
+
+Ilario: In the past meeting, Javier mentioned that he was working for exposing the LAN-or-mesh ethernet port configuration via the lime-app.
+
+Pony: DSA cannot have an interface both in standalone and bridge mode, that was ok for swconfig routers. Porposal: deactivate routing protocols on interfaces by default. With swconfig would not change anything.
+
+Pony: this pull request will also help distinguishing between DSA interfaces and old-style ones: https://github.com/libremesh/lime-packages/pull/1154
+
+Ilario: let's include that fix in a 2024.2 release.
+
+### dev case use and personas: time steps
+
+Cri: Adding to the website the usecases, and link these usecases to humans. The website is a bit too technical, we should explain people what they can use LibreMesh for. For next meeting I can propose a text with the list of the usecases. To complete before the summer. Some have been listed in a previous meeting with Hiure.
+
+### State of Lime App
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+
