@@ -23,16 +23,18 @@ however it is not necessary to understand it before starting a LibreMesh network
 == Geek free configuration using the FirstBootWizard
 
 If your community wants to deploy a free geek network it is advisable to do so using the lime-app
-using the FirstBootWizard. This application simplifies the initial configuration of the nodes and
+using the FirstBootWizard (FBW). This application simplifies the initial configuration of the nodes and
 allows new nodes to join an existing network, all through a user-friendly interface
 which does not require prior knowledge of networks.
 
-To use the FirstBootWizard simply follow the steps on the screen when
-enter http://thisnode.info
+The FBW is not included in LibreMesh by default but is included in
+some derivatives.  To include the FBW in an image, add the
+`first-boot-wizard` package.
+
+If the FBW is included in your router's image, to use it simply follow
+the steps displayed when visiting http://thisnode.info .
 
 image:/assets/img/firstbootwizard-splash.png["FirstBootWizard splash"]
-
-However, if your community is a geek community, then you may not want to use the FirstBootWizard.
 
 Once the network is started using the FBW, the participants can perform some
 configuration changes through the lime-app.
