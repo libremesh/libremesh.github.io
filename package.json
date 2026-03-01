@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vitepress dev docs",
-    "prebuild": "node packages.js",
+    "prebuild": "node prepare_data.js",
     "build": "NODE_ENV=production vitepress build docs",
     "preview": "vitepress preview docs"
   },

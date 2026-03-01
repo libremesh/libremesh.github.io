@@ -1,3 +1,5 @@
 import { createContentLoader } from 'vitepress'
 
-export default createContentLoader('news/*.md', /* options */)
+export default createContentLoader('news/*.md', {
+  excerpt: true,
+}/* options */)

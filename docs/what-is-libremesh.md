@@ -3,7 +3,6 @@ outline: deep
 ---
 
 # What is LibreMesh?
-LibreMesh is a modular framework for creating OpenWrt-based firmwares for wireless mesh nodes.
 
 ## Objectives to Achieve
 
@@ -21,8 +20,7 @@ LibreMesh is a modular framework for creating OpenWrt-based firmwares for wirele
 The network architecture designed for LibreMesh is based on two layers:
 
 ### Cloud layer 2
-
-The cloud layer 2 uses the dynamic routing protocol [BATMAN-adv](https://en.wikipedia.org/wiki/B.A.T.M.A.N.).
+::: info The cloud layer 2 uses the dynamic routing protocol [BATMAN-adv](https://en.wikipedia.org/wiki/B.A.T.M.A.N.).
 
 ![batmanadv](/batmanadv_logo.png)
 ***
@@ -31,15 +29,15 @@ Even if the network topology is made of multiple nodes and multiple hops, B.A.T.
 So from the user's perspective the entire mesh will look like a single LAN.
 This architecture is robust for roaming purposes, thus TCP and UDP connections are not lost even when moving and changing access points.
 ***
-
+:::
 ### Network layer 3
-
-The whole network layer 3 uses by default the routing protocol [Babel](https://en.wikipedia.org/wiki/Babel_(protocol)).
+::: info The whole network layer 3 uses by default the routing protocol [Babel](https://en.wikipedia.org/wiki/Babel_(protocol)).
 ![Babel](/babel_logo.png)
 
 ***
 Babel is a robust and efficient routing protocol for both wireless mesh networks and wired networks
 ***
+:::
 
 ### Mixing layers
 

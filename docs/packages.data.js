@@ -5,24 +5,9 @@ export default {
   async load() {
     let packages = []
     let packages_list = fs.readdirSync('docs/packages/');
-    // const profile_path = '../network-profiles/'
     let profiles = []
-    // let profiles_list = []
-    // let community_list = fs.readdirSync(profile_path);
-    // community_list.forEach(c => {
-    //   if (!fs.lstatSync(profile_path+c).isDirectory()) return 
-    //   if (c.startsWith('.')) { return }
-    //   const community_path = profile_path+c+'/'
-    //   if (!fs.existsSync(profile_path)) { return }
-    //   const community_files = fs.readdirSync(community_path)
+    let profiles_list = fs.readdirSync('docs/profiles/packages/')
 
-    //   community_files.forEach(cf => {
-    //     if (!fs.lstatSync(profile_path+c).isDirectory()) { return }
-    //     if (c.startsWith('.')) { return }
-    //     profiles_list.push('profile-'+c+'-'+cf)
-    //   })
-    // })
-    // console.log(packages_list)
 
     packages_list.forEach(p => {
 
@@ -60,37 +45,49 @@ export default {
         category: category,
         built_main: built_main,
         built_stable: built_stable,
-        built_oldstable: built_oldstable,
-
+        built_oldstable: built_oldstable
       })
     })
     // console.log(packages)
 
 
 
-    // profiles_list.forEach(p => {
-      // console.log(p)
+    profiles_list.forEach(p => {
+      console.log(p)
 
-      // const makefile_path = '../lime-packages/packages/'+p+'/Makefile'
-      // if (!fs.existsSync(makefile_path)) { return }
-      // let makefile = fs.readFileSync(makefile_path, { encoding: 'utf-8', flag: 'r'}) || '';
-      // let pkgarch = makefile.match(/PKGARCH\:\=(.*)/)?.[1] || ''
-      // let maintainer = makefile.match(/MAINTAINER\:\=(.*)/)?.[1] || ''
+      const profile_path = 'docs/profiles/packages/'+p+'/'
+      const makefile_path = 'docs/profiles/packages/'+p+'/Makefile'
+      if (!fs.existsSync(makefile_path)) { return }
+      let makefile = fs.readFileSync(makefile_path, { encoding: 'utf-8', flag: 'r'}) || '';
+      let description = makefile.match(/PROFILE_DESCRIPTION\:\=(.*)/)?.[1] || ''
+
+      let built_main = fs.existsSync(profile_path+'.built_main') || ''
+      let built_stable = fs.existsSync(profile_path+'.built_stable') || null
+      let built_oldstable = fs.existsSync(profile_path+'.built_oldstable') || ''
+
+      let version_stable = built_stable && fs.readFileSync(profile_path+'.built_stable', { encoding: 'utf-8', flag: 'r'}) || ''
+
       // let license = makefile.match(/PKG_LICENSE\:\=(.*)/)?.[1] || ''
       // if (license === '') {
       //   license = makefile.match(/SPDX-License-Identifier\:(.*)/)?.[1] || ''
       // }
 
-      // profiles.push({
-      //   name: p,
-      //   makefile: makefile,
-      //   pkgarch: pkgarch,
-      //   maintainer: maintainer,
-      //   license: license,
-
-      // })
-    // })
-    // console.log(profiles)
+      profiles.push({
+        name: p,
+        version_stable: version_stable,
+        makefile: makefile,
+        description: description,
+        // pkgarch: pkgarch,
+        // maintainer: maintainer,
+        // license: license,
+        // section: section,
+        // category: category,
+        built_main: built_main,
+        built_stable: built_stable,
+        built_oldstable: built_oldstable
+      })
+    })
+    console.log(profiles)
 
 
     return { packages, profiles }

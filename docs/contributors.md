@@ -1,4 +1,4 @@
-# Contributions
+# Contributors
 
 LibreMesh is a community and an open project, so anyone friendly is welcome.    
 We encourage anyone using the LibreMesh to become part of this community.    

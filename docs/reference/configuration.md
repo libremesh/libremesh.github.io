@@ -36,50 +36,5 @@ Inside `lime-files` the options marked with `Parametrizable with %Mn, %Nn, %H`, 
 
 
 ## lime-config
-The command `lime-config` configures LibreMesh on top of OpenWrt.
-
-### `lime-<level> files`
-Merge them from the low level `lime-defaults` to top level `lime-node` to produce the complete configuration in `lime-autogen`
-
-### Modules
-Modules are configured in this order `hardware_detection`, `wireless`, `network`, `firewall`, `system`, `generic_config`
-
-#### hardware_detection
-Loads all packages starting with `lime-hwd-*`    
-`lime-hwd-openwrt-wan` configures the OpenWrt wan port as WAN. If disabled, or the package is not installed, the wan port is configured as LAN.
-
-#### wireless
-Scan the OpenWrt device to find existing radios.   
-Produce the UCI configuration for each radio, loading configs from `lime-autogen` in the order: `wifi`, `2ghz`|`5ghz`, specific `radioN`
-
-#### network
-Scan the OpenWrt device to find existing ethernet devices.
-Configure all `general protocols` from `lime-autogen.network.protocols`
-
-For each ethernet device if it is present a specific `config net` use it, else take the protocols list from the `general protocols`
-Configures all protocols on the ethernet device.
-
-The file `lime-defaults` provides default configuration for large list of protocols.     
-Only the protocols for which the relative package `lime-proto-<proto-name>`is installed are configured. 
-In the default configuration they are 
-- `ieee80211s` included in the package `lime-system`
-- `lan` included in the package `lime-system`
-- `anygw` - provided by `lime-proto-anygw` 
-- `babeld` - provided by `lime-proto-babeld` 
-- `batman-adv` - provided by `lime-proto-batadv` 
-
-#### firewall
-Provide default firewall configuration:    
-`input: ACCEPT`, `output: ACCEPT`,  `forward: ACCEPT`
-
-Provide default firewall configuration for the LAN zone, and referesh the list of lan interfaces:    
-`input: ACCEPT`, `output: ACCEPT`,  `forward: ACCEPT`, `mtu_fix: 1`, `network: <list-of-lan-interfaces>` 
-
-LAN interfaces are determined before during the configuration of the network protocol `lan`
-
-#### system
-Set `hostname` and `root_password`
-
-#### generic_config
-Apply `generic_config`
-By default `uhttpd` is instructed to avoid force redirect from `http` to `https`
+The command `lime-config` configures LibreMesh on top of OpenWrt.   
+Refers to the page [lime-config](lime-config) for the details.

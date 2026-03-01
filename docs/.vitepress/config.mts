@@ -11,7 +11,9 @@ const libremesh = {
   oldstable_branch_openwrt: ['19.07'],
 }
 
-const packages = await getFiles('docs/packages/*/index.md'); // Path to folder
+const packages = await getFiles('docs/packages/*/index.md');
+const profiles = await getFiles('docs/profiles/packages/*/index.md');
+const communities = await getFiles('docs/profiles/communities/*/index.md');
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -72,7 +74,6 @@ export default defineConfig({
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: 'Reference', link: '/reference/configuration' },  
-    // { text: 'News', link: '/news' },  
     { text: 'v2024.1',
       items: [
         { text: 'v2020.4', link: '/news/2023-10-07' },
@@ -121,7 +122,10 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       text: 'Developer Guide',
       collapsed: false,
       items: [
-        { text: 'Run it on QEMU', link: '/guide/qemu' }
+        { text: 'Testing Guide', link: '/development/testing' },
+        { text: 'Run LibreMesh on QEMU', link: '/development/virtualizing' },
+        { text: 'Hacking', link: '/development/hacking' },
+        { text: 'Contributing to lime-packages', link: '/development/contributing' }
       ]
     },
     {
@@ -129,10 +133,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Communication', link: '/communication' },
-        { text: 'Contribute', link: '/contribute' },
+        { text: 'Contributors', link: '/contributors' },
         { text: 'Meetings', link: '/meetings' },
-        { text: 'News', link: '/news' }
-
+        { text: 'News', link: '/news' },
       ]
     },
     {
@@ -153,8 +156,20 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
     {
       text: 'Packages',
       collapsed: true,
-      link: '/packages',
-      items: generateSidebarItems(packages),
+      // link: '/packages',
+      items: [{ text: 'Table of packages', link: '/packages' }].concat(generateSidebarItems(packages)),
+    },
+    {
+      text: 'Profiles',
+      collapsed: true,
+      // link: '/profiles',
+      items: [
+        { text: 'Table of profiles', link: '/profiles' },
+        { text: 'Communities', items: generateSidebarItems(communities) },
+        { text: 'Packages', items: generateSidebarItems(profiles), },
+      ]
+
+      
     },
   ]
 }
@@ -166,7 +181,8 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
       text: 'Reference',
       items: [
         { text: 'Configuration', link: 'configuration' },
-          { text: 'Flavors', link: '/reference/flavors' },
+        { text: 'lime-config', link: 'lime-config' },
+        { text: 'Flavors', link: '/reference/flavors' },
         { text: 'lime-files', items: [
           { text: 'System options', link: 'system' },
           { text: 'Network options', link: 'network/', items: [
