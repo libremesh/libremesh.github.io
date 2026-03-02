@@ -22,7 +22,8 @@ The network architecture designed for LibreMesh is based on two layers:
 ### Cloud layer 2
 ::: info The cloud layer 2 uses the dynamic routing protocol [BATMAN-adv](https://en.wikipedia.org/wiki/B.A.T.M.A.N.).
 
-![batmanadv](/batmanadv_logo.png)
+![batmanadv](/batmanadv_logo.svg){width=250 height=200}
+
 ***
 B.A.T.M.A.N. Advanced is a mesh routing protocol that runs in kernel space.
 Even if the network topology is made of multiple nodes and multiple hops, B.A.T.M.A.N. Advanced abstracts it to a single layer 2 broadcast domain.
@@ -32,7 +33,7 @@ This architecture is robust for roaming purposes, thus TCP and UDP connections a
 :::
 ### Network layer 3
 ::: info The whole network layer 3 uses by default the routing protocol [Babel](https://en.wikipedia.org/wiki/Babel_(protocol)).
-![Babel](/babel_logo.png)
+![Babel](/babel_logo.svg){width=200 height=200}
 
 ***
 Babel is a robust and efficient routing protocol for both wireless mesh networks and wired networks

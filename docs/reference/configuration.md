@@ -15,7 +15,7 @@ The options contained in these files are merged and overwritten from the lowest 
 
 ``` sh-vue
 /etc/config/
-├─ lime-defaults - the default configuration
+├─ lime-defaults - DO NOT EDIT, default configuration
 ├─ lime-community - community configuration
 ├─ lime-<MAC> - node configuration, device specific
 ├─ lime-node - node configuration

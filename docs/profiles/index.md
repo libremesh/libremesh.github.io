@@ -2,12 +2,9 @@
 sidebar: false
 layout: page
 ---
-
 <script setup>
 import { data as profiles } from '/packages.data.js'
 import { useData } from 'vitepress'
-
-console.log(profiles)
 
 const { site, page } = useData()
 
@@ -33,7 +30,7 @@ let packages_list = profiles
       </thead>
       <tbody>
         <tr v-for="p of packages_list.profiles">
-          <td><a :href="site.base+'packages/'+p.name">{{ p.name }}</a></td>
+          <td><a :href="site.base+'profiles/packages/'+p.name">{{ p.name }}</a></td>
           <td>{{ p.version_stable }}</td>
           <!-- <td>{{ p.category }}</td> -->
           <td>

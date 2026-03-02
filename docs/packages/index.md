@@ -7,7 +7,7 @@ layout: page
 import { data as packages } from '/packages.data.js'
 import { useData } from 'vitepress'
 
-console.log(packages)
+// console.log(packages)
 
 const { site, page } = useData()
 

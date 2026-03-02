@@ -27,27 +27,7 @@ Routers with Atheros radios and the `ath10k-ct` OpenWrt's default driver (ath10k
 
 
 ## Flavors
-
-### Default flavor
-
-
-
-### Mini flavor
-A mini version of the default flavor
-
-#### packages list
-- babeld-auto-gw-mode
-- check-date-http
-- lime-docs-minimal
-- lime-hwd-openwrt-wan
-- lime-proto-anygw
-- lime-proto-babeld
-- lime-proto-batadv
-- shared-state
-- shared-state-babeld_hosts
-
-
-
+See [Flavors](/reference/flavors.md)
 
 ## Saving space and RAM
 

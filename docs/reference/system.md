@@ -3,7 +3,19 @@ outline: deep
 ---
 
 # System options
-
+The default values as per `lime-defaults`
+```
+config lime system
+	option hostname 'LiMe-%M4%M5%M6'
+	option domain 'thisnode.info'
+	option keep_on_upgrade 'libremesh dropbear minimum-essential /etc/sysupgrade.conf'
+	option root_password_policy 'DO_NOTHING'
+	option root_password_secret ''
+	option deferrable_reboot_uptime_s '97200'
+	option deferrable_reboot_ping_target '4.2.2.2'
+	option firstbootwizard_configured false
+	option firstbootwizard_dismissed false
+```
 
 ## hostname
 - Default: `LiMe-%M4%M5%M6`

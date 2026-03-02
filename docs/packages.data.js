@@ -53,7 +53,7 @@ export default {
 
 
     profiles_list.forEach(p => {
-      console.log(p)
+      // console.log(p)
 
       const profile_path = 'docs/profiles/packages/'+p+'/'
       const makefile_path = 'docs/profiles/packages/'+p+'/Makefile'
@@ -87,8 +87,6 @@ export default {
         built_oldstable: built_oldstable
       })
     })
-    console.log(profiles)
-
 
     return { packages, profiles }
 

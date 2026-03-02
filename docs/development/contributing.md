@@ -1,3 +1,6 @@
+---
+outline: deep
+---
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
@@ -98,7 +101,7 @@ The general workflow for branching is as follows:
 
     ```git checkout -b <branch name>```
 
-4. Run the tests: read [[Testing docs](testing)].
+4. Run the tests: read [[Testing docs](TESTING.md)].
 
 5. Make your changes, we encourage you to try to add a test.
 

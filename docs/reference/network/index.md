@@ -4,7 +4,14 @@ outline: deep
 
 # Network options
 
-## General
+## General options
+The default values as per `lime-defaults`
+```
+config lime 'network'
+	option primary_interface 'eth0'
+	option main_ipv4_address '10.%N1.0.0/16'
+	option main_ipv6_address 'fd%N1:%N2%N3:%N4%N5::/64'
+```
 
 ### primary_interface
 - Type: `string`

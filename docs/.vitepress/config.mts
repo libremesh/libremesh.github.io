@@ -73,12 +73,13 @@ export default defineConfig({
 
 function nav(): DefaultTheme.NavItem[] {
   return [
+    { text: 'Guide', link: '/guide/packages-selection' },
     { text: 'Reference', link: '/reference/configuration' },  
     { text: 'v2024.1',
       items: [
         { text: 'v2020.4', link: '/news/2023-10-07' },
         { text: 'News', link: '/news' },
-        { text: 'Changelog', link: 'https://github.com/libremesh/lime-packages/tree/master/CHANGELOG.md'},
+        { text: 'Changelog', link: 'changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
     },
@@ -97,7 +98,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       ]
     },
     {
-      text: 'User Guide',
+      text: 'Usage Guide',
       collapsed: false,
       items: [
         { text: 'Connecting to the router', link: '/guide/connecting' },
@@ -113,19 +114,26 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
           collapsed: true,
           items: [
             { text: 'Build methods', link: '/build/' },
-            { text: 'Imagebuilder', link: '/build/imagebuilder' },
+            { text: 'ImageBuilder', link: '/build/imagebuilder' },
+            { text: 'lime-sdk', link: '/build/lime-sdk' },
             { text: 'Buildroot', link: '/build/buildroot'}
         ]}
       ]
     },
+    { text: 'Configuration & Reference', link: '/reference/configuration'},
     {
-      text: 'Developer Guide',
+      text: 'Development Guide',
       collapsed: false,
       items: [
         { text: 'Testing Guide', link: '/development/testing' },
         { text: 'Run LibreMesh on QEMU', link: '/development/virtualizing' },
-        { text: 'Hacking', link: '/development/hacking' },
-        { text: 'Contributing to lime-packages', link: '/development/contributing' }
+        { text: 'Hacking', 
+          link: '/development/hacking', 
+          collapsed: true,
+          items: [
+          { text: 'Kernel Vermagic', link: '/development/kernel_vermagic' }
+        ] },
+        { text: 'Contributing to lime-packages', link: '/development/contributing' },
       ]
     },
     {
@@ -182,24 +190,29 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Configuration', link: 'configuration' },
         { text: 'lime-config', link: 'lime-config' },
-        { text: 'Flavors', link: '/reference/flavors' },
+        { text: 'Flavors', link: 'flavors' },
         { text: 'lime-files', items: [
           { text: 'System options', link: 'system' },
           { text: 'Network options', link: 'network/', items: [
+            { text: 'General options', link: 'network/#general-options'},
+            { text: 'DNS servers', link: 'network/#dns-servers'},
             { text: 'Protocols list', link: 'network/protocols-list'},
             { text: 'Protocols options', link: 'network/protocols-options'},
-            { text: 'Interface specific', link: 'network/interface-specific'},
+            { text: 'Interface specific options', link: 'network/interface-specific'},
           ] },
-          { text: 'Wifi', link: 'wifi', items: [
-            { text: 'Band specific', link: 'wifi#wifi-band-specific-options'},
-            { text: 'Interface specific', link: 'wifi#wifi-interface-specific-options'},
-            { text: 'Client mode', link: 'wifi#wifi-client-mode'},
-            { text: 'Backbone AP', link: 'wifi#wifi-backbone-ap'},
+          { text: 'WiFi options', link: 'wifi', items: [
+            { text: 'General options', link: 'wifi/#general-options'},
+            { text: 'Band specific options', link: 'wifi/band-specific-options'},
+            { text: 'Interface specific options', link: 'wifi/interface-specific'},
           ] },
-          { text: 'Generic UCI configs', link: 'openwrt_configs' },
-          { text: 'BGP', link: 'bgp' },
-          { text: 'Ground Routing', link: 'wifi' },
-          { text: 'Watchcat', link: 'watchcat' }
+          { text: 'Generic UCI configs', link: 'generic_config' },
+          { text: 'Hardware detection', 
+            link: 'hardware_detection',
+            items: [
+              { text: 'Ground Routing', link: 'hardware_detection/ground_routing' },
+              { text: 'Watchcat', link: 'hardware_detection/watchcat' }
+            ]
+          },
         ]}
       ]
     }

@@ -4,6 +4,23 @@ outline: deep
 
 # Network protocols options
 
+The default values as per `lime-defaults`
+```
+config lime 'network'
+	option anygw_dhcp_start '2'
+	option anygw_dhcp_limit '0'
+	option anygw_mac "aa:aa:aa:%N1:%N2:aa"
+	option batadv_orig_interval '2000'
+	option batadv_routing_algo 'BATMAN_IV'
+	option bmx7_mtu '1500'
+	option bmx7_publish_ownip false
+	option bmx7_over_batman false
+	option bmx7_pref_gw none
+	option bmx7_wifi_rate_max 'auto'
+	option bmx7_enable_pki false
+	option use_odhcpd false
+```
+
 ## anygw options
 
 ::: tip NOTE
@@ -48,7 +65,7 @@ config lime network
     option anygw_mac 'aa:aa:aa:%N1:%N2:aa'
 ```
 
-Parametrizable with `%Nn`. Keep in mind that the ebtables rule will use a mask of `ff:ff:ff:00:00:00`.
+Parametrizable with `%Nn`. Keep in mind that the `nftables` rule will use a mask of `ff:ff:ff:00:00:00`.
 
 
 ## batadv options
@@ -81,7 +98,7 @@ config lime network
     option batadv_routing_algo 'BATMAN_IV' 
 ```
 
-BATMAN_V uses throughput rather than packet loss (as in BATMAN_IV) for evaluating the quality of a link 
+BATMAN_V uses throughput rather than packet loss (as in BATMAN_IV) for evaluating the quality of a link.
 
 ## bmx7 options
 
@@ -93,7 +110,7 @@ BATMAN_V uses throughput rather than packet loss (as in BATMAN_IV) for evaluatin
 config lime network
     option bmx7_mtu '1500'
 ```
-Set MTU for bmx7 tunnel interfaces
+Set MTU for bmx7 tunnel interfaces.
 
 ### bmx7_publish_ownip
 - Type: `boolean`
@@ -103,7 +120,7 @@ Set MTU for bmx7 tunnel interfaces
 config lime network
     option bmx7_publish_ownip false
 ```
-Announce also a /32 route about each node
+Announce also a /32 route about each node.
 
 
 ### bmx7_over_batman
@@ -124,7 +141,7 @@ config lime network
     option bmx7_pref_gw none
 ```
 
-Force bmx7 to use a specific gateway to Internet (hostname must be used as identifier)
+Force bmx7 to use a specific gateway to Internet (hostname must be used as identifier).
 
 ### bmx7_wifi_rate_max
 - Type: `number|auto`
@@ -143,32 +160,32 @@ config lime network
 config lime network
     option bmx7_enable_pki false
 ```
-Trust only nodes in /etc/bmx7/trustedNodes when set (default is to trust all nodes)
+Trust only nodes in /etc/bmx7/trustedNodes when set (default is to trust all nodes).
 
 
 ## autoap - lime-ap-watchping
 
 ### autoap_enabled
-Type: `boolean`
-Default: `0`
+Type: `boolean`    
+Default: `0`    
 Packages required: `lime-ap-watchping`
 
 ```
 config lime network
     option autoap_enabled 0
 ```
-Requires lime-ap-watchping installed. If enabled AP SSID is changed to ERROR when network issues
+If enabled AP SSID is changed to ERROR when network issues.
 
 ### autoap_hosts
-Type: `string`
-Default: `8.8.8.8 141.1.1.1`
+Type: `string`    
+Default: `8.8.8.8 141.1.1.1`    
 Packages required: `lime-ap-watchping`
 
 ```
 config lime network
     option autoap_hosts "8.8.8.8 141.1.1.1"
 ```
-Requires lime-ap-watchping installed. Hosts used to check if the network is working fine
+Hosts used to check if the network is working fine.
 
 ## odhcpd
 
@@ -176,4 +193,5 @@ Requires lime-ap-watchping installed. Hosts used to check if the network is work
 config lime network
     option use_odhcpd false
 ```
-
+Option to enable the usage of odhcpd as dhcp server.    
+Enable it to have a dhcp server when building libremesh without `lime-proto-anygw` that by default uses `dnsmasq-dhcpv6`.

@@ -2,21 +2,34 @@
 outline: deep
 ---
 
-# Protocols list
+# Network protocols list
 
-## list protocols
-- Type: `list`
-- Default: `ieee80211s lan anygw batadv:%N1 bmx6:13 oslr:14 oslr6:15 oslr2:16 babeld:17 bmx:18`
-
-```sh
-uci get lime-autogen.network.protocols
+The default values as per `lime-defaults`
 ```
+config lime 'network'
+	list protocols anygw
+	list protocols batadv:%N1
+	list protocols babeld:17
+	list protocols bmx7:18
+	list protocols ieee80211s
+	list protocols lan
+	list protocols olsr:14
+	list protocols olsr2:16
+	list protocols olsr6:15
+```
+
+## Network protocols
 List of protocols configured by LibreMesh, only `lan` and `ieee80211s` are included in the package `lime-system`
-Others require the relative package `lime-proto-<proto>`. 
+The others require the relative package `lime-proto-<proto>`. 
 
 ::: tip NOTE
 If you set some protocols in `/etc/config/lime-node`, or `/etc/config/lime-community` you overwrite the *whole* list of protocols set in `/etc/config/lime-defaults`
 :::
+
+Check the applied list in `lime-autogen`
+```sh
+uci get lime-autogen.network.protocols
+```
 
 ### anygw
 - Default: `enabled`
@@ -91,10 +104,7 @@ Do not use a VLAN ID between 29 and 284 as this range is reserved for batadv:%N1
     list protocols olsr6:16
 ```
 
-## Other protocols
-::: tip NOTE
-The following protocols should be included in an interface specific section `config <proto_section> <section_name>`
-:::
+## Other network protocols
 
 ### bgp
 - Packages required: `lime-proto-bgp`
@@ -112,6 +122,7 @@ config bgp_peer peer2
 One section for each BGP peer
 
 ## Interface specific protocols
+The following protocols should only be included in an interface specific section, i.e. `config net lan1`. See the next page for details.
 
 ::: tip NOTE
 The following protocols should be included in an interface specific section `config net <section_name>`

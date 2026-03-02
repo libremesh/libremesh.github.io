@@ -1,3 +1,6 @@
+---
+outline: deep
+---
 # Testing guide
 
 LibreMesh has unit tests that help us add new features while keeping maintenance effort contained.

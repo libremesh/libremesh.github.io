@@ -42,18 +42,18 @@ Refers the the page [`Build LibreMesh`](/build/) for instructions on how to buil
 Install the firmware on your device following the installation method reported in the [wiki of OpenWrt](https://openwrt.org)
 or, if not present, search the instruction in the **`git-commit` message** left from who added the support for that device model. See the [Table of Hardware](https://toh.openwrt.org).
 
+https://openwrt.org/docs/guide-quick-start/factory_installation
+
 ::: tip NOTE
 It is strongly adviced to **install OpenWrt first**:
 1. Download the latest `stable` firmware for your device from the [`OpenWrt Firmware Selector`](https://firmware-selector.openwrt.org).    
-   Beware that OpenWrt `SNAPSHOT` versions are meant for testing purposes.   
-   Use them at your own risc.
+   If your device runs OEM firmware use the `factory` for first time installation.
 2. Check that the OpenWrt device boot and function properly.    
    Beware that OpenWrt by default doesn't turn on the Wi-Fi.    
    Turn it on from `LuCi` from the menu `Network` / `Wireless`.
 3. Upgrade to LibreMesh:
-    - via CLI using `sysupgrade -n firmware.bin` 
-    - or via the web interface `LuCI` from the menu `System` / `Backup / Flash Firmware`.
-
+    - upload the firmware via the web interface `LuCI` from the menu `System` / `Backup / Flash Firmware`.
+    - or via ssh using the command `sysupgrade -n firmware.bin`
 :::
 
 
@@ -73,6 +73,10 @@ See the page [configuration](reference/configuration) for detailed options.
 Install newer OpenWrt stable releases to keep updated the device:
 - Subscribe to the Newsletter [`OpenWrt Annouce`](https://lists.openwrt.org/mailman/listinfo/openwrt-announce).
 - Or follow the [`Openwrt Announcement-Bot`](https://social.tchncs.de/@openwrt) on Mastodon.
+
+Refers to the OpenWrt Wiki for details about the upgrade process:
+- [Upgrading OpenWrt firmware using LuCI and CLI](https://openwrt.org/docs/guide-user/installation/generic.sysupgrade)
+- [Preserving OpenWrt settings during firmware upgrade](https://openwrt.org/docs/guide-quick-start/admingui_sysupgrade_keepsettings)
 
 ### Recommendations
 ::: warning BEWARE

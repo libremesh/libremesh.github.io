@@ -4,3 +4,6 @@
 [submodule "network-profiles"]
 	path = network-profiles
 	url = https://github.com/libremesh/network-profiles
+[submodule "lime-sdk"]
+	path = lime-sdk
+	url = https://github.com/libremesh/lime-sdk

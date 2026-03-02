@@ -9,6 +9,11 @@ node_modules/
 /docs/profiles/**
 !/docs/profiles/index.md
 
-
 /lime-packages
 /network-profiles
+/lime-sdk
+
+/docs/build/lime-sdk.md
+
+/docs/development/**
+!/docs/development/hacking/kernel_vermagic.md

@@ -1,9 +1,8 @@
 # Connecting to the router
-The router could be reached
-
 
 ## via web browser 
-At the default anygw FQDN http://thisnode.info.     
+At the default anygw FQDN http://thisnode.info.    
+
 These addresses are available as well:
   - http://10.13.0.1 - default anygw ipv4
   - http://10.13.x.x - node default LAN `br-lan` ipv4 address
@@ -16,7 +15,7 @@ These addresses are available as well:
 
 ![lime-app](/lime-app.png)
 
-## via CLI
+## via SSH
 
 The following bash aliases are recommended:
 - `+ssh-rsa` - (optional) Required if the node runs an openwrt older than the branch 23.05
