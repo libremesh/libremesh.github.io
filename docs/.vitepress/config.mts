@@ -49,6 +49,7 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
+    outline: 'deep',
 
     nav: nav(),
 
@@ -75,10 +76,11 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     { text: 'Guide', link: '/guide/packages-selection' },
     { text: 'Reference', link: '/reference/configuration' },  
-    { text: 'v2024.1',
+    { text: 'News',
       items: [
-        { text: 'v2020.4', link: '/news/2023-10-07' },
-        { text: 'News', link: '/news' },
+        { text: 'v2024.1', link: '/news/2023-10-07' },
+        { text: 'v2020.4', link: '/news/2025-05-04' },
+        { text: 'Latest News', link: '/news' },
         { text: 'Changelog', link: 'changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
@@ -117,7 +119,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             { text: 'ImageBuilder', link: '/build/imagebuilder' },
             { text: 'lime-sdk', link: '/build/lime-sdk' },
             { text: 'Buildroot', link: '/build/buildroot'}
-        ]}
+        ]},
+        { text: 'Upgrade', link: '/guide/upgrade' },
       ]
     },
     { text: 'Configuration & Reference', link: '/reference/configuration'},
@@ -131,7 +134,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
           link: '/development/hacking', 
           collapsed: true,
           items: [
-          { text: 'Kernel Vermagic', link: '/development/kernel_vermagic' }
+          { text: 'Kernel Vermagic', link: '/development/hacking/kernel_vermagic' }
         ] },
         { text: 'Contributing to lime-packages', link: '/development/contributing' },
       ]
@@ -143,7 +146,6 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
         { text: 'Communication', link: '/communication' },
         { text: 'Contributors', link: '/contributors' },
         { text: 'Meetings', link: '/meetings' },
-        { text: 'News', link: '/news' },
       ]
     },
     {

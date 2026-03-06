@@ -74,20 +74,4 @@ Install newer OpenWrt stable releases to keep updated the device:
 - Subscribe to the Newsletter [`OpenWrt Annouce`](https://lists.openwrt.org/mailman/listinfo/openwrt-announce).
 - Or follow the [`Openwrt Announcement-Bot`](https://social.tchncs.de/@openwrt) on Mastodon.
 
-Refers to the OpenWrt Wiki for details about the upgrade process:
-- [Upgrading OpenWrt firmware using LuCI and CLI](https://openwrt.org/docs/guide-user/installation/generic.sysupgrade)
-- [Preserving OpenWrt settings during firmware upgrade](https://openwrt.org/docs/guide-quick-start/admingui_sysupgrade_keepsettings)
-
-### Recommendations
-::: warning BEWARE
-From times to times it could be that some OpenWrt devices encounter issues upgrading, and result `bricked` or `soft-bricked`
-Be sure to have **read the OpenWrt release notes** for the `version`/`branch` you are installing.   
-
-In **production environments with multiple LibreMesh nodes** deployed, it is adviceable to keep at least one device, for each models you are using, to test that upgrades are ok. Or eventually recover it using an `USB Serial Adapter`.
-:::
-
-### Tools
-Tools to upgrade the base OpenWrt version and LibreMesh packages:
-- `eupgrade` - provide semi-automated upgrades checking if a new firmware is available from an https server.
-- `owut` - provides upgrades using an [`ASU`](https://github.com/openwrt/asu) (online imagebuilder) instance. Test it installing the package `profile-antennine.org-an-lime-owut`
-- `safe-upgrade` - Wrapper around `sysupgrade`. Requires large flash storage, at least the double of the firmware-size, to rollback in case something didn't work.
+Refers to the page [Upgrade](/guide/upgrade) for recommended operations with LibreMesh.

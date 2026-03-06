@@ -293,9 +293,7 @@ async function addRepoDoc() {
   await copyFiles(from_dir, to_dir, 'CONTRIBUTING.md', 'contributing.md')
   await copyFiles(from_dir, './docs/', 'CHANGELOG.md', 'changelog.md')
 
-  let testing = await replaceInFile(to_dir+'testing.md', "# Testing", "---\noutline: deep\n---\n# Testing")
-  let contributing = await replaceInFile(to_dir+'contributing.md', "# Contributing", "---\noutline: deep\n---\n# Contributing")
-  contributing = await replaceInFile(to_dir+'contributing.md', /]\(TESTING.md\)/, "](testing)")
+  await replaceInFile(to_dir+'contributing.md', /]\(TESTING.md\)/, "](testing)")
 }
 
 // copy VIRTUALIZING.md TESTING.md HACKING.Md

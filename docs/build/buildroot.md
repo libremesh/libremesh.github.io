@@ -28,13 +28,13 @@ Run all the above commands as normal user (do not use root).
 
 ::: code-group
 
-``` sh-vue [{{ openwrt.oldstable_version }}]
-git clone -b v{{ openwrt.oldstable_version }} --single-branch https://github.com/openwrt/openwrt
+``` sh-vue [{{ openwrt.stable_version }}]
+git clone -b v{{ openwrt.stable_version }} --single-branch https://github.com/openwrt/openwrt
 cd openwrt
 ```
 
-``` sh-vue [{{ openwrt.stable_version }}]
-git clone -b v{{ openwrt.stable_version }} --single-branch https://github.com/openwrt/openwrt
+``` sh-vue [{{ openwrt.oldstable_version }}]
+git clone -b v{{ openwrt.oldstable_version }} --single-branch https://github.com/openwrt/openwrt
 cd openwrt
 ```
 
@@ -43,24 +43,24 @@ cd openwrt
 Copy the defalt OpenWrt repositories file, and add the LibreMesh repositories
 
 ::: tip
-Use `2024.1` to build the latest LibreMesh release (compatible with OpenWrt 23.05.X)    
-Use `master` to build the latest LibreMesh code (compatible with OpenWrt 24.10.X or newer)
+Use `master` to build the latest LibreMesh code (compatible with openwrt-24.10 or newer)     
+Use `2024.1` to build the latest LibreMesh release (compatible with openwrt-24.10 and openwrt-23.05)    
 :::
 
 ::: code-group
-
-``` sh [2024.1]
-cp feeds.conf.default feeds.conf
-cat << EOF >> feeds.conf
-src-git libremesh https://github.com/libremesh/lime-packages.git;v2024.1
-src-git profiles https://github.com/libremesh/network-profiles.git
-EOF
-```
 
 ``` sh [master]
 cp feeds.conf.default feeds.conf
 cat << EOF >> feeds.conf
 src-git libremesh https://github.com/libremesh/lime-packages.git;master
+src-git profiles https://github.com/libremesh/network-profiles.git
+EOF
+```
+
+``` sh [2024.1]
+cp feeds.conf.default feeds.conf
+cat << EOF >> feeds.conf
+src-git libremesh https://github.com/libremesh/lime-packages.git;v2024.1
 src-git profiles https://github.com/libremesh/network-profiles.git
 EOF
 ```

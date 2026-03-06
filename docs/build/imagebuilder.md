@@ -60,10 +60,9 @@ Refers to the OpenWrt wiki [Using the Image Builder](https://openwrt.org/docs/gu
 
 ::: code-group
 
-
-```sh-vue [{{ openwrt.oldstable_version }}]
+```sh-vue [{{ openwrt.stable_version }} (stable)]
 FILE_HOST="{{build.file_host}}"
-DOWNLOAD_PATH="{{download_path(openwrt.oldstable_version)}}"
+DOWNLOAD_PATH="{{download_path(openwrt.stable_version)}}"
 DOWNLOAD_FILE="{{build.download_file}}"
 
 mkdir imagebuilder; cd imagebuilder
@@ -73,9 +72,9 @@ wget -nv "$FILE_HOST/$DOWNLOAD_PATH/$file_name"
 tar xf "$file_name" --strip=1 --no-same-owner -C .
 ```
 
-```sh-vue [{{ openwrt.stable_version }}]
+```sh-vue [{{ openwrt.oldstable_version }} (oldstable)]
 FILE_HOST="{{build.file_host}}"
-DOWNLOAD_PATH="{{download_path(openwrt.stable_version)}}"
+DOWNLOAD_PATH="{{download_path(openwrt.oldstable_version)}}"
 DOWNLOAD_FILE="{{build.download_file}}"
 
 mkdir imagebuilder; cd imagebuilder
@@ -106,18 +105,7 @@ Start an ImageBuilder of your choice, for example {{ build.target }} if your dev
 
 ::: code-group
 
-```sh-vue [{{ openwrt.oldstable_version }}]
-mkdir ./images/
-docker run -it \
-    -e TARGET=$TARGET \
-    -e ARCH=$ARCH \
-    -v $(pwd)/config/:/builder/files/etc/config/ \
-    -v $(pwd)/images:/images/ \
-    ghcr.io/openwrt/imagebuilder:$TARGET-v{{ openwrt.oldstable_version }}
-```
-
-
-```sh-vue [{{ openwrt.stable_version }}]
+```sh-vue [{{ openwrt.stable_version }} (stable)]
 mkdir ./images/
 docker run -it \
     -e TARGET=$TARGET \
@@ -125,6 +113,16 @@ docker run -it \
     -v $(pwd)/config/:/builder/files/etc/config/ \
     -v $(pwd)/images:/images/ \
     ghcr.io/openwrt/imagebuilder:$TARGET-v{{ openwrt.stable_version }}
+```
+
+```sh-vue [{{ openwrt.oldstable_version }} (oldstable)]
+mkdir ./images/
+docker run -it \
+    -e TARGET=$TARGET \
+    -e ARCH=$ARCH \
+    -v $(pwd)/config/:/builder/files/etc/config/ \
+    -v $(pwd)/images:/images/ \
+    ghcr.io/openwrt/imagebuilder:$TARGET-v{{ openwrt.oldstable_version }}
 ```
 
 ```sh-vue [SNAPSHOT]
@@ -144,24 +142,27 @@ docker run -it \
 Within the container add the `lime-packages` feeds.
 ::: code-group
 
-```sh-vue [opkg - openwrt-23.05]
-cat << EOF >> repositories.conf
-src/gz libremesh_packages https://feed.libremesh.org/master/openwrt-23.05/x86_64
-src/gz libremesh_arch_packages https://feed.libremesh.org/master/openwrt-23.05/$ARCH
-src/gz profiles https://feed.libremesh.org/profiles/openwrt-23.05/x86_64
+
+```sh-vue [openwrt-{{ openwrt.stable_branch }} (stable)]
+cat << EOF >> repositories
+https://feed.libremesh.org/master/openwrt-{{ openwrt.stable_branch }}/x86_64/packages.adb
+https://feed.libremesh.org/master/openwrt-{{ openwrt.stable_branch }}/$ARCH/packages.adb
+https://feed.libremesh.org/profiles/openwrt-{{ openwrt.stable_branch }}/x86_64/packages.adb
 EOF
 
-cat << EOF > keys/a71b3c8285abd28b
-untrusted comment: signed by libremesh.org key a71b3c8285abd28b
-RWSnGzyChavSiyQ+vLk3x7F0NqcLa4kKyXCdriThMhO78ldHgxGljM/8
+cat << EOF > keys/libremesh.pem
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdFJZ2qVti49Ol8LJZYuxgOCLowBS
+8bI86a7zqhSbs5yon3JON7Yee7CQOgqwPOX5eMALGOu8iFGAqIRx5YjfYA==
+-----END PUBLIC KEY-----
 EOF
 ```
 
-```sh-vue [opkg - openwrt-24.10]
+```sh-vue [openwrt-{{ openwrt.oldstable_branch }} (oldstable)]
 cat << EOF >> repositories.conf
-src/gz libremesh_packages https://feed.libremesh.org/master/openwrt-24.10/x86_64
-src/gz libremesh_arch_packages https://feed.libremesh.org/master/openwrt-24.10/$ARCH
-src/gz profiles https://feed.libremesh.org/profiles/openwrt-24.10/x86_64
+src/gz libremesh_packages https://feed.libremesh.org/master/openwrt-{{ openwrt.oldstable_branch }}/x86_64
+src/gz libremesh_arch_packages https://feed.libremesh.org/master/openwrt-{{ openwrt.oldstable_branch }}/$ARCH
+src/gz profiles https://feed.libremesh.org/profiles/openwrt-{{ openwrt.oldstable_branch }}/x86_64
 EOF
 
 cat << EOF > keys/a71b3c8285abd28b
