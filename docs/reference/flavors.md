@@ -99,8 +99,9 @@ The LibreMesh `mini` flavor contains these packages:
 The configuration is the same as the one of the default flavor.
 The removed packages are:
 
+- batctl-default - CLI utility to manage batman-adv interfaces with debug commands, in absence `batctl-tiny` is installed
 - lime-app - the web interface
 - lime-docs - offline docs
-- lime-debug - set of debug tools including tcpdump, mtr, iperf3
+- lime-debug - set of debug tools including `tcpdump`, `mtr`, `iperf3`
 - shared-state-async - newer shared-state in C++
 - lime-hwd-ground-routing - to manage ground routing connections

@@ -21,7 +21,7 @@ config lime 'network'
 	option use_odhcpd false
 ```
 
-## anygw options
+## anygw
 
 ::: tip NOTE
 The package `lime-proto-anygw` is included in the [`default flavor`](/reference/flavors)
@@ -68,7 +68,8 @@ config lime network
 Parametrizable with `%Nn`. Keep in mind that the `nftables` rule will use a mask of `ff:ff:ff:00:00:00`.
 
 
-## batadv options
+## batadv
+See the [batman-adv page](protocols/batman-adv) for the default configuration.
 
 ::: tip NOTE
 The package `lime-proto-batadv` is included in the [`default flavor`](/reference/flavors)
@@ -100,7 +101,7 @@ config lime network
 
 BATMAN_V uses throughput rather than packet loss (as in BATMAN_IV) for evaluating the quality of a link.
 
-## bmx7 options
+## bmx7
 
 ### bmx7_mtu
 - Type: `number`

@@ -1,25 +1,33 @@
 // import readme from each packages
 import fs, { read } from 'fs'
-import { glob } from 'glob'
-
-import downdoc from 'downdoc'
-import { profile } from 'console'
+import { XMLHttpRequest } from 'xmlhttprequest'
 
 const lime_repo = './lime-packages/'
 const lime_pkgs_path = './lime-packages/packages/'
 const profile_repo = './network-profiles/'
 const lime_sdk_repo = './lime-sdk/'
+let lime_feed = {}
+let profiles_feed = {}
 
-let lime_feed = {
+const request = new XMLHttpRequest();
+request.open('GET', 'https://mirror-03.infra.openwrt.org/.versions.json', false);  // `false` makes the request synchronous
+request.send(null);
+if (request.status !== 200) { console.log('unreachable') }
+let openwrt = JSON.parse(request.responseText)
+
+openwrt.stable_branch = openwrt.stable_version?.substr(0,5)
+openwrt.oldstable_branch = openwrt.oldstable_version?.substr(0,5)
+
+lime_feed = {
   main: await (await fetch('https://feed.libremesh.org/master/openwrt-main/x86_64/index.json')).json(),
-  stable: await (await fetch('https://feed.libremesh.org/master/openwrt-24.10/x86_64/index.json')).json(),
-  oldstable: await (await fetch('https://feed.libremesh.org/master/openwrt-23.05/x86_64/index.json')).json()
+  stable: await (await fetch('https://feed.libremesh.org/master/openwrt-'+openwrt.stable_branch+'/x86_64/index.json')).json(),
+  oldstable: await (await fetch('https://feed.libremesh.org/master/openwrt-'+openwrt.oldstable_branch+'/x86_64/index.json')).json()
 }
 
-let profiles_feed = {
-   main: await (await fetch('https://feed.libremesh.org/profiles/openwrt-main/x86_64/index.json')).json(),
-   stable: await (await fetch('https://feed.libremesh.org/profiles/openwrt-24.10/x86_64/index.json')).json(),
-   oldstable: await (await fetch('https://feed.libremesh.org/profiles/openwrt-23.05/x86_64/index.json')).json()
+profiles_feed = {
+  main: await (await fetch('https://feed.libremesh.org/profiles/openwrt-main/x86_64/index.json')).json(),
+  stable: await (await fetch('https://feed.libremesh.org/profiles/openwrt-'+openwrt.stable_branch+'/x86_64/index.json')).json(),
+  oldstable: await (await fetch('https://feed.libremesh.org/profiles/openwrt-'+openwrt.oldstable_branch+'/x86_64/index.json')).json()
 }
 
 async function copyFiles(from_dir, to_dir, from_file, to_file) {

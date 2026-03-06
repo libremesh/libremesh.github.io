@@ -40,8 +40,8 @@ uci get lime-autogen.network.protocols
 
 ### batadv
 - Default: `enabled`
-- Packages required: `lime-proto-anygw`
-- Parameter 1: `vlan_number` default `%N1`
+- Packages required: `lime-proto-batadv`
+- Parameter 1: `vlan_number` default `%N1` (from 29 to 256)
 - Parameter 2: `vlan_type` default `8021ad` 
 - Parameter 2 type: `8021ad|8021q`
 
@@ -49,20 +49,25 @@ uci get lime-autogen.network.protocols
     list protocols batadv:%N1
 #   list protocols batadv:0
 ```
-If the vlan is `0` tags are disabled and the routing is done on the raw interface
-
+If the vlan is `0` tags are disabled and the routing is done on the raw interface.
+::: tip 
+See the page about [batman-adv](protocols/batman-adv) for the default configuration.
+:::
 ### babeld
 - Default: `enabled`
-- Packages required: `lime-proto-anygw`
+- Packages required: `lime-proto-babeld`
 - Parameter 1: `vlan` default `17`
 
 ```
     list protocols babeld:17
 ```
+::: tip
+See the page about [babeld](protocols/babeld) for the default configuration.
+:::
 
 ### bmx7
 - Default: `enabled`
-- Packages required: `lime-proto-anygw`
+- Packages required: `lime-proto-bmx7`
 - Parameter 1: `vlan` default `18`
 
 ```

@@ -40,25 +40,20 @@ Additionally these packages could be `excluded` in the firmware build:
 
 ::: code-group
 
+``` [{{ openwrt.stable_version }}]
+-apk-mbedtls -ca-bundle -ppp -ppp-mod-pppoe
+```
+
 ``` [{{ openwrt.oldstable_version }}]
 -opkg -ca-bundle -ppp -ppp-mod-pppoe
 ```
 
-``` [{{ openwrt.stable_version }}]
--apk-mbedtls -ca-bundle -ppp -ppp-mod-pppoe
-```
 
 :::
 
 The same formatted as list
 ::: code-group
 
-``` [{{ openwrt.oldstable_version }}]
--opkg
--ca-bundle
--ppp
--ppp-mod-pppoe
-```
 
 ``` [{{ openwrt.stable_version }}]
 -apk-mbedtls
@@ -67,13 +62,20 @@ The same formatted as list
 -ppp-mod-pppoe
 ```
 
-:::
+``` [{{ openwrt.oldstable_version }}]
+-opkg
+-ca-bundle
+-ppp
+-ppp-mod-pppoe
+```
 
-#### `opkg`  
-The router won't be able to install packages after installing
+:::
 
 #### `apk-mbedtls`
 Package manager    
+The router won't be able to install packages after installing
+
+#### `opkg`  
 The router won't be able to install packages after installing
 
 #### `ca-bundle`

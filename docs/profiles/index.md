@@ -3,10 +3,14 @@ sidebar: false
 layout: page
 ---
 <script setup>
+import { data as openwrt } from '/openwrt.data.js'
 import { data as profiles } from '/packages.data.js'
 import { useData } from 'vitepress'
 
 const { site, page } = useData()
+
+openwrt.stable_branch = openwrt.stable_version.substr(0,5)
+openwrt.oldstable_branch = openwrt.oldstable_version.substr(0,5)
 
 let packages_list = profiles
 </script>
@@ -35,8 +39,8 @@ let packages_list = profiles
           <!-- <td>{{ p.category }}</td> -->
           <td>
             {{ p.built_main && '️✅' || '❌' }} main,  
-            {{ p.built_stable && '️✅' || '❌' }} 24.10, 
-            {{ p.built_oldstable && '️✅' || '❌' }} 23.05
+            {{ p.built_stable && '️✅' || '❌' }} {{ openwrt.stable_branch }}, 
+            {{ p.built_oldstable && '️✅' || '❌' }} {{ openwrt.oldstable_branch }}
           </td>
           <!-- <td>{{ p.license }}</td>
           <td>{{ p.pkgarch }}</td>

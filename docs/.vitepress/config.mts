@@ -193,6 +193,10 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
         { text: 'Configuration', link: 'configuration' },
         { text: 'lime-config', link: 'lime-config' },
         { text: 'Flavors', link: 'flavors' },
+        { text: 'Default protocols', items: [
+          { text: 'Batman-adv', link: 'network/protocols/batman-adv'},
+          { text: 'Babeld', link: 'network/protocols/babeld'},
+        ]},
         { text: 'lime-files', items: [
           { text: 'System options', link: 'system' },
           { text: 'Network options', link: 'network/', items: [
@@ -203,7 +207,7 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
             { text: 'Interface specific options', link: 'network/interface-specific'},
           ] },
           { text: 'WiFi options', link: 'wifi', items: [
-            { text: 'General options', link: 'wifi/#general-options'},
+            { text: 'General options', link: 'wifi'},
             { text: 'Band specific options', link: 'wifi/band-specific-options'},
             { text: 'Interface specific options', link: 'wifi/interface-specific'},
           ] },
@@ -215,7 +219,7 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
               { text: 'Watchcat', link: 'hardware_detection/watchcat' }
             ]
           },
-        ]}
+        ]},
       ]
     }
   ]
