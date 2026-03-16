@@ -80,7 +80,7 @@ The information shared by default depends from shared-state's `publishers` insta
 - shared-state-nodes_and_links
 
 
-## Mini flavor
+## Flavor Mini
 
 ### Packages list
 The LibreMesh `mini` flavor contains these packages:
@@ -97,6 +97,8 @@ The LibreMesh `mini` flavor contains these packages:
 
 ### Configuration
 The configuration is the same as the one of the default flavor.
+
+### Excluded packages
 The removed packages are:
 
 - batctl-default - CLI utility to manage batman-adv interfaces with debug commands, in absence `batctl-tiny` is installed

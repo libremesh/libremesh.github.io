@@ -1,5 +1,5 @@
 // import readme from each packages
-import fs, { read } from 'fs'
+import fs from 'fs'
 import { XMLHttpRequest } from 'xmlhttprequest'
 
 const lime_repo = './lime-packages/'

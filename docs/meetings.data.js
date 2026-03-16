@@ -1,7 +1,7 @@
 import { createContentLoader } from 'vitepress'
 
-export default createContentLoader('meetings/**/*.md', {
+export default createContentLoader('meetings/*/*.md', {
   transform(rawData) {
-    return rawData.reverse().slice(1).filter(i => i[0] !== '')
+    return rawData
   }
 }/* options */)

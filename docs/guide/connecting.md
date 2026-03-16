@@ -11,11 +11,13 @@ These addresses are available as well:
   - http://\<hostname\> - device `hostname`
   - http://\<hostname\>.thisnode.info - device FQDN
   - http://\[fd0d:fe46:8ce8::1\] - default anygw ipv6
-  - http://\[fd0d:fe46:8ce8::x\:xx/64\] - node default LAN `br-lan` ipv6 address
+  - http://\[fd0d:fe46:8ce8::x\:xx\] - node default LAN `br-lan` ipv6 address
 
 ![lime-app](/lime-app.png)
 
 ## via SSH
+
+Refers to [SSH to OpenWrt](https://openwrt.org/docs/guide-quick-start/sshadministration)
 
 The following bash aliases are recommended:
 - `+ssh-rsa` - (optional) Required if the node runs an openwrt older than the branch 23.05
@@ -38,7 +40,7 @@ ussh root@thisnode.info
 
 Once the connection is established the default banners will be printed to the console:
 ```
-BusyBox v1.36.1 (2025-12-30 22:05:19 UTC) built-in shell (ash)
+BusyBox v1.37.0 (2026-03-05 17:27:01 UTC) built-in shell (ash)
 
   _______                     ________        __
  |       |.-----.-----.-----.|  |  |  |.----.|  |_
@@ -46,14 +48,22 @@ BusyBox v1.36.1 (2025-12-30 22:05:19 UTC) built-in shell (ash)
  |_______||   __|_____|__|__||________||__|  |____|
           |__| W I R E L E S S   F R E E D O M
  -----------------------------------------------------
- OpenWrt 24.10.5, r29087-d9c5716d1d
+ OpenWrt 25.12.0, r32713-f919e7899d Dave's Guitar
  -----------------------------------------------------
-  __    __ __                _______             __
- |  |  |__|  |--.----.-----.|   |   |-----.-----|  |--.
- |  |__|  |  _  |   _|  -__||       |  -__|__ --|     |
+
+ === WARNING! =====================================
+ There is no root password defined on this device!
+ Use the "passwd" command to set up a new password
+ in order to prevent unauthorized SSH logins.
+ --------------------------------------------------
+
+  ___   __ __                _______             __
+ |   |_|__|  |--.----.-----.|   |   |-----.-----|  |--.
+ |     |  |  _  |   _|  -__||       |  -__|__ --|     |
  |_____|__|_____|__| |_____||__|_|__|_____|_____|__|__|
+
  ------------------------------------------------------
- LiMe master development (master rev. 94aa82c 20260105_1030)
+ LiMe master development (master rev. 7929208 20260304_1752)
  ------------------------------------------------------
  https://libremesh.org
  ------------------------------------------------------
@@ -62,10 +72,22 @@ BusyBox v1.36.1 (2025-12-30 22:05:19 UTC) built-in shell (ash)
 
  = edit via http://thisnode.info/app/#/notes or /etc/banner.notes =
 
-=== WARNING! =====================================
-There is no root password defined on this device!
-Use the "passwd" command to set up a new password
-in order to prevent unauthorized SSH logins.
---------------------------------------------------
-root@openwrt:~#
+
+ OpenWrt recently switched to the "apk" package manager!
+
+ OPKG Command           APK Equivalent      Description
+ ------------------------------------------------------------------
+ opkg install <pkg>     apk add <pkg>       Install a package
+ opkg remove <pkg>      apk del <pkg>       Remove a package
+ opkg upgrade           apk upgrade         Upgrade all packages
+ opkg files <pkg>       apk info -L <pkg>   List package contents
+ opkg list-installed    apk info            List installed packages
+ opkg update            apk update          Update package lists
+ opkg search <pkg>      apk search <pkg>    Search for packages
+ ------------------------------------------------------------------
+
+For more information visit:
+https://openwrt.org/docs/guide-user/additional-software/opkg-to-apk-cheatsheet
+
+root@openwrt:~# 
 ```

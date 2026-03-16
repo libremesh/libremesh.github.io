@@ -80,7 +80,7 @@ function nav(): DefaultTheme.NavItem[] {
       items: [
         { text: 'v2024.1', link: '/news/2023-10-07' },
         { text: 'v2020.4', link: '/news/2025-05-04' },
-        { text: 'Latest News', link: '/news' },
+        { text: 'Latest Articles', link: '/news' },
         { text: 'Changelog', link: 'changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
@@ -208,12 +208,11 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
           ] },
           { text: 'WiFi options', link: 'wifi', items: [
             { text: 'General options', link: 'wifi'},
-            { text: 'Band specific options', link: 'wifi/band-specific-options'},
+            { text: 'Band specific options', link: 'wifi/band-specific'},
             { text: 'Interface specific options', link: 'wifi/interface-specific'},
           ] },
           { text: 'Generic UCI configs', link: 'generic_config' },
           { text: 'Hardware detection', 
-            link: 'hardware_detection',
             items: [
               { text: 'Ground Routing', link: 'hardware_detection/ground_routing' },
               { text: 'Watchcat', link: 'hardware_detection/watchcat' }
