@@ -51,10 +51,12 @@ jobs:
       - name: Prebuild with VitePress
         run: pnpm run prebuild # or pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Build with VitePress
-        run: pnpm run build # or pnpm docs:build / yarn docs:build / bun run docs:build
+        run: pnpm run build:server # or pnpm docs:build / yarn docs:build / bun run docs:build
       
       - name: Upload using rsync
         run: |
-          mkdir .ssh/; echo ${{ secrets.RSYNC_PASSWORD }} > .ssh/id_ed25519
-          ssh-keyscan -H ${{ secrets.RSYNC_HOST }} >> .ssh/known_hosts
-          rsync -va --rsh="ssh -i .ssh/id_ed25519"  docs/.vitepress/dist ${{ secrets.RSYNC_USER }}@${{ secrets.RSYNC_HOST }}:/home/${{ secrets.RSYNC_USER }}/site
+          mkdir .ssh/; 
+          echo "${{ secrets.RSYNC_PASSWORD }}" > .ssh/id_ed25519;
+          chmod 600 .ssh/id_ed25519;
+          ssh-keyscan -H "${{ secrets.RSYNC_HOST }}" > .ssh/known_hosts;
+          rsync -va --rsh="ssh -i .ssh/id_ed25519 -o UserKnownHostsFile=.ssh/known_hosts"  docs/.vitepress/dist ${{ secrets.RSYNC_USER }}@${{ secrets.RSYNC_HOST }}:/home/${{ secrets.RSYNC_USER }}/site

@@ -1,8 +1,9 @@
 import { createContentLoader, defineConfig, type DefaultTheme } from 'vitepress'
 import { generateSidebarItems, getFiles } from './sidebar'
 
-const isBuild = process.env.NODE_ENV === 'production'
-const baseUrl = isBuild && '/libremesh.github.io' || ''
+// const isBuild = process.env.NODE_ENV === 'production'
+const isFork = process.env.IS_FORK === '1'
+const baseUrl = isFork && '/libremesh.github.io' || ''
 
 const libremesh = {
   stable_version: '2024.1',
