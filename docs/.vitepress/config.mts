@@ -108,14 +108,13 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
           link: '/guide/packages-selection', 
           collapsed: true,
           items: [
-          { text: 'Build customization', link: '/guide/packages-selection' },
           { text: 'Network Profiles', link: '/guide/network-profiles' }
         ] },
         { text: 'Build LibreMesh', 
-          link: '/build',
+          link: '/build/',
           collapsed: true,
           items: [
-            { text: 'Build methods', link: '/build/' },
+            // { text: 'Build methods', link: '/build/' },
             { text: 'ImageBuilder', link: '/build/imagebuilder' },
             { text: 'lime-sdk', link: '/build/lime-sdk' },
             { text: 'Buildroot', link: '/build/buildroot'}
@@ -193,23 +192,26 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
         { text: 'Configuration', link: 'configuration' },
         { text: 'lime-config', link: 'lime-config' },
         { text: 'Flavors', link: 'flavors' },
-        { text: 'Default protocols', items: [
-          { text: 'Batman-adv', link: 'network/protocols/batman-adv'},
-          { text: 'Babeld', link: 'network/protocols/babeld'},
+        { text: 'Default protocols', 
+          collapsed: true,
+          items: [
+          { text: 'Batman-adv', link: 'protocols/batman-adv'},
+          { text: 'Babeld', link: 'protocols/babeld'},
         ]},
         { text: 'lime-files', items: [
-          { text: 'System options', link: 'system' },
-          { text: 'Network options', link: 'network/', items: [
-            { text: 'General options', link: 'network/#general-options'},
+          { text: 'System', link: 'system' },
+          { text: 'Network', link: 'network/', items: [
+            { text: 'General', link: 'network/#general-options'},
             { text: 'DNS servers', link: 'network/#dns-servers'},
             { text: 'Protocols list', link: 'network/protocols-list'},
             { text: 'Protocols options', link: 'network/protocols-options'},
-            { text: 'Interface specific options', link: 'network/interface-specific'},
+            { text: 'Interface specific', link: 'network/interface-specific'},
           ] },
-          { text: 'WiFi options', link: 'wifi', items: [
-            { text: 'General options', link: 'wifi'},
-            { text: 'Band specific options', link: 'wifi/band-specific'},
-            { text: 'Interface specific options', link: 'wifi/interface-specific'},
+          { text: 'WiFi', link: 'wifi/', items: [
+            { text: 'General', link: 'wifi/#general-options'},
+            { text: 'Modes', link: 'wifi/modes'},
+            { text: 'Band specific', link: 'wifi/band-specific'},
+            { text: 'Interface specific', link: 'wifi/interface-specific'},
           ] },
           { text: 'Generic UCI configs', link: 'generic_config' },
           { text: 'Hardware detection', 

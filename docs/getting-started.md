@@ -42,19 +42,18 @@ Refers the the page [`Build LibreMesh`](/build/) for instructions on how to buil
 Install the firmware on your device following the installation method reported in the [wiki of OpenWrt](https://openwrt.org)
 or, if not present, search the instruction in the **`git-commit` message** left from who added the support for that device model. See the [Table of Hardware](https://toh.openwrt.org).
 
-https://openwrt.org/docs/guide-quick-start/factory_installation
-
 ::: tip NOTE
-It is strongly adviced to **install OpenWrt first**:
+If your device runs OEM firmware it is adviced to **install OpenWrt first**:
+:::
+
 1. Download the latest `stable` firmware for your device from the [`OpenWrt Firmware Selector`](https://firmware-selector.openwrt.org).    
-   If your device runs OEM firmware use the `factory` for first time installation.
+   Use the `factory` image for first time installation. See the OpenWrt wiki page [Factory Install: First Time Installation](https://openwrt.org/docs/guide-quick-start/factory_installation):
 2. Check that the OpenWrt device boot and function properly.    
    Beware that OpenWrt by default doesn't turn on the Wi-Fi.    
    Turn it on from `LuCi` from the menu `Network` / `Wireless`.
-3. Upgrade to LibreMesh:
+3. Upgrade to LibreMesh using a `sysupgrade` image:
     - upload the firmware via the web interface `LuCI` from the menu `System` / `Backup / Flash Firmware`.
     - or via ssh using the command `sysupgrade -n firmware.bin`
-:::
 
 
 ## Connecting to the router

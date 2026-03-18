@@ -1,7 +1,6 @@
 ---
 outline: deep
 ---
-
 <script setup>
 import { data as openwrt } from '/openwrt.data.js'
 </script>
@@ -18,7 +17,8 @@ It is **highly discouraged** to `upgrade` packages. Read the OpenWrt's [`Upgrade
 :::
 
 ::: warning ath9k warning
-Routers with Atheros radios and the `ath9k` driver have a known bug that cause them to become deaf, if you are using an OpenWrt older than 24.10.6 be sure to include the libremesh package `wifi-unstuck-wa` 
+Routers with Atheros radios and the `ath9k` driver have a known bug that cause them to become deaf, 
+if you are using an OpenWrt older than 24.10.6 be sure to include the libremesh package `wifi-unstuck-wa` 
 :::
 
 ::: warning ath10k warning
@@ -69,26 +69,32 @@ Additionally these packages could be `excluded` in the firmware build:
 
 :::
 
-The same formatted as list
+The same list to use when building with Buildroot.
 ::: code-group
 
 
 ``` [{{ openwrt.stable_version }}]
--dnsmasq
--odhcpd-ipv6only
--apk-mbedtls
--ca-bundle
--ppp
--ppp-mod-pppoe
+cat << EOF >> .config
+CONFIG_PACKAGE_dnsmasq=m
+CONFIG_PACKAGE_odhcpd-ipv6only=m
+CONFIG_PACKAGE_apk-mbedtls=m
+CONFIG_PACKAGE_ca-bundle=m
+CONFIG_PACKAGE_ppp=m
+CONFIG_PACKAGE_ppp-mod-pppoe=m
+EOF
+make defconfig
 ```
 
 ``` [{{ openwrt.oldstable_version }}]
--dnsmasq
--odhcpd-ipv6only
--opkg
--ca-bundle
--ppp
--ppp-mod-pppoe
+cat << EOF >> .config
+CONFIG_PACKAGE_dnsmasq=m
+CONFIG_PACKAGE_odhcpd-ipv6only=m
+CONFIG_PACKAGE_opkg=m
+CONFIG_PACKAGE_ca-bundle=m
+CONFIG_PACKAGE_ppp=m
+CONFIG_PACKAGE_ppp-mod-pppoe=m
+EOF
+make defconfig
 ```
 
 :::

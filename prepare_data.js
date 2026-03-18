@@ -73,7 +73,7 @@ async function generateIndexMd(indexMd_dir, pkg, _descr, _readme, _makefile, _ex
 ```" || ''
 
   const fm = "---\ntitle: "+pkg+"\n---\n"
-  const content = "# {{ $frontmatter.title }}\n\
+  const content = "# "+pkg+"\n\
 \n\
 "+description+"\
 \n\

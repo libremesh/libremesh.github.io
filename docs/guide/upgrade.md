@@ -8,8 +8,24 @@ In **production environments with multiple LibreMesh nodes** deployed, it is adv
 :::
 
 Refers to the OpenWrt Wiki for details about the upgrade process:
+- [Sysupgrade](https://openwrt.org/docs/techref/sysupgrade)
 - [Upgrading OpenWrt firmware using LuCI and CLI](https://openwrt.org/docs/guide-user/installation/generic.sysupgrade)
 - [Preserving OpenWrt settings during firmware upgrade](https://openwrt.org/docs/guide-quick-start/admingui_sysupgrade_keepsettings)
+
+
+## Sysupgrade
+The default OpenWrt command `sysupgrade` preserve:
+- files defined in `/lib/upgrade/keep.d`
+- the list of `conffiles` (configuration files defined by certain packages) that has been changed:
+  - See the whole list for `apk` with `cat /lib/apk/packages/*.conffiles`
+  - See the whole list for `opkg` with `cat /usr/lib/opkg/info/*.conffiles`
+
+Initial files are preserved in `/rom/` and changed files are created at `/overlay/upper/`.
+
+```
+apk add diffutils
+diff /overlay/upper/etc/config/babeld /rom/etc/config/babeld
+```
 
 
 ## Examples

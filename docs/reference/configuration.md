@@ -24,7 +24,6 @@ The options contained in these files are merged and overwritten from the lowest 
 
 ::: tip Interface specific options
 Interface specific options have to be included in `lime-node` or `lime-<MAC>`.
-If in `lime-community` they'll cause unpredictable behaviour.
 :::
 
 ### Parametrizable options

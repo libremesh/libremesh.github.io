@@ -34,14 +34,6 @@ config lime-wifi-band '2ghz'
     Refer to the OpenWrt wiki: https://openwrt.org/docs/guide-user/network/wifi/basic#htmodewi-fi_channel_width
 - `distance '1000'`  # 1 km max distance, farther clients or peers will not be able to connect
 
-### Use as AP only
-For networks where only dual band routers are used, 2.4Ghz radios can be reserved for access points.
-```
-config lime-wifi-band '2ghz'
-    list modes 'ap'                                     
-    list modes 'apname'                                 
-```
-
 ## 5ghz
 ```
 config lime-wifi-band '5ghz'
@@ -61,11 +53,21 @@ If you are unsure of the right number, better to use a too-large distance here t
 Farther clients or peers will not be able to connect
 - `htmode 'HT40'` - htmode sets the width of the channel. VHT80 should have better performances in non-noisy environment. 
 Check out the valid channels list in this comment: https://github.com/libremesh/lime-packages/issues/647#issuecomment-1503968192 
-and refer to the OpenWrt wiki here: https://openwrt.org/docs/guide-user/network/wifi/basic#htmodewi-fi_channel_width
+and refer to the OpenWrt wiki [htmode: Wi-Fi channel width](https://openwrt.org/docs/guide-user/network/wifi/basic#htmodewi-fi_channel_width)
 
-### Use as 11s only
-For networks where only dual band routers are used, the 5 GHz radio can be reserved for the node-to-node connections.
+
+## Examples
+
+### Dual band 
+For networks where only dual band routers are used:
+- the 5GHz radio can be reserved for the node-to-node connections.
+- the 2.4Ghz radios can be reserved for access points.
+
 ```
 config lime-wifi-band '5ghz'
     list modes 'ieee80211s'                                
+
+config lime-wifi-band '2ghz'
+    list modes 'ap'                                     
+    list modes 'apname'                                 
 ```

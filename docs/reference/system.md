@@ -40,7 +40,7 @@ config lime system
 DNS domain for the L2 cloud it could be something like `mycloud.mynetwork.tld`
 
 ## keep_on_upgrade
-- Type: `string`
+- Type: `list`
 - Default: `libremesh dropbear minimum-essential /etc/sysupgrade.conf`
 
 ```
@@ -49,7 +49,10 @@ config lime system
 ```
 
 Files defining the list of files and directories to backup when upgrade.    
-Relative to `/lib/upgrade/keep.d` if no `/` defined.
+The file path is relative to the OpenWrt default `/lib/upgrade/keep.d` if no `/` defined.    
+This option is used by the command `lime-sysupgrade` and by the optional package `safe-upgrade`.
+
+See the page [Upgrade](/guide/upgrade) for more details.
 
 ## root_password_policy
 - Type: `DO_NOTHING | RANDOM | SET_SECRET`

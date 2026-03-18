@@ -1,10 +1,12 @@
----
-outline: deep
----
-
 # WiFi Options
+Configuration for each radio device is calculated from 
+- the **general options** in `config lime wifi`
+- the corresponding **band specific section** for `2ghz` and `5ghz` also included in `lime-defaults`
+- an (optional) **interface specific section** relative to that specific radio device.
 
+## Default values
 The default values as per `lime-defaults`
+
 ```
 config lime wifi
 	list modes 'ap'
@@ -20,58 +22,89 @@ config lime wifi
 	option ieee80211s_mesh_id 'LiMe'
 	option unstuck_interval '10'
 	option unstuck_timeout '300'
+
+config lime-wifi-band '2ghz'
+	option channel '11'
+	option htmode 'HT20'
+	option distance '1000'
+	option adhoc_mcast_rate '24000'
+	option ieee80211s_mcast_rate '24000'
+
+config lime-wifi-band '5ghz'
+	list channel '48'
+	list channel '157'
+	option htmode 'HT40'
+	option distance '10000'
+	option adhoc_mcast_rate '6000'
+	option ieee80211s_mcast_rate '6000'
 ```
 
 ## General options
-Settings in this section applies to all radios. 
+Settings in the section `config lime wifi` applies to **all radios**.
 
-### modes
-`adhoc`, `ap`, `apbb` `apname`, `apup`, `client`, `ieee80211s`
+The LibreMesh configurations in the sections `wifi` `lime-wifi-band` and specific `radioN` contains options for configuring:
+- **radio device options** like `channel`, `distance`, `htmode` and `txpower`
+- **wifi interfaces options** for Access Points, like `ap_ssid`, `ap_key`, `ap_encryption`, or other supported modes like 80211s or client. 
+- **network options**, protocols list and options are inherited from the default network section `config lime 'network'`
 
+### ap_ssid
+- Type: `string`
+- Default: `LibreMesh.org`
 
-### ap / apname / apbb
-
-#### ap_ssid
-Default: `LibreMesh.org`
+```
+config lime wifi
+	option ap_ssid 'LibreMesh.org'
+```
 
 Set here your network name, **this value is required even if AP is not used**, as it is used for calculating fields with %Nn.
 
-#### apname_ssid
-Default: `LibreMesh.org/%H`
 
-#### apbb_ssid
+### country
+- Type: country code
+- Default: unset, uses default `00` (World)
 
-#### ap_key / apname_key / apbb_key
+Set this to your location country code, for example in Spain, setting `ES` allows you to use channel 13
 
-#### ap_encryption / apname_encryption / apbb_encryption
+### modes
+- `adhoc` - See below for adhoc configuration
+- `ap` - This mode setup an Access Point, with the same ssid in each node for roaming purposes.
+- `apbb` - Backbone AP, for other LibreMesh routers connection rather than for users connectio
+- `apname` - This mode setup an Access Point, with specific ssid for each node.
+- `apup` - This mode setup radio for APuP operation.
+- `client` - client configuration should be done in [Wifi specific options](./interface-specific.html#wifi-client-mode)
+- `ieee80211s` - Used for mesh links between nodes.
 
-```
-# 
+#### modes options
+See the next page [Wifi Modes](./modes) for details on `Access Points`, `Adhoc`, `APuP` and `802.11s` options.
 
-config lime wifi
-    list modes 'ap'                                     # This mode setup an Access Point, with the same ssid in each node for roaming purposes.
-    list modes 'apname'                                 # This mode setup an Access Point, with specific ssid for each node.
-    list modes 'apup'                                   # This mode setup radio for APuP operation.
-    list modes 'ieee80211s'                             # Used for mesh links between nodes.
-#   list modes 'adhoc'                                  # See below for adhoc configuration
-#   list modes 'client'                                 # See below for client configuration
-#   option country 'ES'                                 # Set this to your location country code, for example in Spain, setting ES allows you to use channel 13
 
-    option apname_ssid 'LibreMesh.org/%H'               # SSID specific to each AP. A user can connect to the named AP to avoid roaming
+## Workaround for deaf radios
+::: warning ath9k warning
 
-    option apup_ssid 'LibreMesh.org'                    # Set here your APuP based network name
-    option adhoc_ssid 'LiMe'                            # SSID of the APs (nodes) when meshing in ad-hoc mode, i.e., the nodes form an IBSS. Not used when meshing in 802.11s (the default)
-    option adhoc_bssid 'ca:fe:00:c0:ff:ee'
-    option ieee80211s_mesh_fwding '0'                   # Settings needed only for 802.11s
-    option ieee80211s_mesh_nolearn '1'                  # Disable multi-hop mesh routing capabilities of 802.11s
-    option ieee80211s_mesh_id 'LiMe'                    # Mesh cloud identifier (close to SSID in concept). Used by the nodes to join and participate in the mesh network.
-#   option ieee80211s_encryption 'psk2/aes'             # In order to use encrypted mesh, the wpad-mini package have to be replaced with wpad-mesh-wolfssl package 
-                                                        # either manually or by the selected network-profile
+Routers with Atheros radios and the ath9k driver have a known bug that cause them to become deaf, 
+if you are using an OpenWrt older than 24.10.6 be sure to include the libremesh package `wifi-unstuck-wa`
+:::
 
-#   option ieee80211s_key 'SomePsk2AESKey'
-    option unstuck_interval '10'                        # Interval in minutes that defines how often to run the workaround script provided by the package wifi-unstuck-wa 
-                                                        # that rescan all available frequencies in active radios.
-
-    option unstuck_timeout '300'                        # Timeout in seconds that defines how long the mentioned above workaround should go.
+### unstuck_interval
+- Default: `10`
+- Packages required: `wifi-unstuck-wa`
 
 ```
+config lime 'wifi'
+    option unstuck_interval '10'
+```
+
+Interval in minutes that defines how often to run the workaround script provided by the package `wifi-unstuck-wa`
+that rescan all available frequencies in active radios.
+
+
+### unstuck_timeout
+- Default: `10`
+- Packages required: `wifi-unstuck-wa`
+
+```
+config lime 'wifi'
+    option unstuck_interval '10'
+```
+
+Timeout in seconds that defines how long the mentioned above workaround should go.

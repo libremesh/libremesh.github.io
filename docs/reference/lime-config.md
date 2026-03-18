@@ -6,10 +6,10 @@ outline: deep
 The command `lime-config` configures LibreMesh on top of OpenWrt.
 
 ## lime-files
-Merge them from the low level `lime-defaults` to top level `lime-node` to produce the complete configuration in `lime-autogen`
+These files are merged from the low level `lime-defaults` to top level `lime-node` to produce the complete configuration in `lime-autogen`.
 
 ## Modules
-Modules are configured in this order `hardware_detection`, `wireless`, `network`, `firewall`, `system`, `generic_config`
+Modules are configured in this order `hardware_detection`, `wireless`, `network`, `firewall`, `system`, `generic_config`.
 
 ### hardware_detection
 Loads all packages starting with `lime-hwd-*`    
@@ -17,7 +17,11 @@ Loads all packages starting with `lime-hwd-*`
 
 ### wireless
 Scan the OpenWrt device to find existing radios.   
-Produce the UCI configuration for each radio, loading configs from `lime-autogen` in the order: `wifi`, `2ghz`|`5ghz`, specific `radioN`
+Produce the UCI configuration for each radio, loading configs from `lime-autogen` in the order: 
+- `config lime 'wifi'` (wifi general options)
+- `config lime '5ghz'` (band specific options)
+- `config lime '2ghz'` (band specific options)
+- `config radioN` (radio specific options)
 
 ### network
 
@@ -103,28 +107,23 @@ config zone
 Set `hostname` and `root_password`
 
 ### generic_config
-Apply the sections `generic_uci_config`, `copy_asset` and `run_asset`
+Reads and execute the sections `generic_uci_config`, `copy_asset` and `run_asset`. 
+Apply custom UCI configuration or copy/execute shell scripts.
+See the page [Generic Config](generic_config) for detailed options.
 
-#### generic_uci_config
+
+## Commit changes
+Changes are committed by the command `lime-config` and written in `/etc/config/` files.  
+::: tip  
+Be sure to do not loose the connection to your device after the configuration.    
+To apply the changes the **safest way** is to perform a `reboot` of the device.    
+:::
+
+### lime-apply
+On most cases one can skip the reboot running the command `lime-apply` which calls the OpenWrt `reload_config`.  
+Depending on the changed configurations a full restart of some services may be required, like `wireless`, `network` and `firewall`.    
 ```
-config generic_uci_config 'uhttpd_https'
-	list uci_set 'uhttpd.main.redirect_https=0'
+lime-config; lime-apply; wifi; \
+/etc/init.d/network restart; \
+/etc/init.d/firewall restart
 ```
-By default `uhttpd` is instructed to avoid force redirect from `http` to `https`
-
-#### copy_asset
---! copy_asset copy an file from the assets directory into a specified path.
---! The node asset directories are /etc/lime-assets/node and /etc/lime-assets/community.
---! The community directory should contain the same files in all the community nodes.
---!
---! config copy_asset collectd
---!    option asset 'community/collectd.conf' # or 'node/collectd.conf' or 'community/mynode_collectd.conf'
---!    option dst '/etc/collectd.conf'
---!
-
-#### run_asset
---! Executes a file from the assets directory scheme explained in copy_asset.
---!
---! config run_asset dropbear
---!     option asset 'community/dropbear.sh'
---!     option when 'ATFIRSTBOOT' # ATFIRSTBOOT, ATCONFIG

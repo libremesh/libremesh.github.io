@@ -3,9 +3,44 @@ outline: deep
 ---
 
 # Network options
+Configuration for each network device is calculated from:
+- the **general options** in `config lime network`, 
+- an (optional) **interface specific section** relative to that specific network device.
+
+## Default values
+Default values as per `/etc/config/lime-defaults`
+```
+config lime network
+	option primary_interface 'eth0'
+	option main_ipv4_address '10.%N1.0.0/16'
+	option anygw_dhcp_start '2'
+	option anygw_dhcp_limit '0'
+	option main_ipv6_address 'fd%N1:%N2%N3:%N4%N5::/64'
+	list protocols ieee80211s
+	list protocols lan
+	list protocols anygw
+	list protocols batadv:%N1
+	list protocols olsr:14
+	list protocols olsr6:15
+	list protocols olsr2:16
+	list protocols babeld:17
+	list protocols bmx7:18
+	list resolvers 4.2.2.2   # b.resolvers.Level3.net
+	list resolvers 141.1.1.1 # cns1.cw.net
+	list resolvers 2001:470:20::2 # ordns.he.net
+	option bmx7_mtu '1500'
+	option bmx7_publish_ownip false
+	option bmx7_over_batman false
+	option bmx7_pref_gw none
+	option bmx7_wifi_rate_max 'auto'
+	option bmx7_enable_pki false
+	option batadv_orig_interval '2000'
+	option batadv_routing_algo 'BATMAN_IV'
+	option anygw_mac "aa:aa:aa:%N1:%N2:aa"
+	option use_odhcpd false
+```
 
 ## General options
-The default values as per `lime-defaults`
 ```
 config lime 'network'
 	option primary_interface 'eth0'
@@ -17,13 +52,15 @@ config lime 'network'
 - Type: `string`
 - Default: `eth0`
 
-
 ```
 config lime network
     option primary_interface 'eth0'
 ```
 
-The mac address of this device will be used in different places
+The mac address of this device will be used in different places.    
+An partial list includes:
+- Options parametrized with `%Mn`
+- Batman-adv soft interfaces use the last 3 bytes from main interface bat0 which is equal to the mac of `primary_interface`
 
 ### main_ipv4_address
 - Type: `<static>|<parametrized>|<network-address>`

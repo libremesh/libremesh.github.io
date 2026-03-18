@@ -1,8 +1,10 @@
+*~
 cache
 dist
 temp
 
 node_modules/
+
 /docs/packages/**
 !/docs/packages/index.md
 
