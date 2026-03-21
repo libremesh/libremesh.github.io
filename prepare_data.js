@@ -315,7 +315,7 @@ async function addSdkDoc() {
   const from_dir = lime_sdk_repo
   const to_dir = './docs/build/'
   await copyFiles(from_dir, to_dir, 'README.md', 'lime-sdk.md')
-  await replaceInFile(to_dir+'lime-sdk.md', "# lime-sdk", "---\naside: false\n---\n# lime-sdk")
+  await replaceInFile(to_dir+'lime-sdk.md', "# lime-sdk", "---\naside: false\n---\n# lime-sdk\n[[toc]]\n")
 }
 
 setupPackages()
