@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "prebuild": "node prepare_data.js",
-    "build": "NODE_ENV=production IS_FORK=1 vitepress build docs",
+    "build": "NODE_ENV=production vitepress build docs",
+    "build:fork": "NODE_ENV=production IS_FORK=1 vitepress build docs",
     "build:server": "NODE_ENV=production vitepress build docs",
     "preview": "vitepress preview docs"
   },
