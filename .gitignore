@@ -5,17 +5,17 @@ temp
 
 node_modules/
 
-/docs/packages/**
 !/docs/packages/index.md
+/docs/packages/**
 
-/docs/profiles/**
 !/docs/profiles/index.md
+/docs/profiles/**
 
-/lime-packages
-/network-profiles
-/lime-sdk
+/lime-packages/**
+/network-profiles/**
+/lime-sdk/**
 
 /docs/build/lime-sdk.md
 
-/docs/development/**
 !/docs/development/hacking/kernel_vermagic.md
+/docs/development/**
