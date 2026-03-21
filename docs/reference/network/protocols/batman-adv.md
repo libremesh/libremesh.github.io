@@ -24,3 +24,27 @@
 .. 3 bytes from main interface
 
 - set the `mtu` for each vlan interface to `1532`
+
+## Examples
+
+### batctl
+
+---
+
+**get active interfaces**
+```
+root@LiMe-ab46b8:~# batctl if
+eth0_270: active
+wlan0-mesh_270: active
+```
+
+---
+
+**get neighbours**
+```
+root@LiMe-ab46b8:~# batctl n
+[B.A.T.M.A.N. adv 2025.4-openwrt-2, MainIF/MAC: eth0_270/02:95:39:ab:46:b8 (bat0/76:ff:fb:da:33:92 BATMAN_IV)]
+IF             Neighbor              last-seen
+   wlan0-mesh_270	  02:58:47:59:82:57    4.640s
+
+```

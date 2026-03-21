@@ -3,6 +3,7 @@ outline: deep
 ---
 <script setup>
 import { data as openwrt } from '/openwrt.data.js'
+import { data as libremesh } from '/libremesh.data.js'
 </script>
 
 # Packages selection
@@ -37,17 +38,9 @@ For `8/64` devices it should be possible to install a reduced version of the `de
 See details of excluded packages at [Flavor Mini](/reference/flavors.md#flavor-mini)
 This package list is selectable also by including the network-profile `profile-libremesh-suggested-packages-tiny`.
 
-```
-babeld-auto-gw-mode
-check-date-http
-lime-docs-minimal
-lime-hwd-openwrt-wan
-lime-proto-anygw
-lime-proto-babeld
-lime-proto-batadv
-shared-state
-shared-state-babeld_hosts
-```
+<ul>
+<li v-for="p in libremesh.flavors.mini"><a :href="'/packages/'+p">{{ p }}</a></li>
+</ul>
 
 ### Excluding packages
 

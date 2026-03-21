@@ -5,13 +5,6 @@ import { generateSidebarItems, getFiles } from './sidebar'
 const isFork = process.env.IS_FORK === '1'
 const baseUrl = isFork && '/libremesh.github.io' || ''
 
-const libremesh = {
-  stable_version: '2024.1',
-  stable_branch_openwrt: ['23.05'],
-  oldstable_version: '2020.4',
-  oldstable_branch_openwrt: ['19.07'],
-}
-
 const packages = await getFiles('docs/packages/*/index.md');
 const profiles = await getFiles('docs/profiles/packages/*/index.md');
 const communities = await getFiles('docs/profiles/communities/*/index.md');
@@ -81,7 +74,7 @@ function nav(): DefaultTheme.NavItem[] {
       items: [
         { text: 'v2024.1', link: '/news/2023-10-07' },
         { text: 'v2020.4', link: '/news/2025-05-04' },
-        { text: 'Latest Articles', link: '/news' },
+        { text: 'Latest Articles', link: '/news/' },
         { text: 'Changelog', link: 'changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
@@ -196,8 +189,8 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
         { text: 'Default protocols', 
           collapsed: true,
           items: [
-          { text: 'Batman-adv', link: 'protocols/batman-adv'},
-          { text: 'Babeld', link: 'protocols/babeld'},
+          { text: 'Batman-adv', link: 'network/protocols/batman-adv'},
+          { text: 'Babeld', link: 'network/protocols/babeld'},
         ]},
         { text: 'lime-files', items: [
           { text: 'System', link: 'system' },

@@ -1,6 +1,6 @@
----
-outline: deep
----
+<script setup>
+import { data as libremesh } from '/libremesh.data.js'
+</script>
 
 # Flavors
 
@@ -8,22 +8,12 @@ outline: deep
 
 ### Packages list 
 The LibreMesh default `flavor` contains these packages:
-- babeld-auto-gw-mode
-- batctl-default
-- check-date-http
-- lime-app
-- lime-debug
-- lime-docs
-- lime-docs-minimal
-- lime-hwd-ground-routing
-- lime-hwd-openwrt-wan
-- lime-proto-anygw
-- lime-proto-babeld
-- lime-proto-batadv
-- shared-state
-- shared-state-babeld_hosts
-- shared-state-bat_hosts
-- shared-state-nodes_and_links
+<ul>
+<li v-for="p in libremesh.flavors.default">
+  <a v-if="!['batctl-default'].includes(p)" :href="'/packages/'+p">{{ p }}</a>
+  <span v-else>{{ p }}</span>
+</li>
+</ul>
 
 ### Configuration
 
@@ -85,15 +75,9 @@ The information shared by default depends from shared-state's `publishers` insta
 ### Packages list
 The LibreMesh `mini` flavor contains these packages:
 
-- babeld-auto-gw-mode
-- check-date-http
-- lime-docs-minimal
-- lime-hwd-openwrt-wan
-- lime-proto-anygw
-- lime-proto-babeld
-- lime-proto-batadv
-- shared-state
-- shared-state-babeld_hosts
+<ul>
+<li v-for="p in libremesh.flavors.mini"><a :href="'/packages/'+p">{{ p }}</a></li>
+</ul>
 
 ### Configuration
 The configuration is the same as the one of the default flavor.

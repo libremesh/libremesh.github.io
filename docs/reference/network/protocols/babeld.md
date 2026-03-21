@@ -59,3 +59,33 @@ config filter 'denyany'
 	option action 'deny'
 
 ```
+
+## Examples
+
+---
+
+### ubus
+
+**list commands**
+```
+ubus -v list babeld
+'babeld' @98e57cc3
+	"add_interface":{"ifname":"String"}
+	"add_filter":{"ifname":"String","type":"Integer","metric":"Integer"}
+	"get_info":{}
+	"get_xroutes":{}
+	"get_routes":{}
+	"get_neighbours":{}
+```
+---
+
+**get_info**
+```
+ubus call babeld get_info
+{
+	"babeld_version": "babeld-1.13.1-ubus-mod",
+	"my_id": "22:05:b7:ff:fe:00:04:80",
+	"host": "openwrt"
+}
+
+```

@@ -10,7 +10,7 @@ let lime_feed = {}
 let profiles_feed = {}
 
 const request = new XMLHttpRequest();
-request.open('GET', 'https://mirror-03.infra.openwrt.org/.versions.json', false);  // `false` makes the request synchronous
+request.open('GET', 'https://downloads.openwrt.org/.versions.json', false);  // `false` makes the request synchronous
 request.send(null);
 if (request.status !== 200) { console.log('unreachable') }
 let openwrt = JSON.parse(request.responseText)
@@ -107,10 +107,15 @@ async function setupPackages() {
     let makefile = ''
 
     await copyFiles(from_dir, to_dir, 'Makefile')
-    await copyFiles(from_dir, to_dir, 'README.md')
-    await copyFiles(from_dir, to_dir, 'README', 'README.md')
-    await copyFiles(from_dir, to_dir, 'Readme.md', 'README.md')
-    // await copyFiles(from_dir, to_dir, 'README.adoc', 'README.md')
+
+    if (['lime-app', 'shared-state-async'].includes(pa)) {
+
+    } else {
+      await copyFiles(from_dir, to_dir, 'README.md')
+      await copyFiles(from_dir, to_dir, 'README', 'README.md')
+      await copyFiles(from_dir, to_dir, 'Readme.md', 'README.md')
+      // await copyFiles(from_dir, to_dir, 'README.adoc', 'README.md')
+    }
 
     const readme_path = to_dir+'README.md'
     const readmeExist = fs.existsSync(readme_path)
@@ -290,7 +295,7 @@ function setupProfiles() {
   // console.log(profiles_list)
 }
 
-// copy VIRTUALIZING.md TESTING.md HACKING.Md
+// copy VIRTUALIZING.md TESTING.md HACKING.md
 async function addRepoDoc() {
   console.log('Copying lime-packages docs')
   const from_dir = lime_repo

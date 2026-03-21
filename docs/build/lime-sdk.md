@@ -2,6 +2,9 @@
 aside: false
 ---
 # lime-sdk cooker
+
+[[toc]]
+
 LibreMesh **software development kit** uses the [OpenWRT](https://openwrt.org) SDK and ImageBuilder to generate (**cook**) LibreMesh packages and firmware. If you want to create your own LibreMesh flavor because you need some specific configuration or you just want to have control over your binaries, the cooker is your friend!
 
 Basic usage example for cooking a libremesh using bmx7 routing protocol firmware for device Alix Board 2d2 using remote repositories (no compilation required). Recommended for most people:

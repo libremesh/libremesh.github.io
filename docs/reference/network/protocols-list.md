@@ -47,9 +47,12 @@ uci get lime-autogen.network.protocols
 
 ```
     list protocols batadv:%N1
-#   list protocols batadv:0
 ```
 If the vlan is `0` tags are disabled and the routing is done on the raw interface.
+```
+    list protocols batadv:0
+```
+
 ::: tip 
 See the page about [batman-adv](protocols/batman-adv) for the default configuration.
 :::
