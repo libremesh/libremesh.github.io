@@ -17,5 +17,6 @@ node_modules/
 
 /docs/build/lime-sdk.md
 
-!/docs/development/hacking/kernel_vermagic.md
-/docs/development/**
+/docs/development/*
+!/docs/development/hacking/
+
