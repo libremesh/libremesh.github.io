@@ -6,6 +6,8 @@ hero:
   name: "LibreMesh"
   text: "A modular framework for creating OpenWrt-based firmwares for wireless mesh nodes"
 # tagline:
+  image:
+    src: ./lime.svg
   actions:
     - theme: brand
       text: What is LibreMesh?

@@ -131,5 +131,11 @@
 
 :root {
   --vp-home-hero-name-color: #008300;
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #abfe03 10%,
+    #008300 50%,
+    #abfe03 90%
+  );
 }
 
