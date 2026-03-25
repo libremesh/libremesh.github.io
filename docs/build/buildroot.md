@@ -4,20 +4,6 @@ aside: false
 
 <script setup>
 import { data as openwrt } from '/openwrt.data.js'
-
-let arch = 'mips_24kc'
-let target ='ath79-generic'
-let _target =target.replace('-','/')
-
-const build = {
-    arch: arch,
-    target: target,
-    file_host: "https://downloads.openwrt.org",
-    download_file: "imagebuilder-.*x86_64.tar.[xz|zst]",
-    profile: "librerouter_librerouter-v1"
-}
-
-
 </script>
 
 # Buildroot
@@ -209,9 +195,8 @@ Network profiles are the specific configuration from the communities, and are st
 
 #### export target-subtarget to env
 ``` sh-vue
-export TARGET={{ build.target }}
-export ARCH=$(curl -s https://downloads.openwrt.org/snapshots/.targets.json | \
-    sed 's/\//-/' | jq -r '."${TARGET}"')
+export TARGET=ath79
+export SUBTARGET=generic
 ```
 
 #### configure
