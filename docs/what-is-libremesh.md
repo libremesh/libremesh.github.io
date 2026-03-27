@@ -112,5 +112,5 @@ It may be a node from the same cloud or any other from another cloud far away.
 
 ## Diagrams
 
-- Example diagram listing all network interfaces created in LibreMesh installed on a **OpenWrt One** router.
+- Diagram listing of all network interfaces created in LibreMesh running on a **OpenWrt One** router.
 [![diagram_libremesh-interfaces-openwrt-one](/diagram_libremesh-interfaces-openwrt-one.png)](/diagrams/libremesh-interfaces-openwrt-one)
