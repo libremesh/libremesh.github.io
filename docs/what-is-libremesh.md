@@ -108,3 +108,9 @@ The packet is routed through the Babel layer 3 network to the closest Internet g
 It may be a node from the same cloud or any other from another cloud far away.
 
 ![](/network6.png)
+
+
+## Diagrams
+
+- Example diagram listing all network interfaces created in LibreMesh installed on a **OpenWrt One** router.
+[![diagram_libremesh-interfaces-openwrt-one](/diagram_libremesh-interfaces-openwrt-one.png)](/diagrams/libremesh-interfaces-openwrt-one)
