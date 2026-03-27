@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "LibreMesh"
   text: "A modular framework for creating OpenWrt-based firmwares for wireless mesh nodes"
-# tagline:
+  tagline: Making free networks possible
   image:
     src: ./lime.svg
   actions:
