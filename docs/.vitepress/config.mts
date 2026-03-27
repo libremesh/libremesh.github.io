@@ -72,8 +72,8 @@ function nav(): DefaultTheme.NavItem[] {
     { text: 'Reference', link: '/reference/configuration' },  
     { text: 'News',
       items: [
-        { text: 'v2024.1', link: '/news/2023-10-07' },
-        { text: 'v2020.4', link: '/news/2025-05-04' },
+        { text: 'v2024.1', link: '/news/2025-05-04' },
+        { text: 'v2020.4', link: '/news/2020-12-15' },
         { text: 'Latest Articles', link: '/news/' },
         { text: 'Changelog', link: 'changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},

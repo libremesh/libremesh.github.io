@@ -233,6 +233,14 @@ EOF
 make defconfig
 ```
 
+#### Router profile
+Selects the router profile based on the compatible string:
+
+```
+echo "CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_librerouter_librerouter-v1=y" >> .config
+make defconfig
+```
+
 #### LibreMesh packages
 ```sh
 cat << EOF >> .config
@@ -245,14 +253,6 @@ CONFIG_PACKAGE_kmod-pppoe=m
 CONFIG_PACKAGE_kmod-pppox=m
 CONFIG_PACKAGE_profile-libremesh-suggested-packages=y
 EOF
-make defconfig
-```
-
-#### Router profile
-Selects the router profile based on the compatible string:
-
-```
-echo "CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_librerouter_librerouter-v1=y" >> .config
 make defconfig
 ```
 

@@ -26,6 +26,7 @@ concurrency:
 jobs:
   # Build job
   build_deploy:
+    if: github.repository_owner == 'libremesh'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
