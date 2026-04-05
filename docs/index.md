@@ -50,12 +50,14 @@ features:
 |              |                   |                            |                                       |
 | -------------| ----------------- | -------------------------- | ------------------------------------- |
 | AlterMundi   | Argentina         | https://altermundi.net     | ![AlterMundi](/altermundi_logo.png)   |
+| Coolab       | Brasil            | https://wiki.coolab.org    | ![Coolab](/coolab_logo.png)       |
 | FreiFunk     | Germany           | https://freifunk.net       | ![FreiFunk](/freifunk_logo.png)       |
 | FunkFeuer    | Austria           | https://funkfeuer.at       | ![FunkFeuer](/funkfeuer_logo.png)     |
 | Guifi        | Iberian peninsula | https://guifi.net          | ![Guifi](/guifi_logo.png)             |
 | IBEBrasil    | Brasil            | https://ibebrasil.org.br   | ![IBEBrasil](/ibebrasil_logo.png)     |
 | LibreRouter  | Global            | https://librerouter.org    | ![LibreRouter](/librerouter_logo.png) |
 | Ninux        | Italy             | https://ninux.org          | ![Ninux](/ninux_logo.png)             |
+| NUPEF        | Brasil            | https://nupef.org.br/      |                                       |
 | Wakoma       | Global            | https://wakoma.co          | ![Wakoma](/wakoma_logo.png)           |
 
 ## Community mesh networks using LibreMesh:
@@ -63,9 +65,10 @@ features:
 |                 |                     |                                           |                           |
 | --------------- | ------------------- | ----------------------------------------- | ------------------------- |
 | Antennine       | Bologna, Italy      | https://antennine.noblogs.org             | ![Ninux](/ninux_logo.png) |
-| Calafou         | Catalunia           | https://calafou.org/                      |
-| Coolab          | Brasil              | https://www.coolab.org/                   | 
-| Janastu CowMesh | Rural Karnataka     | https://open.janastu.org/projects/cowmesh | 
+| Calafou         | Catalunia           | https://calafou.org/                      |                           |
+| Coolab          | Brasil              | https://www.coolab.org/                   |                           |
+| Janastu CowMesh | Rural Karnataka     | https://open.janastu.org/projects/cowmesh |                           |
+| NUPEF           | Brasil              | https://nupef.org.br/                     |                           |
 
 <style>
 #organizations-supporting-libremesh + table > thead,
