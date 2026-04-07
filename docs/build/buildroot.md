@@ -18,8 +18,8 @@ for the package list of other Linux distributions.
 ```sh
 sudo apt update
 sudo apt install build-essential clang flex bison g++ gawk \
-gcc-multilib g++-multilib gettext git libncurses5-dev libssl-dev \
-python3-setuptools rsync swig unzip zlib1g-dev file wget
+gcc-multilib g++-multilib gettext git libncurses-dev libssl-dev \
+rsync swig unzip zlib1g-dev file wget bzip2
 ```
 
 ## Download
