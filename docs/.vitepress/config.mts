@@ -37,7 +37,7 @@ export default defineConfig({
     logo: { light: '/libremesh_logo.svg', dark: '/libremesh_logo.svg', alt: 'Logo' },
     siteTitle: false,
     editLink: {
-      pattern: 'https://github.com/a-gave/libremesh.github.io/edit/main/docs/:path',
+      pattern: 'https://github.com/libremesh/libremesh.github.io/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
     search: {
