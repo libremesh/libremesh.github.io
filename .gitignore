@@ -13,9 +13,6 @@ node_modules/
 
 /lime-packages/**
 /network-profiles/**
-/lime-sdk/**
-
-/docs/build/lime-sdk.md
 
 /docs/development/*
 !/docs/development/hacking/

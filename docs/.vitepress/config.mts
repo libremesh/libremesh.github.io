@@ -110,7 +110,6 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
           items: [
             // { text: 'Build methods', link: '/build/' },
             { text: 'ImageBuilder', link: '/build/imagebuilder' },
-            { text: 'lime-sdk', link: '/build/lime-sdk' },
             { text: 'Buildroot', link: '/build/buildroot'}
         ]},
         { text: 'Upgrade', link: '/guide/upgrade' },

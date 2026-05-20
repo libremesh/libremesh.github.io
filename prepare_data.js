@@ -5,7 +5,6 @@ import { XMLHttpRequest } from 'xmlhttprequest'
 const lime_repo = './lime-packages/'
 const lime_pkgs_path = './lime-packages/packages/'
 const profile_repo = './network-profiles/'
-const lime_sdk_repo = './lime-sdk/'
 let lime_feed = {}
 let profiles_feed = {}
 
@@ -309,19 +308,8 @@ async function addRepoDoc() {
   await replaceInFile(to_dir+'contributing.md', /]\(TESTING.md\)/, "](testing)")
 }
 
-// copy VIRTUALIZING.md TESTING.md HACKING.Md
-async function addSdkDoc() {
-  console.log('Copying lime-sdk docs')
-  const from_dir = lime_sdk_repo
-  const to_dir = './docs/build/'
-  await copyFiles(from_dir, to_dir, 'README.md', 'lime-sdk.md')
-  await replaceInFile(to_dir+'lime-sdk.md', "# lime-sdk", "---\naside: false\n---\n# lime-sdk\n[[toc]]\n")
-}
-
 setupPackages()
 
 setupProfiles()
 
 addRepoDoc()
-
-addSdkDoc()
