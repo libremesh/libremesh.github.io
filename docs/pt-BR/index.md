@@ -7,7 +7,7 @@ hero:
   text: "Um framework modular para criar firmwares baseados em OpenWrt para nós mesh sem fio"
   tagline: Tornando possíveis as redes livres
   image:
-    src: ./lime.svg
+    src: /lime.svg
   actions:
     - theme: brand
       text: O que é o LibreMesh?
