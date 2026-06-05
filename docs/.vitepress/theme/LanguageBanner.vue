@@ -3,18 +3,12 @@ import { onMounted, ref } from 'vue'
 import { inBrowser, useRoute } from 'vitepress'
 
 const STORAGE_KEY = 'libremesh-lang-pref'
-const dismissed = ref(true)
-const detectedLocale = ref(null)
+const showToast = ref(false)
+const targetLocale = ref(null)
 
 const messages = {
-  es: {
-    label: 'Español',
-    href: (path) => '/es' + (path === '/' ? '/' : path)
-  },
-  'pt-BR': {
-    label: 'Português (BR)',
-    href: (path) => '/pt-BR' + (path === '/' ? '/' : path)
-  }
+  es:     { label: 'Español',          path: '/es/' },
+  'pt-BR': { label: 'Português (BR)',   path: '/pt-BR/' }
 }
 
 function pickLocale(navLang) {
@@ -25,59 +19,43 @@ function pickLocale(navLang) {
   return null
 }
 
-function stripLocalePrefix(path) {
-  if (path.startsWith('/es/') || path === '/es') return path.replace(/^\/es/, '') || '/'
-  if (path.startsWith('/pt-BR/') || path === '/pt-BR') return path.replace(/^\/pt-BR/, '') || '/'
-  return path
-}
+const route = useRoute()
 
 onMounted(() => {
   if (!inBrowser) return
   try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored === 'dismissed') return
-    if (stored && messages[stored]) return
+    if (localStorage.getItem(STORAGE_KEY)) return
   } catch (e) { return }
+
+  const path = route.path
+  if (path.startsWith('/es') || path.startsWith('/pt-BR')) return
 
   const locale = pickLocale(navigator.language)
   if (!locale) return
 
-  const route = useRoute()
-  const currentPath = stripLocalePrefix(route.path)
-  if (currentPath.startsWith('/es') || currentPath.startsWith('/pt-BR')) return
-
-  detectedLocale.value = locale
-  dismissed.value = false
+  targetLocale.value = locale
+  showToast.value = true
 })
 
-function dismiss() {
-  dismissed.value = true
-  try { localStorage.setItem(STORAGE_KEY, 'dismissed') } catch (e) {}
-}
-
 function accept() {
-  const locale = detectedLocale.value
+  const locale = targetLocale.value
   if (!locale) return
   try { localStorage.setItem(STORAGE_KEY, locale) } catch (e) {}
-  const route = useRoute()
-  const target = messages[locale].href(stripLocalePrefix(route.path))
-  window.location.href = target
+  window.location.href = messages[locale].path
+}
+
+function dismiss() {
+  showToast.value = false
+  try { localStorage.setItem(STORAGE_KEY, 'dismissed') } catch (e) {}
 }
 </script>
 
 <template>
-  <div v-if="detectedLocale && !dismissed" class="lang-banner" role="region" aria-label="Language suggestion">
-    <span class="lang-banner__msg">
-      This site is also available in
-      <strong>{{ messages[detectedLocale].label }}</strong>.
+  <div v-if="showToast && targetLocale && messages[targetLocale]" class="lang-toast" role="status">
+    <span class="lang-toast__msg">
+      Available in <strong>{{ messages[targetLocale].label }}</strong>?
     </span>
-    <span class="lang-banner__actions">
-      <button type="button" class="lang-banner__btn lang-banner__btn--primary" @click="accept">
-        Switch language
-      </button>
-      <button type="button" class="lang-banner__btn" @click="dismiss">
-        Stay in English
-      </button>
-    </span>
+    <button type="button" class="lang-toast__btn lang-toast__btn--primary" @click="accept">Switch</button>
+    <button type="button" class="lang-toast__btn" @click="dismiss" aria-label="Dismiss">×</button>
   </div>
 </template>

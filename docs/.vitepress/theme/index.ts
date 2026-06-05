@@ -13,7 +13,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       'wide': () => h(LayoutWide),
-      'layout-top': () => h(LanguageBanner)
+      'page-bottom': () => h(LanguageBanner)
     })
   },
   enhanceApp({ app, router, siteData }) {
