@@ -232,16 +232,16 @@ function sidebarGuideEs(): DefaultTheme.SidebarItem[] {
       text: 'Introducción',
       collapsed: false,
       items: [
-        { text: '¿Qué es LibreMesh?', link: '/es/what-is-libremesh' },
-        { text: 'Primeros pasos', link: '/es/getting-started' },
-        { text: 'Características', link: '/es/features' },
+        { text: '¿Qué es LibreMesh?', link: 'what-is-libremesh' },
+        { text: 'Primeros pasos', link: 'getting-started' },
+        { text: 'Características', link: 'features' },
       ]
     },
     {
       text: 'Guía de uso',
       collapsed: false,
       items: [
-        { text: 'Conectarse al router', link: '/es/guide/connecting' },
+        { text: 'Conectarse al router', link: 'guide/connecting' },
       ]
     },
   ]
@@ -253,16 +253,16 @@ function sidebarGuidePtBr(): DefaultTheme.SidebarItem[] {
       text: 'Introdução',
       collapsed: false,
       items: [
-        { text: 'O que é o LibreMesh?', link: '/pt-BR/what-is-libremesh' },
-        { text: 'Primeiros passos', link: '/pt-BR/getting-started' },
-        { text: 'Recursos', link: '/pt-BR/features' },
+        { text: 'O que é o LibreMesh?', link: 'what-is-libremesh' },
+        { text: 'Primeiros passos', link: 'getting-started' },
+        { text: 'Recursos', link: 'features' },
       ]
     },
     {
       text: 'Guia de uso',
       collapsed: false,
       items: [
-        { text: 'Conectando ao roteador', link: '/pt-BR/guide/connecting' },
+        { text: 'Conectando ao roteador', link: 'guide/connecting' },
       ]
     },
   ]
