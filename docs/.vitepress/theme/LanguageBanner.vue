@@ -7,8 +7,8 @@ const showToast = ref(false)
 const targetLocale = ref(null)
 
 const messages = {
-  es:     { label: 'Español',          home: '/es/',         hint: 'Esta página también está disponible en Español.',  action: 'Cambiar' },
-  'pt-BR': { label: 'Português (BR)',   home: '/pt-BR/',      hint: 'Esta página também está disponível em Português (BR).', action: 'Trocar' }
+  es:     { label: 'Español',          home: '/es/',         hint: 'Esta página también está disponible en Español.',  action: 'Cambiar', dismiss: 'Cerrar' },
+  'pt-BR': { label: 'Português (BR)',   home: '/pt-BR/',      hint: 'Esta página também está disponível em Português (BR).', action: 'Trocar', dismiss: 'Fechar' }
 }
 
 // English pages that have a translated counterpart. When the user
@@ -29,11 +29,15 @@ const translatedPaths = {
   }
 }
 
-function pickLocale(navLang) {
-  if (!navLang) return null
-  const lower = navLang.toLowerCase()
-  if (lower.startsWith('pt')) return 'pt-BR'
-  if (lower.startsWith('es')) return 'es'
+function pickLocale(navLangs) {
+  if (!navLangs) return null
+  const list = Array.isArray(navLangs) ? navLangs : [navLangs]
+  for (const lang of list) {
+    if (!lang) continue
+    const lower = String(lang).toLowerCase()
+    if (lower.startsWith('pt')) return 'pt-BR'
+    if (lower.startsWith('es')) return 'es'
+  }
   return null
 }
 
@@ -53,7 +57,7 @@ onMounted(() => {
   const path = route.path
   if (path.startsWith('/es') || path.startsWith('/pt-BR')) return
 
-  const locale = pickLocale(navigator.language)
+  const locale = pickLocale(navigator.languages || navigator.language)
   if (!locale) return
 
   targetLocale.value = locale
@@ -77,6 +81,6 @@ function dismiss() {
   <div v-if="showToast && targetLocale && messages[targetLocale]" class="lang-toast" role="status">
     <span class="lang-toast__msg">{{ messages[targetLocale].hint }}</span>
     <button type="button" class="lang-toast__btn lang-toast__btn--primary" @click="accept">{{ messages[targetLocale].action }}</button>
-    <button type="button" class="lang-toast__btn" @click="dismiss" aria-label="Dismiss">×</button>
+    <button type="button" class="lang-toast__btn" @click="dismiss" :aria-label="messages[targetLocale].dismiss">×</button>
   </div>
 </template>

@@ -22,6 +22,7 @@ export default defineConfig({
     root: {
       label: 'English',
       lang: 'en',
+      description: 'A modular framework for creating OpenWrt-based firmwares for wireless mesh nodes',
       themeConfig: {
         nav: navEn(),
         sidebar: {
@@ -34,6 +35,7 @@ export default defineConfig({
       label: 'Español',
       lang: 'es',
       link: '/es/',
+      description: 'Un framework modular para crear firmwares basados en OpenWrt para nodos de mesh inalámbricos',
       themeConfig: {
         nav: navEs(),
         sidebar: {
@@ -45,6 +47,7 @@ export default defineConfig({
       label: 'Português (BR)',
       lang: 'pt-BR',
       link: '/pt-BR/',
+      description: 'Um framework modular para criar firmwares baseados em OpenWrt para nós mesh sem fio',
       themeConfig: {
         nav: navPtBr(),
         sidebar: {
@@ -93,7 +96,7 @@ function navEn(): DefaultTheme.NavItem[] {
         { text: 'v2024.1', link: '/news/2025-05-04' },
         { text: 'v2020.4', link: '/news/2023-10-07' },
         { text: 'Latest Articles', link: '/news/' },
-        { text: 'Changelog', link: 'changelog'},
+        { text: 'Changelog', link: '/changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
     },
