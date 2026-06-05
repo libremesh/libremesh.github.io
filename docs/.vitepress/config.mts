@@ -38,7 +38,6 @@ export default defineConfig({
         nav: navEs(),
         sidebar: {
           '/es/': { base: '/es/', items: sidebarGuideEs() },
-          '/es/reference/': { base: '/es/reference/', items: sidebarReferenceEn() }
         },
       },
     },
@@ -50,7 +49,6 @@ export default defineConfig({
         nav: navPtBr(),
         sidebar: {
           '/pt-BR/': { base: '/pt-BR/', items: sidebarGuidePtBr() },
-          '/pt-BR/reference/': { base: '/pt-BR/reference/', items: sidebarReferenceEn() }
         },
       },
     },
@@ -104,14 +102,14 @@ function navEn(): DefaultTheme.NavItem[] {
 
 function navEs(): DefaultTheme.NavItem[] {
   return [
-    { text: 'Guía', link: '/es/guide/packages-selection' },
-    { text: 'Referencia', link: '/es/reference/configuration' },
+    { text: 'Guía', link: '/guide/packages-selection' },
+    { text: 'Referencia', link: '/reference/configuration' },
     { text: 'Noticias',
       items: [
-        { text: 'v2024.1', link: '/es/news/2025-05-04' },
-        { text: 'v2020.4', link: '/es/news/2023-10-07' },
-        { text: 'Artículos recientes', link: '/es/news/' },
-        { text: 'Changelog', link: '/es/changelog'},
+        { text: 'v2024.1', link: '/news/2025-05-04' },
+        { text: 'v2020.4', link: '/news/2023-10-07' },
+        { text: 'Artículos recientes', link: '/news/' },
+        { text: 'Changelog', link: '/changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
     },
@@ -120,14 +118,14 @@ function navEs(): DefaultTheme.NavItem[] {
 
 function navPtBr(): DefaultTheme.NavItem[] {
   return [
-    { text: 'Guia', link: '/pt-BR/guide/packages-selection' },
-    { text: 'Referência', link: '/pt-BR/reference/configuration' },
+    { text: 'Guia', link: '/guide/packages-selection' },
+    { text: 'Referência', link: '/reference/configuration' },
     { text: 'Notícias',
       items: [
-        { text: 'v2024.1', link: '/pt-BR/news/2025-05-04' },
-        { text: 'v2020.4', link: '/pt-BR/news/2023-10-07' },
-        { text: 'Artigos recentes', link: '/pt-BR/news/' },
-        { text: 'Changelog', link: '/pt-BR/changelog'},
+        { text: 'v2024.1', link: '/news/2025-05-04' },
+        { text: 'v2020.4', link: '/news/2023-10-07' },
+        { text: 'Artigos recentes', link: '/news/' },
+        { text: 'Changelog', link: '/changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
     },

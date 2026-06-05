@@ -154,7 +154,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
-  background: var(--vp-c-bg-soft, var(--vp-c-bg));
+  background: var(--vp-c-bg);
   color: var(--vp-c-text-1);
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
