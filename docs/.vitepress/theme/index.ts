@@ -5,13 +5,15 @@ import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import { redirects } from './redirects'
 import LayoutWide from './LayoutWide.vue'
+import LanguageBanner from './LanguageBanner.vue'
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'wide': () => h(LayoutWide)
+      'wide': () => h(LayoutWide),
+      'layout-top': () => h(LanguageBanner)
     })
   },
   enhanceApp({ app, router, siteData }) {

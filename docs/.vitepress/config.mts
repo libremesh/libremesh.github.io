@@ -21,7 +21,38 @@ export default defineConfig({
   locales: {
     root: {
       label: 'English',
-      lang: 'en'
+      lang: 'en',
+      themeConfig: {
+        nav: navEn(),
+        sidebar: {
+          '/': { base: '/', items: sidebarGuideEn() },
+          '/reference/': { base: '/reference/', items: sidebarReferenceEn() }
+        },
+      },
+    },
+    es: {
+      label: 'Español',
+      lang: 'es',
+      link: '/es/',
+      themeConfig: {
+        nav: navEs(),
+        sidebar: {
+          '/es/': { base: '/es/', items: sidebarGuideEs() },
+          '/es/reference/': { base: '/es/reference/', items: sidebarReferenceEn() }
+        },
+      },
+    },
+    'pt-BR': {
+      label: 'Português (BR)',
+      lang: 'pt-BR',
+      link: '/pt-BR/',
+      themeConfig: {
+        nav: navPtBr(),
+        sidebar: {
+          '/pt-BR/': { base: '/pt-BR/', items: sidebarGuidePtBr() },
+          '/pt-BR/reference/': { base: '/pt-BR/reference/', items: sidebarReferenceEn() }
+        },
+      },
     },
   },
 
@@ -45,13 +76,6 @@ export default defineConfig({
     },
     outline: 'deep',
 
-    nav: nav(),
-
-    sidebar: {
-      '/': { base: '/', items: sidebarGuide() },
-      '/reference/': { base: '/reference/', items: sidebarReference() }
-    },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/libremesh/lime-packages' },
       // { icon: 'maildotru', link: 'https://www.autistici.org/mailman/listinfo/libremesh' },
@@ -60,16 +84,12 @@ export default defineConfig({
       { icon: 'peertube', link: 'https://media.exo.cat/a/libremesh' }
     ],
   },
-  // async buildEnd() {
-  //   // const meetings = await createContentLoader('meetings/*.md').load()
-  //   // generate files based on posts metadata, e.g. RSS feed
-  // }
 })
 
-function nav(): DefaultTheme.NavItem[] {
+function navEn(): DefaultTheme.NavItem[] {
   return [
     { text: 'Guide', link: '/guide/packages-selection' },
-    { text: 'Reference', link: '/reference/configuration' },  
+    { text: 'Reference', link: '/reference/configuration' },
     { text: 'News',
       items: [
         { text: 'v2024.1', link: '/news/2025-05-04' },
@@ -82,7 +102,39 @@ function nav(): DefaultTheme.NavItem[] {
   ]
 }
 
-function sidebarGuide(): DefaultTheme.SidebarItem[] {
+function navEs(): DefaultTheme.NavItem[] {
+  return [
+    { text: 'Guía', link: '/es/guide/packages-selection' },
+    { text: 'Referencia', link: '/es/reference/configuration' },
+    { text: 'Noticias',
+      items: [
+        { text: 'v2024.1', link: '/es/news/2025-05-04' },
+        { text: 'v2020.4', link: '/es/news/2023-10-07' },
+        { text: 'Artículos recientes', link: '/es/news/' },
+        { text: 'Changelog', link: '/es/changelog'},
+        { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
+      ]
+    },
+  ]
+}
+
+function navPtBr(): DefaultTheme.NavItem[] {
+  return [
+    { text: 'Guia', link: '/pt-BR/guide/packages-selection' },
+    { text: 'Referência', link: '/pt-BR/reference/configuration' },
+    { text: 'Notícias',
+      items: [
+        { text: 'v2024.1', link: '/pt-BR/news/2025-05-04' },
+        { text: 'v2020.4', link: '/pt-BR/news/2023-10-07' },
+        { text: 'Artigos recentes', link: '/pt-BR/news/' },
+        { text: 'Changelog', link: '/pt-BR/changelog'},
+        { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
+      ]
+    },
+  ]
+}
+
+function sidebarGuideEn(): DefaultTheme.SidebarItem[] {
   return  [
     {
       text: 'Introduction',
@@ -98,13 +150,13 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Connecting to the router', link: '/guide/connecting' },
-        { text: 'Packages selection', 
-          link: '/guide/packages-selection', 
+        { text: 'Packages selection',
+          link: '/guide/packages-selection',
           collapsed: true,
           items: [
           { text: 'Network Profiles', link: '/guide/network-profiles' }
         ] },
-        { text: 'Build LibreMesh', 
+        { text: 'Build LibreMesh',
           link: '/build/',
           collapsed: true,
           items: [
@@ -122,8 +174,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Testing Guide', link: '/development/testing' },
         { text: 'Run LibreMesh on QEMU', link: '/development/virtualizing' },
-        { text: 'Hacking', 
-          link: '/development/hacking', 
+        { text: 'Hacking',
+          link: '/development/hacking',
           collapsed: true,
           items: [
           { text: 'Kernel Vermagic', link: '/development/hacking/kernel_vermagic' }
@@ -147,7 +199,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Media list', link: '/resources/media_list' },
         { text: 'Related projects', link: '/resources/related_projects' },
-        { text: 'Tools', 
+        { text: 'Tools',
           link: '/resources/tools/monitoring',
           collapsed: true,
           items: [
@@ -170,14 +222,54 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
         { text: 'Communities', items: generateSidebarItems(communities) },
         { text: 'Packages', items: generateSidebarItems(profiles), },
       ]
+    },
+  ]
+}
 
-      
+function sidebarGuideEs(): DefaultTheme.SidebarItem[] {
+  return  [
+    {
+      text: 'Introducción',
+      collapsed: false,
+      items: [
+        { text: '¿Qué es LibreMesh?', link: '/es/what-is-libremesh' },
+        { text: 'Primeros pasos', link: '/es/getting-started' },
+        { text: 'Características', link: '/es/features' },
+      ]
+    },
+    {
+      text: 'Guía de uso',
+      collapsed: false,
+      items: [
+        { text: 'Conectarse al router', link: '/es/guide/connecting' },
+      ]
+    },
+  ]
+}
+
+function sidebarGuidePtBr(): DefaultTheme.SidebarItem[] {
+  return  [
+    {
+      text: 'Introdução',
+      collapsed: false,
+      items: [
+        { text: 'O que é o LibreMesh?', link: '/pt-BR/what-is-libremesh' },
+        { text: 'Primeiros passos', link: '/pt-BR/getting-started' },
+        { text: 'Recursos', link: '/pt-BR/features' },
+      ]
+    },
+    {
+      text: 'Guia de uso',
+      collapsed: false,
+      items: [
+        { text: 'Conectando ao roteador', link: '/pt-BR/guide/connecting' },
+      ]
     },
   ]
 }
 
 
-function sidebarReference(): DefaultTheme.SidebarItem[] {
+function sidebarReferenceEn(): DefaultTheme.SidebarItem[] {
   return [
     {
       text: 'Reference',
@@ -185,7 +277,7 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
         { text: 'Configuration', link: 'configuration' },
         { text: 'lime-config', link: 'lime-config' },
         { text: 'Flavors', link: 'flavors' },
-        { text: 'Default protocols', 
+        { text: 'Default protocols',
           collapsed: true,
           items: [
           { text: 'Batman-adv', link: 'network/protocols/batman-adv'},
@@ -207,7 +299,7 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
             { text: 'Interface specific', link: 'wifi/interface-specific'},
           ] },
           { text: 'Generic UCI configs', link: 'generic_config' },
-          { text: 'Hardware detection', 
+          { text: 'Hardware detection',
             items: [
               { text: 'Ground Routing', link: 'hardware_detection/ground_routing' },
               { text: 'Watchcat', link: 'hardware_detection/watchcat' }

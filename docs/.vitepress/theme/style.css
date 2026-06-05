@@ -139,3 +139,57 @@
   );
 }
 
+/**
+ * Component: Language suggestion banner
+ * -------------------------------------------------------------------------- */
+
+.lang-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  text-align: center;
+}
+
+.lang-banner__msg strong {
+  font-weight: 600;
+}
+
+.lang-banner__actions {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.lang-banner__btn {
+  appearance: none;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.lang-banner__btn:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.lang-banner__btn--primary {
+  background: var(--vp-c-brand-3);
+  color: var(--vp-c-white);
+  border-color: var(--vp-c-brand-3);
+}
+
+.lang-banner__btn--primary:hover {
+  background: var(--vp-c-brand-2);
+  border-color: var(--vp-c-brand-2);
+}
+
