@@ -98,13 +98,33 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Connecting to the router', link: '/guide/connecting' },
-        { text: 'Packages selection', 
-          link: '/guide/packages-selection', 
+        { text: 'Using LimeApp',
+          link: '/guide/limeapp/',
+          collapsed: true,
+          items: [
+            { text: 'Overview', link: '/guide/limeapp/' },
+            { text: 'Accessing LimeApp', link: '/guide/limeapp/access' },
+            { text: 'A tour of the menu', link: '/guide/limeapp/menu' },
+            { text: 'Status', link: '/guide/limeapp/status' },
+            { text: 'Alignment', link: '/guide/limeapp/alignment' },
+            { text: 'Map', link: '/guide/limeapp/map' },
+            { text: 'Diagnostics', link: '/guide/limeapp/diagnostics' },
+            { text: 'Notes', link: '/guide/limeapp/notes' },
+            { text: 'Node configuration', link: '/guide/limeapp/node-config' },
+            { text: 'Network configuration', link: '/guide/limeapp/network-config' },
+            { text: 'Firmware', link: '/guide/limeapp/firmware' },
+            { text: 'Visit neighbor node', link: '/guide/limeapp/visit-node' },
+            { text: 'Remote support', link: '/guide/limeapp/remote-support' },
+            { text: 'Aligning antennas', link: '/guide/limeapp/aligning-antennas' },
+          ]
+        },
+        { text: 'Packages selection',
+          link: '/guide/packages-selection',
           collapsed: true,
           items: [
           { text: 'Network Profiles', link: '/guide/network-profiles' }
         ] },
-        { text: 'Build LibreMesh', 
+        { text: 'Build LibreMesh',
           link: '/build/',
           collapsed: true,
           items: [
