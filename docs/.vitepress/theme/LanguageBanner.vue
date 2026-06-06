@@ -1,13 +1,20 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import { inBrowser, useRoute } from 'vitepress'
+import { inBrowser, useData, useRoute } from 'vitepress'
 import { messages, pickLocale, targetFor } from './i18n'
 
 const STORAGE_KEY = 'libremesh-lang-pref'
 const showToast = ref(false)
 const targetLocale = ref(null)
 
+const { siteData } = useData()
 const route = useRoute()
+
+function withBase(path) {
+  const base = siteData.value?.base || '/'
+  if (path.startsWith('http')) return path
+  return base.replace(/\/$/, '') + path
+}
 
 onMounted(() => {
   if (!inBrowser) return
@@ -29,7 +36,7 @@ function accept() {
   const locale = targetLocale.value
   if (!locale) return
   try { localStorage.setItem(STORAGE_KEY, locale) } catch (e) {}
-  window.location.href = targetFor(locale, route.path)
+  window.location.href = withBase(targetFor(locale, route.path))
 }
 
 function dismiss() {
@@ -39,7 +46,7 @@ function dismiss() {
 </script>
 
 <template>
-  <div v-if="showToast && targetLocale && messages[targetLocale]" class="lang-toast" role="status">
+  <div v-if="showToast && targetLocale && messages[targetLocale] && messages[targetLocale].hint" class="lang-toast" role="status">
     <span class="lang-toast__msg">{{ messages[targetLocale].hint }}</span>
     <button type="button" class="lang-toast__btn lang-toast__btn--primary" @click="accept">{{ messages[targetLocale].action }}</button>
     <button type="button" class="lang-toast__btn" @click="dismiss" :aria-label="messages[targetLocale].dismiss">×</button>

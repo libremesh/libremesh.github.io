@@ -6,9 +6,9 @@
 export const LOCALE_PREFIXES = ['/es', '/pt-BR']
 
 export const messages = {
-  en:    { label: 'English',          short: 'EN', home: '/' },
-  es:    { label: 'Español',          short: 'ES', home: '/es/' },
-  'pt-BR': { label: 'Português (BR)', short: 'PT', home: '/pt-BR/' }
+  en:    { label: 'English',          short: 'EN', home: '/',         hint: '',  action: '',  dismiss: 'Dismiss' },
+  es:    { label: 'Español',          short: 'ES', home: '/es/',      hint: 'Esta página también está disponible en Español.',         action: 'Cambiar', dismiss: 'Cerrar' },
+  'pt-BR': { label: 'Português (BR)', short: 'PT', home: '/pt-BR/',   hint: 'Esta página também está disponível em Português (BR).', action: 'Trocar',  dismiss: 'Fechar' }
 }
 
 export const translatedPaths = {
@@ -39,6 +39,11 @@ export function cleanPath(path) {
   return path.replace(/\.html$/, '').replace(/\/$/, '') || '/'
 }
 
+// Returns a target path in the requested locale. The returned path
+// does NOT include the VitePress base — callers must prepend it
+// (e.g. via import.meta.env.BASE_URL or the useData() siteData.base)
+// before assigning to window.location.href. The LanguageBanner and
+// LanguageSwitcher components handle that.
 export function targetFor(locale, currentPath) {
   const clean = cleanPath(stripLocale(currentPath))
   if (locale === 'en') return clean
