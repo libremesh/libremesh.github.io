@@ -140,6 +140,98 @@
 }
 
 /**
+ * Component: Custom language switcher in the nav.
+ * We replace VitePress's built-in VPNavBarTranslations because the
+ * built-in one auto-generates links to /<locale>/<current-path> for
+ * every locale, which 404s for pages that don't have a translated
+ * counterpart. This custom version only links to paths that exist,
+ * falling back to the locale home otherwise.
+ * -------------------------------------------------------------------------- */
+
+/* VitePress's built-in VPNavBarTranslations is removed from the DOM
+ * by LanguageSwitcher.vue onMounted. This CSS is a defensive fallback
+ * in case the JS hasn't run yet (e.g. noscript users). */
+.VPNavBarTranslations { display: none !important; }
+
+.lang-switcher {
+  position: relative;
+  display: inline-flex;
+}
+
+.lang-switcher__btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  line-height: 1.4;
+}
+
+.lang-switcher__btn:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.lang-switcher__caret {
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.lang-switcher__menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 12rem;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  padding: 0.25rem;
+  z-index: 50;
+}
+
+.lang-switcher__item {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--vp-c-text-1);
+  padding: 0.45rem 0.6rem;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.lang-switcher__item:hover {
+  background: var(--vp-c-default-soft);
+}
+
+.lang-switcher__item--current {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.lang-switcher__item-hint {
+  font-size: 0.7rem;
+  color: var(--vp-c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/**
  * Component: Language suggestion toast
  * Floating chip in the bottom-right corner. Out of the nav so it
  * never overlaps the menu and never shifts layout on mobile.

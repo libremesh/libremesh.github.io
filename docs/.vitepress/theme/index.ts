@@ -6,6 +6,7 @@ import './style.css'
 import { redirects } from './redirects'
 import LayoutWide from './LayoutWide.vue'
 import LanguageBanner from './LanguageBanner.vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 export default {
   extends: DefaultTheme,
@@ -13,7 +14,8 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       'wide': () => h(LayoutWide),
-      'page-bottom': () => h(LanguageBanner)
+      'page-bottom': () => h(LanguageBanner),
+      'nav-bar-content-after': () => h(LanguageSwitcher)
     })
   },
   enhanceApp({ app, router, siteData }) {
