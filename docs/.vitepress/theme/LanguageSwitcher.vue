@@ -44,10 +44,6 @@ function goesToHome(loc) {
   const clean = cleanPath(stripLocale(rootPath.value))
   const home = messages[loc].home
   const target = targetFor(loc, rootPath.value)
-  // If the target is the locale home and the user is not already on
-  // that page in the equivalent English location, mark it as a
-  // fallback. Compared against the locale home directly so pages
-  // with a real translation don't get mislabelled.
   return target === home && clean !== '/'
 }
 
@@ -61,7 +57,6 @@ function removeBuiltInSwitchers() {
   // covered.
   document.querySelectorAll('.VPNavBarTranslations, .VPNavScreenTranslations, .group.translations, [class*="translations"]')
     .forEach(el => {
-      // Skip our own switcher in case the selector matches it.
       if (el.closest('#lang-switcher')) return
       el.remove()
     })
@@ -92,36 +87,44 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="lang-switcher" id="lang-switcher">
+  <div
+    class="VPFlyout lang-switcher"
+    id="lang-switcher"
+    :class="{ active: open }"
+    @mouseenter="open = true"
+    @mouseleave="open = false"
+  >
     <button
       type="button"
-      class="lang-switcher__btn"
-      :aria-expanded="open"
+      class="button"
       aria-haspopup="true"
+      :aria-expanded="open"
       aria-label="Change language"
-      @click.stop="toggle"
+      @click="toggle"
     >
-      <span class="lang-switcher__current">{{ messages[currentLocale].short }}</span>
-      <span class="lang-switcher__caret" aria-hidden="true">▾</span>
+      <span class="text">
+        <span class="vpi-languages option-icon" />
+        <span class="vpi-chevron-down text-icon" />
+      </span>
     </button>
-    <div v-if="open" class="lang-switcher__menu" role="menu">
-      <button
-        v-for="loc in locales"
-        :key="loc"
-        type="button"
-        class="lang-switcher__item"
-        role="menuitem"
-        :class="{ 'lang-switcher__item--current': loc === currentLocale }"
-        :aria-current="loc === currentLocale ? 'true' : undefined"
-        @click="go(loc); close()"
-      >
-        <span class="lang-switcher__item-label">{{ messages[loc].label }}</span>
-        <span
-          v-if="loc !== currentLocale && goesToHome(loc)"
-          class="lang-switcher__item-hint"
-          aria-hidden="true"
-        >home</span>
-      </button>
+
+    <div class="menu">
+      <div class="VPMenu">
+        <div class="items">
+          <p class="title">{{ messages[currentLocale].label }}</p>
+          <button
+            v-for="loc in locales"
+            :key="loc"
+            type="button"
+            class="link"
+            :class="{ active: loc === currentLocale }"
+            @click="go(loc); close()"
+          >
+            <span class="link-text">{{ messages[loc].label }}</span>
+            <span v-if="loc !== currentLocale && goesToHome(loc)" class="link-hint">home</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
