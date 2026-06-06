@@ -148,10 +148,20 @@
  * falling back to the locale home otherwise.
  * -------------------------------------------------------------------------- */
 
-/* VitePress's built-in VPNavBarTranslations is removed from the DOM
- * by LanguageSwitcher.vue onMounted. This CSS is a defensive fallback
- * in case the JS hasn't run yet (e.g. noscript users). */
-.VPNavBarTranslations { display: none !important; }
+/* VitePress's built-in language switchers — desktop nav
+ * (.VPNavBarTranslations), mobile overflow (.group.translations
+ * inside .VPNavBarExtra), and mobile screen
+ * (.VPNavScreenTranslations) — all auto-render links to
+ * /<locale>/<current-path> for every locale, which 404s for any
+ * English page that doesn't have a translated counterpart. We
+ * replace them with our own switcher (LanguageSwitcher.vue), so
+ * hide the built-ins at SSR time so the dead links never reach
+ * crawlers or no-JS users. */
+.VPNavBarTranslations,
+.VPNavScreenTranslations,
+.group.translations,
+[class*="VPNavBarTranslations"],
+[class*="VPNavScreenTranslations"] { display: none !important; }
 
 .lang-switcher {
   position: relative;
