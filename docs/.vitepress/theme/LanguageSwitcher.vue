@@ -1,13 +1,19 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useData, useRoute } from 'vitepress'
-import { messages, targetFor, currentLocaleOf, cleanPath, stripLocale } from './i18n'
+import { messages, targetFor, currentLocaleOf, cleanPath, stripBase, stripLocale } from './i18n'
 
 const { site } = useData()
 const route = useRoute()
 const open = ref(false)
 
-const currentLocale = computed(() => currentLocaleOf(route.path))
+// route.path can include the VitePress base (e.g.
+// '/libremesh.github.io/pt-BR/foo') on IS_FORK=1 builds. Strip it
+// before passing to the locale helpers, which all expect a
+// root-relative path.
+const rootPath = computed(() => stripBase(route.path, site.value?.base))
+
+const currentLocale = computed(() => currentLocaleOf(rootPath.value))
 const locales = ['en', 'es', 'pt-BR']
 
 function withBase(path) {
@@ -17,7 +23,7 @@ function withBase(path) {
 }
 
 function go(locale) {
-  window.location.href = withBase(targetFor(locale, route.path))
+  window.location.href = withBase(targetFor(locale, rootPath.value))
 }
 
 function toggle() { open.value = !open.value }
@@ -32,9 +38,17 @@ function onKey(e) {
   if (e.key === 'Escape') close()
 }
 
+// True when clicking this locale would land on the locale home
+// (a fallback) rather than the equivalent translated page.
 function goesToHome(loc) {
-  const clean = cleanPath(stripLocale(route.path))
-  return targetFor(loc, route.path) !== clean
+  const clean = cleanPath(stripLocale(rootPath.value))
+  const home = messages[loc].home
+  const target = targetFor(loc, rootPath.value)
+  // If the target is the locale home and the user is not already on
+  // that page in the equivalent English location, mark it as a
+  // fallback. Compared against the locale home directly so pages
+  // with a real translation don't get mislabelled.
+  return target === home && clean !== '/'
 }
 
 function removeBuiltInSwitchers() {

@@ -1,7 +1,7 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { inBrowser, useData, useRoute } from 'vitepress'
-import { hasTranslation, messages, pickLocale, targetFor } from './i18n'
+import { hasTranslation, messages, pickLocale, stripBase, targetFor } from './i18n'
 
 const STORAGE_KEY = 'libremesh-lang-pref'
 const showToast = ref(false)
@@ -9,6 +9,10 @@ const targetLocale = ref(null)
 
 const { site } = useData()
 const route = useRoute()
+
+// route.path can include the VitePress base on IS_FORK=1 builds.
+// Strip it so the locale helpers see a root-relative path.
+const rootPath = computed(() => stripBase(route.path, site.value?.base))
 
 function withBase(path) {
   const base = site.value?.base || '/'
@@ -22,7 +26,7 @@ onMounted(() => {
     if (localStorage.getItem(STORAGE_KEY)) return
   } catch (e) { return }
 
-  const path = route.path
+  const path = rootPath.value
   if (path.startsWith('/es') || path.startsWith('/pt-BR')) return
 
   const locale = pickLocale(navigator.languages || navigator.language)
@@ -42,7 +46,7 @@ function accept() {
   const locale = targetLocale.value
   if (!locale) return
   try { localStorage.setItem(STORAGE_KEY, locale) } catch (e) {}
-  window.location.href = withBase(targetFor(locale, route.path))
+  window.location.href = withBase(targetFor(locale, rootPath.value))
 }
 
 function dismiss() {

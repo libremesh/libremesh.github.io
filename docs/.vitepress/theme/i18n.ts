@@ -35,6 +35,17 @@ export function stripLocale(path) {
   return path
 }
 
+// Strip a VitePress base prefix (e.g. "/libremesh.github.io") so the
+// remaining path is suitable for the locale helpers above, which all
+// expect a root-relative path. With base '/' this is a no-op.
+export function stripBase(path, base) {
+  if (!base || base === '/') return path
+  const b = base.replace(/\/$/, '')
+  if (path === b) return '/'
+  if (path.startsWith(b + '/')) return path.slice(b.length) || '/'
+  return path
+}
+
 export function cleanPath(path) {
   return path.replace(/\.html$/, '').replace(/\/$/, '') || '/'
 }
