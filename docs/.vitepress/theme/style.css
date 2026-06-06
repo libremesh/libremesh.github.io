@@ -151,8 +151,9 @@
 /* Hide VitePress's built-in language switchers at SSR so the dead
  * /<locale>/<current-path> links they auto-generate for untranslated
  * pages never reach the served HTML. Our own switcher (mounted via
- * the nav-bar-content-after slot) replaces them with links that only
- * point at pages that actually exist. */
+ * the nav-bar-content-after and nav-screen-content-after slots)
+ * replaces them with links that only point at pages that actually
+ * exist. */
 .VPNavBarTranslations,
 .VPNavScreenTranslations,
 .group.translations,
@@ -160,19 +161,31 @@
 [class*="VPNavScreenTranslations"] { display: none !important; }
 
 /**
- * Component: Custom language switcher in the nav.
+ * Component: Custom language switcher in the desktop nav.
  * Styled to match VitePress's built-in VPNavBarTranslations: globe
  * icon + chevron, transparent button, hover/aria-expanded driven
- * dropdown, themed panel.
+ * dropdown, themed panel. Flexbox `order` places it to the right of
+ * the theme (appearance) switcher, separated by a `|` divider drawn
+ * with a ::before pseudo-element.
  * -------------------------------------------------------------------------- */
 
 .lang-switcher {
   position: relative;
-  display: none;
+  display: flex;
+  align-items: center;
+  order: 1;
 }
 
-@media (min-width: 1280px) {
-  .lang-switcher { display: flex; align-items: center; }
+.VPNavBarAppearance { order: 0; }
+.VPNavBarSocialLinks { order: 2; }
+.VPNavBarExtra { order: 3; }
+
+.lang-switcher::before {
+  content: "";
+  width: 1px;
+  height: 24px;
+  background: var(--vp-c-divider);
+  margin: 0 12px 0 0;
 }
 
 .lang-switcher:hover,
@@ -260,16 +273,6 @@
   gap: 0;
 }
 
-.lang-switcher .title {
-  padding: 0 24px 0 12px;
-  line-height: 32px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--vp-c-text-1);
-  text-align: left;
-  margin: 0;
-}
-
 .lang-switcher .link {
   display: flex;
   align-items: center;
@@ -300,6 +303,95 @@
 }
 
 .lang-switcher .link-hint {
+  font-size: 11px;
+  color: var(--vp-c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/**
+ * Component: Language switcher in the mobile full-screen menu.
+ * Mirrors VitePress's built-in VPNavScreenTranslations layout: a
+ * collapsible header with the globe icon and current locale label,
+ * expanding to a list of locale buttons. Click anywhere outside
+ * doesn't matter here since the screen is modal.
+ * -------------------------------------------------------------------------- */
+
+.lang-switcher-mobile {
+  padding: 12px 0;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.lang-switcher-mobile .title {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+}
+
+.lang-switcher-mobile .icon {
+  font-size: 16px;
+}
+
+.lang-switcher-mobile .icon.lang {
+  margin-right: 8px;
+}
+
+.lang-switcher-mobile .icon.chevron {
+  margin-left: auto;
+  transition: transform 0.25s;
+}
+
+.lang-switcher-mobile.open .icon.chevron {
+  transform: rotate(180deg);
+}
+
+.lang-switcher-mobile .list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lang-switcher-mobile .link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 6px 0 6px 24px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--vp-c-text-1);
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.25s, background-color 0.25s;
+}
+
+.lang-switcher-mobile .link:hover {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-default-soft);
+}
+
+.lang-switcher-mobile .link.active {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.lang-switcher-mobile .link-hint {
   font-size: 11px;
   color: var(--vp-c-text-3);
   text-transform: uppercase;

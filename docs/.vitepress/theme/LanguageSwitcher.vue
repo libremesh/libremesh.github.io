@@ -57,7 +57,7 @@ function removeBuiltInSwitchers() {
   // covered.
   document.querySelectorAll('.VPNavBarTranslations, .VPNavScreenTranslations, .group.translations, [class*="translations"]')
     .forEach(el => {
-      if (el.closest('#lang-switcher')) return
+      if (el.closest('#lang-switcher') || el.closest('#lang-switcher-mobile')) return
       el.remove()
     })
 }
@@ -111,7 +111,6 @@ onBeforeUnmount(() => {
     <div class="menu">
       <div class="VPMenu">
         <div class="items">
-          <p class="title">{{ messages[currentLocale].label }}</p>
           <button
             v-for="loc in locales"
             :key="loc"
