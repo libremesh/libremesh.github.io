@@ -55,7 +55,7 @@ function removeBuiltInSwitchers() {
   // nav-bar-content-after slot) so the user only ever sees links
   // that actually resolve. This is idempotent so SSR re-renders are
   // covered.
-  document.querySelectorAll('.VPNavBarTranslations, .VPNavScreenTranslations, .group.translations, [class*="translations"]')
+  document.querySelectorAll('.VPNavBarTranslations, .VPNavScreenTranslations, .group.translations')
     .forEach(el => {
       if (el.closest('#lang-switcher') || el.closest('#lang-switcher-mobile')) return
       el.remove()
@@ -83,6 +83,9 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', onDocClick)
   document.removeEventListener('keydown', onKey)
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('popstate', removeBuiltInSwitchers)
+  }
 })
 </script>
 

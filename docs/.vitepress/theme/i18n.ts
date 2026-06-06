@@ -138,8 +138,10 @@ export function hasTranslation(locale, currentPath) {
 }
 
 export function currentLocaleOf(path) {
-  if (path.startsWith('/es')) return 'es'
-  if (path.startsWith('/pt-BR')) return 'pt-BR'
+  // Check for exact locale prefix: /es, /es/, or /es/...
+  // Avoid false matches like /esoteric or /escape
+  if (path === '/es' || path === '/es/' || path.startsWith('/es/')) return 'es'
+  if (path === '/pt-BR' || path === '/pt-BR/' || path.startsWith('/pt-BR/')) return 'pt-BR'
   return 'en'
 }
 

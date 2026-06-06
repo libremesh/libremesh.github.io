@@ -27,7 +27,9 @@ onMounted(() => {
   } catch (e) { return }
 
   const path = rootPath.value
-  if (path.startsWith('/es') || path.startsWith('/pt-BR')) return
+  // Check for exact locale prefix to avoid false matches
+  if (path === '/es' || path === '/es/' || path.startsWith('/es/')) return
+  if (path === '/pt-BR' || path === '/pt-BR/' || path.startsWith('/pt-BR/')) return
 
   const locale = pickLocale(navigator.languages || navigator.language)
   if (!locale) return
