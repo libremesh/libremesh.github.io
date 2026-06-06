@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { inBrowser, useData, useRoute } from 'vitepress'
-import { messages, pickLocale, targetFor } from './i18n'
+import { hasTranslation, messages, pickLocale, targetFor } from './i18n'
 
 const STORAGE_KEY = 'libremesh-lang-pref'
 const showToast = ref(false)
@@ -27,6 +27,12 @@ onMounted(() => {
 
   const locale = pickLocale(navigator.languages || navigator.language)
   if (!locale) return
+
+  // Only show the toast when the current page has a translated
+  // counterpart — otherwise clicking would take the user to the
+  // locale home, which is misleading when the prompt claims "this
+  // page is also available".
+  if (!hasTranslation(locale, path)) return
 
   targetLocale.value = locale
   showToast.value = true

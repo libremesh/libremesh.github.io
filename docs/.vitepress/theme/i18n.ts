@@ -50,6 +50,16 @@ export function targetFor(locale, currentPath) {
   return translatedPaths[locale][clean] || messages[locale].home
 }
 
+// True when the current path has a direct translated counterpart
+// in the requested locale (i.e. the user can land on the same page
+// in the other language). False when the only available target is
+// the locale home (the user would be sent there as a fallback).
+export function hasTranslation(locale, currentPath) {
+  if (locale === 'en') return true
+  const clean = cleanPath(stripLocale(currentPath))
+  return Object.prototype.hasOwnProperty.call(translatedPaths[locale], clean)
+}
+
 export function currentLocaleOf(path) {
   if (path.startsWith('/es')) return 'es'
   if (path.startsWith('/pt-BR')) return 'pt-BR'
