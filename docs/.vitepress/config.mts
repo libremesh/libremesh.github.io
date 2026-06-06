@@ -105,14 +105,14 @@ function navEn(): DefaultTheme.NavItem[] {
 
 function navEs(): DefaultTheme.NavItem[] {
   return [
-    { text: 'Guía', link: '/guide/packages-selection' },
-    { text: 'Referencia', link: '/reference/configuration' },
-    { text: 'Noticias',
+    { text: 'Guía', link: '/es/guide/connecting' },
+    { text: 'Referencia (en)', link: '/reference/configuration' },
+    { text: 'Noticias (en)',
       items: [
-        { text: 'v2024.1', link: '/news/2025-05-04' },
-        { text: 'v2020.4', link: '/news/2023-10-07' },
-        { text: 'Artículos recientes', link: '/news/' },
-        { text: 'Changelog', link: '/changelog'},
+        { text: 'v2024.1 (en)', link: '/news/2025-05-04' },
+        { text: 'v2020.4 (en)', link: '/news/2023-10-07' },
+        { text: 'Artículos recientes (en)', link: '/news/' },
+        { text: 'Changelog (en)', link: '/changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
     },
@@ -121,14 +121,14 @@ function navEs(): DefaultTheme.NavItem[] {
 
 function navPtBr(): DefaultTheme.NavItem[] {
   return [
-    { text: 'Guia', link: '/guide/packages-selection' },
-    { text: 'Referência', link: '/reference/configuration' },
-    { text: 'Notícias',
+    { text: 'Guia', link: '/pt-BR/guide/connecting' },
+    { text: 'Referência (em)', link: '/reference/configuration' },
+    { text: 'Notícias (em)',
       items: [
-        { text: 'v2024.1', link: '/news/2025-05-04' },
-        { text: 'v2020.4', link: '/news/2023-10-07' },
-        { text: 'Artigos recentes', link: '/news/' },
-        { text: 'Changelog', link: '/changelog'},
+        { text: 'v2024.1 (em)', link: '/news/2025-05-04' },
+        { text: 'v2020.4 (em)', link: '/news/2023-10-07' },
+        { text: 'Artigos recentes (em)', link: '/news/' },
+        { text: 'Changelog (em)', link: '/changelog'},
         { text: 'Issues', link: 'https://github.com/libremesh/lime-packages/issues'},
       ]
     },
