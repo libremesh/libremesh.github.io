@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { messages, targetFor, currentLocaleOf, cleanPath, stripLocale } from './i18n'
 
-const { siteData } = useData()
+const { site } = useData()
 const route = useRoute()
 const open = ref(false)
 
@@ -11,7 +11,7 @@ const currentLocale = computed(() => currentLocaleOf(route.path))
 const locales = ['en', 'es', 'pt-BR']
 
 function withBase(path) {
-  const base = siteData.value?.base || '/'
+  const base = site.value?.base || '/'
   if (path.startsWith('http')) return path
   return base.replace(/\/$/, '') + path
 }

@@ -7,11 +7,11 @@ const STORAGE_KEY = 'libremesh-lang-pref'
 const showToast = ref(false)
 const targetLocale = ref(null)
 
-const { siteData } = useData()
+const { site } = useData()
 const route = useRoute()
 
 function withBase(path) {
-  const base = siteData.value?.base || '/'
+  const base = site.value?.base || '/'
   if (path.startsWith('http')) return path
   return base.replace(/\/$/, '') + path
 }
