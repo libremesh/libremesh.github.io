@@ -13,16 +13,18 @@ export const messages = {
 
 export const translatedPaths = {
   es: {
-    '/what-is-libremesh':    '/es/what-is-libremesh',
-    '/getting-started':      '/es/getting-started',
-    '/features':             '/es/features',
-    '/guide/connecting':     '/es/guide/connecting',
+    '/':                     '/es/',
+    '/what-is-libremesh':    '/es/what-is-libremesh.html',
+    '/getting-started':      '/es/getting-started.html',
+    '/features':             '/es/features.html',
+    '/guide/connecting':     '/es/guide/connecting.html',
   },
   'pt-BR': {
-    '/what-is-libremesh':    '/pt-BR/what-is-libremesh',
-    '/getting-started':      '/pt-BR/getting-started',
-    '/features':             '/pt-BR/features',
-    '/guide/connecting':     '/pt-BR/guide/connecting',
+    '/':                     '/pt-BR/',
+    '/what-is-libremesh':    '/pt-BR/what-is-libremesh.html',
+    '/getting-started':      '/pt-BR/getting-started.html',
+    '/features':             '/pt-BR/features.html',
+    '/guide/connecting':     '/pt-BR/guide/connecting.html',
   }
 }
 
