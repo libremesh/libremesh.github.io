@@ -243,6 +243,51 @@ function sidebarGuideEs(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Conectarse al router', link: 'guide/connecting' },
+        { text: 'Selección de paquetes',
+          link: 'guide/packages-selection',
+          collapsed: true,
+          items: [
+          { text: 'Perfiles de red', link: 'guide/network-profiles' }
+        ] },
+        { text: 'Compilar LibreMesh',
+          link: 'build/',
+          collapsed: true,
+          items: [
+            { text: 'ImageBuilder', link: 'build/imagebuilder' },
+            { text: 'Buildroot', link: 'build/buildroot'}
+        ]},
+        { text: 'Actualización', link: 'guide/upgrade' },
+      ]
+    },
+    { text: 'Configuración y Referencia', link: 'reference/configuration'},
+    {
+      text: 'Guía de desarrollo',
+      collapsed: false,
+      items: [
+        { text: 'Guía de testing', link: 'development/testing' },
+        { text: 'Ejecutar LibreMesh en QEMU', link: 'development/virtualizing' },
+        { text: 'Hacking',
+          link: 'development/hacking',
+          collapsed: true,
+          items: [
+          { text: 'Vermagic del kernel', link: 'development/hacking/kernel_vermagic' }
+        ] },
+        { text: 'Contribuir a lime-packages', link: 'development/contributing' },
+      ]
+    },
+    {
+      text: 'Recursos',
+      collapsed: false,
+      link: 'resources',
+      items: [
+        { text: 'Lista de medios', link: 'resources/media_list' },
+        { text: 'Proyectos relacionados', link: 'resources/related_projects' },
+        { text: 'Herramientas',
+          link: 'resources/tools/monitoring',
+          collapsed: true,
+          items: [
+            { text: 'Monitoring', link: 'resources/tools/monitoring' },
+        ]},
       ]
     },
   ]
@@ -264,6 +309,51 @@ function sidebarGuidePtBr(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Conectando ao roteador', link: 'guide/connecting' },
+        { text: 'Seleção de pacotes',
+          link: 'guide/packages-selection',
+          collapsed: true,
+          items: [
+          { text: 'Perfis de rede', link: 'guide/network-profiles' }
+        ] },
+        { text: 'Compilar o LibreMesh',
+          link: 'build/',
+          collapsed: true,
+          items: [
+            { text: 'ImageBuilder', link: 'build/imagebuilder' },
+            { text: 'Buildroot', link: 'build/buildroot'}
+        ]},
+        { text: 'Atualização', link: 'guide/upgrade' },
+      ]
+    },
+    { text: 'Configuração e Referência', link: 'reference/configuration'},
+    {
+      text: 'Guia de desenvolvimento',
+      collapsed: false,
+      items: [
+        { text: 'Guia de testes', link: 'development/testing' },
+        { text: 'Executar LibreMesh no QEMU', link: 'development/virtualizing' },
+        { text: 'Hacking',
+          link: 'development/hacking',
+          collapsed: true,
+          items: [
+          { text: 'Vermagic do kernel', link: 'development/hacking/kernel_vermagic' }
+        ] },
+        { text: 'Contribuir com lime-packages', link: 'development/contributing' },
+      ]
+    },
+    {
+      text: 'Recursos',
+      collapsed: false,
+      link: 'resources',
+      items: [
+        { text: 'Lista de mídia', link: 'resources/media_list' },
+        { text: 'Projetos relacionados', link: 'resources/related_projects' },
+        { text: 'Ferramentas',
+          link: 'resources/tools/monitoring',
+          collapsed: true,
+          items: [
+            { text: 'Monitoramento', link: 'resources/tools/monitoring' },
+        ]},
       ]
     },
   ]

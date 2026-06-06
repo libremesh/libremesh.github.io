@@ -185,7 +185,7 @@
   width: 1px;
   height: 24px;
   background: var(--vp-c-divider);
-  margin: 0 12px 0 0;
+  margin: 0 8px;
 }
 
 .lang-switcher:hover,
