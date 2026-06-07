@@ -1,3 +1,6 @@
+---
+title: "Contribuindo"
+---
 # Contribuindo
 
 Ao contribuir para este repositório, por favor discuta primeiro a alteração que você deseja fazer via issue,

@@ -1,3 +1,6 @@
+---
+title: "Sabores"
+---
 <script setup>
 import { data as libremesh } from '/libremesh.data.js'
 </script>

@@ -1,3 +1,6 @@
+---
+title: "Lista de mídia"
+---
 # Lista de mídia
 
 Uma lista não exaustiva de mídias sobre o LibreMesh inclui apresentações ou discussões em áudio/vídeo e artigos técnicos.

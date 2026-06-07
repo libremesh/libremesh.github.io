@@ -1,4 +1,6 @@
-
+---
+title: "Configs UCI genéricas"
+---
 
 # Configs UCI genéricas
 Seções adicionais do LibreMesh para:    

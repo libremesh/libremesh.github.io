@@ -1,3 +1,6 @@
+---
+title: "Batman-adv"
+---
 # Batman-adv
 
 ![batmanadv](/batmanadv_logo.svg){width=250 height=200}

@@ -1,3 +1,6 @@
+---
+title: "Babeld"
+---
 # Babeld
 
 ![Babel](/babel_logo.svg){width=200 height=200}
