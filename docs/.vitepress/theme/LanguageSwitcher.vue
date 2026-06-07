@@ -16,6 +16,10 @@ const rootPath = computed(() => stripBase(route.path, site.value?.base))
 const currentLocale = computed(() => currentLocaleOf(rootPath.value))
 const locales = ['en', 'es', 'pt-BR']
 
+// MutationObserver that hides built-in VitePress language switchers
+// as soon as they appear in the DOM.
+let _switcherObserver = null
+
 function withBase(path) {
   const base = site.value?.base || '/'
   if (path.startsWith('http')) return path
@@ -47,44 +51,56 @@ function goesToHome(loc) {
   return target === home && clean !== '/'
 }
 
-function removeBuiltInSwitchers() {
-  // VitePress renders the language switcher in three places — desktop
-  // nav, mobile overflow, and the mobile screen. All three expose
-  // /<locale>/<current-path> links that 404 for untranslated pages.
-  // We replace them with our own dropdown (rendered via the
-  // nav-bar-content-after slot) so the user only ever sees links
-  // that actually resolve. This is idempotent so SSR re-renders are
-  // covered.
-  document.querySelectorAll('.VPNavBarTranslations, .VPNavScreenTranslations, .group.translations')
-    .forEach(el => {
-      if (el.closest('#lang-switcher') || el.closest('#lang-switcher-mobile')) return
-      el.remove()
-    })
+// Selector for the built-in VitePress language switcher elements
+// that we want to suppress (they generate /<locale>/<current-path>
+// links that 404 for untranslated pages).
+const BUILTIN_SELECTOR = '.VPNavBarTranslations, .VPNavScreenTranslations, .group.translations'
+
+function hideBuiltInSwitchers(root = document) {
+  root.querySelectorAll(BUILTIN_SELECTOR).forEach(el => {
+    if (el.closest('#lang-switcher') || el.closest('#lang-switcher-mobile')) return
+    el.setAttribute('data-lang-hidden', '')
+  })
 }
 
 onMounted(() => {
   document.addEventListener('click', onDocClick)
   document.addEventListener('keydown', onKey)
-  removeBuiltInSwitchers()
-  // VitePress SPA-navigates between pages without re-mounting the
-  // layout, so the built-in switcher reappears on each navigation.
-  // Re-run the cleanup after each route change.
-  if (typeof window !== 'undefined' && window.history) {
-    const _push = history.pushState.bind(history)
-    history.pushState = function (...args) {
-      const r = _push(...args)
-      setTimeout(removeBuiltInSwitchers, 0)
-      return r
+
+  // Use a MutationObserver to hide built-in VitePress language
+  // switchers whenever they appear in the DOM (initial render,
+  // SPA navigation, HMR, etc.). This is more robust than
+  // monkey-patching history.pushState and does not depend on
+  // fragile class-name guesses in CSS.
+  hideBuiltInSwitchers()
+  _switcherObserver = new MutationObserver(mutations => {
+    for (const m of mutations) {
+      for (const node of m.addedNodes) {
+        if (node.nodeType !== 1) continue
+        if (node.matches?.(BUILTIN_SELECTOR)) {
+          if (!node.closest('#lang-switcher') && !node.closest('#lang-switcher-mobile')) {
+            node.setAttribute('data-lang-hidden', '')
+          }
+        }
+        // Also check children of added subtrees
+        if (node.querySelectorAll) {
+          node.querySelectorAll(BUILTIN_SELECTOR).forEach(el => {
+            if (el.closest('#lang-switcher') || el.closest('#lang-switcher-mobile')) return
+            el.setAttribute('data-lang-hidden', '')
+          })
+        }
+      }
     }
-    window.addEventListener('popstate', removeBuiltInSwitchers)
-  }
+  })
+  _switcherObserver.observe(document.body, { childList: true, subtree: true })
 })
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', onDocClick)
   document.removeEventListener('keydown', onKey)
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('popstate', removeBuiltInSwitchers)
+  if (_switcherObserver) {
+    _switcherObserver.disconnect()
+    _switcherObserver = null
   }
 })
 </script>

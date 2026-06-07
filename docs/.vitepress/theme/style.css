@@ -148,17 +148,14 @@
  * falling back to the locale home otherwise.
  * -------------------------------------------------------------------------- */
 
-/* Hide VitePress's built-in language switchers at SSR so the dead
- * /<locale>/<current-path> links they auto-generate for untranslated
- * pages never reach the served HTML. Our own switcher (mounted via
- * the nav-bar-content-after and nav-screen-content-after slots)
- * replaces them with links that only point at pages that actually
- * exist. */
-.VPNavBarTranslations,
-.VPNavScreenTranslations,
-.group.translations,
-[class*="VPNavBarTranslations"],
-[class*="VPNavScreenTranslations"] { display: none !important; }
+/* Hide VitePress's built-in language switchers.
+ * The MutationObserver in LanguageSwitcher.vue sets a data-lang-hidden
+ * attribute on these elements whenever they appear in the DOM (initial
+ * render, SPA navigation, HMR, etc.). This CSS rule picks up that
+ * attribute to hide them. Our own switcher (mounted via the
+ * nav-bar-content-after and nav-screen-content-after slots) replaces
+ * them with links that only point at pages that actually exist. */
+[data-lang-hidden] { display: none !important; }
 
 /**
  * Component: Custom language switcher in the desktop nav.
