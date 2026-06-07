@@ -1,3 +1,6 @@
+---
+title: "Opciones específicas de banda WiFi"
+---
 # Opciones específicas de banda WiFi
 
 ## Valores predeterminados

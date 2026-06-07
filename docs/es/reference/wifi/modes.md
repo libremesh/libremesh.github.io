@@ -1,3 +1,6 @@
+---
+title: "Modos WiFi"
+---
 # Modos WiFi
 
 ## Puntos de acceso

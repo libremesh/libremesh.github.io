@@ -1,3 +1,6 @@
+---
+title: "Primeros pasos"
+---
 # Primeros pasos
 
 ## Instalación

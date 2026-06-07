@@ -1,3 +1,6 @@
+---
+title: "Opciones WiFi"
+---
 # Opciones WiFi
 La configuración de cada dispositivo de radio se calcula a partir de:
 - las **opciones generales** en `config lime wifi`

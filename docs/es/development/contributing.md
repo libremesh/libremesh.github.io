@@ -1,3 +1,6 @@
+---
+title: "Guía de desarrollo"
+---
 # Contribuyendo
 
 Al contribuir a este repositorio, por favor discute primero el cambio que deseas hacer mediante un issue,

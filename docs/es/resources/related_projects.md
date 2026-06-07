@@ -1,3 +1,6 @@
+---
+title: "Proyectos relacionados"
+---
 # Proyectos relacionados
 
 ## [Gluon](https://gluon.readthedocs.io/)

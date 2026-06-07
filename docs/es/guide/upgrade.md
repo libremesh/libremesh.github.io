@@ -1,3 +1,6 @@
+---
+title: "Actualización"
+---
 # Actualización
 
 ::: tip PRECAUCIÓN
