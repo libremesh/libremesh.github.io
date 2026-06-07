@@ -13,7 +13,12 @@ const communities = await getFiles('docs/profiles/communities/*/index.md');
 export default defineConfig({
   title: "LibreMesh",
   description: "A modular framework for creating OpenWrt-based firmwares for wireless mesh nodes",
-  head: [['link', { rel: 'icon', href: baseUrl+'/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: baseUrl+'/favicon.ico' }],
+    ['link', { rel: 'alternate', hreflang: 'en', href: 'https://libremesh.github.io/' }],
+    ['link', { rel: 'alternate', hreflang: 'es', href: 'https://libremesh.github.io/es/' }],
+    ['link', { rel: 'alternate', hreflang: 'pt-BR', href: 'https://libremesh.github.io/pt-BR/' }],
+  ],
   lastUpdated: true,
   base: baseUrl,
   metaChunk: true,

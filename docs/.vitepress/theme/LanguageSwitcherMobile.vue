@@ -39,7 +39,7 @@ function goesToHome(loc) {
       type="button"
       class="title"
       :aria-expanded="open"
-      aria-label="Change language"
+      :aria-label="messages[currentLocale].changeLanguage"
       @click="open = !open"
     >
       <span class="vpi-languages icon lang" />

@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
       class="button"
       aria-haspopup="true"
       :aria-expanded="open"
-      aria-label="Change language"
+      :aria-label="messages[currentLocale].changeLanguage"
       @click="toggle"
     >
       <span class="text">

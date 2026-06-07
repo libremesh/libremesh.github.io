@@ -6,9 +6,9 @@
 export const LOCALE_PREFIXES = ['/es', '/pt-BR']
 
 export const messages = {
-  en:    { label: 'English',          short: 'EN', home: '/',         hint: '',  action: '',  dismiss: 'Dismiss' },
-  es:    { label: 'Español',          short: 'ES', home: '/es/',      hint: 'Esta página también está disponible en Español.',         action: 'Cambiar', dismiss: 'Cerrar' },
-  'pt-BR': { label: 'Português (BR)', short: 'PT', home: '/pt-BR/',   hint: 'Esta página também está disponível em Português (BR).', action: 'Trocar',  dismiss: 'Fechar' }
+  en:    { label: 'English',          short: 'EN', home: '/',         hint: '',  action: '',  dismiss: 'Dismiss',     changeLanguage: 'Change language' },
+  es:    { label: 'Español',          short: 'ES', home: '/es/',      hint: 'Esta página también está disponible en Español.',         action: 'Cambiar', dismiss: 'Cerrar', changeLanguage: 'Cambiar idioma' },
+  'pt-BR': { label: 'Português (BR)', short: 'PT', home: '/pt-BR/',   hint: 'Esta página também está disponível em Português (BR).', action: 'Trocar',  dismiss: 'Fechar', changeLanguage: 'Mudar idioma' }
 }
 
 export const translatedPaths = {
@@ -49,6 +49,9 @@ export const translatedPaths = {
     '/development/virtualizing': '/es/development/virtualizing.html',
     '/development/hacking':  '/es/development/hacking.html',
     '/development/hacking/kernel_vermagic': '/es/development/hacking/kernel_vermagic.html',
+    '/resources/media_list': '/es/resources/media_list.html',
+    '/resources/related_projects': '/es/resources/related_projects.html',
+    '/resources/tools/monitoring': '/es/resources/tools/monitoring.html',
     '/diagrams/libremesh-interfaces-openwrt-one': '/es/diagrams/libremesh-interfaces-openwrt-one.html',
   },
   'pt-BR': {
@@ -88,6 +91,9 @@ export const translatedPaths = {
     '/development/virtualizing': '/pt-BR/development/virtualizing.html',
     '/development/hacking':  '/pt-BR/development/hacking.html',
     '/development/hacking/kernel_vermagic': '/pt-BR/development/hacking/kernel_vermagic.html',
+    '/resources/media_list': '/pt-BR/resources/media_list.html',
+    '/resources/related_projects': '/pt-BR/resources/related_projects.html',
+    '/resources/tools/monitoring': '/pt-BR/resources/tools/monitoring.html',
     '/diagrams/libremesh-interfaces-openwrt-one': '/pt-BR/diagrams/libremesh-interfaces-openwrt-one.html',
   }
 }
