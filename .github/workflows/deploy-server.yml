@@ -33,7 +33,9 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0 # Not needed if lastUpdated is not enabled
-          submodules: 'recursive' # Fetch lime-packages and network-profiles
+          # submodules: 'recursive'
+      - name: Submodule update # Fetch lime-packages and network-profiles
+        run: git submodule update --init --recursive --remote
       - name: Install rsync
         run: |
           sudo apt-get update
