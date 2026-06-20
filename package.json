@@ -1,7 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.4",
     "downdoc": "1.0.2-stable",
     "typescript": "^5.9.3",
     "vitepress": "2.0.0-alpha.16"
