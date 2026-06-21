@@ -139,3 +139,329 @@
   );
 }
 
+/**
+ * Component: Custom language switcher in the nav.
+ * We replace VitePress's built-in VPNavBarTranslations because the
+ * built-in one auto-generates links to /<locale>/<current-path> for
+ * every locale, which 404s for pages that don't have a translated
+ * counterpart. This custom version only links to paths that exist,
+ * falling back to the locale home otherwise.
+ * -------------------------------------------------------------------------- */
+
+/* Hide VitePress's built-in language switchers.
+ * The MutationObserver in LanguageSwitcher.vue sets a data-lang-hidden
+ * attribute on these elements whenever they appear in the DOM (initial
+ * render, SPA navigation, HMR, etc.). This CSS rule picks up that
+ * attribute to hide them. Our own switcher (mounted via the
+ * nav-bar-content-after and nav-screen-content-after slots) replaces
+ * them with links that only point at pages that actually exist. */
+[data-lang-hidden] { display: none !important; }
+
+/**
+ * Component: Custom language switcher in the desktop nav.
+ * Styled to match VitePress's built-in VPNavBarTranslations: globe
+ * icon + chevron, transparent button, hover/aria-expanded driven
+ * dropdown, themed panel. Flexbox `order` places it to the right of
+ * the theme (appearance) switcher, separated by a `|` divider drawn
+ * with a ::before pseudo-element.
+ * -------------------------------------------------------------------------- */
+
+.lang-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+
+.VPNavBarAppearance { order: 0; }
+.VPNavBarSocialLinks { order: 2; }
+.VPNavBarExtra { order: 3; }
+
+.lang-switcher::before {
+  content: "";
+  width: 1px;
+  height: 24px;
+  background: var(--vp-c-divider);
+  margin: 0 8px;
+}
+
+.lang-switcher:hover,
+.lang-switcher.active {
+  color: var(--vp-c-brand-1);
+  transition: color 0.25s;
+}
+
+.lang-switcher .button {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: var(--vp-nav-height);
+  color: var(--vp-c-text-1);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  transition: color 0.5s;
+}
+
+.lang-switcher .text {
+  display: flex;
+  align-items: center;
+  line-height: var(--vp-nav-height);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  transition: color 0.25s;
+}
+
+.lang-switcher:hover .text { color: var(--vp-c-text-2); }
+.lang-switcher.active .text { color: var(--vp-c-brand-1); }
+.lang-switcher.active:hover .text { color: var(--vp-c-brand-2); }
+
+.lang-switcher .option-icon {
+  font-size: 16px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--icon);
+          mask-image: var(--icon);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.lang-switcher .text-icon {
+  margin-left: 4px;
+  font-size: 14px;
+}
+
+.lang-switcher .menu {
+  position: absolute;
+  top: calc(var(--vp-nav-height) / 2 + 20px);
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0);
+  transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+}
+
+.lang-switcher:hover .menu,
+.lang-switcher.active .menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-switcher .VPMenu {
+  border-radius: 12px;
+  padding: 12px;
+  min-width: 128px;
+  border: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg-elv);
+  box-shadow: var(--vp-shadow-3);
+}
+
+.lang-switcher .items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lang-switcher .link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  padding: 0 12px;
+  line-height: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  text-align: left;
+  white-space: nowrap;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.lang-switcher .link:hover {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-default-soft);
+}
+
+.lang-switcher .link.active {
+  color: var(--vp-c-brand-1);
+}
+
+.lang-switcher .link-hint {
+  font-size: 11px;
+  color: var(--vp-c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/**
+ * Component: Language switcher in the mobile full-screen menu.
+ * Mirrors VitePress's built-in VPNavScreenTranslations layout: a
+ * collapsible header with the globe icon and current locale label,
+ * expanding to a list of locale buttons. Click anywhere outside
+ * doesn't matter here since the screen is modal.
+ * -------------------------------------------------------------------------- */
+
+.lang-switcher-mobile {
+  padding: 12px 0;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.lang-switcher-mobile .title {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+}
+
+.lang-switcher-mobile .icon {
+  font-size: 16px;
+}
+
+.lang-switcher-mobile .icon.lang {
+  margin-right: 8px;
+}
+
+.lang-switcher-mobile .icon.chevron {
+  margin-left: auto;
+  transition: transform 0.25s;
+}
+
+.lang-switcher-mobile.open .icon.chevron {
+  transform: rotate(180deg);
+}
+
+.lang-switcher-mobile .list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lang-switcher-mobile .link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 6px 0 6px 24px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--vp-c-text-1);
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.25s, background-color 0.25s;
+}
+
+.lang-switcher-mobile .link:hover {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-default-soft);
+}
+
+.lang-switcher-mobile .link.active {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.lang-switcher-mobile .link-hint {
+  font-size: 11px;
+  color: var(--vp-c-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/**
+ * Component: Language suggestion toast
+ * Floating chip in the bottom-right corner. Out of the nav so it
+ * never overlaps the menu and never shifts layout on mobile.
+ * -------------------------------------------------------------------------- */
+
+.lang-toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 200;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  font-size: 0.85rem;
+  max-width: calc(100vw - 2rem);
+}
+
+.lang-toast__msg {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lang-toast__msg strong {
+  font-weight: 600;
+}
+
+.lang-toast__btn {
+  appearance: none;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  padding: 0.15rem 0.55rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.lang-toast__btn:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.lang-toast__btn--primary {
+  background: var(--vp-c-brand-3);
+  color: var(--vp-c-white);
+  border-color: var(--vp-c-brand-3);
+}
+
+.lang-toast__btn--primary:hover {
+  background: var(--vp-c-brand-2);
+  border-color: var(--vp-c-brand-2);
+}
+
+@media (max-width: 480px) {
+  .lang-toast {
+    right: 0.5rem;
+    bottom: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+

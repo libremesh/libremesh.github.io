@@ -5,13 +5,19 @@ import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import { redirects } from './redirects'
 import LayoutWide from './LayoutWide.vue'
+import LanguageBanner from './LanguageBanner.vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
+import LanguageSwitcherMobile from './LanguageSwitcherMobile.vue'
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'wide': () => h(LayoutWide)
+      'wide': () => h(LayoutWide),
+      'page-bottom': () => h(LanguageBanner),
+      'nav-bar-content-after': () => h(LanguageSwitcher),
+      'nav-screen-content-after': () => h(LanguageSwitcherMobile)
     })
   },
   enhanceApp({ app, router, siteData }) {
