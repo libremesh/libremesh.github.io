@@ -1,12 +1,8 @@
----
-outline: deep
----
-
 # Network configuration
 
 This screen lets you set a shared administration password for the network.
 
-![Network configuration screen](/guide/limeapp/images/network_config.png)
+![Network configuration screen](/guide/lime-app/images/network_config.png)
 
 1. **Type the desired password.**
    It must satisfy the three conditions shown on the screen. Each condition shows a red cross ✘ when unmet and a green tick ✔ when met.
@@ -23,4 +19,4 @@ This is **not** the same as the Wi-Fi password. If you ever set them to the same
 
 ---
 
-> **Attribution.** Translated from [«Configuración de la Red»](https://conectividad.altermundi.net/documentacion/usar-limeapp1-4/un-paseo-por-el-menu-1-4/configuracion-de-la-red/) by [AlterMundi](https://altermundi.net/), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+> **Attribution.** Translated from [«Configuración de la Red»](https://conectividad.altermundi.net/documentacion/usar-lime-app1-4/un-paseo-por-el-menu-1-4/configuracion-de-la-red/) by [AlterMundi](https://altermundi.net/), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

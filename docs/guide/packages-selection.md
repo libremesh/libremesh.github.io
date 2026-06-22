@@ -1,6 +1,3 @@
----
-outline: deep
----
 <script setup>
 import { data as openwrt } from '/openwrt.data.js'
 import { data as libremesh } from '/libremesh.data.js'

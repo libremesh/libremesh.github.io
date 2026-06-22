@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # lime-config
 The command `lime-config` configures LibreMesh on top of OpenWrt.
 

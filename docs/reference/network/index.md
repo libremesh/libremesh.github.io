@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Network options
 Configuration for each network device is calculated from:
 - the **general options** in `config lime network`, 

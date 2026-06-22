@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # System options
 The default values as per `lime-defaults`
 ```

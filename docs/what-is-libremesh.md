@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # What is LibreMesh?
 
 ## Objectives to Achieve

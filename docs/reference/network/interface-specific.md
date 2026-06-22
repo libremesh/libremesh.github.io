@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Network interface specific options
 
 ## Configure an ethernet port

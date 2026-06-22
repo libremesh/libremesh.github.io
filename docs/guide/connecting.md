@@ -13,12 +13,14 @@ These addresses are available as well:
   - http://\[fd0d:fe46:8ce8::1\] - default anygw ipv6
   - http://\[fd0d:fe46:8ce8::x\:xx\] - node default LAN `br-lan` ipv6 address
 
+::: tip <span class="custom-block-info">![LibreRouter](/librerouter_icon.svg) LibreRouterOS</span>
 The recommended way to access the node on a LibreRouter is through the
 **LimeApp** web interface that comes preinstalled. It is a friendlier
 alternative to LuCI/SSH for everyday node administration and is the
 default UI of LibreRouterOS. See the full
-[Using LimeApp](/guide/limeapp/) guide for a tour of its features
+[Using LimeApp](/guide/lime-app/) guide for a tour of its features
 (status, alignment, diagnostics, firmware update, etc.).
+:::
 
 ![lime-app](/lime-app.png)
 

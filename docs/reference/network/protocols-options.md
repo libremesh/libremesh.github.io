@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Network protocols options
 
 The default values as per `lime-defaults`

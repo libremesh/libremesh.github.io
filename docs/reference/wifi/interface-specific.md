@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # WiFi interface specific options 
 The following options must be edited in `lime-node` or `lime-<MAC>`
 

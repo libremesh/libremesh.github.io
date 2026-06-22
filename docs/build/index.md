@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Build LibreMesh
 
 ## Recommended methods
