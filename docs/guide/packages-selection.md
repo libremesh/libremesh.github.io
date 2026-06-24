@@ -14,11 +14,6 @@ It is possible to `install` new software via the package manager `opkg` or the n
 It is **highly discouraged** to `upgrade` packages. Read the OpenWrt's [`Upgrade packages warning`](https://openwrt.org/meta/infobox/upgrade_packages_warning).
 :::
 
-::: warning ath9k warning
-Routers with Atheros radios and the `ath9k` driver have a known bug that cause them to become deaf, 
-if you are using an OpenWrt older than 24.10.6 be sure to include the libremesh package `wifi-unstuck-wa` 
-:::
-
 ::: warning ath10k warning
 Routers with Atheros radios and the `ath10k-ct` OpenWrt's default driver (ath10k made by CandelaTech) are unstable/broken with 80211s meshing, works only wave2 chipsets. Replace packages related to `ath10k-ct` with the corresponding `ath10k` packages.
 :::
