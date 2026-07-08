@@ -9,25 +9,35 @@ const feed_repo = "https://feed.libremesh.org/"
 let lime_feed = {}
 let profiles_feed = {}
 
-const request = new XMLHttpRequest();
-request.open('GET', 'https://downloads.openwrt.org/.versions.json', false);  // `false` makes the request synchronous
-request.send(null);
-if (request.status !== 200) { console.log('unreachable') }
-let openwrt = JSON.parse(request.responseText)
-
-openwrt.stable_branch = openwrt.stable_version?.substr(0,5)
-openwrt.oldstable_branch = openwrt.oldstable_version?.substr(0,5)
-
-lime_feed = {
-  main: await (await fetch(feed_repo+'master/openwrt-main/x86_64/index.json')).json(),
-  stable: await (await fetch(feed_repo+'master/openwrt-'+openwrt.stable_branch+'/x86_64/index.json')).json(),
-  oldstable: await (await fetch(feed_repo+'master/openwrt-'+openwrt.oldstable_branch+'/x86_64/index.json')).json()
+function getJsonSync(url) {
+  const request = new XMLHttpRequest();
+  request.open('GET', url, false);  // `false` makes the request synchronous
+  request.send(null);
+  if (request.status !== 200) { console.log('unreachable') }
+  let res = JSON.parse(request.responseText)
+  return res
 }
 
-profiles_feed = {
-  main: await (await fetch(feed_repo+'profiles/openwrt-main/x86_64/index.json')).json(),
-  stable: await (await fetch(feed_repo+'profiles/openwrt-'+openwrt.stable_branch+'/x86_64/index.json')).json(),
-  oldstable: await (await fetch(feed_repo+'profiles/openwrt-'+openwrt.oldstable_branch+'/x86_64/index.json')).json()
+let openwrt = getJsonSync('https://downloads.openwrt.org/.versions.json')
+openwrt.branches = {
+  "main": "main",
+  "stable": openwrt.stable_version?.substr(0,5),
+  "oldstable": openwrt.oldstable_version?.substr(0,5)
+}
+
+Object.entries(openwrt.branches).forEach(async function ([name, branch]){
+  lime_feed[name] = getJsonSync(feed_repo+'master/openwrt-'+branch+'/x86_64/index.json')
+  profiles_feed[name] = getJsonSync(feed_repo+'profiles/openwrt-'+branch+'/x86_64/index.json')
+})
+
+function readUTF8(file_path) {
+  return fs.readFileSync(file_path, { encoding: 'utf-8', flag: 'r'}) || ''
+}
+
+function fileExistAndNotEmpty(file_path) {
+  if (!fs.existsSync(file_path)) { return false }
+  let file = readUTF8(file_path)
+  if (file === '') { return false } else { return true }
 }
 
 async function copyFiles(from_dir, to_dir, from_file, to_file) {
@@ -35,17 +45,8 @@ async function copyFiles(from_dir, to_dir, from_file, to_file) {
   let to = to_file && to_dir+to_file || to_dir+from_file
   fs.mkdirSync(to_dir, {recursive:true})
   if (!fs.existsSync(from)) { return }
-  // if (from_file.endsWith('adoc')) {
-  //   let tmp_from = '/tmp/.vitepress-tmp'
-  //   fs.writeFile(from_file, result, 'utf8', function (err) {
-  //     if (err) return console.log(err);
-  //  });
-  //   fs.writeFileSync(tmp_from,downdoc(fs.readFileSync(from)))
-  //   from = tmp_from
-  // }
   fs.copyFile(from, to, (err) => {
     if (err) throw err;
-    // console.log('File '+to+' was copied to destination');
   })
 }
 
@@ -63,35 +64,27 @@ async function replaceInFile(file,pattern,replace) {
 }
 
 async function generateIndexMd(indexMd_dir, pkg, _descr, _readme, _makefile, _extra) {
-  let description = _descr !== '' && _descr.trim()+'\n' || ''
-  let readme = _readme !== '' && _readme.trim()+'\n' || ''
-  let extra = _extra !== '' && _extra?.trim()+'\n' || ''
+  let description = _descr && _descr !== '' && _descr.trim()+'\n' || ''
+  let readme = _readme && _readme !== '' && _readme.trim()+'\n' || ''
+  let extra = _extra && _extra !== '' && _extra.trim()+'\n' || ''
 
-  let makefile = _makefile != '' && "## Makefile\n\
+  let makefile = _makefile &&  _makefile != '' && "## Makefile\n\
 ```\n\
 <!--@include: Makefile-->\n\
 ```" || ''
 
-  const fm = "---\ntitle: "+pkg+"\n---\n"
-  const content = "# "+pkg+"\n\
-\n\
-"+description+"\
-\n\
-"+readme+"\
-\n\
-"+makefile+"\
-\n\
-"+extra+"\n"
+  const frontMatter = "---\ntitle: "+pkg+"\n---\n"
+  const content = frontMatter+"# "+pkg+"\n\n"+description+"\n"+readme+"\n\
+"+makefile+"\n"+extra+"\n"
 
-  const file = fm+content
-  fs.writeFileSync(indexMd_dir+pkg+'/index.md', file)
+  fs.writeFileSync(indexMd_dir+pkg+'/index.md', content)
 }
 
 function generateBuildInfo(feed, pa, path) {
-  ['main', 'stable', 'oldstable'].forEach(branch => {
-    Object.entries(feed[branch].packages).find(p => {
+  Object.entries(openwrt.branches).forEach(([name]) => {
+    Object.entries(feed[name].packages).find(p => {
       if (p[0] === pa) {
-        fs.writeFileSync('./docs/'+path+'/'+pa+'/.built_'+branch, p[1])
+        fs.writeFileSync('./docs/'+path+'/'+pa+'/.built_'+name, p[1])
       }
     })
   })
@@ -109,14 +102,7 @@ async function setupPackages() {
     const from_dir = lime_pkgs_path+pa+'/'
     const to_dir = './docs/packages/'+pa+'/'
     
-    let readme = ''
-    let description = ''
-    let makefile = ''
-
     await copyFiles(from_dir, to_dir, 'Makefile')
-
-    const makefile_path = to_dir+'/Makefile'
-    const makefileExist = fs.existsSync(makefile_path)
 
     if (['lime-app', 'shared-state-async'].includes(pa)) {
       // skip packages with external url
@@ -127,58 +113,46 @@ async function setupPackages() {
       // await copyFiles(from_dir, to_dir, 'README.adoc', 'README.md')
     }
 
-    const readme_path = to_dir+'README.md'
-    const readmeExist = fs.existsSync(readme_path)
+    const makefilePath = to_dir+'/Makefile'
+    const readmePath = to_dir+'README.md'
+    let readme, makefile, description
 
-    if (readmeExist) {
-      readme = fs.readFileSync(readme_path, { encoding: 'utf-8', flag: 'r'}) || ''
-      if (readme !== '') {
+    if (fileExistAndNotEmpty(makefilePath)) {
+
+      if (fileExistAndNotEmpty(readmePath)) { 
+        readme = readUTF8(readmePath)
         readme = "---\n"+readme.replace(/^# .*/, '')
       }
-    }
 
-    if (makefileExist) {
-      makefile = fs.readFileSync(makefile_path, { encoding: 'utf-8', flag: 'r'}) || ''
+      makefile = readUTF8(makefilePath)
+      if (makefile.includes('description')) {
 
-      if (makefile !== '' && makefile.includes('description')) {
         const regex = /\/description([\s\S]*?)endef/
-        // let makefile_cleaned = makefile.replace(/^\s*['"]?/g, '').replace(/['"]?\s*$/, '').replace('/(\s*\+\s*)/g','')
-        // let makefile_cleaned = makefile.replace(', '')
-        // console.log(makefile)
-        
         let matches = makefile.match(regex)
-        // console.log(matches)
 
         description = matches?.[1] || ''
         if (description === '') {
-          // console.log('regex2')
           const regex2 = /\/description([\s\S\t\t].*?)endef/
           let matches2 = makefile.match(regex2)
-          // console.log(matches2)
           description = matches2?.[1] || ''
         }
         if (description === '') {
-          // console.log('regex3')
           const regex3 = /\/description([\s\S\t]*?)endef/
           let matches3 = makefile.match(regex3)
-          // console.log(matches3)
           description = matches3?.[1] || ''
         }
       }
-
       generateIndexMd('./docs/packages/', pa, description, readme, makefile)
     }
-
+    
     generateBuildInfo(lime_feed, pa, 'packages')
   })
 }
 
 function setupProfiles() {
   console.log('Copying network-profiles communities and packages')
-  // let profiles = []
   let profiles_list = []
   let community_list = fs.readdirSync(profile_repo);
-  // community_list = community_list.filter
 
   community_list.forEach(async (c) => {
     if (!fs.lstatSync(profile_repo+c).isDirectory()) return 
@@ -192,18 +166,12 @@ function setupProfiles() {
 
     // await copyFiles(from_dir, to_dir, 'README.md')
     await copyFiles(from_dir, to_dir, 'README.md')
-
-
     let readme = ''
     const readme_path = to_dir+'/README.md'
-    const readmeExist = fs.existsSync(readme_path)
-
-    if (readmeExist) {
-      readme = fs.readFileSync(readme_path, { encoding: 'utf-8', flag: 'r'}) || ''
-      if (readme !== '') {
-        readme = readme.replace(/^# .*/, '')
-        generateIndexMd('./docs/profiles/communities/', c, '', readme)
-      }
+    if (fileExistAndNotEmpty(readme_path)) {
+      readme = readUTF8(readme_path)
+      readme = readme.replace(/^# .*/, '')
+      generateIndexMd('./docs/profiles/communities/', c, '', readme)
     }
 
     community_files.forEach(async (cf) => {
@@ -230,48 +198,40 @@ function setupProfiles() {
       await copyFiles(from_dir+'root/etc/config/', to_dir, 'lime-community')
       await copyFiles(from_dir+'root/etc/config/', to_dir, 'lime-node')
 
-      let readme = ''
-      let description = ''
-      let makefile = ''
-      let extra = ''
-      const makefile_path = to_dir+'/Makefile'
-      const makefileExist = fs.existsSync(makefile_path)
-      const readme_path = to_dir+'/README.md'
-      const readmeExist = fs.existsSync(readme_path)
-      const limeCommunityExists = fs.existsSync(to_dir+'lime-community')
-      const limeNodeExists = fs.existsSync(to_dir+'lime-node')
+      readme = ''
+      let description, makefile, extra = ''
 
-      if (readmeExist) {
-        readme = fs.readFileSync(readme_path, { encoding: 'utf-8', flag: 'r'}) || ''
-        if (readme !== '') {
-          readme = "---\n"+readme.replace(/^# .*/, '')
-        }
+      const makefilePath = to_dir+'/Makefile'
+      const readmePath = to_dir+'/README.md'
+      const limeCommunityPath = to_dir+'lime-community'
+      const limeNodePath = to_dir+'lime-node'
+
+      if (fileExistAndNotEmpty(readmePath)) {
+        readme = readUTF8(readmePath)
+        readme = "---\n"+readme.replace(/^# .*/, '')
       }
 
-      if (makefileExist) {
-        makefile = fs.readFileSync(makefile_path, { encoding: 'utf-8', flag: 'r'}) || ''
+      if (fileExistAndNotEmpty(makefilePath)) {
+        makefile = readUTF8(makefilePath)
     
-        if (makefile !== '' && makefile.includes('DESCRIPTION')) {
-          description = makefile.match(/PROFILE_DESCRIPTION\:\=(.*)/)?.[1] || ''
+        if (makefile.includes('DESCRIPTION')) {
+          description = makefile.match(/PROFILE_DESCRIPTION:=(.*)/)?.[1] || ''
         }
-        if (limeCommunityExists) {
-          let limeCommunity = fs.readFileSync(to_dir+'lime-community', { encoding: 'utf-8', flag: 'r'}) || ''
-          if (limeCommunity !== '') {
-            extra = extra+'\n## lime-community\n```\n'+limeCommunity+'\n```\n'
-          }
+
+        if (fileExistAndNotEmpty(limeCommunityPath)) {
+          let limeCommunity = readUTF8(limeCommunityPath)
+          extra = extra+'\n## lime-community\n```\n'+limeCommunity+'\n```\n'
         }
-        if (limeNodeExists) {
-          let limeNode = fs.readFileSync(to_dir+'lime-node', { encoding: 'utf-8', flag: 'r'}) || ''
-          if (limeNode !== '') {
-            extra = extra+'\n## lime-node\n```\n'+limeNode+'\n```\n'
-          }
+        if (fileExistAndNotEmpty(limeNodePath)) {
+          let limeNode = readUTF8(limeNodePath)
+          extra = extra+'\n## lime-node\n```\n'+limeNode+'\n```\n'
         }
+
         generateIndexMd('./docs/profiles/packages/', profile_name, description, readme, makefile, extra)
       }
       generateBuildInfo(profiles_feed, profile_name, 'profiles/packages')
     })
   })
-  // console.log(profiles_list)
 }
 
 // copy VIRTUALIZING.md TESTING.md HACKING.md
