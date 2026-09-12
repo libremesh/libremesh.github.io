@@ -270,5 +270,7 @@ If everything goes well you should find the produced binaries inside the `bin/` 
 If after the compilation you don't see the compiled image in the `bin/targets/.../.../` folder, it is possible that your router has such a small flash memory that the aforementioed packages don't fit in it (it can happen also with routers having 8 MB of flash memory when selecting huge packages to be included). In this case, you can remove the `.config` generated packages list and repeat the packages selection without including `lime-app`. If the compiled image is still too large, try selecting only `lime-proto-anygw`, `lime-proto-batadv` and `lime-proto-babeld` or following [this guide](https://openwrt.org/docs/guide-user/additional-software/saving_space).
 :::
 
-Refers to the pages under **Development guide** [testing](/development/testing) and [virtualizing](/development/virtualizing)
-for emulating on your computer with qemu.
+
+## Run on QEMU
+
+Refers to the pages under **Development guide** [virtualizing](/development/virtualizing) and [testing](/development/testing#development-with-qemu-virtual-machine) for emulating on your computer with qemu.

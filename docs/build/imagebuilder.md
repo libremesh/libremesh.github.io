@@ -47,8 +47,10 @@ Find the `target-subtarget` of your device using the [OpenWrt's Table of Hardwar
 Export to the environment the `target-subtarget` and the package `architecture`
 ``` sh-vue
 export TARGET={{ build.target }}
+```
+``` sh-vue
 export ARCH=$(curl -s https://downloads.openwrt.org/snapshots/.targets.json | \
-    sed 's/\//-/' | jq -r '."${TARGET}"')
+    sed 's/\//-/' | jq -r --arg TARGET "$TARGET" '.[$TARGET]')
 ```
 
 ### Build on Debian

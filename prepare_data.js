@@ -1,6 +1,7 @@
 // import readme from each packages
 import fs from 'fs'
 import { XMLHttpRequest } from 'xmlhttprequest'
+import { spawn } from 'node:child_process'
 
 const lime_repo = './lime-packages/'
 const lime_pkgs_path = './lime-packages/packages/'
@@ -253,3 +254,5 @@ setupPackages()
 setupProfiles()
 
 addRepoDoc()
+
+spawn('./scripts/packages_included_files_list.sh')
