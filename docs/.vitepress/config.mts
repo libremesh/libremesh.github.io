@@ -98,6 +98,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Connecting to the router', link: '/guide/connecting' },
+        { text: 'Connecting nodes', link: '/guide/connecting_nodes' },
         { text: 'Using LimeApp',
           link: '/guide/lime-app/',
           collapsed: true,
@@ -180,7 +181,10 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       text: 'Packages',
       collapsed: true,
       // link: '/packages',
-      items: [{ text: 'Table of packages', link: '/packages' }].concat(generateSidebarItems(packages)),
+      items: [
+        { text: 'Table of packages', link: '/packages' },
+        { text: 'List of included files', link: '/packages/included_files_list' },
+      ].concat(generateSidebarItems(packages)),
     },
     {
       text: 'Profiles',
