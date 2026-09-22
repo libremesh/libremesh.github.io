@@ -2,71 +2,11 @@
 
 ## Mailing Lists
 
-The project communicate on the following mailing list
-
-* [libremesh at krutt.org](https://www.autistici.org/mailman/listinfo/libremesh) -
-  This list is used for project organisational purposes, user support, and development discussions. Any language is welcome.
-
-You can see the [mailing list archive here](https://lists.autistici.org/list/libremesh.html) and search in it using this form:
-
-<form id="mailing_list_search" action="https://lists.autistici.org/cgi-lurker/keyword.cgi" accept-charset="UTF-8" onsubmit="form_timezone(this)">
-<input type="hidden" name="doc-url" value="https://lists.autistici.org">
-<input type="hidden" name="format" value="en.html">
-<input type="hidden" name="list" value="libremesh">
-<table>
-  <tbody>
-<tr><td colspan="2">
-  <input type="text" name="query" class="longtext">
-  <input type="submit" name="submit" value="Search!" style="padding: 0 1em">
-</td></tr>
-<tr><td><b>Subject</b></td><td><input type="text" name="subject" class="longtext"></td></tr>
-<tr><td><b>Author</b></td><td><input type="text" name="author" class="longtext"></td></tr>
-<tr>
-  <td><b>Date</b></td>
-  <td>
-    <input type="hidden" name="utc" value="0">
-    <input type="hidden" name="sec" value="00">
-    <input type="hidden" name="min" value="00">
-    <input type="hidden" name="hour" value="0">
-    <select name="mday">
-      <option v-for="opt in 31" :value="opt" :selected="opt == 31">{{ opt }}</option>
-    </select>
-    &nbsp;
-    <select name="mon">
-      <option value="1">January</option>
-      <option value="2">February</option>
-      <option value="3">March</option>
-      <option value="4">April</option>
-      <option value="5">May</option>
-      <option value="6">June</option>
-      <option value="7">July</option>
-      <option value="8">August</option>
-      <option value="9">September</option>
-      <option value="10">October</option>
-      <option value="11">November</option>
-      <option value="12" selected="">December</option>
-    </select>
-    &nbsp;
-    <select name="year">
-      <option value="2022">2022</option>
-      <option value="2023">2023</option>
-      <option value="2024">2024</option>
-      <option value="2025">2025</option>
-      <option value="2026" selected>2026</option>
-      <option value="2027">2027</option>
-    </select>
-  </td>
-</tr>
-</tbody></table></form>
-
-Old mailing list archives can be consulted at: 
-
-* lime-dev https://listas.altermundi.net/archives/list/lime-dev@lists.libremesh.org/latest
-* lime-users https://listas.altermundi.net/archives/list/lime-users@lists.libremesh.org/latest
+We do not have a mailing list, currently. Our mailing list on Autistici/Inventati servers is not available anymore for the reasons explained [at this website](https://keepitfree.ai/).
 
 ## Matrix Chatroom
 
-The chatroom can be accessed through a Matrix client like **Element** desktop software or the mobile-app and entering the `#libremesh-dev:matrix.guifi.net` chatroom. You'll need to register a user on any of the Matrix nodes (the default on element.io will also work).
+The chatroom can be accessed through a Matrix client like **Element** desktop software or the mobile-app and entering the `#libremesh-dev:matrix.guifi.net` chatroom or clicking [this link](https://matrix.to/#/#libremesh-dev:matrix.guifi.net). You'll need to register a user on any of the Matrix nodes (the default on element.io will also work).
 
 ## Social networks
 
