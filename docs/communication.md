@@ -2,7 +2,8 @@
 
 ## Mailing Lists
 
-We do not have a mailing list, currently. Our mailing list on Autistici/Inventati servers is not available anymore for the reasons explained [at this website](https://keepitfree.ai/).
+[libremesh at framagroupes.org](https://framagroupes.org/sympa/info/libremesh) - 
+This list is used for project organisational purposes, user support, and development discussions. Any language is welcome.
 
 ## Matrix Chatroom
 
